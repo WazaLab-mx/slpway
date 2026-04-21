@@ -116,7 +116,7 @@
     "newsletter": "ニュースレター",
     "contactUs": "お問い合わせ",
     "contactForm": "お問い合わせフォーム",
-    "copyright": "© {year} San Luis Way. 全著作権所有。",
+    "copyright": "© {{year}} San Luis Way. 全著作権所有。",
     "privacyPolicy": "プライバシーポリシー",
     "termsOfService": "利用規約",
     "cookiePolicy": "クッキーポリシー",

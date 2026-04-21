@@ -111,7 +111,7 @@
     "newsletter": "Newsletter",
     "contactUs": "Kontaktieren Sie uns",
     "contactForm": "Kontaktformular",
-    "copyright": "© {year} San Luis Way. Alle Rechte vorbehalten.",
+    "copyright": "© {{year}} San Luis Way. Alle Rechte vorbehalten.",
     "privacyPolicy": "Datenschutz",
     "termsOfService": "Nutzungsbedingungen",
     "cookiePolicy": "Cookie-Richtlinie",
