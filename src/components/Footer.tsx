@@ -1,0 +1,275 @@
+import Link from 'next/link';
+import Image from 'next/image';
+import NewsletterSignup from './NewsletterSignup';
+import { useTranslation } from 'next-i18next';
+
+export default function Footer() {
+  const { t } = useTranslation('common');
+
+  return (
+    <footer className="bg-gradient-to-b from-gray-900 to-gray-950 text-white relative overflow-hidden">
+      {/* Enhanced San Luis Colors Accent Bar */}
+      <div className="h-3 bg-gradient-to-r from-secondary via-primary to-secondary opacity-90 animate-pulse-slow"></div>
+
+      {/* Enhanced Decorative Pattern */}
+      <div className="h-12 bg-gradient-to-r from-secondary/80 via-secondary/90 to-secondary/80 overflow-hidden relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-pulse-slow"></div>
+        <div className="absolute inset-0"
+             style={{
+               backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 12px, rgba(255, 203, 5, 0.15) 12px, rgba(255, 203, 5, 0.15) 24px)`,
+             }}>
+        </div>
+        {/* Floating elements */}
+        <div className="absolute top-2 left-8 w-2 h-2 bg-primary/40 rounded-full animate-float"></div>
+        <div className="absolute top-3 right-12 w-1 h-1 bg-white/30 rounded-full animate-pulse"></div>
+      </div>
+
+      <div className="container-responsive section-padding relative z-10">
+        {/* Newsletter Section */}
+        <div className="mb-16">
+          <NewsletterSignup variant="footer" />
+        </div>
+
+        {/* B2B CTA Section */}
+        <div className="mb-16">
+          <a
+            href="https://sanluiswayhub.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 border border-primary/30 rounded-2xl p-6 hover:border-primary/50 transition-all duration-300 group"
+          >
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white group-hover:text-primary transition-colors">
+                    {t('b2b.footer.title')}
+                  </h3>
+                  <p className="text-gray-300 text-sm">
+                    {t('b2b.footer.description')}
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 px-6 py-3 bg-primary text-secondary font-semibold rounded-full group-hover:bg-primary-dark transition-colors">
+                {t('b2b.footer.cta')}
+                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+          {/* Enhanced Brand Section */}
+          <div className="col-span-1 md:col-span-2 lg:col-span-1">
+            <Link href="/" className="inline-block mb-6 hover-scale transition-transform duration-200">
+              <Image
+                src="/images/logo.jpeg"
+                alt="SLP Descubre Logo"
+                width={200}
+                height={200}
+                className="h-18 w-auto"
+                sizes="(max-width: 640px) 72px, 96px"
+              />
+            </Link>
+            <p className="text-gray-300 mb-6 text-base leading-relaxed">
+              {t('footer.description')}
+            </p>
+            <div className="flex space-x-5">
+              <a
+                href="https://www.instagram.com/sanluisway/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-primary transition-all duration-200 p-2 rounded-lg hover:bg-primary/10 hover:scale-110 flex items-center gap-2"
+                aria-label={t('footer.followInstagram', 'Follow San Luis Way on Instagram (@sanluisway)')}
+              >
+                <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.09 1.064.077 1.791.232 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.233.636.388 1.363.465 2.427.067 1.067.09 1.407.09 4.123v.08c0 2.643-.012 2.987-.09 4.043-.077 1.064-.232 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.233-1.363.388-2.427.465-1.067.067-1.407.09-4.123.09h-.08c-2.643 0-2.987-.012-4.043-.09-1.064-.077-1.791-.232-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.233-.636-.388-1.363-.465-2.427-.07-1.067-.09-1.407-.09-4.123v-.08c0-2.643.012-2.987.09-4.043.077-1.064.232-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.233 1.363-.388 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
+                </svg>
+                <span className="text-sm font-medium">@sanluisway</span>
+              </a>
+              <a
+                href="https://www.tiktok.com/@sanluisway"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-primary transition-all duration-200 p-2 rounded-lg hover:bg-primary/10 hover:scale-110 flex items-center gap-2"
+                aria-label={t('footer.followTiktok', 'Follow San Luis Way on TikTok (@sanluisway)')}
+              >
+                <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+                </svg>
+                <span className="text-sm font-medium">@sanluisway</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Enhanced Quick Links */}
+          <div className="relative pl-6">
+            <div className="absolute left-0 top-0 w-1 h-16 bg-gradient-to-b from-primary to-primary-dark rounded-full"></div>
+            <h3 className="text-lg font-bold text-white tracking-wide mb-6">
+              {t('footer.quickLinks')}
+            </h3>
+            <ul className="space-y-4">
+              <li>
+                <Link href="/cultural/history" className="text-base text-gray-300 hover:text-primary transition-all duration-200 hover:translate-x-1 inline-flex items-center group">
+                  <span className="w-1 h-1 bg-primary/60 rounded-full mr-3 transition-all duration-200 group-hover:bg-primary group-hover:scale-125"></span>
+                  {t('footer.history')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/cultural/festivals" className="text-base text-gray-300 hover:text-primary transition-all duration-200 hover:translate-x-1 inline-flex items-center group">
+                  <span className="w-1 h-1 bg-primary/60 rounded-full mr-3 transition-all duration-200 group-hover:bg-primary group-hover:scale-125"></span>
+                  {t('footer.festivals')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/cultural/music-dance" className="text-base text-gray-300 hover:text-primary transition-all duration-200 hover:translate-x-1 inline-flex items-center group">
+                  <span className="w-1 h-1 bg-primary/60 rounded-full mr-3 transition-all duration-200 group-hover:bg-primary group-hover:scale-125"></span>
+                  {t('footer.musicDance')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/places" className="text-base text-gray-300 hover:text-primary transition-all duration-200 hover:translate-x-1 inline-flex items-center group">
+                  <span className="w-1 h-1 bg-primary/60 rounded-full mr-3 transition-all duration-200 group-hover:bg-primary group-hover:scale-125"></span>
+                  {t('categories.places')}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Enhanced Resources */}
+          <div className="relative pl-6">
+            <div className="absolute left-0 top-0 w-1 h-16 bg-gradient-to-b from-secondary to-secondary-light rounded-full"></div>
+            <h3 className="text-lg font-bold text-white tracking-wide mb-6">
+              {t('footer.resources')}
+            </h3>
+            <ul className="space-y-4">
+              <li>
+                <Link href="/blog" className="text-base text-gray-300 hover:text-secondary transition-all duration-200 hover:translate-x-1 inline-flex items-center group">
+                  <span className="w-1 h-1 bg-secondary/60 rounded-full mr-3 transition-all duration-200 group-hover:bg-secondary group-hover:scale-125"></span>
+                  {t('nav.blog')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/expat-guide" className="text-base text-gray-300 hover:text-secondary transition-all duration-200 hover:translate-x-1 inline-flex items-center group">
+                  <span className="w-1 h-1 bg-secondary/60 rounded-full mr-3 transition-all duration-200 group-hover:bg-secondary group-hover:scale-125"></span>
+                  {t('footer.expatGuide')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/living-guide" className="text-base text-gray-300 hover:text-secondary transition-all duration-200 hover:translate-x-1 inline-flex items-center group">
+                  <span className="w-1 h-1 bg-secondary/60 rounded-full mr-3 transition-all duration-200 group-hover:bg-secondary group-hover:scale-125"></span>
+                  {t('footer.livingGuide')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/newsletter" className="text-base text-gray-300 hover:text-secondary transition-all duration-200 hover:translate-x-1 inline-flex items-center group">
+                  <span className="w-1 h-1 bg-secondary/60 rounded-full mr-3 transition-all duration-200 group-hover:bg-secondary group-hover:scale-125"></span>
+                  {t('footer.newsletter')}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Enhanced Contact Section */}
+          <div className="relative pl-6">
+            <div className="absolute left-0 top-0 w-1 h-16 bg-gradient-to-b from-primary to-primary-dark rounded-full"></div>
+            <h3 className="text-lg font-bold text-white tracking-wide mb-6">
+              {t('footer.contactUs')}
+            </h3>
+            <ul className="space-y-4">
+              <li>
+                <a href="mailto:sanluisway@waza.baby" className="text-base text-gray-300 hover:text-primary transition-all duration-200 hover:translate-x-1 inline-flex items-center group">
+                  <svg className="w-4 h-4 mr-3 text-primary/60 group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  sanluisway@waza.baby
+                </a>
+              </li>
+              <li className="text-base text-gray-300 inline-flex items-center">
+                <svg className="w-4 h-4 mr-3 text-primary/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                San Luis Potosí, México
+              </li>
+              <li>
+                <Link href="/contact" className="text-base text-gray-300 hover:text-primary transition-all duration-200 hover:translate-x-1 inline-flex items-center group">
+                  <svg className="w-4 h-4 mr-3 text-primary/60 group-hover:text-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  {t('footer.contactForm')}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* AI Agents Section */}
+          <div className="relative pl-6">
+            <div className="absolute left-0 top-0 w-1 h-16 bg-gradient-to-b from-secondary to-secondary-light rounded-full"></div>
+            <h3 className="text-lg font-bold text-white tracking-wide mb-6">
+              {t('footer.aiAgents')}
+            </h3>
+            <ul className="space-y-4">
+              <li>
+                <Link href="/agent-connect" className="text-base text-gray-300 hover:text-secondary transition-all duration-200 hover:translate-x-1 inline-flex items-center group">
+                  <span className="w-1 h-1 bg-secondary/60 rounded-full mr-3 transition-all duration-200 group-hover:bg-secondary group-hover:scale-125"></span>
+                  {t('footer.agentConnect')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/mcp" className="text-base text-gray-300 hover:text-secondary transition-all duration-200 hover:translate-x-1 inline-flex items-center group">
+                  <span className="w-1 h-1 bg-secondary/60 rounded-full mr-3 transition-all duration-200 group-hover:bg-secondary group-hover:scale-125"></span>
+                  {t('footer.mcpServer')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/cli" className="text-base text-gray-300 hover:text-secondary transition-all duration-200 hover:translate-x-1 inline-flex items-center group">
+                  <span className="w-1 h-1 bg-secondary/60 rounded-full mr-3 transition-all duration-200 group-hover:bg-secondary group-hover:scale-125"></span>
+                  CLI
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Enhanced Bottom Bar */}
+        <div className="mt-8 border-t border-gray-700/50 pt-8">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
+            <p className="text-lg text-gray-300 font-medium">
+              {t('footer.copyright', { year: new Date().getFullYear() })}
+            </p>
+            <div className="flex flex-wrap justify-center lg:justify-end gap-8">
+              <Link href="/privacy" className="text-base text-gray-300 hover:text-primary transition-all duration-200 hover:scale-105">
+                {t('footer.privacyPolicy')}
+              </Link>
+              <Link href="/terms" className="text-base text-gray-300 hover:text-primary transition-all duration-200 hover:scale-105">
+                {t('footer.termsOfService')}
+              </Link>
+              <Link href="/cookies" className="text-base text-gray-300 hover:text-primary transition-all duration-200 hover:scale-105">
+                {t('footer.cookiePolicy')}
+              </Link>
+              <Link href="/sitemap" className="text-base text-gray-300 hover:text-primary transition-all duration-200 hover:scale-105">
+                {t('footer.sitemap')}
+              </Link>
+            </div>
+          </div>
+
+          {/* Waza Lab Credit */}
+          <div className="mt-8 text-center">
+            <div className="bg-gradient-to-r from-transparent via-gray-800/30 to-transparent p-6 rounded-2xl">
+              <p className="text-gray-300 text-lg">
+                {t('footer.madeWith')} <span className="text-pink-500 animate-pulse text-xl">❤</span> {t('footer.by')} <a href="https://waza.baby" target="_blank" rel="noopener noreferrer" className="text-pink-500 font-bold hover:text-pink-400 transition-all duration-200 hover:scale-105 inline-flex items-center gap-1">Waza Lab</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}

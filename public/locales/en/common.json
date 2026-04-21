@@ -1,0 +1,2606 @@
+{
+  "agentConnect": {
+    "bannerLabel": "New",
+    "bannerHeadline": "Your AI agent can now access San Luis Way data",
+    "bannerCta": "Connect Your Agent",
+    "bannerResponse": "→ 12 upcoming events in SLP",
+    "bannerTags": "MCP · CLI · OpenClaw",
+    "pageTitle": "Connect Your Agent to San Luis Way",
+    "pageSubtitle": "Give your AI agent structured access to the most complete guide to San Luis Potosí",
+    "whatYourAgentGets": "What Your Agent Gets",
+    "events": "Events",
+    "eventsDesc": "Upcoming events, festivals, and conferences",
+    "places": "Places",
+    "placesDesc": "Restaurants, cafés, bars, museums, and more",
+    "guides": "Guides",
+    "guidesDesc": "Practical guides for visitors and residents",
+    "outdoor": "Outdoor",
+    "outdoorDesc": "Hiking, camping, Real de Catorce, Huasteca",
+    "culture": "Culture",
+    "cultureDesc": "Historic sites, museums, Centro Histórico",
+    "weather": "Weather",
+    "weatherDesc": "Current conditions in San Luis Potosí",
+    "news": "News",
+    "newsDesc": "Local headlines in 4 languages",
+    "rates": "Exchange Rates",
+    "ratesDesc": "MXN to USD, EUR, GBP, JPY, CNY",
+    "mcpTitle": "MCP Server",
+    "mcpDesc": "For Claude Desktop, Cursor & Windsurf",
+    "cliTitle": "CLI",
+    "cliDesc": "Terminal access for scripts and agents",
+    "quickStart": "Quick Start",
+    "noApiKey": "No API keys. No accounts. No configuration.",
+    "faqTitle": "Frequently Asked Questions",
+    "faq1q": "What can my AI agent do with San Luis Way?",
+    "faq1a": "Your agent can query events, places, restaurants, guides, outdoor activities, culture, weather, news, and exchange rates — all in structured JSON format.",
+    "faq2q": "Do I need an API key?",
+    "faq2a": "No. All data is public and free. No API keys, accounts, or configuration needed.",
+    "faq3q": "Which AI clients are supported?",
+    "faq3a": "Claude Desktop, Cursor, Windsurf, Claude Code, Gemini CLI, Codex CLI, and any MCP-compatible client. The CLI works anywhere.",
+    "faq4q": "Is the data free?",
+    "faq4a": "Yes, completely free. San Luis Way's mission is to make SLP information accessible to everyone — including AI agents.",
+    "faq5q": "How often is the data updated?",
+    "faq5a": "Events and places are updated in real-time from our database. Weather updates every 3 minutes. News every 5 minutes. Exchange rates every 10 minutes."
+  },
+  "nav": {
+    "home": "Home",
+    "explore": "Explore",
+    "resources": "Resources",
+    "spouseHub": "Spouse Hub",
+    "events": "Events",
+    "blog": "Blog",
+    "about": "About",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "signIn": "Sign In",
+    "signin": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out",
+    "signout": "Sign Out",
+    "myAccount": "My Account",
+    "myOrders": "My Orders",
+    "getStarted": "Get Started",
+    "searchPlaceholder": "Search places, events...",
+    "searching": "Searching",
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "visit": "Visit SLP",
+    "nomads": "Digital Nomads",
+    "more": "More",
+    "developers": "Developers",
+    "developersAgents": "Developers & Agents",
+    "agentConnect": "Agent Connect",
+    "mcp": "MCP Server",
+    "cli": "CLI"
+  },
+  "categories": {
+    "food": "Food",
+    "beverages": "Beverages",
+    "outdoorActivities": "Outdoor Activities",
+    "service": "Service",
+    "sportsFitness": "Sports & Fitness",
+    "privateDiningRooms": "Private Dining Rooms",
+    "languageExchangeCafes": "Language Exchange Cafes",
+    "familyActivities": "Family Activities",
+    "terraces": "Terraces",
+    "liveMusic": "Live Music",
+    "other": "Other"
+  },
+  "search": {
+    "placeholder": "Search places, events...",
+    "noResults": "No places found",
+    "loading": "Loading..."
+  },
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "de": "Deutsch",
+    "ja": "日本語",
+    "zh": "中文",
+    "select": "Language"
+  },
+  "footer": {
+    "description": "Your comprehensive guide to discovering the rich cultural heritage and vibrant community of San Luis Potosí. We help expatriates navigate the city's cultural landscape with curated recommendations and local insights.",
+    "quickLinks": "Quick Links",
+    "history": "History",
+    "festivals": "Festivals",
+    "musicDance": "Music & Dance",
+    "resources": "Resources",
+    "expatGuide": "Expat Guide",
+    "livingGuide": "Living Guide",
+    "newsletter": "Newsletter",
+    "contactUs": "Contact Us",
+    "contactForm": "Contact Form",
+    "copyright": "© {year} San Luis Way. All Rights Reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiePolicy": "Cookie Policy",
+    "sitemap": "Sitemap",
+    "madeWith": "Made with",
+    "by": "by",
+    "followInstagram": "Follow San Luis Way on Instagram (@sanluisway)",
+    "followTiktok": "Follow San Luis Way on TikTok (@sanluisway)",
+    "aiAgents": "AI Agents",
+    "agentConnect": "Agent Connect",
+    "mcpServer": "MCP Server"
+  },
+  "account": {
+    "title": "Account"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "readMore": "Read more",
+    "viewAll": "View all"
+  },
+  "forms": {
+    "yourName": "Your Name",
+    "emailAddress": "Email Address",
+    "message": "Message",
+    "sending": "Sending...",
+    "sendInquiry": "Send Inquiry",
+    "sendRequest": "Send Request",
+    "sendMessage": "Send Message",
+    "thankYou": "Thank you for your inquiry!",
+    "weWillContact": "We've received your request and will contact you shortly.",
+    "recaptchaError": "Please complete the reCAPTCHA or try again later."
+  },
+  "services": {
+    "ourServices": "Our Services"
+  },
+  "wellness": {
+    "pageTitle": "Health & Wellness Services | San Luis Way",
+    "metaDescription": "Holistic wellness services for expats in San Luis Potosí, including mental health, fitness, and nutritional support.",
+    "heroTitle": "Health & Wellness",
+    "heroDescription": "Your guide to health and wellness in San Luis Potosí. Access quality healthcare, fitness centers, and mental health support.",
+    "contactTitle": "Contact Us for Wellness Support",
+    "messagePlaceholder": "Tell us about your wellness goals...",
+    "mentalHealth": "Mental Health Support",
+    "mentalHealthDesc": "Access to therapists and counselors",
+    "fitness": "Fitness & Recreation",
+    "fitnessDesc": "Find gyms, personal trainers, and sports clubs",
+    "holistic": "Holistic Health",
+    "holisticDesc": "Yoga, meditation, acupuncture, and more",
+    "nutrition": "Nutritional Guidance",
+    "nutritionDesc": "Connect with nutritionists and dietitians",
+    "support": "Support Networks",
+    "supportDesc": "Join wellness groups and communities",
+    "coaching": "Health Coaching",
+    "coachingDesc": "Personalized coaching to achieve your health goals"
+  },
+  "petCare": {
+    "pageTitle": "Pet Care Services | San Luis Way",
+    "metaDescription": "Complete pet care services for expats in San Luis Potosí, including veterinary, grooming, sitting, and relocation support.",
+    "heroTitle": "Pet Care Services",
+    "heroDescription": "Comprehensive and compassionate care for your beloved pets. From grooming to veterinary services, we're here for you.",
+    "contactTitle": "Contact Us for Pet Care",
+    "messagePlaceholder": "Tell us about your pet and the services you need...",
+    "veterinary": "Veterinary Services",
+    "veterinaryDesc": "Access to trusted vets and emergency care",
+    "sitting": "Pet Sitting & Boarding",
+    "sittingDesc": "Reliable care for your pets when you are away",
+    "grooming": "Grooming",
+    "groomingDesc": "Professional grooming services to keep your pet looking great",
+    "training": "Training & Behavior",
+    "trainingDesc": "Expert training for a well-behaved companion",
+    "relocation": "Pet Relocation",
+    "relocationDesc": "Assistance with national and international pet transport",
+    "insurance": "Pet Insurance",
+    "insuranceDesc": "Find the best insurance options for your pet"
+  },
+  "homeServices": {
+    "pageTitle": "Home Services | San Luis Way - Reliable Home Support",
+    "metaDescription": "Comprehensive home services in San Luis Potosí, including repairs, cleaning, utility setup, and contractor sourcing.",
+    "heroTitle": "Home Services",
+    "heroDescription": "Reliable and professional home services to make your life easier. From maintenance to cleaning, we've got you covered.",
+    "contactTitle": "Request Home Services",
+    "messagePlaceholder": "Please describe the services you need...",
+    "repairs": "General Repairs & Maintenance",
+    "repairsDesc": "Plumbing, electrical, carpentry, and appliance repairs.",
+    "cleaning": "Professional Cleaning",
+    "cleaningDesc": "Scheduled deep cleaning, move-in/out cleaning, and regular housekeeping.",
+    "utilities": "Utility Setup & Management",
+    "utilitiesDesc": "Assistance with electricity, water, gas, and bill payments.",
+    "internet": "Internet & Communications",
+    "internetDesc": "Installation of internet, television, and phone lines.",
+    "painting": "Painting & Decorating",
+    "paintingDesc": "Interior/exterior painting, wallpapering, and design consultation.",
+    "contractors": "Verified Contractor Sourcing",
+    "contractorsDesc": "Finding trusted professionals for remodeling and installations.",
+    "security": "Home Security",
+    "securityDesc": "Alarm system installation, camera setup, and security assessments.",
+    "pest": "Pest Control",
+    "pestDesc": "Safe and effective solutions for all common household pests.",
+    "moving": "Moving & Storage",
+    "movingDesc": "Local moving assistance and secure storage solutions."
+  },
+  "familySupport": {
+    "pageTitle": "Family Support Services | San Luis Way",
+    "metaDescription": "Comprehensive support for expat families in San Luis Potosí, including childcare, education, and community integration.",
+    "heroTitle": "Family Support Services",
+    "heroDescription": "Find the resources your family needs to thrive in San Luis Potosí. From childcare to education, we're here to help.",
+    "contactTitle": "Contact Us for Family Support",
+    "messagePlaceholder": "Tell us about your family's needs...",
+    "childcare": "Childcare Services",
+    "childcareDesc": "Find trusted babysitters and nannies",
+    "education": "Educational Support",
+    "educationDesc": "Access to tutors and educational resources",
+    "activities": "Family Activities",
+    "activitiesDesc": "Discover family-friendly events and activities",
+    "workshops": "Parenting Workshops",
+    "workshopsDesc": "Join workshops on parenting in a new culture",
+    "supportGroups": "Support Groups",
+    "supportGroupsDesc": "Connect with other expat families for support",
+    "healthcare": "Healthcare Navigation",
+    "healthcareDesc": "Guidance on finding pediatricians and family doctors"
+  },
+  "homepage": {
+    "hero": {
+      "badge": "Your Guide to San Luis Potosí",
+      "titlePrefix": "Your",
+      "titleSuffix": "Life in",
+      "glitchWords": {
+        "word1": "Refined",
+        "word2": "Calm",
+        "word3": "Happy",
+        "word4": "Lovely",
+        "word5": "Gourmet",
+        "word6": "Dream",
+        "word7": "Golf",
+        "word8": "Runner",
+        "word9": "Music",
+        "word10": "Foodie",
+        "word11": "Art",
+        "word12": "Zen",
+        "word13": "Active",
+        "word14": "Cultural"
+      },
+      "title2": "San Luis Potosí",
+      "description": "Discover a sophisticated lifestyle where colonial charm meets modern comfort. Your curated guide to visiting, working remotely, and living in Mexico's hidden gem.",
+      "cta1": "Start Exploring",
+      "cta2": "View Places"
+    },
+    "benefits": {
+      "badge": "Why San Luis Potosí",
+      "title": "A Life Well Lived",
+      "description": "Experience the perfect blend of affordability, culture, and quality of life in Mexico's second-best city",
+      "affordable": {
+        "title": "Affordable Excellence",
+        "description": "Enjoy a sophisticated lifestyle at a fraction of the cost. Quality housing, dining, and services that don't break the bank.",
+        "detail": "Average monthly cost: $1,200-$2,000"
+      },
+      "culture": {
+        "title": "Rich Cultural Heritage",
+        "description": "Immerse yourself in centuries of history, colonial architecture, and vibrant traditions that make every day special.",
+        "detail": "UNESCO World Heritage nearby"
+      },
+      "community": {
+        "title": "Welcoming Community",
+        "description": "Join a growing community of travelers, remote workers and expats while experiencing authentic Mexican hospitality and warm local connections.",
+        "detail": "1,000+ active expat members"
+      },
+      "recognition": {
+        "title": "Mexico's 2nd Best City to Live",
+        "description": "Recognized by IMCO for quality of life, safety, and opportunity",
+        "cta": "Learn More"
+      }
+    },
+    "places": {
+      "badge": "Curated Experiences",
+      "title": "Discover Hidden Gems",
+      "description": "Handpicked by locals and expats who know the city best",
+      "viewAll": "View All Places",
+      "featured": "Featured",
+      "discoverMore": "Discover More"
+    },
+    "events": {
+      "badge": "What's Happening",
+      "title": "Cultural Calendar",
+      "description": "From art exhibitions to traditional festivals",
+      "viewAll": "View All Events",
+      "until": "Until"
+    },
+    "culture": {
+      "badge": "Cultural Heritage",
+      "title": "Traditions & History",
+      "description": "Explore San Luis Potosí's rich cultural heritage and traditions that make this city truly special",
+      "history": {
+        "title": "Historical Heritage",
+        "description": "Discover the colonial architecture and historical significance of this UNESCO-adjacent city"
+      },
+      "festivals": {
+        "title": "Cultural Festivals",
+        "description": "Year-round celebrations and traditional events that bring the community together"
+      },
+      "language": {
+        "title": "Local Language",
+        "description": "Spanish language resources and cultural nuances to help you integrate"
+      },
+      "viewCalendar": "View Event Calendar",
+      "bookTour": "Book Cultural Tour",
+      "colonialArch": "Colonial Architecture",
+      "traditionalFestivals": "Traditional Festivals",
+      "localArtisans": "Local Artisans"
+    },
+    "outdoors": {
+      "badge": "Beyond the City",
+      "title": "Natural Wonders Await",
+      "description": "From mystical ghost towns to tropical waterfalls, discover the extraordinary landscapes surrounding San Luis Potosí",
+      "cta": "Explore All Adventures",
+      "hiking": {
+        "title": "Hiking Trails",
+        "description": "Explore scenic mountain trails and natural landscapes",
+        "linkText": "Find Trails",
+        "badge": "Adventure"
+      },
+      "camping": {
+        "title": "Camping Sites",
+        "description": "Discover beautiful camping spots in the Sierra Madre Oriental",
+        "linkText": "View Sites",
+        "badge": "Nature"
+      },
+      "realCatorce": {
+        "title": "Real de Catorce",
+        "description": "Visit this historic ghost town and UNESCO World Heritage site",
+        "linkText": "Plan Visit",
+        "badge": "Historic"
+      },
+      "mediaLuna": {
+        "title": "Media Luna",
+        "description": "Crystal clear waters perfect for swimming and snorkeling",
+        "linkText": "Learn More",
+        "badge": "Swimming"
+      },
+      "huasteca": {
+        "title": "Huasteca Potosina",
+        "description": "Tropical paradise with waterfalls and jungle adventures",
+        "linkText": "Explore",
+        "badge": "Waterfalls"
+      },
+      "xilitla": {
+        "title": "Xilitla",
+        "description": "Surreal gardens and architectural wonders in the cloud forest",
+        "linkText": "Discover",
+        "badge": "Surreal"
+      }
+    },
+    "dining": {
+      "badge": "Culinary Scene",
+      "title": "Savor the Flavors",
+      "description": "From traditional Potosino cuisine to modern fusion restaurants and trendy cocktail bars",
+      "traditional": {
+        "title": "Traditional Cuisine",
+        "description": "Authentic Potosino restaurants serving enchiladas potosinas, zacahuil, and regional specialties",
+        "link": "Explore Traditional"
+      },
+      "modern": {
+        "title": "Modern Dining",
+        "description": "Contemporary restaurants with fusion cuisine, farm-to-table experiences, and innovative creations",
+        "link": "View Modern Spots"
+      },
+      "cocktails": {
+        "title": "Cocktail Bars",
+        "description": "Trendy bars featuring craft cocktails, local mezcal, and vibrant nightlife",
+        "link": "Find Your Bar"
+      },
+      "terraces": {
+        "title": "Rooftop Terraces",
+        "description": "Stunning rooftop venues with panoramic city views and al fresco dining",
+        "link": "See Terraces"
+      },
+      "cantinas": {
+        "title": "Cantinas",
+        "description": "Authentic cantinas with traditional atmosphere, complimentary botanas, and mariachi",
+        "link": "Visit Cantinas"
+      },
+      "liveMusic": {
+        "title": "Live Music",
+        "description": "Venues featuring live performances from jazz to rock, mariachi to electronic",
+        "link": "Find Live Music"
+      }
+    },
+    "brands": {
+      "badge": "Made in SLP",
+      "title": "Potosino Brands",
+      "description": "Authentic brands born in San Luis Potosí, showcasing local creativity and craftsmanship",
+      "discoverBrand": "Discover Brand",
+      "exploreAll": "Explore All Brands"
+    },
+    "practical": {
+      "badge": "Curated Lists",
+      "title": "Smart Picks",
+      "description": "Places curated for specific needs — find exactly what you're looking for",
+      "family": {
+        "title": "Family Activities",
+        "description": "Parks, museums & entertainment perfect for all ages",
+        "badge": "Family"
+      },
+      "rainyDay": {
+        "title": "Rainy Day Activities",
+        "description": "Indoor spots to keep everyone entertained when it rains",
+        "badge": "Indoor"
+      },
+      "playgrounds": {
+        "title": "Kid-Friendly Restaurants",
+        "description": "Eat in peace while kids burn energy in safe play areas",
+        "badge": "Dining"
+      },
+      "healthcare": {
+        "title": "English-Speaking Healthcare",
+        "description": "Doctors, dentists & clinics where staff speaks English",
+        "badge": "Health"
+      },
+      "markets": {
+        "title": "International Markets",
+        "description": "Asian groceries, American snacks, European imports & more",
+        "badge": "Shopping"
+      },
+      "parking": {
+        "title": "Easy Parking Spots",
+        "description": "Restaurants & cafes with hassle-free parking",
+        "badge": "Parking"
+      }
+    },
+    "cta": {
+      "title1": "Ready to Begin Your",
+      "title2": "San Luis Potosí Journey?",
+      "description": "Join our community of expats and travelers discovering the art of living in Mexico's hidden gem",
+      "assistance": "Get Personalized Assistance",
+      "community": "Join the Community",
+      "stats": {
+        "businesses": "Verified Businesses",
+        "members": "Active Members",
+        "ranking": "Best City in Mexico"
+      }
+    },
+    "disclaimer": {
+      "title": "Independent Guide:",
+      "text": "San Luis Way is created by locals who love this city. Our goal is to help newcomers navigate San Luis Potosí and discover the culture we cherish. The businesses and services featured here are personal recommendations based on our own positive experiences — we are not affiliated with, employed by, or financially connected to any of them. While we strive to provide accurate and helpful information, San Luis Way is not responsible for the products, services, or experiences provided by third parties."
+    }
+  },
+  "tangamangaBanner": {
+    "title": "Tangamanga Park",
+    "description": "The most important green lung of San Luis Potosí, with over 420 hectares of green areas, artificial lakes, sports courts, and trails to enjoy nature.",
+    "cta": "Discover More",
+    "badge": "Complete Guide",
+    "subtitle": "Zoo · Planetarium · Museum · Japanese Garden",
+    "altText": "Parque Tangamanga I — zoo, trails and lake in San Luis Potosí",
+    "stats": {
+      "hectares": "hectares",
+      "trees": "trees",
+      "entry": "entry",
+      "species": "species",
+      "free": "FREE"
+    }
+  },
+  "tangamanga": {
+    "title": "Tangamanga Park I",
+    "subtitle": "Mexico's Second Largest Urban Park - Where Nature Meets Adventure",
+    "hours": "Hours",
+    "hoursMon": "Mon: 6AM-12PM",
+    "hoursTueSun": "Tue-Sun: 6AM-8PM",
+    "hoursNote": "Closed Monday afternoons",
+    "admission": "Admission",
+    "freeEntry": "Free Entry",
+    "location": "Location",
+    "size": "Size",
+    "hectares": "420 Hectares",
+    "ranking": "Ranking",
+    "rankingText": "2nd largest urban park in Mexico",
+    "trees": "Trees",
+    "treesCount": "Over 1.8 million",
+    "oxygen": "Oxygen",
+    "oxygenProduction": "800 tons per year",
+    "history": {
+      "title": "History & Cultural Significance",
+      "meaningTitle": "The Meaning of \"Tangamanga\"",
+      "meaningText": "The name \"Tangamanga\" comes from the Huachichil language, an indigenous group that once inhabited the region. It translates to \"meeting place\" or \"place of gathering\", reflecting the park's role as a central social and cultural hub for the community.",
+      "originTitle": "Historical Origin",
+      "originText": "The park was formed on the grounds of the old Hacienda de la Tenería, which dates back to 1609. The hacienda's main building is still preserved within the park, serving as a silent witness to over four centuries of Potosino history.",
+      "creationTitle": "Creation and Development",
+      "creationText": "The project's first phase began in 1982, when the land was expropriated and over a thousand trees were planted. The park was officially inaugurated in 1983 during the government of Prof. Carlos Jonguitud Barrios. In 1997, the government gave it the official name \"Parque Carlos Jonguitud Barrios\", although most people simply know it as Tangamanga Park.",
+      "impactTitle": "National Importance",
+      "impactText": "With an area of 420 hectares, Tangamanga Park I is positioned as the second largest urban park in Mexico, only surpassed by Bosque de Chapultepec in Mexico City, and one of the largest urban parks in the world. Its more than 1.8 million trees make it the most important green lung of San Luis Potosí, producing 800 tons of oxygen per year."
+    },
+    "attractions": {
+      "title": "Main Attractions",
+      "naturalTitle": "Natural Spaces",
+      "natural1": "Botanical garden with endemic and exotic species",
+      "natural2": "Artificial lake for boat rides",
+      "natural3": "Walking and cycling trails over 10 km long",
+      "natural4": "Picnic areas and grills",
+      "natural5": "Japanese Garden with traditional architecture",
+      "natural6": "Greenhouse with tropical plants",
+      "sportsTitle": "Sports Facilities",
+      "sports1": "Basketball, baseball, and tennis courts",
+      "sports2": "BMX dirt track",
+      "sports3": "Running tracks and exercise areas",
+      "sports4": "Children's playground area",
+      "culturalTitle": "Cultural Attractions",
+      "cultural1": "Zoo with native and exotic species",
+      "cultural2": "Planetarium with astronomical projections",
+      "cultural3": "Science Museum with interactive exhibits",
+      "cultural4": "Tangamanga EcoMuseum in historic tannery buildings",
+      "cultural5": "Teatro Carlos Amador for concerts and events",
+      "cultural6": "Tangamanga Splash - water park with slides and pools"
+    },
+    "activities": {
+      "title": "Activities & Events",
+      "sportsTitle": "Sports",
+      "sports1": "Outdoor yoga classes",
+      "sports2": "Running and walking groups",
+      "sports3": "Zumba and dance classes",
+      "sports4": "Team sports practice",
+      "sports5": "Mountain biking and BMX",
+      "sports6": "Tennis and racquet sports",
+      "cultureTitle": "Culture",
+      "culture1": "Performances at Teatro Carlos Amador",
+      "culture2": "Concerts and dance shows",
+      "culture3": "Outdoor movie screenings",
+      "culture4": "Environmental education workshops",
+      "culture5": "Cultural and traditional festivals",
+      "culture6": "Planetarium and science museum visits",
+      "familyTitle": "Family",
+      "family1": "Children's playground area",
+      "family2": "Boat rides on the lake",
+      "family3": "Zoo and botanical garden visits",
+      "family4": "Tangamanga Splash water park",
+      "family5": "Family festivals and picnics",
+      "family6": "Educational workshops for children"
+    },
+    "biodiversity": {
+      "title": "Biodiversity & Nature",
+      "text": "The park hosts an extraordinary diversity of flora and fauna. In its 420 hectares, more than 1.8 million native and exotic trees coexist, along with migratory and resident birds, as well as small mammals and reptiles. The botanical garden is especially important for the conservation of endemic species from the Potosino region and the Mexican desert."
+    },
+    "sustainability": {
+      "title": "Self-Sustainability",
+      "description": "Tangamanga Park is a model of environmental sustainability",
+      "feature1Title": "Water Treatment",
+      "feature1Text": "Water treatment plants that allow water reuse for irrigation of all green areas",
+      "feature2Title": "Compost Generation",
+      "feature2Text": "Own production of organic compost to nourish the park's vegetation",
+      "feature3Title": "Green Lung",
+      "feature3Text": "Generation of 800 tons of oxygen per year thanks to its 1.8 million trees"
+    },
+    "services": {
+      "title": "Services",
+      "parking": "Ample parking",
+      "restrooms": "Public restrooms",
+      "food": "Food and beverage stands",
+      "bikeRental": "Bike rental",
+      "waterpark": "Water park",
+      "museum": "Museums and planetarium"
+    },
+    "tips": {
+      "title": "Visitor Tips",
+      "tip1": "Bring sunscreen, hat, and plenty of water",
+      "tip2": "Wear comfortable shoes for walking - the park is very large",
+      "tip3": "Arrive early on weekends to find good parking",
+      "tip4": "Check the Teatro Carlos Amador event calendar",
+      "tip5": "Visit the EcoMuseum to learn about the Hacienda de la Tenería history",
+      "tip6": "The park closes Monday afternoons - plan your visit accordingly",
+      "tip7": "Respect designated areas and wildlife",
+      "tip8": "Don't leave trash - help keep the city's green lung clean"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions about Parque Tangamanga",
+      "q1": "Is Parque Tangamanga free to enter?",
+      "a1": "Yes. Parque Tangamanga I is completely free to enter, including the zoo, the Laberinto de las Ciencias (interactive science museum), the botanical garden, and all walking/running trails. Some attractions like the planetarium and aquarium have small fees ($20-50 MXN).",
+      "q2": "What are the hours for Parque Tangamanga?",
+      "a2": "Monday: 5 AM to 11 AM (maintenance day). Tuesday to Saturday: 5 AM to 10:30 PM. Sunday: 5 AM to 6 PM. The zoo opens Tuesday to Sunday 9 AM to 5 PM.",
+      "q3": "What can you do at Parque Tangamanga?",
+      "a3": "Free zoo with 100+ species, planetarium, aquarium (Splash), Laberinto de las Ciencias science museum, Japanese garden, botanical garden, open-air theater, lakes for pedal boats, running and cycling trails, sports courts, picnic areas, and bike rental.",
+      "q4": "Is Parque Tangamanga safe?",
+      "a4": "Yes. The park is well-patrolled during opening hours. Avoid visiting alone after dark on weekdays. Weekend mornings are the busiest and safest time.",
+      "q5": "How big is Parque Tangamanga compared to other parks?",
+      "a5": "Parque Tangamanga I covers 411 hectares, larger than Central Park in New York (341 ha). It has over 400,000 trees.",
+      "q6": "When is the BMW Tangamanga Marathon?",
+      "a6": "The Maratón Internacional Tangamanga runs every year on the last Sunday of June. Edition 40 takes place June 28, 2026, starting and ending at Parque Tangamanga I. Registration opens in January each year.",
+      "q7": "Is there parking at Parque Tangamanga?",
+      "a7": "Yes. Free parking is available at multiple entrances. The main lots are near the zoo (east entrance) and near the theater (north entrance). On weekends and holidays the lots fill before 11 AM — arrive early or use rideshare.",
+      "q8": "How do I get to Parque Tangamanga by public transit?",
+      "a8": "The park sits on Av. Dr. Salvador Nava. Several city bus routes stop at the main entrances: Ruta 23, 32, and 52 reach the east side (zoo). Rideshare and taxis drop visitors at any of the 8 gates.",
+      "q9": "What can kids do at Parque Tangamanga?",
+      "a9": "Splash aquarium, the free zoo, Laberinto de las Ciencias (science museum), paddle boats on the lake, the Japanese garden, open theater performances on weekends, bike rentals, and multiple playgrounds. Most activities are free.",
+      "q10": "What's the difference between Tangamanga I and Tangamanga II?",
+      "a10": "Tangamanga I (this page) is the 411-hectare tourist park with the zoo, planetarium, aquarium, and gardens. Tangamanga II is a 189-hectare sports park built over SLP's old airport — focused on archery, running tracks, auto racing, and soccer fields. Both are free and both are in San Luis Potosí city limits.",
+      "q11": "Is Parque Tangamanga bigger than Central Park?",
+      "a11": "Yes. Parque Tangamanga I covers 411 hectares (1,015 acres), which is 70 hectares larger than New York's Central Park (341 ha / 843 acres). It is the second-largest urban park in Mexico.",
+      "q12": "How long does it take to visit Parque Tangamanga?",
+      "a12": "Plan at least 3 to 4 hours for the main attractions (zoo, Japanese garden, lakes). A full visit including the planetarium, Splash aquarium, and Laberinto de las Ciencias takes a full day. Bring water and sunscreen — the park's altitude (1,864 m) and open layout make sun exposure significant.",
+      "q13": "Are dogs allowed at Parque Tangamanga?",
+      "a13": "Yes, dogs are allowed on leash in the public walking areas of Parque Tangamanga I. Dogs are not permitted inside the zoo, planetarium, or aquarium. For an off-leash experience, Parque Tangamanga II has a dedicated fenced pet zone.",
+      "q14": "Can I bring food to Parque Tangamanga?",
+      "a14": "Yes. Picnics are welcome in the designated lawn areas. Glass containers and alcohol are not permitted. There are also food vendors and small restaurants inside the park, most active on weekends.",
+      "q15": "What is the best time to visit Parque Tangamanga?",
+      "a15": "Weekend mornings (8 AM to noon) offer the best experience: cool temperatures, active zoo animals, open food stalls, and free weekend events at the open-air theater. Weekday mornings are quietest. Avoid Monday if you want full access — most attractions close for maintenance Monday afternoons."
+    },
+    "maraton": {
+      "badge": "Annual Event",
+      "title": "BMW Maratón Internacional Tangamanga 2026 — 40th Anniversary",
+      "subtitle": "The city's biggest running event takes place right here in Tangamanga I every year. Over 17,000 runners, four certified distances (5K, 10K, half marathon, full marathon), and a forty-year tradition.",
+      "date": "June 28, 2026",
+      "linkText": "See full race guide"
+    },
+    "comparison": {
+      "title": "Parque Tangamanga I vs Tangamanga II",
+      "description": "San Luis Potosí has two Tangamanga parks. They share a name and a philosophy, but they serve different visitors.",
+      "t1Title": "Tangamanga I — 411 ha",
+      "t1Desc": "The iconic park. Zoo, planetarium, aquarium, Japanese garden, theater, lakes, and 400,000 trees. Best for families, tourists, and first-time visitors.",
+      "t2Title": "Tangamanga II — 189 ha",
+      "t2Desc": "Built over the city's old airport. Sports-focused: archery, auto racing track, soccer fields, basketball, tennis, pet zone and kids area. Best for athletes and serious runners.",
+      "ctaText": "Visit the Tangamanga II guide"
+    },
+    "nearbyParks": {
+      "title": "Other Parks Nearby",
+      "description": "Round out your visit with these other green spaces in San Luis Potosí.",
+      "bicentenarioName": "Parque Bicentenario",
+      "bicentenarioDesc": "Smaller urban park celebrating Mexico's bicentennial. Good for afternoon walks and family picnics.",
+      "t2Name": "Parque Tangamanga II",
+      "t2Desc": "The sports park — archery, running, auto racing, pet zone."
+    },
+    "quickAnswer": {
+      "title": "Parque Tangamanga I at a glance",
+      "definition": "Parque Tangamanga I is a 411-hectare public urban park in San Luis Potosí, Mexico. It is the second-largest urban park in Mexico and is 70 hectares larger than New York's Central Park. The park opened in 1980 and is operated by CECURT (Centro Cultural Universitario Rafael del Villar). Entry to the park, the zoo, the Laberinto de las Ciencias, and the gardens is free of charge.",
+      "keyFactsTitle": "Key facts",
+      "keyFacts": [
+        "Size: 411 hectares (1,015 acres) — #2 urban park in Mexico",
+        "Admission: free (planetarium and aquarium charge $20–50 MXN)",
+        "Hours: Tuesday–Saturday 5 AM–10:30 PM · Sunday 5 AM–6 PM · Monday 5–11 AM (maintenance)",
+        "Location: Av. Dr. Salvador Nava, southeast San Luis Potosí",
+        "Opened: 1980 (zoo added in 1985)",
+        "Operator: CECURT (Centro Cultural Universitario Rafael del Villar)",
+        "Trees: over 400,000",
+        "Main attractions: zoo, planetarium, Splash aquarium, Laberinto de las Ciencias, Japanese garden, botanical garden, open-air theater, lakes"
+      ],
+      "lastVerified": "Last verified by San Luis Way editorial team: April 17, 2026"
+    },
+    "sources": {
+      "title": "Sources used on this page",
+      "items": [
+        "CECURT — official park operator (cecurt.slp.gob.mx)",
+        "Gobierno de San Luis Potosí — municipal records",
+        "INEGI 2020 Census — surrounding demographic data",
+        "Maratón Tangamanga — official race organizer (maratontangamanga.com)"
+      ]
+    }
+  },
+  "circleOfTrust": {
+    "badge": "Our Promise",
+    "title": "The Circle of Trust",
+    "description1": "Everything we recommend on San Luis Way is",
+    "highlight": "safe and recommended by locals",
+    "description2": "We're not a generic directory - we're a curated community of places we know and trust.",
+    "description3": "Every place on our platform has been",
+    "highlight2": "visited, tested, and approved",
+    "description4": "by local residents. We don't accept just any business - only those that meet our standards of quality, service, and authenticity.",
+    "stats": {
+      "verified": "Verified",
+      "randomPlaces": "Random Places",
+      "first": "First"
+    },
+    "features": {
+      "curatedByLocals": {
+        "title": "Curated by Locals",
+        "description": "Every recommendation comes from someone who lives in SLP and knows the city"
+      },
+      "safetyGuaranteed": {
+        "title": "Safety Guaranteed",
+        "description": "Only places in safe zones with good community reputation"
+      },
+      "qualityOverQuantity": {
+        "title": "Quality Over Quantity",
+        "description": "We prefer fewer high-quality places than an endless unfiltered directory"
+      }
+    }
+  },
+  "todayInSLP": {
+    "title": "What you need to know today",
+    "localTime": "Local time",
+    "viewCalendar": "View calendar",
+    "eventsToday": "events today",
+    "traffic": "Traffic",
+    "live": "Live",
+    "viewLiveTraffic": "View live traffic",
+    "tipOfDay": "Tip of the day",
+    "slpNews": "SLP NEWS",
+    "loadingNews": "Loading news...",
+    "communityLife": "Community Life",
+    "notAvailable": "Not available",
+    "social": "Social",
+    "community": "Community",
+    "culture": "Culture",
+    "local": "Local",
+    "dailyTip": "Discover something new about San Luis Potosí every day."
+  },
+  "blog": {
+    "title": "From the Blog",
+    "subtitle": "Stories, tips, and insights for life in San Luis Potosí",
+    "seoTitle": "Expat Blog & Living Guide",
+    "seoDescription": "Discover insider tips, local recommendations, and expat experiences in San Luis Potosí. From finding apartments to the best tacos - we've got you covered.",
+    "badge": "Your Guide to SLP",
+    "heroTitle": "Stories, Tips & Local Insights",
+    "heroDescription": "Whether you're planning your move, settling in, or just curious about life in San Luis Potosí — we're here to help you navigate it all. Real talk, practical advice, and the inside scoop from people who've been there.",
+    "accuracyTitle": "Our Commitment to Accuracy",
+    "accuracyDescription": "We take facts seriously. Our articles go through a verification process where key claims are cross-referenced with official sources, local data, and expert input. We're not perfect, but we're committed to getting it right.",
+    "viewFactChecks": "View our fact-check reports",
+    "allPosts": "All Posts",
+    "minRead": "min read",
+    "noPostsFound": "No blog posts found. Check back later!",
+    "tags": "Tags",
+    "categories": {
+      "cultureHistory": "Culture & History",
+      "foodDining": "Food & Dining",
+      "expatLife": "Expat Life",
+      "thingsToDo": "Things to Do",
+      "travel": "Travel"
+    }
+  },
+  "centroHistoricoBanner": {
+    "badge": "Heart of the City",
+    "title": "Historic Downtown",
+    "description": "Discover the colonial heart of San Luis Potosí: majestic plazas, 16th-century architecture, legendary cantinas, charming restaurants, and a vibrant cultural life that will captivate you.",
+    "cta": "Explore Downtown"
+  },
+  "centroHistorico": {
+    "seo": {
+      "title": "Historic Downtown San Luis Potosí | Complete Expat Guide",
+      "description": "UNESCO colonial downtown walk-through: Plaza de Armas, Cathedral, Teatro de la Paz + 20 restaurants, cafés and markets worth your afternoon. Start here."
+    },
+    "title": "Historic Downtown",
+    "subtitle": "The Colonial Heart of San Luis Potosí - Where History Comes Alive",
+    "badge": "Cultural Heritage",
+    "intro": {
+      "title": "Welcome to the Heart of San Luis Potosí",
+      "paragraph1": "The Historic Downtown is much more than a collection of old buildings: it's the living soul of the city. Every plaza, every alley, every pink quarry facade tells a story dating back over four centuries.",
+      "paragraph2": "Here, past and present coexist in perfect harmony. While admiring the majesty of colonial architecture, you can savor specialty coffee in an 18th-century courtyard, explore contemporary art galleries, or enjoy the city's finest gastronomy.",
+      "stat1": "Historic Buildings",
+      "stat2": "Years of History",
+      "stat3": "Year Founded"
+    },
+    "quickInfo": {
+      "location": "Location",
+      "locationValue": "City Center",
+      "bestTime": "Best Time",
+      "bestTimeValue": "Mornings & Sunsets",
+      "safety": "Safety",
+      "safetyValue": "Very Safe Zone",
+      "founded": "Founded"
+    },
+    "history": {
+      "title": "History & Heritage",
+      "cathedralAlt": "San Luis Potosí Cathedral",
+      "originsTitle": "Colonial Origins",
+      "originsText": "Founded in 1592, San Luis Potosí was born thanks to the region's mining wealth. The Historic Downtown preserves the essence of over four centuries of history, with baroque, neoclassical, and colonial buildings that narrate the grandeur of New Spain.",
+      "architectureTitle": "Exceptional Architecture",
+      "architectureText": "The Historic Downtown is an open-air museum with over 1,500 catalogued historic buildings. The pink quarry stone, characteristic of the city, adorns the facades of temples, mansions, and government buildings. Every street reveals architectural treasures that transport you to another era.",
+      "todayTitle": "A Living Downtown",
+      "todayText": "Far from being a frozen museum, the Historic Downtown pulses with life. Cafés in colonial courtyards, contemporary art galleries in 18th-century buildings, and gourmet restaurants in old mansions create a unique fusion between past and present."
+    },
+    "pointsOfInterest": {
+      "title": "Points of Interest",
+      "landmarksTitle": "Must-See Landmarks",
+      "landmark1": "Plaza de Armas - The heart of the city with its kiosk and gardens",
+      "landmark2": "Metropolitan Cathedral - 17th-century baroque jewel",
+      "landmark3": "Teatro de la Paz - One of Mexico's most beautiful theaters",
+      "landmark4": "Temple of Carmen - Churrigueresque masterpiece",
+      "landmark5": "Government Palace - Living history with Fernando Leal murals",
+      "museumsTitle": "Museums & Culture",
+      "museum1": "National Mask Museum - Unique collection in Mexico",
+      "museum2": "Federico Silva Museum - Contemporary art in the Old Hacienda",
+      "museum3": "Viceroyalty Museum - Colonial history",
+      "museum4": "Arts Center - Exhibitions and workshops"
+    },
+    "gastronomy": {
+      "title": "Gastronomy & Nightlife",
+      "intro": "The Historic Downtown is a gastronomic paradise where tradition and innovation meet. From century-old cantinas to author cuisine restaurants, every corner offers a memorable culinary experience.",
+      "restaurantsTitle": "Featured Restaurants",
+      "restaurant1": "La Gran Vía - Traditional cuisine and historic ambiance since 1940",
+      "restaurant2": "Café Pacífico - Classic since 1943",
+      "restaurant3": "La Oruga y la Cebada - Author cuisine",
+      "restaurant4": "Restaurante 1913 - Fine Mexican dining",
+      "restaurant5": "La Posadita - Mexican cuisine and bohemian vibe",
+      "barsTitle": "Bars & Cantinas",
+      "bar1": "Chau! Resto - Cocktails and modern atmosphere",
+      "bar2": "Bar Atómico - Creative cocktails downtown",
+      "bar3": "Bar Progreso - Craft cocktails",
+      "bar4": "Catrina Rooftop - Terrace with panoramic views",
+      "bar5": "El Callejón del Beso - Bar in historic alley",
+      "marketsTitle": "Traditional Markets",
+      "market1": "Mercado Hidalgo - The main market since 1906",
+      "market2": "Mercado República - Crafts and street food",
+      "market3": "Sunday Tianguis - Antiques and curiosities",
+      "market4": "Mercado 16 de Septiembre - Fresh produce"
+    },
+    "nightlife": {
+      "title": "Entertainment & Nightlife",
+      "text": "When the sun sets, the Historic Downtown transforms. The plazas light up, street musicians appear, and bars open their doors. From concerts at Teatro de la Paz to jazz nights in colonial courtyards, downtown offers entertainment for all tastes. On weekends, pedestrian streets fill with life through cultural events, food fairs, and artistic performances.",
+      "tourTitle": "Downtown Bar Crawl",
+      "tourText": "One of the best nightlife experiences is exploring the bar zone on foot. Within a few blocks you'll find:",
+      "spot1": "El Ricardito - Best vinyl and music bar in town, small but incredible vibes",
+      "spot2": "Rockabilly - Rock music and retro atmosphere",
+      "spot3": "Las Bóvedas - Unique space in historic architecture",
+      "spot4": "Toxic - Alternative and party atmosphere",
+      "tourTip": "All within walking distance, perfect for a safe and fun bar crawl."
+    },
+    "shopping": {
+      "title": "Shopping & Crafts",
+      "artisansTitle": "Potosino Crafts",
+      "artisansText": "The Historic Downtown is the best place to find authentic regional crafts. From the famous Santa María del Río rebozo to high-quality leatherwork, each piece tells a story of artisanal tradition.",
+      "item1": "Santa María del Río Rebozos - Century-old textile tradition",
+      "item2": "Leatherwork and leather goods - Belts, bags, saddles",
+      "item3": "Traditional sweets - Queso de tuna, charamuscas, glorias",
+      "item4": "Ceramics and talavera - Unique decorative pieces"
+    },
+    "hiddenGems": {
+      "title": "Downtown Secrets",
+      "intro": "Beyond the tourist sites, the Historic Downtown holds secrets that only locals know. Here we reveal some of our favorites.",
+      "gem1Title": "Callejón del Cardo",
+      "gem1Text": "A hidden passage with art galleries and bohemian cafés. Perfect for a quiet afternoon of exploration.",
+      "gem2Title": "Colonial Courtyards",
+      "gem2Text": "Many buildings preserve spectacular interior courtyards. Enter to admire fountains, gardens, and intimate architecture.",
+      "gem3Title": "Golden Hour",
+      "gem3Text": "At sunset, the pink quarry stone glows with warm tones. The best time for photography at Plaza de Armas.",
+      "gem4Title": "Sundays Downtown",
+      "gem4Text": "Streets close to traffic. Families, cyclists, and pedestrians take over the streets in a festive atmosphere."
+    },
+    "practical": {
+      "title": "Practical Information",
+      "gettingThere": "Getting There",
+      "gettingThereText": "Uber and taxi are the most comfortable options. Downtown is very walkable once you arrive.",
+      "parking": "Parking",
+      "parkingText": "Several public parking lots around downtown. Avoid pedestrian streets.",
+      "safetyInfo": "Safety",
+      "safetyInfoText": "The Historic Downtown is one of the safest areas in the city, with constant patrol and good lighting."
+    },
+    "tips": {
+      "title": "Visitor Tips",
+      "tip1": "Wear comfortable shoes - streets are cobblestone",
+      "tip2": "Visit on weekdays to avoid crowds",
+      "tip3": "Sundays have fewer cars and more pedestrian life",
+      "tip4": "Bring cash for markets and street vendors",
+      "tip5": "Ask locals for recommendations - they're very friendly",
+      "tip6": "Explore the alleys - that's where the hidden gems are"
+    },
+    "funFacts": {
+      "title": "Fun Facts",
+      "fact1": "The Historic Downtown has over 1,500 buildings catalogued as historical heritage.",
+      "fact2": "The pink quarry stone that adorns the buildings is extracted from local quarries and is unique to Mexico.",
+      "fact3": "Benito Juárez established Mexico's capital here in 1863 during the French intervention.",
+      "fact4": "Teatro de la Paz was inaugurated in 1894 and is considered one of the most beautiful theaters in Latin America."
+    },
+    "cafes": {
+      "title": "Cafés to Rest",
+      "intro": "After walking, these cafés are perfect to recharge:",
+      "cafe1": "Café Pacífico - Classic since 1943",
+      "cafe2": "Barista del Portal - Specialty coffee",
+      "cafe3": "Café La Parroquia - Potosino tradition",
+      "cafe4": "Cocolatte - Artisan chocolate and coffee"
+    },
+    "events": {
+      "title": "Annual Events",
+      "event1Title": "Festival de San Luis",
+      "event1Date": "August - Regional fair with music and gastronomy",
+      "event2Title": "Holy Week",
+      "event2Date": "March/April - Silent processions",
+      "event3Title": "Day of the Dead",
+      "event3Date": "November - Altars and celebrations",
+      "event4Title": "Festival of Lights",
+      "event4Date": "December - Christmas illumination",
+      "event5Title": "Viernes de Dolores",
+      "event5Date": "Lent - Unique altar tradition"
+    },
+    "streets": {
+      "title": "Pedestrian Streets",
+      "intro": "The best streets to walk and explore car-free:",
+      "street1": "Calle Hidalgo - The main artery",
+      "street2": "Jardín Guerrero - Plaza with cafés",
+      "street3": "Callejón de San Francisco - Bohemian atmosphere",
+      "street4": "Plaza del Carmen - Surrounded by history"
+    },
+    "cta": {
+      "title": "Ready to Explore?",
+      "text": "Discover more recommended places in the Historic Downtown and throughout the city.",
+      "button": "View All Places"
+    },
+    "closing": {
+      "badge": "Start Your Adventure",
+      "title": "The Historic Downtown Awaits",
+      "description": "Walk cobblestone streets that have witnessed centuries of history. Discover why the Historic Downtown is the beating heart of San Luis Potosí.",
+      "primaryCta": "Explore All Places",
+      "secondaryCta": "Read More on the Blog",
+      "feature1": "Stunning Colonial Architecture",
+      "feature2": "World-Class Gastronomy",
+      "feature3": "Vibrant Cultural Life"
+    }
+  },
+  "reviews": {
+    "loginRequired": "Sign in to leave a review",
+    "ratingRequired": "Please select a rating",
+    "textTooShort": "Review must be at least 10 characters",
+    "writeReview": "Write a review",
+    "placeholder": "Share your experience...",
+    "submitted": "Review submitted successfully!",
+    "submitting": "Submitting...",
+    "submit": "Submit Review",
+    "noReviews": "No reviews yet. Be the first to review!"
+  },
+  "placeCard": {
+    "featured": "Featured",
+    "viewDetails": "View Details"
+  },
+  "placeModal": {
+    "description": "Description",
+    "reviews": "Reviews",
+    "call": "Call",
+    "website": "Website",
+    "contactInfo": "Contact Info",
+    "hours": "Hours",
+    "location": "Location",
+    "visitWebsite": "Visit Website",
+    "viewOnMap": "View on Map",
+    "noReviews": "No reviews available yet. Be the first to leave a review!",
+    "contactByPhone": "Contact by Phone",
+    "readyToCall": "Ready to call? Click below to connect directly:",
+    "noPhone": "No phone number available for this place.",
+    "clickToVisit": "Click below to visit the official website:",
+    "noWebsite": "No website available for this place."
+  },
+  "serviceCards": {
+    "localConnections": {
+      "title": "Local Connections",
+      "description": "We'll introduce you to our trusted network of service providers, from plumbers and electricians to language tutors and childcare professionals.",
+      "button": "Connect Me"
+    },
+    "culturalImmersion": {
+      "title": "Cultural Immersion",
+      "description": "Experience the rich traditions, history and authentic culture of San Luis Potosí through guided immersion services like cooking classes with local chefs or social gatherings with both locals and fellow expats.",
+      "button": "Join an Experience"
+    },
+    "relocationSupport": {
+      "title": "Relocation Support",
+      "description": "Navigate bureaucratic processes, banking setup, and essential services to smoothly integrate into the Potosino lifestyle.",
+      "button": "Get Support"
+    }
+  },
+  "newsletter": {
+    "stayInLoop": "Stay in the Loop",
+    "weeklyUpdates": "Get weekly updates on new places, events, and expat tips delivered to your inbox.",
+    "joinExpats": "Join 1,000+ Expats",
+    "bestOfSLP": "Get the best of San Luis Potosí delivered weekly",
+    "emailPlaceholder": "your.email@example.com",
+    "subscribing": "Subscribing...",
+    "subscribed": "Subscribed!",
+    "subscribe": "Subscribe",
+    "invalidEmail": "Please enter a valid email address",
+    "alreadySubscribed": "You're already subscribed!",
+    "welcomeBack": "Welcome back! You've been resubscribed.",
+    "thankYou": "Thanks for subscribing! Check your inbox for a welcome email.",
+    "errorGeneric": "Oops! Something went wrong. Please try again.",
+    "privacyNote": "We respect your privacy. Unsubscribe at any time."
+  },
+  "blogCarousel": {
+    "badge": "EXPAT INSIGHTS",
+    "title": "From the Blog",
+    "subtitle": "Stories, tips, and insights for life in San Luis Potosí",
+    "viewAll": "View All Articles",
+    "readArticle": "Read Article",
+    "minRead": "min read",
+    "prevPost": "Previous post",
+    "nextPost": "Next post",
+    "goToSlide": "Go to slide"
+  },
+  "blogCategories": {
+    "Adventure Travel": "Adventure Travel",
+    "Historia y Cultura": "History & Culture",
+    "Food & Drink": "Food & Drink",
+    "Ultimate Guides": "Ultimate Guides",
+    "Housing": "Housing",
+    "Restaurants": "Restaurants",
+    "Relocation": "Relocation",
+    "Expat Guide": "Expat Guide",
+    "expat-life": "Expat Life",
+    "Arte y Cultura": "Art & Culture",
+    "Guías y Itinerarios": "Guides & Itineraries",
+    "Expat Life": "Expat Life",
+    "Tours": "Tours",
+    "Culture": "Culture"
+  },
+  "festivalBanner": {
+    "badge": "Mar 28 — Apr 4, 2026",
+    "title": "San Luis Spring Festival",
+    "subtitle": "Miguel Bosé, Lucero, Mon Laferte, Diego El Cigala and more. 110+ free events in the Historic Center.",
+    "description": "The 5th edition of San Luis Potosí's biggest festival transforms the Historic Center into a stage of art, music and culture during Holy Week. Artists from 9 countries, Oaxaca's Guelaguetza, Spain as guest country and the iconic Procession of Silence.",
+    "cta": "See full schedule"
+  },
+  "eventCarousel": {
+    "metalFest": {
+      "badge": "May 16 — 17, 2026",
+      "title": "San Luis Metal Fest",
+      "description": "1st edition. FREE ENTRY. Marduk, Possessed, Metal Church and more at FENAPO grounds.",
+      "cta": "See full lineup",
+      "stat1Value": "2",
+      "stat1Label": "Days",
+      "stat2Value": "30K+",
+      "stat2Label": "Attendees",
+      "stat3Value": "Free",
+      "stat3Label": "Entry",
+      "stat4Value": "8+",
+      "stat4Label": "Countries"
+    },
+    "maraton": {
+      "badge": "Jun 28, 2026",
+      "title": "Tangamanga Marathon",
+      "description": "40th Anniversary. 5K, 10K, 21K & 42K through Tangamanga Park and SLP Historic Center.",
+      "cta": "Info & registration",
+      "stat1Value": "40th",
+      "stat1Label": "Edition",
+      "stat2Value": "15K+",
+      "stat2Label": "Runners",
+      "stat3Value": "4",
+      "stat3Label": "Distances",
+      "stat4Value": "FMAA",
+      "stat4Label": "Certified"
+    },
+    "fenapo": {
+      "badge": "August 2026",
+      "title": "FENAPO 2026",
+      "description": "Mexico's most traditional fair returns. Grupo Firme, Sin Bandera, Los Acosta and more artists TBA.",
+      "cta": "See confirmed artists",
+      "stat1Value": "24",
+      "stat1Label": "Days",
+      "stat2Value": "3+",
+      "stat2Label": "Artists",
+      "stat3Value": "Free",
+      "stat3Label": "Gen. Entry",
+      "stat4Value": "6",
+      "stat4Label": "Zones"
+    }
+  },
+  "metalFest2026": {
+    "seo": {
+      "title": "San Luis Metal Fest 2026 — Free Metal Festival in San Luis Potosí",
+      "description": "San Luis Metal Fest 2026: May 16-17. FREE ENTRY. Marduk, Possessed, Metal Church, Grave, Armored Saint and more. First international metal festival in SLP. Lineup, schedule and attendee guide.",
+      "keywords": "san luis metal fest 2026, metal festival san luis potosi, metal fest slp, metal concerts mexico, marduk mexico 2026, possessed mexico 2026"
+    },
+    "hero": {
+      "badge": "1ST EDITION — FREE ENTRY",
+      "date": "May 16 — 17, 2026",
+      "title": "San Luis Metal Fest",
+      "subtitle": "The Awakening of Darkness",
+      "description": "The first international metal festival in San Luis Potosí. Two days of legendary bands from 8 countries, gastronomy, Huasteca culture and Mexico's best metal community.",
+      "cta": "Register for free",
+      "ctaLineup": "See lineup",
+      "location": "San Luis Potosí, capital of the state of San Luis Potosí, Mexico"
+    },
+    "stats": {
+      "days": "Days",
+      "daysValue": "2",
+      "bands": "Bands",
+      "bandsValue": "15+",
+      "attendees": "Expected attendees",
+      "attendeesValue": "30,000+",
+      "countries": "Countries",
+      "countriesValue": "8+",
+      "price": "Entry",
+      "priceValue": "Free"
+    },
+    "lineup": {
+      "title": "Official Lineup",
+      "subtitle": "Legendary bands from thrash, death, black and heavy metal around the world.",
+      "day1": "Day 1 — Saturday, May 16",
+      "day2": "Day 2 — Sunday, May 17",
+      "headliners": "Headliners",
+      "scheduleTbc": "Schedule TBC",
+      "bands": {
+        "marduk": {
+          "name": "Marduk",
+          "genre": "Black Metal",
+          "country": "Sweden"
+        },
+        "metalChurch": {
+          "name": "Metal Church",
+          "genre": "Heavy / Power Metal",
+          "country": "USA"
+        },
+        "possessed": {
+          "name": "Possessed",
+          "genre": "Death Metal",
+          "country": "USA"
+        },
+        "grave": {
+          "name": "Grave",
+          "genre": "Death Metal",
+          "country": "Sweden"
+        },
+        "armoredSaint": {
+          "name": "Armored Saint",
+          "genre": "Heavy Metal",
+          "country": "USA"
+        },
+        "crimsonGlory": {
+          "name": "Crimson Glory",
+          "genre": "Progressive Metal",
+          "country": "USA"
+        },
+        "pestilence": {
+          "name": "Pestilence",
+          "genre": "Death Metal",
+          "country": "Netherlands"
+        },
+        "sacrifice": {
+          "name": "Sacrifice",
+          "genre": "Thrash Metal",
+          "country": "Canada"
+        },
+        "hirax": {
+          "name": "Hirax",
+          "genre": "Thrash Metal",
+          "country": "USA"
+        },
+        "hellripper": {
+          "name": "Hellripper",
+          "genre": "Speed / Black Metal",
+          "country": "Scotland"
+        },
+        "bloodFeast": {
+          "name": "Blood Feast",
+          "genre": "Thrash Metal",
+          "country": "USA"
+        }
+      }
+    },
+    "registration": {
+      "title": "How to Register",
+      "subtitle": "Entry is free but requires pre-registration.",
+      "step1Title": "Visit the official site",
+      "step1Desc": "Go to the San Luis Metal Fest registration page.",
+      "step2Title": "Complete your registration",
+      "step2Desc": "Provide your name, email address and official ID.",
+      "step3Title": "Get your confirmation",
+      "step3Desc": "You'll receive an email with your access code and event instructions.",
+      "note": "Valid government-issued ID is required for entry."
+    },
+    "attendeeGuide": {
+      "title": "Attendee Guide",
+      "subtitle": "Everything you need to know to enjoy the festival.",
+      "bringTitle": "What to bring",
+      "bringItems": "Sunscreen, ear plugs, reusable water bottle, cash and cards, comfortable clothes and shoes, official ID",
+      "prohibitedTitle": "Prohibited items",
+      "prohibitedItems": "Weapons and sharp objects, glass bottles, illegal drugs, pets, drones, folding chairs",
+      "tipsTitle": "Pit Etiquette",
+      "tipsDesc": "If someone falls, pick them up. Respect others' boundaries. Stay hydrated between sets. Side areas are great if you prefer watching without contact."
+    },
+    "culture": {
+      "title": "More Than Metal: Food & Culture",
+      "subtitle": "The festival features unique experiences celebrating the richness of San Luis Potosí.",
+      "gastroTitle": "Gastronomy Pavilion",
+      "gastroDesc": "Try enchiladas potosinas, Huasteca tacos, zacahuil and more regional delicacies. Food trucks and craft beverages available.",
+      "huastecaTitle": "Huasteca Culture Pavilion",
+      "huastecaDesc": "Huasteca art exhibition, traditional dances, handicrafts and huapango music. A window into the state's cultural heritage."
+    },
+    "gettingThere": {
+      "title": "Getting There",
+      "venue": "Teatro del Pueblo — FENAPO Grounds",
+      "address": "Av. Fco. Martínez de la Vega No. 255, San Luis Potosí",
+      "byCarTitle": "By car",
+      "byCarDesc": "Ample parking available at the venue. From downtown, take Av. Salvador Nava south (~15 min).",
+      "byTransitTitle": "Public transit",
+      "byTransitDesc": "Bus routes passing FENAPO grounds: 10, 12, 17. Taxis and Uber readily available.",
+      "byPlaneTitle": "From the airport",
+      "byPlaneDesc": "SLP Airport (BJX) is a 20-minute drive. Taxis available at the terminal.",
+      "hotelsTitle": "Nearby hotels",
+      "hotelsDesc": "Hotels along Av. Carranza and Centro Histórico (10-15 min from venue). Book in advance."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Is San Luis Metal Fest really free?",
+      "a1": "Yes. Entry is completely free, but online pre-registration is required. You'll receive an access code via email.",
+      "q2": "Can minors attend?",
+      "a2": "Yes, minors can attend accompanied by a responsible adult with valid ID. Hearing protection is recommended for children.",
+      "q3": "Can I bring my own water?",
+      "a3": "Yes, reusable water bottles are allowed (no glass). Free hydration stations will also be available inside the venue.",
+      "q4": "Is re-entry allowed?",
+      "a4": "Yes, re-entry is allowed by showing your access wristband. Don't lose your wristband.",
+      "q5": "Are there ATMs at the venue?",
+      "a5": "Yes, there are ATMs inside the FENAPO grounds. However, bringing cash is recommended as some food vendors may not accept cards.",
+      "q6": "Can I bring a camera?",
+      "a6": "Compact cameras and phones are allowed. Professional cameras with detachable lenses require press accreditation.",
+      "q7": "Is the venue accessible for people with disabilities?",
+      "a7": "Yes, the FENAPO grounds have access ramps and designated areas for people with disabilities.",
+      "q8": "What time should I arrive?",
+      "a8": "Gates open at 12:00 PM. Arriving early is recommended to avoid lines and get a good spot near the stage."
+    },
+    "cta": {
+      "title": "Don't Miss San Luis Metal Fest 2026",
+      "description": "The first international metal festival in San Luis Potosí. Two days of extreme music, gastronomy and culture. Free entry.",
+      "register": "Register for free",
+      "moreEvents": "See more events in SLP"
+    }
+  },
+  "maraton2026": {
+    "seo": {
+      "title": "Tangamanga Marathon 2026 — 40th Anniversary | San Luis Potosí",
+      "description": "BMW Tangamanga International Marathon 2026: June 28. 40th Anniversary. 5K, 10K, 21K & 42K. World Athletics & FMAA certified. Registration, route, runner's guide and all info.",
+      "keywords": "tangamanga marathon 2026, marathon san luis potosi, half marathon slp, 10k slp, 42k tangamanga, tangamanga marathon registration"
+    },
+    "hero": {
+      "badge": "40TH ANNIVERSARY",
+      "date": "June 28, 2026",
+      "title": "Tangamanga Marathon",
+      "subtitle": "BMW International Marathon — 40th Edition",
+      "description": "One of Mexico's oldest and most prestigious road races celebrates 40 years. Run through Tangamanga Park and the Historic Center of San Luis Potosí in 4 distances.",
+      "cta": "Register now",
+      "ctaRoute": "See route",
+      "location": "San Luis Potosí, capital of the state of San Luis Potosí, Mexico"
+    },
+    "stats": {
+      "edition": "Edition",
+      "editionValue": "40th",
+      "runners": "Runners",
+      "runnersValue": "15,000+",
+      "distances": "Distances",
+      "distancesValue": "4",
+      "certified": "Certification",
+      "certifiedValue": "World Athletics"
+    },
+    "distances": {
+      "title": "Race Categories & Distances",
+      "subtitle": "Choose your distance and get ready to run one of Mexico's most iconic races.",
+      "fiveK": {
+        "name": "5K Fun Run",
+        "description": "Ideal for beginners and families. Route within Tangamanga Park.",
+        "age": "Minimum age: 15",
+        "start": "Start: 7:30 AM"
+      },
+      "tenK": {
+        "name": "10K",
+        "description": "Mixed route through the park and surrounding streets. Age and gender categories.",
+        "age": "Minimum age: 16",
+        "start": "Start: 7:00 AM"
+      },
+      "halfMarathon": {
+        "name": "Half Marathon (21K)",
+        "description": "FMAA-certified course through Tangamanga Park, Av. Salvador Nava and Historic Center.",
+        "age": "Minimum age: 18",
+        "start": "Start: 6:30 AM"
+      },
+      "marathon": {
+        "name": "Marathon (42K)",
+        "description": "Full World Athletics & FMAA-certified course. The most iconic route in SLP.",
+        "age": "Minimum age: 20",
+        "start": "Start: 6:00 AM"
+      }
+    },
+    "route": {
+      "title": "Route Map",
+      "subtitle": "The course crosses San Luis Potosí's most iconic landscapes.",
+      "description": "The route starts at Tangamanga Park I, goes up Av. Salvador Nava toward the Historic Center, passes Plaza de los Fundadores and the Cathedral, then returns to the park. The full marathon repeats a modified loop.",
+      "hydration": "Hydration points every 2.5 km with water and sports drink.",
+      "medical": "Medical stations at km 5, 10, 15, 21, 30 and finish line.",
+      "landmarks": "Landmarks: Tangamanga Park, Av. Carranza, Plaza de Armas, Metropolitan Cathedral, Teatro de la Paz."
+    },
+    "runnerGuide": {
+      "title": "Runner's Guide",
+      "subtitle": "Essential tips for running in San Luis Potosí.",
+      "altitudeTitle": "Altitude",
+      "altitudeDesc": "San Luis Potosí sits at 1,860 meters (6,100 ft) above sea level. If you're coming from a low-altitude city, arrive at least 2 days early to acclimatize. Altitude affects your pace and recovery.",
+      "weatherTitle": "June weather",
+      "weatherDesc": "Temperature between 15°C (59°F) at start and 28°C (82°F) at midday. Possible afternoon showers. Wear light clothing, a cap and sunscreen. Hydrate more than usual.",
+      "hydrationTitle": "Hydration",
+      "hydrationDesc": "At this altitude, you need more water than usual. Drink 500ml 2 hours before start. Take advantage of every hydration point on the course.",
+      "warmupTitle": "Warm-up",
+      "warmupDesc": "The warm-up zone is at the main esplanade of Tangamanga Park. Arrive at least 45 minutes before your start time."
+    },
+    "kit": {
+      "title": "Runner's Kit",
+      "subtitle": "Everything you receive and need to know for packet pickup.",
+      "includes": "Kit includes",
+      "includesList": "Official 40th anniversary shirt, race bib number, timing chip, finisher medal (upon completion), runner's bag with sponsor products",
+      "pickupTitle": "Packet pickup",
+      "pickupDesc": "Marathon Expo at Tangamanga Park. Friday June 26 and Saturday June 27, 10:00 AM to 7:00 PM. Bring your registration confirmation and official ID.",
+      "docsTitle": "Required documents",
+      "docsDesc": "Registration confirmation (printed or digital), valid government-issued ID, sports medical certificate (required for 21K and 42K)."
+    },
+    "spectators": {
+      "title": "Spectator Info",
+      "subtitle": "Support your runner from the best viewing spots along the course.",
+      "viewingTitle": "Best viewing spots",
+      "viewingDesc": "Finish line at Tangamanga Park, Av. Salvador Nava (km 8-10), Plaza de Armas in Historic Center (km 15), Av. Carranza (km 18-20).",
+      "parkingTitle": "Parking",
+      "parkingDesc": "Parking available at Tangamanga Park and surrounding streets. Arrive early — spots fill up fast on race day.",
+      "activitiesTitle": "Things to do while waiting",
+      "activitiesDesc": "Tangamanga Park has green areas, a lake, playgrounds and cafés. The Historic Center is 15 minutes away."
+    },
+    "accommodation": {
+      "title": "Accommodation & Transport",
+      "airportTitle": "From the airport",
+      "airportDesc": "SLP International Airport (BJX) is 25 minutes from Tangamanga Park. Taxis and shuttle service available.",
+      "busTitle": "From the bus station",
+      "busDesc": "The Central Bus Station is 20 minutes from the park. Direct connections from Mexico City, Monterrey, Guadalajara and Querétaro.",
+      "hotelsTitle": "Recommended hotels",
+      "hotelsDesc": "Tangamanga Sur area: hotels 5-10 min from the park. Historic Center: charming colonial hotels 15 min away. Book in advance — June is peak season due to the marathon."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "When does registration open?",
+      "a1": "Registration usually opens in January. Check maratontangamanga.com for exact dates and prices by category. Prices increase as the event approaches.",
+      "q2": "Do I need a medical certificate?",
+      "a2": "Yes, for 21K and 42K distances a valid sports medical certificate is required (issued within the last 6 months) when picking up your kit.",
+      "q3": "Are there pacemakers?",
+      "a3": "Yes, the marathon has official pacemakers for 3:30, 4:00, 4:30 and 5:00 hours in the marathon, and 1:45 and 2:00 in the half marathon.",
+      "q4": "What is the time limit?",
+      "a4": "Marathon: 6 hours. Half marathon: 3 hours. 10K: 1 hour 30 minutes. 5K: 45 minutes.",
+      "q5": "Does altitude affect performance?",
+      "a5": "Yes. At 1,860m above sea level, expect 5-10% lower performance than at sea level. Arrive 2-3 days early to acclimatize and adjust your target pace.",
+      "q6": "Can I change distance after registering?",
+      "a6": "Distance changes are subject to availability and allowed up to 2 weeks before the event, with a possible fee adjustment.",
+      "q7": "Is there bag check?",
+      "a7": "Yes, there is a bag check service at the start/finish area in Tangamanga Park. Avoid leaving valuables.",
+      "q8": "How do I check my results?",
+      "a8": "Results are posted in real-time on the marathon website and official app. The timing chip records split and net times.",
+      "q9": "Are there hydration stations?",
+      "a9": "Yes, every 2.5 km there are hydration stations with water, sports drink, and at some points, fruit (banana and orange).",
+      "q10": "Can I run with headphones?",
+      "a10": "Yes, headphones are allowed, but keeping the volume low is recommended so you can hear instructions from marshals and emergency vehicles."
+    },
+    "cta": {
+      "title": "Run the Tangamanga Marathon 2026",
+      "description": "Celebrate 40 years of history at one of Mexico's most iconic road races. 4 distances, certified course and the landscape of San Luis Potosí.",
+      "register": "Register now",
+      "moreEvents": "See more events in SLP"
+    }
+  },
+  "festival": {
+    "title": "International Spring Festival San Luis 2026",
+    "viewSchedule": "View official schedule",
+    "seeLineup": "See lineup",
+    "headliners": "Main Artists"
+  },
+  "betaBanner": {
+    "betaVersion": "Beta Version",
+    "improvingDaily": "We're improving every day. Found a bug?",
+    "letUsKnow": "Let us know",
+    "dismiss": "Dismiss"
+  },
+  "factchecks": {
+    "seoTitle": "Fact-Check Reports | San Luis Way",
+    "seoDescription": "Transparent fact-checking using AI agents. We verify claims with primary sources and welcome community collaboration to build the most accurate information about San Luis Potosí.",
+    "heroTitle": "Fact-Check Reports",
+    "heroSubtitle": "Verification Reports",
+    "heroTagline": "Transparency matters. Truth matters.",
+    "heroDescription": "We verify every claim in our articles using AI-powered analysis and share our sources so you can check them yourself. Because credibility is built on evidence, not promises.",
+    "reportsPublished": "Reports Published",
+    "claimsVerified": "Claims Verified",
+    "transparency": "Transparency",
+    "reliabilityGuide": "Reliability Score Guide",
+    "highlyReliable": "Highly Reliable",
+    "highlyReliableDesc": "Most claims verified with primary sources",
+    "moderatelyReliable": "Moderately Reliable",
+    "moderatelyReliableDesc": "Some claims need additional verification",
+    "lowReliability": "Low Reliability",
+    "lowReliabilityDesc": "Multiple unverified claims",
+    "unreliable": "Unreliable",
+    "unreliableDesc": "Majority of claims cannot be verified",
+    "methodology": "Our Methodology",
+    "aiAnalysis": "AI-Powered Analysis",
+    "aiAnalysisDesc": "Specialized AI agents scan and analyze current web information",
+    "sourceVerification": "Source Verification",
+    "sourceVerificationDesc": "Each claim is checked against government data, academic sources, and reputable outlets",
+    "scoringReports": "Scoring & Reports",
+    "scoringReportsDesc": "Comprehensive reports with reliability scores and primary source links",
+    "proprietaryTools": "Our AI verification tools are developed in-house",
+    "proprietaryToolsDesc": "by the San Luis Way team in collaboration with",
+    "proprietaryToolsContinue": "We continuously improve our algorithms to ensure more accurate and comprehensive fact-checking.",
+    "collaborate": "Collaborate With Us",
+    "collaborateIntro": "We acknowledge that some historical or statistical data cannot always be verified with absolute certainty. Information about San Luis Potosí is constantly evolving.",
+    "collaborateAction": "If you have verified information, primary sources, or official documentation, we would love to hear from you. We are committed to building the most complete and accurate information base about our region.",
+    "contactCollaborate": "Contact us to collaborate",
+    "publishedReports": "Published Reports",
+    "verified": "Verified",
+    "true": "True",
+    "partial": "Partial",
+    "unclear": "Unclear",
+    "claimsAnalyzed": "claims analyzed",
+    "verifiedTrue": "verified true",
+    "readReport": "Read report",
+    "noReportsYet": "No fact-check reports available yet.",
+    "checkBackSoon": "Check back soon for verified content.",
+    "backToBlog": "Back to Blog"
+  },
+  "spouseHub": {
+    "seo": {
+      "title": "Spouse Hub - Resources for Accompanying Partners | San Luis Way",
+      "description": "You're not alone. Resources, community, and opportunities for trailing spouses and accompanying partners in San Luis Potosí. Find activities, volunteering, mom groups, and work ideas."
+    },
+    "badge": "For Trailing Spouses & Accompanying Partners",
+    "hero": {
+      "title": "You're Not Alone",
+      "subtitle": "Activities, community, and opportunities for accompanying partners in San Luis Potosí. Everything you need to build your life here."
+    },
+    "notice": {
+      "title": "Coming Soon!",
+      "description": "This section is under development. We'll be implementing these activities and resources in the coming months."
+    },
+    "tabs": {
+      "activities": "Activities & Classes",
+      "volunteer": "Volunteering",
+      "moms": "Mom Groups",
+      "work": "Work & Business",
+      "stories": "Success Stories"
+    },
+    "activities": {
+      "title": "Activities & Classes",
+      "subtitle": "Fill your days with things that bring you joy. These are tried and tested by expat spouses in SLP.",
+      "fitnessWellness": "Fitness & Wellness",
+      "artsCreativity": "Arts & Creativity",
+      "languageCulture": "Language & Culture",
+      "proTipTitle": "Pro Tip from Fellow Spouses",
+      "proTip": "Don't wait until you feel ready. Sign up for something — anything — in your first week. The activity itself matters less than showing up consistently. That's how you build a routine and meet people. I started with yoga knowing zero Spanish, and my classmates became my first friends here.",
+      "proTipAuthor": "— Lisa, 2 years in SLP"
+    },
+    "volunteer": {
+      "title": "Volunteering Opportunities",
+      "subtitle": "Find purpose while giving back. Volunteering is one of the fastest ways to feel connected and valued.",
+      "englishOk": "English OK",
+      "timeCommitment": "Time commitment",
+      "whyTitle": "Why Volunteering Transforms Your Experience",
+      "why1": "Gives you purpose and structure to your week",
+      "why2": "Forces you to practice Spanish in meaningful contexts",
+      "why3": "Connects you with like-minded, compassionate people",
+      "why4": "Looks great on your resume if you return to work",
+      "why5": "Helps you see beyond the expat bubble"
+    },
+    "momGroups": {
+      "title": "Expat Mom Groups",
+      "subtitle": "Your tribe is waiting. These groups are lifelines for expat mothers — for playdates, advice, venting, and friendship.",
+      "members": "members",
+      "howToJoinTitle": "How to Join",
+      "howToJoinIntro": "Most groups are private for safety reasons. Here's how to connect:",
+      "join1": "Ask at Colegio Terranova if your kids attend — they can connect you",
+      "join2": "Search Facebook for \"Expats in San Luis Potosí\" and request to join",
+      "join3": "Ask your partner's HR department — they often have spouse networks",
+      "join4": "Contact us and we'll help facilitate introductions"
+    },
+    "work": {
+      "title": "Work & Business Ideas",
+      "subtitle": "You don't have to put your career on hold. Many spouses have built thriving businesses and careers from SLP.",
+      "visaWarningTitle": "Important: Work Visa Considerations",
+      "visaWarning": "Your dependent visa may not allow formal employment in Mexico. However, you CAN: work remotely for non-Mexican companies, freelance internationally, start an online business, or volunteer. Consult an immigration lawyer for your specific situation before pursuing local employment.",
+      "remoteWork": "Remote Work",
+      "localOpportunities": "Local Opportunities",
+      "entrepreneurship": "Entrepreneurship",
+      "where": "Where"
+    },
+    "stories": {
+      "title": "Success Stories",
+      "subtitle": "Real stories from spouses who found their path in San Luis Potosí. If they did it, so can you.",
+      "yearsInSLP": "years in SLP",
+      "ctaTitle": "Your Story Could Be Here",
+      "ctaText": "Every success story started with someone feeling exactly like you do now. Take the first step. Join a group. Sign up for a class. Say yes.",
+      "shareStory": "Share Your Story →"
+    },
+    "cta": {
+      "title": "Ready to Start Your Journey?",
+      "subtitle": "You've already done the hardest part — you moved. Now it's time to build the life you deserve here. We're here to help every step of the way.",
+      "connect": "Connect With Us",
+      "community": "Join the Community"
+    },
+    "resourceCard": {
+      "title": "Spouse Hub",
+      "description": "You're not alone. Resources, community, activities, volunteering, mom groups, and work ideas for accompanying partners in SLP."
+    }
+  },
+  "newsletterBanner": {
+    "freeWeekly": "Free Weekly Newsletter",
+    "insiderGuide": "Your Insider Guide to",
+    "practicalTips": "Practical tips and useful info to navigate the city like a local — delivered every week.",
+    "weeklyEvents": "Weekly Events",
+    "localGems": "Local Gems",
+    "practicalInfo": "Practical Info",
+    "enterEmail": "Enter your email",
+    "joining": "Joining...",
+    "joined": "Joined!",
+    "subscribeNow": "Subscribe Now",
+    "everySunday": "Every Sunday morning. No spam, unsubscribe anytime.",
+    "stayInLoop": "Stay in the Loop",
+    "slpWeekly": "SLP Weekly",
+    "slpWeeklyDesc": "Practical tips and useful info to navigate the city, plus events and local discoveries.",
+    "free": "Free",
+    "weekly": "Weekly",
+    "noSpam": "No spam",
+    "subscribe": "Subscribe",
+    "done": "Done!",
+    "getSlpWeekly": "Get the SLP Weekly",
+    "citytipsEvery": "Practical city tips & local info every Sunday",
+    "joinFree": "Join Free",
+    "slpWeeklyNewsletter": "SLP Weekly Newsletter",
+    "practicalTipsNav": "Practical tips to navigate the city",
+    "email": "Email",
+    "join": "Join",
+    "enjoyedArticle": "Enjoyed this article?",
+    "enjoyedDesc": "Get practical tips to navigate the city, weekly events, and useful local info delivered to your inbox.",
+    "subscribeFree": "Subscribe Free",
+    "subscribed": "Subscribed!",
+    "joinCommunity": "Join our community. No spam, ever.",
+    "invalidEmail": "Please enter a valid email",
+    "alreadySubscribed": "You're already subscribed!",
+    "welcomeAboard": "Welcome aboard! Check your inbox.",
+    "somethingWrong": "Something went wrong"
+  },
+  "arrivalChecklist": {
+    "meta": {
+      "title": "Arrival Checklist: Your First 30 Days in San Luis Potosí | San Luis Way",
+      "description": "Complete 45+ item checklist for newcomers to San Luis Potosí. Covers essentials, bureaucratic tasks, utilities, banking, healthcare, and social integration.",
+      "keywords": "San Luis Potosí arrival checklist, expat checklist Mexico, moving to SLP, first days San Luis Potosí",
+      "ogTitle": "Arrival Checklist: Your First 30 Days in San Luis Potosí",
+      "ogDescription": "Your complete checklist for settling in San Luis Potosí."
+    },
+    "hero": {
+      "badge": "Your First 30 Days",
+      "title": "Arrival Checklist",
+      "subtitle": "45+ actionable items to help you settle into San Luis Potosí successfully",
+      "categories": "7 Categories",
+      "checkboxes": "Interactive Checkboxes",
+      "links": "Official Links"
+    },
+    "learnMore": "Learn more →",
+    "resources": {
+      "title": "Essential Resources",
+      "emergency": {
+        "title": "Emergency Numbers",
+        "general": "General Emergency",
+        "police": "Police",
+        "ambulance": "Red Cross / Ambulance"
+      },
+      "guides": {
+        "title": "San Luis Way Guides",
+        "neighborhoods": "Neighborhoods Guide →",
+        "healthcare": "Healthcare Guide →",
+        "expat": "Expat Essentials →",
+        "foodie": {
+          "title": "Foodie Guide",
+          "description": "Discover the best traditional and modern cuisine in San Luis Potosí",
+          "badge": "Food"
+        },
+        "wine": {
+          "title": "Potosino Wine Scene",
+          "description": "Explore the emerging wine culture and best spots in SLP",
+          "badge": "Wine"
+        }
+      }
+    },
+    "cta": {
+      "title": "Need Personalized Help?",
+      "subtitle": "Our local experts can guide you through the settling process.",
+      "button": "Contact Us"
+    },
+    "categories": {
+      "firstWeek": {
+        "title": "First Week Essentials",
+        "items": {
+          "sim": {
+            "title": "Get a Mexican SIM card",
+            "description": "Telcel (best coverage), AT&T, or Movistar. Available at OXXO or carrier stores. $150-300 MXN."
+          },
+          "apps": {
+            "title": "Download essential apps",
+            "description": "Uber, DiDi (rides), Rappi (delivery), Google Maps, WhatsApp (primary messaging)."
+          },
+          "atm": {
+            "title": "Withdraw pesos from ATM",
+            "description": "Use ATMs inside banks (Santander, BBVA). Decline conversion to home currency."
+          },
+          "cash": {
+            "title": "Keep cash on hand",
+            "description": "Many places are cash-only. Keep $500-1,000 MXN for daily needs."
+          },
+          "spanish": {
+            "title": "Learn basic Spanish phrases",
+            "description": "\"Buenos días\", \"Gracias\", \"¿Cuánto cuesta?\", \"La cuenta, por favor\"."
+          },
+          "translate": {
+            "title": "Download Google Translate",
+            "description": "Get the Spanish offline pack. Camera feature helps with menus and signs."
+          }
+        }
+      },
+      "administrative": {
+        "title": "Administrative Tasks",
+        "items": {
+          "inm": {
+            "title": "INM address registration",
+            "description": "Required within 90 days if you have residency. Bring passport, residency card, proof of address."
+          },
+          "curp": {
+            "title": "Get your CURP",
+            "description": "Mexico's population ID. Free at Registro Civil with passport and residency card."
+          },
+          "rfc": {
+            "title": "Obtain RFC (if working)",
+            "description": "Tax ID for employment. Apply at SAT office with CURP, passport, proof of address."
+          },
+          "consulate": {
+            "title": "Register at your consulate",
+            "description": "For emergency assistance and voting abroad. Most done online."
+          },
+          "license": {
+            "title": "Mexican driver's license (optional)",
+            "description": "Apply at Secretaría de Seguridad Pública. Cost: ~$800-1,200 MXN."
+          }
+        }
+      },
+      "homeServices": {
+        "title": "Home & Services",
+        "items": {
+          "electricity": {
+            "title": "Set up electricity (CFE)",
+            "description": "Transfer account at CFE office with lease and ID. Pay at OXXO or online."
+          },
+          "water": {
+            "title": "Set up water (INTERAPAS)",
+            "description": "Transfer at INTERAPAS office. Bills typically $150-400 MXN/month."
+          },
+          "gas": {
+            "title": "Arrange gas delivery",
+            "description": "Providers: Gas Express Nieto, Zeta Gas. Stationary tanks refilled, portable exchanged."
+          },
+          "internet": {
+            "title": "Set up internet",
+            "description": "Telmex (most coverage), Totalplay (fiber), Izzi. Plans $400-800 MXN/month."
+          },
+          "garrafon": {
+            "title": "Buy water garrafones",
+            "description": "Tap water NOT drinkable. Buy 5-gallon jugs from Bonafont, Ciel. ~$30-40 MXN each."
+          },
+          "dispenser": {
+            "title": "Get a garrafón dispenser",
+            "description": "Available at Soriana, Walmart, Amazon Mexico. $500-2,000 MXN."
+          }
+        }
+      },
+      "financial": {
+        "title": "Financial Setup",
+        "items": {
+          "bank": {
+            "title": "Open Mexican bank account",
+            "description": "BBVA, Santander (expat-friendly), Banorte. Need: passport, residency, CURP, proof of address."
+          },
+          "mercadoPago": {
+            "title": "Set up Mercado Pago",
+            "description": "Mexico's popular digital wallet. Works at many stores, transfers to friends, pay bills."
+          },
+          "spei": {
+            "title": "Learn SPEI transfers",
+            "description": "Mexico's instant bank transfer system. Free, fast, widely used for rent and services."
+          },
+          "international": {
+            "title": "Set up international transfers",
+            "description": "Wise (best rates), Remitly, or wire transfer for regular transfers."
+          },
+          "bills": {
+            "title": "Understand bill payments",
+            "description": "Pay at OXXO (24/7), bank apps, online portals. OXXO is easiest for most services."
+          }
+        }
+      },
+      "healthcare": {
+        "title": "Healthcare",
+        "items": {
+          "doctor": {
+            "title": "Find a general doctor",
+            "description": "Ask in expat groups for English speakers. Consultations: $400-800 MXN."
+          },
+          "dentist": {
+            "title": "Find a dentist",
+            "description": "Dental care is excellent and affordable. Cleaning: $400-800 MXN."
+          },
+          "pharmacy": {
+            "title": "Locate pharmacies",
+            "description": "Farmacias Guadalajara, Farmacias del Ahorro. Many meds available without prescription."
+          },
+          "insurance": {
+            "title": "Set up health insurance",
+            "description": "IMSS (~$6,000 MXN/year) or private: GNP, Seguros Monterrey, Bupa."
+          },
+          "emergency": {
+            "title": "Save emergency numbers",
+            "description": "911 (emergency), 066 (police), 065 (ambulance/Red Cross)."
+          }
+        }
+      },
+      "social": {
+        "title": "Social & Community",
+        "items": {
+          "facebook": {
+            "title": "Join expat Facebook groups",
+            "description": "Search \"Expats in San Luis Potosí\". Great for advice and meeting others."
+          },
+          "exchange": {
+            "title": "Find language exchange partners",
+            "description": "Practice Spanish, help with English. Check Meetup, university boards, cafes."
+          },
+          "classes": {
+            "title": "Enroll in Spanish classes",
+            "description": "UASLP offers courses. Private tutors: $150-300 MXN/hour."
+          },
+          "neighborhoods": {
+            "title": "Explore neighborhoods",
+            "description": "Walk Centro Histórico, Parque Tangamanga, Lomas. Best way to feel at home."
+          },
+          "events": {
+            "title": "Attend local events",
+            "description": "Check our events calendar. FENAPO (August) is the biggest annual fair."
+          },
+          "neighbors": {
+            "title": "Meet your neighbors",
+            "description": "A simple \"Buenos días\" goes a long way. Neighbors are valuable for recommendations."
+          }
+        }
+      },
+      "dailyLife": {
+        "title": "Practical Daily Life",
+        "items": {
+          "supermarkets": {
+            "title": "Find supermarkets",
+            "description": "Soriana (local), Walmart, HEB (premium), Costco (membership)."
+          },
+          "markets": {
+            "title": "Explore local markets",
+            "description": "Mercado Hidalgo (Centro), Mercado República. Fresh produce at better prices."
+          },
+          "rides": {
+            "title": "Download ride apps",
+            "description": "Uber and DiDi work throughout the city. Safer than street taxis."
+          },
+          "gym": {
+            "title": "Find a gym",
+            "description": "Smart Fit ($400-600 MXN/mo), Sport City (premium), local gyms ($300-500 MXN/mo)."
+          },
+          "park": {
+            "title": "Explore Parque Tangamanga",
+            "description": "One of Mexico's largest urban parks. Running, cycling, picnics. Free entry."
+          },
+          "amazon": {
+            "title": "Set up Amazon Mexico",
+            "description": "Delivery available. Prime offers faster shipping. Great for hard-to-find items."
+          }
+        }
+      }
+    }
+  },
+  "filters": {
+    "searchPlaceholder": "Search...",
+    "allCategories": "All Categories",
+    "minRating": "Min Rating",
+    "priceLevel": "Price",
+    "sortNewest": "Newest First",
+    "sortRating": "Highest Rated",
+    "sortName": "A-Z",
+    "clearAll": "Clear filters",
+    "showing": "Showing",
+    "of": "of"
+  },
+  "pagination": {
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "analytics": {
+    "title": "Analytics Overview",
+    "activeListings": "Active Listings",
+    "inquiries": "Contact Inquiries",
+    "revenue": "Revenue",
+    "avgRating": "Avg Rating",
+    "recentInquiries": "Recent Inquiries",
+    "new": "new"
+  },
+  "fenapo2026": {
+    "seo": {
+      "title": "FENAPO 2026 — National Potosino Fair | San Luis Potosí",
+      "description": "FENAPO 2026: Mexico's most traditional fair. August 2026 in San Luis Potosí. Grupo Firme, Sin Bandera, Los Acosta. Teatro del Pueblo, Palenque, gastronomy, rides. Program, artists and visitor guide.",
+      "keywords": "fenapo 2026, feria nacional potosina, fenapo san luis potosi, fenapo lineup 2026, grupo firme fenapo, palenque fenapo, teatro del pueblo"
+    },
+    "hero": {
+      "badge": "2026 EDITION",
+      "date": "August 2026",
+      "title": "FENAPO 2026",
+      "subtitle": "Feria Nacional Potosina",
+      "description": "Mexico's most traditional fair returns to San Luis Potosí with concerts, gastronomy, culture and entertainment for the whole family. Confirmed artists: Grupo Firme, Sin Bandera, Los Acosta.",
+      "note": "Lineup expanded April 2026: 3 Teatro del Pueblo + 6 Palenque artists confirmed, plus 4 pre-FENAPO events running April through May. Final dates TBC — this page updates as the fair announces more.",
+      "cta": "Official website",
+      "ctaArtists": "See artists",
+      "location": "San Luis Potosí, capital of the state of San Luis Potosí, Mexico"
+    },
+    "stats": {
+      "days": "Days",
+      "daysValue": "~24",
+      "artists": "Confirmed artists",
+      "artistsValue": "9+",
+      "entry": "General entry",
+      "entryValue": "Free",
+      "zones": "Zones",
+      "zonesValue": "6+"
+    },
+    "about": {
+      "title": "What is FENAPO?",
+      "p1": "The Feria Nacional Potosina (FENAPO) is Mexico's most important and traditional fair. Held every year during August in San Luis Potosí, it coincides with the patron saint festivities honoring San Luis Rey de Francia (August 25), the city's patron saint.",
+      "p2": "With over half a century of history, FENAPO brings together culture, entertainment, gastronomy and commerce at the Recinto Ferial, a 30+ hectare venue that transforms for nearly a month into the center of Potosino social life.",
+      "p3": "The fair generates over 2 billion pesos in economic impact and attracts more than 3 million visitors each edition, making it the state's most important tourism event.",
+      "highlights": {
+        "title": "What you'll find at FENAPO:",
+        "item1": "Teatro del Pueblo with national and international artists (free entry)",
+        "item2": "Palenque with the best of regional Mexican music (ticketed)",
+        "item3": "Gastronomy zone with Potosino, Mexican and international cuisine",
+        "item4": "Commercial exhibition with local and national products",
+        "item5": "Mechanical rides and family entertainment",
+        "item6": "Livestock and agricultural exhibition",
+        "item7": "Cultural pavilion with art and handicrafts",
+        "item8": "FENAPO queen coronation ceremony"
+      },
+      "organizer": "Organized annually by the Government of the State of San Luis Potosí, FENAPO is one of the largest state fairs in Mexico."
+    },
+    "artists": {
+      "title": "Confirmed Artists",
+      "subtitle": "As of April 2026, nine artists are confirmed across Teatro del Pueblo (free with fair admission) and Palenque (paid separate ticket). More names expected as August approaches.",
+      "teatroTitle": "Teatro del Pueblo",
+      "teatroNote": "3 confirmed · 2 international TBC",
+      "palenqueTitle": "Palenque",
+      "palenqueNote": "6 confirmed · cartelera complete",
+      "tbc": "More artists TBA",
+      "sinBandera": "Sin Bandera",
+      "losAcosta": "Los Acosta",
+      "grupoFirme": "Grupo Firme",
+      "freeNotice": "Teatro del Pueblo concerts, mechanical rides, parking, and fair entry will be free this year per the Governor of San Luis Potosí.",
+      "keniaOs": "Kenia Os",
+      "keniaOsGenre": "Pop / Urban",
+      "sinBanderaGenre": "Pop Ballad Duo",
+      "losAcostaGenre": "Cumbia / Regional",
+      "grupoFirmeGenre": "Regional Mexicano",
+      "edenMunoz": "Edén Muñoz",
+      "edenMunozGenre": "Regional Mexicano",
+      "gloriaTrevi": "Gloria Trevi",
+      "gloriaTreviGenre": "Pop Latino",
+      "losInvasores": "Los Invasores de Nuevo León",
+      "losInvasoresGenre": "Norteño",
+      "losCardenales": "Los Cardenales de Nuevo León",
+      "losCardenalesGenre": "Norteño",
+      "losViejones": "Los Viejones de Linares",
+      "losViejonesGenre": "Norteño"
+    },
+    "areas": {
+      "title": "Fair Areas",
+      "subtitle": "The fairgrounds are divided into zones so you can find exactly what you're looking for.",
+      "teatro": {
+        "name": "Teatro del Pueblo",
+        "desc": "Main stage with top-tier artists. Free concerts every night."
+      },
+      "palenque": {
+        "name": "Palenque",
+        "desc": "Premium shows with the best of Mexican and regional music."
+      },
+      "gastro": {
+        "name": "Gastronomy Zone",
+        "desc": "Potosino, Mexican and international food. Enchiladas, gorditas, asado de boda and more."
+      },
+      "commercial": {
+        "name": "Commercial Exhibition",
+        "desc": "Local and national products and services. Exclusive fair deals and promotions."
+      },
+      "rides": {
+        "name": "Mechanical Rides",
+        "desc": "Roller coaster, Ferris wheel, bumper cars and more fun for the whole family."
+      },
+      "cultural": {
+        "name": "Cultural Pavilion",
+        "desc": "Art exhibitions, handicrafts, dance and traditional Potosino music."
+      },
+      "livestock": {
+        "name": "Livestock Exhibition",
+        "desc": "Cattle exhibition, charreadas and ranching traditions of San Luis Potosí."
+      },
+      "kids": {
+        "name": "Kids Zone",
+        "desc": "Activities and shows designed for the youngest members of the family."
+      }
+    },
+    "visitorGuide": {
+      "title": "Visitor Guide",
+      "subtitle": "Everything you need to know to make the most of your FENAPO visit.",
+      "bestDaysTitle": "Best days to go",
+      "bestDaysDesc": "Monday to Thursday is less crowded and easier to get around. Fridays and Saturdays offer the best shows but expect crowds. Sundays are ideal for families.",
+      "bringTitle": "What to bring",
+      "bringDesc": "Comfortable walking shoes, sun protection, cash (some vendors don't accept cards), portable phone charger.",
+      "safetyTitle": "Safety",
+      "safetyDesc": "The venue has private security and police presence. Watch your belongings in crowded areas. Information and first aid stations are available.",
+      "familyTitle": "Family visits",
+      "familyDesc": "The kids zone and rides are ideal for children. Avoid Fridays and Saturdays if bringing young children due to crowds."
+    },
+    "gettingThere": {
+      "title": "Getting There",
+      "venue": "Recinto Ferial de la FENAPO",
+      "address": "Av. Fco. Martínez de la Vega No. 255, San Luis Potosí",
+      "byCarTitle": "By car",
+      "byCarDesc": "Ample parking inside and outside the venue. From downtown, take Av. Salvador Nava south (~15 min). Expect traffic during peak fair hours.",
+      "byTransitTitle": "Public transit",
+      "byTransitDesc": "Bus routes: 10, 12, 17. Special transport services operate during the fair. Taxis and Uber available.",
+      "byPlaneTitle": "From the airport",
+      "byPlaneDesc": "SLP Airport is 20 minutes away. Taxis available at the terminal.",
+      "distanceTitle": "From downtown",
+      "distanceDesc": "The venue is 15 minutes from the Historic Center via Av. Salvador Nava."
+    },
+    "accommodation": {
+      "title": "Accommodation",
+      "description": "August is SLP's busiest month due to FENAPO. Book in advance.",
+      "nearbyTitle": "Near the venue",
+      "nearbyDesc": "Hotels along Av. Salvador Nava and Tangamanga Sur, 5-10 minutes from the venue.",
+      "centroTitle": "Historic Center",
+      "centroDesc": "Boutique and colonial hotels downtown, 15 minutes away. Ideal if you want to explore the city beyond the fair.",
+      "budgetTitle": "Budget tip",
+      "budgetDesc": "Hotel prices rise during FENAPO. Booking 2-3 months ahead can save you up to 40%."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "When are the exact dates for FENAPO 2026?",
+      "a1": "Official dates for FENAPO 2026 are not yet confirmed. Traditionally the fair runs throughout August, starting the first week and closing around the 31st. This page will be updated when exact dates are announced.",
+      "q2": "How much do Palenque tickets cost?",
+      "a2": "Palenque prices vary by artist, from $500 to $3,000+ MXN. Tickets are sold through Ticketmaster and at venue box offices. Popular artists sell out quickly.",
+      "q3": "Is general admission free?",
+      "a3": "Entry to the fairgrounds and Teatro del Pueblo is free. The Palenque, rides and some special shows have additional costs.",
+      "q4": "Is there parking?",
+      "a4": "Yes, parking is available inside the venue and in nearby lots. Cost varies. Arrive early on weekends to find a spot.",
+      "q5": "Can I bring food into the venue?",
+      "a5": "Outside food and drinks are not allowed. There's a large gastronomy zone with options for all budgets.",
+      "q6": "What are the fair hours?",
+      "a6": "Generally 11:00 AM to 12:00 AM (midnight) Monday-Thursday, and 11:00 AM to 2:00 AM Friday-Saturday. Hours may vary.",
+      "q7": "Is FENAPO safe?",
+      "a7": "Yes. The venue has private security, police presence and assistance stations. As with any mass event, watch your belongings and avoid carrying unnecessary valuables.",
+      "q8": "Are pets allowed?",
+      "a8": "No, pets are not allowed inside the fairgrounds for safety and animal welfare reasons.",
+      "q9": "Are there ATMs?",
+      "a9": "Yes, there are ATMs inside the venue. However, lines can be long. Bringing enough cash is recommended.",
+      "q10": "Is it kid-friendly?",
+      "a10": "Yes, FENAPO is a family event. There's a kids zone, children's rides and family shows. Sundays are usually the best days to go with children.",
+      "q11": "Is there a dress code?",
+      "a11": "No formal dress code. Casual and comfortable clothing. Closed shoes are recommended for the venue terrain. For Palenque, people tend to dress up more.",
+      "q12": "Is it accessible for people with disabilities?",
+      "a12": "The venue has access ramps and designated areas. Teatro del Pueblo and Palenque have accessible sections. Arriving early is recommended to secure a spot."
+    },
+    "cta": {
+      "title": "Don't Miss FENAPO 2026!",
+      "description": "Mexico's most traditional fair. Nearly a month of culture, entertainment, gastronomy and fun for the whole family in San Luis Potosí.",
+      "official": "Official website",
+      "newsletter": "Subscribe for updates",
+      "moreEvents": "See more events in SLP"
+    },
+    "preFenapo": {
+      "title": "Pre-FENAPO Events at the Recinto Ferial",
+      "subtitle": "The fairgrounds are already hosting events ahead of the main August celebration. A great way to experience the venue before the crowds.",
+      "event1Date": "April 18, 2026",
+      "event1Title": "Duelo de Acordeones",
+      "event1Desc": "Regional norteño competition featuring local and touring accordion acts.",
+      "event2Date": "April 24, 2026",
+      "event2Title": "Victor Mendivil + Kevin AMF",
+      "event2Desc": "Regional Mexicano double bill at the Recinto Ferial.",
+      "event3Date": "May 16, 2026",
+      "event3Title": "San Luis Metal Fest 2026",
+      "event3Desc": "Mexico's biggest potosino metal festival. Full coverage on our event page.",
+      "event4Date": "May 22–24, 2026",
+      "event4Title": "Copa Libertadores 2026 (Volleyball)",
+      "event4Desc": "International volleyball tournament at the fair pavilions."
+    },
+    "quickAnswer": {
+      "title": "FENAPO 2026 at a glance",
+      "definition": "FENAPO 2026 — the 77th edition of Mexico's Feria Nacional Potosina — takes place in August 2026 at the Recinto Ferial on Av. Fco. Martínez de la Vega, San Luis Potosí. As of April 2026, nine headliners are confirmed (three for the free Teatro del Pueblo and six for the paid Palenque), with fair entry, rides, parking, and Teatro del Pueblo concerts free for attendees. The Palenque cartelera is complete; Teatro del Pueblo is 90% confirmed with two international artists pending announcement. Pre-FENAPO events are already running at the fairgrounds from April through May.",
+      "keyFactsTitle": "Key facts (verified April 18, 2026)"
+    },
+    "sources": {
+      "title": "Sources used on this page"
+    }
+  },
+  "b2b": {
+    "nav": "For Businesses",
+    "footer": {
+      "title": "For Businesses",
+      "description": "Reach 15,000+ expats and international professionals in San Luis Potosí",
+      "cta": "Partner With Us"
+    },
+    "banner": {
+      "title": "Own a Business in SLP?",
+      "subtitle": "Get discovered by international clients actively seeking your services",
+      "cta": "Learn More",
+      "benefits": {
+        "visibility": "Multilingual visibility",
+        "clients": "Pre-qualified leads",
+        "seo": "SEO optimized profile"
+      }
+    },
+    "card": {
+      "title": "Grow Your Business",
+      "description": "Join 100+ local businesses reaching the international community in San Luis Potosí. Get a verified profile, multilingual content, and direct access to expats.",
+      "cta": "Partner With Us",
+      "badge": "B2B"
+    },
+    "inline": {
+      "text": "Is this your business?",
+      "cta": "Claim your profile"
+    }
+  },
+  "marketplace": {
+    "shopTitle": "Shop",
+    "shopDescription": "Browse products from local businesses in San Luis Potosi",
+    "shopSubtitle": "Discover products from local businesses",
+    "searchProducts": "Search products...",
+    "allCategories": "All Categories",
+    "noProducts": "No products found",
+    "noProductsDescription": "Try adjusting your search or filter criteria",
+    "buyNow": "Buy Now",
+    "addToCart": "Add to Cart",
+    "checkout": "Checkout",
+    "emptyCart": "Your cart is empty",
+    "continueShopping": "Continue Shopping",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "total": "Total",
+    "processing": "Processing...",
+    "payNow": "Pay Now",
+    "loginRequired": "You need to sign in to complete your purchase",
+    "orderSuccess": "Order Confirmed!",
+    "orderNumber": "Order #",
+    "items": "Items",
+    "goHome": "Go Home",
+    "sellerOrders": "Orders & Earnings",
+    "totalEarnings": "Total Earnings",
+    "pendingPayouts": "Pending Payouts",
+    "totalOrders": "Total Orders",
+    "recentOrders": "Recent Orders",
+    "date": "Date",
+    "amount": "Amount",
+    "yourEarnings": "Your Earnings",
+    "status": "Status",
+    "noOrdersYet": "No orders received yet. Orders will appear here when customers purchase your products."
+  },
+  "booking": {
+    "bookNow": "Book Now",
+    "reserveAt": "Reserve at",
+    "date": "Date",
+    "time": "Time",
+    "partySize": "Party Size",
+    "person": "person",
+    "people": "people",
+    "contactName": "Contact Name",
+    "contactEmail": "Email",
+    "contactPhone": "Phone",
+    "specialRequests": "Special Requests",
+    "notesPlaceholder": "Any special requirements or requests...",
+    "confirmBooking": "Confirm Booking",
+    "submitting": "Submitting...",
+    "successMessage": "Booking submitted successfully!",
+    "confirmationNote": "You will receive a confirmation once the business reviews your reservation.",
+    "errorCreating": "Failed to create booking. Please try again.",
+    "loginRequired": "Please sign in to make a booking.",
+    "noBookings": "You have no bookings yet.",
+    "unknownPlace": "Unknown Place",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "markCompleted": "Mark Completed",
+    "noShow": "No Show",
+    "allBookings": "All",
+    "noBookingsFound": "No bookings found.",
+    "manageBookings": "Manage Bookings",
+    "manageDescription": "View and manage reservations for your business.",
+    "backToDashboard": "Back to Dashboard",
+    "status": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "cancelled": "Cancelled",
+      "completed": "Completed",
+      "no_show": "No Show"
+    }
+  },
+  "mcpPage": {
+    "pageTitle": "MCP Server for San Luis Way",
+    "pageSubtitle": "Give your AI structured access to the most complete guide to San Luis Potosi",
+    "heroTag": "Model Context Protocol",
+    "quickStartTitle": "Quick Start",
+    "quickStartDesc": "Add to your Claude Desktop config and start asking about San Luis Potosi.",
+    "configPathMac": "macOS: ~/Library/Application Support/Claude/claude_desktop_config.json",
+    "configPathWin": "Windows: %APPDATA%Claudeclaude_desktop_config.json",
+    "otherClientsTitle": "Other Clients",
+    "clientClaude": "Claude Desktop",
+    "clientCursor": "Cursor",
+    "clientClaudeCode": "Claude Code",
+    "clientWindsurf": "Windsurf",
+    "clientGemini": "Gemini CLI",
+    "clientCodex": "Codex CLI",
+    "cursorDesc": "Add to .cursor/mcp.json in your project root:",
+    "claudeCodeDesc": "Run in your terminal:",
+    "windsurfDesc": "Add to your Windsurf MCP settings:",
+    "geminiDesc": "Add to your Gemini CLI config:",
+    "codexDesc": "Add to your Codex CLI config:",
+    "capabilitiesTitle": "What You Can Do",
+    "cap1": "Search events, festivals, and concerts",
+    "cap2": "Find restaurants, cafes, and bars",
+    "cap3": "Get practical guides for visitors",
+    "cap4": "Explore outdoor activities and trails",
+    "cap5": "Discover cultural sites and museums",
+    "cap6": "Check weather and exchange rates",
+    "toolsTitle": "Tools Reference",
+    "toolsDesc": "All 12 tools available in the MCP server:",
+    "toolHeader": "Tool",
+    "descHeader": "Description",
+    "paramsHeader": "Key Params",
+    "tool_get_events": "List upcoming events",
+    "tool_get_event": "Get event details by slug",
+    "tool_get_places": "List places by category",
+    "tool_get_place": "Get place details by slug",
+    "tool_get_guides": "List available guides",
+    "tool_get_guide": "Get guide content by slug",
+    "tool_get_outdoor": "List outdoor activities",
+    "tool_get_culture": "List cultural sites",
+    "tool_get_weather": "Current weather conditions",
+    "tool_get_news": "Latest local headlines",
+    "tool_get_exchange_rates": "Current exchange rates",
+    "tool_search": "Full-text search across all data",
+    "examplePromptsTitle": "Example Prompts",
+    "examplePromptsDesc": "Try these with any MCP-connected AI client:",
+    "prompt1": "What events are happening this weekend in SLP?",
+    "prompt2": "Best restaurants in Centro Historico",
+    "prompt3": "How's the weather in San Luis Potosi?",
+    "prompt4": "Show me outdoor activities near Real de Catorce",
+    "prompt5": "Search for tacos in SLP",
+    "whatIsMcpTitle": "What is MCP?",
+    "whatIsMcpText": "The Model Context Protocol (MCP) is an open standard that lets AI assistants connect to external data sources. Instead of relying only on training data, your AI can query live, structured information from San Luis Way — events, places, weather, and more — in real time.",
+    "faqTitle": "Frequently Asked Questions",
+    "faq1q": "Do I need an API key to use the MCP server?",
+    "faq1a": "No. The San Luis Way MCP server is completely free and requires no API keys, accounts, or configuration. Just add the config and start asking.",
+    "faq2q": "What data can I access through MCP?",
+    "faq2a": "Events, places (restaurants, cafes, bars, museums), guides, outdoor activities, cultural sites, weather, news, and exchange rates — all for San Luis Potosi.",
+    "faq3q": "Does it work with clients other than Claude Desktop?",
+    "faq3a": "Yes. Any MCP-compatible client works, including Cursor, Claude Code, Windsurf, Gemini CLI, and Codex CLI. Setup instructions are provided for each.",
+    "faq4q": "How is this different from the CLI?",
+    "faq4a": "The MCP server integrates directly into your AI assistant so you can ask questions in natural language. The CLI is for terminal scripts and automation. Both access the same data."
+  },
+  "cliPage": {
+    "pageTitle": "CLI for San Luis Way",
+    "pageSubtitle": "Access San Luis Potosi data directly from your terminal — events, places, guides, weather, and more",
+    "heroTag": "Command Line Interface",
+    "quickStartTitle": "Quick Start",
+    "quickStartDesc": "Run a single command to query events, places, and more from SLP:",
+    "quickStartCmd": "npx @sanluisway/cli events --limit 5 --json",
+    "openClawTitle": "Works with OpenClaw",
+    "openClawDesc": "The CLI is built on OpenClaw skills, meaning any AI agent or automation tool can discover and use the same commands programmatically. Browse available skills on ClawHub.",
+    "openClawLink": "Browse skills on ClawHub",
+    "installTitle": "Installation",
+    "installGlobalLabel": "Global install",
+    "installGlobalCmd": "npm install -g @sanluisway/cli",
+    "installOnDemandLabel": "On-demand (no install)",
+    "installOnDemandCmd": "npx @sanluisway/cli --help",
+    "commandsTitle": "Command Reference",
+    "commandsDesc": "All available commands in the CLI:",
+    "cmdHeader": "Command",
+    "descHeader": "Description",
+    "flagsHeader": "Key Flags",
+    "cmd_events": "List upcoming events",
+    "cmd_events_flags": "--limit, --category, --json",
+    "cmd_event": "Get event details by slug",
+    "cmd_event_flags": "--json",
+    "cmd_places": "List places by category",
+    "cmd_places_flags": "--category, --limit, --json",
+    "cmd_place": "Get place details by slug",
+    "cmd_place_flags": "--json",
+    "cmd_guides": "List available guides",
+    "cmd_guides_flags": "--limit, --json",
+    "cmd_guide": "Get guide content by slug",
+    "cmd_guide_flags": "--json",
+    "cmd_outdoor": "List outdoor activities",
+    "cmd_outdoor_flags": "--limit, --json",
+    "cmd_culture": "List cultural sites",
+    "cmd_culture_flags": "--limit, --json",
+    "cmd_weather": "Current weather conditions",
+    "cmd_weather_flags": "--json",
+    "cmd_news": "Latest local headlines",
+    "cmd_news_flags": "--limit, --json",
+    "cmd_exchange_rates": "Current exchange rates",
+    "cmd_exchange_rates_flags": "--json",
+    "cmd_search": "Full-text search across all data",
+    "cmd_search_flags": "--type, --limit, --json",
+    "examplesTitle": "Example Commands",
+    "examplesDesc": "Common usage patterns:",
+    "jsonTitle": "JSON Output",
+    "jsonDesc": "Add --json to any command to get structured output. The response envelope looks like this:",
+    "comparisonTitle": "CLI vs MCP",
+    "comparisonDesc": "Choose the right tool for your workflow:",
+    "compFeatureHeader": "Feature",
+    "compCliHeader": "CLI",
+    "compMcpHeader": "MCP",
+    "comp1Feature": "Best for",
+    "comp1Cli": "Scripts, agents, CI pipelines",
+    "comp1Mcp": "Chat AI clients (Claude, Cursor)",
+    "comp2Feature": "Output format",
+    "comp2Cli": "JSON to stdout",
+    "comp2Mcp": "Structured tool calling",
+    "comp3Feature": "Access method",
+    "comp3Cli": "Direct terminal commands",
+    "comp3Mcp": "Natural language via AI",
+    "comp4Feature": "Discoverability",
+    "comp4Cli": "--help on every command",
+    "comp4Mcp": "Auto-discovered by AI clients",
+    "comp5Feature": "Setup",
+    "comp5Cli": "npx or npm install",
+    "comp5Mcp": "Add to client config",
+    "faqTitle": "Frequently Asked Questions",
+    "faq1q": "Do I need an API key to use the CLI?",
+    "faq1a": "No. The San Luis Way CLI is completely free and requires no API keys, accounts, or tokens. Just run the command and get data.",
+    "faq2q": "What data can I access through the CLI?",
+    "faq2a": "Events, places (restaurants, cafes, bars, museums), guides, outdoor activities, cultural sites, weather, news, and exchange rates — all for San Luis Potosi.",
+    "faq3q": "Can I use the CLI output in scripts and automation?",
+    "faq3a": "Yes. Add --json to any command to get structured JSON output that you can pipe into jq, parse in scripts, or feed into other tools.",
+    "faq4q": "How is this different from the MCP server?",
+    "faq4a": "The CLI gives you direct terminal access for scripts and automation. The MCP server integrates into AI assistants for natural language queries. Both access the same data."
+  },
+  "nomadGuide": {
+    "meta": {
+      "title": "Digital Nomad Guide to San Luis Potosí | Remote Work in Mexico",
+      "description": "Everything digital nomads need to know about San Luis Potosí: coworking spaces, internet speeds, cost of living, visa options, neighborhoods and lifestyle."
+    },
+    "breadcrumb": "Digital Nomad Guide",
+    "hero": {
+      "title": "Work Remotely from San Luis Potosí",
+      "subtitle": "Affordable living, fast internet, rich culture — discover why SLP is Mexico's best-kept secret for digital nomads."
+    },
+    "nav": {
+      "title": "In This Guide",
+      "whySlp": "Why SLP",
+      "coworking": "Coworking & Cafes",
+      "internet": "Internet",
+      "costOfLiving": "Cost of Living",
+      "visas": "Visas",
+      "neighborhoods": "Neighborhoods",
+      "healthcare": "Healthcare",
+      "lifestyle": "Lifestyle",
+      "faq": "FAQ"
+    },
+    "whySlp": {
+      "title": "Why San Luis Potosí for Remote Work?",
+      "intro": "San Luis Potosí combines affordability, safety, culture and connectivity in a way few Mexican cities can match. Central timezone (CST/CDT), direct flights to the US, and a cost of living 60-70% lower than comparable US cities.",
+      "timezone": {
+        "title": "US-Aligned Timezone",
+        "description": "CST/CDT — same as Chicago, Dallas and Houston. Perfect for US-based clients and teams."
+      },
+      "safety": {
+        "title": "Safe & Walkable",
+        "description": "One of Mexico's safest mid-size cities. The historic center and residential areas are well-maintained and walkable."
+      },
+      "cost": {
+        "title": "Low Cost of Living",
+        "description": "Live comfortably on $1,000-$1,500 USD/month. Enjoy a quality of life that would cost 3x in the US."
+      },
+      "culture": {
+        "title": "Rich Cultural Scene",
+        "description": "Baroque architecture, year-round festivals, world-class gastronomy and a welcoming local community."
+      }
+    },
+    "coworking": {
+      "title": "Coworking Spaces & WiFi Cafes",
+      "intro": "SLP has a growing number of work-friendly cafes and coworking spaces with reliable WiFi, power outlets and comfortable seating. Most offer day passes or monthly memberships.",
+      "cta": "Browse Remote Work Cafes"
+    },
+    "internet": {
+      "title": "Internet & Connectivity",
+      "intro": "Fiber optic internet is widely available in SLP. Most neighborhoods have access to 100+ Mbps, and many cafes offer 50-100 Mbps. Mobile data coverage (4G/5G) is strong with Telcel, AT&T Mexico and Movistar.",
+      "provider": "Provider",
+      "speed": "Speed",
+      "price": "Price"
+    },
+    "costOfLiving": {
+      "title": "Cost of Living Breakdown",
+      "intro": "San Luis Potosí is one of the most affordable cities in central Mexico. Here's a realistic monthly budget for a digital nomad living comfortably.",
+      "category": "Category",
+      "range": "Monthly (USD)",
+      "cta": "Full Living Guide"
+    },
+    "visas": {
+      "title": "Visa Options for Nomads",
+      "intro": "Mexico is one of the easiest countries for remote workers. You don't need a work visa to work remotely for a foreign employer — the key distinction is that you're not employed by a Mexican company."
+    },
+    "neighborhoods": {
+      "title": "Best Neighborhoods for Nomads",
+      "intro": "Your neighborhood choice depends on your lifestyle. Here are the top three for remote workers.",
+      "lomas": {
+        "name": "Lomas",
+        "description": "Modern, safe, walkable. Close to restaurants, gyms and malls. Popular with expats and professionals."
+      },
+      "centro": {
+        "name": "Centro Histórico",
+        "description": "Colonial charm, cafes at every corner, cultural venues. Best for those who want to be in the heart of the action."
+      },
+      "tangamanga": {
+        "name": "Tangamanga Area",
+        "description": "Quiet, green, near Mexico's largest urban park. Great for runners, cyclists and nature lovers."
+      },
+      "cta": "Full Neighborhoods Guide"
+    },
+    "healthcare": {
+      "title": "Healthcare for Nomads",
+      "intro": "Private healthcare in SLP is affordable and high-quality. A doctor's visit costs $30-$50 USD, and major hospitals like Hospital Lomas and Hospital Angeles have English-speaking staff.",
+      "cta": "Full Health Guide"
+    },
+    "lifestyle": {
+      "title": "Life Outside Work",
+      "intro": "SLP offers plenty to do on your off-hours — from hiking and weekend getaways to museums and live music.",
+      "outdoors": "Outdoor Activities",
+      "getaways": "Weekend Getaways",
+      "culture": "Cultural Attractions",
+      "cafes": "Best Cafes for Work"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions"
+    }
+  },
+  "visitGuide": {
+    "meta": {
+      "title": "Visit San Luis Potosí — Travel Guide | Things to Do & See",
+      "description": "Plan your trip to San Luis Potosí, Mexico. Top attractions, 48-hour itinerary, food guide, day trips to Huasteca Potosina, and practical travel tips."
+    },
+    "breadcrumb": "Visit San Luis Potosí",
+    "hero": {
+      "title": "Visit San Luis Potosí",
+      "subtitle": "Colonial charm, natural wonders and world-class gastronomy — discover one of Mexico's most beautiful and authentic cities."
+    },
+    "nav": {
+      "title": "In This Guide",
+      "attractions": "Top Attractions",
+      "itinerary": "48-Hour Itinerary",
+      "food": "Food & Dining",
+      "dayTrips": "Day Trips",
+      "culture": "Cultural Experiences",
+      "gettingHere": "Getting Here",
+      "bestTime": "Best Time to Visit",
+      "faq": "FAQ"
+    },
+    "attractions": {
+      "title": "Top Attractions",
+      "intro": "San Luis Potosí's historic center is a treasure trove of baroque and neoclassical architecture, grand plazas and world-class museums.",
+      "centro": "Centro Histórico",
+      "centroDesc": "Walk through colonial plazas, baroque churches, and pedestrian streets. The heart of the city and a candidate for UNESCO World Heritage status.",
+      "tangamanga": "Parque Tangamanga",
+      "tangamangaDesc": "One of Mexico's largest urban parks with 57 hectares of trails, lakes, sports facilities and botanical gardens.",
+      "museums": "Museums & Galleries",
+      "museumsDesc": "From the Museo Nacional de la Máscara to the Centro de las Artes — SLP has over 20 museums to explore.",
+      "history": "Historical Heritage",
+      "historyDesc": "Discover 400+ years of history from colonial silver mining to the Mexican Revolution."
+    },
+    "itinerary": {
+      "title": "48-Hour Itinerary",
+      "morning": "Morning",
+      "afternoon": "Afternoon",
+      "evening": "Evening",
+      "day1": {
+        "title": "Day 1 — Historic Center & Culture",
+        "morning": "Start at Plaza de Armas, visit the Cathedral and Palacio de Gobierno. Coffee at a terrace cafe on Plaza del Carmen.",
+        "afternoon": "Museo Nacional de la Máscara, walk Calle Zaragoza, explore Plaza de los Fundadores and Templo del Carmen.",
+        "evening": "Dinner at a traditional Potosino restaurant. Try enchiladas potosinas and asado de boda."
+      },
+      "day2": {
+        "title": "Day 2 — Parks, Markets & Food",
+        "morning": "Parque Tangamanga for a morning walk or run. Visit the botanical garden and lake.",
+        "afternoon": "Mercado Hidalgo for street food and local shopping. Head to Calzada de Guadalupe for the scenic walk.",
+        "evening": "Explore the cantina scene or catch live music. End with mezcal at a rooftop bar."
+      }
+    },
+    "food": {
+      "title": "Food & Dining",
+      "intro": "Potosino cuisine is one of Mexico's best-kept culinary secrets. From enchiladas potosinas to gorditas and craft mezcal, the food scene is vibrant and affordable.",
+      "restaurants": "Restaurant Directory",
+      "foodie": "Foodie Guide",
+      "traditional": "Traditional Cuisine",
+      "breakfast": "Breakfast Spots",
+      "markets": "Farmers Markets",
+      "festivals": "Food Festivals"
+    },
+    "dayTrips": {
+      "title": "Day Trips & Weekend Getaways",
+      "intro": "Some of Mexico's most spectacular natural wonders are within a few hours of SLP.",
+      "huasteca": {
+        "name": "Huasteca Potosina",
+        "description": "Turquoise waterfalls, jungle rivers, and surreal natural pools. Mexico's adventure paradise.",
+        "distance": "4-5 hours east"
+      },
+      "realDeCatorce": {
+        "name": "Real de Catorce",
+        "description": "Ghost town turned magic pueblo. Arrive through a 2.3km tunnel into a mystical desert landscape.",
+        "distance": "3 hours north"
+      },
+      "xilitla": {
+        "name": "Xilitla & Las Pozas",
+        "description": "Edward James' surrealist garden in the jungle. A dreamlike sculpture park hidden in the Sierra Madre.",
+        "distance": "5 hours east"
+      },
+      "cta": "All Weekend Getaways"
+    },
+    "culture": {
+      "title": "Cultural Experiences",
+      "intro": "SLP has one of Mexico's richest cultural calendars, from colonial-era festivals to contemporary art.",
+      "festivals": "Festivals & Celebrations",
+      "music": "Music & Dance",
+      "culinary": "Culinary Traditions",
+      "events": "Upcoming Events"
+    },
+    "gettingHere": {
+      "title": "Getting Here & Around",
+      "byAir": {
+        "title": "By Air",
+        "description": "Ponciano Arriaga International Airport (SLP) has direct flights from Mexico City (VivaAerobus, Volaris), Monterrey, Dallas, Houston and Chicago. The airport is 15 minutes from downtown."
+      },
+      "byBus": {
+        "title": "By Bus",
+        "description": "First-class buses (Primera Plus, ETN) connect SLP to Mexico City (4-5 hrs), Querétaro (3 hrs), Guadalajara (4 hrs) and Monterrey (5 hrs). The central bus station is modern and well-connected."
+      }
+    },
+    "bestTime": {
+      "title": "Best Time to Visit",
+      "intro": "SLP has a semi-arid climate with warm days and cool nights. The city sits at 1,850m elevation, keeping temperatures comfortable year-round.",
+      "octDec": {
+        "title": "Oct – Dec",
+        "description": "Ideal weather (18-25°C). Día de Muertos celebrations, holiday markets, and Festival de Luz."
+      },
+      "janMar": {
+        "title": "Jan – Mar",
+        "description": "Cool and dry (12-22°C). Carnival in February, Holy Week processions in March/April."
+      },
+      "aprJun": {
+        "title": "Apr – Jun",
+        "description": "Warm (22-32°C). Festival de San Luis in June, spring cultural season."
+      },
+      "julSep": {
+        "title": "Jul – Sep",
+        "description": "Rainy season, afternoon showers (20-28°C). FENAPO — the biggest festival — in August."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions"
+    }
+  },
+  "affiliate": {
+    "disclosure": "Affiliate link",
+    "disclosureLong": "Affiliate link — we may earn a commission at no extra cost to you.",
+    "cta": "View on Mercado Libre",
+    "sectionTitle": "Essentials for San Luis Potosí",
+    "sectionSubtitle": "Gear and home items our community recommends for life and adventure in SLP.",
+    "products": {
+      "brita": {
+        "title": "Brita Metro water filter pitcher",
+        "description": "Clean drinking water at home — a must-have setup item for expats arriving in Mexico."
+      },
+      "termo": {
+        "title": "Stanley Quencher H2.0 40oz insulated tumbler",
+        "description": "Viral for a reason — keeps water icy for 11+ hours. Perfect for hikes, coworking, and long drives."
+      },
+      "columbia": {
+        "title": "Columbia men's hiking trail shoes",
+        "description": "Trail-ready grip for Real de Catorce, Huasteca Potosina, and Sierra de San Miguelito."
+      },
+      "mochila": {
+        "title": "Tactical hydration backpack 3L",
+        "description": "Hands-free hydration for long days at Cascadas de Tamul, Sierra trails, or biking."
+      },
+      "dubery": {
+        "title": "Dubery D620 polarized sunglasses UV400",
+        "description": "SLP sits at 1,860m — full UV protection matters. Polarized lenses cut desert glare."
+      },
+      "sandalias": {
+        "title": "All-terrain water sandals",
+        "description": "Grip wet stone at Media Luna, Puente de Dios, and Huasteca waterfalls without slipping."
+      },
+      "levoit": {
+        "title": "Levoit HEPA air purifier",
+        "description": "SLP is dry and dusty. A HEPA purifier helps expats avoid respiratory issues in the first months."
+      },
+      "blackdiamond": {
+        "title": "Black Diamond Storm 500-R headlamp",
+        "description": "Rechargeable, 500 lumens, water-resistant. Essential for camping Real de Catorce or night treks."
+      }
+    }
+  },
+  "tangamanga2": {
+    "seo": {
+      "title": "Parque Tangamanga II: SLP's Sports Park Guide 2026",
+      "description": "189 ha built over SLP's old airport. Archery, auto racing track, sports courts, pet zone, running loops. Hours, directions, what to do — complete guide.",
+      "keywords": "parque tangamanga 2, parque tangamanga ii, tangamanga ii san luis potosi, pista tangamanga, tiro con arco tangamanga, parque deportivo slp"
+    },
+    "title": "Parque Tangamanga II",
+    "subtitle": "San Luis Potosí's sports park — 189 hectares over the city's old airport. Archery, auto racing, running tracks, pet zone.",
+    "hero": {
+      "badge": "Sports Park",
+      "size": "189 ha",
+      "admission": "Free",
+      "year": "Since 1985"
+    },
+    "quickFacts": {
+      "title": "Quick Facts",
+      "location": "South-west SLP, over the old airport runway",
+      "address": "Av. Salvador Nava Martínez, Fracc. Tangamanga",
+      "phone": "+52 (444) 811 5396",
+      "inaugurated": "1985 — 40th anniversary in 2025",
+      "hours": "Tue–Sun 5:30 AM–7 PM, Mon 5:30–11 AM"
+    },
+    "history": {
+      "title": "A Park Built on a Runway",
+      "body": "Parque Tangamanga II opened in 1985 on the site of San Luis Potosí's original municipal airport. When the state relocated the airport to its current location on the Mexico City highway, the old runway and terminal apron were reclaimed as an urban green space dedicated to sport and recreation. The long, flat geometry of the former runway made it ideal for running loops, cycling circuits, and an auto racing track — features that define Tangamanga II's identity to this day."
+    },
+    "attractions": {
+      "title": "Main Attractions",
+      "archeryTitle": "Archery Club",
+      "archeryDesc": "Home to Club de Tiro con Arco Tangamanga, one of Mexico's most active archery venues. Open practice fields plus coaching for beginners and competitors.",
+      "racingTitle": "Auto Racing Track",
+      "racingDesc": "Asphalt racing circuit hosting regional and national series events. The only permanent racing venue in the city.",
+      "sportsTitle": "Sports Courts",
+      "sportsDesc": "Soccer fields, basketball courts, tennis courts, volleyball, and a running track. Free to use, first-come first-served.",
+      "petTitle": "Pet Zone",
+      "petDesc": "Fenced off-leash area with agility equipment. One of few dog-friendly zones of its size in central Mexico.",
+      "kidsTitle": "Kids Zone",
+      "kidsDesc": "Playgrounds, open lawns for games, and seasonal family events. Popular for weekend birthday parties.",
+      "runningTitle": "Running Loops",
+      "runningDesc": "Flat, shaded loops of 1km, 2.5km, and 5km using the former runway and perimeter paths. Favorite among local marathoners."
+    },
+    "compare": {
+      "title": "Should I visit Tangamanga I or Tangamanga II?",
+      "body": "If it's your first time in San Luis Potosí, go to Tangamanga I — the bigger park with the zoo, planetarium, and gardens. Pick Tangamanga II if you're running, training a sport, bringing a pet, or watching a motorsport event.",
+      "cta": "See Tangamanga I guide"
+    },
+    "faq": {
+      "title": "FAQ — Parque Tangamanga II",
+      "q1": "Is Parque Tangamanga II free?",
+      "a1": "Yes. Entry to the park and use of the public courts and running loops is free. Some specific clubs (archery academy, auto racing events) charge their own fees.",
+      "q2": "What are Tangamanga II's hours?",
+      "a2": "Tuesday to Sunday 5:30 AM to 7 PM (last entry 6 PM). Monday 5:30–11 AM only — reduced hours for maintenance.",
+      "q3": "Where exactly is Parque Tangamanga II?",
+      "a3": "South-west San Luis Potosí, off Av. Salvador Nava Martínez. It was built over the old municipal airport, so it sits on what used to be the runway and terminal apron.",
+      "q4": "Can I do archery at Tangamanga II?",
+      "a4": "Yes. Club de Tiro con Arco Tangamanga offers open practice and beginner lessons. Contact them directly via their Facebook page for current schedule and rates.",
+      "q5": "Is it safe to run at Tangamanga II at dawn?",
+      "a5": "Yes. Tangamanga II is popular with runners precisely because it's well-lit and monitored from 5:30 AM. Weekend mornings are the busiest and safest.",
+      "q6": "Is Parque Tangamanga II bigger or smaller than Tangamanga I?",
+      "a6": "Tangamanga II (189 ha) is smaller than Tangamanga I (411 ha). But Tangamanga II is still the second-largest green space in San Luis Potosí city and is dedicated specifically to sports and athletics.",
+      "q7": "What sports can I do at Parque Tangamanga II?",
+      "a7": "Tangamanga II offers: archery (Club de Tiro con Arco Tangamanga), auto racing (permanent circuit), soccer, basketball, tennis, volleyball, running, cycling, and walking. Most public courts are free; specialty clubs (archery academy, racing events) charge their own fees.",
+      "q8": "How do I get to Parque Tangamanga II by car or transit?",
+      "a8": "By car: Av. Salvador Nava Martínez, Fracc. Tangamanga, postal code 78260. Free parking at multiple gates. By transit: city bus routes serving Av. Salvador Nava stop near the main gates; rideshare drops visitors at any entrance."
+    },
+    "quickAnswer": {
+      "title": "Parque Tangamanga II at a glance",
+      "definition": "Parque Tangamanga II is a 189-hectare sports-focused public park in San Luis Potosí, Mexico. It was built in 1985 on the site of the city's original municipal airport. The park specializes in sports infrastructure — archery, auto racing, running loops, soccer fields, tennis, basketball, and a dedicated off-leash pet zone. Entry is free.",
+      "keyFactsTitle": "Key facts",
+      "keyFacts": [
+        "Size: 189 hectares (467 acres) — second-largest green space in SLP",
+        "Admission: free",
+        "Hours: Tuesday–Sunday 5:30 AM–7 PM · Monday 5:30–11 AM",
+        "Location: south-west SLP, Av. Salvador Nava Martínez",
+        "Built: 1985 — over the city's old municipal airport",
+        "40th anniversary: 2025",
+        "Main attractions: archery club, auto racing track, sports courts, pet zone, kids zone, running loops"
+      ],
+      "lastVerified": "Last verified by San Luis Way editorial team: April 17, 2026"
+    },
+    "sources": {
+      "title": "Sources used on this page",
+      "items": [
+        "CECURT — official park operator (cecurt.slp.gob.mx)",
+        "Club de Tiro con Arco Tangamanga — archery facility (Facebook page)",
+        "Líder Empresarial — 40th anniversary coverage (2025)",
+        "Municipal records — San Luis Potosí city archives"
+      ]
+    }
+  }
+}
