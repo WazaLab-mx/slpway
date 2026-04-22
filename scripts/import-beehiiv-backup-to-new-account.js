@@ -75,11 +75,16 @@ function buildPayload(sub) {
     .filter((cf) => cf && cf.name)
     .map((cf) => ({ name: cf.name, value: cf.value ?? '' }));
 
+  // WARNING: do NOT add `double_opt_override: 'on'` here. Beehiiv's naming is
+  // inverted — 'on' forces double opt-in to be REQUIRED for this subscriber,
+  // even when the publication has DOI disabled. That's how we ended up with
+  // 826 stuck-pending subs on 2026-04-21. With DOI off at the publication
+  // level (the correct setting for migrations of already-confirmed lists),
+  // omitting this field lets subs transition validating → active as expected.
   return {
     email: sub.email.toLowerCase().trim(),
     reactivate_existing: true,
     send_welcome_email: false,
-    double_opt_override: 'on',   // these are already confirmed opt-ins
     utm_source: sub.utm_source || 'beehiiv_migration',
     utm_medium: sub.utm_medium || '',
     utm_campaign: sub.utm_campaign || '',

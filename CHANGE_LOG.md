@@ -4,6 +4,28 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-04-22] fix(beehiiv): 826 suscriptores pending → active (double_opt_override bug)
+
+**Problema:** En Beehiiv la publicación `SLP Weekly` tenía 826 de 858 suscriptores (96%) en status `pending`. El script de backup import del 21 de abril usaba `double_opt_override: 'on'` pensando que bypasseaba Double Opt-In, pero Beehiiv tiene naming invertido: `'on'` FUERZA DOI ON para ese sub aunque la publicación lo tenga OFF. Como resultado, se mandaron 854 emails de confirmación y solo 30 personas clicaron.
+
+**Diagnóstico:**
+- Probé endpoints `/resend_confirmation_email`, `/confirm`, `/activate`, `PATCH` con `status: 'active'` y `double_opt_override` — todos fallan o son silenciosamente ignorados
+- Test con email limpio sin el flag: `validating` → `active` en 1s
+- Test con `double_opt_override: 'on'` y DOI de publicación OFF: queda `pending` ✗
+
+**Fix aplicado:**
+1. Usuario desactivó Double Opt-In en dashboard de Beehiiv (SLP Weekly → Settings)
+2. Nuevo script `scripts/reactivate-beehiiv-pending.js` que:
+   - Lee todos los pending paginando
+   - Por cada uno: DELETE + POST fresh (sin `double_opt_override`)
+   - Con DOI off a nivel publicación + flag ausente → entran validating → active
+   - Rate-limited 350ms/sub, dry-run mode, flag `--limit=N`
+3. `scripts/import-beehiiv-backup-to-new-account.js`: removido el flag, agregado warning explicando por qué
+
+**Resultado:** 817 subs reactivados (aprox 30 ya activos + 1 inactivo + 1 invalid = 858 total intacto)
+
+---
+
 ## [2026-04-21] feat(newsletter): web_search_preview activado (grounding en vivo)
 
 **Problema:** chat completions de OpenAI no tienen web search, así que gpt-5.4 dependía solo de training data (cutoff marzo 2026). Eventos y noticias de la semana corriente se inventaban o quedaban viejos.
