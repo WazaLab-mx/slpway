@@ -163,7 +163,7 @@ async function fetchNewsWithClaude(): Promise<{ communityNews: CommunityNews[], 
         'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
+        model: 'claude-sonnet-4-6',
         max_tokens: 4000,
         tools: [{
           type: 'web_search_20250305',
@@ -231,11 +231,11 @@ Genera exactamente 3 communityNews y 5 headlines. NO cambies los nombres de los 
 
     const data = await response.json();
 
-    // Find the text content (may be after tool uses)
+    // Concatenate all text blocks (tool_use and text blocks can be interleaved)
     let content = '';
     for (const block of data.content || []) {
       if (block.type === 'text') {
-        content = block.text;
+        content += block.text;
       }
     }
 
