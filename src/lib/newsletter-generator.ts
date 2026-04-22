@@ -107,39 +107,61 @@ Retrieved at: ${new Date().toISOString()}
 }
 
 /**
- * Hard deny-list of businesses / venues in SLP that no longer exist or must
- * never be recommended. LLM training data keeps surfacing these as if they
- * were still open. Extend as new cases come up.
+ * Build a "business operating status" verification block anchored to the
+ * authoritative current date. Every section that names a specific business
+ * (store, restaurant, market, venue) must search for proof it is still
+ * operating in the current month — training data is NOT trusted because
+ * places close and old mentions persist in the LLM's knowledge.
+ *
+ * The `now` argument MUST be the already-anchored authoritative time
+ * (from fetchAuthoritativeNow), not a fresh `new Date()` — otherwise the
+ * verification month can drift from the rest of the prompt.
  */
-export const FORBIDDEN_BUSINESSES: Array<{ name: string; reason: string }> = [
-  {
-    name: 'City Market Plaza San Luis',
-    reason: 'Cerró hace años — ya no existe en SLP. NUNCA recomendar para comida internacional ni productos importados.',
-  },
-];
-
-/**
- * Build a prompt block that lists forbidden businesses and the verification
- * rule. Injected into every generation prompt so sections like Pro Tip,
- * Community Spotlight, and Spot of the Week can't reintroduce stale places.
- */
-export function renderForbiddenBusinessesBlock(): string {
-  const list = FORBIDDEN_BUSINESSES
-    .map(b => `    - ❌ "${b.name}" — ${b.reason}`)
-    .join('\n');
+export function renderBusinessVerificationBlock(now: Date): string {
+  const currentMonthEn = format(now, 'MMMM');
+  const currentYear = now.getFullYear();
+  const monthsInSpanish: Record<string, string> = {
+    January: 'enero', February: 'febrero', March: 'marzo', April: 'abril',
+    May: 'mayo', June: 'junio', July: 'julio', August: 'agosto',
+    September: 'septiembre', October: 'octubre', November: 'noviembre', December: 'diciembre',
+  };
+  const currentMonthEs = monthsInSpanish[currentMonthEn] || currentMonthEn.toLowerCase();
 
   return `
-    🚫 BUSINESSES / VENUES THAT NO LONGER EXIST — NEVER RECOMMEND:
-${list}
+    🏪 BUSINESS / VENUE VERIFICATION — HARD REQUIREMENT
+    Anchor month for this newsletter: ${currentMonthEn} ${currentYear} (es: ${currentMonthEs})
 
-    🔎 VERIFICATION RULE FOR ANY SPECIFIC BUSINESS NAME:
-    Before recommending a specific business (store, restaurant, café, gym, etc.),
-    you MUST find a verifiable recent mention (within the current month, via
-    Google Search) confirming it is currently operating. If you cannot verify
-    it is open, use a category description instead of a specific name:
-    - ✅ "un supermercado grande en Lomas con sección de productos importados"
-    - ❌ inventing a specific store name from memory
-    LLM training data from 2023-2024 is NOT sufficient — places close.
+    Before naming ANY specific business (supermercado, tienda, restaurante,
+    café, bar, gimnasio, mercado, plaza, museo, venue, hotel, agencia, etc.),
+    you MUST run a Google Search proving it is OPEN AND OPERATING this month.
+
+    REQUIRED SEARCH PATTERNS (run at least one, adjust for the business type):
+    - "<business name> San Luis Potosí ${currentMonthEs} ${currentYear}"
+    - "<business name> horarios ${currentYear}"
+    - "<business name> reseñas ${currentYear}"
+    - "<business name> SLP ${currentMonthEs} ${currentYear}"
+
+    ACCEPT the business only if the search returns AT LEAST ONE of:
+    ✅ A review, post, photo, or news article dated within the last 90 days
+    ✅ A current Google Maps / Google Business listing marked as open
+    ✅ An active social media post (Instagram/Facebook) from this year
+    ✅ A news article from ${currentMonthEn} ${currentYear} or the month prior
+
+    REJECT (do not mention) if:
+    ❌ Search returns only articles from 2023 or earlier
+    ❌ Search returns explicit mentions of "cerró", "cerrado", "closed",
+       "ya no existe", "out of business", or a liquidation notice
+    ❌ Google Maps shows "Permanently closed" / "Cerrado permanentemente"
+    ❌ You cannot find ANY recent evidence it is still operating
+    ❌ You are recalling the business from training data without a live search hit
+
+    WHEN UNVERIFIED — FALL BACK TO CATEGORY, NEVER INVENT:
+    - ✅ "un supermercado grande en Lomas con sección internacional"
+    - ✅ "cualquier sucursal grande de Soriana, Chedraui o Walmart en SLP"
+    - ❌ inventing "City Market Plaza San Luis" or any store name from memory
+
+    This rule OVERRIDES anything your training data says about SLP businesses.
+    Places close all the time — only live search results count.
 `;
 }
 
@@ -1785,7 +1807,7 @@ Overall Summary: ${weatherForecast.summary}
     - ✅ "eventos San Luis Potosí México ${spanishMonth} ${currentYear}"
     - ✅ "noticias SLP ${spanishMonth} ${currentYear}"
     - ❌ "eventos San Luis Potosí" (without date = old results)
-${renderForbiddenBusinessesBlock()}
+${renderBusinessVerificationBlock(dates.weekStartDate)}
     ═══════════════════════════════════════════════════════════
     VOICE & TONE GUIDE
     ═══════════════════════════════════════════════════════════

@@ -6,7 +6,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { format, addDays } from 'date-fns';
 import { fetchWeatherForecast } from './api/dashboard-data';
-import { fetchAuthoritativeNow, fetchUsdMxnForPrompt, renderForbiddenBusinessesBlock } from './newsletter-generator';
+import { fetchAuthoritativeNow, fetchUsdMxnForPrompt, renderBusinessVerificationBlock } from './newsletter-generator';
 
 // Helper to get current dates for prompts
 function getCurrentDates(now: Date = new Date()) {
@@ -626,7 +626,7 @@ You are the editor of "San Luis Way Weekly", a newsletter for expats and locals 
 ║  ❌ NOT Arizona, California, Texas, or any US location                   ║
 ║  💰 Prices in MXN (Mexican pesos) | 📞 Phone numbers start with +52     ║
 ╚══════════════════════════════════════════════════════════════════════════╝
-${renderForbiddenBusinessesBlock()}
+${renderBusinessVerificationBlock(authoritativeNow)}
 ${prompt}
 
 Current section being replaced:
