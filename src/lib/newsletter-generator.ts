@@ -106,37 +106,6 @@ Retrieved at: ${new Date().toISOString()}
   }
 }
 
-/**
- * Small prompt block that asks the generator to verify every named business
- * via a dated Google Search before recommending it. Anchored to the
- * authoritative month/year so search queries stay pinned to the real date.
- *
- * Pass the authoritative `now` (from fetchAuthoritativeNow) — not
- * `new Date()` — to keep this aligned with the rest of the prompt.
- */
-export function renderBusinessVerificationBlock(now: Date): string {
-  const currentMonthEn = format(now, 'MMMM');
-  const currentYear = now.getFullYear();
-  const monthsInSpanish: Record<string, string> = {
-    January: 'enero', February: 'febrero', March: 'marzo', April: 'abril',
-    May: 'mayo', June: 'junio', July: 'julio', August: 'agosto',
-    September: 'septiembre', October: 'octubre', November: 'noviembre', December: 'diciembre',
-  };
-  const currentMonthEs = monthsInSpanish[currentMonthEn] || currentMonthEn.toLowerCase();
-
-  return `
-    🏪 BUSINESS CHECK (applies to every specific place you name — store,
-    restaurant, café, bar, gym, market, venue, hotel, etc.):
-    Only name a business when your Google Search returns a dated result from
-    ${currentMonthEn} ${currentYear} or the prior month (review, social post,
-    news article, or a current Google Maps listing). If you can't find recent
-    evidence it's still operating, describe by category instead — e.g.
-    "un supermercado grande en Lomas con sección internacional" rather than
-    a specific store name. SLP businesses close often; don't rely on
-    training-data memory alone.
-`;
-}
-
 // Initialize Gemini with SEARCH GROUNDING
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY!);
 const model = genAI.getGenerativeModel({
@@ -1779,7 +1748,7 @@ Overall Summary: ${weatherForecast.summary}
     - ✅ "eventos San Luis Potosí México ${spanishMonth} ${currentYear}"
     - ✅ "noticias SLP ${spanishMonth} ${currentYear}"
     - ❌ "eventos San Luis Potosí" (without date = old results)
-${renderBusinessVerificationBlock(dates.weekStartDate)}
+
     ═══════════════════════════════════════════════════════════
     VOICE & TONE GUIDE
     ═══════════════════════════════════════════════════════════
