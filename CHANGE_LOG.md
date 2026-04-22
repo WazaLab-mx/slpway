@@ -4,6 +4,33 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-04-21] feat(newsletter): OpenAI gpt-5.4 como generador primario
+
+**Problema:** Gemini 2.0 Flash seguía haciendo refuse ("I can't assist with this request as it requires generating HTML content with specific real-time details") cada vez que el prompt se endurecía con reglas de verificación. El bloque de verificación fue revertido (commit `658f4bc`) para restaurar el generador, pero el problema de fondo persistía: Gemini es frágil ante reglas estrictas.
+
+**Fix aplicado (commit `5e52bbc`):**
+- OpenAI `gpt-5.4` ahora es el generador primario (antes era Gemini)
+- Gemini 2.0 Flash queda como fallback (mantiene `googleSearch` grounding por si se necesita)
+- Aplicado en ambos flujos: generador semanal completo Y regeneración por-sección
+- `max_tokens` → `max_completion_tokens` (requisito de GPT-5)
+- Detección de refusals cortos ("sorry / can't assist") marca el response como fallido y dispara el fallback
+- Validación de API key cambia prioridad: `OPENAI_API_KEY` primero, `GOOGLE_API_KEY` como opcional
+
+**Trade-off:** chat completions de OpenAI no tienen web search nativo, así que el contenido que dependía del grounding de Gemini (eventos, noticias) ahora depende del training data de gpt-5.4 (cutoff marzo 2026 — bastante fresco). Si aparecen eventos inventados, se puede:
+1. Agregar el tool `web_search_preview` de OpenAI
+2. Swap a `gpt-5-search-api` (tiene search nativo, probado que devuelve noticias de abril 2026 con citas)
+3. Inyectar eventos desde la tabla `events` de Supabase directamente al prompt
+
+---
+
+## [2026-04-21] revert(newsletter): Remueve verification block (gatillaba refusal de Gemini)
+
+**Problema:** Los 3 intentos de agregar un bloque de verificación de negocios al prompt (deny-list, HARD REQUIREMENT, guideline suavizado) gatillaban que Gemini 2.0 Flash retornara refusals.
+
+**Fix (commit `658f4bc`):** remove completo del helper `renderBusinessVerificationBlock` y ambas inyecciones. El generador volvió al estado funcional pre-intervención.
+
+---
+
 ## [2026-04-21] fix(newsletter): Verificación live-search de negocios (reemplaza deny-list)
 
 **Problema:** El generador de newsletter seguía recomendando "City Market Plaza San Luis" (cerró hace años) para comprar comida internacional. La información desactualizada venía del training data del LLM (Gemini 2.0 Flash con Google Search grounding), y el grounding por sí solo no bastaba.
