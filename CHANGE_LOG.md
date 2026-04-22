@@ -4,6 +4,32 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-04-21] fix(news): Cron de noticias SLP usaba defaults hardcoded
+
+**Problema:** La barra de "SLP News" en el homepage mostraba los mismos 5 titulares todos los días (BMW, pavimentación, UASLP, Turismo, SEDECO). El cron corría a las 7am MX pero Claude web_search fallaba silenciosamente.
+
+**Causas encontradas:**
+1. API key de Anthropic sin saldo → `400 credit balance too low` → fallback a `getDefaultHeadlines()`
+2. Modelo obsoleto: `claude-sonnet-4-20250514` (mayo 2025)
+3. Bug en `src/pages/api/cron/update-headlines.ts:239` — `content = block.text` sobrescribía en lugar de concatenar text blocks post tool_use
+4. GitHub Actions workflow `daily-news-update.yml` con 0 runs (solo el Netlify scheduled function está activo)
+
+**Fixes aplicados (commit `1730675`):**
+- Modelo actualizado a `claude-sonnet-4-6` en:
+  - `src/pages/api/cron/update-headlines.ts`
+  - `netlify/functions/scheduled-news-update.js`
+  - `scripts/update-news-now.js`
+- Bug de concatenación corregido (`content +=` en vez de `content =`)
+- Ejecutado `node scripts/update-news-now.js` para poblar Supabase con noticias reales inmediatamente
+
+**Resultado:** 5 headlines reales + 3 community news reales en `news_headlines` y `community_news` (MetroRed Riviera Huasteca, renovación Circuito Tének, oficina económica SLP-Alemania, etc.)
+
+**Pendientes opcionales (no implementados):**
+- Decidir si eliminar el workflow GH Actions redundante o configurar secrets
+- Agregar alerta/log cuando Claude falla en vez de silenciar con defaults
+
+---
+
 ## [2026-04-20] chore: Beehiiv import — leads (26).csv
 
 **Descripcion:** Import semanal de leads a Beehiiv usando skill `/import-leads`.
