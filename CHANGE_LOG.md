@@ -4,6 +4,21 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-04-21] feat(newsletter): web_search_preview activado (grounding en vivo)
+
+**Problema:** chat completions de OpenAI no tienen web search, así que gpt-5.4 dependía solo de training data (cutoff marzo 2026). Eventos y noticias de la semana corriente se inventaban o quedaban viejos.
+
+**Fix aplicado (commit `f414bb6`):**
+- Cambio de `openai.chat.completions.create` → `openai.responses.create` con `tools: [{ type: 'web_search_preview' }]`
+- `gpt-5.4` ahora hace búsquedas web en vivo durante la generación
+- Aplicado en `generateWithOpenAI` (newsletter completo) y en `regenerateSection` (regeneración por-sección)
+- Cambios de API: `messages[]` → `input` (string), system prompt → `instructions`, `max_completion_tokens` → `max_output_tokens`, respuesta vía `res.output_text`
+- Gemini sigue siendo fallback
+
+**Verificación end-to-end:** prompt real disparó 3 `web_search_call` y devolvió noticias reales de abril 2026 (El País: El Partido Verde), eventos reales (Sul Tasto Ensamble en Plaza de los Fundadores), y negocio verificado vía Apple Maps. Latencia ~12s para payload pequeño.
+
+---
+
 ## [2026-04-21] feat(newsletter): OpenAI gpt-5.4 como generador primario
 
 **Problema:** Gemini 2.0 Flash seguía haciendo refuse ("I can't assist with this request as it requires generating HTML content with specific real-time details") cada vez que el prompt se endurecía con reglas de verificación. El bloque de verificación fue revertido (commit `658f4bc`) para restaurar el generador, pero el problema de fondo persistía: Gemini es frágil ante reglas estrictas.
