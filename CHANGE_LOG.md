@@ -4,6 +4,24 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-04-21] fix(newsletter): Deny-list de negocios cerrados en SLP
+
+**Problema:** El generador de newsletter seguía recomendando "City Market Plaza San Luis" (cerró hace años) para comprar comida internacional. La información desactualizada venía del training data del LLM (Gemini 2.0 Flash con Google Search grounding), y el grounding por sí solo no bastaba.
+
+**Fix aplicado (commit `c2376bb`):**
+- Nueva constante `FORBIDDEN_BUSINESSES` en `src/lib/newsletter-generator.ts` — lista de negocios cerrados/prohibidos
+- Helper `renderForbiddenBusinessesBlock()` genera un bloque de prompt con la lista + una regla de verificación
+- El bloque se inyecta en:
+  - El prompt principal del generador semanal (`SYSTEM RULES`)
+  - El prompt de regeneración por-sección en `newsletter-sections.ts`
+- Regla agregada: todo negocio mencionado debe ser verificable vía Google Search en el mes actual; si no, usar descripción por categoría ("un supermercado en Lomas") en vez de nombre específico
+
+**Para agregar más negocios cerrados:** editar el array `FORBIDDEN_BUSINESSES` con `{ name, reason }`.
+
+**El mismo commit incluye WIP previo en los archivos:** anclaje a timeapi.io, inyección del tipo de cambio real USD/MXN desde Frankfurter, variaciones del opening hook y actualización de marcadores de inserción de ads.
+
+---
+
 ## [2026-04-21] fix(news): Cron de noticias SLP usaba defaults hardcoded
 
 **Problema:** La barra de "SLP News" en el homepage mostraba los mismos 5 titulares todos los días (BMW, pavimentación, UASLP, Turismo, SEDECO). El cron corría a las 7am MX pero Claude web_search fallaba silenciosamente.
