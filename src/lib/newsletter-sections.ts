@@ -6,10 +6,10 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { format, addDays } from 'date-fns';
 import { fetchWeatherForecast } from './api/dashboard-data';
+import { fetchAuthoritativeNow, fetchUsdMxnForPrompt, renderForbiddenBusinessesBlock } from './newsletter-generator';
 
 // Helper to get current dates for prompts
-function getCurrentDates() {
-  const now = new Date();
+function getCurrentDates(now: Date = new Date()) {
   const endDate = addDays(now, 7);
 
   const currentYear = now.getFullYear();
@@ -300,9 +300,23 @@ export async function regenerateSection(
     throw new Error('GOOGLE_API_KEY is required');
   }
 
-  // Get current dates - calculated fresh each time
-  const dates = getCurrentDates();
-  console.log(`Regenerating section with dates: ${dates.todayFormatted}, range: ${dates.dateRange}`);
+  // Anchor dates to an authoritative current time (timeapi.io) so the AI
+  // operates on a verified "today", not a possibly-drifted server clock.
+  const { now: authoritativeNow, source: timeSource } = await fetchAuthoritativeNow();
+  const dates = getCurrentDates(authoritativeNow);
+  console.log(`Regenerating section [${sectionType}] anchored to ${dates.todayFormatted} (time source: ${timeSource})`);
+
+  // Fetch real USD/MXN exchange rate if regenerating market_watch.
+  // Gemini hallucinates exchange rates from training data otherwise.
+  let exchangeRateBlock = '';
+  if (sectionType === 'market_watch') {
+    console.log('Fetching real USD/MXN exchange rate for market_watch section...');
+    const usdMxn = await fetchUsdMxnForPrompt();
+    exchangeRateBlock = usdMxn
+      ? usdMxn.rateBlock
+      : '⚠️ Exchange rate API unavailable — print "Consulta Banxico" rather than fabricating a value.';
+    if (usdMxn) console.log(`USD/MXN = ${usdMxn.rateStr}`);
+  }
 
   // Fetch real weather data if regenerating weather section
   let weatherDataStr = '';
@@ -334,14 +348,35 @@ Summary: ${forecast.summary}
 
   const model = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY).getGenerativeModel({
     model: "gemini-2.0-flash",
-    generationConfig: { maxOutputTokens: 2000, temperature: 0.8 }
+    generationConfig: { maxOutputTokens: 2000, temperature: 0.95, topP: 0.95 }
   });
 
+  // Randomization seed bakes into every prompt so consecutive regenerations
+  // don't land on the exact same angle / opener / phrasing.
+  const variationSeed = `${Math.random().toString(36).slice(2, 10)}-${Date.now()}`;
+
   const prompts: Record<string, string> = {
-    opening: `Generate a new friendly opening hook for a San Luis Potosí, México newsletter.
-Write 2-3 engaging sentences that welcome readers and tease what's in this week's newsletter.
-Keep it warm, conversational, and relevant to life in SLP.
-Return ONLY the HTML for the opening paragraph (no <tr> wrapper needed, just the <p> tags).`,
+    opening: `Generate a fresh opening block for the "San Luis Way Weekly" newsletter.
+
+🎲 Variation seed (use this to pick a DIFFERENT angle than last time): ${variationSeed}
+
+Output 2-3 short paragraphs wrapped in <p style="font-size: 16px; line-height: 1.7;">...</p> tags.
+The first <p> IS the greeting. DO NOT start with "Hey there! 👋".
+
+Rotate the greeting each time — pick ONE of these (or invent a similar variant):
+- "¡Hola, potosinos!" / "¡Hola, SLP!" / "Buenos días, San Luis 👋"
+- "Happy ${dates.todayFormatted.split(',')[0]}, SLP!"
+- "Welcome back to the weekly brief."
+- A weather-forward opener ("Frosty mornings, sunny tardes — classic SLP this week.")
+- A season-forward opener ("Semana Santa is knocking — here's your week ahead.")
+- A direct lead ("Big week ahead in the city...") — no greeting, dive straight in
+- An emoji-only opener ("🌵 Back with your weekly SLP brief.")
+
+Then 1-2 sentences that tease something SPECIFIC and TIMELY this week — a real event,
+the actual weather, a holiday, a city milestone. No generic filler like "we hope you're
+doing well".
+
+Return ONLY the HTML <p> tags. No <tr>, no <td>, no code fences.`,
 
     weather: `Generate a weather section for San Luis Potosí, México.
 📅 TODAY IS: ${dates.todayFormatted}
@@ -494,10 +529,85 @@ Return the complete <tr> section HTML with warm amber styling (background #FFFBE
     comunidad: `Generate a "Comunidad" section with a community announcement or local business feature.
 Make it friendly and engaging, like a friend sharing a recommendation.
 ${context ? `Use this content as inspiration: ${context}` : 'Create a general community update.'}
-Return the complete <tr> section HTML with the 🤝 Comunidad header.`
+Return the complete <tr> section HTML with the 🤝 Comunidad header.`,
+
+    market_watch: `Generate a "Market Watch" USD/MXN snapshot for San Luis Potosí, México.
+📅 TODAY IS: ${dates.todayFormatted}
+
+🚨 ABSOLUTE RULE: Ship verified numbers only. Do NOT invent, estimate, or recall
+from memory. This section shows ONE data point: the USD/MXN exchange rate.
+
+USD/MXN EXCHANGE RATE — USE THIS EXACT VALUE (already fetched from a live API):
+${exchangeRateBlock}
+
+⛔ Do NOT search for the exchange rate. Do NOT modify the value above.
+⛔ Do NOT use any rate from your training data (e.g. ~$19 or ~$20 MXN).
+⛔ Do NOT add gasoline prices, LP gas prices, or any other number to this block.
+✅ Copy the rate above EXACTLY and display it centered and prominent.
+
+TREND NOTE (one short line below the rate):
+- Factual only, based on the rate above. No predictions, no direction claims.
+- Good: "Tipo de cambio actualizado hoy."
+- Bad: any claim about momentum or forecast.
+
+LAYOUT: One centered block — 💰 Market Watch header, the USD/MXN rate in large
+bold green text, and a small muted trend note underneath. No 3-column table.
+Return the complete <tr> section HTML with the 💰 Market Watch header.`,
+
+    spot_of_the_week: `Generate a "Spot of the Week" feature for San Luis Potosí, México.
+Feature ONE established but lesser-known place in SLP city — NOT a new opening.
+Types: scenic viewpoints, hidden courtyards, neighborhood parks, traditional market stalls,
+quiet cafés, street art corridors, lesser-known museums, artisan workshops.
+
+🎲 Variation seed (pick something DIFFERENT): ${variationSeed}
+
+Include:
+- Specific name and exact address
+- 3-4 sentences on what makes it special
+- Best time to visit
+- Approximate cost or "Free"
+
+Match the HTML structure and styling of the original.
+Return the complete <tr> section HTML with the 📍 Spot of the Week header.`,
+
+    spanish_corner: `Generate a "Spanish Corner" section teaching one useful potosino/Mexican phrase or expression.
+
+🎲 Variation seed (pick a DIFFERENT phrase than last time): ${variationSeed}
+
+Include:
+- The phrase in Spanish (bold)
+- Literal translation
+- What it actually means / when to use it
+- A short example in context
+- Pronunciation tip if it helps
+
+Topics: potosino slang, Mexican idioms, useful expat phrases, formal vs. informal usage,
+regional food vocabulary. Keep it light and actually useful.
+
+Match the HTML structure of the original section.
+Return the complete <tr> section HTML with the 🗣️ Spanish Corner header.`,
+
+    more_events: `Generate 2-3 additional events happening in San Luis Potosí, MÉXICO this week.
+
+📅 TODAY IS: ${dates.todayFormatted}
+📅 EVENTS MUST BE BETWEEN: ${dates.dateRange}
+⛔ REJECT any event from ${dates.prevMonthName1} or ${dates.prevMonthName2}
+✅ ONLY events in ${dates.currentMonth} ${dates.currentYear}
+
+These are SECONDARY picks — shorter format than the "Top Picks" above.
+Each event needs: name, date, venue + neighborhood, time, cost in MXN.
+
+Match the HTML structure of the original section.
+Return the complete <tr> section HTML.`
   };
 
-  const prompt = prompts[sectionType] || prompts['news'];
+  const prompt = prompts[sectionType];
+  if (!prompt) {
+    throw new Error(
+      `No regeneration prompt is defined for section type "${sectionType}". ` +
+      `Supported types: ${Object.keys(prompts).join(', ')}.`
+    );
+  }
 
   const fullPrompt = `
 You are the editor of "San Luis Way Weekly", a newsletter for expats and locals in San Luis Potosí, MÉXICO.
@@ -516,7 +626,7 @@ You are the editor of "San Luis Way Weekly", a newsletter for expats and locals 
 ║  ❌ NOT Arizona, California, Texas, or any US location                   ║
 ║  💰 Prices in MXN (Mexican pesos) | 📞 Phone numbers start with +52     ║
 ╚══════════════════════════════════════════════════════════════════════════╝
-
+${renderForbiddenBusinessesBlock()}
 ${prompt}
 
 Current section being replaced:
@@ -537,10 +647,15 @@ Return ONLY the raw HTML, no markdown code blocks.
     // Remove any images
     newHtml = newHtml.replace(/<img[^>]*>/gi, '');
 
+    if (!newHtml || newHtml.length < 20) {
+      throw new Error('Gemini returned empty or truncated content');
+    }
+
     return newHtml;
   } catch (error) {
     console.error('Error regenerating section:', error);
-    throw new Error('Failed to regenerate section');
+    const message = error instanceof Error ? error.message : 'Unknown error';
+    throw new Error(`Section regeneration failed: ${message}`);
   }
 }
 

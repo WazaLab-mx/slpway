@@ -2,7 +2,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import OpenAI from 'openai';
 import { createClient } from '@supabase/supabase-js';
 import { format, addDays, startOfWeek, endOfWeek } from 'date-fns';
-import { fetchWeatherForecast, WeatherForecast } from './api/dashboard-data';
+import { fetchWeatherForecast, WeatherForecast, fetchExchangeRates } from './api/dashboard-data';
 
 let supabaseClient: ReturnType<typeof createClient> | null = null;
 
@@ -19,10 +19,7 @@ function getSupabaseClient() {
   return supabaseClient;
 }
 
-export function getCurrentNewsletterDates() {
-  // Always use fresh current date/time to ensure accuracy
-  const now = new Date();
-
+export function getCurrentNewsletterDates(now: Date = new Date()) {
   // Get current time in Mexico City timezone for accurate local time
   const mexicoCityTime = new Intl.DateTimeFormat('en-US', {
     timeZone: 'America/Mexico_City',
@@ -54,6 +51,98 @@ export function getCurrentNewsletterDates() {
   };
 }
 
+/**
+ * Fetch authoritative current time from timeapi.io (zone America/Mexico_City).
+ * Falls back to the server clock if the API is unreachable. Mexico City has
+ * not observed DST since 2022, so it's UTC-6 year-round.
+ */
+export async function fetchAuthoritativeNow(): Promise<{ now: Date; source: 'timeapi.io' | 'server-clock' }> {
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000);
+    const res = await fetch(
+      'https://timeapi.io/api/Time/current/zone?timeZone=America/Mexico_City',
+      { signal: controller.signal }
+    );
+    clearTimeout(timeout);
+    if (!res.ok) throw new Error(`timeapi.io returned ${res.status}`);
+    const data = await res.json();
+    if (data && typeof data.dateTime === 'string') {
+      const parsed = new Date(`${data.dateTime}-06:00`);
+      if (!isNaN(parsed.getTime())) {
+        return { now: parsed, source: 'timeapi.io' };
+      }
+    }
+    throw new Error('timeapi.io: unexpected response shape');
+  } catch (err) {
+    console.warn('[newsletter] Authoritative time API unavailable, falling back to server clock:', err);
+    return { now: new Date(), source: 'server-clock' };
+  }
+}
+
+/**
+ * Fetch the real USD/MXN exchange rate (Frankfurter API via dashboard-data).
+ * Returns a prompt-ready string block. Never invents values — if the API
+ * fails, returns null and the prompt is told to print "Consulta Banxico".
+ */
+export async function fetchUsdMxnForPrompt(): Promise<{
+  rateStr: string;
+  rateBlock: string;
+} | null> {
+  try {
+    const rates = await fetchExchangeRates();
+    const usd = rates.find(r => r.code === 'USD');
+    if (!usd || !Number.isFinite(usd.rate)) return null;
+    const rateStr = `$${usd.rate.toFixed(2)} MXN`;
+    const rateBlock = `
+📊 REAL USD/MXN EXCHANGE RATE (from Frankfurter API — USE THIS EXACT VALUE, DO NOT SEARCH):
+1 USD = ${rateStr}
+Retrieved at: ${new Date().toISOString()}
+`;
+    return { rateStr, rateBlock };
+  } catch (err) {
+    console.warn('[newsletter] Could not fetch USD/MXN rate:', err);
+    return null;
+  }
+}
+
+/**
+ * Hard deny-list of businesses / venues in SLP that no longer exist or must
+ * never be recommended. LLM training data keeps surfacing these as if they
+ * were still open. Extend as new cases come up.
+ */
+export const FORBIDDEN_BUSINESSES: Array<{ name: string; reason: string }> = [
+  {
+    name: 'City Market Plaza San Luis',
+    reason: 'Cerró hace años — ya no existe en SLP. NUNCA recomendar para comida internacional ni productos importados.',
+  },
+];
+
+/**
+ * Build a prompt block that lists forbidden businesses and the verification
+ * rule. Injected into every generation prompt so sections like Pro Tip,
+ * Community Spotlight, and Spot of the Week can't reintroduce stale places.
+ */
+export function renderForbiddenBusinessesBlock(): string {
+  const list = FORBIDDEN_BUSINESSES
+    .map(b => `    - ❌ "${b.name}" — ${b.reason}`)
+    .join('\n');
+
+  return `
+    🚫 BUSINESSES / VENUES THAT NO LONGER EXIST — NEVER RECOMMEND:
+${list}
+
+    🔎 VERIFICATION RULE FOR ANY SPECIFIC BUSINESS NAME:
+    Before recommending a specific business (store, restaurant, café, gym, etc.),
+    you MUST find a verifiable recent mention (within the current month, via
+    Google Search) confirming it is currently operating. If you cannot verify
+    it is open, use a category description instead of a specific name:
+    - ✅ "un supermercado grande en Lomas con sección de productos importados"
+    - ❌ inventing a specific store name from memory
+    LLM training data from 2023-2024 is NOT sufficient — places close.
+`;
+}
+
 // Initialize Gemini with SEARCH GROUNDING
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY!);
 const model = genAI.getGenerativeModel({
@@ -65,7 +154,8 @@ const model = genAI.getGenerativeModel({
   ],
   generationConfig: {
     maxOutputTokens: 16384,
-    temperature: 0.7,
+    temperature: 0.95,
+    topP: 0.95,
   }
 });
 
@@ -104,7 +194,8 @@ RULES:
       }
     ],
     max_tokens: 8000,
-    temperature: 0.7,
+    temperature: 0.9,
+    top_p: 0.95,
   });
 
   return response.choices[0]?.message?.content || '';
@@ -369,8 +460,7 @@ export const NEWSLETTER_TEMPLATE = `
           <!-- OPENING HOOK -->
           <tr>
             <td style="padding: 30px;">
-              <p style="font-size: 16px; line-height: 1.7;">Hey there! 👋</p>
-              <p style="font-size: 16px; line-height: 1.7;">[OPENING_HOOK_TEXT]</p>
+              [OPENING_HOOK_TEXT]
             </td>
           </tr>
 
@@ -395,22 +485,8 @@ export const NEWSLETTER_TEMPLATE = `
                 <!-- MARKET WATCH -->
                 <div style="padding: 18px 22px; border-bottom: 1px solid #F3F4F6;">
                   <h3 style="margin: 0 0 12px 0; color: #166534; font-size: 16px;">💰 Market Watch</h3>
-                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-                    <tr>
-                      <td width="33%" style="text-align: center; padding: 4px;">
-                        <p style="margin: 0; font-size: 11px; color: #6B7280;">USD/MXN</p>
-                        <p style="margin: 4px 0 0 0; font-size: 16px; font-weight: bold; color: #166534;">[EXCHANGE_RATE]</p>
-                      </td>
-                      <td width="34%" style="text-align: center; padding: 4px; border-left: 1px solid #E5E7EB; border-right: 1px solid #E5E7EB;">
-                        <p style="margin: 0; font-size: 11px; color: #6B7280;">Gasolina Regular</p>
-                        <p style="margin: 4px 0 0 0; font-size: 16px; font-weight: bold; color: #166534;">[GAS_PRICE] /L</p>
-                      </td>
-                      <td width="33%" style="text-align: center; padding: 4px;">
-                        <p style="margin: 0; font-size: 11px; color: #6B7280;">Gas LP</p>
-                        <p style="margin: 4px 0 0 0; font-size: 16px; font-weight: bold; color: #166534;">[LP_GAS_PRICE] /kg</p>
-                      </td>
-                    </tr>
-                  </table>
+                  <p style="margin: 0; font-size: 11px; color: #6B7280; text-align: center;">USD / MXN</p>
+                  <p style="margin: 4px 0 0 0; font-size: 24px; font-weight: bold; color: #166534; text-align: center;">[EXCHANGE_RATE]</p>
                   <p style="margin: 8px 0 0 0; font-size: 12px; color: #6B7280; text-align: center;">[MARKET_TREND_NOTE]</p>
                 </div>
 
@@ -842,8 +918,8 @@ export function injectAdsIntoHtml(html: string, ads: AdPlacementData[]): string 
 
   const sectionMarkers: Record<string, { top: RegExp; bottom: RegExp | null }> = {
     top: {
-      top: /Hey there![\s\S]{0,500}?<\/td>\s*<\/tr>/i,
-      bottom: /Hey there![\s\S]{0,500}?<\/td>\s*<\/tr>\s*<tr>\s*<td[^>]*style="[^"]*background/i
+      top: /<!-- OPENING HOOK -->[\s\S]{0,1500}?<\/td>\s*<\/tr>/i,
+      bottom: /<!-- OPENING HOOK -->[\s\S]{0,1500}?<\/td>\s*<\/tr>\s*<tr>\s*<td[^>]*style="[^"]*background/i
     },
     middle: {
       top: /📖 From the Blog[\s\S]{0,1000}?<\/td>\s*<\/tr>\s*<tr>\s*<td/i,
@@ -882,7 +958,7 @@ export function injectAdsIntoHtml(html: string, ads: AdPlacementData[]): string 
 
 function findInsertionPoint(html: string, placement: string, markers: { top: RegExp; bottom: RegExp | null }): number | null {
   if (placement === 'top') {
-    const match = html.match(/Hey there![\s\S]{0,200}?<\/td>\s*<\/tr>/i);
+    const match = html.match(/<!-- OPENING HOOK -->[\s\S]{0,2000}?<\/td>\s*<\/tr>/i);
     if (match && match.index !== undefined) {
       return match.index + match[0].length;
     }
@@ -1412,7 +1488,15 @@ function injectFooterIntoNewsletter(html: string): string {
 }
 
 export async function generateWeeklyNewsletter(customContent?: string) {
-  const dates = getCurrentNewsletterDates();
+  // Step 0: Anchor the entire generation to an authoritative wall-clock time
+  // (timeapi.io, Mexico City). This ensures every date reference, search
+  // query, and "reject content from prev month" rule is pinned to a verified
+  // timestamp rather than whatever the server clock happens to say.
+  console.log('0. 🕐 Fetching authoritative current time...');
+  const { now: authoritativeNow, source: timeSource } = await fetchAuthoritativeNow();
+  console.log(`   ✅ Anchor time: ${authoritativeNow.toISOString()} (source: ${timeSource})`);
+
+  const dates = getCurrentNewsletterDates(authoritativeNow);
   const dateRangeStr = dates.dateRangeStr;
   const supabase = getSupabaseClient();
 
@@ -1634,6 +1718,20 @@ Overall Summary: ${weatherForecast.summary}
     weatherDataStr = '⚠️ Weather API error - Search for "Clima San Luis Potosí" to get current weather.';
   }
 
+  // Step 2.5: Fetch real USD/MXN exchange rate. We inject this directly into
+  // the prompt (same pattern as weather) because Gemini has repeatedly
+  // hallucinated outdated rates even with Google Search grounding enabled.
+  console.log('2.5. 💱 Fetching real USD/MXN exchange rate...');
+  const usdMxn = await fetchUsdMxnForPrompt();
+  const exchangeRateBlock = usdMxn
+    ? usdMxn.rateBlock
+    : '⚠️ Exchange rate API unavailable — set [EXCHANGE_RATE] to "Consulta Banxico" rather than fabricating a value.';
+  if (usdMxn) {
+    console.log(`   ✅ USD/MXN = ${usdMxn.rateStr}`);
+  } else {
+    console.log('   ⚠️ Could not fetch FX rate — AI will be instructed to print "Consulta Banxico"');
+  }
+
   console.log('3. 🧠 Performing Deep Research with Gemini Grounding...');
   console.log(`   📅 Newsletter date range: ${dateRangeStr}`);
   console.log(`   📅 Today is: ${dates.todayFormatted}`);
@@ -1687,7 +1785,7 @@ Overall Summary: ${weatherForecast.summary}
     - ✅ "eventos San Luis Potosí México ${spanishMonth} ${currentYear}"
     - ✅ "noticias SLP ${spanishMonth} ${currentYear}"
     - ❌ "eventos San Luis Potosí" (without date = old results)
-
+${renderForbiddenBusinessesBlock()}
     ═══════════════════════════════════════════════════════════
     VOICE & TONE GUIDE
     ═══════════════════════════════════════════════════════════
@@ -1708,12 +1806,27 @@ Overall Summary: ${weatherForecast.summary}
     OPENING HOOK (replace [OPENING_HOOK_TEXT])
     ═══════════════════════════════════════════════════════════
 
-    Write a warm, 2-3 sentence opening that connects to something SPECIFIC happening THIS week:
-    - A big event coming up ("Arena Potosí is about to get loud this Friday...")
-    - The weather/season ("Those cool mornings are finally here...")
-    - A holiday or tradition ("Semana Santa vibes are already in the air...")
-    - A city milestone ("The new bike lane on Carranza just opened and we're here for it")
-    Do NOT write a generic greeting. Reference something real and timely.
+    Write a fresh, warm opening block. Output 2-3 short paragraphs wrapped in
+    <p style="font-size: 16px; line-height: 1.7;">...</p> tags. The first paragraph
+    IS the greeting — DO NOT start with "Hey there! 👋". Vary the greeting every
+    time so consecutive editions don't feel copy-pasted.
+
+    GREETING VARIATIONS (pick a different one each edition, rotate freely):
+    - "¡Hola, potosinos!" / "¡Hola, SLP!" / "Buenos días, San Luis 👋"
+    - "Happy [day of the week], SLP!" / "Another week, another round of SLP life..."
+    - "Welcome back, expats and locals alike!"
+    - A weather-forward opener ("Frosty mornings, sunny tardes — classic SLP this week.")
+    - A season-forward opener ("Semana Santa is knocking — here's your week ahead.")
+    - A direct lead ("Big week ahead in the city...") — no greeting, just dive in
+    - An emoji-only warm opener ("🌵 Back with your weekly SLP brief.")
+
+    Then the hook itself (1-2 sentences) must reference something SPECIFIC happening
+    THIS week: a real event, the actual weather, a city milestone, a holiday.
+    No generic filler. No "we hope you're doing well". Be concrete.
+
+    Randomization seed (use this to pick a different angle than last time): ${Math.random().toString(36).slice(2, 10)}-${Date.now()}
+
+    Return the full opening as 2-3 <p> tags inside a single HTML block.
 
     ═══════════════════════════════════════════════════════════
     SECTION 1: LOCAL NEWS & HEADLINES
@@ -1776,21 +1889,25 @@ Overall Summary: ${weatherForecast.summary}
     - Recommendation: Based on temperatures (if cold: "Bundle up", if rain: "Bring umbrella")
 
     ═══════════════════════════════════════════════════════════
-    SECTION: MARKET WATCH (Economic Snapshot)
+    SECTION: MARKET WATCH (USD/MXN Snapshot)
     ═══════════════════════════════════════════════════════════
 
-    Search for current economic data relevant to SLP residents:
-    - "tipo de cambio dólar peso hoy" or "USD MXN exchange rate today"
-    - "precio gasolina San Luis Potosí hoy ${currentYear}"
-    - "precio gas LP San Luis Potosí ${spanishMonth} ${currentYear}"
+    🚨 ABSOLUTE RULE: We ship verified numbers only. Do NOT invent, estimate,
+    or recall from memory. Only two placeholders exist in this section.
 
-    REQUIRED DATA:
-    - [EXCHANGE_RATE]: Current USD to MXN rate (e.g., "$17.25 MXN")
-    - [GAS_PRICE]: Regular gasoline per liter in SLP (e.g., "$24.50 MXN")
-    - [LP_GAS_PRICE]: LP gas price per kg in SLP (e.g., "$14.80 MXN")
-    - [MARKET_TREND_NOTE]: One-sentence trend note (e.g., "The peso strengthened 1.2% this week against the dollar")
+    [EXCHANGE_RATE] — USE THIS EXACT VALUE (already fetched from a live API):
+    ${exchangeRateBlock}
 
-    SOURCES: Banco de México (banxico.org.mx), CRE (cre.gob.mx), Profeco
+    ⛔ Do NOT search for the exchange rate. Do NOT modify the value above.
+    ⛔ Do NOT use any rate from your training data (e.g. ~$19 or ~$20 MXN).
+    ✅ Copy the rate above into [EXCHANGE_RATE] exactly as shown.
+
+    [MARKET_TREND_NOTE]:
+    - A single short, factual line describing the rate above. No predictions.
+    - Good: "USD/MXN at ${usdMxn?.rateStr || '(consult Banxico)'} — rate updated today."
+    - Good: "El peso abre la semana en ${usdMxn?.rateStr || '(consult Banxico)'} frente al dólar."
+    - Bad: any claim about direction, momentum, or forecast.
+    - If you can't form a factual observation, use "Tipo de cambio actualizado hoy."
 
     ═══════════════════════════════════════════════════════════
     SECTION 3: EVENTS & ENTERTAINMENT
