@@ -4,9 +4,14 @@
  */
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import OpenAI from 'openai';
 import { format, addDays } from 'date-fns';
 import { fetchWeatherForecast } from './api/dashboard-data';
 import { fetchAuthoritativeNow, fetchUsdMxnForPrompt } from './newsletter-generator';
+
+const openai = process.env.OPENAI_API_KEY
+  ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+  : null;
 
 // Helper to get current dates for prompts
 function getCurrentDates(now: Date = new Date()) {
@@ -296,8 +301,8 @@ export async function regenerateSection(
   currentHtml: string,
   context?: string
 ): Promise<string> {
-  if (!process.env.GOOGLE_API_KEY) {
-    throw new Error('GOOGLE_API_KEY is required');
+  if (!openai && !process.env.GOOGLE_API_KEY) {
+    throw new Error('OPENAI_API_KEY or GOOGLE_API_KEY is required');
   }
 
   // Anchor dates to an authoritative current time (timeapi.io) so the AI
@@ -346,10 +351,12 @@ Summary: ${forecast.summary}
     }
   }
 
-  const model = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY).getGenerativeModel({
-    model: "gemini-2.0-flash",
-    generationConfig: { maxOutputTokens: 2000, temperature: 0.95, topP: 0.95 }
-  });
+  const geminiFallback = process.env.GOOGLE_API_KEY
+    ? new GoogleGenerativeAI(process.env.GOOGLE_API_KEY).getGenerativeModel({
+        model: "gemini-2.0-flash",
+        generationConfig: { maxOutputTokens: 2000, temperature: 0.95, topP: 0.95 }
+      })
+    : null;
 
   // Randomization seed bakes into every prompt so consecutive regenerations
   // don't land on the exact same angle / opener / phrasing.
@@ -636,27 +643,53 @@ Generate a fresh, engaging replacement. Match the HTML structure and styling of 
 Return ONLY the raw HTML, no markdown code blocks.
 `;
 
-  try {
-    const result = await model.generateContent(fullPrompt);
-    const response = await result.response;
-    let newHtml = response.text().trim();
+  const cleanOutput = (raw: string): string => {
+    let out = raw.trim()
+      .replace(/^```html\s*/i, '')
+      .replace(/^```\s*/i, '')
+      .replace(/\s*```$/i, '')
+      .replace(/<img[^>]*>/gi, '');
+    return out;
+  };
 
-    // Clean up markdown if present
-    newHtml = newHtml.replace(/^```html\s*/i, '').replace(/^```\s*/i, '').replace(/\s*```$/i, '');
-
-    // Remove any images
-    newHtml = newHtml.replace(/<img[^>]*>/gi, '');
-
-    if (!newHtml || newHtml.length < 20) {
-      throw new Error('Gemini returned empty or truncated content');
+  // Try OpenAI first, fall back to Gemini.
+  let lastError: unknown = null;
+  if (openai) {
+    try {
+      const res = await openai.chat.completions.create({
+        model: 'gpt-5.4',
+        messages: [
+          { role: 'system', content: 'You generate HTML newsletter sections for "San Luis Way Weekly" (San Luis Potosí, México). Return ONLY the raw HTML section, no markdown fences.' },
+          { role: 'user', content: fullPrompt }
+        ],
+        max_completion_tokens: 2000,
+        temperature: 0.9,
+        top_p: 0.95,
+      });
+      const newHtml = cleanOutput(res.choices[0]?.message?.content || '');
+      if (!newHtml || newHtml.length < 20) throw new Error('OpenAI returned empty or truncated content');
+      return newHtml;
+    } catch (err) {
+      console.error('OpenAI section regen error, trying Gemini fallback:', err);
+      lastError = err;
     }
-
-    return newHtml;
-  } catch (error) {
-    console.error('Error regenerating section:', error);
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    throw new Error(`Section regeneration failed: ${message}`);
   }
+
+  if (geminiFallback) {
+    try {
+      const result = await geminiFallback.generateContent(fullPrompt);
+      const response = await result.response;
+      const newHtml = cleanOutput(response.text());
+      if (!newHtml || newHtml.length < 20) throw new Error('Gemini returned empty or truncated content');
+      return newHtml;
+    } catch (err) {
+      console.error('Gemini fallback also failed:', err);
+      lastError = err;
+    }
+  }
+
+  const message = lastError instanceof Error ? lastError.message : 'Unknown error';
+  throw new Error(`Section regeneration failed: ${message}`);
 }
 
 /**

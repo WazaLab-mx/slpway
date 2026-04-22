@@ -132,10 +132,8 @@ async function generateWithOpenAI(prompt: string): Promise<string> {
     throw new Error('OpenAI API key not configured');
   }
 
-  console.log('3. 🔄 Falling back to OpenAI GPT-4...');
-
   const response = await openai.chat.completions.create({
-    model: 'gpt-4o',
+    model: 'gpt-5.4',
     messages: [
       {
         role: 'system',
@@ -156,7 +154,7 @@ RULES:
         content: prompt
       }
     ],
-    max_tokens: 8000,
+    max_completion_tokens: 16384,
     temperature: 0.9,
     top_p: 0.95,
   });
@@ -2257,52 +2255,50 @@ Overall Summary: ${weatherForecast.summary}
   let htmlContent = '';
 
   // Validate API key before attempting generation
-  if (!process.env.GOOGLE_API_KEY) {
-    console.error('❌ GOOGLE_API_KEY is not set');
-    throw new Error('GOOGLE_API_KEY environment variable is required');
+  if (!openai) {
+    console.error('❌ OPENAI_API_KEY is not set');
+    throw new Error('OPENAI_API_KEY environment variable is required');
   }
 
   try {
-    console.log('2.5. 🔑 Using Gemini API with key starting with:', process.env.GOOGLE_API_KEY?.substring(0, 8) + '...');
+    console.log('2.5. 🔑 Using OpenAI GPT-5.4 as primary generator...');
 
-    // Try Gemini first
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    htmlContent = response.text();
+    // Try OpenAI first (primary)
+    htmlContent = await generateWithOpenAI(prompt);
 
-    // Check if response looks like an HTML error page
-    if (htmlContent.trim().toLowerCase().startsWith('<html') || htmlContent.trim().toLowerCase().startsWith('<!doctype')) {
-      if (htmlContent.includes('error') || htmlContent.includes('Error') || htmlContent.length < 1000) {
-        console.error('⚠️ Gemini returned what looks like an HTML error page');
-        throw new Error('Gemini returned an HTML error page instead of newsletter content');
-      }
+    // Check if response looks like a refusal or error
+    const refusalSignals = ['sorry', "can't assist", 'cannot assist', "i'm sorry", 'unable to help'];
+    const firstChunk = htmlContent.trim().slice(0, 200).toLowerCase();
+    if (htmlContent.length < 500 && refusalSignals.some(s => firstChunk.includes(s))) {
+      throw new Error('OpenAI returned a refusal-style short response');
     }
 
-    console.log('3. ✅ Gemini generation successful, content length:', htmlContent.length);
+    console.log('3. ✅ OpenAI generation successful, content length:', htmlContent.length);
 
-  } catch (geminiError: unknown) {
-    const errorMessage = geminiError instanceof Error ? geminiError.message : String(geminiError);
-    console.error("Gemini Generation Error:", errorMessage);
+  } catch (openaiError: unknown) {
+    const errorMessage = openaiError instanceof Error ? openaiError.message : String(openaiError);
+    console.error("OpenAI Generation Error:", errorMessage);
 
-    // Log more details if available
-    if (geminiError && typeof geminiError === 'object') {
-      const errObj = geminiError as Record<string, unknown>;
-      if (errObj.status) console.error('Status:', errObj.status);
-      if (errObj.statusText) console.error('Status Text:', errObj.statusText);
-      if (errObj.response) console.error('Response:', errObj.response);
-    }
-
-    // Fallback to OpenAI
-    if (openai) {
+    // Fallback to Gemini (with googleSearch grounding — useful for live events)
+    if (process.env.GOOGLE_API_KEY) {
       try {
-        htmlContent = await generateWithOpenAI(prompt);
-        console.log('4. ✅ OpenAI fallback successful');
-      } catch (openaiError) {
-        console.error("OpenAI Fallback Error:", openaiError);
-        throw new Error(`Both Gemini and OpenAI failed. Gemini error: ${errorMessage}`);
+        console.log('4. 🔄 Falling back to Gemini 2.0 Flash...');
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        htmlContent = response.text();
+
+        if (htmlContent.trim().toLowerCase().startsWith('<html') || htmlContent.trim().toLowerCase().startsWith('<!doctype')) {
+          if (htmlContent.includes('error') || htmlContent.includes('Error') || htmlContent.length < 1000) {
+            throw new Error('Gemini returned an HTML error page instead of newsletter content');
+          }
+        }
+        console.log('5. ✅ Gemini fallback successful');
+      } catch (geminiError) {
+        console.error("Gemini Fallback Error:", geminiError);
+        throw new Error(`Both OpenAI and Gemini failed. OpenAI error: ${errorMessage}`);
       }
     } else {
-      throw new Error(`Gemini failed: ${errorMessage}. Add OPENAI_API_KEY to .env as fallback`);
+      throw new Error(`OpenAI failed: ${errorMessage}. Add GOOGLE_API_KEY to .env as fallback`);
     }
   }
 
