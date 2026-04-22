@@ -652,21 +652,21 @@ Return ONLY the raw HTML, no markdown code blocks.
     return out;
   };
 
-  // Try OpenAI first, fall back to Gemini.
+  // Try OpenAI with web_search_preview first (Responses API — gpt-5.4 can
+  // ground events/news in live search), fall back to Gemini.
   let lastError: unknown = null;
   if (openai) {
     try {
-      const res = await openai.chat.completions.create({
+      const res = await openai.responses.create({
         model: 'gpt-5.4',
-        messages: [
-          { role: 'system', content: 'You generate HTML newsletter sections for "San Luis Way Weekly" (San Luis Potosí, México). Return ONLY the raw HTML section, no markdown fences.' },
-          { role: 'user', content: fullPrompt }
-        ],
-        max_completion_tokens: 2000,
+        tools: [{ type: 'web_search_preview' }],
+        instructions: 'You generate HTML newsletter sections for "San Luis Way Weekly" (San Luis Potosí, México). Return ONLY the raw HTML section, no markdown fences. Use web_search for time-sensitive facts (events, news, hours, prices).',
+        input: fullPrompt,
+        max_output_tokens: 2000,
         temperature: 0.9,
         top_p: 0.95,
       });
-      const newHtml = cleanOutput(res.choices[0]?.message?.content || '');
+      const newHtml = cleanOutput(res.output_text || '');
       if (!newHtml || newHtml.length < 20) throw new Error('OpenAI returned empty or truncated content');
       return newHtml;
     } catch (err) {

@@ -127,17 +127,7 @@ const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
   : null;
 
-async function generateWithOpenAI(prompt: string): Promise<string> {
-  if (!openai) {
-    throw new Error('OpenAI API key not configured');
-  }
-
-  const response = await openai.chat.completions.create({
-    model: 'gpt-5.4',
-    messages: [
-      {
-        role: 'system',
-        content: `You are the editor of "San Luis Way Weekly", a newsletter for expats and locals in San Luis Potosí, MEXICO (not USA).
+const OPENAI_NEWSLETTER_SYSTEM = `You are the editor of "San Luis Way Weekly", a newsletter for expats and locals in San Luis Potosí, MEXICO (not USA).
 
 VOICE: Write like a knowledgeable friend who lives in SLP. Casual but informed, use "we" and "our city". Sprinkle Spanish naturally. Always actionable - tell readers what to DO, where to GO.
 
@@ -147,19 +137,28 @@ RULES:
 - Include specific dates, times, addresses for every event/place
 - No vague language - be specific with real details
 - No <img> tags
-- Generate HTML that fills the provided template placeholders with real content`
-      },
-      {
-        role: 'user',
-        content: prompt
-      }
-    ],
-    max_completion_tokens: 16384,
+- Generate HTML that fills the provided template placeholders with real content
+- USE web_search for anything time-sensitive (events, news, business hours, current prices) — do not rely on training data for dated facts`;
+
+async function generateWithOpenAI(prompt: string): Promise<string> {
+  if (!openai) {
+    throw new Error('OpenAI API key not configured');
+  }
+
+  // Use the Responses API with the web_search_preview tool so gpt-5.4 can
+  // ground events/news/business info in live search results rather than
+  // training data. Chat completions don't support web_search directly.
+  const response = await openai.responses.create({
+    model: 'gpt-5.4',
+    tools: [{ type: 'web_search_preview' }],
+    instructions: OPENAI_NEWSLETTER_SYSTEM,
+    input: prompt,
+    max_output_tokens: 16384,
     temperature: 0.9,
     top_p: 0.95,
   });
 
-  return response.choices[0]?.message?.content || '';
+  return response.output_text || '';
 }
 
 // Simplified footer HTML for Beehiiv compatibility (no gradients, no box-shadow)
