@@ -107,15 +107,12 @@ Retrieved at: ${new Date().toISOString()}
 }
 
 /**
- * Build a "business operating status" verification block anchored to the
- * authoritative current date. Every section that names a specific business
- * (store, restaurant, market, venue) must search for proof it is still
- * operating in the current month — training data is NOT trusted because
- * places close and old mentions persist in the LLM's knowledge.
+ * Small prompt block that asks the generator to verify every named business
+ * via a dated Google Search before recommending it. Anchored to the
+ * authoritative month/year so search queries stay pinned to the real date.
  *
- * The `now` argument MUST be the already-anchored authoritative time
- * (from fetchAuthoritativeNow), not a fresh `new Date()` — otherwise the
- * verification month can drift from the rest of the prompt.
+ * Pass the authoritative `now` (from fetchAuthoritativeNow) — not
+ * `new Date()` — to keep this aligned with the rest of the prompt.
  */
 export function renderBusinessVerificationBlock(now: Date): string {
   const currentMonthEn = format(now, 'MMMM');
@@ -128,40 +125,15 @@ export function renderBusinessVerificationBlock(now: Date): string {
   const currentMonthEs = monthsInSpanish[currentMonthEn] || currentMonthEn.toLowerCase();
 
   return `
-    🏪 BUSINESS / VENUE VERIFICATION — HARD REQUIREMENT
-    Anchor month for this newsletter: ${currentMonthEn} ${currentYear} (es: ${currentMonthEs})
-
-    Before naming ANY specific business (supermercado, tienda, restaurante,
-    café, bar, gimnasio, mercado, plaza, museo, venue, hotel, agencia, etc.),
-    you MUST run a Google Search proving it is OPEN AND OPERATING this month.
-
-    REQUIRED SEARCH PATTERNS (run at least one, adjust for the business type):
-    - "<business name> San Luis Potosí ${currentMonthEs} ${currentYear}"
-    - "<business name> horarios ${currentYear}"
-    - "<business name> reseñas ${currentYear}"
-    - "<business name> SLP ${currentMonthEs} ${currentYear}"
-
-    ACCEPT the business only if the search returns AT LEAST ONE of:
-    ✅ A review, post, photo, or news article dated within the last 90 days
-    ✅ A current Google Maps / Google Business listing marked as open
-    ✅ An active social media post (Instagram/Facebook) from this year
-    ✅ A news article from ${currentMonthEn} ${currentYear} or the month prior
-
-    REJECT (do not mention) if:
-    ❌ Search returns only articles from 2023 or earlier
-    ❌ Search returns explicit mentions of "cerró", "cerrado", "closed",
-       "ya no existe", "out of business", or a liquidation notice
-    ❌ Google Maps shows "Permanently closed" / "Cerrado permanentemente"
-    ❌ You cannot find ANY recent evidence it is still operating
-    ❌ You are recalling the business from training data without a live search hit
-
-    WHEN UNVERIFIED — FALL BACK TO CATEGORY, NEVER INVENT:
-    - ✅ "un supermercado grande en Lomas con sección internacional"
-    - ✅ "cualquier sucursal grande de Soriana, Chedraui o Walmart en SLP"
-    - ❌ inventing "City Market Plaza San Luis" or any store name from memory
-
-    This rule OVERRIDES anything your training data says about SLP businesses.
-    Places close all the time — only live search results count.
+    🏪 BUSINESS CHECK (applies to every specific place you name — store,
+    restaurant, café, bar, gym, market, venue, hotel, etc.):
+    Only name a business when your Google Search returns a dated result from
+    ${currentMonthEn} ${currentYear} or the prior month (review, social post,
+    news article, or a current Google Maps listing). If you can't find recent
+    evidence it's still operating, describe by category instead — e.g.
+    "un supermercado grande en Lomas con sección internacional" rather than
+    a specific store name. SLP businesses close often; don't rely on
+    training-data memory alone.
 `;
 }
 
