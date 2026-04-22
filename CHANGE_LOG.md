@@ -4,21 +4,19 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
-## [2026-04-21] fix(newsletter): Deny-list de negocios cerrados en SLP
+## [2026-04-21] fix(newsletter): Verificación live-search de negocios (reemplaza deny-list)
 
 **Problema:** El generador de newsletter seguía recomendando "City Market Plaza San Luis" (cerró hace años) para comprar comida internacional. La información desactualizada venía del training data del LLM (Gemini 2.0 Flash con Google Search grounding), y el grounding por sí solo no bastaba.
 
-**Fix aplicado (commit `c2376bb`):**
-- Nueva constante `FORBIDDEN_BUSINESSES` en `src/lib/newsletter-generator.ts` — lista de negocios cerrados/prohibidos
-- Helper `renderForbiddenBusinessesBlock()` genera un bloque de prompt con la lista + una regla de verificación
-- El bloque se inyecta en:
-  - El prompt principal del generador semanal (`SYSTEM RULES`)
-  - El prompt de regeneración por-sección en `newsletter-sections.ts`
-- Regla agregada: todo negocio mencionado debe ser verificable vía Google Search en el mes actual; si no, usar descripción por categoría ("un supermercado en Lomas") en vez de nombre específico
+**Primer intento (commit `c2376bb`):** Lista manual `FORBIDDEN_BUSINESSES`. Descartado — no escala, requiere catalogar manualmente cada negocio cerrado en SLP.
 
-**Para agregar más negocios cerrados:** editar el array `FORBIDDEN_BUSINESSES` con `{ name, reason }`.
-
-**El mismo commit incluye WIP previo en los archivos:** anclaje a timeapi.io, inyección del tipo de cambio real USD/MXN desde Frankfurter, variaciones del opening hook y actualización de marcadores de inserción de ads.
+**Fix definitivo (commit `e973c6c`):**
+- Helper `renderBusinessVerificationBlock(now)` que recibe la fecha autoritativa ya parseada desde timeapi.io
+- Inyecta en los prompts una regla estricta: antes de mencionar cualquier negocio específico (supermercado, restaurante, café, gym, museo, hotel, etc.), Gemini DEBE correr un Google Search con formato `"<business> San Luis Potosí <mes-actual> <año>"` y aceptar solo si hay evidencia (review, post, artículo, Google Maps activo) de los últimos 90 días
+- Rechaza explícitamente: recall desde training data sin búsqueda, resultados de 2023 o antes, mentions de "cerró/closed/permanently closed"
+- Fallback obligatorio a categoría genérica cuando no hay verificación ("un supermercado en Lomas" en vez de inventar un nombre)
+- Las queries se arman con el mes/año de la fecha anclada a timeapi.io, por lo que no drift entre el anchor temporal y la búsqueda de negocios
+- Inyectado en ambos prompts: generador semanal completo y regeneración por-sección
 
 ---
 
