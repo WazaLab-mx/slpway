@@ -15,7 +15,23 @@
 [functions."scheduled-news-update"]
   schedule = "0 13 * * *"
 
-# Redirects for www canonical URL
+# Redirects for www canonical URL — collapse HTTP→HTTPS→www chain to a single
+# 301 hop. PSI "Avoid multiple page redirects" previously flagged ~780ms savings
+# on the HTTP-apex path (http apex → https apex → https www = 2 hops). With
+# explicit protocol rules + force=true, each external entry point lands on
+# the canonical host in exactly one redirect.
+[[redirects]]
+  from = "http://sanluisway.com/*"
+  to = "https://www.sanluisway.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.sanluisway.com/*"
+  to = "https://www.sanluisway.com/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "https://sanluisway.com/*"
   to = "https://www.sanluisway.com/:splat"
