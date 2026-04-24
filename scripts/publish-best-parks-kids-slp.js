@@ -16,6 +16,77 @@ const IMG = {
   sports: '/images/parque-tangamanga/sports.jpg',
 };
 
+const faqJsonLdES = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '¿Cuál es el mejor parque en San Luis Potosí para niños pequeños?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'El Parque Tangamanga I cuenta con una Zona Kids con juegos infantiles adecuados para niños desde los dos años, además del parque temático "Cri-Cri". El terreno es plano, apto para carriolas y con áreas sombreadas. Si buscas una opción más tranquila y con menos gente, la Alameda Juan Sarabia en el Centro Histórico está cercada, es caminable y está rodeada de cafés.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: '¿La entrada al Parque Tangamanga es gratis?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sí. La entrada general al Parque Tangamanga I y II es gratuita. El zoológico, el jardín botánico, el jardín japonés, el Laberinto de las Ciencias (dentro del parque) y las áreas principales de juegos infantiles también son gratis. El Planetario y el parque acuático Splash/Dinoasis cobran tarifas aparte (normalmente $20–50 MXN para el planetario y alrededor de $200 MXN por niño en Dinoasis).'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: '¿A qué hora abre el Parque Tangamanga?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'El Parque Tangamanga I abre todos los días a las 5:00 AM. Los horarios de cierre varían: los lunes cierra temprano a las 11:00 AM por mantenimiento, de martes a sábado permanece abierto hasta las 10:30 PM (último acceso 9:30 PM) y los domingos cierra a las 6:00 PM (último acceso 5:30 PM). El zoológico dentro del parque opera de martes a domingo, de 10:00 AM a 5:00 PM.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: '¿Dónde pueden nadar los niños en San Luis Potosí?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Dentro de la ciudad, el parque acuático Dinoasis (antes Splash) en Tangamanga I es la opción principal, con alberca de olas, toboganes para niños y chapoteaderos poco profundos. Para una experiencia más tradicional de balneario, el Parque Acuático Gogorrón (a 45 minutos al sur de SLP) ofrece albercas de agua termal, tres toboganes y chapoteaderos diseñados para niños pequeños.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: '¿Cuáles son las mejores actividades techadas para niños en San Luis Potosí?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'El Museo Laberinto de las Ciencias y las Artes es la mejor opción: un museo interactivo de ciencia y arte con cine 3D, exhibiciones prácticas de física y biología, con entrada de alrededor de $50 MXN adultos, $40 MXN niños de 4–5 años y gratis para menores de 3. El Planetario del Parque Tangamanga I también es excelente para tardes lluviosas o calurosas. Otras opciones techadas incluyen Kidiverso (brincolines y albercas de pelotas) y Stardust Park (brinca-brinca con temática espacial).'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: '¿Hay parques con chapoteaderos en SLP?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sí. El parque acuático Dinoasis/Splash dentro del Parque Tangamanga I es la principal instalación de chapoteaderos y juegos de agua dentro de la ciudad. Cuenta con fuentes a la altura de bebés y niños pequeños, albercas poco profundas y toboganes especiales para niños. La operación es de temporada, típicamente desde Semana Santa hasta principios de otoño. Para juegos con agua gratis, algunas plazas municipales (incluyendo la zona de Plaza de Armas durante eventos de verano) ocasionalmente instalan zonas de fuentes temporales para familias.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: '¿San Luis Potosí es seguro para familias con niños?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'La capital de San Luis Potosí se considera una de las capitales estatales más seguras del centro de México. Tangamanga I y II, la Alameda Juan Sarabia y el Centro Histórico tienen una fuerte presencia de policía municipal durante el día y son cómodos para familias. Aplican las precauciones estándar: mantente en los caminos principales, guarda objetos de valor fuera de la vista y evita zonas aisladas después del anochecer.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: '¿Cuánto cuesta el estacionamiento en el Parque Tangamanga?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Hay varios estacionamientos gratuitos alrededor del perímetro de Tangamanga I (de la Puerta 1 a la Puerta 8) y de Tangamanga II. Los lugares se asignan por orden de llegada y se llenan rápido los domingos por la mañana. Llega antes de las 9:00 AM o después de las 4:00 PM los fines de semana para la experiencia más sencilla.'
+      }
+    }
+  ]
+};
+
 const faqJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -97,7 +168,7 @@ const contentEN = `<div class="prose prose-lg max-w-none">
   <h3 class="text-xl font-bold mb-4 text-gray-900">Table of Contents</h3>
   <ul class="list-disc pl-6">
     <li><a href="#introduction" class="text-blue-600 hover:text-blue-800">Why SLP is Great for Kids</a></li>
-    <li><a href="#quick-picks" class="text-blue-600 hover:text-blue-800">Quick-Pick Table: Top 7 Parks</a></li>
+    <li><a href="#quick-picks" class="text-blue-600 hover:text-blue-800">Quick-Pick Table: Top 8 Parks</a></li>
     <li><a href="#tangamanga" class="text-blue-600 hover:text-blue-800">Parque Tangamanga I and II: Full Guide</a></li>
     <li><a href="#other-parks" class="text-blue-600 hover:text-blue-800">Other Parks Worth Visiting</a></li>
     <li><a href="#water-play" class="text-blue-600 hover:text-blue-800">Splash Pads and Water Play</a></li>
@@ -126,7 +197,7 @@ const contentEN = `<div class="prose prose-lg max-w-none">
 <section id="introduction" class="mb-12">
 <h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Why San Luis Potosí is Great for Kids</h2>
 
-<p class="text-gray-700 mb-6"><strong>If you are searching "best parks for kids near me" and you live in or are visiting San Luis Potosí (SLP), you are in one of the luckiest family cities in central Mexico.</strong> The capital sits at 1,863 m (6,112 ft) above sea level, which means spring-like weather year-round, low mosquito counts, and long outdoor days. More importantly, SLP has invested heavily in urban green space: Parque Tangamanga I alone is the second-largest urban park in Mexico at 411 hectares — bigger than New York's Central Park.</p>
+<p class="text-gray-700 mb-6"><strong>If you are searching "best parks for kids near me" and you live in or are visiting San Luis Potosí (SLP), you are in one of the luckiest family cities in central Mexico.</strong> The capital sits at 1,863 m (6,112 ft) above sea level, which means spring-like weather year-round, low mosquito counts, and long outdoor days. More importantly, SLP has invested heavily in urban green space: <strong>Parque Tangamanga I alone is 411 hectares</strong> — significantly bigger than New York's Central Park (340 ha). It is officially ranked as Mexico's second-largest urban park after Bosque de Chapultepec in CDMX (866 ha). Here's the nuance locals often point out: <em>Chapultepec is technically classified as a bosque (forest), not a park</em>, which — if you only count urban spaces that are officially parks — arguably makes Tangamanga the largest urban park in the country.</p>
 
 <p class="text-gray-700 mb-6">This guide covers every park where kids can actually play safely: the giant flagships (Tangamanga I and II), the historic plazas with playgrounds, the water-play options, and the indoor backups for the handful of rainy or 30°C afternoons. We verified hours, entry fees and amenities in April 2026, and flagged anything that may change.</p>
 
@@ -134,7 +205,7 @@ const contentEN = `<div class="prose prose-lg max-w-none">
 </section>
 
 <section id="quick-picks" class="mb-12">
-<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Quick-Pick Table: Top 7 Parks for Kids in San Luis Potosí</h2>
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Quick-Pick Table: Top 8 Parks for Kids in San Luis Potosí</h2>
 
 <div class="overflow-x-auto mb-8">
   <table class="min-w-full bg-white border-2 border-gray-200 rounded-lg shadow-lg">
@@ -152,7 +223,8 @@ const contentEN = `<div class="prose prose-lg max-w-none">
       <tr class="bg-gray-50"><td class="px-4 py-3 font-semibold">Parque Tangamanga II</td><td class="px-4 py-3 text-center">5–14</td><td class="px-4 py-3 text-center">Tue–Sun 6am–8pm</td><td class="px-4 py-3 text-center text-green-600 font-bold">Free</td><td class="px-4 py-3">Bike paths, sports courts, less crowded</td></tr>
       <tr><td class="px-4 py-3 font-semibold">Alameda Juan Sarabia</td><td class="px-4 py-3 text-center">0–6</td><td class="px-4 py-3 text-center">Open 24/7</td><td class="px-4 py-3 text-center text-green-600 font-bold">Free</td><td class="px-4 py-3">Historic, shaded, stroller-perfect</td></tr>
       <tr class="bg-gray-50"><td class="px-4 py-3 font-semibold">Parque Juan H. Sánchez (Morales)</td><td class="px-4 py-3 text-center">4–10</td><td class="px-4 py-3 text-center">6am–10pm</td><td class="px-4 py-3 text-center text-green-600 font-bold">Free</td><td class="px-4 py-3">100-yr-old shade trees, under renovation</td></tr>
-      <tr><td class="px-4 py-3 font-semibold">Dinoasis (Splash) water park</td><td class="px-4 py-3 text-center">3–14</td><td class="px-4 py-3 text-center">Seasonal 10am–6pm</td><td class="px-4 py-3 text-center">~$200 MXN kids</td><td class="px-4 py-3">Wave pool + toddler splash zone</td></tr>
+      <tr><td class="px-4 py-3 font-semibold">Parque Bicentenario</td><td class="px-4 py-3 text-center">4–12</td><td class="px-4 py-3 text-center">Tue–Sun 6am–6pm</td><td class="px-4 py-3 text-center text-green-600 font-bold">Free</td><td class="px-4 py-3">Playground, 33 tree species, industrial sculptures</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-3 font-semibold">Dinoasis (Splash) water park</td><td class="px-4 py-3 text-center">3–14</td><td class="px-4 py-3 text-center">Seasonal 10am–6pm</td><td class="px-4 py-3 text-center">~$200 MXN kids</td><td class="px-4 py-3">Wave pool + toddler splash zone</td></tr>
       <tr class="bg-gray-50"><td class="px-4 py-3 font-semibold">Museo Laberinto (indoor)</td><td class="px-4 py-3 text-center">4–14</td><td class="px-4 py-3 text-center">Tue–Fri 9–16; Sat–Sun 11–19</td><td class="px-4 py-3 text-center">$50 MXN adult / $40 child</td><td class="px-4 py-3">Hands-on science + 3D theater</td></tr>
       <tr><td class="px-4 py-3 font-semibold">Kidiverso (indoor)</td><td class="px-4 py-3 text-center">2–12</td><td class="px-4 py-3 text-center">Daily 10am–9pm</td><td class="px-4 py-3 text-center">~$180–250 MXN</td><td class="px-4 py-3">Trampolines, ball pit, party venue</td></tr>
     </tbody>
@@ -173,7 +245,7 @@ const contentEN = `<div class="prose prose-lg max-w-none">
 
 <h3 class="text-2xl font-bold mb-4 text-gray-900">Parque Tangamanga I — The Flagship</h3>
 
-<p class="text-gray-700 mb-6"><strong>Parque Tangamanga I covers 411 hectares (1,016 acres) in the southwestern part of the city</strong> and is widely considered the second-largest urban park in Mexico. It combines a free zoo, a planetarium, a seasonal water park, an interactive science museum, a lake, a Japanese garden, a botanical garden, an amphitheater, 14 kilometers of jogging and biking paths, and — most importantly for families — dedicated children's zones with modern equipment.</p>
+<p class="text-gray-700 mb-6"><strong>Parque Tangamanga I covers 411 hectares (1,016 acres) in the southwestern part of the city.</strong> Officially it's the second-largest urban park in Mexico behind Bosque de Chapultepec (866 ha) in CDMX — but since Chapultepec is classified as a <em>bosque</em> (forest) rather than a park, a growing number of sources argue Tangamanga is actually the largest true urban park in Mexico. Either way, it dwarfs New York's Central Park (340 ha). The park combines a free zoo, a planetarium, a seasonal water park, an interactive science museum, a lake, a Japanese garden, a botanical garden, an amphitheater, 14 kilometers of jogging and biking paths, and — most importantly for families — dedicated children's zones with modern equipment.</p>
 
 <p class="text-gray-700 mb-6"><strong>The "Zona Kids"</strong> is a recently expanded area with age-graded playground equipment suitable for children from 2 to roughly 12 years old. Surfaces are shock-absorbing rubber, equipment is shaded in most sections, and benches are spaced around the perimeter for parents. Adjacent to Zona Kids is the thematic <strong>Parque Cri-Cri</strong> — a charming zone designed around characters from Francisco Gabilondo Soler's children's songs, much loved by Mexican kids.</p>
 
@@ -191,19 +263,22 @@ const contentEN = `<div class="prose prose-lg max-w-none">
   <li><strong>Planetarium:</strong> typically $20–50 MXN per person</li>
   <li><strong>Dinoasis water park</strong> (formerly Splash): approximately $200 MXN per child (seasonal — usually Semana Santa through early fall)</li>
   <li><strong>Bike rental:</strong> around $40–80 MXN per hour depending on size and helmet package</li>
-  <li><strong>Paddle boat on the lake:</strong> approximately $60–100 MXN for 30 minutes</li>
   <li><strong>Sports court rental (2026 update):</strong> $170 MXN / 2 hrs for soccer, basketball and volleyball courts</li>
 </ul>
 
 <div class="mb-8">
-<img src="${IMG.lake}" alt="Lake at Parque Tangamanga I with paddle boats" class="w-full rounded-xl shadow-lg" />
+<img src="${IMG.lake}" alt="Lake at Parque Tangamanga I — a peaceful family picnic spot" class="w-full rounded-xl shadow-lg" />
+</div>
+
+<div class="bg-amber-50 border-l-4 border-amber-400 p-4 mb-6">
+<p class="text-amber-900 text-sm"><strong>Heads-up (2026 update):</strong> Paddle boats on the Tangamanga I lake are no longer in operation. The lake is still a lovely shaded picnic spot and excellent for a stroll around the perimeter, but you can't rent boats anymore. If your kids want to be on the water, the best nearby alternative is Presa San José for guided stand-up paddle sessions.</p>
 </div>
 
 <h4 class="text-xl font-bold mb-3 text-gray-900">What to do with kids at Tangamanga I</h4>
 <ol class="list-decimal pl-6 mb-6 text-gray-700 space-y-2">
   <li><strong>Start at Puerta 1 or 7</strong> (main entrances) — these are closest to the playground and zoo.</li>
   <li><strong>Visit the zoo early.</strong> Animals are most active 10–11 AM before the afternoon heat.</li>
-  <li><strong>Ride paddle boats on the lake</strong> — kids must wear life vests (provided).</li>
+  <li><strong>Picnic by the lake</strong> — shaded tables along the perimeter; paddle boats are no longer in operation but the lake walk is still one of the prettiest spots in the park.</li>
   <li><strong>Walk or bike to the Japanese Garden</strong> — quiet, shaded, free, great for a picnic.</li>
   <li><strong>Hit the Zona Kids playground</strong> after lunch when it's partially shaded.</li>
   <li><strong>End with ice cream from the kiosks</strong> near the amphitheater.</li>
@@ -226,6 +301,9 @@ const contentEN = `<div class="prose prose-lg max-w-none">
 
 <h3 class="text-2xl font-bold mb-4 text-gray-900">Parque Juan H. Sánchez (Parque de Morales)</h3>
 <p class="text-gray-700 mb-6"><strong>Location:</strong> Colonia Himno Nacional, between Av. Venustiano Carranza and Paseo de los Artistas. <strong>Size:</strong> ~18 hectares. <strong>Hours:</strong> 6:00 AM – 10:00 PM. <strong>Cost:</strong> Free. Known affectionately as "Parque de Morales," this 100-year-old park is a potosino institution with an artificial lake created in 1968, over 120 identified animal species, and a famous rocket-shaped slide ("El Cohete") that defined childhoods for generations. A 100-million-peso state rehabilitation project is currently renovating the lake, playground and pet areas — parts of the park may be fenced off in 2026, so check before heading over. The shade is unmatched: huge pine, eucalyptus and cedar trees.</p>
+
+<h3 class="text-2xl font-bold mb-4 text-gray-900">Parque Bicentenario</h3>
+<p class="text-gray-700 mb-6"><strong>Location:</strong> Anillo Periférico, over the former IMMSA industrial site (~5.8 km from Centro). <strong>Hours:</strong> Tuesday–Sunday 6:00 AM – 6:00 PM (closed Mondays). <strong>Cost:</strong> Free. Opened during Mexico's 2010 Bicentennial celebrations, Parque Bicentenario is one of the most interesting reclaimed-industrial green spaces in the country — a former copper foundry turned public park, now home to 33 species of trees, a network of jogging and walking paths, an outdoor gym, covered picnic areas, and a dedicated <strong>children's playground with juegos infantiles</strong> that's especially popular on Sunday mornings. Fifteen industrial sculptures preserved from the original IMMSA plant dot the grounds — kids love climbing near them and parents love the photo opportunities. Free parking on-site; public transit via Ruta 02, 04, 09, or 34.</p>
 
 <h3 class="text-2xl font-bold mb-4 text-gray-900">Plaza de los Fundadores and Plaza de Armas</h3>
 <p class="text-gray-700 mb-6">Not parks in the traditional sense, but the two main historic plazas are excellent for toddlers who want to chase pigeons, ride the small municipal carousel (when it's set up for festivals), and eat raspados (shaved ice). Both are free, surrounded by cafes with bathrooms, and central to family walking tours of the cantera-stone historic center — a UNESCO Camino Real de Tierra Adentro site.</p>
@@ -306,7 +384,7 @@ const contentEN = `<div class="prose prose-lg max-w-none">
       <li>• <strong>Tangamanga I Zona Kids</strong> — the full range of slides and climbing frames</li>
       <li>• <strong>Zoológico de Tangamanga</strong> — free and absolutely captivating at this age</li>
       <li>• <strong>Museo Laberinto</strong> — 3D movie is a big hit</li>
-      <li>• <strong>Paddle boats on the Tangamanga lake</strong> — with life vests</li>
+      <li>• <strong>Parque Bicentenario</strong> — playground + industrial sculptures, safe and shaded</li>
     </ul>
   </div>
   <div class="bg-green-50 border-2 border-green-200 rounded-xl p-6">
@@ -463,50 +541,388 @@ ${JSON.stringify(faqJsonLd, null, 2)}
 
 </div>`;
 
-const contentES = contentEN
-  .replace(/Table of Contents/g, 'Tabla de Contenidos')
-  .replace(/Why SLP is Great for Kids/g, 'Por qué SLP es ideal para niños')
-  .replace(/Quick-Pick Table: Top 7 Parks/g, 'Tabla Rápida: Top 7 Parques')
-  .replace(/Parque Tangamanga I and II: Full Guide/g, 'Parque Tangamanga I y II: Guía Completa')
-  .replace(/Other Parks Worth Visiting/g, 'Otros Parques que Vale la Pena Visitar')
-  .replace(/Splash Pads and Water Play/g, 'Albercas y Juegos de Agua')
-  .replace(/Indoor Spaces for Hot or Rainy Days/g, 'Espacios Techados para Días Calurosos o Lluviosos')
-  .replace(/Age-by-Age Recommendations/g, 'Recomendaciones por Edad')
-  .replace(/Practical Tips: Altitude, Shade, Strollers/g, 'Tips Prácticos: Altitud, Sombra, Carriolas')
-  .replace(/Free vs\. Paid Comparison/g, 'Comparación Gratis vs. De Pago')
-  .replace(/Safety and Parent Reviews/g, 'Seguridad y Reseñas de Padres')
-  .replace(/How to Get There/g, 'Cómo Llegar')
-  .replace(/FAQ/g, 'Preguntas Frecuentes')
-  .replace(/Key Takeaways/g, 'Puntos Clave')
-  .replace(/Why San Luis Potosí is Great for Kids/g, 'Por qué San Luis Potosí es ideal para niños')
-  .replace(/Quick-Pick Table: Top 7 Parks for Kids in San Luis Potosí/g, 'Tabla Rápida: Top 7 Parques para Niños en San Luis Potosí')
-  .replace(/Parque Tangamanga I: The Deep Dive/g, 'Parque Tangamanga I: Guía Detallada')
-  .replace(/The Flagship/g, 'El Principal')
-  .replace(/The Quieter Sibling/g, 'El Hermano Tranquilo')
-  .replace(/Other Parks in San Luis Potosí Worth a Visit/g, 'Otros Parques en SLP que Vale la Pena Visitar')
-  .replace(/Parks in Lomas, Villa Magna and Industrias/g, 'Parques en Lomas, Villa Magna e Industrias')
-  .replace(/Splash Pads and Water Play in San Luis Potosí/g, 'Albercas y Juegos de Agua en San Luis Potosí')
-  .replace(/Indoor Kid Spaces for Rainy or Very Hot Days/g, 'Espacios Techados para Niños en Días de Lluvia o Calor')
-  .replace(/Practical Tips: Altitude, Shade, Strollers/g, 'Tips Prácticos: Altitud, Sombra, Carriolas')
-  .replace(/Free vs\. Paid: Which to Choose/g, 'Gratis vs. De Pago: Cuál Elegir')
-  .replace(/Toddlers/g, 'Bebés y caminantes')
-  .replace(/Preschool/g, 'Preescolar')
-  .replace(/Elementary/g, 'Primaria')
-  .replace(/Tweens \/ Teens/g, 'Preadolescentes / Adolescentes')
-  .replace(/Best overall:/g, 'Mejor en general:')
-  .replace(/Best for toddlers:/g, 'Mejor para bebés:')
-  .replace(/Best for active kids:/g, 'Mejor para niños activos:')
-  .replace(/Best rainy-day indoor pick:/g, 'Mejor opción techada para días de lluvia:')
-  .replace(/Best for swimming:/g, 'Mejor para nadar:')
-  .replace(/Bottom line:/g, 'En resumen:')
-  .replace(/Frequently Asked Questions/g, 'Preguntas Frecuentes')
-  .replace(/Related Family Guides/g, 'Guías Familiares Relacionadas')
-  .replace(/Ready to Explore SLP with Your Kids\?/g, '¿Listo para Explorar SLP con tus Hijos?')
-  .replace(/Browse more SLP family guides/g, 'Ver más guías familiares de SLP')
-  .replace(/Verification note:/g, 'Nota de verificación:')
-  .replace(/Budget tip:/g, 'Tip económico:')
-  .replace(/Day-trip upgrade:/g, 'Mejora de día-viaje:')
-  .replace(/Top indoor pick:/g, 'Mejor opción techada:');
+const contentES = `<div class="prose prose-lg max-w-none">
+
+<div class="mb-8">
+<img src="${IMG.hero}" alt="Mejores parques para niños en San Luis Potosí — Guía familiar del Parque Tangamanga" class="w-full rounded-xl shadow-2xl" />
+</div>
+
+<div class="bg-yellow-50 p-6 rounded-lg mb-8">
+  <h3 class="text-xl font-bold mb-4 text-gray-900">Tabla de Contenidos</h3>
+  <ul class="list-disc pl-6">
+    <li><a href="#introduction" class="text-blue-600 hover:text-blue-800">Por qué SLP es ideal para niños</a></li>
+    <li><a href="#quick-picks" class="text-blue-600 hover:text-blue-800">Tabla Rápida: Los 8 Mejores Parques</a></li>
+    <li><a href="#tangamanga" class="text-blue-600 hover:text-blue-800">Parque Tangamanga I y II: Guía Completa</a></li>
+    <li><a href="#other-parks" class="text-blue-600 hover:text-blue-800">Otros parques que vale la pena visitar</a></li>
+    <li><a href="#water-play" class="text-blue-600 hover:text-blue-800">Chapoteaderos y juegos con agua</a></li>
+    <li><a href="#indoor" class="text-blue-600 hover:text-blue-800">Espacios techados para días lluviosos o calurosos</a></li>
+    <li><a href="#by-age" class="text-blue-600 hover:text-blue-800">Recomendaciones por edad</a></li>
+    <li><a href="#tips" class="text-blue-600 hover:text-blue-800">Consejos prácticos: altitud, sombra, carriolas</a></li>
+    <li><a href="#free-vs-paid" class="text-blue-600 hover:text-blue-800">Gratis vs. de pago</a></li>
+    <li><a href="#safety" class="text-blue-600 hover:text-blue-800">Seguridad y opiniones de papás</a></li>
+    <li><a href="#getting-there" class="text-blue-600 hover:text-blue-800">Cómo llegar</a></li>
+    <li><a href="#faq" class="text-blue-600 hover:text-blue-800">Preguntas frecuentes</a></li>
+  </ul>
+</div>
+
+<div class="bg-blue-50 p-6 rounded-lg mb-8">
+  <h3 class="text-xl font-bold mb-4 text-blue-900">Puntos Clave</h3>
+  <ul class="list-disc pl-6 space-y-2 text-blue-900">
+    <li><strong>Mejor en general:</strong> Parque Tangamanga I — 411 hectáreas, entrada gratis, zoológico, juegos infantiles, lago y una Zona Kids dedicada para niños de 2 a 12 años.</li>
+    <li><strong>Mejor para bebés y menores de 3:</strong> Alameda Juan Sarabia en el Centro Histórico — sombreada, plana, cercada y perfecta para carriolas.</li>
+    <li><strong>Mejor para niños activos:</strong> Parque Tangamanga II — menos concurrido, ciclopistas amplias y canchas deportivas.</li>
+    <li><strong>Mejor opción techada para días lluviosos:</strong> Museo Laberinto de las Ciencias y las Artes — interactivo, con cine 3D, $50 MXN adultos.</li>
+    <li><strong>Mejor para nadar:</strong> Dinoasis (antes Splash) dentro de Tangamanga I — alberca de olas y zonas para niños pequeños.</li>
+    <li><strong>En resumen:</strong> San Luis Potosí tiene más áreas verdes familiares gratuitas y de calidad per cápita que cualquier otra ciudad del Bajío, y casi todo es caminable o está a un Uber corto del Centro.</li>
+  </ul>
+</div>
+
+<section id="introduction" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Por qué San Luis Potosí es ideal para niños</h2>
+
+<p class="text-gray-700 mb-6"><strong>Si estás buscando "mejores parques para niños cerca de mí" y vives o visitas San Luis Potosí (SLP), estás en una de las ciudades más afortunadas para familias en el centro de México.</strong> La capital se encuentra a 1,863 m (6,112 ft) sobre el nivel del mar, lo que se traduce en clima primaveral todo el año, pocos mosquitos y días largos al aire libre. Pero lo más importante es que SLP ha invertido fuertemente en espacios verdes urbanos: <strong>solo el Parque Tangamanga I tiene 411 hectáreas</strong>, considerablemente más grande que el Central Park de Nueva York (340 ha). Oficialmente es el segundo parque urbano más grande de México después del Bosque de Chapultepec en CDMX (866 ha). Aquí el matiz que suelen señalar los locales: <em>Chapultepec se clasifica técnicamente como bosque, no como parque</em>, lo que —si solo cuentas los espacios urbanos oficialmente catalogados como parques— convierte al Tangamanga, de facto, en el parque urbano más grande del país.</p>
+
+<p class="text-gray-700 mb-6">Esta guía cubre todos los parques donde los niños realmente pueden jugar con seguridad: los gigantes insignia (Tangamanga I y II), las plazas históricas con juegos infantiles, las opciones de juegos con agua y los espacios techados de respaldo para las pocas tardes lluviosas o de 30 °C. Verificamos horarios, tarifas y servicios en abril de 2026 y señalamos lo que podría cambiar.</p>
+
+<p class="text-gray-700 mb-6">Para un panorama más amplio de qué hacer con niños más allá de los parques, consulta nuestra guía principal de <a href="/family-friendly-activities" class="text-blue-600 underline font-medium">actividades para familias en SLP</a> y la <a href="/resources/family-guide" class="text-blue-600 underline font-medium">guía para familias expatriadas</a>.</p>
+</section>
+
+<section id="quick-picks" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Tabla Rápida: Los 8 Mejores Parques para Niños en San Luis Potosí</h2>
+
+<div class="overflow-x-auto mb-8">
+  <table class="min-w-full bg-white border-2 border-gray-200 rounded-lg shadow-lg">
+    <thead style="background: linear-gradient(to right, #059669, #0d9488);">
+      <tr>
+        <th class="px-4 py-3 text-left text-xs font-bold text-white uppercase">Parque</th>
+        <th class="px-4 py-3 text-center text-xs font-bold text-white uppercase">Edad Ideal</th>
+        <th class="px-4 py-3 text-center text-xs font-bold text-white uppercase">Horarios</th>
+        <th class="px-4 py-3 text-center text-xs font-bold text-white uppercase">Costo</th>
+        <th class="px-4 py-3 text-left text-xs font-bold text-white uppercase">Característica Destacada</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200 text-sm">
+      <tr><td class="px-4 py-3 font-semibold">Parque Tangamanga I</td><td class="px-4 py-3 text-center">2–12</td><td class="px-4 py-3 text-center">Mar–Sáb 5am–10:30pm; Dom 5am–6pm</td><td class="px-4 py-3 text-center text-green-600 font-bold">Gratis</td><td class="px-4 py-3">Zoológico, lago, Zona Kids, planetario</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-3 font-semibold">Parque Tangamanga II</td><td class="px-4 py-3 text-center">5–14</td><td class="px-4 py-3 text-center">Mar–Dom 6am–8pm</td><td class="px-4 py-3 text-center text-green-600 font-bold">Gratis</td><td class="px-4 py-3">Ciclopistas, canchas deportivas, menos gente</td></tr>
+      <tr><td class="px-4 py-3 font-semibold">Alameda Juan Sarabia</td><td class="px-4 py-3 text-center">0–6</td><td class="px-4 py-3 text-center">Abierto 24/7</td><td class="px-4 py-3 text-center text-green-600 font-bold">Gratis</td><td class="px-4 py-3">Histórico, sombreado, perfecto para carriolas</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-3 font-semibold">Parque Juan H. Sánchez (Morales)</td><td class="px-4 py-3 text-center">4–10</td><td class="px-4 py-3 text-center">6am–10pm</td><td class="px-4 py-3 text-center text-green-600 font-bold">Gratis</td><td class="px-4 py-3">Árboles centenarios, en remodelación</td></tr>
+      <tr><td class="px-4 py-3 font-semibold">Parque Bicentenario</td><td class="px-4 py-3 text-center">4–12</td><td class="px-4 py-3 text-center">Mar–Dom 6am–6pm</td><td class="px-4 py-3 text-center text-green-600 font-bold">Gratis</td><td class="px-4 py-3">Juegos infantiles, 33 especies de árboles, esculturas industriales</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-3 font-semibold">Parque acuático Dinoasis (Splash)</td><td class="px-4 py-3 text-center">3–14</td><td class="px-4 py-3 text-center">Temporada 10am–6pm</td><td class="px-4 py-3 text-center">~$200 MXN niño</td><td class="px-4 py-3">Alberca de olas + chapoteadero para niños</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-3 font-semibold">Museo Laberinto (techado)</td><td class="px-4 py-3 text-center">4–14</td><td class="px-4 py-3 text-center">Mar–Vie 9–16; Sáb–Dom 11–19</td><td class="px-4 py-3 text-center">$50 MXN adulto / $40 niño</td><td class="px-4 py-3">Ciencia interactiva + cine 3D</td></tr>
+      <tr><td class="px-4 py-3 font-semibold">Kidiverso (techado)</td><td class="px-4 py-3 text-center">2–12</td><td class="px-4 py-3 text-center">Diario 10am–9pm</td><td class="px-4 py-3 text-center">~$180–250 MXN</td><td class="px-4 py-3">Brincolines, alberca de pelotas, fiestas</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8">
+<p class="text-yellow-800"><strong>Nota de verificación:</strong> Horarios y precios confirmados en abril de 2026 con el gobierno municipal de San Luis Potosí y el sitio oficial del Museo Laberinto. La actualización de tarifas 2026 en Tangamanga solo afecta la renta de instalaciones deportivas (renta de canchas de fútbol/básquet $170 MXN / 2 hrs; gimnasio de alto rendimiento $470 MXN/mes). La entrada al parque sigue siendo gratuita.</p>
+</div>
+</section>
+
+<section id="tangamanga" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Parque Tangamanga I y II: La Guía Completa</h2>
+
+<div class="mb-8">
+<img src="${IMG.family}" alt="Familias disfrutando del Parque Tangamanga I en San Luis Potosí" class="w-full rounded-xl shadow-lg" />
+</div>
+
+<h3 class="text-2xl font-bold mb-4 text-gray-900">Parque Tangamanga I — El insignia</h3>
+
+<p class="text-gray-700 mb-6"><strong>El Parque Tangamanga I abarca 411 hectáreas (1,016 acres) en el suroeste de la ciudad.</strong> Oficialmente es el segundo parque urbano más grande de México, detrás del Bosque de Chapultepec (866 ha) en CDMX, pero como Chapultepec está clasificado como <em>bosque</em> y no como parque, cada vez más fuentes sostienen que Tangamanga es en realidad el parque urbano más grande del país. De cualquier forma, supera por mucho al Central Park de Nueva York (340 ha). El parque combina un zoológico gratuito, un planetario, un parque acuático de temporada, un museo interactivo de ciencias, un lago, un jardín japonés, un jardín botánico, un teatro al aire libre, 14 kilómetros de pistas para trotar y andar en bici y —lo más importante para las familias— zonas infantiles con equipamiento moderno.</p>
+
+<p class="text-gray-700 mb-6"><strong>La "Zona Kids"</strong> es un área recientemente ampliada con juegos infantiles clasificados por edad, adecuados para niños desde los 2 hasta aproximadamente 12 años. Las superficies son de hule amortiguador, los juegos están sombreados en la mayoría de las secciones y hay bancas distribuidas alrededor del perímetro para los papás. Junto a la Zona Kids está el <strong>Parque Cri-Cri</strong>, una zona temática encantadora diseñada alrededor de los personajes de las canciones infantiles de Francisco Gabilondo Soler, muy queridos por los niños mexicanos.</p>
+
+<h4 class="text-xl font-bold mb-3 text-gray-900">Horarios (confirmados en abril 2026)</h4>
+<ul class="list-disc pl-6 mb-6 text-gray-700">
+  <li><strong>Lunes:</strong> 5:00 AM – 11:00 AM (mantenimiento; último acceso 10:30 AM)</li>
+  <li><strong>Martes a sábado:</strong> 5:00 AM – 10:30 PM (último acceso 9:30 PM)</li>
+  <li><strong>Domingo:</strong> 5:00 AM – 6:00 PM (último acceso 5:30 PM)</li>
+  <li><strong>Zoológico:</strong> Martes a domingo, 10:00 AM – 5:00 PM (cerrado los lunes)</li>
+</ul>
+
+<h4 class="text-xl font-bold mb-3 text-gray-900">Costo de entrada</h4>
+<p class="text-gray-700 mb-4">La entrada general al parque, el zoológico, el Laberinto de las Ciencias y los jardines es <strong>gratuita</strong>. Atracciones de pago dentro del parque:</p>
+<ul class="list-disc pl-6 mb-6 text-gray-700">
+  <li><strong>Planetario:</strong> normalmente $20–50 MXN por persona</li>
+  <li><strong>Parque acuático Dinoasis</strong> (antes Splash): aproximadamente $200 MXN por niño (de temporada, generalmente desde Semana Santa hasta principios de otoño)</li>
+  <li><strong>Renta de bicis:</strong> alrededor de $40–80 MXN por hora, según el tamaño y si incluye casco</li>
+  <li><strong>Renta de canchas deportivas (actualización 2026):</strong> $170 MXN / 2 hrs para canchas de fútbol, básquetbol y voleibol</li>
+</ul>
+
+<div class="mb-8">
+<img src="${IMG.lake}" alt="Lago del Parque Tangamanga I — un rincón tranquilo para picnic en familia" class="w-full rounded-xl shadow-lg" />
+</div>
+
+<div class="bg-amber-50 border-l-4 border-amber-400 p-4 mb-6">
+<p class="text-amber-900 text-sm"><strong>Aviso (actualización 2026):</strong> Los barquitos de pedal del lago de Tangamanga I ya no están en operación. El lago sigue siendo un bonito lugar sombreado para un picnic y para caminar por el perímetro, pero ya no se pueden rentar lanchas. Si tus niños quieren estar en el agua, la mejor alternativa cercana es la Presa San José para sesiones guiadas de stand-up paddle.</p>
+</div>
+
+<h4 class="text-xl font-bold mb-3 text-gray-900">Qué hacer con niños en Tangamanga I</h4>
+<ol class="list-decimal pl-6 mb-6 text-gray-700 space-y-2">
+  <li><strong>Empieza por la Puerta 1 o la 7</strong> (accesos principales): son las más cercanas al área de juegos y al zoológico.</li>
+  <li><strong>Visita el zoológico temprano.</strong> Los animales están más activos entre las 10 y las 11 AM, antes del calor de la tarde.</li>
+  <li><strong>Picnic junto al lago:</strong> hay mesas sombreadas alrededor del perímetro; los barquitos de pedal ya no operan, pero la caminata alrededor del lago sigue siendo uno de los paseos más bonitos del parque.</li>
+  <li><strong>Camina o pedalea hasta el Jardín Japonés:</strong> tranquilo, sombreado, gratis y perfecto para un picnic.</li>
+  <li><strong>Pasa por la Zona Kids</strong> después de comer, cuando ya está parcialmente sombreada.</li>
+  <li><strong>Termina con un helado o un raspado en los kioscos</strong> cerca del teatro al aire libre.</li>
+</ol>
+
+<p class="text-gray-700 mb-6">Para una guía dedicada completa, consulta nuestra <a href="/parque-tangamanga" class="text-blue-600 underline font-medium">guía completa del Parque Tangamanga</a>.</p>
+
+<h3 class="text-2xl font-bold mb-4 text-gray-900 mt-8">Parque Tangamanga II — El hermano tranquilo</h3>
+
+<p class="text-gray-700 mb-6">El Parque Tangamanga II mide aproximadamente un tercio de lo que mide Tangamanga I, está ubicado al noreste de la ciudad y es considerablemente menos concurrido, especialmente los fines de semana. Es ideal para familias que buscan amplios prados abiertos, ciclopistas dedicadas sin tráfico peatonal, canchas de básquetbol y fútbol, y áreas de juegos más tranquilas. El horario suele ser de martes a domingo de 6:00 AM a 8:00 PM (cerrado los lunes por mantenimiento). La entrada es gratuita.</p>
+
+<p class="text-gray-700 mb-6"><strong>Los papás con niños más grandes (8+) suelen preferir Tangamanga II</strong> porque las ciclopistas son más lisas, más continuas y tienen menos peatones. Lleva tus propias bicis: el servicio de renta es más limitado que en Tangamanga I.</p>
+</section>
+
+<section id="other-parks" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Otros Parques en San Luis Potosí que vale la pena visitar</h2>
+
+<h3 class="text-2xl font-bold mb-4 text-gray-900">Alameda Juan Sarabia</h3>
+<p class="text-gray-700 mb-6"><strong>Ubicación:</strong> Extremo oriente del Centro Histórico, junto a la antigua estación del ferrocarril. <strong>Horario:</strong> Abierto 24/7 (mejor durante el día). <strong>Costo:</strong> Gratis. La Alameda fue originalmente la huerta del convento del Carmen antes de convertirse en parque público tras las Leyes de Reforma de 1850, y fue nombrada oficialmente en 1932 en honor al periodista liberal Juan Sarabia Díaz de León. Hoy ofrece más de 4 hectáreas de andadores planos y sombreados, una fuente central, un área de juegos de temporada y eventos culturales frecuentes. Es por mucho la mejor opción para papás con bebés y niños pequeños que quieren una salida corta desde hoteles del Centro o desde el primer cuadro: puedes caminar a la Plaza de Armas o a la Catedral en 10 minutos.</p>
+
+<h3 class="text-2xl font-bold mb-4 text-gray-900">Parque Juan H. Sánchez (Parque de Morales)</h3>
+<p class="text-gray-700 mb-6"><strong>Ubicación:</strong> Colonia Himno Nacional, entre Av. Venustiano Carranza y Paseo de los Artistas. <strong>Tamaño:</strong> ~18 hectáreas. <strong>Horario:</strong> 6:00 AM – 10:00 PM. <strong>Costo:</strong> Gratis. Conocido cariñosamente como "Parque de Morales", este parque centenario es una institución potosina, con un lago artificial creado en 1968, más de 120 especies animales identificadas y la famosa resbaladilla en forma de cohete ("El Cohete") que marcó la infancia de varias generaciones. Un proyecto estatal de rehabilitación de 100 millones de pesos está renovando actualmente el lago, los juegos infantiles y las áreas para mascotas; algunas zonas del parque pueden estar cerradas con valla en 2026, así que conviene verificar antes de ir. La sombra es inigualable: enormes pinos, eucaliptos y cedros.</p>
+
+<h3 class="text-2xl font-bold mb-4 text-gray-900">Parque Bicentenario</h3>
+<p class="text-gray-700 mb-6"><strong>Ubicación:</strong> Anillo Periférico, sobre el antiguo terreno industrial de IMMSA (~5.8 km del Centro). <strong>Horario:</strong> Martes a domingo 6:00 AM – 6:00 PM (cerrado los lunes). <strong>Costo:</strong> Gratis. Inaugurado durante las celebraciones del Bicentenario de México en 2010, el Parque Bicentenario es uno de los espacios verdes recuperados de terrenos industriales más interesantes del país: una antigua fundición de cobre convertida en parque público, hoy hogar de 33 especies de árboles, una red de senderos para correr y caminar, un gimnasio al aire libre, áreas de picnic techadas y un <strong>área de juegos infantiles</strong> especialmente popular los domingos por la mañana. Quince esculturas industriales conservadas de la antigua planta de IMMSA están distribuidas por el terreno: a los niños les encanta trepar cerca de ellas y a los papás les encantan las fotos. Estacionamiento gratuito; transporte público en las Rutas 02, 04, 09 y 34.</p>
+
+<h3 class="text-2xl font-bold mb-4 text-gray-900">Plaza de los Fundadores y Plaza de Armas</h3>
+<p class="text-gray-700 mb-6">No son parques en el sentido tradicional, pero las dos plazas históricas principales son excelentes para bebés y niños pequeños que quieren perseguir palomas, subirse al carrusel municipal (cuando se instala durante las fiestas) y comerse un raspado. Ambas son gratis, están rodeadas de cafés con baños y son el centro de los recorridos familiares a pie por el Centro Histórico, construido en cantera y declarado sitio UNESCO como parte del Camino Real de Tierra Adentro.</p>
+
+<h3 class="text-2xl font-bold mb-4 text-gray-900">Jardín de San Juan de Dios</h3>
+<p class="text-gray-700 mb-6">Pequeño, escondido dentro del Centro Histórico junto a la iglesia del mismo nombre. Bancas a la sombra, árboles viejos, perfecto para una pausa de 30 minutos durante un paseo familiar por el Centro. No tiene juegos infantiles pero es muy seguro y muy mexicano.</p>
+
+<h3 class="text-2xl font-bold mb-4 text-gray-900">Parques en Lomas, Villa Magna e Industrias</h3>
+<p class="text-gray-700 mb-6">Las zonas residenciales más nuevas al sur y suroeste de la ciudad incluyen varios parques vecinales tipo "condominio" tranquilos, bien cuidados y abiertos a visitantes. El <strong>Parque Lomas 4ta Sección</strong> y las áreas verdes a lo largo de Av. Palma de la Cruz cuentan con juegos infantiles básicos y pasto. Son ideales si te estás quedando en un Airbnb de esas colonias y quieres una parada de 15 minutos en el parque. Para jugar techado con nivel, los centros comerciales ancla de esa zona (Plaza Sendero, Altaria, El Dorado) tienen áreas de juego climatizadas, útiles en los días más calurosos.</p>
+
+<h3 class="text-2xl font-bold mb-4 text-gray-900">Parque Central Alameda (Soledad de Graciano Sánchez)</h3>
+<p class="text-gray-700 mb-6">Inaugurado en el municipio vecino de Soledad como parte de la expansión metropolitana de espacios verdes 2023–2025. Juegos infantiles modernos, zonas de chapoteadero y amplios prados. Vale la pena manejar 20 minutos desde el Centro si te estás quedando cerca.</p>
+</section>
+
+<section id="water-play" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Chapoteaderos y zonas de juego con agua en San Luis Potosí</h2>
+
+<div class="mb-8">
+<img src="${IMG.biodiversity}" alt="Juegos con agua y biodiversidad en Tangamanga" class="w-full rounded-xl shadow-lg" />
+</div>
+
+<p class="text-gray-700 mb-6">Las tardes de verano en SLP pueden llegar a 30–32 °C (86–90 °F): hace calor, pero es seco. Los juegos con agua son indispensables de abril a septiembre:</p>
+
+<ul class="list-disc pl-6 mb-6 text-gray-700 space-y-3">
+  <li><strong>Dinoasis (antes Splash), Parque Tangamanga I:</strong> El principal parque acuático dentro de la ciudad. Alberca de olas, chapoteadero para niños con toboganes pequeños, toboganes de emoción media para mayores de 6 y un río lento. Normalmente ~$200 MXN por niño. La temporada va de Semana Santa a principios de otoño; consulta los canales oficiales antes de ir.</li>
+  <li><strong>Parque Acuático Gogorrón (a 45 minutos al sur):</strong> Balneario de agua termal con albercas de distintas profundidades, tres toboganes, dos tubos acuáticos y chapoteaderos diseñados específicamente para niños pequeños. Un clásico paseo familiar de un día.</li>
+  <li><strong>Balneario Lourdes y Ojo Caliente:</strong> Albercas termales tradicionales, excelentes para mañanas frescas. No están tan pulidas para familias como Gogorrón, pero son más baratas.</li>
+  <li><strong>Fuentes de temporada en Plaza de Armas:</strong> Durante los eventos municipales de verano, a veces se instalan fuentes temporales. Gratis. No es algo seguro, pero es una grata sorpresa cuando lo encuentras.</li>
+</ul>
+
+<div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-8">
+<p class="text-blue-800"><strong>Opción para fin de semana:</strong> Para una aventura de fin de semana, la <strong>Huasteca Potosina</strong> (4 horas al este) ofrece ríos turquesa, cascadas naturales y pozas: el mejor parque natural de agua en México. Consulta el <a href="/events/all" class="underline font-medium">calendario de eventos</a> para viajes guiados familiares.</p>
+</div>
+</section>
+
+<section id="indoor" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Espacios techados para niños en días lluviosos o muy calurosos</h2>
+
+<div class="overflow-x-auto mb-8">
+  <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+    <thead class="bg-gray-50"><tr>
+      <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Lugar</th>
+      <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Tipo</th>
+      <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">Horario</th>
+      <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">Precio</th>
+      <th class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">Edad Ideal</th>
+    </tr></thead>
+    <tbody class="divide-y divide-gray-200 text-sm">
+      <tr><td class="px-4 py-3 font-semibold">Museo Laberinto</td><td class="px-4 py-3">Ciencia interactiva + cine 3D</td><td class="px-4 py-3 text-center">Mar–Vie 9–16; Sáb–Dom 11–19</td><td class="px-4 py-3 text-center">$50 adulto / $40 niño</td><td class="px-4 py-3 text-center">4–14</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-3 font-semibold">Planetario Tangamanga I</td><td class="px-4 py-3">Proyecciones astronómicas en domo</td><td class="px-4 py-3 text-center">Mar–Dom, por funciones</td><td class="px-4 py-3 text-center">$20–50 MXN</td><td class="px-4 py-3 text-center">5–14</td></tr>
+      <tr><td class="px-4 py-3 font-semibold">Kidiverso</td><td class="px-4 py-3">Brincolines, alberca de pelotas, inflables</td><td class="px-4 py-3 text-center">Diario 10–21</td><td class="px-4 py-3 text-center">~$180–250 MXN</td><td class="px-4 py-3 text-center">2–12</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-3 font-semibold">Stardust Park</td><td class="px-4 py-3">Brinca-brinca techado con tema espacial</td><td class="px-4 py-3 text-center">Diario 11–20</td><td class="px-4 py-3 text-center">~$150 MXN</td><td class="px-4 py-3 text-center">2–10</td></tr>
+      <tr><td class="px-4 py-3 font-semibold">Área infantil Plaza Sendero</td><td class="px-4 py-3">Área de juegos de centro comercial</td><td class="px-4 py-3 text-center">Horario del centro</td><td class="px-4 py-3 text-center">Normalmente gratis</td><td class="px-4 py-3 text-center">2–8</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-3 font-semibold">Altaria y El Dorado</td><td class="px-4 py-3">Cine + zonas de juego</td><td class="px-4 py-3 text-center">Diario 11–21</td><td class="px-4 py-3 text-center">Varía</td><td class="px-4 py-3 text-center">Todas las edades</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p class="text-gray-700 mb-6"><strong>Mejor opción techada: Museo Laberinto de las Ciencias y las Artes.</strong> Ubicado en el Bulevar Antonio Rocha Cordero, Colonia Tierra Blanca, es uno de los mejores museos interactivos de ciencia para niños del centro de México. Exhibiciones prácticas de física, biología, química y robótica, más un cine 3D: la entrada incluye todo. Los menores de 3 años entran gratis.</p>
+</section>
+
+<section id="by-age" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Recomendaciones por edad</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+  <div class="bg-pink-50 border-2 border-pink-200 rounded-xl p-6">
+    <h3 class="text-xl font-bold text-pink-900 mb-3">Bebés y menores de 3 años</h3>
+    <ul class="space-y-2 text-pink-800 text-sm">
+      <li>• <strong>Alameda Juan Sarabia</strong> — plana, sombreada, perfecta para carriolas</li>
+      <li>• <strong>Parque Tangamanga I — área Cri-Cri</strong> — superficies blandas, juegos a escala de bebé</li>
+      <li>• <strong>Plaza de los Fundadores</strong> — perseguir palomas, comer raspados</li>
+      <li>• Evitar: Parque de Morales (algunos juegos siguen cerrados)</li>
+    </ul>
+  </div>
+  <div class="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-6">
+    <h3 class="text-xl font-bold text-yellow-900 mb-3">Preescolar (3–5 años)</h3>
+    <ul class="space-y-2 text-yellow-800 text-sm">
+      <li>• <strong>Zona Kids de Tangamanga I</strong> — toda la variedad de toboganes y estructuras para trepar</li>
+      <li>• <strong>Zoológico de Tangamanga</strong> — gratis y absolutamente fascinante a esta edad</li>
+      <li>• <strong>Museo Laberinto</strong> — la película 3D es un éxito asegurado</li>
+      <li>• <strong>Parque Bicentenario</strong> — juegos infantiles + esculturas industriales, seguro y sombreado</li>
+    </ul>
+  </div>
+  <div class="bg-green-50 border-2 border-green-200 rounded-xl p-6">
+    <h3 class="text-xl font-bold text-green-900 mb-3">Primaria (6–10 años)</h3>
+    <ul class="space-y-2 text-green-800 text-sm">
+      <li>• <strong>Renta de bicis en Tangamanga I</strong> — 14 km de pistas para explorar</li>
+      <li>• <strong>Tangamanga II</strong> — mejor para paseos largos en bici</li>
+      <li>• <strong>Parque acuático Dinoasis</strong> — toboganes medianos, alberca de olas</li>
+      <li>• <strong>Planetario</strong> — el domo es hipnótico a esta edad</li>
+      <li>• <strong>Brincolines de Kidiverso</strong> — sede ideal para cumpleaños</li>
+    </ul>
+  </div>
+  <div class="bg-blue-50 border-2 border-blue-200 rounded-xl p-6">
+    <h3 class="text-xl font-bold text-blue-900 mb-3">Pre-adolescentes / Adolescentes (11+)</h3>
+    <ul class="space-y-2 text-blue-800 text-sm">
+      <li>• <strong>Canchas deportivas de Tangamanga II</strong> — cascaritas de fútbol, básquetbol</li>
+      <li>• <strong>BMW Maratón Tangamanga (28 de junio de 2026)</strong> — distancias familiares 5K y 10K</li>
+      <li>• <strong>Día en la Huasteca Potosina</strong> — cascadas y ríos</li>
+      <li>• <strong>Cineteca / cines en centros comerciales</strong> — Altaria y Plaza Sendero</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<section id="tips" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Consejos prácticos: altitud, sombra, carriolas</h2>
+
+<ul class="list-disc pl-6 mb-6 text-gray-700 space-y-3">
+  <li><strong>Altitud (1,863 m / 6,112 ft):</strong> Quienes vienen del nivel del mar pueden sentir un poco de fatiga o dolor de cabeza el primer día. Hidrátate más de lo habitual, baja el ritmo las primeras 24 horas y deja los paseos largos en bici para el segundo día. Los niños se adaptan más rápido que los adultos, pero igual necesitan agua cada 30 minutos.</li>
+  <li><strong>La protección solar no es negociable:</strong> El índice UV es alto todo el año por la altitud y la atmósfera delgada. Aplica SPF 50+ antes de salir del hotel y vuelve a aplicar cada 2 horas. Los sombreros de ala ancha para niños son estándar en SLP.</li>
+  <li><strong>Botellas de agua:</strong> Hay estaciones de llenado en Tangamanga I cerca del teatro al aire libre. De lo contrario, lleva al menos 1 L por persona.</li>
+  <li><strong>Mejor horario en verano (abril–septiembre):</strong> Mañanas de 7 a 11 AM o tardes después de las 5 PM. El mediodía es demasiado caluroso para juegos infantiles sin sombra.</li>
+  <li><strong>Mejor horario en invierno (noviembre–febrero):</strong> Tardes de 2 a 5 PM; por las mañanas puede hacer frío (5–10 °C) antes de que el sol caliente el parque.</li>
+  <li><strong>Carriolas:</strong> Los andadores principales de Tangamanga I y la Alameda Juan Sarabia son totalmente aptos para carriolas. En el Parque de Morales algunos senderos son de tierra: solo aptos para carriolas todoterreno. Las banquetas del Centro Histórico son angostas e irregulares; considera un portabebés en el Centro.</li>
+  <li><strong>Baños:</strong> Hay baños públicos en Tangamanga I (cerca de cada puerta principal, a veces con cuota de $5 MXN), en la Alameda (cerca de la fuente central) y en todos los centros comerciales. Los baños del Parque de Morales están en reconstrucción.</li>
+  <li><strong>Comida:</strong> Se permite llevar comida a todos los parques de la ciudad. Varios kioscos venden fruta fresca, raspados, elotes y agua fresca a precios muy accesibles.</li>
+  <li><strong>Accesibilidad:</strong> Tangamanga I tiene andadores pavimentados aptos para sillas de ruedas en toda la zona central. El zoológico es totalmente accesible. Las plazas históricas tienen partes empedradas.</li>
+</ul>
+</section>
+
+<section id="free-vs-paid" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Gratis vs. De pago: ¿Cuál elegir?</h2>
+
+<div class="overflow-x-auto mb-8">
+  <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+    <thead class="bg-gray-50"><tr>
+      <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Opción</th>
+      <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Costo</th>
+      <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Ideal Para</th>
+    </tr></thead>
+    <tbody class="divide-y divide-gray-200 text-sm">
+      <tr><td class="px-4 py-3 font-semibold">Tangamanga I + zoológico + juegos infantiles</td><td class="px-4 py-3 text-green-600 font-bold">Gratis</td><td class="px-4 py-3">Día completo sin gastar</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-3 font-semibold">Tangamanga II bicis/deportes</td><td class="px-4 py-3 text-green-600 font-bold">Gratis (con tu bici)</td><td class="px-4 py-3">Niños mayores activos</td></tr>
+      <tr><td class="px-4 py-3 font-semibold">Alameda + Centro Histórico</td><td class="px-4 py-3 text-green-600 font-bold">Gratis</td><td class="px-4 py-3">Bebés, días de carriola</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-3 font-semibold">Planetario (dentro de Tangamanga)</td><td class="px-4 py-3">$20–50 MXN</td><td class="px-4 py-3">A partir de 5 años, funciones de 45 min</td></tr>
+      <tr><td class="px-4 py-3 font-semibold">Museo Laberinto</td><td class="px-4 py-3">$40–50 MXN</td><td class="px-4 py-3">Día lluvioso, aprendizaje práctico</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-3 font-semibold">Parque acuático Dinoasis</td><td class="px-4 py-3">~$200 MXN / niño</td><td class="px-4 py-3">Tardes calurosas de verano</td></tr>
+      <tr><td class="px-4 py-3 font-semibold">Kidiverso / Stardust Park</td><td class="px-4 py-3">$150–250 MXN</td><td class="px-4 py-3">Fiestas de cumpleaños, días fríos y lluviosos</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p class="text-gray-700 mb-6"><strong>Tip económico:</strong> Una familia de cuatro puede pasar un día completo, genuinamente divertido, en San Luis Potosí sin pagar un solo peso de entrada combinando Tangamanga I (parque gratis, zoológico gratis, juegos infantiles gratis) con la Alameda Juan Sarabia y las plazas históricas. Suma ~$200 MXN en total para raspados, elotes y agua fresca.</p>
+</section>
+
+<section id="safety" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Seguridad y opiniones de papás</h2>
+
+<p class="text-gray-700 mb-6">La capital de San Luis Potosí se considera ampliamente una de las capitales estatales más seguras del centro de México, con tasas de homicidio por debajo del promedio nacional según el INEGI. En cuanto a los parques específicamente:</p>
+
+<ul class="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+  <li><strong>Tangamanga I y II:</strong> La policía municipal patrulla con regularidad y hay personal de seguridad del parque en cada puerta. Los papás locales describen ambos parques como "muy seguros" durante el día. Evita los caminos del perímetro con poca iluminación después del anochecer.</li>
+  <li><strong>Alameda Juan Sarabia:</strong> Muy concurrida durante el día, con seguridad uniformada cerca, excelente para papás o mamás solos con niños. Menos recomendada muy de noche.</li>
+  <li><strong>Parque de Morales (Juan H. Sánchez):</strong> Históricamente seguro, actualmente parcialmente en remodelación: verifica las zonas cerradas y respeta la señalización.</li>
+  <li><strong>Precauciones de sentido común:</strong> Guarda los objetos de valor en una bolsa con cierre, no dejes bolsas sin supervisión en las mesas de picnic y enseña a los niños un punto de reunión en caso de separarse.</li>
+</ul>
+
+<p class="text-gray-700 mb-6">Los foros de papás potosinos (grupos de Facebook "Mamás SLP" y "Familias Expats SLP") califican consistentemente al Parque Tangamanga I como el destino familiar número uno de la ciudad, con más de 9,000 opiniones positivas combinadas entre TripAdvisor, Google Maps y Facebook.</p>
+</section>
+
+<section id="getting-there" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Cómo llegar</h2>
+
+<ul class="list-disc pl-6 mb-6 text-gray-700 space-y-3">
+  <li><strong>Parque Tangamanga I:</strong> <a href="https://maps.google.com/?q=Parque+Tangamanga+I+San+Luis+Potosi" class="text-blue-600 underline">Google Maps</a>. 8 accesos principales (puertas); la mayoría de los visitantes usa la Puerta 1 (Av. Himno Nacional) o la Puerta 7. Estacionamiento gratis en cada acceso. Transporte público: Ruta 1, Ruta 22. Uber desde el Centro: ~$60–90 MXN.</li>
+  <li><strong>Parque Tangamanga II:</strong> <a href="https://maps.google.com/?q=Parque+Tangamanga+II+San+Luis+Potosi" class="text-blue-600 underline">Google Maps</a>. Al noreste de la ciudad. Estacionamiento gratis. Ruta 26.</li>
+  <li><strong>Alameda Juan Sarabia:</strong> <a href="https://maps.google.com/?q=Alameda+Juan+Sarabia+San+Luis+Potosi" class="text-blue-600 underline">Google Maps</a>. A pie desde la Plaza de Armas. Estacionamiento en la calle de pago. Cualquier ruta que vaya al Centro.</li>
+  <li><strong>Parque Juan H. Sánchez / Morales:</strong> <a href="https://maps.google.com/?q=Parque+Morales+San+Luis+Potosi" class="text-blue-600 underline">Google Maps</a>. Colonia Himno Nacional. Estacionamiento gratis en la calle entre semana; competido los domingos.</li>
+  <li><strong>Museo Laberinto:</strong> <a href="https://maps.google.com/?q=Museo+Laberinto+San+Luis+Potosi" class="text-blue-600 underline">Google Maps</a>. Bulevar Antonio Rocha Cordero. Estacionamiento gratis en el propio museo.</li>
+</ul>
+
+<p class="text-gray-700 mb-6">Para una orientación completa sobre colonias y transporte en SLP, consulta nuestra <a href="/resources/living-guide" class="text-blue-600 underline font-medium">guía para vivir en San Luis Potosí</a>.</p>
+</section>
+
+<section id="faq" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Preguntas frecuentes</h2>
+
+<div class="space-y-6">
+  <div class="bg-white border border-gray-200 rounded-lg p-6">
+    <h3 class="text-xl font-bold mb-3 text-gray-900">¿Cuál es el mejor parque en San Luis Potosí para niños pequeños?</h3>
+    <p class="text-gray-700">El Parque Tangamanga I cuenta con una Zona Kids con juegos infantiles adecuados para niños desde los dos años, además del parque temático "Cri-Cri". El terreno es plano, apto para carriolas y con áreas sombreadas. Si buscas una opción más tranquila y con menos gente, la Alameda Juan Sarabia en el Centro Histórico está cercada, es caminable y está rodeada de cafés.</p>
+  </div>
+  <div class="bg-white border border-gray-200 rounded-lg p-6">
+    <h3 class="text-xl font-bold mb-3 text-gray-900">¿La entrada al Parque Tangamanga es gratis?</h3>
+    <p class="text-gray-700">Sí. La entrada general al Parque Tangamanga I y II es gratuita. El zoológico, el jardín botánico, el jardín japonés, el Laberinto de las Ciencias (dentro del parque) y las áreas principales de juegos infantiles también son gratis. El Planetario y el parque acuático Splash/Dinoasis cobran tarifas aparte (normalmente $20–50 MXN para el planetario y alrededor de $200 MXN por niño en Dinoasis).</p>
+  </div>
+  <div class="bg-white border border-gray-200 rounded-lg p-6">
+    <h3 class="text-xl font-bold mb-3 text-gray-900">¿A qué hora abre el Parque Tangamanga?</h3>
+    <p class="text-gray-700">El Parque Tangamanga I abre todos los días a las 5:00 AM. Los horarios de cierre varían: los lunes cierra temprano a las 11:00 AM por mantenimiento, de martes a sábado permanece abierto hasta las 10:30 PM (último acceso 9:30 PM) y los domingos cierra a las 6:00 PM (último acceso 5:30 PM). El zoológico dentro del parque opera de martes a domingo, de 10:00 AM a 5:00 PM.</p>
+  </div>
+  <div class="bg-white border border-gray-200 rounded-lg p-6">
+    <h3 class="text-xl font-bold mb-3 text-gray-900">¿Dónde pueden nadar los niños en San Luis Potosí?</h3>
+    <p class="text-gray-700">Dentro de la ciudad, el parque acuático Dinoasis (antes Splash) en Tangamanga I es la opción principal, con alberca de olas, toboganes para niños y chapoteaderos poco profundos. Para una experiencia más tradicional de balneario, el Parque Acuático Gogorrón (a 45 minutos al sur de SLP) ofrece albercas de agua termal, tres toboganes y chapoteaderos diseñados para niños pequeños.</p>
+  </div>
+  <div class="bg-white border border-gray-200 rounded-lg p-6">
+    <h3 class="text-xl font-bold mb-3 text-gray-900">¿Cuáles son las mejores actividades techadas para niños en San Luis Potosí?</h3>
+    <p class="text-gray-700">El Museo Laberinto de las Ciencias y las Artes es la mejor opción: un museo interactivo de ciencia y arte con cine 3D, exhibiciones prácticas de física y biología, con entrada de alrededor de $50 MXN adultos, $40 MXN niños de 4–5 años y gratis para menores de 3. El Planetario del Parque Tangamanga I también es excelente para tardes lluviosas o calurosas. Otras opciones techadas incluyen Kidiverso (brincolines y albercas de pelotas) y Stardust Park (brinca-brinca con temática espacial).</p>
+  </div>
+  <div class="bg-white border border-gray-200 rounded-lg p-6">
+    <h3 class="text-xl font-bold mb-3 text-gray-900">¿Hay parques con chapoteaderos en SLP?</h3>
+    <p class="text-gray-700">Sí. El parque acuático Dinoasis/Splash dentro del Parque Tangamanga I es la principal instalación de chapoteaderos y juegos de agua dentro de la ciudad. Cuenta con fuentes a la altura de bebés y niños pequeños, albercas poco profundas y toboganes especiales para niños. La operación es de temporada, típicamente desde Semana Santa hasta principios de otoño.</p>
+  </div>
+  <div class="bg-white border border-gray-200 rounded-lg p-6">
+    <h3 class="text-xl font-bold mb-3 text-gray-900">¿San Luis Potosí es seguro para familias con niños?</h3>
+    <p class="text-gray-700">La capital de San Luis Potosí se considera una de las capitales estatales más seguras del centro de México. Tangamanga I y II, la Alameda Juan Sarabia y el Centro Histórico tienen una fuerte presencia de policía municipal durante el día y son cómodos para familias. Aplican las precauciones estándar.</p>
+  </div>
+  <div class="bg-white border border-gray-200 rounded-lg p-6">
+    <h3 class="text-xl font-bold mb-3 text-gray-900">¿Cuánto cuesta el estacionamiento en el Parque Tangamanga?</h3>
+    <p class="text-gray-700">Hay varios estacionamientos gratuitos alrededor del perímetro de Tangamanga I (de la Puerta 1 a la Puerta 8) y de Tangamanga II. Los lugares se asignan por orden de llegada y se llenan rápido los domingos por la mañana. Llega antes de las 9:00 AM o después de las 4:00 PM los fines de semana para la experiencia más sencilla.</p>
+  </div>
+</div>
+</section>
+
+<div class="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
+<h3 class="text-xl font-bold mb-3 text-blue-900">Guías familiares relacionadas</h3>
+<ul class="space-y-2 text-blue-800">
+  <li>→ <a href="/family-friendly-activities" class="underline font-medium">Actividades para familias en San Luis Potosí</a></li>
+  <li>→ <a href="/parque-tangamanga" class="underline font-medium">Guía completa del Parque Tangamanga</a></li>
+  <li>→ <a href="/resources/family-guide" class="underline font-medium">Guía para familias expatriadas en SLP</a></li>
+  <li>→ <a href="/resources/living-guide" class="underline font-medium">Guía para vivir en San Luis Potosí</a></li>
+  <li>→ <a href="/events/all" class="underline font-medium">Próximos eventos familiares en SLP</a></li>
+</ul>
+</div>
+
+<div class="bg-green-50 border-l-4 border-green-400 p-6 mb-8">
+<h3 class="text-xl font-bold mb-3 text-green-900">¿Listo para explorar SLP con tus niños?</h3>
+<p class="text-green-800 mb-3"><strong>San Luis Way es tu guía local completa para la vida familiar en San Luis Potosí.</strong></p>
+<p class="text-green-800"><a href="/blog" class="text-blue-600 hover:text-blue-800 underline font-semibold">Ver más guías familiares de SLP →</a></p>
+</div>
+
+<script type="application/ld+json">
+${JSON.stringify(faqJsonLdES, null, 2)}
+</script>
+
+</div>`;
 
 const post = {
   slug: SLUG,
@@ -517,28 +933,28 @@ const post = {
   tags: ['family', 'parks', 'kids', 'san-luis-potosi', 'tangamanga', 'playgrounds', 'family-friendly', 'slp', 'parques-para-ninos'],
 
   title: 'Best Parks for Kids in San Luis Potosí 2026 (Parent-Tested Guide)',
-  excerpt: 'The 7 best parks for kids in San Luis Potosí — from Parque Tangamanga I (411 ha, free zoo, Zona Kids) to splash pads and rainy-day indoor picks. Verified hours, prices and age tips.',
+  excerpt: 'The 8 best parks for kids in San Luis Potosí — from Parque Tangamanga I (411 ha, free zoo, Zona Kids) to Parque Bicentenario, splash pads, and rainy-day indoor picks. Verified 2026 hours, prices and age tips.',
   content: contentEN,
   meta_title: 'Best Parks for Kids in San Luis Potosí 2026 | SLP Family Guide',
-  meta_description: 'Top 7 parks for kids near you in San Luis Potosí 2026: Tangamanga, Alameda, splash pads. Verified hours, free entry, age tips. Plan a family day today.',
+  meta_description: 'Top 8 parks for kids near you in San Luis Potosí 2026: Tangamanga, Bicentenario, Alameda, splash pads. Verified hours, free entry, age tips.',
 
   title_es: 'Mejores Parques para Niños en San Luis Potosí 2026 (Guía para Papás)',
-  excerpt_es: 'Los 7 mejores parques para niños en San Luis Potosí — desde Parque Tangamanga I (411 ha, zoológico gratis, Zona Kids) hasta albercas de chapoteo. Horarios, precios y tips por edad verificados.',
+  excerpt_es: 'Los 8 mejores parques para niños en San Luis Potosí — desde Parque Tangamanga I (411 ha, zoológico gratis, Zona Kids) hasta Parque Bicentenario, albercas de chapoteo y opciones para días lluviosos. Horarios, precios y tips por edad verificados.',
   content_es: contentES,
   meta_title_es: 'Mejores Parques para Niños San Luis Potosí 2026 | Guía Familiar SLP',
-  meta_description_es: 'Top 7 parques para niños en San Luis Potosí 2026: Tangamanga, Alameda, albercas. Horarios verificados, entrada gratis y tips por edad. Planea tu día familiar hoy.',
+  meta_description_es: 'Top 8 parques para niños en San Luis Potosí 2026: Tangamanga, Bicentenario, Alameda, albercas. Horarios verificados, entrada gratis y tips por edad.',
 
   title_de: 'Die besten Parks für Kinder in San Luis Potosí 2026',
-  excerpt_de: 'Die 7 besten Parks für Kinder in San Luis Potosí — von Parque Tangamanga I (411 ha, kostenloser Zoo, Zona Kids) bis zu Wasserspielplätzen und Regentag-Optionen.',
+  excerpt_de: 'Die 8 besten Parks für Kinder in San Luis Potosí — von Parque Tangamanga I (411 ha, kostenloser Zoo, Zona Kids) über Parque Bicentenario bis zu Wasserspielplätzen und Regentag-Optionen.',
   content_de: contentEN,
   meta_title_de: 'Beste Parks für Kinder San Luis Potosí 2026 | SLP Familienführer',
-  meta_description_de: 'Top 7 Parks für Kinder in San Luis Potosí 2026: Tangamanga, Alameda, Wasserparks. Verifizierte Öffnungszeiten, freier Eintritt und Alterstipps.',
+  meta_description_de: 'Top 8 Parks für Kinder in San Luis Potosí 2026: Tangamanga, Bicentenario, Alameda, Wasserparks. Verifizierte Öffnungszeiten, freier Eintritt und Alterstipps.',
 
-  title_ja: 'サン・ルイス・ポトシの子供向けおすすめ公園ベスト7（2026年版）',
-  excerpt_ja: 'サン・ルイス・ポトシで子供に最適な公園ベスト7 — パルケ・タンガマンガI（411ha、無料動物園、キッズゾーン）からウォーターパーク、室内プレイまで。営業時間と料金を確認済み。',
+  title_ja: 'サン・ルイス・ポトシの子供向けおすすめ公園ベスト8（2026年版）',
+  excerpt_ja: 'サン・ルイス・ポトシで子供に最適な公園ベスト8 — パルケ・タンガマンガI（411ha、無料動物園、キッズゾーン）からパルケ・ビセンテナリオ、ウォーターパーク、室内プレイまで。営業時間と料金を確認済み。',
   content_ja: contentEN,
-  meta_title_ja: 'サン・ルイス・ポトシ 子供向け公園ベスト7 2026 | ファミリーガイド',
-  meta_description_ja: 'サン・ルイス・ポトシで子連れにおすすめの公園トップ7（2026年版）：タンガマンガ、アラメダ、ウォーターパーク。営業時間・料金・年齢別のヒントを掲載。',
+  meta_title_ja: 'サン・ルイス・ポトシ 子供向け公園ベスト8 2026 | ファミリーガイド',
+  meta_description_ja: 'サン・ルイス・ポトシで子連れにおすすめの公園トップ8（2026年版）：タンガマンガ、ビセンテナリオ、アラメダ、ウォーターパーク。営業時間・料金・年齢別のヒントを掲載。',
 };
 
 async function main() {

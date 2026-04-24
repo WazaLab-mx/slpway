@@ -100,6 +100,93 @@ const faqJsonLd = JSON.stringify({
   ]
 });
 
+const faqJsonLdES = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿San Luis Potosí es una buena ciudad para desayunar y hacer brunch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí — San Luis Potosí es considerada una de las mejores ciudades de México para desayunar. El desayuno se vive como un evento social más que como una comida rápida, y el patrimonio culinario de la ciudad (enchiladas potosinas, gorditas de Morales, asado de boda, cecina, café de olla) le da más opciones regionales de desayuno que a la mayoría de las ciudades mexicanas. La cultura moderna de brunch suma café de especialidad, menús de panadería artesanal y platillos internacionales (eggs benedict, avocado toast, pain perdu) a esa tradición."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es el mejor lugar de brunch en San Luis Potosí?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para la mayoría de los visitantes, Cuatro Almas en Lomas Cuarta Sección es la mejor opción — un restaurante de brunch especializado abierto de 8:00 AM a 2:00 PM, con una base leal de clientes locales por sus chilaquiles al chipotle y sus eggs benedict. Para un brunch tradicional potosino, La Parroquia Potosina (Av. Venustiano Carranza 300) es la institución, sobre todo los fines de semana por su bufete de enchiladas potosinas. Para el OG del brunch potosino, ve a la Calle de las Gorditas de Morales — cualquier puesto con fila es garantía."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dónde están las Gorditas de Morales en San Luis Potosí?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La Calle de las Gorditas de Morales (oficialmente Calle Reforma / el corredor de Morales en el Barrio de San Miguelito, a un corto viaje en taxi desde el Centro Histórico) es una calle con decenas de puestos de gorditas y loncherías. Las gorditas de Morales son el brunch potosino original — discos gruesos de masa de maíz asados al comal, abiertos por en medio y rellenos de guisos (chicharrón prensado, nopales, rajas con queso, picadillo, asado de boda). La regla que siguen los locales: cualquier puesto con fila es garantía. No hay reservaciones, solo efectivo, y la hora pico es de 9:30 AM a 1:00 PM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se necesitan reservaciones para hacer brunch en San Luis Potosí?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Normalmente no entre semana, pero sí muy recomendadas sábado y domingo entre 11:00 AM y 1:30 PM, que es la hora pico del brunch en SLP. Lugares populares como Cuatro Almas, Refugio Tierra, Fork Le Brunch Atelier y Dos Amores se llenan rápido — espera de 30 a 60 minutos sin reservación. Llama directo al restaurante o manda un WhatsApp un día antes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿A dónde van los locales a desayunar o hacer brunch los domingos en San Luis Potosí?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los locales prefieren cuatro zonas: Lomas / Chapultepec (Cuatro Almas, Refugio Tierra, El Mesón de San Pascual, Fork Chapultepec), Centro (La Parroquia Potosina, Oliva sobre Carranza, Tres60 Bistro, Fork Centro, Croque La Vie, Hogaza), Colinas del Parque (Dos Amores) y Las Águilas 3ra Secc (Fork Le Brunch Atelier en Olmos 145). Para la experiencia potosina más auténtica, los locales van a la Calle de las Gorditas de Morales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Fork tiene más de una sucursal en San Luis Potosí?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí — Fork opera tres sucursales en SLP. Fork Centro en Galeana 443 en el centro histórico; Fork Chapultepec dentro de Torre Avancer, en Av. Parque Chapultepec 1922; y Fork Le Brunch Atelier en Olmos 145, Las Águilas 3ra Secc, que es el concepto dedicado al brunch. Las reservaciones para todo el grupo se hacen al +52 444 481 1996."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El brunch es una tradición mexicana?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El brunch como nombre es importado, pero el concepto de una comida a media mañana de fin de semana es profundamente mexicano — el almuerzo, que generalmente se come entre las 10 AM y la 1 PM, combina lo que en inglés se separa entre desayuno y comida. En San Luis Potosí, el desayuno es un pilar de la vida de fin de semana: las familias se reúnen por gorditas de Morales, enchiladas potosinas y café de olla. La cultura moderna de brunch en SLP fusiona esta tradición con añadidos internacionales como eggs benedict, avocado toast, hot cakes y mimosas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta el brunch en San Luis Potosí?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un brunch económico para dos personas va de 200 a 350 MXN (~$11–20 USD) en los puestos de gorditas de la Calle de Morales o en cafés de barrio. Lugares de gama media como Cuatro Almas, Tres60, Oliva, Fork, Hogaza o Dos Amores promedian entre 400 y 700 MXN (~$22–39 USD) por dos personas con bebidas. Los brunches de hotel de alta gama (Hyatt Regency, Hilton) y restaurantes de autor rondan los 800–1,400 MXN (~$45–78 USD) para dos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué restaurantes sirven brunch mexicano y cuáles brunch internacional en SLP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para brunch mexicano auténtico: La Parroquia Potosina, El Mesón de San Pascual, las Gorditas de Morales (la calle) y los puestos del Mercado República. Para brunch internacional / moderno: Cuatro Almas, Refugio Tierra, Dos Amores y Croque La Vie (francés). Para fusión que mezcla ambos: Fork, Oliva, Hogaza y Tres60 Bistro sirven chilaquiles junto a eggs benedict, croque madame, omelettes y avocado toast."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Los lugares de brunch en SLP tienen opciones veganas o vegetarianas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Refugio Tierra ofrece menús dedicados vegano, vegetariano y sin gluten, y es el mejor lugar de brunch para vegetarianos en la ciudad. Hogaza, Oliva, Cuatro Almas y Fork tienen opciones vegetarianas como chilaquiles verdes, avocado toast, bowls de açaí y bowls de base vegetal. Pide 'sin carne' o 'vegano' al ordenar."
+      }
+    }
+  ]
+});
+
 const contentEN = `<div class="prose prose-lg max-w-none">
 
 <div class="mb-8">
@@ -629,77 +716,534 @@ const contentEN = `<div class="prose prose-lg max-w-none">
 
 </div>`;
 
-const contentES = contentEN
-  .replace(/Table of Contents/g, 'Tabla de Contenidos')
-  .replace(/Key Takeaways/g, 'Puntos Clave')
-  .replace(/Brunch in San Luis Potosí: The Scene/g, 'Brunch en San Luis Potosí: La Escena')
-  .replace(/Brunch in San Luis Potosí: A Newer Tradition with Deep Roots/g, 'Brunch en San Luis Potosí: Una Tradición Nueva con Raíces Profundas')
-  .replace(/Why SLP is One of Mexico's Best Breakfast Cities/g, 'Por qué SLP es una de las mejores ciudades para desayunar en México')
-  .replace(/Why San Luis Potosí is One of Mexico's Best Breakfast Cities/g, 'Por qué San Luis Potosí es una de las mejores ciudades de México para desayunar')
-  .replace(/Quick-Pick Table: Top 10 Spots/g, 'Tabla Rápida: Top 10 Lugares')
-  .replace(/Quick-Pick Table: Top 10 Brunch Spots in San Luis Potosí/g, 'Tabla Rápida: Los 10 Mejores Lugares de Brunch en San Luis Potosí')
-  .replace(/Restaurant Profiles \(10 Spots\)/g, 'Perfiles de Restaurantes (10 Lugares)')
-  .replace(/Brunch Restaurant Profiles/g, 'Perfiles de Restaurantes de Brunch')
-  .replace(/Honorable Mentions \(Gorditas de Morales\)/g, 'Menciones Honoríficas (Gorditas de Morales)')
-  .replace(/Honorable Mentions — Including the OG Potosino Brunch/g, 'Menciones Honoríficas — Incluyendo el OG del Brunch Potosino')
-  .replace(/The OG of Potosino Brunch/g, 'El OG del Brunch Potosino')
-  .replace(/Other Spots Worth a Visit/g, 'Otros Lugares Dignos de Visita')
-  .replace(/Best Brunch by Vibe/g, 'Mejor Brunch por Ambiente')
-  .replace(/What to Order: Potosino Brunch Dishes/g, 'Qué Pedir: Platillos Potosinos de Brunch')
-  .replace(/What to Order: Potosino Brunch Dishes Deep Dive/g, 'Qué Pedir: Platillos Potosinos de Brunch')
-  .replace(/Drinks to Pair/g, 'Bebidas para Maridar')
-  .replace(/Drinks to Pair with SLP Brunch/g, 'Bebidas para Maridar con el Brunch en SLP')
-  .replace(/Brunch Neighborhoods Map/g, 'Mapa de Colonias para Brunch')
-  .replace(/Neighborhood Map: Where the Brunch Scene Lives/g, 'Mapa de Colonias: Dónde Vive la Escena del Brunch')
-  .replace(/Tips for Visitors/g, 'Consejos para Visitantes')
-  .replace(/Budget Guide/g, 'Guía de Presupuesto')
-  .replace(/Budget Guide: Brunch for Two in SLP/g, 'Guía de Presupuesto: Brunch para Dos en SLP')
-  .replace(/FAQ/g, 'Preguntas Frecuentes')
-  .replace(/Frequently Asked Questions/g, 'Preguntas Frecuentes')
-  .replace(/Best overall brunch:/g, 'Mejor brunch en general:')
-  .replace(/Best traditional Potosino brunch:/g, 'Mejor brunch tradicional potosino:')
-  .replace(/OG of Potosino brunch:/g, 'OG del brunch potosino:')
-  .replace(/Best multi-location bistro:/g, 'Mejor bistro multi-sucursal:')
-  .replace(/Best artisan bakery brunch:/g, 'Mejor brunch de panadería artesanal:')
-  .replace(/Best Mediterranean brunch:/g, 'Mejor brunch mediterráneo:')
-  .replace(/Best French-style brunch:/g, 'Mejor brunch estilo francés:')
-  .replace(/Peak time:/g, 'Hora pico:')
-  .replace(/Brunch for two:/g, 'Brunch para dos:')
-  .replace(/The Locals' Favorite/g, 'El Favorito de los Locales')
-  .replace(/The Institution/g, 'La Institución')
-  .replace(/Best Healthy \/ Veggie Brunch/g, 'Mejor Brunch Saludable / Vegetariano')
-  .replace(/Best Traditional \+ Garden/g, 'Mejor Tradicional + Jardín')
-  .replace(/Best Artisan Bakery Brunch/g, 'Mejor Brunch de Panadería Artesanal')
-  .replace(/Most Instagrammable/g, 'El Más Instagrameable')
-  .replace(/Best French-Style Brunch/g, 'Mejor Brunch Francés')
-  .replace(/Best Multi-Location Brunch Bistro/g, 'Mejor Bistro de Brunch Multi-Sucursal')
-  .replace(/Best Mediterranean Brunch/g, 'Mejor Brunch Mediterráneo')
-  .replace(/Best Casual Centro Brunch/g, 'Mejor Brunch Casual en Centro')
-  .replace(/Honorable Mentions/g, 'Menciones Honoríficas')
-  .replace(/Best for a Date/g, 'Mejor para Cita')
-  .replace(/Best with Kids/g, 'Mejor con Niños')
-  .replace(/Best for Groups/g, 'Mejor para Grupos')
-  .replace(/Best Traditional \(Sit-Down\)/g, 'Mejor Tradicional (Sentado)')
-  .replace(/Best OG \/ Street-Style/g, 'Mejor OG / Estilo Callejero')
-  .replace(/Best Trendy \/ Instagram/g, 'Más Trendy / Instagram')
-  .replace(/Best Outdoor Patio/g, 'Mejor Patio al Aire Libre')
-  .replace(/Best Buffet/g, 'Mejor Buffet')
-  .replace(/Best Vegan \/ Veggie/g, 'Mejor Vegano / Vegetariano')
-  .replace(/Best Coffee-Focused/g, 'Mejor Enfocado en Café')
-  .replace(/Best Multi-Location/g, 'Mejor Multi-Sucursal')
-  .replace(/Best Mediterranean/g, 'Mejor Mediterráneo')
-  .replace(/Reservation Timing/g, 'Tiempo de Reservación')
-  .replace(/Tipping/g, 'Propinas')
-  .replace(/Payment/g, 'Pago')
-  .replace(/Dress Code/g, 'Código de Vestimenta')
-  .replace(/Allergens \(Spanish Phrases\)/g, 'Alergias (Frases en Español)')
-  .replace(/Portion Sizes/g, 'Tamaño de Porciones')
-  .replace(/Traditional Side/g, 'Lado Tradicional')
-  .replace(/Modern \/ Boozy Side/g, 'Lado Moderno / con Alcohol')
-  .replace(/Keep Exploring San Luis Potosí/g, 'Sigue Explorando San Luis Potosí')
-  .replace(/Ready to Brunch\?/g, '¿Listo para el Brunch?')
-  .replace(/Browse more SLP food guides/g, 'Ver más guías de comida de SLP')
-  .replace(/Related guides on sanluisway\.com:/g, 'Guías relacionadas en sanluisway.com:');
+const contentES = `<div class="prose prose-lg max-w-none">
+
+<div class="mb-8">
+<img src="${HERO}" alt="Los mejores lugares de brunch en San Luis Potosí — mesa moderna con chilaquiles, eggs benedict y mimosas" class="w-full rounded-xl shadow-2xl" />
+</div>
+
+<div class="bg-yellow-50 p-6 rounded-lg mb-8">
+  <h3 class="text-xl font-bold mb-4 text-gray-900">Tabla de Contenidos</h3>
+  <ul class="list-disc pl-6">
+    <li><a href="#introduction" class="text-blue-600 hover:text-blue-800">Brunch en San Luis Potosí: La Escena</a></li>
+    <li><a href="#breakfast-city" class="text-blue-600 hover:text-blue-800">Por qué SLP es una de las mejores ciudades para desayunar en México</a></li>
+    <li><a href="#quick-pick" class="text-blue-600 hover:text-blue-800">Tabla Rápida: Top 10 Lugares</a></li>
+    <li><a href="#profiles" class="text-blue-600 hover:text-blue-800">Perfiles de Restaurantes (10 Lugares)</a></li>
+    <li><a href="#honorable" class="text-blue-600 hover:text-blue-800">Menciones Honoríficas (Gorditas de Morales)</a></li>
+    <li><a href="#by-vibe" class="text-blue-600 hover:text-blue-800">Mejor Brunch por Ambiente</a></li>
+    <li><a href="#what-to-order" class="text-blue-600 hover:text-blue-800">Qué Pedir: Platillos Potosinos de Brunch</a></li>
+    <li><a href="#drinks" class="text-blue-600 hover:text-blue-800">Bebidas para Maridar</a></li>
+    <li><a href="#neighborhoods" class="text-blue-600 hover:text-blue-800">Mapa de Colonias para Brunch</a></li>
+    <li><a href="#tips" class="text-blue-600 hover:text-blue-800">Consejos para Visitantes</a></li>
+    <li><a href="#budget" class="text-blue-600 hover:text-blue-800">Guía de Presupuesto</a></li>
+    <li><a href="#faq" class="text-blue-600 hover:text-blue-800">Preguntas Frecuentes</a></li>
+  </ul>
+</div>
+
+<div class="bg-blue-50 p-6 rounded-lg mb-8">
+  <h3 class="text-xl font-bold mb-4 text-blue-900">Puntos Clave</h3>
+  <ul class="list-disc pl-6 space-y-2 text-blue-900">
+    <li><strong>Mejor brunch en general:</strong> Cuatro Almas (Lomas Cuarta Sección) — chilaquiles al chipotle, eggs benedict, abierto de 8 AM a 2 PM.</li>
+    <li><strong>Mejor brunch tradicional potosino:</strong> La Parroquia Potosina (Centro) — bufete de fin de semana y las legendarias enchiladas potosinas.</li>
+    <li><strong>OG del brunch potosino:</strong> Gorditas de Morales — la calle de Morales en el Barrio de San Miguelito es donde los locales realmente comen. Cualquier puesto con fila es garantía.</li>
+    <li><strong>Mejor bistro multi-sucursal:</strong> Fork — tres sucursales en SLP (Centro, Chapultepec, Las Águilas) con Fork Le Brunch Atelier en Olmos 145 dedicado al brunch.</li>
+    <li><strong>Mejor brunch de panadería artesanal:</strong> Hogaza — masa madre de especialidad, pan artesanal y café de especialidad.</li>
+    <li><strong>Mejor brunch mediterráneo:</strong> Oliva (Av. Venustiano Carranza 1325) — concepto "Mantequilla, Pan y Vino" con salmon toast, chilaquiles y cazuela de huevos rotos.</li>
+    <li><strong>Hora pico:</strong> Domingo 11:00 AM–1:00 PM — reserva con 24 horas de anticipación en cualquiera de los lugares más solicitados.</li>
+    <li><strong>Brunch para dos:</strong> desde 200 MXN (~$11 USD) en lo económico hasta 1,400 MXN (~$78 USD) en lo alto de gama.</li>
+  </ul>
+</div>
+
+<section id="introduction" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Brunch en San Luis Potosí: Una Tradición Nueva con Raíces Profundas</h2>
+
+<p class="text-gray-700 mb-6"><strong>Si estás buscando los mejores lugares de brunch cerca de ti en San Luis Potosí, la buena noticia es que la escena ha explotado en los últimos cinco años — y descansa sobre una de las tradiciones de desayuno más fuertes de México.</strong> El brunch como comida con nombre propio es relativamente nuevo en SLP, pero la base cultural siempre estuvo aquí: el almuerzo, esa comida a media mañana que se come entre las 10 AM y la 1 PM, es como las familias potosinas han cerrado siempre sus fines de semana. Lo que ha cambiado es la estética — barras de café de especialidad, panaderías de masa madre, terrazas techadas y esa energía de mimosas de fin de semana que uno esperaría en Polanco o Roma Norte.</p>
+
+<p class="text-gray-700 mb-6">El brunch en SLP vive en tres mundos que se traslapan. Primero, las <strong>cocinas tradicionales potosinas</strong> — lugares como La Parroquia Potosina y El Mesón de San Pascual — que llevan décadas sirviendo enchiladas potosinas, huevos rancheros y café de olla, y que por pura coincidencia tocan cada nota de lo que los extranjeros llaman brunch. Segundo, los <strong>restaurantes de brunch de nueva ola</strong> como Cuatro Almas, Refugio Tierra, Dos Amores y Fork (con sus tres sucursales), que abrieron entre finales de 2010 y principios de 2020 pensando específicamente en el público de media mañana de fin de semana: eggs benedict, avocado toast, bowls de açaí y mimosas. Tercero, la <strong>escena de panaderías de especialidad y mediterránea</strong> — Hogaza para pan artesanal y café de especialidad, Oliva para su brunch mediterráneo de mantequilla, pan y vino, Croque La Vie para el croque-monsieur parisino.</p>
+
+<p class="text-gray-700 mb-6">La altitud importa más de lo que uno cree. SLP está a 1,863 m (6,112 ft), lo que significa que las mimosas, las micheladas y los cocteles de mezcal pegan más fuerte que al nivel del mar. Hidrátate. Pide un agua de jamaica al lado. El lado bueno de la altitud es un clima fresco casi todo el año — desayunar en una terraza soleada en SLP entre noviembre y abril es una de las experiencias de fin de semana genuinamente más agradables del centro de México.</p>
+
+<p class="text-gray-700 mb-6">Esta guía perfila los <strong>10 mejores lugares de brunch en San Luis Potosí</strong> — direcciones verificadas, horarios de fin de semana, platillos estrella, rangos de precio y detalles prácticos de estacionamiento, reservaciones y niños. Está pensada para locales que buscan un lugar nuevo para el domingo, expats que acaban de llegar y quieren la lista de los que saben, y turistas que buscan algo mejor que el bufete del hotel. Para lecturas relacionadas, revisa nuestra <a href="/breakfast-spots-san-luis-potosi" class="text-blue-600 underline">guía de desayunos tempraneros</a>, el <a href="/traditional-cuisine" class="text-blue-600 underline">panorama de cocina tradicional potosina</a>, y el <a href="/restaurants" class="text-blue-600 underline">directorio completo de restaurantes de SLP</a>.</p>
+</section>
+
+<section id="breakfast-city" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Por qué San Luis Potosí es una de las mejores ciudades de México para desayunar</h2>
+
+<div class="bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-200 rounded-xl p-6 mb-8">
+<p class="text-gray-800 mb-4"><strong>Si le preguntas a gente que se ha comido México completo cuáles son las mejores ciudades para desayunar, San Luis Potosí aparece en casi todas las listas.</strong> Los potosinos no tratan el desayuno como una comida de trámite. Es un ritual social — las familias se reúnen en la misma lonchería todos los domingos, los amigos agendan juntas a las 10 AM alrededor de un café de olla, y hay calles enteras que existen sin otro propósito que dar de desayunar a multitudes.</p>
+
+<p class="text-gray-800 mb-4">Tres cosas hacen excepcional la cultura de desayuno de SLP:</p>
+
+<ol class="list-decimal pl-6 space-y-3 text-gray-800 mb-4">
+<li><strong>El patrimonio culinario es profundo y específico.</strong> Enchiladas potosinas, gorditas de Morales, asado de boda, cecina potosina, chilaquiles con cecina y café de olla en jarros de barro — son platillos que existen con esta calidad en ninguna otra parte de México. Otras regiones tienen sus propias firmas, pero SLP concentra varios desayunos de clase mundial en una sola ciudad.</li>
+<li><strong>Variedad en cada rango de precio.</strong> Puedes comer extraordinariamente bien con 40 MXN en un puesto de gorditas en la Calle de Morales, tomarte un brunch de panadería de gama media en Hogaza por 250 MXN, o darte el lujo en Oliva o Cuatro Almas por 450 MXN — y las tres experiencias se sienten auténticas a la ciudad.</li>
+<li><strong>La mañana es la hora más sociable de la ciudad.</strong> Las noches de SLP son tranquilas comparadas con CDMX o Guadalajara. Las mañanas, en cambio, están llenas — los tostadores de café de especialidad abren a las 7:30 AM, los puestos de gorditas del Mercado República se llenan para las 10, y para las 11 AM los restaurantes de brunch de Lomas tienen fila afuera. Si quieres entender la vida social potosina, ven a desayunar, no a cenar.</li>
+</ol>
+
+<p class="text-gray-800 mb-0">Publicaciones internacionales (Food &amp; Wine, Condé Nast Traveler, Eater) han destacado repetidamente a SLP por las enchiladas potosinas en específico, pero la ciudad merece una reputación más amplia como uno de los mejores destinos para desayunar del país. Si sólo vas a estar uno o dos días, arma tu itinerario alrededor del desayuno — vas a comer mejor que en la cena, a la mitad del precio.</p>
+</div>
+</section>
+
+<section id="quick-pick" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Tabla Rápida: Los 10 Mejores Lugares de Brunch en San Luis Potosí</h2>
+
+<div class="overflow-x-auto mb-12">
+  <table class="min-w-full bg-white border-2 border-gray-200 rounded-lg shadow-lg">
+    <thead style="background: linear-gradient(to right, #ea580c, #db2777);">
+      <tr>
+        <th class="px-4 py-3 text-left text-xs font-bold text-white uppercase">Restaurante</th>
+        <th class="px-4 py-3 text-left text-xs font-bold text-white uppercase">Ambiente</th>
+        <th class="px-4 py-3 text-left text-xs font-bold text-white uppercase">Platillo Estrella</th>
+        <th class="px-4 py-3 text-center text-xs font-bold text-white uppercase">Precio (2 pers.)</th>
+        <th class="px-4 py-3 text-center text-xs font-bold text-white uppercase">Espera fin de semana</th>
+        <th class="px-4 py-3 text-left text-xs font-bold text-white uppercase">Zona</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200 text-sm">
+      <tr class="hover:bg-gray-50"><td class="px-4 py-3 font-semibold">Cuatro Almas</td><td class="px-4 py-3">Chic local</td><td class="px-4 py-3">Chilaquiles al chipotle</td><td class="px-4 py-3 text-center">$450–650 MXN</td><td class="px-4 py-3 text-center">30–45 min</td><td class="px-4 py-3">Lomas 4ta</td></tr>
+      <tr class="hover:bg-gray-50"><td class="px-4 py-3 font-semibold">La Parroquia Potosina</td><td class="px-4 py-3">Tradicional</td><td class="px-4 py-3">Enchiladas potosinas</td><td class="px-4 py-3 text-center">$300–450 MXN</td><td class="px-4 py-3 text-center">15–30 min</td><td class="px-4 py-3">Centro</td></tr>
+      <tr class="hover:bg-gray-50"><td class="px-4 py-3 font-semibold">Refugio Tierra</td><td class="px-4 py-3">Saludable chic</td><td class="px-4 py-3">Eggs benedict, bowls vegetales</td><td class="px-4 py-3 text-center">$500–700 MXN</td><td class="px-4 py-3 text-center">30–60 min</td><td class="px-4 py-3">Chapultepec</td></tr>
+      <tr class="hover:bg-gray-50"><td class="px-4 py-3 font-semibold">El Mesón de San Pascual</td><td class="px-4 py-3">Tradicional / jardín</td><td class="px-4 py-3">Chilaquiles con cecina</td><td class="px-4 py-3 text-center">$350–500 MXN</td><td class="px-4 py-3 text-center">20–40 min</td><td class="px-4 py-3">Chapultepec</td></tr>
+      <tr class="hover:bg-gray-50"><td class="px-4 py-3 font-semibold">Hogaza</td><td class="px-4 py-3">Panadería artesanal</td><td class="px-4 py-3">Masa madre, café de especialidad</td><td class="px-4 py-3 text-center">$250–450 MXN</td><td class="px-4 py-3 text-center">15–30 min</td><td class="px-4 py-3">Revisa IG @hogaza.cafe</td></tr>
+      <tr class="hover:bg-gray-50"><td class="px-4 py-3 font-semibold">Dos Amores</td><td class="px-4 py-3">Instagrameable</td><td class="px-4 py-3">Brunch plates, açaí</td><td class="px-4 py-3 text-center">$450–600 MXN</td><td class="px-4 py-3 text-center">20–40 min</td><td class="px-4 py-3">Colinas del Parque</td></tr>
+      <tr class="hover:bg-gray-50"><td class="px-4 py-3 font-semibold">Croque La Vie</td><td class="px-4 py-3">Francés casual</td><td class="px-4 py-3">Croque-monsieur, pain perdu</td><td class="px-4 py-3 text-center">$400–600 MXN</td><td class="px-4 py-3 text-center">15–30 min</td><td class="px-4 py-3">Centro</td></tr>
+      <tr class="hover:bg-gray-50"><td class="px-4 py-3 font-semibold">Fork (3 sucursales)</td><td class="px-4 py-3">Bistró de brunch</td><td class="px-4 py-3">Chilaquiles, croque madame</td><td class="px-4 py-3 text-center">$400–650 MXN</td><td class="px-4 py-3 text-center">20–40 min</td><td class="px-4 py-3">Centro / Chapultepec / Las Águilas</td></tr>
+      <tr class="hover:bg-gray-50"><td class="px-4 py-3 font-semibold">Oliva</td><td class="px-4 py-3">Mediterráneo</td><td class="px-4 py-3">Salmon toast, cazuela de huevos rotos</td><td class="px-4 py-3 text-center">$400–600 MXN</td><td class="px-4 py-3 text-center">20–40 min</td><td class="px-4 py-3">Av. Carranza</td></tr>
+      <tr class="hover:bg-gray-50"><td class="px-4 py-3 font-semibold">Tres60 Bistro</td><td class="px-4 py-3">Bistró casual</td><td class="px-4 py-3">Chilaquiles, enchiladas suizas</td><td class="px-4 py-3 text-center">$350–550 MXN</td><td class="px-4 py-3 text-center">15–30 min</td><td class="px-4 py-3">Centro</td></tr>
+    </tbody>
+  </table>
+</div>
+<p class="text-xs text-gray-500 italic mb-6">Precios en pesos mexicanos, para dos personas con bebidas; aproximado a 18 MXN = $1 USD. Las esperas corresponden al pico del domingo 11:30 AM–1:30 PM. Revisa la sección de Menciones Honoríficas más abajo para las Gorditas de Morales, el OG del brunch potosino.</p>
+</section>
+
+<section id="profiles" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Perfiles de Restaurantes de Brunch</h2>
+
+<div class="mb-8">
+<img src="${IMG_MODERN}" alt="Presentación moderna de brunch en San Luis Potosí" class="w-full rounded-xl shadow-lg" />
+</div>
+
+<!-- 1 Cuatro Almas -->
+<div class="bg-white border-2 border-orange-200 rounded-xl p-6 mb-8">
+<h3 class="text-2xl font-bold text-orange-900 mb-2">1. Cuatro Almas — El Favorito de los Locales</h3>
+<p class="text-gray-700 mb-3"><strong>Colonia:</strong> Lomas Cuarta Sección &nbsp;|&nbsp; <strong>Dirección:</strong> Sierra Pedroso 105 &nbsp;|&nbsp; <strong>Horario:</strong> Todos los días 8:00 AM–2:00 PM &nbsp;|&nbsp; <strong>Teléfono:</strong> +52 444 652 9008</p>
+<p class="text-gray-700 mb-3">El consenso para el mejor brunch de San Luis Potosí. Escondido en una calle residencial tranquila de Lomas, Cuatro Almas (cuatroalmas.mx) es un concepto dedicado a desayuno y brunch — sin cena, sin happy hour. Los <strong>chilaquiles al chipotle</strong> son el platillo por el que los locales traen a sus amigos de fuera. Los eggs benedict y el pan francés de la casa son las alternativas más gringas.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-orange-50 rounded p-2"><strong>Precio:</strong> $$<br/>$450–650 MXN / 2</div>
+<div class="bg-orange-50 rounded p-2"><strong>Reservaciones:</strong><br/>Recomendadas en fin de semana</div>
+<div class="bg-orange-50 rounded p-2"><strong>Estacionamiento:</strong><br/>Calle + valet</div>
+<div class="bg-orange-50 rounded p-2"><strong>Niños:</strong> Sí<br/><strong>Wifi:</strong> Sí</div>
+</div>
+</div>
+
+<!-- 2 La Parroquia Potosina -->
+<div class="bg-white border-2 border-red-200 rounded-xl p-6 mb-8">
+<h3 class="text-2xl font-bold text-red-900 mb-2">2. La Parroquia Potosina — La Institución</h3>
+<p class="text-gray-700 mb-3"><strong>Colonia:</strong> Centro Histórico &nbsp;|&nbsp; <strong>Dirección:</strong> Av. Venustiano Carranza 300 &nbsp;|&nbsp; <strong>Horario:</strong> Lun–Sáb 7:00 AM–medianoche; bufete de brunch de fin de semana vie–dom</p>
+<p class="text-gray-700 mb-3">Si sólo vas a comerte un brunch tradicional en SLP, cómetelo aquí. La Parroquia lleva sirviendo a los potosinos desde antes de que la palabra "brunch" existiera, y sus <strong>enchiladas potosinas</strong> — tortillas de masa teñida de guajillo rellenas de queso Oaxaca, coronadas con guiso de papa y zanahoria, crema y queso fresco desmoronado — son la vara con la que se mide cualquier otro plato de la ciudad. El bufete de viernes a domingo es la mejor relación calidad-precio sentado en el Centro.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-red-50 rounded p-2"><strong>Precio:</strong> $<br/>$300–450 MXN / 2</div>
+<div class="bg-red-50 rounded p-2"><strong>Reservaciones:</strong><br/>No requeridas</div>
+<div class="bg-red-50 rounded p-2"><strong>Estacionamiento:</strong><br/>Calle + pensiones cercanas</div>
+<div class="bg-red-50 rounded p-2"><strong>Niños:</strong> Sí<br/><strong>Wifi:</strong> Limitado</div>
+</div>
+</div>
+
+<!-- 3 Refugio Tierra -->
+<div class="bg-white border-2 border-green-200 rounded-xl p-6 mb-8">
+<h3 class="text-2xl font-bold text-green-900 mb-2">3. Refugio Tierra — Mejor Brunch Saludable / Vegetariano</h3>
+<p class="text-gray-700 mb-3"><strong>Colonia:</strong> Privadas del Pedregal (cerca de Chapultepec) &nbsp;|&nbsp; <strong>Dirección:</strong> Av. Parque Chapultepec 1335 &nbsp;|&nbsp; <strong>Horario:</strong> Mar–Dom 8:00 AM–2:30 PM (cerrado lun) &nbsp;|&nbsp; <strong>Teléfono:</strong> +52 444 210 0778</p>
+<p class="text-gray-700 mb-3">El lugar en la zona de Lomas para quien quiere la experiencia de brunch sin la pesadez. Refugio Tierra ofrece <strong>menús vegano, vegetariano y sin gluten</strong> junto a los clásicos chilaquiles y eggs benedict, con énfasis en jugos frescos, smoothie bowls y platos con mucho verde. El patio es uno de los espacios de brunch más fotogénicos de la ciudad.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-green-50 rounded p-2"><strong>Precio:</strong> $$<br/>$500–700 MXN / 2</div>
+<div class="bg-green-50 rounded p-2"><strong>Reservaciones:</strong><br/>Muy recomendadas</div>
+<div class="bg-green-50 rounded p-2"><strong>Estacionamiento:</strong><br/>Calle</div>
+<div class="bg-green-50 rounded p-2"><strong>Niños:</strong> Sí<br/><strong>Pet-friendly:</strong> Patio</div>
+</div>
+</div>
+
+<!-- 4 El Mesón de San Pascual -->
+<div class="bg-white border-2 border-yellow-200 rounded-xl p-6 mb-8">
+<h3 class="text-2xl font-bold text-yellow-900 mb-2">4. El Mesón de San Pascual — Mejor Tradicional + Jardín</h3>
+<p class="text-gray-700 mb-3"><strong>Colonia:</strong> Chapultepec (junto al Parque Tangamanga I) &nbsp;|&nbsp; <strong>Dirección:</strong> Av. Parque Chapultepec 404 &nbsp;|&nbsp; <strong>Horario:</strong> Todos los días 7:30 AM–1:45 PM</p>
+<p class="text-gray-700 mb-3">Una cocina potosina escondida pegada al Parque Tangamanga, el Mesón de San Pascual es el secreto de los locales para un brunch tradicional en un jardín tranquilo. Pide los <strong>chilaquiles con cecina</strong> en salsa de cascabel o pasilla, acompañados de café de olla en jarros de barro. Muy popular entre las familias que caminan o andan en bici por el parque los domingos por la mañana.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-yellow-50 rounded p-2"><strong>Precio:</strong> $<br/>$350–500 MXN / 2</div>
+<div class="bg-yellow-50 rounded p-2"><strong>Reservaciones:</strong><br/>No requeridas</div>
+<div class="bg-yellow-50 rounded p-2"><strong>Estacionamiento:</strong><br/>Sí (lote)</div>
+<div class="bg-yellow-50 rounded p-2"><strong>Niños:</strong> Excelente<br/><strong>Wifi:</strong> Sí</div>
+</div>
+</div>
+
+<!-- 5 Hogaza -->
+<div class="bg-white border-2 border-amber-200 rounded-xl p-6 mb-8">
+<h3 class="text-2xl font-bold text-amber-900 mb-2">5. Hogaza — Mejor Brunch de Panadería Artesanal</h3>
+<p class="text-gray-700 mb-3"><strong>Concepto:</strong> Panadería artesanal + café de especialidad &nbsp;|&nbsp; <strong>Horario:</strong> Lun–Vie 7:30 AM–8:30 PM, Sáb–Dom 8:30 AM–8:30 PM &nbsp;|&nbsp; <strong>Instagram:</strong> <a href="https://www.instagram.com/hogaza.cafe/" target="_blank" rel="noopener" class="text-blue-600 underline">@hogaza.cafe</a></p>
+<p class="text-gray-700 mb-3">"Hogaza" significa un pan grande, y esa sola palabra te dice la filosofía del lugar. Aquí es donde cristalizó la nueva ola potosina de café de especialidad y masa madre. Espera hogazas de fermentación larga con costra crujiente, canelés y pastelería laminada acompañados de flat whites, pour-overs y un menú de brunch corto pero apretado — tostadas con burrata o salmón ahumado, tartas saladas y una pequeña rotación de platos mexicanos como chilaquiles. Confirma la sucursal actual por Instagram antes de ir — el obrador y el café se han movido conforme ha crecido la marca. Excelente para desayunar solo y para llevarte pan a casa.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-amber-50 rounded p-2"><strong>Precio:</strong> $<br/>$250–450 MXN / 2</div>
+<div class="bg-amber-50 rounded p-2"><strong>Reservaciones:</strong><br/>No requeridas</div>
+<div class="bg-amber-50 rounded p-2"><strong>Estacionamiento:</strong><br/>Calle</div>
+<div class="bg-amber-50 rounded p-2"><strong>Ir solo:</strong> Ideal<br/><strong>Para llevar:</strong> Pan</div>
+</div>
+</div>
+
+<!-- 6 Dos Amores -->
+<div class="bg-white border-2 border-pink-200 rounded-xl p-6 mb-8">
+<h3 class="text-2xl font-bold text-pink-900 mb-2">6. Dos Amores Brunch &amp; Meal — El Más Instagrameable</h3>
+<p class="text-gray-700 mb-3"><strong>Colonia:</strong> Colinas del Parque &nbsp;|&nbsp; <strong>Dirección:</strong> Parque Central 455 &nbsp;|&nbsp; <strong>Horario:</strong> Lun y Mié–Dom 8:30 AM–4:00 PM (cerrado mar) &nbsp;|&nbsp; <strong>Teléfono:</strong> +52 444 165 3308</p>
+<p class="text-gray-700 mb-3">Un concepto dedicado al brunch con interiores en tonos pastel, bowls de açaí, pan francés elaborado y la presentación perfecta para redes sociales. Dos Amores se volvió el lugar de cabecera para citas dominicales y brunchs entre amigas en el surponiente de la ciudad. Las porciones son generosas, el café es excelente, y ofrecen sentado, para llevar y catering para eventos pequeños.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-pink-50 rounded p-2"><strong>Precio:</strong> $$<br/>$450–600 MXN / 2</div>
+<div class="bg-pink-50 rounded p-2"><strong>Reservaciones:</strong><br/>Recomendadas en fin de semana</div>
+<div class="bg-pink-50 rounded p-2"><strong>Estacionamiento:</strong><br/>Calle</div>
+<div class="bg-pink-50 rounded p-2"><strong>Niños:</strong> Sí<br/><strong>Wifi:</strong> Sí</div>
+</div>
+</div>
+
+<!-- 7 Croque La Vie -->
+<div class="bg-white border-2 border-blue-200 rounded-xl p-6 mb-8">
+<h3 class="text-2xl font-bold text-blue-900 mb-2">7. Croque La Vie — Mejor Brunch Estilo Francés</h3>
+<p class="text-gray-700 mb-3"><strong>Colonia:</strong> Centro / Universidad &nbsp;|&nbsp; <strong>Dirección:</strong> Av. Universidad 260 &nbsp;|&nbsp; <strong>Horario:</strong> Mar–Sáb 9:00 AM–10:00 PM; Dom 10:00 AM–8:00 PM (cerrado lun) &nbsp;|&nbsp; <strong>Teléfono:</strong> +52 444 123 4391</p>
+<p class="text-gray-700 mb-3">Aquí la cocina regional mexicana se encuentra con París. El primer restaurante francés en SLP especializado en <strong>croque-monsieur</strong>, Croque La Vie es la jugada cuando quieres algo diferente el domingo — pain perdu (pan francés), croque madame con un huevo estrellado perfecto, crème brûlée de postre, o su fusión <em>croque de cochinita</em> que combina cerdo estilo Yucatán con salsa de serrano-jalapeño y cebolla morada.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-blue-50 rounded p-2"><strong>Precio:</strong> $$<br/>$400–600 MXN / 2</div>
+<div class="bg-blue-50 rounded p-2"><strong>Reservaciones:</strong><br/>Recomendadas domingo</div>
+<div class="bg-blue-50 rounded p-2"><strong>Estacionamiento:</strong><br/>Calle</div>
+<div class="bg-blue-50 rounded p-2"><strong>Niños:</strong> Sí<br/><strong>Cita:</strong> Ideal</div>
+</div>
+</div>
+
+<!-- 8 Fork -->
+<div class="bg-white border-2 border-purple-200 rounded-xl p-6 mb-8">
+<h3 class="text-2xl font-bold text-purple-900 mb-2">8. Fork — Mejor Bistró de Brunch Multi-Sucursal</h3>
+<p class="text-gray-700 mb-3"><strong>Tres sucursales en SLP:</strong></p>
+<ul class="list-disc pl-6 text-gray-700 mb-3">
+<li><strong>Fork Centro</strong> — Galeana 443, Centro Histórico.</li>
+<li><strong>Fork Chapultepec</strong> — Torre Avancer, Av. Parque Chapultepec 1922.</li>
+<li><strong>Fork Le Brunch Atelier</strong> — Olmos 145, Las Águilas 3ra Secc (el concepto dedicado al brunch).</li>
+</ul>
+<p class="text-gray-700 mb-3"><strong>Reservaciones:</strong> +52 444 481 1996 &nbsp;|&nbsp; <strong>Instagram:</strong> <a href="https://www.instagram.com/forkslp/" target="_blank" rel="noopener" class="text-blue-600 underline">@forkslp</a></p>
+<p class="text-gray-700 mb-3">Fork es la marca local de bistró-brunch potosino con tres sucursales, una de las cuales — Fork Le Brunch Atelier en Olmos 145 — está dedicada específicamente al público de brunch de fin de semana. El menú va de clásicos potosinos (chilaquiles, molletes) a platos de influencia francesa (croque madame). Es uno de los conceptos de brunch mejor calificados de SLP en Restaurant Guru (4.4 estrellas, 1,400+ reseñas en el Atelier). Elige la sucursal que te quede más cerca — comparten ADN de cocina pero cada una tiene un ambiente distinto (Centro es la más turística, Chapultepec funciona bien para un brunch de trabajo, y Las Águilas es la más tranquila para un domingo largo).</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-purple-50 rounded p-2"><strong>Precio:</strong> $$<br/>$400–650 MXN / 2</div>
+<div class="bg-purple-50 rounded p-2"><strong>Reservaciones:</strong><br/>Recomendadas en fin de semana</div>
+<div class="bg-purple-50 rounded p-2"><strong>Estacionamiento:</strong><br/>Varía por sucursal</div>
+<div class="bg-purple-50 rounded p-2"><strong>Niños:</strong> Sí<br/><strong>Grupos:</strong> Ideal</div>
+</div>
+</div>
+
+<!-- 9 Oliva -->
+<div class="bg-white border-2 border-emerald-200 rounded-xl p-6 mb-8">
+<h3 class="text-2xl font-bold text-emerald-900 mb-2">9. Oliva (Mantequilla, Pan y Vino) — Mejor Brunch Mediterráneo</h3>
+<p class="text-gray-700 mb-3"><strong>Colonia:</strong> Corredor de Av. Carranza &nbsp;|&nbsp; <strong>Dirección:</strong> Av. Venustiano Carranza 1325 &nbsp;|&nbsp; <strong>Horario:</strong> Desayuno Lun–Sáb 8:00 AM–1:00 PM, Dom 9:00 AM–2:00 PM; Cena Mar–Sáb 6:00 PM–11:00 PM &nbsp;|&nbsp; <strong>Teléfono:</strong> +52 444 892 6286 &nbsp;|&nbsp; <strong>Instagram:</strong> <a href="https://www.instagram.com/olivamantequillapanyvino/" target="_blank" rel="noopener" class="text-blue-600 underline">@olivamantequillapanyvino</a></p>
+<p class="text-gray-700 mb-3">El lema de Oliva — <em>Mantequilla, Pan y Vino</em> — resume el concepto: un bistró de inclinación mediterránea donde el brunch gira alrededor del pan tostado, la buena mantequilla y las copas de vino a media mañana. El menú mezcla clásicos potosinos (chilaquiles) con platos de inflexión europea: <strong>salmon toast, omelettes, cazuela de huevos rotos</strong> y especiales rotativos de fin de semana. El ticket promedio ronda los $200–300 MXN por persona, lo que lo vuelve uno de los brunches con mejor relación calidad-precio del corredor Carranza. Algunos días hay música en vivo — revisa su Instagram antes de ir. También es de los pocos lugares en SLP que ofrecen tanto servicio de desayuno/brunch como cena formal, así que es una buena opción para visitantes que buscan un sólo restaurante confiable para un fin de semana.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-emerald-50 rounded p-2"><strong>Precio:</strong> $$<br/>$400–600 MXN / 2</div>
+<div class="bg-emerald-50 rounded p-2"><strong>Reservaciones:</strong><br/>Recomendadas domingo</div>
+<div class="bg-emerald-50 rounded p-2"><strong>Estacionamiento:</strong><br/>Calle</div>
+<div class="bg-emerald-50 rounded p-2"><strong>Vino:</strong> Sí<br/><strong>Música en vivo:</strong> Algunos días</div>
+</div>
+</div>
+
+<!-- 10 Tres60 -->
+<div class="bg-white border-2 border-teal-200 rounded-xl p-6 mb-8">
+<h3 class="text-2xl font-bold text-teal-900 mb-2">10. Tres60 Bistro — Mejor Brunch Casual en Centro</h3>
+<p class="text-gray-700 mb-3"><strong>Colonia:</strong> Centro &nbsp;|&nbsp; <strong>Dirección:</strong> Av. Venustiano Carranza 390 &nbsp;|&nbsp; <strong>Horario:</strong> Todos los días 8:00 AM–10:00 PM (revisar por día)</p>
+<p class="text-gray-700 mb-3">Tres60 se vende como híbrido bistró-panadería-brunch y cumple en los tres frentes. Pan y pastelería recién horneada, un menú profundo de chilaquiles y enchiladas suizas, y un ambiente casual que funciona igual de bien solo o en grupo. Está justo sobre Carranza, así que puedes combinarlo con un paseo por la Plaza de Armas o encadenarlo con una visita a Oliva si te vas subiendo por la avenida.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+<div class="bg-teal-50 rounded p-2"><strong>Precio:</strong> $$<br/>$350–550 MXN / 2</div>
+<div class="bg-teal-50 rounded p-2"><strong>Reservaciones:</strong><br/>No requeridas</div>
+<div class="bg-teal-50 rounded p-2"><strong>Estacionamiento:</strong><br/>Calle</div>
+<div class="bg-teal-50 rounded p-2"><strong>Niños:</strong> Sí<br/><strong>Wifi:</strong> Sí</div>
+</div>
+</div>
+
+</section>
+
+<section id="honorable" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Menciones Honoríficas — Incluyendo el OG del Brunch Potosino</h2>
+
+<!-- Gorditas de Morales — the OG -->
+<div class="bg-gradient-to-r from-red-50 to-orange-50 border-4 border-red-300 rounded-xl p-6 mb-8">
+<h3 class="text-2xl font-bold text-red-900 mb-3">Gorditas de Morales — El OG del Brunch Potosino</h3>
+<p class="text-gray-800 mb-4"><strong>Si hay una "mención honorífica" que los locales pelearían como número uno, son las Gorditas de Morales.</strong> La Calle de las Gorditas de Morales — un tramo en el Barrio de San Miguelito, a un corto viaje en taxi del Centro Histórico — es el brunch potosino original de fin de semana. Decenas de puestos y loncherías cubren la cuadra, cada uno echando al comal gorditas gruesas de masa de maíz, abriéndolas por en medio y rellenándolas con guisos: chicharrón prensado, rajas con queso, picadillo, nopales, papa con chorizo, asado de boda, frijoles, mole.</p>
+<p class="text-gray-800 mb-4">La regla por la que juran los locales: <strong>cualquier puesto con fila es garantía.</strong> Los que no tienen clientes a las 10 AM de un domingo son los que conviene saltarse. Los clientes habituales tienen su favorito, pero los que van por primera vez mejor caminen la calle, sigan a la multitud y pidan 3 o 4 gorditas cada uno con un Jarrito o un café de olla. Sin reservaciones. Solo efectivo. La hora pico es de 9:30 AM a 1:00 PM, y las mejores mesas son los bancos de plástico del puesto que esté más lleno.</p>
+<p class="text-gray-800 mb-0"><strong>Por qué es el OG:</strong> las gorditas de Morales anteceden por décadas a cualquier restaurante moderno de brunch de esta guía. Así es como las familias potosinas comían el almuerzo de fin de semana antes de que la palabra "brunch" siquiera existiera en la ciudad. Si tienes una sola oportunidad de desayunar potosino y quieres la experiencia más local posible, sáltate los restaurantes sentados y ven aquí.</p>
+</div>
+
+<div class="bg-gray-50 border-l-4 border-gray-300 p-6 mb-8">
+<h3 class="text-xl font-bold mb-3 text-gray-800">Otros Lugares Dignos de Visita</h3>
+<ul class="list-disc pl-6 space-y-2 text-gray-700">
+<li><strong>Café Corta'o</strong> (Calle Independencia 1150) — pequeño lugar de desayunos mexicanos con toque veracruzano; domingos 9:00 AM–2:30 PM en temporada alta.</li>
+<li><strong>Capital Coffee SLP</strong> — café de especialidad con platos de brunch vegetariano/vegano, bueno para nómadas digitales que necesitan wifi.</li>
+<li><strong>Petit Bistro &amp; Café</strong> (Sierra Leona, Lomas 3) — ambiente parisino, baguettes, juegos de mesa, ideal para brunches largos.</li>
+<li><strong>Cielo Tinto</strong> — brunch mexicano tipo hacienda con barra de chilaquiles y huevos al gusto.</li>
+<li><strong>Hyatt Regency SLP</strong> — bufete de desayuno diario de 6 AM a 12 PM, aprox. $350–390 MXN por adulto; opción clásica de brunch de hotel para turistas.</li>
+<li><strong>Mercado República</strong> — no es un restaurante de brunch como tal, pero los puestos de gorditas y enchiladas (Doña Evangelina local 3–4) abren de 10 AM a 6 PM todos los días y son peregrinaje secundario para la experiencia tradicional del almuerzo.</li>
+<li><strong>Napoletano by Fork</strong> — el spin-off de pizza de Fork; no es un lugar de brunch pero vale la pena tenerlo en el radar si amaste Fork y quieres cenar después.</li>
+</ul>
+</div>
+</section>
+
+<section id="by-vibe" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Mejor Brunch por Ambiente</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<div class="bg-rose-50 border-2 border-rose-200 rounded-xl p-5"><h4 class="font-bold text-rose-900 mb-2">Mejor para una Cita</h4><p class="text-sm text-rose-900">Croque La Vie (intimidad francesa), Oliva (vino + mediterráneo) o Refugio Tierra (estética de patio).</p></div>
+<div class="bg-amber-50 border-2 border-amber-200 rounded-xl p-5"><h4 class="font-bold text-amber-900 mb-2">Mejor con Niños</h4><p class="text-sm text-amber-900">El Mesón de San Pascual (jardín + Parque Tangamanga a un paso) o La Parroquia Potosina (institución familiar clásica).</p></div>
+<div class="bg-purple-50 border-2 border-purple-200 rounded-xl p-5"><h4 class="font-bold text-purple-900 mb-2">Mejor para Grupos</h4><p class="text-sm text-purple-900">Fork Le Brunch Atelier o Dos Amores — mesas grandes, platillos para compartir y energía de fin de semana.</p></div>
+<div class="bg-red-50 border-2 border-red-200 rounded-xl p-5"><h4 class="font-bold text-red-900 mb-2">Mejor Tradicional (Sentado)</h4><p class="text-sm text-red-900">La Parroquia Potosina — la vara de medida para las enchiladas potosinas.</p></div>
+<div class="bg-orange-50 border-2 border-orange-200 rounded-xl p-5"><h4 class="font-bold text-orange-900 mb-2">Mejor OG / Estilo Callejero</h4><p class="text-sm text-orange-900">Gorditas de Morales — cualquier puesto lleno de la calle de Morales. Sin reservas, solo efectivo.</p></div>
+<div class="bg-pink-50 border-2 border-pink-200 rounded-xl p-5"><h4 class="font-bold text-pink-900 mb-2">Más Trendy / Instagram</h4><p class="text-sm text-pink-900">Dos Amores (interiores pastel) o Hogaza (estética de panadería tenue).</p></div>
+<div class="bg-green-50 border-2 border-green-200 rounded-xl p-5"><h4 class="font-bold text-green-900 mb-2">Mejor Patio al Aire Libre</h4><p class="text-sm text-green-900">Refugio Tierra (jardín) o El Mesón de San Pascual (jardín junto al parque).</p></div>
+<div class="bg-blue-50 border-2 border-blue-200 rounded-xl p-5"><h4 class="font-bold text-blue-900 mb-2">Mejor Bufete</h4><p class="text-sm text-blue-900">La Parroquia Potosina (vie–dom) o el bufete de desayunos del Hyatt Regency (diario).</p></div>
+<div class="bg-emerald-50 border-2 border-emerald-200 rounded-xl p-5"><h4 class="font-bold text-emerald-900 mb-2">Mejor Vegano / Vegetariano</h4><p class="text-sm text-emerald-900">Refugio Tierra — menús dedicados vegano, vegetariano y sin gluten.</p></div>
+<div class="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-5"><h4 class="font-bold text-yellow-900 mb-2">Mejor Enfocado en Café</h4><p class="text-sm text-yellow-900">Hogaza o Capital Coffee SLP — espresso de especialidad con platillos de brunch bien resueltos.</p></div>
+<div class="bg-indigo-50 border-2 border-indigo-200 rounded-xl p-5"><h4 class="font-bold text-indigo-900 mb-2">Mejor Multi-Sucursal</h4><p class="text-sm text-indigo-900">Fork — tres sucursales (Centro, Chapultepec, Las Águilas). Elige la que te quede más cerca.</p></div>
+<div class="bg-cyan-50 border-2 border-cyan-200 rounded-xl p-5"><h4 class="font-bold text-cyan-900 mb-2">Mejor Mediterráneo</h4><p class="text-sm text-cyan-900">Oliva — mantequilla, pan, vino y un buen salmon toast sobre Av. Carranza.</p></div>
+</div>
+</section>
+
+<section id="what-to-order" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Qué Pedir: Platillos Potosinos de Brunch</h2>
+
+<div class="mb-8">
+<img src="${IMG_ENCHILADAS}" alt="Enchiladas potosinas — el platillo emblema de San Luis Potosí" class="w-full rounded-xl shadow-lg" />
+</div>
+
+<h3 class="text-2xl font-bold mb-4 text-gray-900">Enchiladas Potosinas — El Platillo Emblema de la Ciudad</h3>
+<p class="text-gray-700 mb-6">Las enchiladas potosinas no se parecen a ninguna otra enchilada de México. La masa misma se tiñe de un rojo-naranja profundo al amasarla con <strong>salsa de chile guajillo</strong> antes de prensarla en tortillas pequeñas. Cada tortilla se rellena con <strong>queso Oaxaca</strong> (el queso blanco que derrite en hebras), se dobla a la mitad — no se enrolla — y se dora ligeramente al comal. Se sirven coronadas con un <em>guiso</em> tibio de papa y zanahoria (un sofrito estilo mirepoix), una cucharada de salsa roja, un buen chorro de crema, queso fresco desmoronado, cebolla blanca en rodajas finas y un lado de frijoles refritos. El sabor es ahumado-dulce del guajillo, la textura es crujiente-suave, y la ración suele ser de 4 a 6 piezas — porción ideal de brunch.</p>
+
+<h3 class="text-2xl font-bold mb-4 text-gray-900">Otros Platillos Potosinos Imperdibles</h3>
+<ul class="list-disc pl-6 space-y-2 text-gray-700 mb-6">
+<li><strong>Gorditas de Morales</strong> — gorditas gruesas de masa de maíz asadas al comal, abiertas y rellenas de guisos. Éste es <em>el</em> brunch potosino. Ve a la calle de Morales, sigue a la gente hasta el puesto con la fila más larga y pide 3–4 por persona.</li>
+<li><strong>Asado de boda potosino</strong> — un guisado espeso de puerco en chile rojo, dulzón y sabroso, que históricamente se servía en las bodas; en versión brunch se sirve sobre arroz con tortillas, o dentro de una gordita.</li>
+<li><strong>Chilaquiles con cecina</strong> — triángulos de tortilla frita bañados en salsa roja o verde, coronados con cecina potosina, crema, cebolla y queso fresco. Muchas veces con un huevo estrellado encima.</li>
+<li><strong>Huevos rancheros potosinos</strong> — huevos sobre tortillas ligeramente fritas, nadando en una salsa rústica de jitomate y chile, servidos con frijoles refritos y un lado de cecina o chorizo.</li>
+<li><strong>Huevos divorciados</strong> — dos huevos estrellados, uno en salsa roja y otro en verde, separados por una pista de frijoles refritos. Básicos en Tres60 y Oliva.</li>
+<li><strong>Molletes</strong> — bolillos abiertos, untados de frijoles refritos, queso gratinado y pico de gallo. Brunch económico en su máxima expresión.</li>
+<li><strong>Cazuela de huevos rotos</strong> — un conjunto en cazuela de barro con huevos tiernos sobre papas fritas, muchas veces con jamón serrano o chorizo. Especialidad de Oliva.</li>
+<li><strong>Machaca norteña</strong> — carne seca deshebrada revuelta con huevo, jitomate, cebolla y chile. Opción más pesada para apetitos grandes.</li>
+</ul>
+
+<h3 class="text-2xl font-bold mb-4 text-gray-900">Favoritos Internacionales de Brunch en SLP</h3>
+<ul class="list-disc pl-6 space-y-2 text-gray-700 mb-6">
+<li><strong>Eggs benedict</strong> — las mejores versiones en Cuatro Almas, Refugio Tierra y Fork Le Brunch Atelier.</li>
+<li><strong>Avocado toast</strong> — estándar en cualquier lugar de brunch de nueva ola; Hogaza y Refugio Tierra encabezan con variaciones de masa madre + miel local.</li>
+<li><strong>Bowls de açaí</strong> — Dos Amores y Refugio Tierra hacen las mejores versiones.</li>
+<li><strong>Pan francés / pain perdu</strong> — el pain perdu de Croque La Vie es el estándar de oro; Cuatro Almas hace una gran versión de brioche.</li>
+<li><strong>Croque-monsieur / croque-madame</strong> — Croque La Vie es la casa especialista, pero la croque madame de Fork es una excelente alternativa más casual.</li>
+<li><strong>Salmon toast</strong> — Oliva marca la referencia en la ciudad; Hogaza también hace una versión fuerte sobre masa madre de la casa.</li>
+<li><strong>Hot cakes y waffles</strong> — Dos Amores, Tres60 y la mayoría de los brunches de hotel.</li>
+<li><strong>Shakshuka</strong> — especial ocasional en Refugio Tierra y Oliva.</li>
+</ul>
+</section>
+
+<section id="drinks" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Bebidas para Maridar con el Brunch en SLP</h2>
+
+<div class="mb-8">
+<img src="${IMG_TRADITIONAL}" alt="Bebidas tradicionales potosinas — café de olla y atole" class="w-full rounded-xl shadow-lg" />
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<div class="bg-amber-50 border-2 border-amber-200 rounded-xl p-6">
+<h4 class="text-xl font-bold text-amber-900 mb-3">Lado Tradicional</h4>
+<ul class="list-disc pl-6 space-y-2 text-amber-900">
+<li><strong>Café de olla</strong> — café preparado con canela y piloncillo en olla de barro. El café por excelencia del brunch potosino.</li>
+<li><strong>Atole</strong> — bebida espesa y caliente a base de masa, muchas veces con chocolate, guayaba o fresa.</li>
+<li><strong>Champurrado</strong> — atole de chocolate, perfecto para las mañanas frescas.</li>
+<li><strong>Agua de jamaica</strong> — agua fresca de flor de jamaica, ácida y de un rojo intenso.</li>
+<li><strong>Agua de horchata</strong> — leche de arroz con canela, el maridaje clásico de las enchiladas potosinas.</li>
+<li><strong>Chocolate caliente</strong> — sobre todo en los lugares tradicionales.</li>
+</ul>
+</div>
+<div class="bg-purple-50 border-2 border-purple-200 rounded-xl p-6">
+<h4 class="text-xl font-bold text-purple-900 mb-3">Lado Moderno / con Alcohol</h4>
+<ul class="list-disc pl-6 space-y-2 text-purple-900">
+<li><strong>Mimosas</strong> — estándar en Cuatro Almas, Fork, Dos Amores, Refugio Tierra y Oliva.</li>
+<li><strong>Micheladas</strong> — cerveza condimentada con limón, salsas y chile; la alternativa mexicana al Bloody Mary, apropiada para brunch.</li>
+<li><strong>Mezcal</strong> — el Altiplano Potosino produce mezcales excelentes; muchos cocteles de brunch usan destilados locales.</li>
+<li><strong>Bebidas de espresso de especialidad</strong> — flat whites, cortados y pour-overs en Hogaza y Capital Coffee SLP.</li>
+<li><strong>Cold brew y café nitro</strong> — cada vez más comunes en los lugares de nueva ola.</li>
+<li><strong>Vino por copeo</strong> — Oliva es la opción obvia; una copa de rosado mexicano a media mañana marida increíble con un salmon toast.</li>
+<li><strong>Jugos frescos</strong> — naranja, verdes detox y mezclas de betabel con jengibre; el juice bar de Refugio Tierra es excepcional.</li>
+</ul>
+</div>
+</div>
+
+<div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8">
+<p class="text-yellow-800"><strong>Tip de altitud:</strong> a 1,863 m, el alcohol pega más fuerte que al nivel del mar. Mide las mimosas y ten un agua fresca al lado. Más vale ibuprofeno antes del brunch que después.</p>
+</div>
+</section>
+
+<section id="neighborhoods" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Mapa de Colonias: Dónde Vive la Escena del Brunch</h2>
+
+<div class="space-y-6 mb-8">
+<div class="bg-white border-2 border-gray-200 rounded-xl p-5">
+<h4 class="text-xl font-bold text-gray-900 mb-2">Centro Histórico</h4>
+<p class="text-gray-700">El centro inscrito por la UNESCO, de cantera rosa y plazas caminables. Alberga las instituciones tradicionales (La Parroquia Potosina, Mercado República), los bistrós más nuevos (Tres60, Café Corta'o, Croque La Vie), Fork Centro en Galeana, y Hogaza (cuando está corriendo su café del centro). Es la mejor opción si eres turista hospedado en el centro o si quieres combinar el brunch con una mañana en el Templo del Carmen o el Museo Federico Silva.</p>
+</div>
+<div class="bg-white border-2 border-gray-200 rounded-xl p-5">
+<h4 class="text-xl font-bold text-gray-900 mb-2">Corredor de Av. Carranza</h4>
+<p class="text-gray-700">La avenida que conecta el Centro con Lomas, atravesando algunos de los bloques residenciales más históricos de SLP. La Parroquia Potosina (no. 300), Tres60 Bistro (no. 390) y Oliva (no. 1325) están sobre Carranza — puedes hacer literalmente un recorrido de brunch en este tramo.</p>
+</div>
+<div class="bg-white border-2 border-gray-200 rounded-xl p-5">
+<h4 class="text-xl font-bold text-gray-900 mb-2">Lomas (1ra, 2da, 3ra, 4ta Sección)</h4>
+<p class="text-gray-700">Zona residencial arbolada de clase media-alta al poniente del Centro. Epicentro de la escena de brunch de nueva ola — Cuatro Almas, Petit Bistro y varias cafeterías de especialidad. Ideal si rentas aquí o si buscas un brunch más tranquilo y menos turístico.</p>
+</div>
+<div class="bg-white border-2 border-gray-200 rounded-xl p-5">
+<h4 class="text-xl font-bold text-gray-900 mb-2">Chapultepec / Privadas del Pedregal</h4>
+<p class="text-gray-700">El corredor de Av. Parque Chapultepec, que corre junto al Parque Tangamanga I. Aquí están Refugio Tierra, El Mesón de San Pascual y Fork Chapultepec (Torre Avancer, no. 1922). Ideal si quieres combinar el brunch con una caminata o una rodada en el parque por la mañana.</p>
+</div>
+<div class="bg-white border-2 border-gray-200 rounded-xl p-5">
+<h4 class="text-xl font-bold text-gray-900 mb-2">Villa Magna / Altamira / Colinas del Parque / Las Águilas</h4>
+<p class="text-gray-700">El surponiente de la ciudad, residencial de desarrollo planeado con plazas comerciales más nuevas. Dos Amores Brunch &amp; Meal en Colinas del Parque y Fork Le Brunch Atelier en Olmos 145, Las Águilas 3ra Secc son las anclas, y van abriendo más conceptos conforme crece la zona.</p>
+</div>
+<div class="bg-white border-2 border-gray-200 rounded-xl p-5">
+<h4 class="text-xl font-bold text-gray-900 mb-2">Barrio de San Miguelito — Calle de las Gorditas de Morales</h4>
+<p class="text-gray-700">La colonia original del brunch potosino. A un corto viaje en taxi del Centro, aquí es donde los locales realmente van a almorzar el fin de semana. No hay restaurantes sentados para reservar — sólo hay que caminar la calle, encontrar el puesto más lleno, sentarse en un banco de plástico y pedir gorditas hasta que ya no puedas más.</p>
+</div>
+<div class="bg-white border-2 border-gray-200 rounded-xl p-5">
+<h4 class="text-xl font-bold text-gray-900 mb-2">Zona Industrial / Corredor de hoteles</h4>
+<p class="text-gray-700">Menos vistoso pero donde viven los brunches de hotel del Hyatt Regency, Hilton y Real de Minas. Ideal si quieres un bufete predecible o vienes por trabajo.</p>
+</div>
+</div>
+</section>
+
+<section id="tips" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Consejos para Visitantes</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<div class="bg-blue-50 border-2 border-blue-200 rounded-xl p-5">
+<h4 class="font-bold text-blue-900 mb-2">Timing de Reservaciones</h4>
+<p class="text-sm text-blue-900">El domingo de 11:00 AM a 1:00 PM es el pico. Reserva con 24 horas de anticipación por teléfono o WhatsApp en Cuatro Almas, Refugio Tierra, Fork Le Brunch Atelier, Dos Amores y Oliva. Llegar sin reserva está bien entre semana y los sábados antes de las 10 AM. Las Gorditas de Morales nunca aceptan reservaciones — sólo hay que presentarse.</p>
+</div>
+<div class="bg-green-50 border-2 border-green-200 rounded-xl p-5">
+<h4 class="font-bold text-green-900 mb-2">Propinas</h4>
+<p class="text-sm text-green-900">El 10% es estándar, 15% por servicio excelente. Revisa primero la cuenta — algunos lugares de alta gama cobran el servicio. Deja la propina en efectivo si puedes. Los puestos callejeros (Morales, Mercado República) no esperan propina pero agradecen que redondees.</p>
+</div>
+<div class="bg-purple-50 border-2 border-purple-200 rounded-xl p-5">
+<h4 class="font-bold text-purple-900 mb-2">Pago</h4>
+<p class="text-sm text-purple-900">Las tarjetas (Visa, Mastercard, Amex en la mayoría) se aceptan ampliamente en los restaurantes de brunch. Los puestos de mercado, los de gorditas en Morales y los lugares tradicionales pequeños son solo efectivo. Hay cajeros automáticos de sobra en Centro y Lomas.</p>
+</div>
+<div class="bg-amber-50 border-2 border-amber-200 rounded-xl p-5">
+<h4 class="font-bold text-amber-900 mb-2">Código de Vestimenta</h4>
+<p class="text-sm text-amber-900">Casual elegante en la mayoría; las instituciones del Centro aceptan cualquier cosa que no sea ropa de playa. Los brunches de hotel piden business casual. Los puestos callejeros esperan ropa cómoda a la que no te importe que le caiga una gota de salsa.</p>
+</div>
+<div class="bg-red-50 border-2 border-red-200 rounded-xl p-5">
+<h4 class="font-bold text-red-900 mb-2">Alergias (Frases Útiles)</h4>
+<p class="text-sm text-red-900">"Soy alérgico/a a ___". Comunes: gluten, lactosa, huevo, nueces, mariscos. "Sin picante" para que no lleve chile. Los meseros potosinos suelen ser muy atentos con las alergias — avísales al pedir.</p>
+</div>
+<div class="bg-teal-50 border-2 border-teal-200 rounded-xl p-5">
+<h4 class="font-bold text-teal-900 mb-2">Tamaño de Porciones</h4>
+<p class="text-sm text-teal-900">Las porciones de brunch mexicano son grandes. Un plato de enchiladas potosinas trae típicamente de 4 a 6 piezas. Los platos de chilaquiles son tamaño cena. Pide un plato fuerte cada uno y una entrada para compartir. Las gorditas son más chicas — 3 o 4 por persona es buen punto de partida.</p>
+</div>
+</div>
+</section>
+
+<section id="budget" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Guía de Presupuesto: Brunch para Dos en SLP</h2>
+
+<div class="overflow-x-auto mb-8">
+<table class="min-w-full bg-white border border-gray-200 rounded-lg">
+<thead style="background: linear-gradient(to right, #059669, #0284c7);"><tr>
+<th class="px-6 py-3 text-left text-xs font-bold text-white uppercase">Nivel</th>
+<th class="px-6 py-3 text-left text-xs font-bold text-white uppercase">MXN (2 pers.)</th>
+<th class="px-6 py-3 text-left text-xs font-bold text-white uppercase">USD (2 pers.)</th>
+<th class="px-6 py-3 text-left text-xs font-bold text-white uppercase">Ejemplos</th>
+</tr></thead>
+<tbody class="divide-y divide-gray-200">
+<tr><td class="px-6 py-4 font-semibold text-green-700">Económico</td><td class="px-6 py-4">&lt;$300 MXN</td><td class="px-6 py-4">&lt;$17 USD</td><td class="px-6 py-4">Gorditas de Morales, puestos del Mercado República, pastelería y café en Hogaza, Café Corta'o</td></tr>
+<tr class="bg-gray-50"><td class="px-6 py-4 font-semibold text-blue-700">Gama media</td><td class="px-6 py-4">$400–700 MXN</td><td class="px-6 py-4">$22–39 USD</td><td class="px-6 py-4">Cuatro Almas, Fork (todas las sucursales), Dos Amores, Refugio Tierra, Oliva, Tres60, Croque La Vie, El Mesón de San Pascual, La Parroquia</td></tr>
+<tr><td class="px-6 py-4 font-semibold text-purple-700">Alta gama</td><td class="px-6 py-4">$800–1,400 MXN</td><td class="px-6 py-4">$45–78 USD</td><td class="px-6 py-4">Bufete del Hyatt Regency, bufete de brunch de Cielo Tinto, brunches largos en Oliva con maridaje de vinos</td></tr>
+</tbody>
+</table>
+</div>
+
+<p class="text-gray-700 mb-6">Como contexto: un brunch dominical comparable para dos en San Miguel de Allende suele costar $900–1,800 MXN (~$50–100 USD) en gama media, y hasta más de $2,500 MXN en lugares como Aperí o Jacinto 1930. La escena de brunch de SLP entrega calidad similar a más o menos la mitad del precio, sobre todo en Cuatro Almas, Refugio Tierra, Fork y Oliva. Revisa nuestra <a href="/blog/san-luis-potosi-vs-san-miguel-allende-expats-2026" class="text-blue-600 underline">comparativa completa de costo de vida</a>.</p>
+</section>
+
+<section id="faq" class="mb-12">
+<h2 class="text-3xl font-bold mb-6 text-gray-900 border-b-2 border-blue-200 pb-2">Preguntas Frecuentes</h2>
+<div class="space-y-6">
+
+<div class="bg-white border border-gray-200 rounded-lg p-6">
+<h3 class="text-xl font-bold mb-3 text-gray-900">¿San Luis Potosí es una buena ciudad para desayunar y hacer brunch?</h3>
+<p class="text-gray-700">Sí — San Luis Potosí está considerada como una de las mejores ciudades de México para desayunar. El desayuno se vive como un evento social más que como una comida rápida, y el patrimonio culinario de la ciudad (enchiladas potosinas, gorditas de Morales, asado de boda, cecina, café de olla) le da más opciones regionales de desayuno que a la mayoría de las ciudades mexicanas. La cultura moderna de brunch suma café de especialidad, menús de panadería artesanal y platillos internacionales sobre esa tradición.</p>
+</div>
+
+<div class="bg-white border border-gray-200 rounded-lg p-6">
+<h3 class="text-xl font-bold mb-3 text-gray-900">¿Cuál es el mejor lugar de brunch en San Luis Potosí?</h3>
+<p class="text-gray-700">Para la mayoría de los visitantes, <strong>Cuatro Almas</strong> en Lomas Cuarta Sección es la mejor opción — un restaurante de brunch especializado abierto de 8:00 AM a 2:00 PM con base leal de locales por sus chilaquiles al chipotle y sus eggs benedict. Para un brunch tradicional potosino, <strong>La Parroquia Potosina</strong> (Av. Venustiano Carranza 300) es la institución, sobre todo los fines de semana por su bufete de enchiladas potosinas. Para el OG del brunch potosino, ve a la <strong>Calle de las Gorditas de Morales</strong> — cualquier puesto con fila es garantía.</p>
+</div>
+
+<div class="bg-white border border-gray-200 rounded-lg p-6">
+<h3 class="text-xl font-bold mb-3 text-gray-900">¿Dónde están las Gorditas de Morales en San Luis Potosí?</h3>
+<p class="text-gray-700">La Calle de las Gorditas de Morales (oficialmente Calle Reforma / el corredor de Morales en el Barrio de San Miguelito, a un corto viaje en taxi del Centro Histórico) es una calle con decenas de puestos de gorditas y loncherías. Las gorditas de Morales son el brunch potosino original — discos gruesos de masa de maíz asados al comal, abiertos por en medio y rellenos de guisos (chicharrón prensado, nopales, rajas con queso, picadillo, asado de boda). La regla que siguen los locales: <strong>cualquier puesto con fila es garantía</strong>. Sin reservaciones, solo efectivo, y la hora pico es de 9:30 AM a 1:00 PM.</p>
+</div>
+
+<div class="bg-white border border-gray-200 rounded-lg p-6">
+<h3 class="text-xl font-bold mb-3 text-gray-900">¿Se necesitan reservaciones para hacer brunch en San Luis Potosí?</h3>
+<p class="text-gray-700">Normalmente no entre semana, pero sí muy recomendadas sábado y domingo entre 11:00 AM y 1:30 PM, que es la hora pico del brunch en SLP. Lugares populares como Cuatro Almas, Refugio Tierra, Fork Le Brunch Atelier y Dos Amores se llenan rápido — espera de 30 a 60 minutos sin reservación. Llama directo al restaurante o manda un WhatsApp un día antes.</p>
+</div>
+
+<div class="bg-white border border-gray-200 rounded-lg p-6">
+<h3 class="text-xl font-bold mb-3 text-gray-900">¿A dónde van los locales a hacer brunch los domingos en San Luis Potosí?</h3>
+<p class="text-gray-700">Los locales prefieren cuatro zonas: <strong>Lomas / Chapultepec</strong> (Cuatro Almas, Refugio Tierra, El Mesón de San Pascual, Fork Chapultepec), <strong>Centro</strong> (La Parroquia Potosina, Oliva sobre Carranza, Tres60 Bistro, Fork Centro, Croque La Vie), <strong>Colinas del Parque</strong> (Dos Amores) y <strong>Las Águilas 3ra Secc</strong> (Fork Le Brunch Atelier en Olmos 145). Para la experiencia potosina más auténtica, los locales van a la <strong>Calle de las Gorditas de Morales</strong>.</p>
+</div>
+
+<div class="bg-white border border-gray-200 rounded-lg p-6">
+<h3 class="text-xl font-bold mb-3 text-gray-900">¿Fork tiene más de una sucursal en San Luis Potosí?</h3>
+<p class="text-gray-700">Sí — Fork opera tres sucursales en SLP. <strong>Fork Centro</strong> en Galeana 443, en el centro histórico; <strong>Fork Chapultepec</strong> dentro de Torre Avancer, en Av. Parque Chapultepec 1922; y <strong>Fork Le Brunch Atelier</strong> en Olmos 145, Las Águilas 3ra Secc, que es el concepto dedicado al brunch. Las reservaciones para todo el grupo se hacen al +52 444 481 1996.</p>
+</div>
+
+<div class="bg-white border border-gray-200 rounded-lg p-6">
+<h3 class="text-xl font-bold mb-3 text-gray-900">¿El brunch es una tradición mexicana?</h3>
+<p class="text-gray-700">El brunch como nombre es importado, pero el concepto de una comida a media mañana de fin de semana es profundamente mexicano — el <em>almuerzo</em>, que se come típicamente entre las 10 AM y la 1 PM, combina lo que en inglés se separa entre desayuno y comida. En San Luis Potosí específicamente, el desayuno es pilar de la cultura de fin de semana: las familias se reúnen por gorditas de Morales, enchiladas potosinas y café de olla. La cultura moderna de brunch en SLP fusiona esta tradición con añadidos internacionales como eggs benedict, avocado toast, hot cakes y mimosas.</p>
+</div>
+
+<div class="bg-white border border-gray-200 rounded-lg p-6">
+<h3 class="text-xl font-bold mb-3 text-gray-900">¿Cuánto cuesta el brunch en San Luis Potosí?</h3>
+<p class="text-gray-700">Un brunch económico para dos personas va de 200 a 350 MXN (~$11–20 USD) en los puestos de gorditas de la Calle de Morales o en cafés de barrio. Lugares de gama media como Cuatro Almas, Tres60, Oliva, Fork, Hogaza o Dos Amores promedian entre 400 y 700 MXN (~$22–39 USD) por dos personas con bebidas. Los brunches de hotel de alta gama (Hyatt Regency, Hilton) y restaurantes de autor rondan los 800–1,400 MXN (~$45–78 USD) para dos.</p>
+</div>
+
+<div class="bg-white border border-gray-200 rounded-lg p-6">
+<h3 class="text-xl font-bold mb-3 text-gray-900">¿Qué restaurantes sirven brunch mexicano y cuáles brunch internacional en SLP?</h3>
+<p class="text-gray-700">Para brunch mexicano auténtico: <strong>La Parroquia Potosina, El Mesón de San Pascual, las Gorditas de Morales y los puestos del Mercado República</strong>. Para brunch internacional / moderno: <strong>Cuatro Almas, Refugio Tierra, Dos Amores y Croque La Vie</strong> (francés). Para fusión que mezcla ambos: <strong>Fork, Oliva, Hogaza y Tres60 Bistro</strong> sirven chilaquiles junto a eggs benedict, croque madame, omelettes y avocado toast.</p>
+</div>
+
+<div class="bg-white border border-gray-200 rounded-lg p-6">
+<h3 class="text-xl font-bold mb-3 text-gray-900">¿Los lugares de brunch en SLP tienen opciones veganas o vegetarianas?</h3>
+<p class="text-gray-700">Sí. <strong>Refugio Tierra</strong> ofrece menús vegano, vegetariano y sin gluten, y es el mejor lugar de brunch para vegetarianos en la ciudad. Hogaza, Oliva, Cuatro Almas y Fork tienen opciones vegetarianas con platos como chilaquiles verdes, avocado toast, bowls de açaí y bowls de base vegetal. Pide "sin carne" o "vegano" al ordenar.</p>
+</div>
+
+</div>
+</section>
+
+<div class="bg-blue-50 border-l-4 border-blue-400 p-6 mb-8">
+<h3 class="text-xl font-bold mb-3 text-blue-900">Sigue Explorando San Luis Potosí</h3>
+<p class="text-blue-800 mb-3">Guías relacionadas en sanluisway.com:</p>
+<ul class="space-y-2 text-blue-800">
+<li>→ <a href="/breakfast-spots-san-luis-potosi" class="underline font-medium">Lugares de Desayuno Temprano en San Luis Potosí (antes de las 9 AM)</a></li>
+<li>→ <a href="/traditional-cuisine" class="underline font-medium">Guía de Cocina Tradicional Potosina</a></li>
+<li>→ <a href="/restaurants" class="underline font-medium">Directorio Completo de Restaurantes de SLP</a></li>
+<li>→ <a href="/cultural/culinary-traditions" class="underline font-medium">Tradiciones Culinarias de San Luis Potosí</a></li>
+<li>→ <a href="/resources/expat-guide" class="underline font-medium">Guía para Expats en San Luis Potosí</a></li>
+</ul>
+</div>
+
+<div class="bg-orange-50 border-l-4 border-orange-400 p-6 mb-8">
+<h3 class="text-xl font-bold mb-3 text-orange-900">¿Listo para el Brunch?</h3>
+<p class="text-orange-800 mb-3"><strong>San Luis Way es tu guía local completa de los mejores lugares de brunch en San Luis Potosí.</strong> Guarda esta guía, reserva con tiempo para el domingo, y empieza por unas enchiladas potosinas — o sáltate directo a la calle de Morales. Tu mimosa (o tu café de olla) te está esperando.</p>
+<p class="text-orange-800"><a href="/blog" class="text-blue-600 hover:text-blue-800 underline font-semibold">Ver más guías de comida de SLP →</a></p>
+</div>
+
+<script type="application/ld+json">${faqJsonLdES}</script>
+
+</div>`;
 
 const post = {
   slug: SLUG,
