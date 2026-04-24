@@ -129,3 +129,6 @@ build/
 .vscode/
 *.swp
 *.swo
+
+# Local fact-check research scratch (raw agent output, not committed)
+.factcheck-research/

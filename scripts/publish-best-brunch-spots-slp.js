@@ -41,7 +41,7 @@ const faqJsonLd = JSON.stringify({
       "name": "Where are the Gorditas de Morales in San Luis Potosí?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Calle de las Gorditas de Morales (officially Calle Reforma / the Morales corridor in Barrio de San Miguelito, a short taxi ride from Centro Histórico) is a street lined with dozens of gordita stalls and loncherías. Gorditas de Morales are the original Potosino brunch — thick corn-masa pockets griddled on a comal, split open, and stuffed with guisos (chicharrón prensado, nopales, rajas con queso, picadillo, asado de boda). The rule of thumb locals use: any stall with a line is guaranteed. No reservations, cash is king, and peak time is 9:30 AM to 1:00 PM."
+        "text": "Calle de las Gorditas de Morales runs along Camino a la Presa de San José in the Loma de los Filtros / Morales corridor — a short taxi ride from Centro Histórico, anchored historically by weekend traffic to the Presa de San José. The street is lined with dozens of gordita stalls and loncherías. Gorditas de Morales are the original Potosino brunch — thick corn-masa pockets griddled on a comal, split open, and stuffed with guisos (chicharrón prensado, nopales, rajas con queso, picadillo, asado de boda). The rule of thumb locals use: any stall with a line is guaranteed. No reservations, cash is king, and peak time is 9:30 AM to 1:00 PM."
       }
     },
     {
@@ -65,7 +65,7 @@ const faqJsonLd = JSON.stringify({
       "name": "Does Fork have more than one location in San Luis Potosí?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — Fork operates three locations in SLP. Fork Centro at Galeana 443 in the historic center; Fork Chapultepec inside Torre Avancer at Av. Parque Chapultepec 1922; and Fork Le Brunch Atelier at Olmos 145 in Las Aguilas 3ra Secc, which is the brunch-specific concept. Reservations across the group go through +52 444 481 1996."
+        "text": "Yes — Fork operates three locations in SLP. Fork Centro at Galeana 443 in the historic center; Fork Chapultepec inside Torre Avancer at Av. Parque Chapultepec 1922; and Fork Le Brunch Atelier at Olmos 145 in Las Aguilas 3ra Secc, which is the brunch-specific concept. Reservations: Fork Centro / Chapultepec at +52 444 481 1996; Fork Le Brunch Atelier at +52 444 817 0705."
       }
     },
     {
@@ -128,7 +128,7 @@ const faqJsonLdES = JSON.stringify({
       "name": "¿Dónde están las Gorditas de Morales en San Luis Potosí?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "La Calle de las Gorditas de Morales (oficialmente Calle Reforma / el corredor de Morales en el Barrio de San Miguelito, a un corto viaje en taxi desde el Centro Histórico) es una calle con decenas de puestos de gorditas y loncherías. Las gorditas de Morales son el brunch potosino original — discos gruesos de masa de maíz asados al comal, abiertos por en medio y rellenos de guisos (chicharrón prensado, nopales, rajas con queso, picadillo, asado de boda). La regla que siguen los locales: cualquier puesto con fila es garantía. No hay reservaciones, solo efectivo, y la hora pico es de 9:30 AM a 1:00 PM."
+        "text": "La Calle de las Gorditas de Morales corre por el Camino a la Presa de San José, en el corredor de Loma de los Filtros / Morales — a un corto viaje en taxi del Centro Histórico, anclada históricamente por el tráfico de fin de semana hacia la Presa de San José. La calle está cubierta de decenas de puestos de gorditas y loncherías. Las gorditas de Morales son el brunch potosino original — discos gruesos de masa de maíz asados al comal, abiertos por en medio y rellenos de guisos (chicharrón prensado, nopales, rajas con queso, picadillo, asado de boda). La regla que siguen los locales: cualquier puesto con fila es garantía. No hay reservaciones, solo efectivo, y la hora pico es de 9:30 AM a 1:00 PM."
       }
     },
     {
@@ -152,7 +152,7 @@ const faqJsonLdES = JSON.stringify({
       "name": "¿Fork tiene más de una sucursal en San Luis Potosí?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí — Fork opera tres sucursales en SLP. Fork Centro en Galeana 443 en el centro histórico; Fork Chapultepec dentro de Torre Avancer, en Av. Parque Chapultepec 1922; y Fork Le Brunch Atelier en Olmos 145, Las Águilas 3ra Secc, que es el concepto dedicado al brunch. Las reservaciones para todo el grupo se hacen al +52 444 481 1996."
+        "text": "Sí — Fork opera tres sucursales en SLP. Fork Centro en Galeana 443 en el centro histórico; Fork Chapultepec dentro de Torre Avancer, en Av. Parque Chapultepec 1922; y Fork Le Brunch Atelier en Olmos 145, Las Águilas 3ra Secc, que es el concepto dedicado al brunch. Reservaciones: Fork Centro / Chapultepec al +52 444 481 1996; Fork Le Brunch Atelier al +52 444 817 0705."
       }
     },
     {
@@ -196,6 +196,17 @@ const contentEN = `<div class="prose prose-lg max-w-none">
 <img src="${HERO}" alt="Best brunch spots in San Luis Potosí — modern restaurant table with chilaquiles, eggs benedict, and mimosas" class="w-full rounded-xl shadow-2xl" />
 </div>
 
+<div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-xl p-5 mb-8">
+  <div class="flex items-start gap-3">
+    <div class="text-2xl" aria-hidden="true">✅</div>
+    <div class="flex-1">
+      <div class="text-xs font-bold uppercase tracking-wide text-blue-700 mb-1">Independently Fact-Checked</div>
+      <p class="text-base font-bold text-gray-900 mb-1">Every venue, address, phone number, and dish in this guide was verified on April 24, 2026.</p>
+      <p class="text-sm text-gray-700">Read the full <a href="/blog/factchecks/best-brunch-spots-san-luis-potosi" class="text-blue-700 hover:text-blue-900 underline font-semibold">verification report</a> with sources, evidence chains, and the corrections we made before publishing.</p>
+    </div>
+  </div>
+</div>
+
 <div class="bg-yellow-50 p-6 rounded-lg mb-8">
   <h3 class="text-xl font-bold mb-4 text-gray-900">Table of Contents</h3>
   <ul class="list-disc pl-6">
@@ -219,7 +230,7 @@ const contentEN = `<div class="prose prose-lg max-w-none">
   <ul class="list-disc pl-6 space-y-2 text-blue-900">
     <li><strong>Best overall brunch:</strong> Cuatro Almas (Lomas Cuarta Sección) — chipotle chilaquiles, eggs benedict, open 8 AM–2 PM.</li>
     <li><strong>Best traditional Potosino brunch:</strong> La Parroquia Potosina (Centro) — weekend buffet, legendary enchiladas potosinas.</li>
-    <li><strong>OG of Potosino brunch:</strong> Gorditas de Morales — the Morales street in Barrio de San Miguelito is where locals actually eat. Any stall with a line is guaranteed.</li>
+    <li><strong>OG of Potosino brunch:</strong> Gorditas de Morales — the Morales corridor on Camino a la Presa de San José (Loma de los Filtros) is where locals actually eat. Any stall with a line is guaranteed.</li>
     <li><strong>Best multi-location bistro:</strong> Fork — three SLP branches (Centro, Chapultepec, Las Aguilas) with the brunch-dedicated Fork Le Brunch Atelier on Olmos 145.</li>
     <li><strong>Best artisan bakery brunch:</strong> Hogaza — specialty sourdough, pan artesanal, and café de especialidad.</li>
     <li><strong>Best Mediterranean brunch:</strong> Oliva (Av. Venustiano Carranza 1325) — "Mantequilla, Pan y Vino" concept with salmon toast, chilaquiles, and cazuela de huevos rotos.</li>
@@ -397,7 +408,7 @@ const contentEN = `<div class="prose prose-lg max-w-none">
 <li><strong>Fork Chapultepec</strong> — Torre Avancer, Av. Parque Chapultepec 1922.</li>
 <li><strong>Fork Le Brunch Atelier</strong> — Olmos 145, Las Águilas 3ra Secc (the brunch-dedicated concept).</li>
 </ul>
-<p class="text-gray-700 mb-3"><strong>Reservations:</strong> +52 444 481 1996 &nbsp;|&nbsp; <strong>Instagram:</strong> <a href="https://www.instagram.com/forkslp/" target="_blank" rel="noopener" class="text-blue-600 underline">@forkslp</a></p>
+<p class="text-gray-700 mb-3"><strong>Reservations:</strong> Centro / Chapultepec +52 444 481 1996 · Le Brunch Atelier +52 444 817 0705 &nbsp;|&nbsp; <strong>Instagram:</strong> <a href="https://www.instagram.com/forkslp/" target="_blank" rel="noopener" class="text-blue-600 underline">@forkslp</a></p>
 <p class="text-gray-700 mb-3">Fork is the homegrown SLP bistro-brunch brand with three branches, one of which — Fork Le Brunch Atelier on Olmos 145 — is dedicated specifically to the weekend brunch crowd. The menu stretches from Potosino classics (chilaquiles, molletes) to French-influenced plates (croque madame). It is one of the highest-rated brunch concepts in SLP on Restaurant Guru (4.4 stars, 1,400+ reviews at the Atelier). Pick the branch closest to you — they share the kitchen DNA but each has a slightly different vibe (Centro is the most touristy, Chapultepec is corporate-friendly, Las Águilas is the quietest for a long Sunday brunch).</p>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
 <div class="bg-purple-50 rounded p-2"><strong>Price:</strong> $$<br/>$400–650 MXN / 2</div>
@@ -441,7 +452,7 @@ const contentEN = `<div class="prose prose-lg max-w-none">
 <!-- Gorditas de Morales — the OG -->
 <div class="bg-gradient-to-r from-red-50 to-orange-50 border-4 border-red-300 rounded-xl p-6 mb-8">
 <h3 class="text-2xl font-bold text-red-900 mb-3">Gorditas de Morales — The OG of Potosino Brunch</h3>
-<p class="text-gray-800 mb-4"><strong>If there is one "honorable mention" that locals would argue is actually #1, it's Gorditas de Morales.</strong> Calle de las Gorditas de Morales — a stretch of street in Barrio de San Miguelito, a short taxi ride from Centro Histórico — is the original Potosino weekend brunch. Dozens of stalls and loncherías line the block, each gridding up thick corn-masa gorditas on a comal, splitting them open, and stuffing them with guisos: chicharrón prensado, rajas con queso, picadillo, nopales, papa con chorizo, asado de boda, frijoles, mole.</p>
+<p class="text-gray-800 mb-4"><strong>If there is one "honorable mention" that locals would argue is actually #1, it's Gorditas de Morales.</strong> Calle de las Gorditas de Morales — running along Camino a la Presa de San José in the Loma de los Filtros / Morales corridor, a short taxi ride from Centro Histórico — is the original Potosino weekend brunch. The historical anchor is weekend family traffic heading to the Presa de San José. Dozens of stalls and loncherías line the block, each gridding up thick corn-masa gorditas on a comal, splitting them open, and stuffing them with guisos: chicharrón prensado, rajas con queso, picadillo, nopales, papa con chorizo, asado de boda, frijoles, mole.</p>
 <p class="text-gray-800 mb-4">The rule of thumb locals swear by: <strong>any stall with a line is guaranteed.</strong> The vendors without customers at 10 AM on a Sunday are the ones to skip. Regulars have their favorite, but newcomers should just walk the street, follow the crowd, and order 3–4 gorditas each with a Jarrito or a café de olla. No reservations. Cash is king. Peak time is 9:30 AM to 1:00 PM, and the best tables are the plastic stools at whatever stall is busiest.</p>
 <p class="text-gray-800 mb-0"><strong>Why this is the OG:</strong> gorditas de Morales predate every modern brunch restaurant in this guide by decades. This is how Potosino families ate the weekend meal before "brunch" was even a word in the city. If you have one shot at a Potosino breakfast and want the most local experience possible, skip the sit-down restaurants and go here.</p>
 </div>
@@ -577,7 +588,7 @@ const contentEN = `<div class="prose prose-lg max-w-none">
 <p class="text-gray-700">South-west side of the city, master-planned residential with newer commercial plazas. Dos Amores Brunch &amp; Meal in Colinas del Parque and Fork Le Brunch Atelier on Olmos 145 in Las Águilas 3ra Secc are the anchors, and more concepts are opening here as the area grows.</p>
 </div>
 <div class="bg-white border-2 border-gray-200 rounded-xl p-5">
-<h4 class="text-xl font-bold text-gray-900 mb-2">Barrio de San Miguelito — Calle de las Gorditas de Morales</h4>
+<h4 class="text-xl font-bold text-gray-900 mb-2">Loma de los Filtros / Morales — Calle de las Gorditas de Morales</h4>
 <p class="text-gray-700">The original Potosino brunch neighborhood. A short taxi from Centro, this is where locals actually go for weekend almuerzo. No sit-down restaurants to book — just walk the street, find the busiest stall, sit on a plastic stool, and order gorditas until you can't anymore.</p>
 </div>
 <div class="bg-white border-2 border-gray-200 rounded-xl p-5">
@@ -656,7 +667,7 @@ const contentEN = `<div class="prose prose-lg max-w-none">
 
 <div class="bg-white border border-gray-200 rounded-lg p-6">
 <h3 class="text-xl font-bold mb-3 text-gray-900">Where are the Gorditas de Morales in San Luis Potosí?</h3>
-<p class="text-gray-700">Calle de las Gorditas de Morales (officially Calle Reforma / the Morales corridor in Barrio de San Miguelito, a short taxi ride from Centro Histórico) is a street lined with dozens of gordita stalls and loncherías. Gorditas de Morales are the original Potosino brunch — thick corn-masa pockets griddled on a comal, split open, and stuffed with guisos (chicharrón prensado, nopales, rajas con queso, picadillo, asado de boda). The rule of thumb locals use: <strong>any stall with a line is guaranteed</strong>. No reservations, cash is king, and peak time is 9:30 AM to 1:00 PM.</p>
+<p class="text-gray-700">Calle de las Gorditas de Morales runs along Camino a la Presa de San José in the Loma de los Filtros / Morales corridor — a short taxi ride from Centro Histórico, anchored historically by weekend traffic to the Presa de San José. The street is lined with dozens of gordita stalls and loncherías. Gorditas de Morales are the original Potosino brunch — thick corn-masa pockets griddled on a comal, split open, and stuffed with guisos (chicharrón prensado, nopales, rajas con queso, picadillo, asado de boda). The rule of thumb locals use: <strong>any stall with a line is guaranteed</strong>. No reservations, cash is king, and peak time is 9:30 AM to 1:00 PM.</p>
 </div>
 
 <div class="bg-white border border-gray-200 rounded-lg p-6">
@@ -671,7 +682,7 @@ const contentEN = `<div class="prose prose-lg max-w-none">
 
 <div class="bg-white border border-gray-200 rounded-lg p-6">
 <h3 class="text-xl font-bold mb-3 text-gray-900">Does Fork have more than one location in San Luis Potosí?</h3>
-<p class="text-gray-700">Yes — Fork operates three locations in SLP. <strong>Fork Centro</strong> at Galeana 443 in the historic center; <strong>Fork Chapultepec</strong> inside Torre Avancer at Av. Parque Chapultepec 1922; and <strong>Fork Le Brunch Atelier</strong> at Olmos 145 in Las Águilas 3ra Secc, which is the brunch-specific concept. Reservations across the group go through +52 444 481 1996.</p>
+<p class="text-gray-700">Yes — Fork operates three locations in SLP. <strong>Fork Centro</strong> at Galeana 443 in the historic center; <strong>Fork Chapultepec</strong> inside Torre Avancer at Av. Parque Chapultepec 1922; and <strong>Fork Le Brunch Atelier</strong> at Olmos 145 in Las Águilas 3ra Secc, which is the brunch-specific concept. Reservations: Fork Centro / Chapultepec at +52 444 481 1996; Fork Le Brunch Atelier at +52 444 817 0705.</p>
 </div>
 
 <div class="bg-white border border-gray-200 rounded-lg p-6">
@@ -725,6 +736,17 @@ const contentES = `<div class="prose prose-lg max-w-none">
 <img src="${HERO}" alt="Los mejores lugares de brunch en San Luis Potosí — mesa moderna con chilaquiles, eggs benedict y mimosas" class="w-full rounded-xl shadow-2xl" />
 </div>
 
+<div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-xl p-5 mb-8">
+  <div class="flex items-start gap-3">
+    <div class="text-2xl" aria-hidden="true">✅</div>
+    <div class="flex-1">
+      <div class="text-xs font-bold uppercase tracking-wide text-blue-700 mb-1">Verificado de forma independiente</div>
+      <p class="text-base font-bold text-gray-900 mb-1">Cada restaurante, dirección, teléfono y platillo de esta guía fue verificado el 24 de abril de 2026.</p>
+      <p class="text-sm text-gray-700">Lee el <a href="/blog/factchecks/best-brunch-spots-san-luis-potosi" class="text-blue-700 hover:text-blue-900 underline font-semibold">reporte completo de verificación</a> con fuentes, cadenas de evidencia y las correcciones que hicimos antes de publicar.</p>
+    </div>
+  </div>
+</div>
+
 <div class="bg-yellow-50 p-6 rounded-lg mb-8">
   <h3 class="text-xl font-bold mb-4 text-gray-900">Tabla de Contenidos</h3>
   <ul class="list-disc pl-6">
@@ -748,7 +770,7 @@ const contentES = `<div class="prose prose-lg max-w-none">
   <ul class="list-disc pl-6 space-y-2 text-blue-900">
     <li><strong>Mejor brunch en general:</strong> Cuatro Almas (Lomas Cuarta Sección) — chilaquiles al chipotle, eggs benedict, abierto de 8 AM a 2 PM.</li>
     <li><strong>Mejor brunch tradicional potosino:</strong> La Parroquia Potosina (Centro) — bufete de fin de semana y las legendarias enchiladas potosinas.</li>
-    <li><strong>OG del brunch potosino:</strong> Gorditas de Morales — la calle de Morales en el Barrio de San Miguelito es donde los locales realmente comen. Cualquier puesto con fila es garantía.</li>
+    <li><strong>OG del brunch potosino:</strong> Gorditas de Morales — el corredor de Morales sobre Camino a la Presa de San José (Loma de los Filtros) es donde los locales realmente comen. Cualquier puesto con fila es garantía.</li>
     <li><strong>Mejor bistro multi-sucursal:</strong> Fork — tres sucursales en SLP (Centro, Chapultepec, Las Águilas) con Fork Le Brunch Atelier en Olmos 145 dedicado al brunch.</li>
     <li><strong>Mejor brunch de panadería artesanal:</strong> Hogaza — masa madre de especialidad, pan artesanal y café de especialidad.</li>
     <li><strong>Mejor brunch mediterráneo:</strong> Oliva (Av. Venustiano Carranza 1325) — concepto "Mantequilla, Pan y Vino" con salmon toast, chilaquiles y cazuela de huevos rotos.</li>
@@ -926,7 +948,7 @@ const contentES = `<div class="prose prose-lg max-w-none">
 <li><strong>Fork Chapultepec</strong> — Torre Avancer, Av. Parque Chapultepec 1922.</li>
 <li><strong>Fork Le Brunch Atelier</strong> — Olmos 145, Las Águilas 3ra Secc (el concepto dedicado al brunch).</li>
 </ul>
-<p class="text-gray-700 mb-3"><strong>Reservaciones:</strong> +52 444 481 1996 &nbsp;|&nbsp; <strong>Instagram:</strong> <a href="https://www.instagram.com/forkslp/" target="_blank" rel="noopener" class="text-blue-600 underline">@forkslp</a></p>
+<p class="text-gray-700 mb-3"><strong>Reservaciones:</strong> Centro / Chapultepec +52 444 481 1996 · Le Brunch Atelier +52 444 817 0705 &nbsp;|&nbsp; <strong>Instagram:</strong> <a href="https://www.instagram.com/forkslp/" target="_blank" rel="noopener" class="text-blue-600 underline">@forkslp</a></p>
 <p class="text-gray-700 mb-3">Fork es la marca local de bistró-brunch potosino con tres sucursales, una de las cuales — Fork Le Brunch Atelier en Olmos 145 — está dedicada específicamente al público de brunch de fin de semana. El menú va de clásicos potosinos (chilaquiles, molletes) a platos de influencia francesa (croque madame). Es uno de los conceptos de brunch mejor calificados de SLP en Restaurant Guru (4.4 estrellas, 1,400+ reseñas en el Atelier). Elige la sucursal que te quede más cerca — comparten ADN de cocina pero cada una tiene un ambiente distinto (Centro es la más turística, Chapultepec funciona bien para un brunch de trabajo, y Las Águilas es la más tranquila para un domingo largo).</p>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
 <div class="bg-purple-50 rounded p-2"><strong>Precio:</strong> $$<br/>$400–650 MXN / 2</div>
@@ -970,7 +992,7 @@ const contentES = `<div class="prose prose-lg max-w-none">
 <!-- Gorditas de Morales — the OG -->
 <div class="bg-gradient-to-r from-red-50 to-orange-50 border-4 border-red-300 rounded-xl p-6 mb-8">
 <h3 class="text-2xl font-bold text-red-900 mb-3">Gorditas de Morales — El OG del Brunch Potosino</h3>
-<p class="text-gray-800 mb-4"><strong>Si hay una "mención honorífica" que los locales pelearían como número uno, son las Gorditas de Morales.</strong> La Calle de las Gorditas de Morales — un tramo en el Barrio de San Miguelito, a un corto viaje en taxi del Centro Histórico — es el brunch potosino original de fin de semana. Decenas de puestos y loncherías cubren la cuadra, cada uno echando al comal gorditas gruesas de masa de maíz, abriéndolas por en medio y rellenándolas con guisos: chicharrón prensado, rajas con queso, picadillo, nopales, papa con chorizo, asado de boda, frijoles, mole.</p>
+<p class="text-gray-800 mb-4"><strong>Si hay una "mención honorífica" que los locales pelearían como número uno, son las Gorditas de Morales.</strong> La Calle de las Gorditas de Morales — sobre el Camino a la Presa de San José en el corredor Loma de los Filtros / Morales, a un corto viaje en taxi del Centro Histórico — es el brunch potosino original de fin de semana. El ancla histórica es el tráfico de fin de semana de las familias hacia la Presa de San José. Decenas de puestos y loncherías cubren la cuadra, cada uno echando al comal gorditas gruesas de masa de maíz, abriéndolas por en medio y rellenándolas con guisos: chicharrón prensado, rajas con queso, picadillo, nopales, papa con chorizo, asado de boda, frijoles, mole.</p>
 <p class="text-gray-800 mb-4">La regla por la que juran los locales: <strong>cualquier puesto con fila es garantía.</strong> Los que no tienen clientes a las 10 AM de un domingo son los que conviene saltarse. Los clientes habituales tienen su favorito, pero los que van por primera vez mejor caminen la calle, sigan a la multitud y pidan 3 o 4 gorditas cada uno con un Jarrito o un café de olla. Sin reservaciones. Solo efectivo. La hora pico es de 9:30 AM a 1:00 PM, y las mejores mesas son los bancos de plástico del puesto que esté más lleno.</p>
 <p class="text-gray-800 mb-0"><strong>Por qué es el OG:</strong> las gorditas de Morales anteceden por décadas a cualquier restaurante moderno de brunch de esta guía. Así es como las familias potosinas comían el almuerzo de fin de semana antes de que la palabra "brunch" siquiera existiera en la ciudad. Si tienes una sola oportunidad de desayunar potosino y quieres la experiencia más local posible, sáltate los restaurantes sentados y ven aquí.</p>
 </div>
@@ -1106,7 +1128,7 @@ const contentES = `<div class="prose prose-lg max-w-none">
 <p class="text-gray-700">El surponiente de la ciudad, residencial de desarrollo planeado con plazas comerciales más nuevas. Dos Amores Brunch &amp; Meal en Colinas del Parque y Fork Le Brunch Atelier en Olmos 145, Las Águilas 3ra Secc son las anclas, y van abriendo más conceptos conforme crece la zona.</p>
 </div>
 <div class="bg-white border-2 border-gray-200 rounded-xl p-5">
-<h4 class="text-xl font-bold text-gray-900 mb-2">Barrio de San Miguelito — Calle de las Gorditas de Morales</h4>
+<h4 class="text-xl font-bold text-gray-900 mb-2">Loma de los Filtros / Morales — Calle de las Gorditas de Morales</h4>
 <p class="text-gray-700">La colonia original del brunch potosino. A un corto viaje en taxi del Centro, aquí es donde los locales realmente van a almorzar el fin de semana. No hay restaurantes sentados para reservar — sólo hay que caminar la calle, encontrar el puesto más lleno, sentarse en un banco de plástico y pedir gorditas hasta que ya no puedas más.</p>
 </div>
 <div class="bg-white border-2 border-gray-200 rounded-xl p-5">
@@ -1185,7 +1207,7 @@ const contentES = `<div class="prose prose-lg max-w-none">
 
 <div class="bg-white border border-gray-200 rounded-lg p-6">
 <h3 class="text-xl font-bold mb-3 text-gray-900">¿Dónde están las Gorditas de Morales en San Luis Potosí?</h3>
-<p class="text-gray-700">La Calle de las Gorditas de Morales (oficialmente Calle Reforma / el corredor de Morales en el Barrio de San Miguelito, a un corto viaje en taxi del Centro Histórico) es una calle con decenas de puestos de gorditas y loncherías. Las gorditas de Morales son el brunch potosino original — discos gruesos de masa de maíz asados al comal, abiertos por en medio y rellenos de guisos (chicharrón prensado, nopales, rajas con queso, picadillo, asado de boda). La regla que siguen los locales: <strong>cualquier puesto con fila es garantía</strong>. Sin reservaciones, solo efectivo, y la hora pico es de 9:30 AM a 1:00 PM.</p>
+<p class="text-gray-700">La Calle de las Gorditas de Morales corre sobre el Camino a la Presa de San José, en el corredor de Loma de los Filtros / Morales — a un corto viaje en taxi del Centro Histórico, anclada históricamente por el tráfico de fin de semana hacia la Presa de San José. Es una calle con decenas de puestos de gorditas y loncherías. Las gorditas de Morales son el brunch potosino original — discos gruesos de masa de maíz asados al comal, abiertos por en medio y rellenos de guisos (chicharrón prensado, nopales, rajas con queso, picadillo, asado de boda). La regla que siguen los locales: <strong>cualquier puesto con fila es garantía</strong>. Sin reservaciones, solo efectivo, y la hora pico es de 9:30 AM a 1:00 PM.</p>
 </div>
 
 <div class="bg-white border border-gray-200 rounded-lg p-6">
@@ -1200,7 +1222,7 @@ const contentES = `<div class="prose prose-lg max-w-none">
 
 <div class="bg-white border border-gray-200 rounded-lg p-6">
 <h3 class="text-xl font-bold mb-3 text-gray-900">¿Fork tiene más de una sucursal en San Luis Potosí?</h3>
-<p class="text-gray-700">Sí — Fork opera tres sucursales en SLP. <strong>Fork Centro</strong> en Galeana 443, en el centro histórico; <strong>Fork Chapultepec</strong> dentro de Torre Avancer, en Av. Parque Chapultepec 1922; y <strong>Fork Le Brunch Atelier</strong> en Olmos 145, Las Águilas 3ra Secc, que es el concepto dedicado al brunch. Las reservaciones para todo el grupo se hacen al +52 444 481 1996.</p>
+<p class="text-gray-700">Sí — Fork opera tres sucursales en SLP. <strong>Fork Centro</strong> en Galeana 443, en el centro histórico; <strong>Fork Chapultepec</strong> dentro de Torre Avancer, en Av. Parque Chapultepec 1922; y <strong>Fork Le Brunch Atelier</strong> en Olmos 145, Las Águilas 3ra Secc, que es el concepto dedicado al brunch. Reservaciones: Fork Centro / Chapultepec al +52 444 481 1996; Fork Le Brunch Atelier al +52 444 817 0705.</p>
 </div>
 
 <div class="bg-white border border-gray-200 rounded-lg p-6">

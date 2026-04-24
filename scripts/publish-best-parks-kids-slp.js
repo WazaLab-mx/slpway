@@ -164,6 +164,17 @@ const contentEN = `<div class="prose prose-lg max-w-none">
 <img src="${IMG.hero}" alt="Best parks for kids in San Luis Potosí — Parque Tangamanga family guide" class="w-full rounded-xl shadow-2xl" />
 </div>
 
+<div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-xl p-5 mb-8">
+  <div class="flex items-start gap-3">
+    <div class="text-2xl" aria-hidden="true">✅</div>
+    <div class="flex-1">
+      <div class="text-xs font-bold uppercase tracking-wide text-blue-700 mb-1">Independently Fact-Checked</div>
+      <p class="text-base font-bold text-gray-900 mb-1">Every park, hour, fee, and ranking in this guide was verified on April 24, 2026.</p>
+      <p class="text-sm text-gray-700">Read the full <a href="/blog/factchecks/best-parks-for-kids-san-luis-potosi" class="text-blue-700 hover:text-blue-900 underline font-semibold">verification report</a> with sources, evidence chains, and the corrections we made before publishing.</p>
+    </div>
+  </div>
+</div>
+
 <div class="bg-yellow-50 p-6 rounded-lg mb-8">
   <h3 class="text-xl font-bold mb-4 text-gray-900">Table of Contents</h3>
   <ul class="list-disc pl-6">
@@ -254,11 +265,11 @@ const contentEN = `<div class="prose prose-lg max-w-none">
   <li><strong>Monday:</strong> 5:00 AM – 11:00 AM (maintenance; last entry 10:30 AM)</li>
   <li><strong>Tuesday–Saturday:</strong> 5:00 AM – 10:30 PM (last entry 9:30 PM)</li>
   <li><strong>Sunday:</strong> 5:00 AM – 6:00 PM (last entry 5:30 PM)</li>
-  <li><strong>Zoo:</strong> Tuesday–Sunday, 10:00 AM – 5:00 PM (closed Mondays)</li>
+  <li><strong>Zoo:</strong> Tuesday–Sunday, 9:00 AM – 5:00 PM (closed Mondays)</li>
 </ul>
 
 <h4 class="text-xl font-bold mb-3 text-gray-900">Entrance costs</h4>
-<p class="text-gray-700 mb-4">General entry to the park, zoo, Laberinto de las Ciencias and gardens is <strong>free of charge</strong>. Paid attractions inside the park:</p>
+<p class="text-gray-700 mb-4">General entry to the park, zoo, botanical garden, Japanese garden and the Zona Kids playgrounds is <strong>free of charge</strong>. The Museo Laberinto de las Ciencias y las Artes (located inside the park grounds) charges a separate $50 MXN general admission. Paid attractions inside the park:</p>
 <ul class="list-disc pl-6 mb-6 text-gray-700">
   <li><strong>Planetarium:</strong> typically $20–50 MXN per person</li>
   <li><strong>Dinoasis water park</strong> (formerly Splash): approximately $200 MXN per child (seasonal — usually Semana Santa through early fall)</li>
@@ -271,14 +282,14 @@ const contentEN = `<div class="prose prose-lg max-w-none">
 </div>
 
 <div class="bg-amber-50 border-l-4 border-amber-400 p-4 mb-6">
-<p class="text-amber-900 text-sm"><strong>Heads-up (2026 update):</strong> Paddle boats on the Tangamanga I lake are no longer in operation. The lake is still a lovely shaded picnic spot and excellent for a stroll around the perimeter, but you can't rent boats anymore. If your kids want to be on the water, the best nearby alternative is Presa San José for guided stand-up paddle sessions.</p>
+<p class="text-amber-900 text-sm"><strong>Heads-up (2026 update):</strong> Paddle-boat rentals at the Tangamanga I lake are not advertised on the official 2026 fee schedule — verify availability at the kiosk on arrival before promising the kids a boat ride. The lake is still a lovely shaded picnic spot and excellent for a stroll around the perimeter. If your kids want guaranteed time on the water, head to Presa San José for guided stand-up paddle sessions.</p>
 </div>
 
 <h4 class="text-xl font-bold mb-3 text-gray-900">What to do with kids at Tangamanga I</h4>
 <ol class="list-decimal pl-6 mb-6 text-gray-700 space-y-2">
   <li><strong>Start at Puerta 1 or 7</strong> (main entrances) — these are closest to the playground and zoo.</li>
   <li><strong>Visit the zoo early.</strong> Animals are most active 10–11 AM before the afternoon heat.</li>
-  <li><strong>Picnic by the lake</strong> — shaded tables along the perimeter; paddle boats are no longer in operation but the lake walk is still one of the prettiest spots in the park.</li>
+  <li><strong>Picnic by the lake</strong> — shaded tables along the perimeter; check on-site whether paddle boats are running before promising a ride, but the lake walk is one of the prettiest spots in the park either way.</li>
   <li><strong>Walk or bike to the Japanese Garden</strong> — quiet, shaded, free, great for a picnic.</li>
   <li><strong>Hit the Zona Kids playground</strong> after lunch when it's partially shaded.</li>
   <li><strong>End with ice cream from the kiosks</strong> near the amphitheater.</li>
@@ -300,7 +311,7 @@ const contentEN = `<div class="prose prose-lg max-w-none">
 <p class="text-gray-700 mb-6"><strong>Location:</strong> Eastern edge of Centro Histórico, next to the former railway station. <strong>Hours:</strong> Open 24/7 (best during daylight). <strong>Cost:</strong> Free. The Alameda was originally the orchard of the Carmen convent before being converted into a public park after the 1850s Reforma laws, and officially named in 1932 after liberal journalist Juan Sarabia Díaz de León. Today it offers more than 4 hectares of flat, shaded walkways, a central fountain, a seasonal pop-up playground, and frequent cultural events. It is by far the best option for parents with babies and toddlers who want a short outing from downtown hotels or the Centro — you can walk to the Plaza de Armas or Catedral in 10 minutes.</p>
 
 <h3 class="text-2xl font-bold mb-4 text-gray-900">Parque Juan H. Sánchez (Parque de Morales)</h3>
-<p class="text-gray-700 mb-6"><strong>Location:</strong> Colonia Himno Nacional, between Av. Venustiano Carranza and Paseo de los Artistas. <strong>Size:</strong> ~18 hectares. <strong>Hours:</strong> 6:00 AM – 10:00 PM. <strong>Cost:</strong> Free. Known affectionately as "Parque de Morales," this 100-year-old park is a potosino institution with an artificial lake created in 1968, over 120 identified animal species, and a famous rocket-shaped slide ("El Cohete") that defined childhoods for generations. A 100-million-peso state rehabilitation project is currently renovating the lake, playground and pet areas — parts of the park may be fenced off in 2026, so check before heading over. The shade is unmatched: huge pine, eucalyptus and cedar trees.</p>
+<p class="text-gray-700 mb-6"><strong>Location:</strong> Colonia Himno Nacional, between Av. Venustiano Carranza and Paseo de los Artistas. <strong>Size:</strong> ~13–15 hectares (per El Universal SLP and Líder Empresarial). <strong>Hours:</strong> 6:00 AM – 10:00 PM. <strong>Cost:</strong> Free. Known affectionately as "Parque de Morales," this 100-year-old park (founded May 19, 1924) is a potosino institution with an artificial lake created in 1968, over 120 identified animal species, and a famous rocket-shaped slide ("El Cohete") that defined childhoods for generations. A ~100-million-peso state rehabilitation project that started May 2024 is currently renovating the lake, playground and pet areas — parts of the park may be fenced off in 2026, so check before heading over. The shade is unmatched: huge pine, eucalyptus and cedar trees.</p>
 
 <h3 class="text-2xl font-bold mb-4 text-gray-900">Parque Bicentenario</h3>
 <p class="text-gray-700 mb-6"><strong>Location:</strong> Anillo Periférico, over the former IMMSA industrial site (~5.8 km from Centro). <strong>Hours:</strong> Tuesday–Sunday 6:00 AM – 6:00 PM (closed Mondays). <strong>Cost:</strong> Free. Opened during Mexico's 2010 Bicentennial celebrations, Parque Bicentenario is one of the most interesting reclaimed-industrial green spaces in the country — a former copper foundry turned public park, now home to 33 species of trees, a network of jogging and walking paths, an outdoor gym, covered picnic areas, and a dedicated <strong>children's playground with juegos infantiles</strong> that's especially popular on Sunday mornings. Fifteen industrial sculptures preserved from the original IMMSA plant dot the grounds — kids love climbing near them and parents love the photo opportunities. Free parking on-site; public transit via Ruta 02, 04, 09, or 34.</p>
@@ -314,8 +325,8 @@ const contentEN = `<div class="prose prose-lg max-w-none">
 <h3 class="text-2xl font-bold mb-4 text-gray-900">Parks in Lomas, Villa Magna and Industrias</h3>
 <p class="text-gray-700 mb-6">The newer residential zones in the south and southwest of the city include several HOA-style neighborhood parks that are quiet, well-kept and open to visitors. <strong>Parque Lomas 4ta Sección</strong> and the green spaces along Av. Palma de la Cruz have basic playgrounds and lawns. These are ideal if you are staying in an Airbnb in those neighborhoods and want a 15-minute playground stop. For upscale indoor play, the anchor malls in these zones (Plaza Sendero, Altaria, El Dorado) have climate-controlled play areas — useful on the hottest days.</p>
 
-<h3 class="text-2xl font-bold mb-4 text-gray-900">Parque Central Alameda (Soledad de Graciano Sánchez)</h3>
-<p class="text-gray-700 mb-6">Opened in the neighboring municipality of Soledad as part of the 2023–2025 metropolitan green-space expansion. Modern playgrounds, splash zones and wide lawns. Worth the 20-minute drive from the center if you are staying nearby.</p>
+<h3 class="text-2xl font-bold mb-4 text-gray-900">Parque Lineal Providencia (Soledad de Graciano Sánchez)</h3>
+<p class="text-gray-700 mb-6">Inaugurated in 2025 in the neighboring municipality of Soledad as part of a ~120-million-peso metropolitan green-space expansion. Modern playgrounds, walking and bike paths, and wide lawns. Worth the 20-minute drive from the center if you are staying nearby. Soledad's other 2025 inaugurations — Parque Bugambilias, Quinta Soledad, Villas del Sol and Villas de Soledad — give the metro area more open green-space than at any point in the last decade.</p>
 </section>
 
 <section id="water-play" class="mb-12">
@@ -547,6 +558,17 @@ const contentES = `<div class="prose prose-lg max-w-none">
 <img src="${IMG.hero}" alt="Mejores parques para niños en San Luis Potosí — Guía familiar del Parque Tangamanga" class="w-full rounded-xl shadow-2xl" />
 </div>
 
+<div class="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200 rounded-xl p-5 mb-8">
+  <div class="flex items-start gap-3">
+    <div class="text-2xl" aria-hidden="true">✅</div>
+    <div class="flex-1">
+      <div class="text-xs font-bold uppercase tracking-wide text-blue-700 mb-1">Verificado de forma independiente</div>
+      <p class="text-base font-bold text-gray-900 mb-1">Cada parque, horario, costo y dato de esta guía fue verificado el 24 de abril de 2026.</p>
+      <p class="text-sm text-gray-700">Lee el <a href="/blog/factchecks/best-parks-for-kids-san-luis-potosi" class="text-blue-700 hover:text-blue-900 underline font-semibold">reporte completo de verificación</a> con fuentes, cadenas de evidencia y las correcciones que hicimos antes de publicar.</p>
+    </div>
+  </div>
+</div>
+
 <div class="bg-yellow-50 p-6 rounded-lg mb-8">
   <h3 class="text-xl font-bold mb-4 text-gray-900">Tabla de Contenidos</h3>
   <ul class="list-disc pl-6">
@@ -637,11 +659,11 @@ const contentES = `<div class="prose prose-lg max-w-none">
   <li><strong>Lunes:</strong> 5:00 AM – 11:00 AM (mantenimiento; último acceso 10:30 AM)</li>
   <li><strong>Martes a sábado:</strong> 5:00 AM – 10:30 PM (último acceso 9:30 PM)</li>
   <li><strong>Domingo:</strong> 5:00 AM – 6:00 PM (último acceso 5:30 PM)</li>
-  <li><strong>Zoológico:</strong> Martes a domingo, 10:00 AM – 5:00 PM (cerrado los lunes)</li>
+  <li><strong>Zoológico:</strong> Martes a domingo, 9:00 AM – 5:00 PM (cerrado los lunes)</li>
 </ul>
 
 <h4 class="text-xl font-bold mb-3 text-gray-900">Costo de entrada</h4>
-<p class="text-gray-700 mb-4">La entrada general al parque, el zoológico, el Laberinto de las Ciencias y los jardines es <strong>gratuita</strong>. Atracciones de pago dentro del parque:</p>
+<p class="text-gray-700 mb-4">La entrada general al parque, al zoológico, al jardín botánico, al jardín japonés y a los juegos infantiles de la Zona Kids es <strong>gratuita</strong>. El Museo Laberinto de las Ciencias y las Artes (ubicado dentro del parque) cobra una entrada general aparte de $50 MXN. Atracciones de pago dentro del parque:</p>
 <ul class="list-disc pl-6 mb-6 text-gray-700">
   <li><strong>Planetario:</strong> normalmente $20–50 MXN por persona</li>
   <li><strong>Parque acuático Dinoasis</strong> (antes Splash): aproximadamente $200 MXN por niño (de temporada, generalmente desde Semana Santa hasta principios de otoño)</li>
@@ -654,14 +676,14 @@ const contentES = `<div class="prose prose-lg max-w-none">
 </div>
 
 <div class="bg-amber-50 border-l-4 border-amber-400 p-4 mb-6">
-<p class="text-amber-900 text-sm"><strong>Aviso (actualización 2026):</strong> Los barquitos de pedal del lago de Tangamanga I ya no están en operación. El lago sigue siendo un bonito lugar sombreado para un picnic y para caminar por el perímetro, pero ya no se pueden rentar lanchas. Si tus niños quieren estar en el agua, la mejor alternativa cercana es la Presa San José para sesiones guiadas de stand-up paddle.</p>
+<p class="text-amber-900 text-sm"><strong>Aviso (actualización 2026):</strong> Los barquitos de pedal del lago de Tangamanga I no aparecen en el tarifario oficial de 2026 — verifica disponibilidad en el kiosco al llegar antes de prometerle a los niños un paseo en lancha. El lago sigue siendo un bonito lugar sombreado para un picnic y para caminar por el perímetro. Si tus niños quieren tiempo garantizado en el agua, la mejor alternativa cercana es la Presa San José para sesiones guiadas de stand-up paddle.</p>
 </div>
 
 <h4 class="text-xl font-bold mb-3 text-gray-900">Qué hacer con niños en Tangamanga I</h4>
 <ol class="list-decimal pl-6 mb-6 text-gray-700 space-y-2">
   <li><strong>Empieza por la Puerta 1 o la 7</strong> (accesos principales): son las más cercanas al área de juegos y al zoológico.</li>
   <li><strong>Visita el zoológico temprano.</strong> Los animales están más activos entre las 10 y las 11 AM, antes del calor de la tarde.</li>
-  <li><strong>Picnic junto al lago:</strong> hay mesas sombreadas alrededor del perímetro; los barquitos de pedal ya no operan, pero la caminata alrededor del lago sigue siendo uno de los paseos más bonitos del parque.</li>
+  <li><strong>Picnic junto al lago:</strong> hay mesas sombreadas alrededor del perímetro; verifica en sitio si los barquitos de pedal están operando antes de prometer un paseo en lancha, pero la caminata alrededor del lago sigue siendo uno de los paseos más bonitos del parque.</li>
   <li><strong>Camina o pedalea hasta el Jardín Japonés:</strong> tranquilo, sombreado, gratis y perfecto para un picnic.</li>
   <li><strong>Pasa por la Zona Kids</strong> después de comer, cuando ya está parcialmente sombreada.</li>
   <li><strong>Termina con un helado o un raspado en los kioscos</strong> cerca del teatro al aire libre.</li>
@@ -683,7 +705,7 @@ const contentES = `<div class="prose prose-lg max-w-none">
 <p class="text-gray-700 mb-6"><strong>Ubicación:</strong> Extremo oriente del Centro Histórico, junto a la antigua estación del ferrocarril. <strong>Horario:</strong> Abierto 24/7 (mejor durante el día). <strong>Costo:</strong> Gratis. La Alameda fue originalmente la huerta del convento del Carmen antes de convertirse en parque público tras las Leyes de Reforma de 1850, y fue nombrada oficialmente en 1932 en honor al periodista liberal Juan Sarabia Díaz de León. Hoy ofrece más de 4 hectáreas de andadores planos y sombreados, una fuente central, un área de juegos de temporada y eventos culturales frecuentes. Es por mucho la mejor opción para papás con bebés y niños pequeños que quieren una salida corta desde hoteles del Centro o desde el primer cuadro: puedes caminar a la Plaza de Armas o a la Catedral en 10 minutos.</p>
 
 <h3 class="text-2xl font-bold mb-4 text-gray-900">Parque Juan H. Sánchez (Parque de Morales)</h3>
-<p class="text-gray-700 mb-6"><strong>Ubicación:</strong> Colonia Himno Nacional, entre Av. Venustiano Carranza y Paseo de los Artistas. <strong>Tamaño:</strong> ~18 hectáreas. <strong>Horario:</strong> 6:00 AM – 10:00 PM. <strong>Costo:</strong> Gratis. Conocido cariñosamente como "Parque de Morales", este parque centenario es una institución potosina, con un lago artificial creado en 1968, más de 120 especies animales identificadas y la famosa resbaladilla en forma de cohete ("El Cohete") que marcó la infancia de varias generaciones. Un proyecto estatal de rehabilitación de 100 millones de pesos está renovando actualmente el lago, los juegos infantiles y las áreas para mascotas; algunas zonas del parque pueden estar cerradas con valla en 2026, así que conviene verificar antes de ir. La sombra es inigualable: enormes pinos, eucaliptos y cedros.</p>
+<p class="text-gray-700 mb-6"><strong>Ubicación:</strong> Colonia Himno Nacional, entre Av. Venustiano Carranza y Paseo de los Artistas. <strong>Tamaño:</strong> ~13–15 hectáreas (según El Universal SLP y Líder Empresarial). <strong>Horario:</strong> 6:00 AM – 10:00 PM. <strong>Costo:</strong> Gratis. Conocido cariñosamente como "Parque de Morales", este parque centenario (fundado el 19 de mayo de 1924) es una institución potosina, con un lago artificial creado en 1968, más de 120 especies animales identificadas y la famosa resbaladilla en forma de cohete ("El Cohete") que marcó la infancia de varias generaciones. Un proyecto estatal de rehabilitación de ~100 millones de pesos iniciado en mayo de 2024 está renovando actualmente el lago, los juegos infantiles y las áreas para mascotas; algunas zonas del parque pueden estar cerradas con valla en 2026, así que conviene verificar antes de ir. La sombra es inigualable: enormes pinos, eucaliptos y cedros.</p>
 
 <h3 class="text-2xl font-bold mb-4 text-gray-900">Parque Bicentenario</h3>
 <p class="text-gray-700 mb-6"><strong>Ubicación:</strong> Anillo Periférico, sobre el antiguo terreno industrial de IMMSA (~5.8 km del Centro). <strong>Horario:</strong> Martes a domingo 6:00 AM – 6:00 PM (cerrado los lunes). <strong>Costo:</strong> Gratis. Inaugurado durante las celebraciones del Bicentenario de México en 2010, el Parque Bicentenario es uno de los espacios verdes recuperados de terrenos industriales más interesantes del país: una antigua fundición de cobre convertida en parque público, hoy hogar de 33 especies de árboles, una red de senderos para correr y caminar, un gimnasio al aire libre, áreas de picnic techadas y un <strong>área de juegos infantiles</strong> especialmente popular los domingos por la mañana. Quince esculturas industriales conservadas de la antigua planta de IMMSA están distribuidas por el terreno: a los niños les encanta trepar cerca de ellas y a los papás les encantan las fotos. Estacionamiento gratuito; transporte público en las Rutas 02, 04, 09 y 34.</p>
@@ -697,8 +719,8 @@ const contentES = `<div class="prose prose-lg max-w-none">
 <h3 class="text-2xl font-bold mb-4 text-gray-900">Parques en Lomas, Villa Magna e Industrias</h3>
 <p class="text-gray-700 mb-6">Las zonas residenciales más nuevas al sur y suroeste de la ciudad incluyen varios parques vecinales tipo "condominio" tranquilos, bien cuidados y abiertos a visitantes. El <strong>Parque Lomas 4ta Sección</strong> y las áreas verdes a lo largo de Av. Palma de la Cruz cuentan con juegos infantiles básicos y pasto. Son ideales si te estás quedando en un Airbnb de esas colonias y quieres una parada de 15 minutos en el parque. Para jugar techado con nivel, los centros comerciales ancla de esa zona (Plaza Sendero, Altaria, El Dorado) tienen áreas de juego climatizadas, útiles en los días más calurosos.</p>
 
-<h3 class="text-2xl font-bold mb-4 text-gray-900">Parque Central Alameda (Soledad de Graciano Sánchez)</h3>
-<p class="text-gray-700 mb-6">Inaugurado en el municipio vecino de Soledad como parte de la expansión metropolitana de espacios verdes 2023–2025. Juegos infantiles modernos, zonas de chapoteadero y amplios prados. Vale la pena manejar 20 minutos desde el Centro si te estás quedando cerca.</p>
+<h3 class="text-2xl font-bold mb-4 text-gray-900">Parque Lineal Providencia (Soledad de Graciano Sánchez)</h3>
+<p class="text-gray-700 mb-6">Inaugurado en 2025 en el municipio vecino de Soledad como parte de una expansión metropolitana de espacios verdes con inversión de ~120 millones de pesos. Juegos infantiles modernos, andadores, ciclovías y amplios prados. Vale la pena manejar 20 minutos desde el Centro si te estás quedando cerca. Las otras inauguraciones de Soledad en 2025 — Parque Bugambilias, Quinta Soledad, Villas del Sol y Villas de Soledad — le dan al área metropolitana más espacio verde abierto que en cualquier punto de la última década.</p>
 </section>
 
 <section id="water-play" class="mb-12">
