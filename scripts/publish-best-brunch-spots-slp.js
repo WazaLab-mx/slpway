@@ -7,7 +7,10 @@ const supabase = createClient(
 );
 
 const SLUG = 'best-brunch-spots-san-luis-potosi';
-const HERO = '/images/food/fusion-restaurant.jpg';
+// Hero swapped from fusion-restaurant.jpg (brochetas — not brunch-related) to
+// enchiladas potosinas, the signature Potosino brunch dish referenced
+// throughout the post as the city's benchmark.
+const HERO = '/images/food/enchiladas-potosinas.jpg';
 const IMG_TRADITIONAL = '/images/food/traditional-potosino-main.jpg';
 const IMG_ENCHILADAS = '/images/food/enchiladas-potosinas.jpg';
 const IMG_MODERN = '/images/food/modern-presentation.jpg';
