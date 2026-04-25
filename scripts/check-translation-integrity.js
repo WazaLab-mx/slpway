@@ -13,7 +13,8 @@ function findFactcheckLinks(html, slug) {
 }
 
 (async () => {
-  const slugs = ['best-parks-for-kids-san-luis-potosi', 'best-brunch-spots-san-luis-potosi'];
+  const cliSlugs = process.argv.slice(2).filter(a => !a.startsWith('--'));
+  const slugs = cliSlugs.length > 0 ? cliSlugs : ['best-parks-for-kids-san-luis-potosi', 'best-brunch-spots-san-luis-potosi'];
   for (const slug of slugs) {
     const { data, error } = await supabase
       .from('blog_posts')

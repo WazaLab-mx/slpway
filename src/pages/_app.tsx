@@ -120,6 +120,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         `}
       </Script>
 
+      {/* Meta Pixel — global PageView so paid Meta campaigns get full attribution
+          across the site (not just home + /subscribe). Add Lead event in
+          src/lib/analytics.ts when newsletter signup succeeds. */}
+      <Script id="facebook-pixel" strategy="lazyOnload">
+        {`
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '1916912242550142');
+          fbq('track', 'PageView');
+        `}
+      </Script>
+
       {/* Microsoft Clarity — heatmaps + session replay (free) */}
       {process.env.NEXT_PUBLIC_CLARITY_ID && (
         <Script

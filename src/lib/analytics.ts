@@ -19,8 +19,13 @@ export function trackFbEvent(eventName: string, params?: Record<string, unknown>
 
 // Conversion events
 export const ConversionEvents = {
-  newsletterSignup: (source: string) =>
-    trackEvent('newsletter_signup', { source, method: 'email' }),
+  // Fires GA4 newsletter_signup (importable as Google Ads conversion via GA4 link)
+  // AND Meta `Lead` standard event so Meta Ads campaigns optimizing for leads
+  // get attribution. Both sides are wired up in src/pages/_app.tsx.
+  newsletterSignup: (source: string) => {
+    trackEvent('newsletter_signup', { source, method: 'email' });
+    trackFbEvent('Lead', { content_name: 'newsletter', source });
+  },
 
   contactFormSubmit: (subject?: string) =>
     trackEvent('contact_form_submit', { subject: subject || 'general' }),
