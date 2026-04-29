@@ -11,9 +11,14 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# Scheduled function for news updates (daily at 7am Mexico City / 13:00 UTC)
+# Scheduled function for news updates: every 6h (01/07/13/19 UTC) so a single
+# failed Claude call has multiple chances to recover within the same day.
 [functions."scheduled-news-update"]
-  schedule = "0 13 * * *"
+  schedule = "0 1,7,13,19 * * *"
+
+# Scheduled function for weekly newsletter generation (Mondays 7am Mexico City / 13:00 UTC)
+[functions."scheduled-weekly-newsletter"]
+  schedule = "0 13 * * 1"
 
 # Redirects for www canonical URL — collapse HTTP→HTTPS→www chain to a single
 # 301 hop. PSI "Avoid multiple page redirects" previously flagged ~780ms savings
