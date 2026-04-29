@@ -432,11 +432,12 @@ export async function fetchExchangeRates(): Promise<ExchangeRate[]> {
 
 /**
  * Fetch news headlines from Supabase
+ * Returns empty array if no active data exists — never falls back to hardcoded content.
  */
 export async function fetchHeadlines(): Promise<NewsHeadline[]> {
   if (!supabaseUrl || !supabaseAnonKey) {
     console.warn('Supabase not configured for headlines');
-    return getDefaultHeadlines();
+    return [];
   }
 
   try {
@@ -454,11 +455,11 @@ export async function fetchHeadlines(): Promise<NewsHeadline[]> {
 
     if (error) {
       console.error('Error fetching headlines:', error);
-      return getDefaultHeadlines();
+      return [];
     }
 
     if (!data || data.length === 0) {
-      return getDefaultHeadlines();
+      return [];
     }
 
     return data.map(h => ({
@@ -475,50 +476,18 @@ export async function fetchHeadlines(): Promise<NewsHeadline[]> {
     }));
   } catch (error) {
     console.error('Error fetching headlines:', error);
-    return getDefaultHeadlines();
+    return [];
   }
 }
 
 /**
- * Default headlines fallback
- */
-function getDefaultHeadlines(): NewsHeadline[] {
-  return [
-    {
-      id: '1',
-      textEs: 'Bienvenido a San Luis Way - Tu guía definitiva de San Luis Potosí',
-      textEn: 'Welcome to San Luis Way - Your definitive guide to San Luis Potosí',
-      textDe: 'Willkommen bei San Luis Way - Ihr definitiver Reiseführer für San Luis Potosí',
-      textJa: 'San Luis Wayへようこそ - サンルイスポトシの究極ガイド',
-      summaryEs: 'Descubre lugares, eventos y experiencias únicas en la ciudad y la Huasteca.',
-      summaryEn: 'Discover places, events, and unique experiences in the city and Huasteca.',
-      summaryDe: 'Entdecken Sie Orte, Veranstaltungen und einzigartige Erlebnisse in der Stadt und Huasteca.',
-      summaryJa: '街とウアステカで場所、イベント、ユニークな体験を発見しましょう。',
-      source: null
-    },
-    {
-      id: '2',
-      textEs: 'Explora la riqueza cultural y gastronómica de SLP',
-      textEn: 'Explore the cultural and gastronomic richness of SLP',
-      textDe: 'Erkunden Sie den kulturellen und gastronomischen Reichtum von SLP',
-      textJa: 'SLPの文化とグルメの豊かさを探索',
-      summaryEs: 'Desde enchiladas potosinas hasta el Centro de las Artes, hay mucho por descubrir.',
-      summaryEn: 'From enchiladas potosinas to the Arts Center, there is much to discover.',
-      summaryDe: 'Von Enchiladas Potosinas bis zum Kunstzentrum gibt es viel zu entdecken.',
-      summaryJa: 'エンチラーダス・ポトシーナスからアートセンターまで、発見することがたくさん。',
-      source: null
-    }
-  ];
-}
-
-/**
  * Fetch community news from Supabase
- * Social and community-focused news for the dashboard
+ * Returns empty array if no active data exists — never falls back to hardcoded content.
  */
 export async function fetchCommunityNews(): Promise<CommunityNews[]> {
   if (!supabaseUrl || !supabaseAnonKey) {
     console.warn('Supabase not configured for community news');
-    return getDefaultCommunityNews();
+    return [];
   }
 
   try {
@@ -536,11 +505,11 @@ export async function fetchCommunityNews(): Promise<CommunityNews[]> {
 
     if (error) {
       console.error('Error fetching community news:', error);
-      return getDefaultCommunityNews();
+      return [];
     }
 
     if (!data || data.length === 0) {
-      return getDefaultCommunityNews();
+      return [];
     }
 
     return data.map(n => ({
@@ -560,56 +529,8 @@ export async function fetchCommunityNews(): Promise<CommunityNews[]> {
     }));
   } catch (error) {
     console.error('Error fetching community news:', error);
-    return getDefaultCommunityNews();
+    return [];
   }
-}
-
-/**
- * Default community news fallback
- */
-function getDefaultCommunityNews(): CommunityNews[] {
-  const now = new Date().toISOString();
-  return [
-    {
-      id: '1',
-      titleEs: 'Mercado Tangamanga celebra su 5to aniversario',
-      titleEn: 'Tangamanga Market celebrates 5th anniversary',
-      titleDe: 'Tangamanga-Markt feiert 5-jähriges Jubiläum',
-      titleJa: 'タンガマンガ市場が5周年を祝う',
-      summaryEs: 'El mercado artesanal más querido de SLP festeja con actividades especiales este fin de semana.',
-      summaryEn: 'SLP\'s beloved artisan market celebrates with special activities this weekend.',
-      summaryDe: 'Der beliebte Kunsthandwerkermarkt von SLP feiert mit besonderen Aktivitäten an diesem Wochenende.',
-      summaryJa: 'SLPで愛される職人市場が今週末特別なアクティビティでお祝い。',
-      category: 'community',
-      publishedAt: now
-    },
-    {
-      id: '2',
-      titleEs: 'Nueva ruta ciclista conecta Lomas con el Centro',
-      titleEn: 'New bike route connects Lomas to Downtown',
-      titleDe: 'Neue Fahrradroute verbindet Lomas mit der Innenstadt',
-      titleJa: '新しい自転車ルートがロマスとダウンタウンを接続',
-      summaryEs: 'La ciclovía de 8km promete facilitar el transporte sustentable en la ciudad.',
-      summaryEn: 'The 8km bike lane promises to facilitate sustainable transportation in the city.',
-      summaryDe: 'Der 8km lange Radweg verspricht nachhaltigen Transport in der Stadt zu fördern.',
-      summaryJa: '8kmの自転車レーンが市内の持続可能な交通を促進する見込み。',
-      category: 'local',
-      publishedAt: now
-    },
-    {
-      id: '3',
-      titleEs: 'Voluntarios limpian el Parque de Morales',
-      titleEn: 'Volunteers clean up Morales Park',
-      titleDe: 'Freiwillige reinigen den Morales-Park',
-      titleJa: 'ボランティアがモラレス公園を清掃',
-      summaryEs: 'Más de 200 ciudadanos participaron en la jornada de limpieza comunitaria.',
-      summaryEn: 'Over 200 citizens participated in the community cleanup day.',
-      summaryDe: 'Über 200 Bürger nahmen am Gemeinschaftsreinigungstag teil.',
-      summaryJa: '200人以上の市民がコミュニティ清掃活動に参加。',
-      category: 'social',
-      publishedAt: now
-    }
-  ];
 }
 
 /**

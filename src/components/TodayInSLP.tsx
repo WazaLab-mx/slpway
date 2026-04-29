@@ -124,73 +124,28 @@ const TodayInSLP: React.FC<TodayInSLPProps> = ({ todayEvents = [] }) => {
     return en;
   };
 
-  const tickerHeadlines = headlines.length > 0
-    ? headlines.map(h => ({
-        id: h.id,
-        text: getLocalizedText(h.textEs, h.textEn, h.textDe, h.textJa),
-        summary: getLocalizedText(h.summaryEs, h.summaryEn, h.summaryDe, h.summaryJa)
-      }))
-    : [
-        { id: '1', text: t('todayInSLP.loadingNews'), summary: '' }
-      ];
+  const tickerHeadlines = headlines.map(h => ({
+    id: h.id,
+    text: getLocalizedText(h.textEs, h.textEn, h.textDe, h.textJa),
+    summary: getLocalizedText(h.summaryEs, h.summaryEn, h.summaryDe, h.summaryJa)
+  }));
+  const placeholderHeadline = { id: 'placeholder', text: t('todayInSLP.loadingNews'), summary: '' };
+  const displayHeadlines = tickerHeadlines.length > 0 ? tickerHeadlines : [placeholderHeadline];
 
   // Auto-rotate news carousel every 8 seconds
   useEffect(() => {
-    if (tickerHeadlines.length <= 1) return;
+    if (displayHeadlines.length <= 1) return;
     const interval = setInterval(() => {
-      setNewsIndex(prev => (prev + 1) % tickerHeadlines.length);
+      setNewsIndex(prev => (prev + 1) % displayHeadlines.length);
     }, 8000);
     return () => clearInterval(interval);
-  }, [tickerHeadlines.length]);
+  }, [displayHeadlines.length]);
 
   const todayTip = getTipOfTheDay();
   const dailyTip = locale === 'es' ? todayTip.es
     : locale === 'de' ? todayTip.de
     : locale === 'ja' ? todayTip.ja
     : todayTip.en;
-
-  // Default community news fallback
-  const defaultCommunityNews: CommunityNews[] = [
-    {
-      id: '1',
-      titleEs: 'Mercado Tangamanga celebra su 5to aniversario',
-      titleEn: 'Tangamanga Market celebrates 5th anniversary',
-      titleDe: 'Tangamanga-Markt feiert 5-jähriges Jubiläum',
-      titleJa: 'タンガマンガ市場が5周年を祝う',
-      summaryEs: 'El mercado artesanal más querido de SLP festeja con actividades especiales este fin de semana.',
-      summaryEn: "SLP's beloved artisan market celebrates with special activities this weekend.",
-      summaryDe: 'Der beliebte Kunsthandwerkermarkt von SLP feiert mit besonderen Aktivitäten an diesem Wochenende.',
-      summaryJa: 'SLPで愛される職人市場が今週末特別なアクティビティでお祝い。',
-      category: 'community',
-      publishedAt: '2026-03-01T12:00:00.000Z'
-    },
-    {
-      id: '2',
-      titleEs: 'Nueva ruta ciclista conecta Lomas con el Centro',
-      titleEn: 'New bike route connects Lomas to Downtown',
-      titleDe: 'Neue Fahrradroute verbindet Lomas mit der Innenstadt',
-      titleJa: '新しい自転車ルートがロマスとダウンタウンを接続',
-      summaryEs: 'La ciclovía de 8km promete facilitar el transporte sustentable en la ciudad.',
-      summaryEn: 'The 8km bike lane promises to facilitate sustainable transportation in the city.',
-      summaryDe: 'Der 8km lange Radweg verspricht nachhaltigen Transport in der Stadt zu fördern.',
-      summaryJa: '8kmの自転車レーンが市内の持続可能な交通を促進する見込み。',
-      category: 'local',
-      publishedAt: '2026-03-01T12:00:00.000Z'
-    },
-    {
-      id: '3',
-      titleEs: 'Voluntarios limpian el Parque de Morales',
-      titleEn: 'Volunteers clean up Morales Park',
-      titleDe: 'Freiwillige reinigen den Morales-Park',
-      titleJa: 'ボランティアがモラレス公園を清掃',
-      summaryEs: 'Más de 200 ciudadanos participaron en la jornada de limpieza comunitaria.',
-      summaryEn: 'Over 200 citizens participated in the community cleanup day.',
-      summaryDe: 'Über 200 Bürger nahmen am Gemeinschaftsreinigungstag teil.',
-      summaryJa: '200人以上の市民がコミュニティ清掃活動に参加。',
-      category: 'social',
-      publishedAt: '2026-03-01T12:00:00.000Z'
-    }
-  ];
 
   const getWeatherIcon = (condition?: string) => {
     switch (condition) {
@@ -380,7 +335,7 @@ const TodayInSLP: React.FC<TodayInSLPProps> = ({ todayEvents = [] }) => {
             </div>
             <div className="flex items-center gap-2">
               <span className="text-white/70 text-sm">
-                {newsIndex + 1} / {tickerHeadlines.length}
+                {newsIndex + 1} / {displayHeadlines.length}
               </span>
             </div>
           </div>
@@ -388,18 +343,18 @@ const TodayInSLP: React.FC<TodayInSLPProps> = ({ todayEvents = [] }) => {
           <div className="relative">
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 min-h-[100px] flex flex-col justify-center">
               <p className="text-white text-lg font-semibold leading-relaxed">
-                {tickerHeadlines[newsIndex]?.text}
+                {displayHeadlines[newsIndex]?.text}
               </p>
-              {tickerHeadlines[newsIndex]?.summary && (
+              {displayHeadlines[newsIndex]?.summary && (
                 <p className="text-white/80 text-sm mt-2 leading-relaxed">
-                  {tickerHeadlines[newsIndex].summary}
+                  {displayHeadlines[newsIndex].summary}
                 </p>
               )}
             </div>
 
             <div className="flex items-center justify-between mt-4">
               <button
-                onClick={() => setNewsIndex(prev => prev === 0 ? tickerHeadlines.length - 1 : prev - 1)}
+                onClick={() => setNewsIndex(prev => prev === 0 ? displayHeadlines.length - 1 : prev - 1)}
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
                 aria-label="Previous news"
               >
@@ -407,7 +362,7 @@ const TodayInSLP: React.FC<TodayInSLPProps> = ({ todayEvents = [] }) => {
               </button>
 
               <div className="flex gap-1">
-                {tickerHeadlines.map((_, idx) => (
+                {displayHeadlines.map((_h, idx: number) => (
                   <button
                     key={idx}
                     onClick={() => setNewsIndex(idx)}
@@ -425,7 +380,7 @@ const TodayInSLP: React.FC<TodayInSLPProps> = ({ todayEvents = [] }) => {
               </div>
 
               <button
-                onClick={() => setNewsIndex(prev => prev === tickerHeadlines.length - 1 ? 0 : prev + 1)}
+                onClick={() => setNewsIndex(prev => prev === displayHeadlines.length - 1 ? 0 : prev + 1)}
                 className="flex items-center justify-center w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
                 aria-label="Next news"
               >
@@ -435,7 +390,8 @@ const TodayInSLP: React.FC<TodayInSLPProps> = ({ todayEvents = [] }) => {
           </div>
         </div>
 
-        {/* Community News Section */}
+        {/* Community News Section — only render when fresh data is available */}
+        {communityNews.length > 0 && (
         <div className="mt-6">
           <div className="flex items-center gap-2 mb-4">
             <UserGroupIcon className="w-5 h-5 text-secondary" />
@@ -444,7 +400,7 @@ const TodayInSLP: React.FC<TodayInSLPProps> = ({ todayEvents = [] }) => {
             </h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {(communityNews.length > 0 ? communityNews : defaultCommunityNews).map((news) => (
+            {communityNews.map((news) => (
               <div
                 key={news.id}
                 className="bg-white rounded-xl p-4 shadow-md border border-gray-100 hover:shadow-lg transition-shadow"
@@ -482,7 +438,7 @@ const TodayInSLP: React.FC<TodayInSLPProps> = ({ todayEvents = [] }) => {
             ))}
           </div>
         </div>
-
+        )}
 
       </div>
     </section>
