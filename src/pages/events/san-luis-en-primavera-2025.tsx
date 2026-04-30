@@ -31,6 +31,7 @@ export default function SanLuisEnPrimavera() {
         description="Discover the Festival Internacional San Luis en Primavera 2025, one of Mexico's most anticipated cultural events taking place from April 12-19, 2025."
         keywords="Festival San Luis en Primavera, cultural festival San Luis Potosí, events SLP 2025, concerts San Luis Potosí"
         ogImage="/images/festival-primavera.jpg"
+        noIndex
       />
 
       <main className="pt-20 pb-16">

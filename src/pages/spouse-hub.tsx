@@ -124,6 +124,7 @@ export default function SpouseHubPage() {
       <Head>
         <title>{t('spouseHub.seo.title')}</title>
         <meta name="description" content={t('spouseHub.seo.description')} />
+        <meta name="robots" content="noindex, follow" />
       </Head>
 
       <main className="min-h-screen bg-gradient-to-b from-rose-50 via-white to-purple-50">

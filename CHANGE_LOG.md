@@ -4,6 +4,44 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-04-30] seo(indexing): noindex utility pages, multi-locale sitemap, orphan routes
+
+**Problema:** GSC reportó 11 categorías de issues de indexación: 88 URLs 404, 386 "rastreada sin indexar", 51 "descubierta sin indexar", 26 "duplicada Google eligió otra canonical", 124 "alternativa con canonical adecuado", entre otras. Auditoría reveló 3 causas raíz:
+1. ~30 páginas estáticas existían pero NO estaban en el sitemap (16 `/category/*`, 10 `/san-luis-potosi-*/`, etc.).
+2. El sitio sirve 4 locales (en/es/de/ja) con hreflang completo, pero el sitemap solo listaba URLs en inglés. Google rastreaba ~858 URLs de locale via hreflang sin guía de prioridad.
+3. Páginas utility/WIP (cli, mcp, agent-connect, sitemap HTML, spouse-hub, eventos pasados 2025, listings disabled) eran indexables y competían por crawl budget.
+
+**Diagnóstico:**
+- URL Inspection API confirmó que páginas core (home, /blog, /parque-tangamanga) sí están indexadas → "0 indexed" del sitemap es contador stale.
+- robots.txt y redirects 301 ya estaban sanos.
+- HreflangAlternates emite canonical self-referencing + hreflang completo en cada locale → arquitectura correcta, solo faltaba reflejarla en sitemap.
+
+**Fix aplicado:**
+1. **noindex** en 8 páginas utility/WIP via prop `noIndex` o `<meta name="robots" content="noindex, follow">`:
+   - `/agent-connect`, `/cli`, `/mcp` (meta pages para AI)
+   - `/sitemap` (HTML — recursivo)
+   - `/spouse-hub` (WIP con aviso "en desarrollo")
+   - `/events/fenapo-2025`, `/events/san-luis-en-primavera-2025`, `/events/xantolo-2025` (eventos pasados)
+2. **301 redirect** server-side para `/listings` → `/` en `next.config.js` (la página tenía soft-redirect cliente que Google trataba como duplicado).
+3. **Sitemap modular** — refactor de `src/lib/sitemap.ts` (245 líneas) a `src/lib/sitemap/` (4 módulos, todos < 200 líneas):
+   - `locale.ts` — helpers de URL por locale + hreflang cluster
+   - `static-routes.ts` — 78 rutas estáticas (52 originales + 16 `/category/*` + 10 `/san-luis-potosi-*/`)
+   - `dynamic.ts` — fetchers Supabase (blog/places/events/brands) + factchecks
+   - `index.ts` — buildSitemapXml + expansión por locale
+4. **Multi-locale sitemap** — cada URL base se emite 4 veces (en/es/de/ja) con `<xhtml:link rel="alternate" hreflang>` cluster completo dentro de cada `<url>`. Total: ~286 base × 4 ≈ 1,144 URLs (antes solo 286).
+
+**Tests:** 22 tests nuevos en `src/lib/sitemap/sitemap.test.ts` cubriendo: helpers de locale, hreflang cluster, integridad de STATIC_ROUTES (16 categorías + 10 servicios, sin paths noindexados), expansión 4× por locale, escape XML, integration test con fetchers mockeados verificando namespace xhtml + URLs de blog en 4 locales + categorías + XML bien formado.
+
+**Resultado esperado en GSC (4-8 semanas):**
+- 386 "rastreada sin indexar" ↓ (sitemap explícito de locales da prioridad de crawl).
+- 51 "descubierta sin indexar" ↓ (huérfanas ahora en sitemap).
+- ~10 páginas utility salen del índice (noindex respetado en próximo recrawl).
+- /listings deja de aparecer como duplicado.
+
+**Pendiente (siguiente fase):** auditar canonicals dinámicas en `/places/[id]`, `/brands/[slug]`, `/blog/[slug]` (issue #4 del análisis) y procesar CSV de los 88 404s para agregar redirects 301 (issue #5).
+
+---
+
 ## [2026-04-22] fix(beehiiv): 826 suscriptores pending → active (double_opt_override bug)
 
 **Problema:** En Beehiiv la publicación `SLP Weekly` tenía 826 de 858 suscriptores (96%) en status `pending`. El script de backup import del 21 de abril usaba `double_opt_override: 'on'` pensando que bypasseaba Double Opt-In, pero Beehiiv tiene naming invertido: `'on'` FUERZA DOI ON para ese sub aunque la publicación lo tenga OFF. Como resultado, se mandaron 854 emails de confirmación y solo 30 personas clicaron.

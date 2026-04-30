@@ -68,6 +68,7 @@ export default function SitemapPage() {
       <Head>
         <title>Sitemap | San Luis Way</title>
         <meta name="description" content="Complete sitemap of San Luis Way - Find all pages and sections of our website for expats and visitors in San Luis Potosí." />
+        <meta name="robots" content="noindex, follow" />
       </Head>
 
       <div className="bg-gradient-to-br from-gray-50 to-white min-h-screen">

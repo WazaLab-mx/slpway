@@ -22,6 +22,7 @@ export default function Xantolo2025() {
         description="Xantolo 2025 - The most authentic Day of the Dead celebration in Huasteca Potosina. October 31 to November 2. Ancestral rituals, traditional dances, offerings, and typical gastronomy."
         keywords="Xantolo 2025, Day of the Dead San Luis Potosí, Huasteca Potosina traditions, Xantolo festival, Dia de Muertos Mexico"
         ogImage="/images/events/xantolo-image-1.jpg"
+        noIndex
       />
 
       {/* Hero Section */}

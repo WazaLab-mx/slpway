@@ -42,6 +42,7 @@ export default function McpPage() {
         description={t('mcpPage.pageSubtitle')}
         keywords="MCP server, Model Context Protocol, San Luis Potosi, Claude Desktop, Cursor, AI agent, structured data"
         ogType="website"
+        noIndex
         structuredData={buildMcpFaqSchema(faqItems)}
       />
 

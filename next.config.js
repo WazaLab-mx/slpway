@@ -140,6 +140,14 @@ const nextConfig = {
         destination: '/blog/fenapo-2026-guia-preparacion',
         permanent: true,
       },
+      // /listings is temporarily disabled (the page client-redirects to /).
+      // Surface that as a true 301 so Google deindexes it cleanly instead
+      // of treating the soft-redirect page as a duplicate.
+      {
+        source: '/listings',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
   env: {

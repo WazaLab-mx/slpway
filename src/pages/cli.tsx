@@ -66,6 +66,7 @@ export default function CliPage() {
         description={t('cliPage.pageSubtitle')}
         keywords="CLI, command line, San Luis Potosi, terminal, npx, npm, developer tools, API, JSON"
         ogType="website"
+        noIndex
         structuredData={buildCliFaqSchema(faqItems)}
       />
 

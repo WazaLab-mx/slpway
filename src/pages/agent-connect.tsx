@@ -46,6 +46,7 @@ export default function AgentConnectPage() {
         description={t('agentConnect.pageSubtitle')}
         keywords="MCP server, CLI, AI agent, San Luis Potosi, structured data, Claude Desktop, Cursor, Windsurf"
         ogType="website"
+        noIndex
         structuredData={buildAgentFaqSchema(faqItems)}
       />
 

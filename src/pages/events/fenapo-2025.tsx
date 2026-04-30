@@ -22,6 +22,7 @@ export default function Fenapo2025() {
         description="FENAPO 2025 - The most traditional fair in Mexico. August 8-31, 2025 in San Luis Potosí. Cultural events, sports, concerts, gastronomy and much more."
         keywords="FENAPO 2025, Feria Nacional Potosina, San Luis Potosí fair, Mexico fairs, palenque, teatro del pueblo"
         ogImage="/images/events/fenapo-fair.jpg"
+        noIndex
       />
 
       {/* Hero Section */}
