@@ -1,4 +1,8 @@
-const { schedule } = require('@netlify/functions');
+// Manually-triggered newsletter generation. Schedule is intentionally NOT
+// applied here — newsletter is reviewed and POSTed manually each Monday.
+// To re-enable automatic Monday runs, restore the `schedule()` wrapper at
+// the bottom of this file AND restore the [functions."..."] block in
+// netlify.toml.
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sanluisway.com';
 
@@ -58,5 +62,4 @@ const handler = async () => {
   }
 };
 
-// Run every Monday at 13:00 UTC (7am Mexico City)
-exports.handler = schedule('0 13 * * 1', handler);
+exports.handler = handler;

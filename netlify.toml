@@ -16,9 +16,10 @@
 [functions."scheduled-news-update"]
   schedule = "0 1,7,13,19 * * *"
 
-# Scheduled function for weekly newsletter generation (Mondays 7am Mexico City / 13:00 UTC)
-[functions."scheduled-weekly-newsletter"]
-  schedule = "0 13 * * 1"
+# Weekly newsletter scheduled trigger is intentionally disabled — newsletter
+# is reviewed and triggered manually each Monday via POST to
+# /api/newsletter/generate with x-admin-key header. The function file
+# remains in netlify/functions/ for future re-enablement.
 
 # Redirects for www canonical URL — collapse HTTP→HTTPS→www chain to a single
 # 301 hop. PSI "Avoid multiple page redirects" previously flagged ~780ms savings
