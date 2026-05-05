@@ -48,6 +48,7 @@ export interface NewsHeadline {
   summaryDe: string;
   summaryJa: string;
   source: string | null;
+  sourceUrl: string | null;
 }
 
 export interface CommunityNews {
@@ -63,6 +64,7 @@ export interface CommunityNews {
   category: 'social' | 'community' | 'culture' | 'local';
   imageUrl?: string;
   source?: string;
+  sourceUrl?: string;
   publishedAt: string;
 }
 
@@ -446,7 +448,7 @@ export async function fetchHeadlines(): Promise<NewsHeadline[]> {
 
     const { data, error } = await supabase
       .from('news_headlines')
-      .select('id, text_es, text_en, text_de, text_ja, summary_es, summary_en, summary_de, summary_ja, source')
+      .select('id, text_es, text_en, text_de, text_ja, summary_es, summary_en, summary_de, summary_ja, source, source_url')
       .eq('active', true)
       .or(`expires_at.is.null,expires_at.gt.${now}`)
       .order('priority', { ascending: true })
@@ -472,7 +474,8 @@ export async function fetchHeadlines(): Promise<NewsHeadline[]> {
       summaryEn: h.summary_en || '',
       summaryDe: h.summary_de || h.summary_en || '',
       summaryJa: h.summary_ja || h.summary_en || '',
-      source: h.source
+      source: h.source,
+      sourceUrl: h.source_url
     }));
   } catch (error) {
     console.error('Error fetching headlines:', error);
@@ -512,21 +515,26 @@ export async function fetchCommunityNews(): Promise<CommunityNews[]> {
       return [];
     }
 
-    return data.map(n => ({
-      id: n.id,
-      titleEs: n.title_es,
-      titleEn: n.title_en,
-      titleDe: n.title_de || n.title_en,
-      titleJa: n.title_ja || n.title_en,
-      summaryEs: n.summary_es,
-      summaryEn: n.summary_en,
-      summaryDe: n.summary_de || n.summary_en,
-      summaryJa: n.summary_ja || n.summary_en,
-      category: n.category,
-      imageUrl: n.image_url,
-      source: n.source,
-      publishedAt: n.published_at
-    }));
+    return data.map(n => {
+      const sourceValue: string | null = n.source ?? null;
+      const isUrl = typeof sourceValue === 'string' && /^https?:\/\//i.test(sourceValue);
+      return {
+        id: n.id,
+        titleEs: n.title_es,
+        titleEn: n.title_en,
+        titleDe: n.title_de || n.title_en,
+        titleJa: n.title_ja || n.title_en,
+        summaryEs: n.summary_es,
+        summaryEn: n.summary_en,
+        summaryDe: n.summary_de || n.summary_en,
+        summaryJa: n.summary_ja || n.summary_en,
+        category: n.category,
+        imageUrl: n.image_url,
+        source: !isUrl && sourceValue ? sourceValue : undefined,
+        sourceUrl: isUrl && sourceValue ? sourceValue : undefined,
+        publishedAt: n.published_at
+      };
+    });
   } catch (error) {
     console.error('Error fetching community news:', error);
     return [];

@@ -74,6 +74,8 @@ const handler = async () => {
       summary_ja: n.summary_ja || n.summary_en || '',
       category: n.category,
       priority: n.priority,
+      // URL stored in `source` column (acts as link target for clickable cards)
+      source: n.url || null,
       active: true,
       published_at: new Date().toISOString(),
       expires_at: getExpiryDate(7)
@@ -105,6 +107,7 @@ const handler = async () => {
       summary_de: h.summary_de || h.summary_en || '',
       summary_ja: h.summary_ja || h.summary_en || '',
       source: h.source,
+      source_url: h.url || null,
       priority: h.priority,
       active: true,
       expires_at: getExpiryDate(3)
@@ -202,12 +205,13 @@ Busca noticias POSITIVAS/NEUTRALES de San Luis Potosí, México de hoy o esta se
 
 IMPORTANTE - 4 IDIOMAS: Cada campo de texto debe tener versiones en español (_es), inglés (_en), alemán (_de) y japonés (_ja).
 IMPORTANTE - RESÚMENES DETALLADOS: 2-3 oraciones con cifras específicas, nombres de empresas/funcionarios, fechas, e impacto.
+IMPORTANTE - URLs REALES: Cada item DEBE incluir el campo "url" con un enlace REAL y verificable a la nota original (medio mexicano: elsoldesanluis.com.mx, planoinformativo.com, pulsoslp.com.mx, slp.gob.mx, codigosanluis.com, etc.). NUNCA inventes URLs. Si no tienes una URL real, omite ese item.
 
 Devuelve SOLO JSON puro sin markdown ni backticks. Formato exacto:
 
-{"communityNews":[{"title_es":"...","title_en":"...","title_de":"...","title_ja":"...","summary_es":"...","summary_en":"...","summary_de":"...","summary_ja":"...","category":"community","priority":1}],"headlines":[{"text_es":"...","text_en":"...","text_de":"...","text_ja":"...","summary_es":"...","summary_en":"...","summary_de":"...","summary_ja":"...","source":"...","priority":1}]}
+{"communityNews":[{"title_es":"...","title_en":"...","title_de":"...","title_ja":"...","summary_es":"...","summary_en":"...","summary_de":"...","summary_ja":"...","category":"community","priority":1,"url":"https://..."}],"headlines":[{"text_es":"...","text_en":"...","text_de":"...","text_ja":"...","summary_es":"...","summary_en":"...","summary_de":"...","summary_ja":"...","source":"...","url":"https://...","priority":1}]}
 
-Genera exactamente 3 communityNews y 5 headlines.`
+Genera exactamente 3 communityNews y 5 headlines, todos con URL real.`
       }]
     })
   });

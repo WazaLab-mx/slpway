@@ -127,9 +127,11 @@ const TodayInSLP: React.FC<TodayInSLPProps> = ({ todayEvents = [] }) => {
   const tickerHeadlines = headlines.map(h => ({
     id: h.id,
     text: getLocalizedText(h.textEs, h.textEn, h.textDe, h.textJa),
-    summary: getLocalizedText(h.summaryEs, h.summaryEn, h.summaryDe, h.summaryJa)
+    summary: getLocalizedText(h.summaryEs, h.summaryEn, h.summaryDe, h.summaryJa),
+    sourceUrl: h.sourceUrl ?? undefined,
+    source: h.source ?? undefined
   }));
-  const placeholderHeadline = { id: 'placeholder', text: t('todayInSLP.loadingNews'), summary: '' };
+  const placeholderHeadline = { id: 'placeholder', text: t('todayInSLP.loadingNews'), summary: '', sourceUrl: undefined as string | undefined, source: undefined as string | undefined };
   const displayHeadlines = tickerHeadlines.length > 0 ? tickerHeadlines : [placeholderHeadline];
 
   // Auto-rotate news carousel every 8 seconds
@@ -341,16 +343,43 @@ const TodayInSLP: React.FC<TodayInSLPProps> = ({ todayEvents = [] }) => {
           </div>
 
           <div className="relative">
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 min-h-[100px] flex flex-col justify-center">
-              <p className="text-white text-lg font-semibold leading-relaxed">
-                {displayHeadlines[newsIndex]?.text}
-              </p>
-              {displayHeadlines[newsIndex]?.summary && (
-                <p className="text-white/80 text-sm mt-2 leading-relaxed">
-                  {displayHeadlines[newsIndex].summary}
-                </p>
-              )}
-            </div>
+            {(() => {
+              const current = displayHeadlines[newsIndex];
+              const headlineBody = (
+                <>
+                  <p className="text-white text-lg font-semibold leading-relaxed">
+                    {current?.text}
+                  </p>
+                  {current?.summary && (
+                    <p className="text-white/80 text-sm mt-2 leading-relaxed">
+                      {current.summary}
+                    </p>
+                  )}
+                  {current?.sourceUrl && (
+                    <span className="inline-flex items-center gap-1 text-white/90 text-xs font-medium mt-3">
+                      {current.source ? `${current.source} →` : t('todayInSLP.readMore', 'Read more')}
+                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </span>
+                  )}
+                </>
+              );
+              return current?.sourceUrl ? (
+                <a
+                  href={current.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white/10 backdrop-blur-sm rounded-xl p-4 min-h-[100px] flex flex-col justify-center hover:bg-white/15 transition-colors"
+                >
+                  {headlineBody}
+                </a>
+              ) : (
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 min-h-[100px] flex flex-col justify-center">
+                  {headlineBody}
+                </div>
+              );
+            })()}
 
             <div className="flex items-center justify-between mt-4">
               <button
@@ -400,11 +429,8 @@ const TodayInSLP: React.FC<TodayInSLPProps> = ({ todayEvents = [] }) => {
             </h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {communityNews.map((news) => (
-              <div
-                key={news.id}
-                className="bg-white rounded-xl p-4 shadow-md border border-gray-100 hover:shadow-lg transition-shadow"
-              >
+            {communityNews.map((news) => {
+              const cardInner = (
                 <div className="flex items-start gap-3">
                   <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${
                     news.category === 'social' ? 'bg-rose-100' :
@@ -432,10 +458,37 @@ const TodayInSLP: React.FC<TodayInSLPProps> = ({ todayEvents = [] }) => {
                     <p className="text-gray-600 text-xs mt-1 line-clamp-2">
                       {getLocalizedText(news.summaryEs, news.summaryEn, news.summaryDe, news.summaryJa)}
                     </p>
+                    {news.sourceUrl && (
+                      <span className="inline-flex items-center gap-1 text-xs font-medium text-secondary mt-2">
+                        {t('todayInSLP.readMore', 'Read more')}
+                        <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </span>
+                    )}
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+
+              return news.sourceUrl ? (
+                <a
+                  key={news.id}
+                  href={news.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white rounded-xl p-4 shadow-md border border-gray-100 hover:shadow-lg hover:border-secondary/30 transition-all block"
+                >
+                  {cardInner}
+                </a>
+              ) : (
+                <div
+                  key={news.id}
+                  className="bg-white rounded-xl p-4 shadow-md border border-gray-100 hover:shadow-lg transition-shadow"
+                >
+                  {cardInner}
+                </div>
+              );
+            })}
           </div>
         </div>
         )}
