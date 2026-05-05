@@ -174,7 +174,7 @@ async function fetchNewsWithClaude(): Promise<{ communityNews: CommunityNews[]; 
     },
     body: JSON.stringify({
       model: 'claude-sonnet-4-6',
-      max_tokens: 6000,
+      max_tokens: 10000,
       tools: [{
         type: 'web_search_20250305',
         name: 'web_search',
@@ -190,7 +190,9 @@ IMPORTANTE - 4 IDIOMAS: Cada campo de texto debe tener versiones en español (_e
 IMPORTANTE - RESÚMENES DETALLADOS: 2-3 oraciones con cifras específicas, nombres de empresas/funcionarios, fechas, e impacto.
 IMPORTANTE - URLs REALES: Cada item DEBE incluir el campo "url" con un enlace REAL y verificable a la nota original (medio mexicano: elsoldesanluis.com.mx, planoinformativo.com, pulsoslp.com.mx, slp.gob.mx, codigosanluis.com, etc.). NUNCA inventes URLs. Si no tienes una URL real, omite ese item.
 
-Devuelve SOLO JSON puro sin markdown ni backticks. Formato exacto:
+CRÍTICO - FORMATO DE SALIDA: Tu respuesta DEBE empezar EXACTAMENTE con el carácter '{' y terminar EXACTAMENTE con '}'. NO escribas preámbulo, NO escribas explicación, NO uses markdown, NO uses backticks. SOLO el objeto JSON.
+
+Formato exacto:
 
 {"communityNews":[{"title_es":"...","title_en":"...","title_de":"...","title_ja":"...","summary_es":"...","summary_en":"...","summary_de":"...","summary_ja":"...","category":"community","priority":1,"url":"https://..."}],"headlines":[{"text_es":"...","text_en":"...","text_de":"...","text_ja":"...","summary_es":"...","summary_en":"...","summary_de":"...","summary_ja":"...","source":"...","url":"https://...","priority":1}]}
 
