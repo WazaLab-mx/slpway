@@ -13,7 +13,9 @@
 
 # Scheduled function for news updates: every 6h (01/07/13/19 UTC) so a single
 # failed Claude call has multiple chances to recover within the same day.
-[functions."scheduled-news-update"]
+# Background variant (-background suffix) allows up to 15-min runtime — the
+# Anthropic web_search round-trip can exceed the 60s sync scheduled-fn cap.
+[functions."scheduled-news-update-background"]
   schedule = "0 1,7,13,19 * * *"
 
 # Weekly newsletter scheduled trigger is intentionally disabled — newsletter

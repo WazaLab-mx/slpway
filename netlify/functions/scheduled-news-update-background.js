@@ -191,11 +191,13 @@ async function fetchNewsWithClaude(apiKey) {
     },
     body: JSON.stringify({
       model: 'claude-sonnet-4-6',
-      max_tokens: 8000,
+      max_tokens: 6000,
+      // max_uses kept at 3 so the full Claude+web_search round-trip
+      // stays under the 60s sync scheduled-function timeout on Netlify.
       tools: [{
         type: 'web_search_20250305',
         name: 'web_search',
-        max_uses: 5
+        max_uses: 3
       }],
       messages: [{
         role: 'user',
