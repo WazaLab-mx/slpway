@@ -16,8 +16,7 @@ async function listSubscribers(page = 1, limit = 100) {
   try {
     const params = new URLSearchParams({
       page: page.toString(),
-      limit: limit.toString(),
-      status: 'active'
+      limit: limit.toString()
     });
 
     const response = await fetch(

@@ -396,7 +396,7 @@ Include forecast summary, temperature range in Celsius (USE THE EXACT VALUES FRO
 Format as HTML with the 🌦️ Weather Watch header.
 Return the complete <tr> section HTML.`,
 
-    news: `Generate 2 local news items for San Luis Potosí, MÉXICO (NOT USA).
+    news: `Generate EXACTLY 3 distinct local news items for San Luis Potosí, MÉXICO (NOT USA), each on a different topic.
 
 🚨 CRITICAL DATE REQUIREMENT:
 📅 TODAY IS: ${dates.todayFormatted}
@@ -408,8 +408,8 @@ Return the complete <tr> section HTML.`,
 Search for: "noticias San Luis Potosí ${dates.spanishMonth} ${dates.currentYear}"
 
 Focus on: city announcements, infrastructure, business news, or community events.
-Each news item should have: headline, 3-4 sentence summary, and "why it matters" explanation.
-Also include 3 "Quick Hits" - short practical updates.
+Each of the 3 news items should have: headline, 3-4 sentence summary, and "why it matters" explanation.
+After the 3 news items, include 3 "Quick Hits" - short practical one-line updates that do NOT duplicate the 3 news items above.
 Return the complete <tr> section HTML with the 📰 The Week in SLP header.`,
 
     events: `Generate 3 events happening in San Luis Potosí, MÉXICO.

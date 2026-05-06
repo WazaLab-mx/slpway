@@ -19,7 +19,7 @@ interface NewsletterEditorProps {
 
 // Section patterns for parsing (client-side version)
 const SECTION_MARKERS = [
-  { id: 'opening', name: '👋 Opening Hook', pattern: /Hey there! 👋/i, editable: true },
+  { id: 'opening', name: '👋 Opening Hook', pattern: /<!-- OPENING HOOK -->/i, editable: true },
   { id: 'weather', name: '🌦️ Weather Watch', pattern: /🌦️ Weather Watch/i, editable: true },
   { id: 'market_watch', name: '💰 Market Watch', pattern: /💰 Market Watch/i, editable: true },
   { id: 'news', name: '📰 The Week in SLP', pattern: /📰 The Week in SLP/i, editable: true },
@@ -38,6 +38,21 @@ const SECTION_MARKERS = [
   { id: 'comunidad', name: '🤝 Comunidad', pattern: /🤝 Comunidad/i, editable: true },
 ];
 
+function findSectionStart(html: string, matchIndex: number, matchLength: number): number {
+  // Comment-style markers (e.g. <!-- OPENING HOOK -->) sit just BEFORE the <tr>
+  // they label, so we look forward from the end of the match for the next <tr>.
+  // Title-style markers (e.g. "🌦️ Weather Watch") sit INSIDE a <tr>, so we
+  // walk backward to find the enclosing <tr>.
+  const matchedText = html.substr(matchIndex, matchLength);
+  if (matchedText.trim().startsWith('<!--')) {
+    const afterIndex = html.indexOf('<tr>', matchIndex + matchLength);
+    return afterIndex !== -1 ? afterIndex : matchIndex;
+  }
+  const beforeMatch = html.substring(0, matchIndex);
+  const trStart = beforeMatch.lastIndexOf('<tr>');
+  return trStart !== -1 ? trStart : matchIndex;
+}
+
 function parseSections(html: string): NewsletterSection[] {
   const sections: NewsletterSection[] = [];
   const markers = [...SECTION_MARKERS];
@@ -47,19 +62,14 @@ function parseSections(html: string): NewsletterSection[] {
     const match = html.match(marker.pattern);
 
     if (match && match.index !== undefined) {
-      // Find the start of the <tr> containing this section
-      const beforeMatch = html.substring(0, match.index);
-      const trStart = beforeMatch.lastIndexOf('<tr>');
-      const startIndex = trStart !== -1 ? trStart : match.index;
+      const startIndex = findSectionStart(html, match.index, match[0].length);
 
       // Find the next section or end
       let endIndex = html.length;
       for (let j = i + 1; j < markers.length; j++) {
         const nextMatch = html.match(markers[j].pattern);
         if (nextMatch && nextMatch.index !== undefined) {
-          const beforeNext = html.substring(0, nextMatch.index);
-          const nextTrStart = beforeNext.lastIndexOf('<tr>');
-          endIndex = nextTrStart !== -1 ? nextTrStart : nextMatch.index;
+          endIndex = findSectionStart(html, nextMatch.index, nextMatch[0].length);
           break;
         }
       }

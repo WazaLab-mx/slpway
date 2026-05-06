@@ -8,7 +8,7 @@ const supabase = createClient(
 );
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { ad_id, newsletter_id, placement } = req.query;
+  const { ad_id, newsletter_id, placement, original_url } = req.query;
 
   if (!ad_id || typeof ad_id !== 'string') {
     return res.status(400).json({ error: 'Ad ID is required' });
@@ -55,6 +55,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     if (ad.link_url) {
       return res.redirect(302, ad.link_url);
+    }
+
+    // Fallback to the URL captured from the ad HTML at send time, so the click
+    // still resolves even when link_url wasn't populated on the sponsor_ads row.
+    if (typeof original_url === 'string' && /^https?:\/\//i.test(original_url)) {
+      return res.redirect(302, original_url);
     }
 
     return res.status(400).json({ error: 'No link URL configured for this ad' });

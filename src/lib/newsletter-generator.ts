@@ -452,10 +452,25 @@ export const NEWSLETTER_TEMPLATE = `
 
                 <!-- NEWS SECTION -->
                 <div style="padding: 18px 22px; border-bottom: 1px solid #F3F4F6;">
-                  <h3 style="margin: 0 0 10px 0; color: #C75B39; font-size: 16px;">📰 Top News</h3>
-                  <h4 style="margin: 0 0 8px 0; font-size: 15px; color: #1F2937;">[NEWS_HEADLINE_1]</h4>
-                  <p style="margin: 0 0 8px 0; font-size: 14px; color: #4B5563; line-height: 1.6;">[NEWS_SUMMARY_1]</p>
-                  <p style="margin: 0; font-size: 13px; color: #C75B39; font-style: italic;">→ Why it matters: [IMPACT_1]</p>
+                  <h3 style="margin: 0 0 14px 0; color: #C75B39; font-size: 16px;">📰 Top News</h3>
+
+                  <div style="margin-bottom: 16px;">
+                    <h4 style="margin: 0 0 8px 0; font-size: 15px; color: #1F2937;">[NEWS_HEADLINE_1]</h4>
+                    <p style="margin: 0 0 8px 0; font-size: 14px; color: #4B5563; line-height: 1.6;">[NEWS_SUMMARY_1]</p>
+                    <p style="margin: 0; font-size: 13px; color: #C75B39; font-style: italic;">→ Why it matters: [IMPACT_1]</p>
+                  </div>
+
+                  <div style="margin-bottom: 16px; padding-top: 14px; border-top: 1px solid #F3F4F6;">
+                    <h4 style="margin: 0 0 8px 0; font-size: 15px; color: #1F2937;">[NEWS_HEADLINE_2]</h4>
+                    <p style="margin: 0 0 8px 0; font-size: 14px; color: #4B5563; line-height: 1.6;">[NEWS_SUMMARY_2]</p>
+                    <p style="margin: 0; font-size: 13px; color: #C75B39; font-style: italic;">→ Why it matters: [IMPACT_2]</p>
+                  </div>
+
+                  <div style="padding-top: 14px; border-top: 1px solid #F3F4F6;">
+                    <h4 style="margin: 0 0 8px 0; font-size: 15px; color: #1F2937;">[NEWS_HEADLINE_3]</h4>
+                    <p style="margin: 0 0 8px 0; font-size: 14px; color: #4B5563; line-height: 1.6;">[NEWS_SUMMARY_3]</p>
+                    <p style="margin: 0; font-size: 13px; color: #C75B39; font-style: italic;">→ Why it matters: [IMPACT_3]</p>
+                  </div>
                 </div>
 
                 <!-- QUICK HITS -->
@@ -963,14 +978,18 @@ function findInsertionPoint(html: string, placement: string, markers: { top: Reg
 }
 
 function wrapAdWithTracking(html: string, adId: string): string {
-  const trackingUrl = `/api/newsletter/ad-click?ad_id=${encodeURIComponent(adId)}`;
+  // Tracking URL must be absolute — email clients can't resolve relative paths,
+  // so a relative href would render as a broken link in the delivered newsletter.
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sanluisway.com').replace(/\/$/, '');
+  const trackingUrl = `${siteUrl}/api/newsletter/ad-click?ad_id=${encodeURIComponent(adId)}`;
   const regex = /<a\s+([^>]*?)href=["']([^"']+)["']([^>]*)>/gi;
-  
+
   return html.replace(regex, (match, before, href, after) => {
-    if (href.startsWith('/') || href.startsWith('#')) {
+    if (href.startsWith('#')) {
       return match;
     }
-    const trackingHref = `${trackingUrl}&original_url=${encodeURIComponent(href)}`;
+    const absoluteHref = href.startsWith('/') ? `${siteUrl}${href}` : href;
+    const trackingHref = `${trackingUrl}&original_url=${encodeURIComponent(absoluteHref)}`;
     return `<a ${before}href="${trackingHref}"${after}>`;
   });
 }
@@ -1811,7 +1830,9 @@ Overall Summary: ${weatherForecast.summary}
     - University news only if it affects the broader community
     AVOID: Pure political news without practical impact, crime blotters, national news unrelated to SLP
 
-    Identify exactly 3 "Quick Hits": one-line practical updates (traffic, construction, transit, utilities, weather alerts, small neighborhood news).
+    Identify EXACTLY 3 distinct top news stories AND exactly 3 "Quick Hits" (one-line practical updates: traffic, construction, transit, utilities, weather alerts, small neighborhood news).
+    The 3 top news stories must each cover a DIFFERENT topic — don't repeat the same story or angle.
+    The Quick Hits must NOT duplicate any of the 3 top news stories.
 
     SOURCES:
     - El Sol de San Luis (elsoldesanluis.com.mx)
@@ -1821,10 +1842,12 @@ Overall Summary: ${weatherForecast.summary}
     - La Jornada San Luis
     - Government sites: slp.gob.mx, sanluis.gob.mx
 
-    FORMAT FOR THE ONE TOP NEWS ITEM (fills [NEWS_HEADLINE_1] / [NEWS_SUMMARY_1] / [IMPACT_1]):
-    - Headline (translated to English) in [NEWS_HEADLINE_1]
-    - **Summary (3-4 sentences)** with context + source name inline in [NEWS_SUMMARY_1]
-    - One-sentence "Why it matters to residents/expats" in [IMPACT_1]
+    FORMAT FOR THE 3 TOP NEWS ITEMS (fills [NEWS_HEADLINE_1..3] / [NEWS_SUMMARY_1..3] / [IMPACT_1..3]):
+    - All 3 placeholder sets are MANDATORY — never leave [NEWS_HEADLINE_2], [NEWS_HEADLINE_3], etc. empty.
+    - Headline (translated to English) in [NEWS_HEADLINE_N]
+    - **Summary (3-4 sentences)** with context + source name inline in [NEWS_SUMMARY_N]
+    - One-sentence "Why it matters to residents/expats" in [IMPACT_N]
+    - Order: lead with the highest-impact story in slot 1, then slots 2 and 3 in descending priority.
     - Do NOT include <img> tags
 
     FORMAT FOR QUICK HITS (fills [QUICK_HIT_1] / [QUICK_HIT_2] / [QUICK_HIT_3]):
