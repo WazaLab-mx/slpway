@@ -2567,5 +2567,179 @@
         "Municipal records — San Luis Potosí city archives"
       ]
     }
+  },
+  "advertise": {
+    "seo": {
+      "title": "Werbung auf San Luis Way - Erreichen Sie Ihre Zielgruppe in San Luis Potosí",
+      "description": "Lassen Sie Ihre Marke in San Luis Potosí wachsen mit Bannern, Newsletter-Sponsoring, gesponserten Inhalten, Markengeschichten und besonderen Erwähnungen.",
+      "keywords": "Werbung, Marketing, San Luis Potosí, Banner, Newsletter-Sponsoring, gesponserte Inhalte, Markengeschichten, lokale Marken"
+    },
+    "hero": {
+      "titlePrefix": "Lassen Sie Ihre Marke wachsen in",
+      "titleHighlight": "San Luis Potosí",
+      "subtitle": "Verbinden Sie sich mit unserer engagierten Community aus Einheimischen, Expats und Besuchern – über die Website und den wöchentlichen Newsletter.",
+      "ctaPrimary": "Jetzt starten",
+      "ctaSecondary": "Optionen ansehen"
+    },
+    "whyUs": {
+      "title": "Warum San Luis Way?",
+      "subtitle": "Wir sind die führende Plattform, um das Beste von San Luis Potosí zu entdecken",
+      "audience": {
+        "title": "Engagierte Zielgruppe",
+        "desc": "Unsere Community sucht aktiv nach neuen Erlebnissen, Dienstleistungen und lokalen Produkten – Konsumenten, die bereit sind zu handeln."
+      },
+      "authority": {
+        "title": "Lokale Autorität",
+        "desc": "Wir sind die vertrauenswürdige Quelle für das Beste von SLP. Ihre Marke profitiert von unserem Ruf und unserer Glaubwürdigkeit."
+      },
+      "results": {
+        "title": "Messbare Ergebnisse",
+        "desc": "Erhalten Sie detaillierte Berichte zur Kampagnenleistung mit klaren, umsetzbaren Kennzahlen."
+      }
+    },
+    "options": {
+      "title": "Werbeoptionen",
+      "subtitle": "Wählen Sie die perfekte Option, um Ihre Marke wachsen zu lassen",
+      "siteBanners": {
+        "title": "Website-Banner",
+        "subtitle": "Premium-Sichtbarkeit auf sanluisway.com",
+        "bullets": [
+          "Banner auf der Startseite und Top-Seiten",
+          "Formate: Leaderboard, Rechteck, Skyscraper",
+          "Targeting nach Ort und Kategorie",
+          "Impression- und Klick-Reports",
+          "Design durch unser Team inklusive"
+        ],
+        "cta": "Information anfordern"
+      },
+      "newsletterSponsorship": {
+        "title": "Newsletter-Sponsoring",
+        "subtitle": "Erreichen Sie über 900 engagierte Postfächer pro Woche",
+        "bullets": [
+          "Gesponsertes Banner im wöchentlichen Newsletter (oben, Mitte oder unten)",
+          "Markenerwähnung in 'Around Town' oder einer passenden Sektion",
+          "Direkte Zustellung an Abonnenten (Einheimische + Expats)",
+          "Klick- und Öffnungs-Analyse nach jedem Versand",
+          "Mehrwöchige Pakete mit Rotationsrabatten"
+        ],
+        "cta": "Newsletter sponsern"
+      },
+      "sponsoredContent": {
+        "title": "Gesponserte Inhalte",
+        "subtitle": "Artikel und Blogbeiträge, die Vertrauen aufbauen",
+        "bullets": [
+          "Blogbeiträge mit 800–1200 Wörtern auf sanluisway.com",
+          "On-Page-SEO-Optimierung inklusive",
+          "Promotion auf Social Media",
+          "Professionelle Fotografie inklusive",
+          "Distribution im wöchentlichen Newsletter"
+        ],
+        "cta": "Inhalte erstellen"
+      },
+      "brandStories": {
+        "title": "Markengeschichten",
+        "subtitle": "Tiefgehende Geschichten über Ihr Unternehmen",
+        "bullets": [
+          "Interviews mit Gründern und Inhabern",
+          "Professionelles Foto-Shooting",
+          "Promovideo (optional)",
+          "Positionierung als lokaler Marktführer",
+          "Multi-Plattform-Distribution"
+        ],
+        "cta": "Meine Geschichte erzählen"
+      },
+      "specialMentions": {
+        "title": "Besondere Erwähnungen",
+        "subtitle": "Hervorhebung in Guides und kuratierten Listen",
+        "bullets": [
+          "Aufnahme in thematische Guides",
+          "Badges 'Empfohlen von SLW'",
+          "Redaktionelle 'Best of SLP'-Listen",
+          "Erwähnung im wöchentlichen Newsletter",
+          "Präsenz bei virtuellen Events"
+        ],
+        "cta": "Hervorgehoben werden"
+      }
+    },
+    "packages": {
+      "title": "Komplettpakete",
+      "subtitle": "Kombinieren Sie mehrere Services für maximale Wirkung und Ersparnis",
+      "perMonth": "/Monat",
+      "popular": "Am beliebtesten",
+      "yearlySavings": "17% sparen mit dem Jahresplan",
+      "basic": {
+        "name": "Basis",
+        "tagline": "Perfekt für den Einstieg",
+        "price": "$1,500",
+        "features": [
+          "1 Website-Banner",
+          "1 Newsletter-Erwähnung",
+          "1 Besondere Erwähnung",
+          "Monatlicher Performance-Bericht"
+        ],
+        "cta": "Preise anfragen"
+      },
+      "premium": {
+        "name": "Premium",
+        "tagline": "Maximale Sichtbarkeit",
+        "price": "$3,000",
+        "features": [
+          "3 Banner an Premium-Platzierungen",
+          "1 Newsletter-Sponsoring pro Monat",
+          "2 Gesponserte Blogbeiträge",
+          "1 Markengeschichte",
+          "Mehrere besondere Erwähnungen"
+        ],
+        "cta": "Preise anfragen"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "tagline": "Maßgeschneiderte Lösung",
+        "price": "$5,000+",
+        "priceNote": "Auf Ihre spezifischen Bedürfnisse zugeschnitten",
+        "features": [
+          "360°-Kampagne nach Maß",
+          "Unbegrenzte Inhalte",
+          "Wiederkehrendes Newsletter-Sponsoring",
+          "Persönlicher Account Manager",
+          "Erweiterte Analyse und Reporting"
+        ],
+        "cta": "Jetzt Kontakt aufnehmen"
+      }
+    },
+    "process": {
+      "title": "Unser Prozess",
+      "subtitle": "Wir arbeiten Schritt für Schritt mit Ihnen, um die perfekte Kampagne zu gestalten",
+      "steps": [
+        {
+          "title": "Erstgespräch",
+          "desc": "Wir lernen Ihre Ziele und Zielgruppe kennen"
+        },
+        {
+          "title": "Maßgeschneidertes Angebot",
+          "desc": "Wir entwerfen eine Strategie speziell für Ihre Marke"
+        },
+        {
+          "title": "Content-Erstellung",
+          "desc": "Unser Team produziert alle Materialien"
+        },
+        {
+          "title": "Ergebnisse & Analyse",
+          "desc": "Wir messen die Wirkung und optimieren laufend"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Bereit, Ihre Marke wachsen zu lassen?",
+      "subtitle": "Schließen Sie sich den Marken an, die San Luis Way vertrauen, um ihre ideale Zielgruppe zu erreichen",
+      "primary": "Kampagne starten",
+      "secondary": "Information anfordern",
+      "note": "Antwort innerhalb von 24 Stunden • Kostenlose Erstberatung"
+    },
+    "questions": {
+      "title": "Fragen?",
+      "subtitle": "Unser Team hilft Ihnen, die perfekte Lösung für Ihre Marke zu finden",
+      "sendMessage": "Nachricht senden"
+    }
   }
 }

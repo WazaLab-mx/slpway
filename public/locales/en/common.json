@@ -2602,5 +2602,179 @@
         "Municipal records — San Luis Potosí city archives"
       ]
     }
+  },
+  "advertise": {
+    "seo": {
+      "title": "Advertise with San Luis Way - Reach Your Audience in San Luis Potosí",
+      "description": "Grow your brand in San Luis Potosí with site banners, newsletter sponsorships, sponsored content, brand stories and special mentions. Reach locals, expats and visitors.",
+      "keywords": "advertising, marketing, San Luis Potosí, banners, newsletter sponsorship, sponsored content, brand stories, local brands"
+    },
+    "hero": {
+      "titlePrefix": "Grow Your Brand in",
+      "titleHighlight": "San Luis Potosí",
+      "subtitle": "Reach our engaged community of locals, expats and visitors through premium advertising on the website and the weekly newsletter.",
+      "ctaPrimary": "Get Started",
+      "ctaSecondary": "View Options"
+    },
+    "whyUs": {
+      "title": "Why Choose San Luis Way?",
+      "subtitle": "We're the leading platform to discover and connect with the best of San Luis Potosí",
+      "audience": {
+        "title": "Engaged Audience",
+        "desc": "Our community actively looks for new experiences, services and local products. They are ready-to-act consumers."
+      },
+      "authority": {
+        "title": "Local Authority",
+        "desc": "We are the trusted source for the best of SLP. Your brand benefits from our reputation and credibility."
+      },
+      "results": {
+        "title": "Measurable Results",
+        "desc": "Receive detailed reports on campaign performance with clear, actionable metrics."
+      }
+    },
+    "options": {
+      "title": "Advertising Options",
+      "subtitle": "Choose the perfect option to grow your brand and connect with new customers",
+      "siteBanners": {
+        "title": "Site Banners",
+        "subtitle": "Premium visibility on sanluisway.com",
+        "bullets": [
+          "Banners on the homepage and high-traffic pages",
+          "Formats: leaderboard, rectangle, skyscraper",
+          "Targeting by location and category",
+          "Impression and click reporting",
+          "Design included by our team"
+        ],
+        "cta": "Request Information"
+      },
+      "newsletterSponsorship": {
+        "title": "Newsletter Sponsorships",
+        "subtitle": "Reach 900+ engaged inboxes every week",
+        "bullets": [
+          "Sponsored banner inside the weekly newsletter (top, middle or bottom placement)",
+          "Branded mention in 'Around Town' or a relevant section",
+          "Direct delivery to subscribers (locals + expats)",
+          "Click and open analytics shared after every send",
+          "Multi-week packages with rotation discounts"
+        ],
+        "cta": "Sponsor the Newsletter"
+      },
+      "sponsoredContent": {
+        "title": "Sponsored Content",
+        "subtitle": "Articles and blog posts that build trust",
+        "bullets": [
+          "800-1200 word blog posts on sanluisway.com",
+          "On-page SEO optimization included",
+          "Promotion across social channels",
+          "Professional photography included",
+          "Distribution in our weekly newsletter"
+        ],
+        "cta": "Create Content"
+      },
+      "brandStories": {
+        "title": "Brand Stories",
+        "subtitle": "In-depth stories about your business",
+        "bullets": [
+          "Interviews with founders and owners",
+          "Professional photo shoot",
+          "Promotional video (optional)",
+          "Position your brand as a local leader",
+          "Multi-platform distribution"
+        ],
+        "cta": "Tell My Story"
+      },
+      "specialMentions": {
+        "title": "Special Mentions",
+        "subtitle": "Featured in guides and curated lists",
+        "bullets": [
+          "Inclusion in topical guides",
+          "'Recommended by SLW' badges",
+          "Editorial 'Best of SLP' lists",
+          "Mention in the weekly newsletter",
+          "Presence at virtual events"
+        ],
+        "cta": "Get Featured"
+      }
+    },
+    "packages": {
+      "title": "Bundled Packages",
+      "subtitle": "Combine multiple services for maximum impact and savings",
+      "perMonth": "/mo",
+      "popular": "Most Popular",
+      "yearlySavings": "Save 17% with the annual plan",
+      "basic": {
+        "name": "Basic",
+        "tagline": "Perfect to get started",
+        "price": "$1,500",
+        "features": [
+          "1 Site banner",
+          "1 Newsletter mention",
+          "1 Special mention",
+          "Monthly performance report"
+        ],
+        "cta": "Request Pricing"
+      },
+      "premium": {
+        "name": "Premium",
+        "tagline": "Maximum visibility",
+        "price": "$3,000",
+        "features": [
+          "3 Banners in premium placements",
+          "1 Newsletter sponsorship per month",
+          "2 Sponsored blog posts",
+          "1 Brand story",
+          "Multiple special mentions"
+        ],
+        "cta": "Request Pricing"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "tagline": "Custom solution",
+        "price": "$5,000+",
+        "priceNote": "Tailored to your specific needs",
+        "features": [
+          "360° custom campaign",
+          "Unlimited content",
+          "Recurring newsletter sponsorship",
+          "Dedicated account manager",
+          "Advanced analytics and reporting"
+        ],
+        "cta": "Contact Now"
+      }
+    },
+    "process": {
+      "title": "Our Process",
+      "subtitle": "We work with you step by step to build the perfect campaign",
+      "steps": [
+        {
+          "title": "Initial Consultation",
+          "desc": "We learn about your goals and target audience"
+        },
+        {
+          "title": "Custom Proposal",
+          "desc": "We craft a strategy specific to your brand"
+        },
+        {
+          "title": "Content Creation",
+          "desc": "Our team produces all the materials"
+        },
+        {
+          "title": "Results & Analysis",
+          "desc": "We measure impact and continuously optimize"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Grow Your Brand?",
+      "subtitle": "Join the brands that trust San Luis Way to reach their ideal audience",
+      "primary": "Start My Campaign",
+      "secondary": "Request Information",
+      "note": "Reply within 24 hours • Free initial consultation"
+    },
+    "questions": {
+      "title": "Have Questions?",
+      "subtitle": "Our team is here to help you find the perfect solution for your brand",
+      "sendMessage": "Send Message"
+    }
   }
 }

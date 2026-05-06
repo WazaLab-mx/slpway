@@ -2602,5 +2602,179 @@
         "Registros municipales — archivos de la ciudad de San Luis Potosí"
       ]
     }
+  },
+  "advertise": {
+    "seo": {
+      "title": "Publicita con San Luis Way - Conecta con tu Audiencia en San Luis Potosí",
+      "description": "Haz crecer tu marca en San Luis Potosí con banners en el sitio, patrocinios del newsletter, contenido patrocinado, reportajes y menciones especiales.",
+      "keywords": "publicidad, marketing, San Luis Potosí, banners, patrocinio newsletter, contenido patrocinado, reportajes, marcas locales"
+    },
+    "hero": {
+      "titlePrefix": "Haz Crecer Tu Marca en",
+      "titleHighlight": "San Luis Potosí",
+      "subtitle": "Conecta con nuestra audiencia comprometida de locales, expatriados y visitantes a través de publicidad premium en el sitio y el newsletter semanal.",
+      "ctaPrimary": "Comienza Hoy",
+      "ctaSecondary": "Ver Opciones"
+    },
+    "whyUs": {
+      "title": "¿Por Qué Elegir San Luis Way?",
+      "subtitle": "Somos la plataforma líder para descubrir y conectar con lo mejor de San Luis Potosí",
+      "audience": {
+        "title": "Audiencia Comprometida",
+        "desc": "Nuestra comunidad busca activamente nuevas experiencias, servicios y productos locales. Son consumidores listos para actuar."
+      },
+      "authority": {
+        "title": "Autoridad Local",
+        "desc": "Somos la fuente confiable para descubrir lo mejor de SLP. Tu marca se beneficia de nuestra reputación y credibilidad."
+      },
+      "results": {
+        "title": "Resultados Medibles",
+        "desc": "Recibe reportes detallados sobre el rendimiento de tu campaña con métricas claras y accionables."
+      }
+    },
+    "options": {
+      "title": "Opciones de Publicidad",
+      "subtitle": "Elige la opción perfecta para hacer crecer tu marca y conectar con nuevos clientes",
+      "siteBanners": {
+        "title": "Banners en el Sitio",
+        "subtitle": "Visibilidad premium en sanluisway.com",
+        "bullets": [
+          "Banners en homepage y páginas de alto tráfico",
+          "Formatos: leaderboard, rectángulo, skyscraper",
+          "Targeting por ubicación y categoría",
+          "Reportes de impresiones y clicks",
+          "Diseño incluido por nuestro equipo"
+        ],
+        "cta": "Solicitar Información"
+      },
+      "newsletterSponsorship": {
+        "title": "Patrocinio del Newsletter",
+        "subtitle": "Llega a +900 inboxes comprometidos cada semana",
+        "bullets": [
+          "Banner patrocinado dentro del newsletter semanal (posición top, middle o bottom)",
+          "Mención de marca en 'Around Town' o sección relevante",
+          "Entrega directa a suscriptores (locales + expatriados)",
+          "Reporte de clicks y aperturas tras cada envío",
+          "Paquetes multi-semana con descuentos por rotación"
+        ],
+        "cta": "Patrocinar el Newsletter"
+      },
+      "sponsoredContent": {
+        "title": "Contenido Patrocinado",
+        "subtitle": "Artículos y blog posts que construyen confianza",
+        "bullets": [
+          "Blog posts de 800-1200 palabras en sanluisway.com",
+          "Optimización SEO en página incluida",
+          "Promoción en redes sociales",
+          "Fotografía profesional incluida",
+          "Distribución en nuestro newsletter semanal"
+        ],
+        "cta": "Crear Contenido"
+      },
+      "brandStories": {
+        "title": "Reportajes de Marca",
+        "subtitle": "Historias profundas sobre tu negocio",
+        "bullets": [
+          "Entrevistas con fundadores y propietarios",
+          "Sesión fotográfica profesional",
+          "Video promocional (opcional)",
+          "Posicionamiento como líder local",
+          "Distribución multiplataforma"
+        ],
+        "cta": "Contar Mi Historia"
+      },
+      "specialMentions": {
+        "title": "Menciones Especiales",
+        "subtitle": "Destacados en guías y listados curados",
+        "bullets": [
+          "Inclusión en guías temáticas",
+          "Badges 'Recomendado por SLW'",
+          "Listados editoriales 'Lo Mejor de SLP'",
+          "Mención en el newsletter semanal",
+          "Presencia en eventos virtuales"
+        ],
+        "cta": "Ser Destacado"
+      }
+    },
+    "packages": {
+      "title": "Paquetes Integrales",
+      "subtitle": "Combina múltiples servicios para máximo impacto y ahorro",
+      "perMonth": "/mes",
+      "popular": "Más Popular",
+      "yearlySavings": "Ahorra 17% con el plan anual",
+      "basic": {
+        "name": "Básico",
+        "tagline": "Perfecto para empezar",
+        "price": "$1,500",
+        "features": [
+          "1 Banner en el sitio",
+          "1 Mención en el newsletter",
+          "1 Mención especial",
+          "Reporte mensual de desempeño"
+        ],
+        "cta": "Consultar Precio"
+      },
+      "premium": {
+        "name": "Premium",
+        "tagline": "Máxima visibilidad",
+        "price": "$3,000",
+        "features": [
+          "3 Banners en ubicaciones premium",
+          "1 Patrocinio del newsletter al mes",
+          "2 Blog posts patrocinados",
+          "1 Reportaje de marca",
+          "Múltiples menciones especiales"
+        ],
+        "cta": "Consultar Precio"
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "tagline": "Solución personalizada",
+        "price": "$5,000+",
+        "priceNote": "Adaptado a tus necesidades específicas",
+        "features": [
+          "Campaña 360° personalizada",
+          "Contenido ilimitado",
+          "Patrocinio recurrente del newsletter",
+          "Account manager dedicado",
+          "Análisis avanzado y reportes"
+        ],
+        "cta": "Contactar Ahora"
+      }
+    },
+    "process": {
+      "title": "Nuestro Proceso",
+      "subtitle": "Trabajamos contigo paso a paso para crear la campaña perfecta",
+      "steps": [
+        {
+          "title": "Consulta Inicial",
+          "desc": "Entendemos tus objetivos y audiencia objetivo"
+        },
+        {
+          "title": "Propuesta Personalizada",
+          "desc": "Creamos una estrategia específica para tu marca"
+        },
+        {
+          "title": "Creación de Contenido",
+          "desc": "Nuestro equipo desarrolla todos los materiales"
+        },
+        {
+          "title": "Resultados y Análisis",
+          "desc": "Medimos el impacto y optimizamos continuamente"
+        }
+      ]
+    },
+    "cta": {
+      "title": "¿Listo para Hacer Crecer Tu Marca?",
+      "subtitle": "Únete a las marcas que confían en San Luis Way para conectar con su audiencia ideal",
+      "primary": "Empezar Mi Campaña",
+      "secondary": "Solicitar Información",
+      "note": "Respuesta en 24 horas • Consulta inicial gratuita"
+    },
+    "questions": {
+      "title": "¿Tienes Preguntas?",
+      "subtitle": "Nuestro equipo está aquí para ayudarte a encontrar la solución perfecta para tu marca",
+      "sendMessage": "Enviar Mensaje"
+    }
   }
 }
