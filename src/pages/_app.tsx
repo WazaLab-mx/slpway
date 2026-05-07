@@ -108,12 +108,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       {/* GA4 + Google Ads — both ride on the same gtag.js loader.
           AW-18144279003 = San Luis Way Google Ads account 950-839-2076.
-          The Newsletter Signup conversion event fires from analytics.ts. */}
+          afterInteractive (vs lazyOnload) so Google Ads Tag Assistant can
+          detect the AW config during its scan window — lazyOnload was
+          too late and conversions failed validation. */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-5R48THR70E"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
       />
-      <Script id="ga4" strategy="lazyOnload">
+      <Script id="ga4" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
