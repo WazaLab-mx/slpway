@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { CheckCircleIcon, SparklesIcon, ClockIcon, UserGroupIcon } from '@heroicons/react/24/solid';
+import { ConversionEvents } from '@/lib/analytics';
 
 /**
  * Render the newsletter subscription page for San Luis Way, including the hero signup form, sneak-peek content, benefits grid, final CTA, footer, and a success confirmation view.
@@ -52,6 +53,10 @@ export default function SubscribePage() {
       setMessage(data.alreadySubscribed
         ? "You're already on the list!"
         : 'Welcome to San Luis Way Weekly!');
+
+      if (!data.alreadySubscribed) {
+        ConversionEvents.newsletterSignup('landing_page_optimized');
+      }
 
     } catch (error) {
       setStatus('error');
