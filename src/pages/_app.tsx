@@ -106,7 +106,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-T4LHTQ9C');`}
       </Script>
 
-      {/* GA4 — gtag.js */}
+      {/* GA4 + Google Ads — both ride on the same gtag.js loader.
+          AW-18144279003 = San Luis Way Google Ads account 950-839-2076.
+          The Newsletter Signup conversion event fires from analytics.ts. */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-5R48THR70E"
         strategy="lazyOnload"
@@ -117,6 +119,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-5R48THR70E');
+          gtag('config', 'AW-18144279003');
         `}
       </Script>
 

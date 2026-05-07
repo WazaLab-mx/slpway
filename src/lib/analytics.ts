@@ -17,14 +17,24 @@ export function trackFbEvent(eventName: string, params?: Record<string, unknown>
   }
 }
 
+const GOOGLE_ADS_NEWSLETTER_CONVERSION = 'AW-18144279003/0m7bCMjy56gcENvz7stD';
+
+export function trackGoogleAdsConversion(sendTo: string, value: number, currency: string) {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'conversion', { send_to: sendTo, value, currency });
+  }
+}
+
 // Conversion events
 export const ConversionEvents = {
-  // Fires GA4 newsletter_signup (importable as Google Ads conversion via GA4 link)
-  // AND Meta `Lead` standard event so Meta Ads campaigns optimizing for leads
-  // get attribution. Both sides are wired up in src/pages/_app.tsx.
+  // Fires three signals on a successful newsletter signup:
+  //   1. GA4 `newsletter_signup` (lifetime metric + still importable into Ads)
+  //   2. Meta `Lead` standard event (Meta Ads lead-gen optimization)
+  //   3. Google Ads `conversion` to AW-18144279003 (Search campaign optimization)
   newsletterSignup: (source: string) => {
     trackEvent('newsletter_signup', { source, method: 'email' });
     trackFbEvent('Lead', { content_name: 'newsletter', source });
+    trackGoogleAdsConversion(GOOGLE_ADS_NEWSLETTER_CONVERSION, 1.0, 'MXN');
   },
 
   contactFormSubmit: (subject?: string) =>
