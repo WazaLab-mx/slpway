@@ -45,7 +45,7 @@ export const STATIC_ROUTES: StaticRoute[] = [
   { path: '/breakfast-spots-san-luis-potosi',         changefreq: 'monthly', priority: 0.7 },
   { path: '/weekend-getaways',                        changefreq: 'monthly', priority: 0.7 },
   { path: '/festival-primavera-2026',                 changefreq: 'weekly',  priority: 0.7 },
-  { path: '/events/san-luis-metal-fest-2026',         changefreq: 'weekly',  priority: 0.8 },
+  { path: '/events/cara-sucia-country-fest-2026',     changefreq: 'weekly',  priority: 0.8 },
   { path: '/events/maraton-tangamanga-2026',          changefreq: 'weekly',  priority: 0.8 },
   { path: '/events/fenapo-2026',                      changefreq: 'weekly',  priority: 0.8 },
   { path: '/resources/expat-guide',                   changefreq: 'monthly', priority: 0.8 },

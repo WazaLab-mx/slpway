@@ -20,16 +20,17 @@ interface EventSlide {
 
 const slides: EventSlide[] = [
   {
-    key: 'metalFest',
-    href: '/events/san-luis-metal-fest-2026',
-    image: '/images/events/metal-fest-stage.jpg',
-    gradient: 'from-black/80 via-red-950/70 to-purple-950/80',
-    badgeBg: 'bg-red-500/20 border-red-500/30',
-    badgeText: 'text-red-300',
-    badgeDot: 'bg-red-500',
-    ctaGradient: 'from-red-500 to-red-600',
-    ctaHover: 'hover:from-red-400 hover:to-red-500',
-    ctaShadow: 'shadow-red-500/25',
+    key: 'countryFest',
+    href: '/events/cara-sucia-country-fest-2026',
+    image: '/images/events/cara-sucia-country-fest-2026-banner.png',
+    imageFit: 'cover',
+    gradient: 'from-stone-950/80 via-amber-900/60 to-orange-950/80',
+    badgeBg: 'bg-amber-400/20 border-amber-400/40',
+    badgeText: 'text-amber-200',
+    badgeDot: 'bg-amber-400',
+    ctaGradient: 'from-amber-400 to-amber-500',
+    ctaHover: 'hover:from-amber-300 hover:to-amber-400',
+    ctaShadow: 'shadow-amber-500/25',
   },
   {
     key: 'maraton',

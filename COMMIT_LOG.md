@@ -4,6 +4,54 @@ Log detallado de todos los commits realizados en el proyecto San Luis Way.
 
 ---
 
+## Commit: 2026-05-25 — feat: Replace Metal Fest with Cara Sucia Country Fest 2026
+
+**Contexto:**
+El San Luis Metal Fest 2026 ya ocurrió (16-17 mayo). Se reemplaza esa página del
+sitio con la del próximo evento destacado: **Cara Sucia Country Fest 2026** (13 de
+junio, La Legendaria, SLP). Además se agrega un sponsor ad en el newsletter.
+
+**Archivos creados:**
+- `src/pages/events/cara-sucia-country-fest-2026.tsx` — página completa del festival
+  con SEO + JSON-LD (MusicEvent, FAQ, Breadcrumb), hero con cartel, sección de
+  lineup (imagen del cartel oficial), actividades (BBQ, toro mecánico, rodeo, hat
+  bar, kids zone, mercadito vaquero, full bar), boletos por fase ($380/$480/$580),
+  cómo llegar, sponsors y FAQ. Paleta amber/orange/stone (country aesthetic).
+- `public/images/events/cara-sucia-country-fest-2026-banner.png` — banner oficial
+- `public/images/events/cara-sucia-country-fest-2026-lineup.png` — cartel completo
+- `scripts/create-cara-sucia-country-fest-ad.js` — script que crea sponsor ad en
+  Supabase (`sponsor_ads`) para el newsletter, placement `middle`, prioridad 100,
+  activo hasta 2026-06-13. Ejecutado: ad id `ca6d7be5-c98c-4aaf-8d55-9ea90dd5f0f1`.
+
+**Archivos modificados:**
+- `public/locales/{es,en,de,ja}/common.json` — reemplazado `metalFest`/`metalFest2026`
+  por `countryFest`/`countryFest2026` en los 4 locales (hero, stats, lineup,
+  activities, tickets, gettingThere, sponsors, faq, cta).
+- `src/components/EventCarouselBanner.tsx` — slide del carousel ahora apunta a
+  country fest con paleta amber/stone.
+- `src/lib/sitemap/static-routes.ts` — ruta del sitemap actualizada.
+- `next.config.js` — redirect 301 permanente
+  `/events/san-luis-metal-fest-2026` → `/events/cara-sucia-country-fest-2026`
+  para preservar SEO equity de blog posts publicados que aún linkean al viejo URL.
+
+**Archivos eliminados:**
+- `src/pages/events/san-luis-metal-fest-2026.tsx`
+
+**Investigación del evento:**
+- Fecha: sábado 13 junio 2026 · Acceso 2:00 PM
+- Venue: La Legendaria — Lib. Sur Anillo Perif. 720, Garita de Jalisco, 78294 SLP
+- Boletos: Superboletos, escalonados $380 → $480 → $580 MXN
+- Sponsors: Ford SS San Luis (powered by), Grupo La Gran Canica, Superboletos
+- Organizador: Cara Sucia BBQ (@soycarasucia)
+- Actividades: BBQ ahumado, toro mecánico, juegos de rodeo, hat customization,
+  zona infantil (menores de 5 gratis), mercadito vaquero, bar completo.
+- Fuentes: guiadehoy.com, superboletos.com, Instagram @soycarasucia.
+- Lineup específico no se hardcodea en el código — se muestra como imagen del
+  cartel oficial (cara-sucia-country-fest-2026-lineup.png) para evitar publicar
+  nombres incorrectos. Cuando el lineup se confirme, actualizar la sección.
+
+---
+
 ## DB Update: 2026-04-13
 
 **Descripción:** Agregar eventos familiares de abril a Supabase (family_friendly: true)

@@ -1024,19 +1024,19 @@
     "cta": "See full schedule"
   },
   "eventCarousel": {
-    "metalFest": {
-      "badge": "May 16 — 17, 2026",
-      "title": "San Luis Metal Fest",
-      "description": "1st edition. FREE ENTRY. Marduk, Possessed, Metal Church and more at FENAPO grounds.",
-      "cta": "See full lineup",
-      "stat1Value": "2",
-      "stat1Label": "Days",
-      "stat2Value": "30K+",
-      "stat2Label": "Attendees",
-      "stat3Value": "Free",
-      "stat3Label": "Entry",
-      "stat4Value": "8+",
-      "stat4Label": "Countries"
+    "countryFest": {
+      "badge": "June 13, 2026",
+      "title": "Cara Sucia Country Fest",
+      "description": "SLP's 1st country music festival. Live music, BBQ, mechanical bull and more at La Legendaria.",
+      "cta": "See the poster",
+      "stat1Value": "1st",
+      "stat1Label": "Edition",
+      "stat2Value": "$380",
+      "stat2Label": "From MXN",
+      "stat3Value": "2 PM",
+      "stat3Label": "Doors",
+      "stat4Value": "Family",
+      "stat4Label": "Friendly"
     },
     "maraton": {
       "badge": "Jun 28, 2026",
@@ -1067,164 +1067,141 @@
       "stat4Label": "Zones"
     }
   },
-  "metalFest2026": {
+  "countryFest2026": {
     "seo": {
-      "title": "San Luis Metal Fest 2026 — Free Metal Festival in San Luis Potosí",
-      "description": "San Luis Metal Fest 2026: May 16-17. FREE ENTRY. Marduk, Possessed, Metal Church, Grave, Armored Saint and more. First international metal festival in SLP. Lineup, schedule and attendee guide.",
-      "keywords": "san luis metal fest 2026, metal festival san luis potosi, metal fest slp, metal concerts mexico, marduk mexico 2026, possessed mexico 2026"
+      "title": "Cara Sucia Country Fest 2026 — Country Music Festival in San Luis Potosí",
+      "description": "Cara Sucia Country Fest 2026: Saturday June 13 at La Legendaria, SLP. Live country music, BBQ, mechanical bull, rodeo games and a western marketplace. Tickets from $380 MXN on Superboletos.",
+      "keywords": "cara sucia country fest 2026, country festival san luis potosi, country fest slp, country concerts mexico, la legendaria slp, june 13 2026 festival"
     },
     "hero": {
-      "badge": "1ST EDITION — FREE ENTRY",
-      "date": "May 16 — 17, 2026",
-      "title": "San Luis Metal Fest",
-      "subtitle": "The Awakening of Darkness",
-      "description": "The first international metal festival in San Luis Potosí. Two days of legendary bands from 8 countries, gastronomy, Huasteca culture and Mexico's best metal community.",
-      "cta": "Register for free",
+      "badge": "1ST EDITION — POWERED BY FORD SS",
+      "date": "Saturday, June 13, 2026 · Doors 2:00 PM",
+      "title": "Cara Sucia Country Fest",
+      "subtitle": "Howdy y'all 🤠 — Music, BBQ & Cowboy Spirit",
+      "description": "San Luis Potosí's first big country festival. A full day of live country music, slow-smoked BBQ, mechanical bull, rodeo games and a western marketplace at La Legendaria.",
+      "cta": "Buy tickets",
       "ctaLineup": "See lineup",
-      "location": "San Luis Potosí, capital of the state of San Luis Potosí, Mexico"
+      "location": "La Legendaria, Garita de Jalisco, San Luis Potosí",
+      "bannerAlt": "Official Cara Sucia Country Fest 2026 banner — June 13 at La Legendaria, SLP"
     },
     "stats": {
-      "days": "Days",
-      "daysValue": "2",
-      "bands": "Bands",
-      "bandsValue": "15+",
-      "attendees": "Expected attendees",
-      "attendeesValue": "30,000+",
-      "countries": "Countries",
-      "countriesValue": "8+",
-      "price": "Entry",
-      "priceValue": "Free"
+      "date": "June",
+      "dateValue": "13",
+      "gates": "Doors",
+      "gatesValue": "2 PM",
+      "price": "From MXN",
+      "priceValue": "$380",
+      "family": "Family",
+      "familyValue": "Friendly"
     },
     "lineup": {
       "title": "Official Lineup",
-      "subtitle": "Legendary bands from thrash, death, black and heavy metal around the world.",
-      "day1": "Day 1 — Saturday, May 16",
-      "day2": "Day 2 — Sunday, May 17",
-      "headliners": "Headliners",
-      "scheduleTbc": "Schedule TBC",
-      "bands": {
-        "marduk": {
-          "name": "Marduk",
-          "genre": "Black Metal",
-          "country": "Sweden"
+      "subtitle": "A full day of the best country, americana and folk at La Legendaria.",
+      "posterAlt": "Full artist lineup poster for Cara Sucia Country Fest 2026",
+      "posterNote": "Official lineup published by"
+    },
+    "activities": {
+      "title": "Way More Than a Concert",
+      "subtitle": "A full day of western experiences for the whole family.",
+      "items": {
+        "bbq": {
+          "icon": "🥩",
+          "title": "Cara Sucia BBQ",
+          "desc": "Cara Sucia's slow-smoked BBQ menu available all day long."
         },
-        "metalChurch": {
-          "name": "Metal Church",
-          "genre": "Heavy / Power Metal",
-          "country": "USA"
+        "mechanicalBull": {
+          "icon": "🐂",
+          "title": "Mechanical Bull",
+          "desc": "Hop on the mechanical bull and show off your cowboy grit. Open to all ages."
         },
-        "possessed": {
-          "name": "Possessed",
-          "genre": "Death Metal",
-          "country": "USA"
+        "rodeo": {
+          "icon": "🤠",
+          "title": "Rodeo Games",
+          "desc": "Lassoing, horseshoes and classic rodeo games to live the western experience."
         },
-        "grave": {
-          "name": "Grave",
-          "genre": "Death Metal",
-          "country": "Sweden"
+        "hatBar": {
+          "icon": "🪶",
+          "title": "Hat Customization Bar",
+          "desc": "Personalize your cowboy hat on-site with feathers, bands and unique hardware."
         },
-        "armoredSaint": {
-          "name": "Armored Saint",
-          "genre": "Heavy Metal",
-          "country": "USA"
+        "kids": {
+          "icon": "🧒",
+          "title": "Kids Zone",
+          "desc": "Play area for the little ones. Kids under 5 enter free."
         },
-        "crimsonGlory": {
-          "name": "Crimson Glory",
-          "genre": "Progressive Metal",
-          "country": "USA"
+        "market": {
+          "icon": "👢",
+          "title": "Western Marketplace",
+          "desc": "Local brands featuring country clothing, boots, jewelry, hats and accessories."
         },
-        "pestilence": {
-          "name": "Pestilence",
-          "genre": "Death Metal",
-          "country": "Netherlands"
-        },
-        "sacrifice": {
-          "name": "Sacrifice",
-          "genre": "Thrash Metal",
-          "country": "Canada"
-        },
-        "hirax": {
-          "name": "Hirax",
-          "genre": "Thrash Metal",
-          "country": "USA"
-        },
-        "hellripper": {
-          "name": "Hellripper",
-          "genre": "Speed / Black Metal",
-          "country": "Scotland"
-        },
-        "bloodFeast": {
-          "name": "Blood Feast",
-          "genre": "Thrash Metal",
-          "country": "USA"
+        "drinks": {
+          "icon": "🥃",
+          "title": "Full Bar",
+          "desc": "Signature cocktails, beer, wine, alcohol-free mocktails and water available."
         }
       }
     },
-    "registration": {
-      "title": "How to Register",
-      "subtitle": "Entry is free but requires pre-registration.",
-      "step1Title": "Visit the official site",
-      "step1Desc": "Go to the San Luis Metal Fest registration page.",
-      "step2Title": "Complete your registration",
-      "step2Desc": "Provide your name, email address and official ID.",
-      "step3Title": "Get your confirmation",
-      "step3Desc": "You'll receive an email with your access code and event instructions.",
-      "note": "Valid government-issued ID is required for entry."
-    },
-    "attendeeGuide": {
-      "title": "Attendee Guide",
-      "subtitle": "Everything you need to know to enjoy the festival.",
-      "bringTitle": "What to bring",
-      "bringItems": "Sunscreen, ear plugs, reusable water bottle, cash and cards, comfortable clothes and shoes, official ID",
-      "prohibitedTitle": "Prohibited items",
-      "prohibitedItems": "Weapons and sharp objects, glass bottles, illegal drugs, pets, drones, folding chairs",
-      "tipsTitle": "Pit Etiquette",
-      "tipsDesc": "If someone falls, pick them up. Respect others' boundaries. Stay hydrated between sets. Side areas are great if you prefer watching without contact."
-    },
-    "culture": {
-      "title": "More Than Metal: Food & Culture",
-      "subtitle": "The festival features unique experiences celebrating the richness of San Luis Potosí.",
-      "gastroTitle": "Gastronomy Pavilion",
-      "gastroDesc": "Try enchiladas potosinas, Huasteca tacos, zacahuil and more regional delicacies. Food trucks and craft beverages available.",
-      "huastecaTitle": "Huasteca Culture Pavilion",
-      "huastecaDesc": "Huasteca art exhibition, traditional dances, handicrafts and huapango music. A window into the state's cultural heritage."
+    "tickets": {
+      "title": "Phased Tickets",
+      "subtitle": "Phased pricing — the earlier you buy, the less you pay. Sold exclusively on Superboletos.",
+      "phase1": {
+        "label": "Phase 1",
+        "price": "$380",
+        "status": "Sold out"
+      },
+      "phase2": {
+        "label": "Phase 2",
+        "price": "$480",
+        "status": "Sold out"
+      },
+      "phase3": {
+        "label": "Phase 3 — Current",
+        "price": "$580",
+        "status": "Available now"
+      },
+      "note": "Prices in MXN. Kids under 5 enter free accompanied by an adult.",
+      "cta": "Buy on Superboletos"
     },
     "gettingThere": {
       "title": "Getting There",
-      "venue": "Teatro del Pueblo — FENAPO Grounds",
-      "address": "Av. Fco. Martínez de la Vega No. 255, San Luis Potosí",
+      "venue": "La Legendaria",
+      "address": "Lib. Sur Anillo Perif. 720, Garita de Jalisco, 78294 San Luis Potosí, S.L.P.",
+      "gates": "Doors open: 2:00 PM",
       "byCarTitle": "By car",
-      "byCarDesc": "Ample parking available at the venue. From downtown, take Av. Salvador Nava south (~15 min).",
+      "byCarDesc": "Take the South Periférico to Garita de Jalisco. On-site parking available.",
       "byTransitTitle": "Public transit",
-      "byTransitDesc": "Bus routes passing FENAPO grounds: 10, 12, 17. Taxis and Uber readily available.",
+      "byTransitDesc": "Bus routes along South Periférico. Uber, DiDi and taxis recommended, especially for the ride home.",
       "byPlaneTitle": "From the airport",
-      "byPlaneDesc": "SLP Airport (BJX) is a 20-minute drive. Taxis available at the terminal.",
+      "byPlaneDesc": "SLP International Airport (SLP) is ~25 min away by car. Taxis and rentals available at the terminal.",
       "hotelsTitle": "Nearby hotels",
-      "hotelsDesc": "Hotels along Av. Carranza and Centro Histórico (10-15 min from venue). Book in advance."
+      "hotelsDesc": "Zona Industrial, Av. Salvador Nava and Centro Histórico (15-25 min). Book in advance."
+    },
+    "sponsors": {
+      "title": "Powered by"
     },
     "faq": {
       "title": "Frequently Asked Questions",
-      "q1": "Is San Luis Metal Fest really free?",
-      "a1": "Yes. Entry is completely free, but online pre-registration is required. You'll receive an access code via email.",
-      "q2": "Can minors attend?",
-      "a2": "Yes, minors can attend accompanied by a responsible adult with valid ID. Hearing protection is recommended for children.",
-      "q3": "Can I bring my own water?",
-      "a3": "Yes, reusable water bottles are allowed (no glass). Free hydration stations will also be available inside the venue.",
-      "q4": "Is re-entry allowed?",
-      "a4": "Yes, re-entry is allowed by showing your access wristband. Don't lose your wristband.",
-      "q5": "Are there ATMs at the venue?",
-      "a5": "Yes, there are ATMs inside the FENAPO grounds. However, bringing cash is recommended as some food vendors may not accept cards.",
-      "q6": "Can I bring a camera?",
-      "a6": "Compact cameras and phones are allowed. Professional cameras with detachable lenses require press accreditation.",
-      "q7": "Is the venue accessible for people with disabilities?",
-      "a7": "Yes, the FENAPO grounds have access ramps and designated areas for people with disabilities.",
-      "q8": "What time should I arrive?",
-      "a8": "Gates open at 12:00 PM. Arriving early is recommended to avoid lines and get a good spot near the stage."
+      "q1": "When and where is Cara Sucia Country Fest 2026?",
+      "a1": "Saturday June 13, 2026 at La Legendaria, located at Lib. Sur Anillo Perif. 720, Garita de Jalisco, 78294 San Luis Potosí, S.L.P. Doors open at 2:00 PM.",
+      "q2": "How much are tickets and where do I buy them?",
+      "a2": "Tickets are sold in phases (Phase 1 $380, Phase 2 $480, Phase 3 $580 MXN). Sold exclusively on Superboletos. Buy early for the best price.",
+      "q3": "Is this a family event? Can kids attend?",
+      "a3": "Yes, it's a family-friendly festival. Kids under 5 enter free accompanied by an adult. There's a dedicated kids zone with activities for the little ones.",
+      "q4": "Will there be food at the festival?",
+      "a4": "Yes. Cara Sucia BBQ serves its smoked menu throughout the event, plus guest food trucks and a full bar with cocktails, beer, wine and alcohol-free options.",
+      "q5": "What bands or artists are performing?",
+      "a5": "Check the official lineup poster on this page for the full bill. For updates, follow @soycarasucia on Instagram.",
+      "q6": "Can I wear my cowboy hat, boots and western outfit?",
+      "a6": "Absolutely — full country dress code is welcome. There's also an on-site Hat Customization Bar if you want to personalize your hat at the festival.",
+      "q7": "Is there parking?",
+      "a7": "Yes, parking is available at La Legendaria. We recommend arriving early or using Uber/DiDi during peak hours.",
+      "q8": "What happens if it rains?",
+      "a8": "The event is mostly outdoors. Light rain doesn't stop the show; bring a poncho or umbrella. Follow @soycarasucia for any weather updates."
     },
     "cta": {
-      "title": "Don't Miss San Luis Metal Fest 2026",
-      "description": "The first international metal festival in San Luis Potosí. Two days of extreme music, gastronomy and culture. Free entry.",
-      "register": "Register for free",
+      "title": "Don't Miss Cara Sucia Country Fest 2026",
+      "description": "A full cowboy day with BBQ, live country music and unique experiences. Saturday June 13 at La Legendaria, SLP.",
+      "buy": "Buy tickets",
       "moreEvents": "See more events in SLP"
     }
   },

@@ -148,6 +148,14 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      // Metal Fest happened May 16-17, 2026. Page was removed and the slot
+      // reused for Cara Sucia Country Fest. Redirect preserves SEO equity
+      // and prevents 404s from existing blog posts that still link out.
+      {
+        source: '/events/san-luis-metal-fest-2026',
+        destination: '/events/cara-sucia-country-fest-2026',
+        permanent: true,
+      },
     ];
   },
   env: {

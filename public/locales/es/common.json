@@ -1024,19 +1024,19 @@
     "cta": "Ver programa completo"
   },
   "eventCarousel": {
-    "metalFest": {
-      "badge": "16 — 17 May 2026",
-      "title": "San Luis Metal Fest",
-      "description": "1ra edición. Entrada GRATUITA. Marduk, Possessed, Metal Church y más en el recinto FENAPO.",
-      "cta": "Ver cartel completo",
-      "stat1Value": "2",
-      "stat1Label": "Días",
-      "stat2Value": "30K+",
-      "stat2Label": "Asistentes",
-      "stat3Value": "Gratis",
-      "stat3Label": "Entrada",
-      "stat4Value": "8+",
-      "stat4Label": "Países"
+    "countryFest": {
+      "badge": "13 Junio 2026",
+      "title": "Cara Sucia Country Fest",
+      "description": "1ra edición del festival country de SLP. Música en vivo, BBQ, toro mecánico y mucho más en La Legendaria.",
+      "cta": "Ver el cartel",
+      "stat1Value": "1ra",
+      "stat1Label": "Edición",
+      "stat2Value": "$380",
+      "stat2Label": "Desde MXN",
+      "stat3Value": "2 PM",
+      "stat3Label": "Acceso",
+      "stat4Value": "Familiar",
+      "stat4Label": "Apto"
     },
     "maraton": {
       "badge": "28 Jun 2026",
@@ -1067,164 +1067,141 @@
       "stat4Label": "Zonas"
     }
   },
-  "metalFest2026": {
+  "countryFest2026": {
     "seo": {
-      "title": "San Luis Metal Fest 2026 — Festival de Metal Gratuito en San Luis Potosí",
-      "description": "San Luis Metal Fest 2026: 16-17 de mayo. Entrada GRATUITA. Marduk, Possessed, Metal Church, Grave, Armored Saint y más. Primer festival internacional de metal en SLP. Cartel, horarios y guía del asistente.",
-      "keywords": "san luis metal fest 2026, festival metal san luis potosi, metal fest slp, conciertos metal mexico, marduk mexico 2026, possessed mexico 2026"
+      "title": "Cara Sucia Country Fest 2026 — Festival Country en San Luis Potosí",
+      "description": "Cara Sucia Country Fest 2026: sábado 13 de junio en La Legendaria, SLP. Música country en vivo, BBQ, toro mecánico, juegos de rodeo y mercado vaquero. Boletos desde $380 MXN en Superboletos.",
+      "keywords": "cara sucia country fest 2026, festival country san luis potosi, country fest slp, conciertos country mexico, la legendaria slp, festival 13 junio 2026"
     },
     "hero": {
-      "badge": "1RA EDICIÓN — ENTRADA GRATUITA",
-      "date": "16 — 17 de Mayo, 2026",
-      "title": "San Luis Metal Fest",
-      "subtitle": "El Despertar de la Oscuridad",
-      "description": "El primer festival internacional de metal en San Luis Potosí. Dos días de bandas legendarias de 8 países, gastronomía, cultura Huasteca y la mejor comunidad metalera de México.",
-      "cta": "Regístrate gratis",
+      "badge": "1RA EDICIÓN — POWERED BY FORD SS",
+      "date": "Sábado 13 de Junio, 2026 · Acceso 2:00 PM",
+      "title": "Cara Sucia Country Fest",
+      "subtitle": "Howdy y'all 🤠 — Música, BBQ y Espíritu Vaquero",
+      "description": "El primer gran festival country de San Luis Potosí. Una jornada de música country en vivo, BBQ al humo todo el día, toro mecánico, juegos de rodeo y mercadito vaquero en La Legendaria.",
+      "cta": "Comprar boletos",
       "ctaLineup": "Ver cartel",
-      "location": "San Luis Potosí, capital del estado de San Luis Potosí, México"
+      "location": "La Legendaria, Garita de Jalisco, San Luis Potosí",
+      "bannerAlt": "Cartel oficial del Cara Sucia Country Fest 2026 — 13 de junio en La Legendaria, SLP"
     },
     "stats": {
-      "days": "Días",
-      "daysValue": "2",
-      "bands": "Bandas",
-      "bandsValue": "15+",
-      "attendees": "Asistentes esperados",
-      "attendeesValue": "30,000+",
-      "countries": "Países",
-      "countriesValue": "8+",
-      "price": "Entrada",
-      "priceValue": "Gratis"
+      "date": "Junio",
+      "dateValue": "13",
+      "gates": "Acceso",
+      "gatesValue": "2 PM",
+      "price": "Desde MXN",
+      "priceValue": "$380",
+      "family": "Apto",
+      "familyValue": "Familiar"
     },
     "lineup": {
       "title": "Cartel Oficial",
-      "subtitle": "Bandas legendarias de thrash, death, black y heavy metal de todo el mundo.",
-      "day1": "Día 1 — Sábado 16 de Mayo",
-      "day2": "Día 2 — Domingo 17 de Mayo",
-      "headliners": "Headliners",
-      "scheduleTbc": "Horarios por confirmar",
-      "bands": {
-        "marduk": {
-          "name": "Marduk",
-          "genre": "Black Metal",
-          "country": "Suecia"
+      "subtitle": "Un día con lo mejor del country, americana y folk en La Legendaria.",
+      "posterAlt": "Cartel completo de artistas del Cara Sucia Country Fest 2026",
+      "posterNote": "Cartel oficial publicado por"
+    },
+    "activities": {
+      "title": "Mucho Más que un Concierto",
+      "subtitle": "Una jornada completa de experiencias vaqueras para toda la familia.",
+      "items": {
+        "bbq": {
+          "icon": "🥩",
+          "title": "BBQ Cara Sucia",
+          "desc": "Menú BBQ ahumado al estilo Cara Sucia disponible durante todo el evento."
         },
-        "metalChurch": {
-          "name": "Metal Church",
-          "genre": "Heavy / Power Metal",
-          "country": "EE.UU."
+        "mechanicalBull": {
+          "icon": "🐂",
+          "title": "Toro Mecánico",
+          "desc": "Sube al toro mecánico y demuestra tu temple vaquero. Apto para todas las edades."
         },
-        "possessed": {
-          "name": "Possessed",
-          "genre": "Death Metal",
-          "country": "EE.UU."
+        "rodeo": {
+          "icon": "🤠",
+          "title": "Juegos de Rodeo",
+          "desc": "Lazos, herraduras y juegos clásicos del rodeo para que vivas la experiencia western."
         },
-        "grave": {
-          "name": "Grave",
-          "genre": "Death Metal",
-          "country": "Suecia"
+        "hatBar": {
+          "icon": "🪶",
+          "title": "Hat Customization Bar",
+          "desc": "Personaliza tu sombrero vaquero en sitio con plumas, cintas y herrajes únicos."
         },
-        "armoredSaint": {
-          "name": "Armored Saint",
-          "genre": "Heavy Metal",
-          "country": "EE.UU."
+        "kids": {
+          "icon": "🧒",
+          "title": "Zona Infantil",
+          "desc": "Área de juegos para los más pequeños. Menores de 5 años entran gratis."
         },
-        "crimsonGlory": {
-          "name": "Crimson Glory",
-          "genre": "Progressive Metal",
-          "country": "EE.UU."
+        "market": {
+          "icon": "👢",
+          "title": "Mercadito Vaquero",
+          "desc": "Marcas locales con ropa country, botas, joyería, sombreros y accesorios."
         },
-        "pestilence": {
-          "name": "Pestilence",
-          "genre": "Death Metal",
-          "country": "Países Bajos"
-        },
-        "sacrifice": {
-          "name": "Sacrifice",
-          "genre": "Thrash Metal",
-          "country": "Canadá"
-        },
-        "hirax": {
-          "name": "Hirax",
-          "genre": "Thrash Metal",
-          "country": "EE.UU."
-        },
-        "hellripper": {
-          "name": "Hellripper",
-          "genre": "Speed / Black Metal",
-          "country": "Escocia"
-        },
-        "bloodFeast": {
-          "name": "Blood Feast",
-          "genre": "Thrash Metal",
-          "country": "EE.UU."
+        "drinks": {
+          "icon": "🥃",
+          "title": "Bar Completo",
+          "desc": "Cocteles de autor, cervezas, vino, mocktails sin alcohol y agua disponibles."
         }
       }
     },
-    "registration": {
-      "title": "Cómo Registrarse",
-      "subtitle": "La entrada es gratuita pero requiere registro previo.",
-      "step1Title": "Visita el sitio oficial",
-      "step1Desc": "Accede a la página de registro del San Luis Metal Fest.",
-      "step2Title": "Completa tu registro",
-      "step2Desc": "Proporciona tu nombre, correo electrónico e identificación oficial.",
-      "step3Title": "Recibe tu confirmación",
-      "step3Desc": "Recibirás un correo con tu código de acceso y las instrucciones del evento.",
-      "note": "Se requiere identificación oficial vigente para el acceso."
-    },
-    "attendeeGuide": {
-      "title": "Guía del Asistente",
-      "subtitle": "Todo lo que necesitas saber para disfrutar el festival.",
-      "bringTitle": "Qué llevar",
-      "bringItems": "Protector solar, tapones para oídos, agua reutilizable, efectivo y tarjetas, ropa y calzado cómodo, identificación oficial",
-      "prohibitedTitle": "Objetos prohibidos",
-      "prohibitedItems": "Armas y objetos punzocortantes, botellas de vidrio, drogas ilegales, mascotas, drones, sillas plegables",
-      "tipsTitle": "Tips para el Pit",
-      "tipsDesc": "Si alguien se cae, levántalo. Respeta los límites de los demás. Mantente hidratado entre sets. Las áreas laterales son ideales si prefieres ver sin contacto."
-    },
-    "culture": {
-      "title": "Más que Metal: Gastronomía y Cultura",
-      "subtitle": "El festival incluye experiencias únicas que celebran la riqueza de San Luis Potosí.",
-      "gastroTitle": "Pabellón Gastronómico",
-      "gastroDesc": "Prueba enchiladas potosinas, tacos huastecos, zacahuil y más delicias regionales. Food trucks y bebidas artesanales.",
-      "huastecaTitle": "Pabellón de Cultura Huasteca",
-      "huastecaDesc": "Exposición de arte huasteco, danzas tradicionales, artesanías y música de huapango. Una ventana a la herencia cultural del estado."
+    "tickets": {
+      "title": "Boletos por Fase",
+      "subtitle": "Precios escalonados — entre antes pagas menos. Venta exclusiva en Superboletos.",
+      "phase1": {
+        "label": "Fase 1",
+        "price": "$380",
+        "status": "Agotada"
+      },
+      "phase2": {
+        "label": "Fase 2",
+        "price": "$480",
+        "status": "Agotada"
+      },
+      "phase3": {
+        "label": "Fase 3 — Actual",
+        "price": "$580",
+        "status": "Disponible ahora"
+      },
+      "note": "Precios en MXN. Menores de 5 años entran gratis acompañados de un adulto.",
+      "cta": "Comprar en Superboletos"
     },
     "gettingThere": {
       "title": "Cómo Llegar",
-      "venue": "Teatro del Pueblo — Recinto FENAPO",
-      "address": "Av. Fco. Martínez de la Vega No. 255, San Luis Potosí",
+      "venue": "La Legendaria",
+      "address": "Lib. Sur Anillo Perif. 720, Garita de Jalisco, 78294 San Luis Potosí, S.L.P.",
+      "gates": "Apertura de puertas: 2:00 PM",
       "byCarTitle": "En auto",
-      "byCarDesc": "Estacionamiento amplio disponible en el recinto. Desde el centro, toma Av. Salvador Nava hacia el sur (~15 min).",
+      "byCarDesc": "Toma el Anillo Periférico Sur hasta la Garita de Jalisco. Estacionamiento disponible en el predio.",
       "byTransitTitle": "Transporte público",
-      "byTransitDesc": "Rutas de camión que pasan por el recinto FENAPO: 10, 12, 17. Taxis y Uber disponibles.",
+      "byTransitDesc": "Rutas que circulan por el Periférico Sur. Uber, DiDi y taxis recomendados, especialmente para el regreso.",
       "byPlaneTitle": "Desde el aeropuerto",
-      "byPlaneDesc": "El Aeropuerto de SLP (BJX) está a 20 minutos en auto. Taxis disponibles en la terminal.",
+      "byPlaneDesc": "El Aeropuerto Internacional de SLP (SLP) está a ~25 min en auto. Hay taxis y rentas de auto en la terminal.",
       "hotelsTitle": "Hospedaje cercano",
-      "hotelsDesc": "Hoteles en la zona de Av. Carranza y Centro Histórico (10-15 min del recinto). Reserva con anticipación."
+      "hotelsDesc": "Zona Industrial, Av. Salvador Nava y Centro Histórico (15-25 min). Reserva con anticipación."
+    },
+    "sponsors": {
+      "title": "Powered by"
     },
     "faq": {
       "title": "Preguntas Frecuentes",
-      "q1": "¿El San Luis Metal Fest es realmente gratis?",
-      "a1": "Sí. La entrada es completamente gratuita, pero se requiere registro previo en línea. Recibirás un código de acceso por correo electrónico.",
-      "q2": "¿Pueden entrar menores de edad?",
-      "a2": "Sí, menores de edad pueden asistir acompañados de un adulto responsable con identificación oficial. Se recomienda protección auditiva para niños.",
-      "q3": "¿Puedo llevar mi propia agua?",
-      "a3": "Sí, se permite llevar botellas de agua reutilizables (no vidrio). También habrá estaciones de hidratación gratuitas dentro del recinto.",
-      "q4": "¿Hay reingreso?",
-      "a4": "Sí, se permite el reingreso mostrando tu pulsera de acceso. No pierdas tu pulsera.",
-      "q5": "¿Hay cajeros automáticos en el recinto?",
-      "a5": "Sí, hay cajeros dentro del recinto FENAPO. Sin embargo, se recomienda traer efectivo ya que algunos puestos de comida no aceptan tarjeta.",
-      "q6": "¿Puedo llevar cámara fotográfica?",
-      "a6": "Cámaras compactas y teléfonos están permitidos. Cámaras profesionales con lente desmontable requieren acreditación de prensa.",
-      "q7": "¿El recinto es accesible para personas con discapacidad?",
-      "a7": "Sí, el Recinto FENAPO cuenta con rampas de acceso y áreas designadas para personas con discapacidad.",
-      "q8": "¿A qué hora debo llegar?",
-      "a8": "Las puertas abren a las 12:00 PM. Se recomienda llegar temprano para evitar filas y asegurar buen lugar frente al escenario."
+      "q1": "¿Cuándo y dónde es el Cara Sucia Country Fest 2026?",
+      "a1": "El sábado 13 de junio de 2026 en La Legendaria, ubicada en Lib. Sur Anillo Perif. 720, Garita de Jalisco, 78294 San Luis Potosí, S.L.P. La apertura de puertas es a las 2:00 PM.",
+      "q2": "¿Cuánto cuestan los boletos y dónde los compro?",
+      "a2": "Los boletos están en preventa por fases (Fase 1 $380, Fase 2 $480, Fase 3 $580 MXN). La venta es exclusiva en Superboletos. Reserva antes para asegurar el mejor precio.",
+      "q3": "¿Es un evento familiar? ¿Pueden entrar niños?",
+      "a3": "Sí, es un festival apto para toda la familia. Los menores de 5 años entran gratis acompañados de un adulto. Hay zona infantil y actividades para los más pequeños.",
+      "q4": "¿Habrá comida en el festival?",
+      "a4": "Sí. Cara Sucia BBQ ofrece su menú ahumado durante todo el evento, además de food trucks invitados y un bar completo con cocteles, cervezas, vino y opciones sin alcohol.",
+      "q5": "¿Qué bandas o artistas se presentan?",
+      "a5": "Consulta el cartel oficial en esta página para ver el lineup completo. Para actualizaciones síguenos en @soycarasucia en Instagram.",
+      "q6": "¿Puedo entrar con mi sombrero, botas y atuendo vaquero?",
+      "a6": "¡Por supuesto! El dress code country es bienvenido. Habrá un Hat Customization Bar dentro del festival si quieres personalizar tu sombrero en sitio.",
+      "q7": "¿Hay estacionamiento?",
+      "a7": "Sí, hay estacionamiento disponible en el predio de La Legendaria. Recomendamos llegar temprano o usar Uber/DiDi en horarios pico.",
+      "q8": "¿Qué pasa si llueve?",
+      "a8": "El evento se realiza en gran parte al aire libre. En caso de lluvia ligera el festival continúa; trae impermeable o sombrilla. Sigue @soycarasucia para cualquier actualización del clima."
     },
     "cta": {
-      "title": "No te pierdas el San Luis Metal Fest 2026",
-      "description": "El primer festival internacional de metal en San Luis Potosí. Dos días de música extrema, gastronomía y cultura. Entrada gratuita.",
-      "register": "Regístrate gratis",
+      "title": "No te pierdas el Cara Sucia Country Fest 2026",
+      "description": "Una jornada vaquera con BBQ, música country en vivo y experiencias únicas. Sábado 13 de junio en La Legendaria, SLP.",
+      "buy": "Comprar boletos",
       "moreEvents": "Ver más eventos en SLP"
     }
   },
