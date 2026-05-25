@@ -126,7 +126,7 @@ async function createSponsorAd() {
     placement: 'middle',
     priority: 100,
     active: true,
-    start_date: '2026-05-26',
+    start_date: new Date().toISOString().split('T')[0],
     end_date: '2026-06-13',
     rotation_group: 'featured-event',
   };
