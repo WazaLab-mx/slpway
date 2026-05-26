@@ -50,11 +50,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       html: result.html,
     });
   } catch (error) {
+    const detail =
+      error instanceof Error
+        ? `${error.name}: ${error.message}`
+        : typeof error === 'string'
+          ? error
+          : JSON.stringify(error);
     logger.error('Chat-edit error:', error);
     return res.status(500).json({
       success: false,
-      message: 'Chat-edit failed',
-      error: error instanceof Error ? error.message : 'Unknown error',
+      message: detail,
+      error: detail,
     });
   }
 }

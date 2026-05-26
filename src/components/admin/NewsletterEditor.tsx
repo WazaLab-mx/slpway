@@ -18,26 +18,45 @@ interface NewsletterEditorProps {
   onClose: () => void;
 }
 
-// Section patterns for parsing (client-side version)
-const SECTION_MARKERS = [
-  { id: 'opening', name: '👋 Opening Hook', pattern: /<!-- OPENING HOOK -->/i, editable: true },
-  { id: 'weather', name: '🌦️ Weather Watch', pattern: /🌦️ Weather Watch/i, editable: true },
-  { id: 'market_watch', name: '💰 Market Watch', pattern: /💰 Market Watch/i, editable: true },
-  { id: 'news', name: '📰 The Week in SLP', pattern: /📰 The Week in SLP/i, editable: true },
-  { id: 'events', name: '🌟 Top Picks', pattern: /🌟 This Week's Top Picks/i, editable: true },
-  { id: 'more_events', name: '🎭 More This Week', pattern: /🎭 More This Week/i, editable: true },
-{ id: 'fact', name: '🧠 Did You Know?', pattern: /🧠 Did You Know/i, editable: true },
-  { id: 'spot_of_the_week', name: '📍 Spot of the Week', pattern: /📍 Spot of the Week/i, editable: true },
-  { id: 'around_town', name: '🏙️ Around Town', pattern: /🏙️ Around Town/i, editable: true },
-  { id: 'escape', name: '🌿 Weekend Escape', pattern: /🌿 Weekend Escape/i, editable: true },
-  { id: 'coming_up', name: '📅 Coming Up', pattern: /📅 Coming Up/i, editable: true },
-  { id: 'ask_an_expat', name: '🙋 Ask an Expat', pattern: /🙋 Ask an Expat/i, editable: true },
-  { id: 'tip', name: '💡 Pro Tip', pattern: /💡 Expat Pro Tip/i, editable: true },
-  { id: 'spanish_corner', name: '🗣️ Spanish Corner', pattern: /🗣️ Spanish Corner/i, editable: true },
-  { id: 'blog', name: '📖 From the Blog', pattern: /📖 From the Blog/i, editable: false },
-  { id: 'community_spotlight', name: '✨ Community Spotlight', pattern: /✨ Community Spotlight/i, editable: true },
-  { id: 'comunidad', name: '🤝 Comunidad', pattern: /🤝 Comunidad/i, editable: true },
+// Section markers — primary pattern is the HTML comment the generator
+// templates emit (most reliable since it survives LLM rewrites of titles
+// and emojis), with a fallback emoji+title regex for newsletters that
+// were authored before the comments existed.
+interface SectionMarker {
+  id: string;
+  name: string;
+  pattern: RegExp;
+  fallback?: RegExp;
+  editable: boolean;
+}
+
+const SECTION_MARKERS: SectionMarker[] = [
+  { id: 'opening',             name: '👋 Opening Hook',         pattern: /<!--\s*OPENING HOOK\s*-->/i,                fallback: /Hey there! 👋|¡Hola, potosinos!|Happy [A-Z]/i, editable: true },
+  { id: 'weather',             name: '🌦️ Weather Watch',        pattern: /<!--\s*WEATHER(?:\s*&\s*ENVIRONMENT)?\s*-->/i, fallback: /🌦️\s*Weather Watch/i, editable: true },
+  { id: 'market_watch',        name: '💰 Market Watch',         pattern: /<!--\s*MARKET WATCH\s*-->/i,                fallback: /💰\s*Market Watch/i, editable: true },
+  { id: 'news',                name: '📰 The Week in SLP',      pattern: /<!--\s*NEWS SECTION\s*-->/i,                fallback: /📰\s*The Week in SLP/i, editable: true },
+  { id: 'events',              name: '🌟 Top Picks',            pattern: /<!--\s*TOP PICKS\s*-->/i,                   fallback: /🌟\s*This Week'?s Top Picks/i, editable: true },
+  { id: 'more_events',         name: '🎭 More This Week',       pattern: /<!--\s*MORE THIS WEEK\s*-->/i,              fallback: /🎭\s*More This Week/i, editable: true },
+  { id: 'spot_of_the_week',    name: '📍 Spot of the Week',     pattern: /<!--\s*SPOT OF THE WEEK\s*-->/i,            fallback: /📍\s*Spot of the Week/i, editable: true },
+  { id: 'around_town',         name: '🏙️ Around Town',          pattern: /<!--\s*AROUND TOWN\s*-->/i,                 fallback: /🏙️\s*Around Town/i, editable: true },
+  { id: 'coming_up',           name: '📅 Coming Up',            pattern: /<!--\s*COMING UP\s*-->/i,                   fallback: /📅\s*Coming Up/i, editable: true },
+  { id: 'ask_an_expat',        name: '🙋 Ask an Expat',         pattern: /<!--\s*ASK AN EXPAT\s*-->/i,                fallback: /🙋\s*Ask an Expat/i, editable: true },
+  { id: 'tip',                 name: '💡 Pro Tip',              pattern: /<!--\s*PRO TIP\s*-->/i,                     fallback: /💡\s*Expat Pro Tip/i, editable: true },
+  { id: 'spanish_corner',      name: '🗣️ Spanish Corner',       pattern: /<!--\s*SPANISH CORNER\s*-->/i,              fallback: /🗣️\s*Spanish Corner/i, editable: true },
+  { id: 'fact',                name: '🧠 Did You Know?',        pattern: /<!--\s*DID YOU KNOW\??\s*-->/i,             fallback: /🧠\s*Did You Know/i, editable: true },
+  { id: 'escape',              name: '🌿 Weekend Escape',       pattern: /<!--\s*WEEKEND ESCAPE\s*-->/i,              fallback: /🌿\s*Weekend Escape/i, editable: true },
+  { id: 'blog',                name: '📖 From the Blog',        pattern: /<!--\s*FROM THE BLOG[^>]*-->/i,             fallback: /📖\s*From the Blog/i, editable: false },
+  { id: 'community_spotlight', name: '✨ Community Spotlight',  pattern: /<!--\s*COMMUNITY SPOTLIGHT\s*-->/i,         fallback: /✨\s*Community Spotlight/i, editable: true },
+  { id: 'comunidad',           name: '🤝 Comunidad',            pattern: /<!--\s*COMUNIDAD(?:\s+SECTION)?[^>]*-->/i,  fallback: /🤝\s*Comunidad/i, editable: true },
+  { id: 'cta',                 name: '📣 Call to Action',       pattern: /<!--\s*CALL TO ACTION\s*-->/i,              fallback: /Call to Action/i, editable: true },
 ];
+
+function matchMarker(html: string, marker: SectionMarker): RegExpMatchArray | null {
+  const primary = html.match(marker.pattern);
+  if (primary) return primary;
+  if (marker.fallback) return html.match(marker.fallback);
+  return null;
+}
 
 function findSectionStart(html: string, matchIndex: number, matchLength: number): number {
   // Comment-style markers (e.g. <!-- OPENING HOOK -->) sit just BEFORE the <tr>
@@ -55,39 +74,36 @@ function findSectionStart(html: string, matchIndex: number, matchLength: number)
 }
 
 function parseSections(html: string): NewsletterSection[] {
+  // Pre-locate every marker once so we can walk them in document order
+  // (instead of declaration order) — required for sections that may appear
+  // shuffled in some newsletters.
+  const hits: { marker: SectionMarker; start: number; matchLen: number }[] = [];
+  for (const marker of SECTION_MARKERS) {
+    const match = matchMarker(html, marker);
+    if (!match || match.index === undefined) continue;
+    hits.push({
+      marker,
+      start: findSectionStart(html, match.index, match[0].length),
+      matchLen: match[0].length,
+    });
+  }
+  hits.sort((a, b) => a.start - b.start);
+
   const sections: NewsletterSection[] = [];
-  const markers = [...SECTION_MARKERS];
-
-  for (let i = 0; i < markers.length; i++) {
-    const marker = markers[i];
-    const match = html.match(marker.pattern);
-
-    if (match && match.index !== undefined) {
-      const startIndex = findSectionStart(html, match.index, match[0].length);
-
-      // Find the next section or end
-      let endIndex = html.length;
-      for (let j = i + 1; j < markers.length; j++) {
-        const nextMatch = html.match(markers[j].pattern);
-        if (nextMatch && nextMatch.index !== undefined) {
-          endIndex = findSectionStart(html, nextMatch.index, nextMatch[0].length);
-          break;
-        }
-      }
-
-      const sectionHtml = html.substring(startIndex, endIndex).trim();
-      if (sectionHtml.length > 20) {
-        sections.push({
-          id: marker.id,
-          name: marker.name,
-          type: marker.id,
-          html: sectionHtml,
-          editable: marker.editable
-        });
-      }
+  for (let i = 0; i < hits.length; i++) {
+    const { marker, start } = hits[i];
+    const end = i + 1 < hits.length ? hits[i + 1].start : html.length;
+    const sectionHtml = html.substring(start, end).trim();
+    if (sectionHtml.length > 20) {
+      sections.push({
+        id: marker.id,
+        name: marker.name,
+        type: marker.id,
+        html: sectionHtml,
+        editable: marker.editable,
+      });
     }
   }
-
   return sections;
 }
 

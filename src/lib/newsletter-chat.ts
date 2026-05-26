@@ -137,23 +137,30 @@ export async function chatEditHtml(req: ChatEditRequest): Promise<ChatEditResult
   }
 
   const userPrompt = buildUserPrompt(req);
+  // Full-newsletter HTML can be ~30-50KB, so the response also needs room.
+  // Section-level edits are an order of magnitude smaller.
+  const maxOutputTokens = req.scope === 'newsletter' ? 32000 : 8000;
   let lastError: unknown = null;
 
+  // Use the Responses API to match the working pattern elsewhere in this
+  // codebase (newsletter-generator.ts, newsletter-sections.ts). Chat
+  // Completions doesn't accept gpt-5.4 and trips on response_format.
   if (openai) {
     try {
-      const res = await openai.chat.completions.create({
+      const res = await openai.responses.create({
         model: 'gpt-5.4',
-        messages: [
-          { role: 'system', content: SYSTEM_PROMPT },
-          { role: 'user', content: userPrompt },
-        ],
-        response_format: { type: 'json_object' },
+        instructions: SYSTEM_PROMPT,
+        input: userPrompt,
+        max_output_tokens: maxOutputTokens,
         temperature: 0.4,
-        max_tokens: 4000,
+        top_p: 0.95,
       });
-      const text = res.choices?.[0]?.message?.content || '';
+      const text = res.output_text || '';
       const parsed = extractJson(text);
-      if (!parsed) throw new Error('OpenAI returned unparseable response');
+      if (!parsed) {
+        console.error('OpenAI chat-edit unparseable text (first 500 chars):', text.slice(0, 500));
+        throw new Error('OpenAI returned unparseable response');
+      }
       return parsed;
     } catch (err) {
       console.error('OpenAI chat-edit error, trying Gemini fallback:', err);
@@ -165,13 +172,20 @@ export async function chatEditHtml(req: ChatEditRequest): Promise<ChatEditResult
     try {
       const model = geminiClient.getGenerativeModel({
         model: 'gemini-2.0-flash',
-        generationConfig: { maxOutputTokens: 4000, temperature: 0.4, responseMimeType: 'application/json' },
+        generationConfig: {
+          maxOutputTokens,
+          temperature: 0.4,
+          responseMimeType: 'application/json',
+        },
       });
       const result = await model.generateContent(`${SYSTEM_PROMPT}\n\n${userPrompt}`);
       const response = await result.response;
       const text = response.text();
       const parsed = extractJson(text);
-      if (!parsed) throw new Error('Gemini returned unparseable response');
+      if (!parsed) {
+        console.error('Gemini chat-edit unparseable text (first 500 chars):', text.slice(0, 500));
+        throw new Error('Gemini returned unparseable response');
+      }
       return parsed;
     } catch (err) {
       console.error('Gemini chat-edit also failed:', err);
