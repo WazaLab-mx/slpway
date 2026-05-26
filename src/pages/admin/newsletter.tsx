@@ -127,6 +127,15 @@ export default function NewsletterAdminPage() {
     if (savedKey) setAdminKey(savedKey);
   }, []);
 
+  useEffect(() => {
+    if (!selectedNewsletter) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedNewsletter(null);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [selectedNewsletter]);
+
   const handleGenerate = async () => {
     if (!confirm('This will use AI to generate a newsletter. It may take 30-60 seconds. Continue?')) return;
 
@@ -491,7 +500,12 @@ export default function NewsletterAdminPage() {
 
                 {/* Newsletter Preview Modal */}
                 {selectedNewsletter && (
-                  <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+                  <div
+                    className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+                    onClick={(e) => {
+                      if (e.target === e.currentTarget) setSelectedNewsletter(null);
+                    }}
+                  >
                     <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
                       <div className="p-4 border-b flex justify-between items-center bg-gray-50">
                         <div>

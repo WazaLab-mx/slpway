@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SponsorAd, AdPlacement, LinkTarget } from '@/types/supabase';
 
 interface HtmlAdEditorProps {
@@ -23,6 +23,15 @@ const PLACEMENTS: { value: AdPlacement; label: string }[] = [
 ];
 
 export default function HtmlAdEditor({ ad, onSave, onCancel }: HtmlAdEditorProps) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onCancel();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [onCancel]);
+
+
   const [formData, setFormData] = useState({
     name: ad?.name || '',
     description: ad?.description || '',
@@ -116,24 +125,39 @@ export default function HtmlAdEditor({ ad, onSave, onCancel }: HtmlAdEditorProps
   };
 
   return (
-    <div style={styles.overlay}>
+    <div
+      style={styles.overlay}
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onCancel();
+      }}
+    >
       <div style={styles.modal}>
         <div style={styles.header}>
           <h2 style={styles.title}>{ad?.id ? 'Edit Ad' : 'Create New Ad'}</h2>
-          <div style={styles.tabs}>
+          <div style={styles.headerActions}>
+            <div style={styles.tabs}>
+              <button
+                type="button"
+                style={{ ...styles.tab, ...(previewMode ? {} : styles.tabActive) }}
+                onClick={() => setPreviewMode(false)}
+              >
+                Editor
+              </button>
+              <button
+                type="button"
+                style={{ ...styles.tab, ...(previewMode ? styles.tabActive : {}) }}
+                onClick={() => setPreviewMode(true)}
+              >
+                Preview
+              </button>
+            </div>
             <button
               type="button"
-              style={{ ...styles.tab, ...(previewMode ? {} : styles.tabActive) }}
-              onClick={() => setPreviewMode(false)}
+              onClick={onCancel}
+              aria-label="Close"
+              style={styles.closeBtn}
             >
-              Editor
-            </button>
-            <button
-              type="button"
-              style={{ ...styles.tab, ...(previewMode ? styles.tabActive : {}) }}
-              onClick={() => setPreviewMode(true)}
-            >
-              Preview
+              ✕
             </button>
           </div>
         </div>
@@ -151,6 +175,14 @@ export default function HtmlAdEditor({ ad, onSave, onCancel }: HtmlAdEditorProps
                 <div style={styles.sectionPlaceholder}>More Content...</div>
               </div>
               <div style={styles.emailFooter}>Footer</div>
+            </div>
+            <div style={styles.actions}>
+              <button type="button" onClick={() => setPreviewMode(false)} style={styles.cancelBtn}>
+                ← Back to editor
+              </button>
+              <button type="button" onClick={onCancel} style={styles.cancelBtn}>
+                Close
+              </button>
             </div>
           </div>
         ) : (
@@ -416,9 +448,28 @@ const styles: Record<string, React.CSSProperties> = {
     fontWeight: 600,
     color: '#1f2937',
   },
+  headerActions: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '12px',
+  },
   tabs: {
     display: 'flex',
     gap: '8px',
+  },
+  closeBtn: {
+    width: '32px',
+    height: '32px',
+    borderRadius: '8px',
+    border: '1px solid #d1d5db',
+    backgroundColor: 'white',
+    cursor: 'pointer',
+    fontSize: '16px',
+    color: '#6b7280',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    lineHeight: 1,
   },
   tab: {
     padding: '8px 16px',

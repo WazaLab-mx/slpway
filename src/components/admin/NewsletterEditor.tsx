@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+import NewsletterChatPanel, { ChatScope } from './NewsletterChatPanel';
 
 interface NewsletterSection {
   id: string;
@@ -103,11 +104,21 @@ export default function NewsletterEditor({
   const [regenerating, setRegenerating] = useState<string | null>(null);
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
+  const [chatTargetId, setChatTargetId] = useState<string | null>(null);
 
   useEffect(() => {
     const parsed = parseSections(htmlContent);
     setSections(parsed);
   }, [htmlContent]);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [onClose]);
 
   const handleRegenerateSection = async (section: NewsletterSection) => {
     setRegenerating(section.id);
@@ -161,8 +172,44 @@ export default function NewsletterEditor({
     return text.substring(0, 150) + (text.length > 150 ? '...' : '');
   };
 
+  const chatTargetSection = useMemo(
+    () => (chatTargetId ? sections.find((s) => s.id === chatTargetId) : undefined),
+    [chatTargetId, sections],
+  );
+
+  const chatScope: ChatScope = chatTargetSection
+    ? {
+        scope: 'section',
+        sectionId: chatTargetSection.id,
+        sectionName: chatTargetSection.name,
+        sectionType: chatTargetSection.type,
+        html: chatTargetSection.html,
+      }
+    : { scope: 'newsletter', html: fullHtml };
+
+  const handleChatApply = (newHtml: string) => {
+    if (chatTargetSection) {
+      const before = chatTargetSection.html;
+      const updatedSections = sections.map((s) =>
+        s.id === chatTargetSection.id ? { ...s, html: newHtml } : s,
+      );
+      setSections(updatedSections);
+      // Best-effort substitution; if the section HTML wasn't found verbatim
+      // (rare — e.g. whitespace drift), fall back to leaving the full HTML
+      // alone so the user can re-trigger a save manually.
+      setFullHtml((prev) => (prev.includes(before) ? prev.replace(before, newHtml) : prev));
+    } else {
+      setFullHtml(newHtml);
+    }
+  };
+
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+    <div
+      className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
       <div className="bg-white rounded-xl max-w-5xl w-full max-h-[95vh] overflow-hidden flex flex-col">
         {/* Header */}
         <div className="p-4 border-b bg-gradient-to-r from-terracotta to-terracotta/80 text-white">
@@ -172,6 +219,19 @@ export default function NewsletterEditor({
               <p className="text-sm opacity-90">{subject}</p>
             </div>
             <div className="flex gap-2">
+              <button
+                onClick={() => {
+                  setChatTargetId(null);
+                  setChatOpen((v) => !v);
+                }}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
+                  chatOpen
+                    ? 'bg-indigo-500 text-white hover:bg-indigo-400'
+                    : 'bg-white/20 text-white hover:bg-white/30'
+                }`}
+              >
+                {chatOpen ? '💬 Chat abierto' : '💬 Chat con IA'}
+              </button>
               <button
                 onClick={() => onExport(fullHtml, subject)}
                 className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 text-sm font-medium"
@@ -198,7 +258,7 @@ export default function NewsletterEditor({
         {/* Content */}
         <div className="flex-1 overflow-hidden flex">
           {/* Sections List */}
-          <div className="w-1/2 border-r overflow-y-auto p-4 space-y-3">
+          <div className={`${chatOpen ? 'w-1/3' : 'w-1/2'} border-r overflow-y-auto p-4 space-y-3`}>
             <p className="text-sm text-gray-500 mb-4">
               Click on a section to expand it. Use "Regenerate" to create new content for that section.
             </p>
@@ -226,20 +286,37 @@ export default function NewsletterEditor({
                     </div>
                     <div className="flex items-center gap-2">
                       {section.editable && (
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleRegenerateSection(section);
-                          }}
-                          disabled={regenerating === section.id}
-                          className={`px-3 py-1 text-xs rounded-full font-medium ${
-                            regenerating === section.id
-                              ? 'bg-gray-200 text-gray-500'
-                              : 'bg-purple-100 text-purple-700 hover:bg-purple-200'
-                          }`}
-                        >
-                          {regenerating === section.id ? '⟳ Regenerating...' : '🔄 Regenerate'}
-                        </button>
+                        <>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setChatTargetId(section.id);
+                              setChatOpen(true);
+                            }}
+                            title="Pídele al editor IA cambios específicos a esta sección"
+                            className={`px-3 py-1 text-xs rounded-full font-medium ${
+                              chatOpen && chatTargetId === section.id
+                                ? 'bg-indigo-600 text-white'
+                                : 'bg-indigo-100 text-indigo-700 hover:bg-indigo-200'
+                            }`}
+                          >
+                            💬 Chat
+                          </button>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleRegenerateSection(section);
+                            }}
+                            disabled={regenerating === section.id}
+                            className={`px-3 py-1 text-xs rounded-full font-medium ${
+                              regenerating === section.id
+                                ? 'bg-gray-200 text-gray-500'
+                                : 'bg-purple-100 text-purple-700 hover:bg-purple-200'
+                            }`}
+                          >
+                            {regenerating === section.id ? '⟳ Regenerating...' : '🔄 Regenerate'}
+                          </button>
+                        </>
                       )}
                       <span className="text-gray-400">
                         {expandedSection === section.id ? '▼' : '▶'}
@@ -260,8 +337,20 @@ export default function NewsletterEditor({
             )}
           </div>
 
+          {/* Chat Panel (toggleable) */}
+          {chatOpen && (
+            <div className="w-1/3 border-r">
+              <NewsletterChatPanel
+                adminKey={adminKey}
+                scope={chatScope}
+                onApply={handleChatApply}
+                onClose={() => setChatOpen(false)}
+              />
+            </div>
+          )}
+
           {/* Preview Panel */}
-          <div className="w-1/2 overflow-y-auto bg-gray-100">
+          <div className={`${chatOpen ? 'w-1/3' : 'w-1/2'} overflow-y-auto bg-gray-100`}>
             <div className="p-4">
               <h3 className="font-medium text-gray-700 mb-3">Live Preview</h3>
               <div className="bg-white rounded-lg shadow overflow-hidden">
