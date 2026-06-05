@@ -1,10 +1,10 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import {
   CalendarIcon,
   MapPinIcon,
   TicketIcon,
   MusicalNoteIcon,
-  InformationCircleIcon,
 } from '@heroicons/react/24/outline';
 import { GetStaticProps } from 'next';
 import { useTranslation } from 'next-i18next';
@@ -25,27 +25,75 @@ const AREA_ICONS: Record<string, string> = {
   rides: '🎡', cultural: '🎨', livestock: '🐄', kids: '🎠',
 };
 
-// FENAPO 2026 confirmed artists — verified against fenapo.slp.gob.mx,
-// feriafenapo.com, Noticieros SLP, Frontal Noticias (April 18, 2026).
-const TEATRO_ARTISTS = [
-  { key: 'sinBandera', nameKey: 'sinBandera', genreKey: 'sinBanderaGenre' },
-  { key: 'losAcosta', nameKey: 'losAcosta', genreKey: 'losAcostaGenre' },
-  { key: 'keniaOs', nameKey: 'keniaOs', genreKey: 'keniaOsGenre' },
-] as const;
+// FENAPO 2026 complete lineup — verified against Infobae, El Universal SLP,
+// Milenio and feriafenapo.com (full cartel released May 27, 2026).
+// Artist names and dates are locale-neutral facts, kept inline as the single source of truth.
+interface Act {
+  date: string; // ISO date (yyyy-mm-dd)
+  name: string;
+}
 
-const PALENQUE_ARTISTS = [
-  { key: 'grupoFirme', nameKey: 'grupoFirme', genreKey: 'grupoFirmeGenre' },
-  { key: 'edenMunoz', nameKey: 'edenMunoz', genreKey: 'edenMunozGenre' },
-  { key: 'gloriaTrevi', nameKey: 'gloriaTrevi', genreKey: 'gloriaTreviGenre' },
-  { key: 'losInvasores', nameKey: 'losInvasores', genreKey: 'losInvasoresGenre' },
-  { key: 'losCardenales', nameKey: 'losCardenales', genreKey: 'losCardenalesGenre' },
-  { key: 'losViejones', nameKey: 'losViejones', genreKey: 'losViejonesGenre' },
-] as const;
+// Foro de las Estrellas (formerly Teatro del Pueblo) — 21 free nights.
+const FORO_ARTISTS: Act[] = [
+  { date: '2026-08-07', name: 'Gloria Trevi' },
+  { date: '2026-08-08', name: 'Mötley Crüe' },
+  { date: '2026-08-09', name: 'Lila Downs' },
+  { date: '2026-08-10', name: 'Yandel Sinfónico' },
+  { date: '2026-08-11', name: 'Influencers más grandes de México' },
+  { date: '2026-08-12', name: 'El Bogueto' },
+  { date: '2026-08-13', name: 'Xavi' },
+  { date: '2026-08-14', name: 'Ramón Ayala' },
+  { date: '2026-08-15', name: 'Óscar Maydon' },
+  { date: '2026-08-16', name: 'Chihuahua Fest' },
+  { date: '2026-08-18', name: 'Bizarrap' },
+  { date: '2026-08-19', name: 'Sin Bandera' },
+  { date: '2026-08-20', name: 'Kenia Os' },
+  { date: '2026-08-21', name: 'Laberinto y los Herederos de Nuevo León' },
+  { date: '2026-08-22', name: 'Los Huracanes del Norte' },
+  { date: '2026-08-23', name: 'Los Acosta' },
+  { date: '2026-08-25', name: 'Katy Perry' },
+  { date: '2026-08-26', name: 'Santa Fe Klan' },
+  { date: '2026-08-27', name: 'Potosinazo' },
+  { date: '2026-08-28', name: 'Alameños de la Sierra' },
+  { date: '2026-08-30', name: 'Los Tigres del Norte' },
+];
+
+// Palenque — 14 ticketed nights.
+const PALENQUE_ARTISTS: Act[] = [
+  { date: '2026-08-07', name: 'Remmy Valenzuela' },
+  { date: '2026-08-08', name: 'Luis R. Conríquez' },
+  { date: '2026-08-09', name: 'Conjunto Primavera' },
+  { date: '2026-08-13', name: 'María José' },
+  { date: '2026-08-14', name: 'Matute' },
+  { date: '2026-08-15', name: 'Pesado e Invasores' },
+  { date: '2026-08-16', name: 'Cornelio Vega Jr.' },
+  { date: '2026-08-20', name: 'Horóscopos de Durango' },
+  { date: '2026-08-21', name: 'Grupo Firme' },
+  { date: '2026-08-23', name: 'Ha*Ash' },
+  { date: '2026-08-27', name: 'Emmanuel & Mijares' },
+  { date: '2026-08-28', name: 'Marca Registrada' },
+  { date: '2026-08-29', name: 'Edén Muñoz' },
+  { date: '2026-08-30', name: 'Julión Álvarez' },
+];
 
 const PRE_FENAPO_EVENTS = [1, 2, 3, 4] as const;
 
+const LOCALE_TAGS: Record<string, string> = {
+  es: 'es-MX', en: 'en-US', de: 'de-DE', ja: 'ja-JP',
+};
+
+function formatActDate(iso: string, locale: string): string {
+  // Parse at midday to avoid timezone day-shifts.
+  return new Date(`${iso}T12:00:00`).toLocaleDateString(LOCALE_TAGS[locale] ?? 'es-MX', {
+    weekday: 'short',
+    day: 'numeric',
+    month: 'short',
+  });
+}
+
 export default function Fenapo2026() {
   const { t } = useTranslation('common');
+  const { locale = 'es' } = useRouter();
 
   const structuredData = {
     '@context': 'https://schema.org',
@@ -53,8 +101,8 @@ export default function Fenapo2026() {
       {
         '@type': 'Festival',
         name: 'FENAPO 2026 — Feria Nacional Potosina',
-        startDate: '2026-08-01',
-        endDate: '2026-08-31',
+        startDate: '2026-08-07',
+        endDate: '2026-08-30',
         location: {
           '@type': 'Place',
           name: 'Recinto Ferial de la FENAPO',
@@ -71,47 +119,27 @@ export default function Fenapo2026() {
         eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
         url: 'https://www.sanluisway.com/events/fenapo-2026',
         isAccessibleForFree: true,
-        performer: [
-          { '@type': 'MusicGroup', name: 'Sin Bandera', genre: 'Pop Ballad' },
-          { '@type': 'MusicGroup', name: 'Los Acosta', genre: 'Cumbia' },
-          { '@type': 'Person', name: 'Kenia Os', genre: 'Pop' },
-          { '@type': 'MusicGroup', name: 'Grupo Firme', genre: 'Regional Mexicano' },
-          { '@type': 'Person', name: 'Edén Muñoz', genre: 'Regional Mexicano' },
-          { '@type': 'Person', name: 'Gloria Trevi', genre: 'Pop Latino' },
-          { '@type': 'MusicGroup', name: 'Los Invasores de Nuevo León', genre: 'Norteño' },
-          { '@type': 'MusicGroup', name: 'Los Cardenales de Nuevo León', genre: 'Norteño' },
-          { '@type': 'MusicGroup', name: 'Los Viejones de Linares', genre: 'Norteño' },
-        ],
+        performer: [...FORO_ARTISTS, ...PALENQUE_ARTISTS].map((a) => ({
+          '@type': 'MusicGroup',
+          name: a.name,
+        })),
         subEvent: [
-          {
+          ...FORO_ARTISTS.map((a) => ({
             '@type': 'MusicEvent',
-            name: 'Teatro del Pueblo — FENAPO 2026',
-            startDate: '2026-08-01',
-            endDate: '2026-08-31',
-            location: { '@type': 'Place', name: 'Teatro del Pueblo, Recinto Ferial FENAPO', address: { '@type': 'PostalAddress', addressLocality: 'San Luis Potosí', addressRegion: 'SLP', addressCountry: 'MX' } },
+            name: `${a.name} — Foro de las Estrellas, FENAPO 2026`,
+            startDate: a.date,
+            location: { '@type': 'Place', name: 'Foro de las Estrellas, Recinto Ferial FENAPO', address: { '@type': 'PostalAddress', addressLocality: 'San Luis Potosí', addressRegion: 'SLP', addressCountry: 'MX' } },
             isAccessibleForFree: true,
-            performer: [
-              { '@type': 'MusicGroup', name: 'Sin Bandera' },
-              { '@type': 'MusicGroup', name: 'Los Acosta' },
-              { '@type': 'Person', name: 'Kenia Os' },
-            ],
-          },
-          {
+            performer: [{ '@type': 'MusicGroup', name: a.name }],
+          })),
+          ...PALENQUE_ARTISTS.map((a) => ({
             '@type': 'MusicEvent',
-            name: 'Palenque — FENAPO 2026',
-            startDate: '2026-08-01',
-            endDate: '2026-08-31',
+            name: `${a.name} — Palenque, FENAPO 2026`,
+            startDate: a.date,
             location: { '@type': 'Place', name: 'Palenque FENAPO, Recinto Ferial', address: { '@type': 'PostalAddress', addressLocality: 'San Luis Potosí', addressRegion: 'SLP', addressCountry: 'MX' } },
             isAccessibleForFree: false,
-            performer: [
-              { '@type': 'MusicGroup', name: 'Grupo Firme' },
-              { '@type': 'Person', name: 'Edén Muñoz' },
-              { '@type': 'Person', name: 'Gloria Trevi' },
-              { '@type': 'MusicGroup', name: 'Los Invasores de Nuevo León' },
-              { '@type': 'MusicGroup', name: 'Los Cardenales de Nuevo León' },
-              { '@type': 'MusicGroup', name: 'Los Viejones de Linares' },
-            ],
-          },
+            performer: [{ '@type': 'MusicGroup', name: a.name }],
+          })),
         ],
       },
       {
@@ -182,14 +210,9 @@ export default function Fenapo2026() {
             <h2 className="text-xl md:text-2xl text-purple-300 font-semibold mb-5">
               {t('fenapo2026.hero.subtitle')}
             </h2>
-            <p className="text-lg text-white/80 max-w-2xl mb-4">
+            <p className="text-lg text-white/80 max-w-2xl mb-8">
               {t('fenapo2026.hero.description')}
             </p>
-            {/* TBC Notice */}
-            <div className="flex items-start gap-2 bg-yellow-500/10 border border-yellow-500/30 rounded-lg px-4 py-3 mb-8 max-w-2xl">
-              <InformationCircleIcon className="w-5 h-5 text-yellow-400 shrink-0 mt-0.5" />
-              <p className="text-yellow-300 text-sm">{t('fenapo2026.hero.note')}</p>
-            </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 max-w-2xl">
               {stats.map((s) => (
                 <div key={s.label} className="text-center">
@@ -255,7 +278,7 @@ export default function Fenapo2026() {
               {t('fenapo2026.quickAnswer.definition')}
             </p>
             <p className="text-xs text-gray-400 italic pt-3 border-t border-purple-800/30">
-              Last verified by San Luis Way editorial team: April 18, 2026
+              Last verified by San Luis Way editorial team: June 4, 2026
             </p>
           </div>
         </div>
@@ -282,7 +305,7 @@ export default function Fenapo2026() {
             <p className="text-gray-400 max-w-2xl mx-auto">{t('fenapo2026.artists.subtitle')}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Teatro del Pueblo */}
+            {/* Foro de las Estrellas */}
             <div className="bg-gray-800 rounded-2xl p-6">
               <div className="flex items-center justify-between mb-5 flex-wrap gap-2">
                 <h3 className="font-bold text-lg text-purple-300">{t('fenapo2026.artists.teatroTitle')}</h3>
@@ -291,16 +314,14 @@ export default function Fenapo2026() {
                 </span>
               </div>
               <ul className="space-y-3">
-                {TEATRO_ARTISTS.map((a) => (
-                  <li key={a.key} className="flex items-start gap-3 bg-gray-900/50 rounded-lg p-3">
-                    <MusicalNoteIcon className="w-5 h-5 text-purple-400 shrink-0 mt-0.5" />
-                    <div className="flex-1 min-w-0">
-                      <p className="font-semibold text-white">{t(`fenapo2026.artists.${a.nameKey}`)}</p>
-                      <p className="text-xs text-purple-300/80 mt-0.5">{t(`fenapo2026.artists.${a.genreKey}`)}</p>
-                    </div>
+                {FORO_ARTISTS.map((a) => (
+                  <li key={a.date} className="flex items-center gap-3 bg-gray-900/50 rounded-lg p-3">
+                    <span className="text-xs font-bold text-purple-300 bg-purple-950/60 border border-purple-800/50 rounded-md px-2 py-1 shrink-0 w-24 text-center capitalize">
+                      {formatActDate(a.date, locale)}
+                    </span>
+                    <p className="font-semibold text-white flex-1 min-w-0">{a.name}</p>
                   </li>
                 ))}
-                <li className="text-gray-500 text-xs italic pt-2">{t('fenapo2026.artists.tbc')}</li>
               </ul>
             </div>
             {/* Palenque */}
@@ -313,12 +334,11 @@ export default function Fenapo2026() {
               </div>
               <ul className="space-y-3">
                 {PALENQUE_ARTISTS.map((a) => (
-                  <li key={a.key} className="flex items-start gap-3 bg-gray-900/50 rounded-lg p-3">
-                    <MusicalNoteIcon className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
-                    <div className="flex-1 min-w-0">
-                      <p className="font-semibold text-white">{t(`fenapo2026.artists.${a.nameKey}`)}</p>
-                      <p className="text-xs text-amber-300/80 mt-0.5">{t(`fenapo2026.artists.${a.genreKey}`)}</p>
-                    </div>
+                  <li key={a.date} className="flex items-center gap-3 bg-gray-900/50 rounded-lg p-3">
+                    <span className="text-xs font-bold text-amber-300 bg-amber-950/60 border border-amber-800/50 rounded-md px-2 py-1 shrink-0 w-24 text-center capitalize">
+                      {formatActDate(a.date, locale)}
+                    </span>
+                    <p className="font-semibold text-white flex-1 min-w-0">{a.name}</p>
                   </li>
                 ))}
               </ul>

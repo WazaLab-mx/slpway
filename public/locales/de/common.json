@@ -1749,25 +1749,24 @@
   "fenapo2026": {
     "seo": {
       "title": "FENAPO 2026 — Nationale Messe von Potosí | San Luis Potosí",
-      "description": "FENAPO 2026: Mexikos traditionsreichste Messe. August 2026. Grupo Firme, Sin Bandera, Los Acosta. Programm, Künstler und Besucherguide.",
+      "description": "FENAPO 2026: Mexikos traditionsreichste Messe, 7.–30. August in San Luis Potosí. Komplettes Line-up: Katy Perry, Mötley Crüe, Bizarrap, Grupo Firme, Los Tigres del Norte. Kostenloses Foro de las Estrellas, Palenque, Gastronomie und Fahrgeschäfte.",
       "keywords": "fenapo 2026, feria nacional potosina, fenapo san luis potosi, fenapo programm 2026"
     },
     "hero": {
       "badge": "AUSGABE 2026",
-      "date": "August 2026",
+      "date": "7.–30. August 2026",
       "title": "FENAPO 2026",
       "subtitle": "Feria Nacional Potosina",
-      "description": "Mexikos traditionsreichste Messe kehrt mit Konzerten, Gastronomie, Kultur und Unterhaltung für die ganze Familie zurück. Bestätigte Künstler: Grupo Firme, Sin Bandera, Los Acosta.",
-      "note": "Lineup expanded April 2026: 3 Teatro del Pueblo + 6 Palenque artists confirmed, plus 4 pre-FENAPO events running April through May. Final dates TBC — this page updates as the fair announces more.",
+      "description": "Mexikos traditionsreichste Messe kehrt mit Konzerten, Gastronomie, Kultur und Unterhaltung für die ganze Familie zurück. Komplettes Line-up: Katy Perry, Mötley Crüe, Bizarrap, Grupo Firme, Los Tigres del Norte, Gloria Trevi und viele mehr.",
       "cta": "Offizielle Website",
       "ctaArtists": "Künstler ansehen",
       "location": "San Luis Potosí, Hauptstadt des Bundesstaates San Luis Potosí, Mexiko"
     },
     "stats": {
       "days": "Tage",
-      "daysValue": "~24",
-      "artists": "Bestätigte Künstler",
-      "artistsValue": "9+",
+      "daysValue": "24",
+      "artists": "Künstler im Line-up",
+      "artistsValue": "35",
       "entry": "Allgemeiner Eintritt",
       "entryValue": "Gratis",
       "zones": "Bereiche",
@@ -1780,7 +1779,7 @@
       "p3": "Die Messe erzielt einen wirtschaftlichen Effekt von über 2 Milliarden Pesos und zieht pro Ausgabe mehr als 3 Millionen Besucher an.",
       "highlights": {
         "title": "Was dich bei FENAPO erwartet:",
-        "item1": "Teatro del Pueblo mit nationalen und internationalen Künstlern (kostenloser Eintritt)",
+        "item1": "Foro de las Estrellas mit nationalen und internationalen Künstlern (kostenloser Eintritt)",
         "item2": "Palenque mit den besten Vertretern regionaler Musik (Tickets)",
         "item3": "Gastronomie-Zone mit potosiner, mexikanischer und internationaler Küche",
         "item4": "Handelsausstellung mit lokalen und nationalen Produkten",
@@ -1792,39 +1791,20 @@
       "organizer": "Die FENAPO wird jährlich von der Regierung des Bundesstaates San Luis Potosí veranstaltet und zählt zu den größten Staatsmessen Mexikos."
     },
     "artists": {
-      "title": "Bestätigte Künstler",
-      "subtitle": "As of April 2026, nine artists are confirmed across Teatro del Pueblo (free with fair admission) and Palenque (paid separate ticket). More names expected as August approaches.",
-      "teatroTitle": "Teatro del Pueblo",
-      "teatroNote": "3 confirmed · 2 international TBC",
+      "title": "Komplettes Line-up",
+      "subtitle": "Offizielles FENAPO-2026-Line-up: 21 kostenlose Abende im Foro de las Estrellas und 14 Abende im Palenque (separates Ticket), 7.–30. August.",
+      "teatroTitle": "Foro de las Estrellas",
+      "teatroNote": "21 Abende · kostenlos",
       "palenqueTitle": "Palenque",
-      "palenqueNote": "6 confirmed · cartelera complete",
-      "tbc": "Weitere Künstler folgen",
-      "sinBandera": "Sin Bandera",
-      "losAcosta": "Los Acosta",
-      "grupoFirme": "Grupo Firme",
-      "freeNotice": "Teatro del Pueblo concerts, mechanical rides, parking, and fair entry will be free this year per the Governor of San Luis Potosí.",
-      "keniaOs": "Kenia Os",
-      "keniaOsGenre": "Pop / Urban",
-      "sinBanderaGenre": "Pop Ballad Duo",
-      "losAcostaGenre": "Cumbia / Regional",
-      "grupoFirmeGenre": "Regional Mexicano",
-      "edenMunoz": "Edén Muñoz",
-      "edenMunozGenre": "Regional Mexicano",
-      "gloriaTrevi": "Gloria Trevi",
-      "gloriaTreviGenre": "Pop Latino",
-      "losInvasores": "Los Invasores de Nuevo León",
-      "losInvasoresGenre": "Norteño",
-      "losCardenales": "Los Cardenales de Nuevo León",
-      "losCardenalesGenre": "Norteño",
-      "losViejones": "Los Viejones de Linares",
-      "losViejonesGenre": "Norteño"
+      "palenqueNote": "14 Abende · Ticket",
+      "freeNotice": "Die Konzerte im Foro de las Estrellas, die Fahrgeschäfte, der Parkplatz und der Messeeintritt sind dieses Jahr per Dekret des Gouverneurs von San Luis Potosí kostenlos."
     },
     "areas": {
       "title": "Messebereiche",
       "subtitle": "Das Gelände ist in Zonen unterteilt.",
       "teatro": {
-        "name": "Teatro del Pueblo",
-        "desc": "Hauptbühne mit erstklassigen Künstlern. Kostenlose Konzerte jeden Abend."
+        "name": "Foro de las Estrellas",
+        "desc": "Hauptbühne (früher Teatro del Pueblo) mit erstklassigen Künstlern. Kostenlose Konzerte jeden Abend."
       },
       "palenque": {
         "name": "Palenque",
@@ -1893,11 +1873,11 @@
     "faq": {
       "title": "Häufig gestellte Fragen",
       "q1": "Wann sind die genauen Termine der FENAPO 2026?",
-      "a1": "Die offiziellen Termine sind noch nicht bestätigt. Traditionell findet die Messe den ganzen August statt.",
+      "a1": "Die FENAPO 2026 findet vom 7. bis 30. August 2026 auf dem Recinto Ferial in San Luis Potosí statt, mit Konzerten jeden Abend im Foro de las Estrellas und im Palenque.",
       "q2": "Was kosten Palenque-Tickets?",
-      "a2": "Preise variieren je nach Künstler, von 500 bis 3.000+ MXN. Ticketverkauf über Ticketmaster.",
+      "a2": "Die Preise variieren je nach Künstler und Zone: General 700–1.300 MXN, Dorada 1.100–3.600, VIP 1.700–4.600, Diamante 1.900–5.500. Tickets über SLP Fast Ticket (slpfastticket.com) und an den Kassen des Palenque. Beliebte Acts wie Grupo Firme und Emmanuel & Mijares sind schnell ausverkauft.",
       "q3": "Ist der allgemeine Eintritt kostenlos?",
-      "a3": "Ja, Gelände und Teatro del Pueblo sind kostenlos. Palenque, Fahrgeschäfte und Sondershows kosten extra.",
+      "a3": "Ja. 2026 sind der Eintritt zum Gelände, die Konzerte im Foro de las Estrellas, die Fahrgeschäfte und der Parkplatz per Dekret des Gouverneurs kostenlos. Nur der Palenque erfordert ein separates Ticket.",
       "q4": "Gibt es Parkplätze?",
       "a4": "Ja, auf dem Gelände und in der Nähe. Am Wochenende früh kommen.",
       "q5": "Darf man Essen mitbringen?",
@@ -1915,7 +1895,7 @@
       "q11": "Gibt es einen Dresscode?",
       "a11": "Nein. Bequeme Freizeitkleidung. Geschlossene Schuhe empfohlen. Für den Palenque kleidet man sich eleganter.",
       "q12": "Ist es barrierefrei?",
-      "a12": "Ja. Rampen und ausgewiesene Bereiche vorhanden. Früh kommen empfohlen."
+      "a12": "Ja. Rampen und ausgewiesene Bereiche vorhanden. Das Foro de las Estrellas und der Palenque haben barrierefreie Bereiche. Früh kommen empfohlen."
     },
     "cta": {
       "title": "Verpasse die FENAPO 2026 nicht!",
@@ -1941,9 +1921,9 @@
       "event4Desc": "International volleyball tournament at the fair pavilions."
     },
     "quickAnswer": {
-      "title": "FENAPO 2026 at a glance",
-      "definition": "FENAPO 2026 — the 77th edition of Mexico's Feria Nacional Potosina — takes place in August 2026 at the Recinto Ferial on Av. Fco. Martínez de la Vega, San Luis Potosí. As of April 2026, nine headliners are confirmed (three for the free Teatro del Pueblo and six for the paid Palenque), with fair entry, rides, parking, and Teatro del Pueblo concerts free for attendees. The Palenque cartelera is complete; Teatro del Pueblo is 90% confirmed with two international artists pending announcement. Pre-FENAPO events are already running at the fairgrounds from April through May.",
-      "keyFactsTitle": "Key facts (verified April 18, 2026)"
+      "title": "FENAPO 2026 im Überblick",
+      "definition": "Die FENAPO 2026 — Mexikos Feria Nacional Potosina — findet vom 7. bis 30. August 2026 auf dem Recinto Ferial an der Av. Fco. Martínez de la Vega in San Luis Potosí statt. Das komplette Line-up umfasst 35 Künstler: 21 kostenlose Abende im Foro de las Estrellas (Katy Perry, Mötley Crüe, Bizarrap, Gloria Trevi, Los Tigres del Norte, Sin Bandera, Kenia Os und mehr) und 14 Abende mit Ticket im Palenque (Grupo Firme, Julión Álvarez, Edén Muñoz, Ha*Ash, Emmanuel & Mijares und mehr). Eintritt, Fahrgeschäfte, Parkplatz und die Konzerte im Foro de las Estrellas sind kostenlos. Palenque-Tickets gibt es über SLP Fast Ticket.",
+      "keyFactsTitle": "Wichtige Fakten (verifiziert am 4. Juni 2026)"
     },
     "sources": {
       "title": "Sources used on this page"

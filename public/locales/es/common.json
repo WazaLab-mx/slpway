@@ -1784,25 +1784,24 @@
   "fenapo2026": {
     "seo": {
       "title": "FENAPO 2026 — Feria Nacional Potosina | San Luis Potosí",
-      "description": "FENAPO 2026: La feria más tradicional de México. Agosto 2026 en San Luis Potosí. Grupo Firme, Sin Bandera, Los Acosta. Teatro del Pueblo, Palenque, gastronomía, juegos mecánicos. Programa, artistas y guía del visitante.",
+      "description": "FENAPO 2026: La feria más tradicional de México, del 7 al 30 de agosto en San Luis Potosí. Cartel completo: Katy Perry, Mötley Crüe, Bizarrap, Grupo Firme, Los Tigres del Norte. Foro de las Estrellas gratis, Palenque, gastronomía y juegos mecánicos.",
       "keywords": "fenapo 2026, feria nacional potosina, fenapo san luis potosi, cartelera fenapo 2026, grupo firme fenapo, palenque fenapo, teatro del pueblo fenapo"
     },
     "hero": {
       "badge": "EDICIÓN 2026",
-      "date": "Agosto 2026",
+      "date": "7–30 de agosto, 2026",
       "title": "FENAPO 2026",
       "subtitle": "Feria Nacional Potosina",
-      "description": "La feria más tradicional de México regresa a San Luis Potosí con conciertos, gastronomía, cultura y entretenimiento para toda la familia. Artistas confirmados: Grupo Firme, Sin Bandera, Los Acosta.",
-      "note": "Cartelera ampliada abril 2026: 3 artistas en Teatro del Pueblo + 6 en Palenque confirmados, además de 4 eventos pre-FENAPO entre abril y mayo. Fechas finales por confirmar — esta página se actualiza conforme se anuncian más artistas.",
+      "description": "La feria más tradicional de México regresa a San Luis Potosí con conciertos, gastronomía, cultura y entretenimiento para toda la familia. Cartel completo: Katy Perry, Mötley Crüe, Bizarrap, Grupo Firme, Los Tigres del Norte, Gloria Trevi y muchos más.",
       "cta": "Sitio oficial",
       "ctaArtists": "Ver artistas",
       "location": "San Luis Potosí, capital del estado de San Luis Potosí, México"
     },
     "stats": {
       "days": "Días",
-      "daysValue": "~24",
-      "artists": "Artistas confirmados",
-      "artistsValue": "9+",
+      "daysValue": "24",
+      "artists": "Artistas en cartel",
+      "artistsValue": "35",
       "entry": "Entrada general",
       "entryValue": "Gratis",
       "zones": "Zonas",
@@ -1815,7 +1814,7 @@
       "p3": "La feria tiene un impacto económico superior a los 2,000 millones de pesos y atrae a más de 3 millones de visitantes cada edición, consolidándose como el evento turístico más importante del estado.",
       "highlights": {
         "title": "Lo que encontrarás en FENAPO:",
-        "item1": "Teatro del Pueblo con artistas nacionales e internacionales (entrada gratuita)",
+        "item1": "Foro de las Estrellas con artistas nacionales e internacionales (entrada gratuita)",
         "item2": "Palenque con los mejores exponentes de la música regional (boletos)",
         "item3": "Zona gastronómica con cocina potosina, mexicana e internacional",
         "item4": "Exposición comercial con productos locales y nacionales",
@@ -1827,39 +1826,20 @@
       "organizer": "Organizada anualmente por el Gobierno del Estado de San Luis Potosí, la FENAPO es una de las ferias estatales más grandes de México."
     },
     "artists": {
-      "title": "Artistas Confirmados",
-      "subtitle": "A abril de 2026 hay nueve artistas confirmados entre Teatro del Pueblo (gratis con entrada a la feria) y Palenque (boleto aparte). Más nombres se anunciarán conforme se acerca agosto.",
-      "teatroTitle": "Teatro del Pueblo",
-      "teatroNote": "3 confirmados · 2 internacionales por confirmar",
+      "title": "Cartel Completo",
+      "subtitle": "Cartel oficial de FENAPO 2026: 21 noches gratis en el Foro de las Estrellas y 14 noches en el Palenque (boleto aparte), del 7 al 30 de agosto.",
+      "teatroTitle": "Foro de las Estrellas",
+      "teatroNote": "21 noches · entrada gratis",
       "palenqueTitle": "Palenque",
-      "palenqueNote": "6 confirmados · cartelera completa",
-      "tbc": "Más artistas por confirmar",
-      "sinBandera": "Sin Bandera",
-      "losAcosta": "Los Acosta",
-      "grupoFirme": "Grupo Firme",
-      "freeNotice": "Los conciertos del Teatro del Pueblo, juegos mecánicos, estacionamiento y entrada a la feria serán gratuitos este año por decreto del Gobernador de San Luis Potosí.",
-      "keniaOs": "Kenia Os",
-      "keniaOsGenre": "Pop / Urbano",
-      "sinBanderaGenre": "Balada Pop (dúo)",
-      "losAcostaGenre": "Cumbia / Regional",
-      "grupoFirmeGenre": "Regional Mexicano",
-      "edenMunoz": "Edén Muñoz",
-      "edenMunozGenre": "Regional Mexicano",
-      "gloriaTrevi": "Gloria Trevi",
-      "gloriaTreviGenre": "Pop Latino",
-      "losInvasores": "Los Invasores de Nuevo León",
-      "losInvasoresGenre": "Norteño",
-      "losCardenales": "Los Cardenales de Nuevo León",
-      "losCardenalesGenre": "Norteño",
-      "losViejones": "Los Viejones de Linares",
-      "losViejonesGenre": "Norteño"
+      "palenqueNote": "14 noches · boleto",
+      "freeNotice": "Los conciertos del Foro de las Estrellas, juegos mecánicos, estacionamiento y entrada a la feria serán gratuitos este año por decreto del Gobernador de San Luis Potosí."
     },
     "areas": {
       "title": "Áreas de la Feria",
       "subtitle": "El Recinto Ferial se divide en zonas para que encuentres exactamente lo que buscas.",
       "teatro": {
-        "name": "Teatro del Pueblo",
-        "desc": "Escenario principal con artistas de primer nivel. Conciertos gratuitos todas las noches."
+        "name": "Foro de las Estrellas",
+        "desc": "Escenario principal (antes Teatro del Pueblo) con artistas de primer nivel. Conciertos gratuitos todas las noches."
       },
       "palenque": {
         "name": "Palenque",
@@ -1928,11 +1908,11 @@
     "faq": {
       "title": "Preguntas Frecuentes",
       "q1": "¿Cuándo son las fechas exactas de FENAPO 2026?",
-      "a1": "Las fechas oficiales de FENAPO 2026 aún no se confirman. Tradicionalmente la feria se celebra durante todo agosto, arrancando la primera semana y cerrando alrededor del 31. Esta página se actualizará cuando se anuncien las fechas exactas.",
+      "a1": "La FENAPO 2026 se celebra del 7 al 30 de agosto de 2026 en el Recinto Ferial de San Luis Potosí, con conciertos cada noche en el Foro de las Estrellas y el Palenque.",
       "q2": "¿Cuánto cuestan los boletos del Palenque?",
-      "a2": "Los precios del Palenque varían según el artista, desde $500 hasta $3,000+ MXN. Los boletos se venden por Ticketmaster y en taquillas del recinto. Se agotan rápido para artistas populares.",
+      "a2": "Los precios del Palenque varían según el artista y la zona: General de $700 a $1,300 MXN, Dorada de $1,100 a $3,600, VIP de $1,700 a $4,600 y Diamante de $1,900 a $5,500. Los boletos se venden por SLP Fast Ticket (slpfastticket.com) y en taquillas del Palenque. Se agotan rápido para artistas populares como Grupo Firme y Emmanuel & Mijares.",
       "q3": "¿La entrada general es gratuita?",
-      "a3": "La entrada al recinto ferial y al Teatro del Pueblo es gratuita. El Palenque, juegos mecánicos y algunos espectáculos especiales tienen costo adicional.",
+      "a3": "Sí. En 2026 la entrada al recinto ferial, los conciertos del Foro de las Estrellas, los juegos mecánicos y el estacionamiento son gratuitos por decreto del Gobernador. Solo el Palenque requiere boleto aparte.",
       "q4": "¿Hay estacionamiento?",
       "a4": "Sí, hay estacionamiento dentro del recinto y en lotes aledaños. El costo varía. Llega temprano los fines de semana para encontrar lugar.",
       "q5": "¿Se puede llevar comida al recinto?",
@@ -1977,8 +1957,8 @@
     },
     "quickAnswer": {
       "title": "FENAPO 2026 en breve",
-      "definition": "La FENAPO 2026 — la edición 77 de la Feria Nacional Potosina de México — se celebra en agosto de 2026 en el Recinto Ferial de la Av. Fco. Martínez de la Vega, San Luis Potosí. A abril de 2026 hay nueve artistas confirmados (tres para el Teatro del Pueblo gratis y seis para el Palenque de boleto pagado), con entrada, juegos mecánicos, estacionamiento y conciertos del Teatro del Pueblo gratuitos para los asistentes. La cartelera del Palenque está completa; el Teatro del Pueblo está 90% confirmado con dos artistas internacionales pendientes. Eventos pre-FENAPO ya están corriendo en el recinto de abril a mayo.",
-      "keyFactsTitle": "Datos clave (verificados 18 de abril, 2026)"
+      "definition": "La FENAPO 2026 — la Feria Nacional Potosina de México — se celebra del 7 al 30 de agosto de 2026 en el Recinto Ferial de la Av. Fco. Martínez de la Vega, San Luis Potosí. El cartel completo reúne 35 artistas: 21 noches gratuitas en el Foro de las Estrellas (Katy Perry, Mötley Crüe, Bizarrap, Gloria Trevi, Los Tigres del Norte, Sin Bandera, Kenia Os y más) y 14 noches en el Palenque con boleto (Grupo Firme, Julión Álvarez, Edén Muñoz, Ha*Ash, Emmanuel & Mijares y más). La entrada al recinto, los juegos mecánicos, el estacionamiento y los conciertos del Foro de las Estrellas son gratuitos. Los boletos del Palenque se venden por SLP Fast Ticket.",
+      "keyFactsTitle": "Datos clave (verificados 4 de junio, 2026)"
     },
     "sources": {
       "title": "Fuentes consultadas"

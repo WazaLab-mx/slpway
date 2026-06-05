@@ -4,6 +4,27 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-06-04] events(fenapo): cartel completo 2026 (Foro de las Estrellas + Palenque)
+
+**Contexto:** Salió el cartel oficial completo de FENAPO 2026 (publicado 27 may 2026). La página tenía solo 9 artistas tentativos con avisos "por confirmar" y fechas genéricas (agosto 2026, 1–31).
+
+**Fuentes:** Infobae (Palenque y Foro de las Estrellas), El Universal SLP, Milenio. Palenque cruzado entre 2 fuentes.
+
+**Fix aplicado (`src/pages/events/fenapo-2026.tsx`):**
+- Fechas oficiales: **7–30 de agosto, 2026** (antes 1–31).
+- Foro principal renombrado a **Foro de las Estrellas** (antes Teatro del Pueblo).
+- Lineup completo movido a datos inline (`FORO_ARTISTS` 21 noches gratis + `PALENQUE_ARTISTS` 14 noches con boleto = 35 artistas), con fecha por acto. Nombres y fechas son hechos locale-neutros → fuente única, sin duplicar 35×4 en i18n.
+- Fecha de cada acto localizada con `toLocaleDateString` según locale (es/en/de/ja).
+- JSON-LD: startDate/endDate corregidos + `performer` y `subEvent` (MusicEvent por artista con su fecha) generados desde los datos.
+- Removido aviso "TBC" del hero y nota `tbc` de la lista.
+- "Last verified" → 4 jun 2026.
+
+**i18n (4 locales es/en/de/ja):** subtítulo, títulos/notas de sección, hero (date/description), stats (24 días, 35 artistas), seo.description, about.item1, areas.teatro, FAQ q1/a1 (fechas), a2 (precios reales por zona + SLP Fast Ticket), a3 (entrada gratis 2026), a12, quickAnswer. Limpiadas ~25 llaves por-artista obsoletas en cada locale.
+
+**Verificación:** 4 JSON válidos, `tsc --noEmit` sin errores en la página, render HTTP 200 con Katy Perry / Grupo Firme / Julión Álvarez / Bizarrap / Foro de las Estrellas presentes.
+
+---
+
 ## [2026-04-30] seo(indexing): noindex utility pages, multi-locale sitemap, orphan routes
 
 **Problema:** GSC reportó 11 categorías de issues de indexación: 88 URLs 404, 386 "rastreada sin indexar", 51 "descubierta sin indexar", 26 "duplicada Google eligió otra canonical", 124 "alternativa con canonical adecuado", entre otras. Auditoría reveló 3 causas raíz:
