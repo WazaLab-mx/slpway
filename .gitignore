@@ -132,3 +132,6 @@ build/
 
 # Local fact-check research scratch (raw agent output, not committed)
 .factcheck-research/
+
+# Codex (OpenAI agent) local config
+.codex/
