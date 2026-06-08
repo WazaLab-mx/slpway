@@ -4,6 +4,25 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-06-08] newsletter: "Now Open" nunca vacío + editor muestra TODAS las secciones
+
+**Problema 1 — "Now Open / Around Town":** el generador a veces escribía "no encontramos nada que recomendar". El prompt permitía rendirse y las queries de búsqueda estaban hardcodeadas a 2024/2025.
+
+**Fix 1 (`newsletter-generator.ts` SECTION 5 + `newsletter-sections.ts` regen `around_town`):**
+- Búsquedas más profundas y multi-ángulo (prensa local, Instagram/TikTok, Google Maps, categorías más allá de comida), con fechas dinámicas (`${currentYear}` / `${currentYear-1}` / mes en español).
+- Regla explícita: PROHIBIDO emitir "no encontré nada"/placeholder vacío. Escalera de fallback (apertura ≤6m → ≤12m → nueva sucursal/reapertura/remodelación → pop-up/lanzamiento → lugar trending) — siempre entrega una recomendación real y concreta, presentada con confianza.
+
+**Problema 2 — editor de secciones individuales solo mostraba algunas.** Causa raíz: en `findSectionStart`, los marcadores tipo comentario dentro de una misma card (Weather/Market/News/Quick Hits viven como `<div>` hermanos en un solo `<tr>`) saltaban con `indexOf('<tr>')` al `<tr>` de la card siguiente → índices idénticos → rebanadas vacías descartadas. Además el fallback de News buscaba "The Week in SLP" cuando el encabezado real es "Top News".
+
+**Fix 2:**
+- Extraído el parser a `src/lib/newsletter-section-parser.ts` (lógica pura, testeable; separa lógica de presentación). `NewsletterEditor.tsx` ahora lo importa.
+- El límite de sección es la posición del propio marcador (rebanadas contiguas en orden de documento) — ya no colapsan las secciones anidadas en una card.
+- Fallbacks por TEXTO del título (emoji-agnósticos) y corregido News → "Top News". Detecta todas las secciones aunque el LLM borre los comentarios HTML.
+
+**Tests:** `src/lib/__tests__/newsletter-section-parser.test.ts` (6 casos): detecta todas las secciones del template, no colapsa hermanas en una card, recupera por título cuando faltan comentarios, valida el fallback "Top News". Todos en verde. `tsc` sin errores en los archivos tocados.
+
+---
+
 ## [2026-06-04] events(fenapo): cartel completo 2026 (Foro de las Estrellas + Palenque)
 
 **Contexto:** Salió el cartel oficial completo de FENAPO 2026 (publicado 27 may 2026). La página tenía solo 9 artistas tentativos con avisos "por confirmar" y fechas genéricas (agosto 2026, 1–31).

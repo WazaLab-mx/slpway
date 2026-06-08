@@ -446,10 +446,27 @@ Topics: history, culture, famous potosinos, local traditions, architecture, cuis
 Make it interesting and educational.
 Return the complete <tr> section HTML with the 🧠 Did You Know? header.`,
 
-    around_town: `Generate an "Around Town" section featuring:
-1. A NEW place that recently opened in San Luis Potosí (2024-2025)
-2. A "Good to Know" practical city update
-Include specific addresses and details.
+    around_town: `Generate an "Around Town" section for San Luis Potosí, México with:
+1. A "✨ NOW OPEN" spotlight on ONE fresh, noteworthy place
+2. A "📌 Good to Know" practical city update
+
+📅 TODAY IS: ${dates.todayFormatted}
+
+🔎 SEARCH DEEPLY for the NOW OPEN item — do several rounds, don't stop at the first empty result.
+Try multiple angles and recent months (${dates.currentYear} / ${dates.currentYear - 1}):
+- "inauguración restaurante San Luis Potosí ${dates.currentYear}", "apertura negocio SLP ${dates.spanishMonth} ${dates.currentYear}", "nuevo café SLP ${dates.currentYear}", "abre sus puertas SLP"
+- Local press (Pulso SLP, El Universal SLP, Código San Luis), Instagram/TikTok "#nuevoenslp" "#aperturaslp", Google Maps recently-added places
+- Categories beyond food: tienda, boutique, gimnasio, coworking, galería, bar, cervecería, heladería, panadería, museo
+
+🚫 NEVER write "we couldn't find anything", "nothing new", or any empty/apologetic placeholder. This section ALWAYS ships a real, specific recommendation. Use the FIRST tier that yields a verifiable item:
+1. Brand-new opening (~last 6 months) — ideal
+2. Recent opening (~last 12 months)
+3. New branch / reopening / major renovation
+4. Current pop-up, seasonal launch, or new market with real dates
+5. A spot clearly trending right now, framed as "everyone's talking about…"
+Present it confidently as a genuine discovery; never mention earlier tiers came up empty.
+
+Include a real address and at least one real contact (Instagram, phone, or website).
 Return the complete <tr> section HTML with the 🏙️ Around Town header.`,
 
     escape: `Generate a "Weekend Escape" section about a day trip destination near San Luis Potosí.

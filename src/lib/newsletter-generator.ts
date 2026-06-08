@@ -1987,42 +1987,40 @@ Overall Summary: ${weatherForecast.summary}
     TONE: "One of those places you stumble upon and wonder why nobody told you sooner..."
 
     ═══════════════════════════════════════════════════════════
-    SECTION 5: AROUND TOWN - RECENTLY OPENED PLACES ONLY
+    SECTION 5: AROUND TOWN - WHAT'S NEW IN THE CITY
     ═══════════════════════════════════════════════════════════
 
-    **⚠️ CRITICAL: This section is ONLY for places that OPENED IN 2024 or 2025.**
-
-    DO NOT feature established restaurants/cafes that have been open for years.
-    We need FRESH discoveries - places that opened in the last 6 months maximum.
+    Goal: spotlight ONE fresh, noteworthy place or development in San Luis Potosí.
+    Prefer the newest thing you can find; the more recent, the better.
 
     **PREVIOUSLY FEATURED (DO NOT REPEAT):**
     ${usedPlacesList || 'No previous places recorded yet.'}
 
-    **HOW TO FIND RECENTLY OPENED PLACES:**
-    Search queries to use:
-    - "inauguración restaurante San Luis Potosí 2025"
-    - "nuevo café SLP diciembre 2025"
-    - "apertura negocio San Luis Potosí noviembre 2025"
-    - "recién abierto San Luis Potosí"
-    - Instagram: #nuevoenslp #aaboraenslp #slpnuevo
+    **🔎 SEARCH DEEPLY — do MULTIPLE rounds before settling. Do not stop at the first empty result.**
+    Run searches across these angles (use ${currentYear} and ${currentYear - 1}, and the month names ${spanishMonth} ${currentYear}, ${prevMonthSpanish1}):
+    - News/openings: "inauguración restaurante San Luis Potosí ${currentYear}", "apertura negocio SLP ${spanishMonth} ${currentYear}", "nuevo café SLP ${currentYear}", "recién abierto San Luis Potosí", "abre sus puertas SLP ${currentYear}"
+    - Local press: search Pulso SLP, El Universal SLP, Código San Luis, Quinto Poder, Astrolabio for "nuevo", "apertura", "inauguración"
+    - Categories beyond food: tienda, boutique, gimnasio, coworking, galería, parque, mercado, bar, cervecería, heladería, panadería, clínica, museo, centro comercial
+    - Social: Instagram/Facebook/TikTok "#nuevoenslp", "#aperturaslp", "#slp", geotag San Luis Potosí, "gran apertura"
+    - Maps: Google Maps / Google "nuevos lugares San Luis Potosí ${currentYear}", places marked recently added or with first reviews this year
 
-    **VERIFICATION:**
-    Before including a place, verify it opened recently by:
-    - Checking their Instagram for "gran apertura" or opening posts
-    - Looking for news articles about their inauguration
-    - Confirming opening date is 2024 or 2025
+    **VERIFICATION (when you have a candidate):**
+    - Confirm it's genuinely recent (opened within roughly the last 12 months) via an opening post, news article, or first reviews.
+    - Get a real address and at least one real contact (Instagram handle, phone, or website).
 
-    **IF YOU CANNOT FIND A RECENTLY OPENED PLACE:**
-    Instead of featuring an old establishment, write about:
-    - A pop-up event or temporary installation
-    - A seasonal menu launch at a restaurant
-    - A renovation or new location of an existing business
-    - A trending spot that's gaining popularity
+    **🚫 NEVER OUTPUT "we couldn't find anything", "nothing to recommend", "no new openings", or any empty/apologetic placeholder. This section ALWAYS ships a real, specific recommendation.**
+    Work down this ladder and use the FIRST tier that yields a verifiable, specific item:
+    1. A brand-new opening (last ~6 months) — ideal.
+    2. A recent opening from the last ~12 months.
+    3. A new branch / second location, a reopening, or a major renovation of an existing business.
+    4. A current pop-up, seasonal menu launch, new market, or limited-time installation with real dates.
+    5. A spot that is clearly trending / newly buzzed-about right now (verifiable via recent posts or coverage), framed as "everyone's talking about…".
+    Whatever tier you land on, present it confidently as a genuine discovery — never mention that earlier tiers came up empty.
 
     **REQUIRED INFO:**
-    - Name + OPENING DATE (month/year they opened)
+    - Name + how recent it is (opening month/year, or "new this season" / "trending now")
     - Address
-    - Hours
+    - Hours (if available)
     - What they offer
     - Price range
     - Instagram/contact
