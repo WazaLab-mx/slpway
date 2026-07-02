@@ -4,6 +4,12 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-02] content: Real de Catorce deep-dive (Tier 1 #3)
+
+**Nuevo post**: `/blog/real-de-catorce-guide-2026` (ID 9e0a0476), vía `scripts/publish-real-de-catorce-guide.js`. EN + ES completos. Historia verificada con cronología del INAH (48 minas en un mes en 1782, primera dinamita de México 1873, casa de moneda cerrada por Maximiliano 1866), Túnel de Ogarrio, willys/caballos con precios, sección Wirikuta/wixárika con inscripción UNESCO jul 2025 + recuadro legal del peyote (arts. 245 LGS, 194-195 CPF, NOM-059 — sin romantizar), tabla de hoteles, y gancho 2026: 800 aniversario de San Francisco → fiesta de octubre récord. Cautelas editoriales del dossier aplicadas (nombre como leyenda, población "15,000 — la leyenda dice 40,000", Treasure of the Sierra Madre omitida por inverificable). FAQPage JSON-LD 6×2 idiomas. Interlinks: weekend-getaways + Huasteca. Verificado en vivo + Indexing API.
+
+---
+
 ## [2026-07-02] content: deep-dive Xilitla & Las Pozas (Tier 1 #2) + interlink con Huasteca
 
 **Nuevo post**: `/blog/xilitla-las-pozas-guide-2026` (ID f908dc09), vía `scripts/publish-xilitla-las-pozas-guide.js`. EN + ES completos; de/ja metas traducidas. Contenido: historia verificada de Edward James (contrato con Dalí 1937–38, retratos de Magritte, leyenda real presentada como leyenda), llegada a Xilitla 1945 con Plutarco Gastélum, helada de 1962 → flores de concreto, US$5M+ financiados subastando su colección surrealista, estructuras icónicas con nombres, Fondo Xilitla/CEMEX 2007, UNESCO tentativa 2009, Monumento Artístico 2012. Correcciones importantes vs guías viejas: **ya no se permite nadar en las pozas**, drones prohibidos, tours en inglés 10 AM y 3 PM. Sección del pueblo (exconvento 1553, Museo Leonora Carrington Xilitla 2018 → interlink al artículo Carrington existente, café, El Castillo) + Sótano de las Huahuas y Cueva del Salitre. FAQPage JSON-LD 6 preguntas ×2 idiomas, fuentes con discrepancias atribuidas (27 vs 36 estructuras). Imágenes normalizadas: `xilitla-las-pozas-pools.webp`, `xilitla-pueblo-magico.jpg` (copiadas de rutas con espacios).
