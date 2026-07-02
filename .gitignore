@@ -135,3 +135,6 @@ build/
 
 # Codex (OpenAI agent) local config
 .codex/
+
+# Sales outreach exports (contact data stays local)
+outreach-negocios*.csv

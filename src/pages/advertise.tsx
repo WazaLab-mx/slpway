@@ -101,6 +101,12 @@ export default function Advertise() {
                 >
                   {t('advertise.hero.ctaSecondary')}
                 </Link>
+                <Link
+                  href="/media-kit"
+                  className="inline-flex items-center border-2 border-white/60 text-white/90 px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all"
+                >
+                  Media Kit →
+                </Link>
               </div>
             </div>
           </div>

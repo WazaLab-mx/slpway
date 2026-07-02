@@ -4,6 +4,14 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-02] feat(b2b): página /media-kit + lista de outreach WhatsApp
+
+**1. `/media-kit`** (src/pages/media-kit.tsx, bilingüe ES/EN por locale): la herramienta de ventas B2B con SOLO números verificables (constante STATS, actualizar trimestralmente): 850+ subs / 30% apertura (Beehiiv jul 2026), +378% clics de Google T2 vs T1, 30,000+ impresiones/trimestre, 35+ guías, 40+ eventos, 116 negocios, 4 idiomas. Secciones: stats con fuentes citadas, perfil de audiencia (expats corredor BMW/GM + potosinos + viajeros), callout de temporada FENAPO (espacios limitados), 3 productos con CTA a /contact con subject etiquetado (listing $250/mes, patrocinio newsletter, paquetes $1,500–5,000), tracking GA4 `cta_click` media_kit. Enlazada desde el hero de /advertise. Sin ads (es herramienta de venta, no contenido).
+
+**2. Lista de outreach** (`scripts/generate-outreach-list.js` → `outreach-negocios.csv`, gitignoreado): 116 negocios del directorio ordenados para vender — 86 contactables por WhatsApp con **deep link wa.me + pitch pre-escrito** ("tu negocio ya aparece en nuestro directorio... ¿te comparto sus estadísticas?"), prioridad por categoría (45 restaurantes/bares/cafés P1), completitud de perfil 0-5, y gancho de venta sugerido por caso (44 sin sitio web propio = pitch más fuerte). Regenerable en cualquier momento.
+
+---
+
 ## [2026-07-02] fix(conversion): 7 bugs que mataban conversión + política sin-cuentas-públicas
 
 **Contexto:** QA en vivo con navegador (consultoría 2.0) encontró funnels rotos en silencio. Además, decisión del dueño: **sin login/signup público por ahora** — los flujos de negocio pasan a venta directa vía contacto.
