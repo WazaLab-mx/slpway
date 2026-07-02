@@ -70,18 +70,26 @@ const FoodieGuidePage: NextPage = () => {
       </Head>
 
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-amber-50/80 to-amber-100/50">
-        <div className="container mx-auto px-4">
+      <section className="relative py-24 overflow-hidden">
+        <Image
+          src="/images/food/traditional-potosino-main.jpg"
+          alt="Close-up of traditional Mexican tacos topped with cilantro and onion"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 to-black/60" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-amber-700 text-sm font-medium uppercase tracking-wider">
+            <span className="text-amber-300 text-sm font-medium uppercase tracking-wider">
               SPONSORED CONTENT
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6">
+            <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mt-2 mb-6">
               The Ultimate Foodie Guide to San Luis Potosí
             </h1>
-            <LastUpdated date="2026-04-07" className="mb-4" />
-            <p className="text-lg text-gray-700 mb-4">
-              As the aromas of slow-simmered moles and freshly made corn tortillas drift through the historic streets of San Luis Potosí, the city reveals itself as one of Mexico's hidden culinary treasures. Join us on a gastronomic journey curated by <Link href="https://lalegendaria.com/nuestras-cervezas/" className="text-amber-700 hover:underline font-medium" target="_blank" rel="noopener noreferrer">La Legendaria Microcervecería</Link>, where every traditional dish and innovative creation finds its perfect craft beer companion.
+            <LastUpdated date="2026-04-07" className="text-gray-200 mb-4" />
+            <p className="text-lg text-gray-200 mb-4">
+              As the aromas of slow-simmered moles and freshly made corn tortillas drift through the historic streets of San Luis Potosí, the city reveals itself as one of Mexico's hidden culinary treasures. Join us on a gastronomic journey curated by <Link href="https://lalegendaria.com/nuestras-cervezas/" className="text-amber-300 hover:underline font-medium" target="_blank" rel="noopener noreferrer">La Legendaria Microcervecería</Link>, where every traditional dish and innovative creation finds its perfect craft beer companion.
             </p>
             <div className="flex justify-center mt-6">
               <a

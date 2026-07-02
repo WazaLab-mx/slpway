@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
@@ -131,7 +132,14 @@ export default function SpouseHubPage() {
       <main className="min-h-screen bg-gradient-to-b from-rose-50 via-white to-purple-50">
         {/* Hero - Empathetic Welcome */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-rose-600 via-purple-600 to-indigo-700"></div>
+          <Image
+            src="/images/heroes/community-coffee.jpg"
+            alt="Friends chatting over coffee at a cafe meetup"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-rose-600/80 via-purple-600/75 to-indigo-700/80"></div>
           <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10"></div>
 
           <div className="relative container mx-auto px-4 py-16 md:py-24 max-w-3xl text-center">

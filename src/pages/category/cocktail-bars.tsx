@@ -1,5 +1,6 @@
 import { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 import { useState } from 'react';
 import { Place } from '@/types';
 import { supabase } from '@/lib/supabase';
@@ -54,16 +55,24 @@ const CocktailBarsPage: NextPage<CocktailBarsPageProps> = ({ places }) => {
       </Head>
 
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container mx-auto px-4">
+      <section className="relative py-24 overflow-hidden">
+        <Image
+          src="/images/restaurants-and-bars/cocktail-bars.webp"
+          alt="Elegant cocktail bar with backlit shelves and bar stools at night"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 to-black/60" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-primary text-sm font-medium uppercase tracking-wider">
+            <span className="text-white/90 text-sm font-medium uppercase tracking-wider">
               CRAFT COCKTAILS & AMBIANCE
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6">
+            <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mt-2 mb-6">
               Cocktail Bars
             </h1>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-200">
               Experience the sophisticated nightlife of San Luis Potosí. From intimate speakeasies to
               stunning rooftop bars, discover the city's finest cocktail destinations.
             </p>

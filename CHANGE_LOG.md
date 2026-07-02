@@ -4,6 +4,24 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-02] feat(ui): imágenes de fondo en 27 heroes planos + barrido de contraste
+
+**Contexto:** El dueño reportó heroes de "plasta de color liso". Inventario (agente Explore): ~30 heroes planos. Criterio del dueño aplicado: fotos reales de SLP del repo primero, temáticas de Unsplash después (close-ups de objetos/ambientes), NUNCA pueblos que aparenten ser San Luis sin serlo.
+
+**Ejecución (2 agentes frontend-expert en paralelo, 27 páginas):**
+- 23 con imágenes existentes del repo (cantinas, terrazas, Mercado República, Tangamanga, Centro Histórico real para el blog…). 2 sustituciones por verificación visual: live-music.jpg era thumbnail 275px → event-categories/music.webp; food-guide.jpg era logo 200px → tacos 800px.
+- 4 descargas Unsplash verificadas visualmente a public/images/heroes/ (útiles escolares, pasaporte/maleta, cajas de mudanza, café-comunidad). Candidatas RECHAZADAS en el vetting: isla tropical, bóveda de banco, calle de Bucarest (habría parecido pueblo colonial falso). La foto de relocation se reemplazó una segunda vez por traer branding "wehkamp.nl" visible → foto de gente llegando a depa (buscada vía unsplash.com/napi, verificada).
+- Patrón uniforme: Image fill priority + overlay de gradiente del hue original a /70–85 + contenido z-10.
+
+**Barrido de contraste (reporte del dueño: "textos grises que se pierden"):**
+- 9 H1 sin clase clara → text-white explícito (el CSS global fuerza #111827).
+- 5 heroes de recursos: gray-300/400 → gray-100 / white-80 (script limitado al bloque <section> exacto del hero).
+- **Fix de raíz en LastUpdated.tsx**: su text-gray-500 fijo le ganaba al color pasado por el caller (por orden de clases de Tailwind) — ahora si el caller pasa un text-*, el suyo manda. Arregla los 12 heroes con "Reviewed on..." ilegible sin tocar usos normales.
+
+**Validación local completa antes del único deploy** (a petición del dueño para no gastar builds de Netlify): tsc limpio, 3 builds locales, servidor next start + screenshots Playwright (cantinas, breakfast, blog, relocation) y verificación programática de color computado del H1.
+
+---
+
 ## [2026-07-02] feat(product): template de páginas web para negocios ($3,000 MXN) + demo /negocios/demo
 
 **Nuevo producto:** páginas web one-page para negocios locales sin sitio (44 prospectos identificados en el directorio). Construido con pipeline de 2 agentes (frontend-expert construye → design-reviewer critica con screenshots Playwright e itera; calificación 5.5→8.5).

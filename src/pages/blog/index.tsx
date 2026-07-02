@@ -206,21 +206,31 @@ export default function BlogIndexPage({ posts }: BlogIndexProps) {
       </Head>
 
       <main className="bg-gradient-to-b from-gray-50 to-white min-h-screen">
-        <div className="container mx-auto px-4 py-12">
-          {/* Hero Header */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+        {/* Hero Header */}
+        <section className="relative overflow-hidden py-16 md:py-24">
+          <Image
+            src="/images/blog/centro-san-luis/hero-Centro-Historico.jpg"
+            alt="Centro Histórico of San Luis Potosí"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+          <div className="relative z-10 container mx-auto px-4 text-center">
+            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
               <SparklesIcon className="w-4 h-4" />
               {t('blog.badge')}
             </div>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               {t('blog.heroTitle')}
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
               {t('blog.heroDescription')}
             </p>
           </div>
+        </section>
 
+        <div className="container mx-auto px-4 py-12">
           {/* AdSense Banner */}
           <div className="max-w-4xl mx-auto mb-12">
             <AdUnit placement="top-banner" />

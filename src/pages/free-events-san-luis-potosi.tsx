@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 import Link from 'next/link';
 import SEO from '@/components/common/SEO';
 import AdUnit from '@/components/common/AdUnit';
@@ -188,12 +189,20 @@ export default function FreeEventsSLP() {
       />
 
       <main className="min-h-screen bg-gray-50">
-        <section className="bg-gradient-to-br from-blue-700 to-indigo-600 py-16 text-white">
-          <div className="container mx-auto px-4 max-w-4xl text-center">
+        <section className="relative overflow-hidden py-16 text-white">
+          <Image
+            src="/images/calendar/community-fair.jpg"
+            alt="Community fair in San Luis Potosí"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-700/85 to-indigo-600/85" />
+          <div className="relative z-10 container mx-auto px-4 max-w-4xl text-center">
             <span className="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-semibold mb-4">
               {isEs ? 'GUÍA GRATIS' : 'FREE GUIDE'}
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
               {isEs ? 'Eventos Gratis en San Luis Potosí' : 'Free Events in San Luis Potosí'}
             </h1>
             <LastUpdated date="2026-04-07" className="text-blue-100 mb-4" />

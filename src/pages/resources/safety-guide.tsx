@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
@@ -136,16 +137,24 @@ export default function SafetyGuidePage() {
 
       <main className="min-h-screen bg-gray-50">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800 py-16">
-          <div className="container mx-auto px-4 max-w-4xl">
+        <section className="relative overflow-hidden py-16">
+          <Image
+            src="/images/cultural/san-luis-potosi-cathedral.jpg"
+            alt="San Luis Potosí cathedral"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-800/85 via-slate-900/80 to-slate-800/85" />
+          <div className="relative z-10 container mx-auto px-4 max-w-4xl">
             <div className="flex items-center gap-2 text-emerald-400 text-sm mb-4">
               <span className="px-3 py-1 bg-emerald-500/20 rounded-full">Verified Guide</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Is San Luis Potosí Safe?
             </h1>
-            <LastUpdated date="2026-04-07" className="text-gray-300 mb-4" />
-            <p className="text-xl text-gray-300 mb-6">
+            <LastUpdated date="2026-04-07" className="text-gray-100 mb-4" />
+            <p className="text-xl text-gray-100 mb-6">
               A data-driven analysis with crime statistics, local perception surveys, and real expat experiences.
             </p>
             <div className="flex flex-wrap gap-3">

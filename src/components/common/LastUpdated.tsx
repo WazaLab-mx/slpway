@@ -33,8 +33,11 @@ export default function LastUpdated({ date, className = '' }: LastUpdatedProps) 
     timeZone: 'UTC',
   }).format(parsed);
 
+  // The gray default loses against photo heroes — when the caller passes any
+  // text color, theirs must win instead of fighting Tailwind class order.
+  const hasColor = /(^|\s)!?text-/.test(className);
   return (
-    <p className={`text-sm text-gray-500 mt-2 ${className}`}>
+    <p className={`text-sm mt-2 ${hasColor ? '' : 'text-gray-500'} ${className}`}>
       {label}{' '}
       <time dateTime={date} className="font-medium">
         {formatted}

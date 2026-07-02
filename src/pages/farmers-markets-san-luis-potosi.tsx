@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Image from 'next/image';
 import SEO from '@/components/common/SEO';
 import AdUnit from '@/components/common/AdUnit';
 import LastUpdated from '@/components/common/LastUpdated';
@@ -172,12 +173,20 @@ export default function FarmersMarketsSLP() {
       />
 
       <main className="min-h-screen bg-gray-50">
-        <section className="bg-gradient-to-br from-emerald-700 to-teal-600 py-16 text-white">
-          <div className="container mx-auto px-4 max-w-4xl text-center">
+        <section className="relative py-16 text-white overflow-hidden">
+          <Image
+            src="/images/food/mercado-republica.jpg"
+            alt="Interior of Mercado República with fresh produce stalls in San Luis Potosí"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/80 to-teal-800/70" />
+          <div className="container mx-auto px-4 max-w-4xl text-center relative z-10">
             <span className="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-semibold mb-4">
               {isEs ? 'GUÍA LOCAL' : 'LOCAL GUIDE'}
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
               {isEs ? 'Tianguis y Mercados en San Luis Potosí' : 'Farmers Markets in San Luis Potosí'}
             </h1>
             <LastUpdated date="2026-04-07" className="text-emerald-100 mb-4" />

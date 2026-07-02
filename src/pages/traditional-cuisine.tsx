@@ -1,5 +1,6 @@
 import { GetStaticProps, NextPage } from 'next';
 import { useState } from 'react';
+import Image from 'next/image';
 import { Place } from '@/types';
 import { supabase } from '@/lib/supabase';
 import PlaceCard from '@/components/PlaceCard';
@@ -56,16 +57,24 @@ const TraditionalCuisinePage: NextPage<TraditionalCuisinePageProps> = ({ places 
       />
 
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container mx-auto px-4">
+      <section className="relative py-24 overflow-hidden">
+        <Image
+          src="/images/restaurants-and-bars/traditional-restaurants.jpg"
+          alt="Elegant dining room of a traditional restaurant in a historic San Luis Potosí building"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 to-black/60" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-primary text-sm font-medium uppercase tracking-wider">
+            <span className="text-white/90 text-sm font-medium uppercase tracking-wider">
               AUTHENTIC FLAVORS
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6">
+            <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mt-2 mb-6">
               Traditional Cuisine
             </h1>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-200">
               Experience the authentic flavors of San Luis Potosí through our carefully curated selection
               of traditional restaurants. From enchiladas potosinas to regional specialties, discover the
               rich culinary heritage of our city.

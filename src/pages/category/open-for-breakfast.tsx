@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 import { Place } from '@/types';
 import { supabase } from '@/lib/supabase';
 import PlaceCard from '@/components/PlaceCard';
@@ -68,14 +69,27 @@ const OpenForBreakfastPage: React.FC<OpenForBreakfastPageProps> = ({ places }) =
         />
       </Head>
 
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto mb-12 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Open For Breakfast</h1>
-          <p className="text-xl text-gray-600">
-            Start your day right with these breakfast spots in San Luis Potosí. From traditional Mexican morning fare to international options and cozy coffee houses.
-          </p>
+      {/* Hero Section */}
+      <section className="relative py-24 overflow-hidden">
+        <Image
+          src="/images/restaurants-and-bars/breakfast.webp"
+          alt="Traditional Mexican breakfast plate with enchiladas, beans and guacamole"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 to-black/60" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl font-bold text-white mb-4">Open For Breakfast</h1>
+            <p className="text-xl text-gray-200">
+              Start your day right with these breakfast spots in San Luis Potosí. From traditional Mexican morning fare to international options and cozy coffee houses.
+            </p>
+          </div>
         </div>
+      </section>
 
+      <div className="container mx-auto px-4 py-16">
         {places.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {places.map((place) => (

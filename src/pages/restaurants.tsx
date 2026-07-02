@@ -1,5 +1,6 @@
 import { GetStaticProps, NextPage } from 'next';
 import { useState } from 'react';
+import Image from 'next/image';
 import { Place } from '@/types';
 import { supabase } from '@/lib/supabase';
 import PlaceCard from '@/components/PlaceCard';
@@ -54,16 +55,24 @@ const RestaurantsPage: NextPage<RestaurantsPageProps> = ({ places }) => {
       />
 
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container mx-auto px-4">
+      <section className="relative py-24 overflow-hidden">
+        <Image
+          src="/images/food/all-restaurants-main.jpg"
+          alt="Stack of pancakes drizzled with syrup at a San Luis Potosí restaurant"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 to-black/60" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-primary text-sm font-medium uppercase tracking-wider">
+            <span className="text-white/90 text-sm font-medium uppercase tracking-wider">
               Explore Our Cuisine
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6">
+            <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mt-2 mb-6">
               All Restaurants
             </h1>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-200">
               Discover the best culinary scene of San Luis Potosí through our curated selection
               of restaurants. From innovative fusion cuisine to contemporary dining experiences,
               discover the city's most exciting culinary destinations.

@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
@@ -477,8 +478,16 @@ export default function SchoolGuidePage() {
         </div>
 
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 py-12 md:py-16">
-          <div className="container mx-auto px-4">
+        <section className="relative overflow-hidden py-12 md:py-16">
+          <Image
+            src="/images/heroes/school-supplies.jpg"
+            alt="School books, pencils and alphabet blocks on a desk"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/85 via-blue-700/80 to-indigo-800/85" />
+          <div className="relative z-10 container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur rounded-full text-white/90 text-sm mb-6">
                 <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
@@ -487,7 +496,7 @@ export default function SchoolGuidePage() {
               <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
                 Ultimate School Guide<br />San Luis Potosí
               </h1>
-              <LastUpdated date="2026-04-07" className="text-gray-300 mb-4" />
+              <LastUpdated date="2026-04-07" className="text-gray-100 mb-4" />
               <p className="text-xl text-white/90 mb-8">
                 Complete education guide for expat families: international schools, enrollment process, costs & everything you need to know
               </p>

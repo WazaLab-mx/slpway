@@ -66,26 +66,34 @@ const WineScenePage: NextPage = () => {
       </Head>
 
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-red-50 to-red-100/50">
-        <div className="container mx-auto px-4">
+      <section className="relative py-24 overflow-hidden">
+        <Image
+          src="/images/sponsored/potosino-wine.jpg"
+          alt="Candlelit wine cellar with oak barrels at a Potosino winery"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 to-black/60" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-red-700 text-sm font-medium uppercase tracking-wider">
+            <span className="text-red-300 text-sm font-medium uppercase tracking-wider">
               SPONSORED CONTENT
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6">
+            <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mt-2 mb-6">
               Discover the Potosino Wine Scene
             </h1>
-            <LastUpdated date="2026-04-07" className="mb-4" />
-            <p className="text-lg text-gray-700 mb-4">
+            <LastUpdated date="2026-04-07" className="text-gray-200 mb-4" />
+            <p className="text-lg text-gray-200 mb-4">
               The sun dips below the horizon as you raise your glass, capturing the last golden rays through the ruby-red Tempranillo in your hand. Here, in the emerging vineyards of San Luis Potosí, you're witnessing the birth of Mexico's newest wine story—one that local winemakers have been quietly crafting for decades, now finally ready to be savored and shared.
             </p>
-            <p className="text-lg text-gray-700 mb-4">
-              Beyond its rich cultural heritage and stunning landscapes, San Luis Potosí harbors a blossoming wine scene that's capturing the attention of enthusiasts and connoisseurs. Join us on a journey through the region's emerging vineyards, curated by <Link href="https://lagranviaslp.com/" className="text-red-700 hover:underline font-medium" target="_blank" rel="noopener noreferrer">La Gran Vía</Link>, where ancient lands and modern techniques are producing uniquely Potosino expressions of the vine.
+            <p className="text-lg text-gray-200 mb-4">
+              Beyond its rich cultural heritage and stunning landscapes, San Luis Potosí harbors a blossoming wine scene that's capturing the attention of enthusiasts and connoisseurs. Join us on a journey through the region's emerging vineyards, curated by <Link href="https://lagranviaslp.com/" className="text-red-300 hover:underline font-medium" target="_blank" rel="noopener noreferrer">La Gran Vía</Link>, where ancient lands and modern techniques are producing uniquely Potosino expressions of the vine.
             </p>
-            <p className="text-lg text-gray-700 mb-4">
+            <p className="text-lg text-gray-200 mb-4">
               The region is home to a variety of wineries, each offering a distinct taste of the land. From the high-altitude vineyards of the Catorce Highlands, known for their intense minerality and complex flavor profiles, to the fertile Río Verde Valley, where elegant white wines and sparkling varieties flourish, San Luis Potosí is a haven for wine enthusiasts.
             </p>
-            <p className="text-lg text-gray-700 mb-4">
+            <p className="text-lg text-gray-200 mb-4">
               San Luis Potosí hosts various wine events throughout the year, showcasing the diversity and quality of regional wines. These events are a testament to the region's growing reputation in the world of viticulture, drawing wine lovers from near and far to experience the vibrant flavors and rich cultural heritage of San Luis Potosí.
             </p>
             <div className="flex justify-center mt-6">

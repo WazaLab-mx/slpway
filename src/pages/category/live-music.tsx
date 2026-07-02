@@ -1,5 +1,6 @@
 import { GetStaticProps, NextPage } from 'next';
 import { useState } from 'react';
+import Image from 'next/image';
 import SEO from '@/components/common/SEO';
 import { Place } from '@/types';
 import { supabase } from '@/lib/supabase';
@@ -51,16 +52,24 @@ const LiveMusicPage: NextPage<LiveMusicPageProps> = ({ places }) => {
       />
 
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container mx-auto px-4">
+      <section className="relative py-24 overflow-hidden">
+        <Image
+          src="/images/event-categories/music.webp"
+          alt="Band performing on a stage with dramatic lights at a live music venue"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 to-black/60" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-primary text-sm font-medium uppercase tracking-wider">
+            <span className="text-white/90 text-sm font-medium uppercase tracking-wider">
               LIVE ENTERTAINMENT
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6">
+            <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mt-2 mb-6">
               Live Music Venues
             </h1>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-200">
               Experience the vibrant music scene of San Luis Potosí. From intimate jazz clubs to
               lively bars and restaurants with live performances, discover venues where music comes alive.
             </p>

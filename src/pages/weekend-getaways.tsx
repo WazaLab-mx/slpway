@@ -86,17 +86,25 @@ const WeekendGetawaysPage: NextPage = () => {
       </Head>
 
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container mx-auto px-4">
+      <section className="relative py-24 overflow-hidden">
+        <Image
+          src="/images/sponsored/weekend-getaways.jpg"
+          alt="Tamul waterfall pouring into the turquoise Tampaón river in the Huasteca Potosina"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 to-black/60" />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-primary text-sm font-medium uppercase tracking-wider">
+            <span className="text-white/90 text-sm font-medium uppercase tracking-wider">
               SPONSORED CONTENT
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6">
+            <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mt-2 mb-6">
               Weekend Getaways in San Luis Potosí
             </h1>
-            <p className="text-lg text-gray-600 mb-4">
-              As the week comes to an end, there's a whisper among the cobblestone streets of San Luis Potosí—a call to adventure just a short drive away. Escape the routine with these carefully curated weekend adventures by <Link href="https://www.corazondexoconostle.com/index.php/en/" className="text-primary hover:underline font-medium" target="_blank" rel="noopener noreferrer">Corazón de Xoconostle</Link>, the premier adventure guides who have spent over a decade discovering the hidden gems and secret paths of this magnificent region.
+            <p className="text-lg text-gray-200 mb-4">
+              As the week comes to an end, there's a whisper among the cobblestone streets of San Luis Potosí—a call to adventure just a short drive away. Escape the routine with these carefully curated weekend adventures by <Link href="https://www.corazondexoconostle.com/index.php/en/" className="text-white underline hover:no-underline font-medium" target="_blank" rel="noopener noreferrer">Corazón de Xoconostle</Link>, the premier adventure guides who have spent over a decade discovering the hidden gems and secret paths of this magnificent region.
             </p>
             <div className="flex justify-center mt-6">
               <a

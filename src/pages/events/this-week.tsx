@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { CalendarIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
@@ -91,13 +92,21 @@ export default function EventsThisWeek({ events, weekStart, weekEnd }: ThisWeekP
 
       <div className="min-h-screen bg-gray-50">
         {/* Header */}
-        <section className="bg-secondary text-white py-14 px-4">
-          <div className="container mx-auto max-w-5xl text-center">
+        <section className="relative overflow-hidden text-white py-14 px-4">
+          <Image
+            src="/images/events/festival.jpg"
+            alt="Festival in San Luis Potosí"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-secondary/90 via-secondary/80 to-secondary/90" />
+          <div className="relative z-10 container mx-auto max-w-5xl text-center">
             <p className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-primary mb-3">
               <CalendarIcon className="w-5 h-5" />
               {formatRange(weekStart, weekEnd, locale)}
             </p>
-            <h1 className="text-4xl md:text-5xl font-bold font-serif mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold font-serif mb-4 text-white">
               {isEs ? 'Eventos esta semana en San Luis Potosí' : 'Events this week in San Luis Potosí'}
             </h1>
             <p className="text-white/80 max-w-2xl mx-auto">

@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
@@ -548,8 +549,16 @@ export default function HealthGuidePage() {
 
       <div className="min-h-screen bg-gray-50">
         {/* Hero Section */}
-        <div className="bg-gradient-to-br from-emerald-700 via-emerald-600 to-teal-600 text-white">
-          <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden text-white">
+          <Image
+            src="/images/practical-categories/english-speaking-healthcare.jpg"
+            alt="Healthcare services in San Luis Potosí"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-800/85 via-emerald-700/80 to-teal-700/85" />
+          <div className="relative z-10 max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
             <div className="text-center">
               <div className="flex justify-center gap-2 mb-6">
                 <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-green-400 text-green-900">
@@ -559,7 +568,7 @@ export default function HealthGuidePage() {
                   10+ SOURCES
                 </span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
                 Ultimate Healthcare Guide
               </h1>
               <LastUpdated date="2026-04-07" className="text-emerald-100 mb-4" />

@@ -190,6 +190,24 @@ ${formData.specialRequirements}
         <meta name="description" content="Seamless relocation services to San Luis Potosí, from moving and housing to cultural orientation." />
       </Head>
 
+      <div className="relative h-96 w-full overflow-hidden">
+        <Image
+          src="/images/heroes/relocation-boxes.jpg"
+          alt="Moving boxes in a bright apartment"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/80 via-indigo-800/70 to-indigo-900/80 flex items-center justify-center">
+          <div className="text-center text-white px-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-white">Relocation Support</h1>
+            <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-indigo-100">
+              Seamless relocation services to San Luis Potosí, from moving and housing to cultural orientation.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div className="bg-gray-50 text-gray-800 py-16">
         <div className="container mx-auto px-4">
           <section className="max-w-2xl mx-auto">

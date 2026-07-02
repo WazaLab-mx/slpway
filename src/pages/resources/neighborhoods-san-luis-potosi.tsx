@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
@@ -300,9 +301,17 @@ export default function NeighborhoodsGuidePage() {
 
       <main className="min-h-screen bg-gray-50">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 py-16">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <nav className="text-sm text-gray-400 mb-6">
+        <section className="relative overflow-hidden py-16">
+          <Image
+            src="/images/experiences/San-Luis-Potosi-Ciudad.webp"
+            alt="Aerial view of San Luis Potosí city"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/85 via-blue-900/80 to-purple-900/85" />
+          <div className="relative z-10 container mx-auto px-4 max-w-6xl">
+            <nav className="text-sm text-gray-100 mb-6">
               <Link href="/" className="hover:text-white">Home</Link>
               <span className="mx-2">›</span>
               <Link href="/resources" className="hover:text-white">Resources</Link>
@@ -312,8 +321,8 @@ export default function NeighborhoodsGuidePage() {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Ultimate Neighborhoods Guide
             </h1>
-            <LastUpdated date="2026-04-07" className="text-gray-300 mb-4" />
-            <p className="text-xl text-gray-300 mb-6">
+            <LastUpdated date="2026-04-07" className="text-gray-100 mb-4" />
+            <p className="text-xl text-gray-100 mb-6">
               Where to Live in San Luis Potosí — A Complete Guide for Expats
             </p>
             <div className="flex flex-wrap gap-3 text-sm">

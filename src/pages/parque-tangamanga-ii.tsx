@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
 import {
@@ -139,21 +140,21 @@ export default function ParqueTangamanga2() {
 
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
         {/* Hero */}
-        <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white overflow-hidden">
-          <div
-            className="absolute inset-0 opacity-20"
-            style={{
-              background:
-                'radial-gradient(2px 2px at 20px 30px,white,transparent),radial-gradient(2px 2px at 60px 80px,white,transparent),radial-gradient(1px 1px at 120px 50px,white,transparent),radial-gradient(1px 1px at 180px 100px,white,transparent)',
-              backgroundSize: '200px 130px',
-            }}
+        <section className="relative text-white overflow-hidden">
+          <Image
+            src="/images/parque-tangamanga/lake.jpg"
+            alt="Lake at Parque Tangamanga, San Luis Potosí"
+            fill
+            priority
+            className="object-cover"
           />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/85 via-blue-800/75 to-indigo-900/85" />
           <div className="relative container mx-auto px-4 py-16 md:py-24">
             <div className="max-w-3xl">
               <span className="inline-block bg-blue-400/20 border border-blue-300/40 rounded-full px-3 py-1 text-xs font-semibold text-blue-100 mb-4">
                 🏃 {t('tangamanga2.hero.badge')}
               </span>
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">{t('tangamanga2.title')}</h1>
+              <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">{t('tangamanga2.title')}</h1>
               <LastUpdated date="2026-04-17" className="text-blue-200 mb-4" />
               <p className="text-xl text-blue-100 max-w-2xl">{t('tangamanga2.subtitle')}</p>
               <div className="flex flex-wrap gap-4 mt-8">

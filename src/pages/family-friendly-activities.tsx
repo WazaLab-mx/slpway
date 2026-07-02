@@ -372,7 +372,15 @@ export default function FamilyFriendlyActivities({ familyEvents = [] }: { family
         </div>
 
         {/* HERO */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-orange-500 via-pink-500 to-purple-600">
+        <section className="relative overflow-hidden">
+          <Image
+            src="/images/meeting-spots/tangamanga-zoo.jpg"
+            alt="Tangamanga zoo, a family favorite in San Luis Potosí"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/80 via-pink-500/75 to-purple-600/80" />
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
           <div className="relative container mx-auto px-4 md:px-8 lg:px-16 py-16 md:py-24 text-center">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight">

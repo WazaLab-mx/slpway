@@ -166,14 +166,22 @@ export default function ResourcesHubPage() {
 
       <main className="min-h-screen bg-gray-50">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-16 md:py-24">
-          <div className="container mx-auto px-4">
+        <section className="relative overflow-hidden py-16 md:py-24">
+          <Image
+            src="/images/pedestrian-street.jpg"
+            alt="Pedestrian street in San Luis Potosí"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/85 via-gray-800/75 to-gray-900/85" />
+          <div className="relative z-10 container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                 Resources Hub
               </h1>
-              <LastUpdated date="2026-04-07" className="text-gray-300 mb-4" />
-              <p className="text-xl md:text-2xl text-gray-300 mb-8">
+              <LastUpdated date="2026-04-07" className="text-gray-100 mb-4" />
+              <p className="text-xl md:text-2xl text-gray-100 mb-8">
                 Your complete guide to living, working, and thriving in San Luis Potosí
               </p>
               <div className="flex flex-wrap justify-center gap-4">

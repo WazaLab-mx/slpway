@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
@@ -197,16 +198,24 @@ export default function ArrivalChecklistPage() {
 
       <main className="min-h-screen bg-gray-50">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-16">
-          <div className="container mx-auto px-4 text-center">
+        <section className="relative overflow-hidden py-16">
+          <Image
+            src="/images/heroes/arrival-packing.jpg"
+            alt="Travel flat-lay with passport, camera and world map"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900/85 via-gray-800/80 to-gray-900/85" />
+          <div className="relative z-10 container mx-auto px-4 text-center">
             <span className="inline-block px-4 py-2 bg-primary/20 text-primary rounded-full text-sm font-medium mb-4">
               {t('arrivalChecklist.hero.badge')}
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               {t('arrivalChecklist.hero.title')}
             </h1>
-            <LastUpdated date="2026-04-07" className="text-gray-300 mb-4" />
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            <LastUpdated date="2026-04-07" className="text-gray-100 mb-4" />
+            <p className="text-xl text-gray-100 max-w-2xl mx-auto">
               {t('arrivalChecklist.hero.subtitle')}
             </p>
             <div className="flex justify-center gap-4 mt-6 flex-wrap">
