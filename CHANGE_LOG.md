@@ -4,6 +4,23 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-01] content(fenapo): deep-dive de artistas FENAPO 2026 publicado + interlinking
+
+**Contexto:** El plan de contenido decía "talent deep-dive en julio, cuando el cartel esté 100% confirmado". El cartel salió el 27 de mayo; la guía de preparación de abril prometía esta segunda guía. GSC muestra "fenapo" con 1,600+ impresiones y posición ~8 — ventana crítica antes de agosto.
+
+**Cambios principales:**
+1. **Nuevo post publicado en Supabase**: `/blog/fenapo-2026-artistas-cartel-completo` (ID a05cb5fe-3888-4c58-82cf-5673138457af), vía `scripts/publish-fenapo-2026-artistas.js`. Contenido ES + EN completos (de/ja con metas traducidas, contenido EN — patrón del repo). Incluye: 6 noches imperdibles, calendarios completos Foro (21 fechas) y Palenque (14 fechas) generados programáticamente desde los arrays del script (misma fuente que la página del evento), guía por estilo musical, boletos (solo fenapo.mx/eticket.mx), FAQPage JSON-LD (6 preguntas ES / 4 EN), sección speakable, CTA a newsletter, links a prep-guide y event page. Verificado en producción (HTTP 200, hero renderiza).
+2. **Prep-guide actualizado en Supabase** (`scripts/update-fenapo-prep-guide-link-artists.js`): la promesa de abril ("publicaremos una segunda guía") ahora enlaza a la guía de artistas; bullet "9 confirmados" → "cartel completo — 21 + 14 noches"; sección "Estado del Cartel" marcada como histórica con banner de actualización. 5/5 parches en content_es, 4/5 en content (falta un string de nav que no existía en esa columna).
+3. **Interlink desde la página del evento**: `events/fenapo-2026.tsx` ahora tiene CTA "Ver la guía completa de artistas" después de la cartelera. Clave i18n `fenapo2026.artists.deepDiveCta` agregada en es/en/de/ja (JSON validado).
+
+**Archivos afectados:**
+- `scripts/publish-fenapo-2026-artistas.js` — nuevo | Estado: Exitoso (post en producción)
+- `scripts/update-fenapo-prep-guide-link-artists.js` — nuevo | Estado: Exitoso
+- `src/pages/events/fenapo-2026.tsx` — CTA al deep-dive | Estado: Exitoso
+- `public/locales/{es,en,de,ja}/common.json` — clave deepDiveCta | Estado: Exitoso
+
+---
+
 ## [2026-07-01] seo: titles/metas alineados a queries reales de GSC (quick wins)
 
 **Contexto:** GSC Q2 2026 muestra queries rankeando en top 10 con 0 clics porque el title no contiene la palabra buscada: "best brunch spots near me" (1,117 imp, pos 5.7) y "best parks for kids near me" (419 imp, pos 5.7).

@@ -344,6 +344,15 @@ export default function Fenapo2026() {
               </ul>
             </div>
           </div>
+          <div className="mt-8 text-center">
+            <Link
+              href="/blog/fenapo-2026-artistas-cartel-completo"
+              className="inline-flex items-center gap-2 bg-purple-700 hover:bg-purple-600 text-white font-bold px-6 py-3 rounded-full transition-colors"
+            >
+              {t('fenapo2026.artists.deepDiveCta')}
+              <span aria-hidden>→</span>
+            </Link>
+          </div>
         </div>
       </section>
 
