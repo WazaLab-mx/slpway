@@ -4,6 +4,23 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-01] fix(seo): contador honesto de suscriptores + robots.txt único + 301 eventos 2025
+
+**Contexto:** Auditoría de negocio 2026-07-01. Tres fugas de credibilidad/SEO detectadas.
+
+**Cambios principales:**
+1. `/subscribe` decía "2,847+ readers" (hardcodeado); el número real en Beehiiv es 852. Ahora usa 850 (redondeo honesto hacia abajo) en hero, CTA final y metas OG/description. Constante única `subscriberCount` — actualizar ahí cuando crezca.
+2. robots.txt consolidado: eliminados `robots.txt` (raíz, obsoleto: tenía Crawl-delay y sin allowlist de crawlers IA) y `src/pages/api/robots.ts` (servía el archivo obsoleto). Queda solo `public/robots.txt` (2026-04-06, con allowlist GPTBot/ClaudeBot/PerplexityBot). Nada referenciaba las rutas eliminadas.
+3. 301 para eventos 2025 en `next.config.js` (cubren los 4 locales): `/events/fenapo-2025` → `/events/fenapo-2026`; `/events/san-luis-en-primavera-2025` → `/festival-primavera-2026`; `/events/xantolo-2025` → `/cultural/festivals` (crear página Xantolo 2026 en octubre, evento 1-2 nov). Páginas .tsx eliminadas. El sitemap ya las excluía (test `sitemap.test.ts` lo sigue validando, 22/22 en verde).
+
+**Archivos afectados:**
+- `src/pages/subscribe.tsx` — contador honesto | Estado: Exitoso
+- `robots.txt`, `src/pages/api/robots.ts` — eliminados | Estado: Exitoso
+- `next.config.js` — 3 redirects 301 nuevos | Estado: Exitoso
+- `src/pages/events/{fenapo-2025,xantolo-2025,san-luis-en-primavera-2025}.tsx` — eliminados | Estado: Exitoso
+
+---
+
 ## [2026-07-01] feat: Eliminar bookings definitivamente + CTAs de contacto directo trackeadas
 
 **Decisión de negocio:** No queremos ser responsables de reservaciones que no controlamos (operación del negocio). En lugar de intermediar bookings, mandamos el lead directo al negocio y lo MEDIMOS — ese conteo ("tu listing recibió N contactos este mes") es el argumento de venta para el listing de pago (250 MXN/mes).

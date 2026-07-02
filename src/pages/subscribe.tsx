@@ -15,7 +15,8 @@ export default function SubscribePage() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
-  const [subscriberCount, setSubscriberCount] = useState(2847);
+  // Keep this honest: round down from the real Beehiiv active-subscriber count.
+  const subscriberCount = 850;
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -161,10 +162,10 @@ export default function SubscribePage() {
         <title>Never Miss What Matters in SLP | San Luis Way Weekly</title>
         <meta
           name="description"
-          content="Join 2,800+ expats and locals who get the best events, restaurants, and insider tips delivered every Monday. Takes 10 seconds. Free forever."
+          content="Join 850+ expats and locals who get the best events, restaurants, and insider tips delivered every Monday. Takes 10 seconds. Free forever."
         />
         <meta property="og:title" content="Never Miss What Matters in SLP" />
-        <meta property="og:description" content="Join 2,800+ readers who get the best of San Luis Potosí every Monday." />
+        <meta property="og:description" content="Join 850+ readers who get the best of San Luis Potosí every Monday." />
         <meta property="og:image" content="https://www.sanluisway.com/images/og-newsletter.jpg" />
         <meta property="og:url" content="https://www.sanluisway.com/subscribe" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -262,7 +263,7 @@ export default function SubscribePage() {
               </form>
 
               <p className="text-center text-white/80 text-sm mt-4 font-medium">
-                Takes 10 seconds. Free forever. Join 2,847+ happy readers.
+                Takes 10 seconds. Free forever. Join {subscriberCount.toLocaleString()}+ happy readers.
               </p>
             </div>
 

@@ -156,6 +156,24 @@ const nextConfig = {
         destination: '/events/cara-sucia-country-fest-2026',
         permanent: true,
       },
+      // 2025 event pages expired — pass their equity to the current editions.
+      {
+        source: '/events/fenapo-2025',
+        destination: '/events/fenapo-2026',
+        permanent: true,
+      },
+      {
+        source: '/events/san-luis-en-primavera-2025',
+        destination: '/festival-primavera-2026',
+        permanent: true,
+      },
+      // Xantolo 2026 page should be created in October (event is Nov 1-2);
+      // until then the festivals overview is the closest evergreen target.
+      {
+        source: '/events/xantolo-2025',
+        destination: '/cultural/festivals',
+        permanent: true,
+      },
     ];
   },
   env: {
