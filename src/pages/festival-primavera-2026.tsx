@@ -8,6 +8,7 @@ import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import FestivalHero from '@/components/festival/FestivalHero';
 import FestivalLineup from '@/components/festival/FestivalLineup';
 import FestivalDetails from '@/components/festival/FestivalDetails';
+import AdUnit from '@/components/common/AdUnit';
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({
   props: {
@@ -44,7 +45,9 @@ export default function FestivalPrimavera2026() {
 
         <FestivalHero />
         <FestivalLineup />
+        <section className="my-8"><AdUnit placement="mid-content" /></section>
         <FestivalDetails />
+        <section className="mt-12 mb-8"><AdUnit placement="top-banner" /></section>
       </div>
     </>
   );

@@ -8,6 +8,7 @@ import PlaceCard from '@/components/PlaceCard';
 import PlaceModal from '@/components/PlaceModal';
 import FeaturedPlaces from '@/components/FeaturedPlaces';
 import SEO from '@/components/common/SEO';
+import AdUnit from '@/components/common/AdUnit';
 import { MapPinIcon, ClockIcon, TicketIcon, StarIcon } from '@heroicons/react/24/outline';
 
 // Categories based on actual database data
@@ -269,6 +270,12 @@ const CulturalAttractionsPage: NextPage<CulturalAttractionsPageProps> = ({ place
         </div>
       </section>
 
+      <section className="my-8">
+        <div className="container mx-auto px-4">
+          <AdUnit placement="mid-content" />
+        </div>
+      </section>
+
       {/* Cost of Living Callout */}
       <section className="py-8 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -469,6 +476,12 @@ const CulturalAttractionsPage: NextPage<CulturalAttractionsPageProps> = ({ place
               </p>
             </div>
           )}
+        </div>
+      </section>
+
+      <section className="mt-12 mb-8">
+        <div className="container mx-auto px-4">
+          <AdUnit placement="top-banner" />
         </div>
       </section>
 

@@ -10,6 +10,7 @@ import { GetStaticProps } from 'next';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import SEO from '@/components/common/SEO';
+import AdUnit from '@/components/common/AdUnit';
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -267,6 +268,8 @@ export default function Fenapo2026() {
         </div>
       </section>
 
+      <section className="py-8 px-4 bg-white"><div className="container mx-auto max-w-5xl"><AdUnit placement="mid-content" /></div></section>
+
       {/* Quick Answer — GEO block for LLM extraction */}
       <section id="quick-answer" className="speakable py-12 px-4 bg-gradient-to-b from-gray-900 to-gray-950 text-white">
         <div className="container mx-auto max-w-4xl">
@@ -496,6 +499,8 @@ export default function Fenapo2026() {
           </div>
         </div>
       </section>
+
+      <section className="py-8 px-4 bg-white"><div className="container mx-auto max-w-5xl"><AdUnit placement="top-banner" /></div></section>
 
       {/* CTA */}
       <section className="py-16 px-4 bg-gradient-to-br from-blue-950 via-purple-950 to-indigo-950 text-white">

@@ -10,6 +10,7 @@ import {
   StarIcon,
 } from '@heroicons/react/24/solid';
 import { formatDate, getCategoryGradient, getCategoryInfo } from '@/utils/eventHelpers';
+import { buildEventPath } from '@/lib/event-slug';
 
 interface EventHeroCarouselProps {
   events: Event[];
@@ -108,7 +109,7 @@ export default function EventHeroCarousel({ events }: EventHeroCarouselProps) {
 
           {/* CTA */}
           <Link
-            href={`/events/${event.category}/${event.id}`}
+            href={buildEventPath(event)}
             className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-secondary font-bold rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5"
           >
             Ver Evento

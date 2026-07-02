@@ -12,6 +12,7 @@ import {
   SparklesIcon
 } from '@heroicons/react/24/outline';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import AdUnit from '@/components/common/AdUnit';
 
 interface ContactFormData {
   name: string;
@@ -278,6 +279,14 @@ ${formData.specialRequirements}
                 {submitStatus === 'error' && <p className="text-red-600 text-center">Sorry, we couldn't send your request. Please try again.</p>}
               </form>
             </div>
+          </section>
+
+          <section className="my-8">
+            <AdUnit placement="mid-content" />
+          </section>
+
+          <section className="mt-12 mb-8">
+            <AdUnit placement="top-banner" />
           </section>
         </div>
       </div>

@@ -13,6 +13,7 @@ import {
   BuildingOfficeIcon,
 } from '@heroicons/react/24/outline';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import AdUnit from '@/components/common/AdUnit';
 
 interface ContactFormData {
   name: string;
@@ -171,6 +172,10 @@ export default function HousingServices({ recaptchaSiteKey }: { recaptchaSiteKey
               </div>
             ))}
           </div>
+
+          <section className="my-8">
+            <AdUnit placement="mid-content" />
+          </section>
         </div>
       </div>
 
@@ -256,6 +261,10 @@ export default function HousingServices({ recaptchaSiteKey }: { recaptchaSiteKey
                 </form>
               )}
             </div>
+          </section>
+
+          <section className="mt-12 mb-8">
+            <AdUnit placement="top-banner" />
           </section>
         </div>
       </div>

@@ -60,11 +60,11 @@ export async function fetchEventUrls(): Promise<SitemapEntry[]> {
   // Only include events that haven't ended yet — past events have no SEO value.
   const { data, error } = await supabase
     .from('events')
-    .select('id, category, updated_at, end_date')
+    .select('id, title, category, updated_at, end_date')
     .gte('end_date', TODAY());
   if (error || !data) return [];
   return data.map((row) => ({
-    path: `/events/${row.category}/${row.id}`,
+    path: buildEventPath(row),
     lastmod: isoDay(row.updated_at),
     changefreq: 'weekly',
     priority: 0.6,

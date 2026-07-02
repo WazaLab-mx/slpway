@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { ResponsiveImage } from '@/components/common/ResponsiveImage';
 import GuideCTA from '@/components/common/GuideCTA';
+import AdUnit from '@/components/common/AdUnit';
 import AffiliateGrid from '@/components/affiliate/AffiliateGrid';
 
 // Weekend destinations data
@@ -165,6 +166,8 @@ const WeekendGetawaysPage: NextPage = () => {
           </div>
         </div>
       </section>
+
+      <section className="my-8"><AdUnit placement="mid-content" /></section>
 
       {/* Weekend Getaways List */}
       <section className="py-16">
@@ -581,6 +584,8 @@ const WeekendGetawaysPage: NextPage = () => {
           </div>
         </div>
       </section>
+
+      <section className="mt-12 mb-8"><AdUnit placement="top-banner" /></section>
 
       <div className="container mx-auto px-4 py-8">
         <GuideCTA relatedLinks={[

@@ -6,6 +6,7 @@ import { supabase } from '@/lib/supabase';
 import PlaceCard from '@/components/PlaceCard';
 import PlaceModal from '@/components/PlaceModal';
 import FeaturedPlaces from '@/components/FeaturedPlaces';
+import AdUnit from '@/components/common/AdUnit';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 // Categories specific to terraces
@@ -78,6 +79,12 @@ const TerracesPage: NextPage<TerracesPageProps> = ({ places }) => {
         />
       )}
 
+      <section className="my-8">
+        <div className="container mx-auto px-4">
+          <AdUnit placement="mid-content" />
+        </div>
+      </section>
+
       {/* All Terraces */}
       <section className="py-12">
         <div className="container mx-auto px-4">
@@ -91,6 +98,12 @@ const TerracesPage: NextPage<TerracesPageProps> = ({ places }) => {
               />
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="mt-12 mb-8">
+        <div className="container mx-auto px-4">
+          <AdUnit placement="top-banner" />
         </div>
       </section>
 

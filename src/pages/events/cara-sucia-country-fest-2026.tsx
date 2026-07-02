@@ -5,6 +5,7 @@ import { GetStaticProps } from 'next';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import SEO from '@/components/common/SEO';
+import AdUnit from '@/components/common/AdUnit';
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -204,6 +205,8 @@ export default function CaraSuciaCountryFest2026() {
         </div>
       </section>
 
+      <section className="my-8"><AdUnit placement="mid-content" /></section>
+
       {/* Activities */}
       <section className="py-16 px-4 bg-stone-900 text-white">
         <div className="container mx-auto max-w-5xl">
@@ -336,6 +339,8 @@ export default function CaraSuciaCountryFest2026() {
           </div>
         </div>
       </section>
+
+      <section className="mt-12 mb-8"><AdUnit placement="top-banner" /></section>
 
       {/* CTA */}
       <section className="py-16 px-4 bg-gradient-to-br from-amber-900 via-orange-950 to-stone-950 text-white">

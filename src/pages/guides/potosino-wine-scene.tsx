@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ResponsiveImage } from '@/components/common/ResponsiveImage';
 import LastUpdated from '@/components/common/LastUpdated';
+import AdUnit from '@/components/common/AdUnit';
 
 // Wine regions data
 const wineRegions = [
@@ -132,6 +133,8 @@ const WineScenePage: NextPage = () => {
           </div>
         </div>
       </section>
+
+      <section className="my-8"><AdUnit placement="mid-content" /></section>
 
       {/* Wine Regions List */}
       <section className="py-16">
@@ -290,6 +293,8 @@ const WineScenePage: NextPage = () => {
           </div>
         </div>
       </section>
+
+      <section className="mt-12 mb-8"><AdUnit placement="top-banner" /></section>
 
       {/* Call to Action */}
       <section className="py-16 bg-gradient-to-br from-red-800 to-red-900 text-white">

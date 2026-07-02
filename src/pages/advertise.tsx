@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import SEO from '@/components/common/SEO';
+import { ConversionEvents } from '@/lib/analytics';
 import {
   MegaphoneIcon,
   ChartBarIcon,
@@ -59,6 +60,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => ({
 export default function Advertise() {
   const { t } = useTranslation('common');
   const buildLink = (subject: string) => `/contact?subject=${encodeURIComponent(subject)}`;
+  const trackInquiry = (subject: string) => ConversionEvents.ctaClick('advertise_inquiry', subject, '/advertise');
   const arr = (key: string) => t(key, { returnObjects: true }) as string[];
 
   return (
@@ -87,6 +89,7 @@ export default function Advertise() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link
                   href={buildLink('Advertising Inquiry')}
+                  onClick={() => trackInquiry('Advertising Inquiry')}
                   className="inline-flex items-center bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-300 transition-all transform hover:scale-105 shadow-lg"
                 >
                   {t('advertise.hero.ctaPrimary')}
@@ -156,6 +159,7 @@ export default function Advertise() {
                     </ul>
                     <Link
                       href={buildLink(subject)}
+                    onClick={() => trackInquiry(subject)}
                       className={`block text-center text-white px-6 py-3 rounded-lg font-semibold transition-colors ${c.button}`}
                     >
                       {t(`advertise.options.${key}.cta`)}
@@ -214,6 +218,7 @@ export default function Advertise() {
                   </ul>
                   <Link
                     href={buildLink(subject)}
+                    onClick={() => trackInquiry(subject)}
                     className={`block text-center text-white px-6 py-3 rounded-lg font-semibold transition-colors ${
                       highlighted ? 'bg-primary hover:bg-primary-dark' : 'bg-gray-900 hover:bg-gray-800'
                     }`}
@@ -258,6 +263,7 @@ export default function Advertise() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link
                   href={buildLink('Start My Campaign')}
+                  onClick={() => trackInquiry('Start My Campaign')}
                   className="inline-flex items-center bg-yellow-400 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-300 transition-all transform hover:scale-105 shadow-lg"
                 >
                   {t('advertise.cta.primary')}
@@ -265,6 +271,7 @@ export default function Advertise() {
                 </Link>
                 <Link
                   href={buildLink('Advertising Information Request')}
+                  onClick={() => trackInquiry('Advertising Information Request')}
                   className="inline-flex items-center border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all"
                 >
                   {t('advertise.cta.secondary')}
@@ -292,6 +299,7 @@ export default function Advertise() {
                 <span className="text-gray-400">•</span>
                 <a
                   href="mailto:sanluisway@waza.baby"
+                  onClick={() => trackInquiry('Email Direct')}
                   className="inline-flex items-center text-primary hover:text-primary-dark font-semibold"
                 >
                   sanluisway@waza.baby

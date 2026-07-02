@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import AdUnit from '@/components/common/AdUnit';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
@@ -155,6 +156,12 @@ export default function LocalOrganicProducts() {
           </div>
         </section>
 
+        <section className="my-8">
+          <div className="container mx-auto px-4">
+            <AdUnit placement="mid-content" />
+          </div>
+        </section>
+
         {/* Vendors Section */}
         <section className="py-16 px-4">
           <div className="container mx-auto">
@@ -272,6 +279,12 @@ export default function LocalOrganicProducts() {
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="mt-12 mb-8">
+          <div className="container mx-auto px-4">
+            <AdUnit placement="top-banner" />
           </div>
         </section>
 

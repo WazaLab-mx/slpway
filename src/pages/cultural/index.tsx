@@ -8,6 +8,7 @@ import { CalendarIcon, MapPinIcon, ArrowRightIcon } from '@heroicons/react/24/ou
 import EventList from '@/components/EventList';
 import SEO from '@/components/common/SEO';
 import GuideCTA from '@/components/common/GuideCTA';
+import AdUnit from '@/components/common/AdUnit';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 interface CulturalPageProps {
@@ -180,6 +181,10 @@ export default function CulturalPage({ events }: CulturalPageProps) {
                 </div>
               </div>
             </div>
+          </section>
+
+          <section className="my-8">
+            <AdUnit placement="mid-content" />
           </section>
 
           {/* Featured Cultural Attractions */}
@@ -569,6 +574,10 @@ export default function CulturalPage({ events }: CulturalPageProps) {
                 ))}
               </div>
             </div>
+          </section>
+
+          <section className="mt-12 mb-8">
+            <AdUnit placement="top-banner" />
           </section>
 
           <GuideCTA relatedLinks={[

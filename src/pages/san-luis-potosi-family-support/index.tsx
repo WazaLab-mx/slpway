@@ -14,6 +14,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import AdUnit from '@/components/common/AdUnit';
 
 interface ContactFormData {
   name: string;
@@ -166,6 +167,10 @@ export default function FamilySupportServices({ recaptchaSiteKey }: { recaptchaS
               </div>
             ))}
           </div>
+
+          <section className="my-8">
+            <AdUnit placement="mid-content" />
+          </section>
         </div>
       </div>
 
@@ -252,6 +257,10 @@ export default function FamilySupportServices({ recaptchaSiteKey }: { recaptchaS
                 </form>
               )}
             </div>
+          </section>
+
+          <section className="mt-12 mb-8">
+            <AdUnit placement="top-banner" />
           </section>
         </div>
       </div>

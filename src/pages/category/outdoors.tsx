@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import SEO from '@/components/common/SEO';
+import AdUnit from '@/components/common/AdUnit';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
@@ -237,6 +238,12 @@ export default function Outdoors() {
           </div>
         </section>
 
+        <section className="my-8">
+          <div className="container mx-auto px-4">
+            <AdUnit placement="mid-content" />
+          </div>
+        </section>
+
         {/* Curated Experiences Section */}
         <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-indigo-50">
           <div className="container mx-auto">
@@ -401,6 +408,12 @@ export default function Outdoors() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="mt-12 mb-8">
+          <div className="container mx-auto px-4">
+            <AdUnit placement="top-banner" />
           </div>
         </section>
 

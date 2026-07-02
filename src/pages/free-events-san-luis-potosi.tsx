@@ -3,6 +3,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import SEO from '@/components/common/SEO';
+import AdUnit from '@/components/common/AdUnit';
 import LastUpdated from '@/components/common/LastUpdated';
 import TrackedMapLink from '@/components/common/TrackedMapLink';
 import GuideCTA from '@/components/common/GuideCTA';
@@ -230,6 +231,8 @@ export default function FreeEventsSLP() {
             ))}
           </div>
 
+          <section className="my-8"><AdUnit placement="mid-content" /></section>
+
           <section className="mt-12 bg-white rounded-xl shadow-sm p-6">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               {isEs ? 'Preguntas frecuentes' : 'Frequently Asked Questions'}
@@ -243,6 +246,8 @@ export default function FreeEventsSLP() {
               ))}
             </dl>
           </section>
+
+          <section className="mt-12 mb-8"><AdUnit placement="top-banner" /></section>
 
           <GuideCTA relatedLinks={[
             { href: '/food-festivals-san-luis-potosi', label: 'Food Festivals in SLP', labelEs: 'Festivales Gastronómicos en SLP' },

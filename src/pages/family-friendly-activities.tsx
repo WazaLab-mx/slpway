@@ -6,9 +6,11 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
 import { ArrowLeftIcon, CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import SEO from '@/components/common/SEO';
+import AdUnit from '@/components/common/AdUnit';
 import GuideCTA from '@/components/common/GuideCTA';
 import { supabase } from '@/lib/supabase';
 import { Event } from '@/types';
+import { buildEventPath } from '@/lib/event-slug';
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const { data: familyEvents } = await supabase
@@ -429,7 +431,7 @@ export default function FamilyFriendlyActivities({ familyEvents = [] }: { family
                 {familyEvents.map((event) => (
                   <Link
                     key={event.id}
-                    href={`/events/${event.category}/${event.id}`}
+                    href={buildEventPath(event)}
                     className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden hover:-translate-y-1"
                   >
                     <div className="relative h-48 overflow-hidden">
@@ -504,6 +506,8 @@ export default function FamilyFriendlyActivities({ familyEvents = [] }: { family
             </div>
           </div>
         </section>
+
+        <section className="my-8"><AdUnit placement="mid-content" /></section>
 
         {/* INDOOR */}
         <section className="py-16 bg-gray-50" id="indoor">
@@ -594,6 +598,8 @@ export default function FamilyFriendlyActivities({ familyEvents = [] }: { family
             </div>
           </div>
         </section>
+
+        <section className="mt-12 mb-8"><AdUnit placement="top-banner" /></section>
 
         <div className="container mx-auto px-4 md:px-8 lg:px-16 py-8">
           <GuideCTA relatedLinks={[

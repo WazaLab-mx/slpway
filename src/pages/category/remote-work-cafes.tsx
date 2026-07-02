@@ -8,6 +8,7 @@ import PlaceCard from '@/components/PlaceCard';
 import PlaceModal from '@/components/PlaceModal';
 import FeaturedPlaces from '@/components/FeaturedPlaces';
 import B2BBanner from '@/components/B2BBanner';
+import AdUnit from '@/components/common/AdUnit';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 interface RemoteWorkCafesPageProps {
@@ -62,6 +63,12 @@ const RemoteWorkCafesPage: NextPage<RemoteWorkCafesPageProps> = ({ places }) => 
           />
         )}
 
+        <section className="my-8">
+          <div className="container mx-auto px-4">
+            <AdUnit placement="mid-content" />
+          </div>
+        </section>
+
         {/* All Places */}
         <section className="py-12">
           <div className="container mx-auto px-4">
@@ -81,6 +88,12 @@ const RemoteWorkCafesPage: NextPage<RemoteWorkCafesPageProps> = ({ places }) => 
                 No places found in this category yet. Check back soon!
               </p>
             )}
+          </div>
+        </section>
+
+        <section className="mt-12 mb-8">
+          <div className="container mx-auto px-4">
+            <AdUnit placement="top-banner" />
           </div>
         </section>
 

@@ -5,6 +5,7 @@ import { Place } from '@/types';
 import { supabase } from '@/lib/supabase';
 import PlaceCard from '@/components/PlaceCard';
 import PlaceModal from '@/components/PlaceModal';
+import AdUnit from '@/components/common/AdUnit';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 interface OpenForBreakfastPageProps {
@@ -91,6 +92,10 @@ const OpenForBreakfastPage: React.FC<OpenForBreakfastPageProps> = ({ places }) =
           </div>
         )}
 
+        <section className="my-8">
+          <AdUnit placement="mid-content" />
+        </section>
+
         <div className="mt-16 max-w-2xl mx-auto">
           <div className="bg-primary/5 rounded-xl p-6 border border-primary/10">
             <h2 className="font-bold text-xl mb-3 text-gray-900">About Breakfast in San Luis Potosí</h2>
@@ -103,6 +108,10 @@ const OpenForBreakfastPage: React.FC<OpenForBreakfastPageProps> = ({ places }) =
             </p>
           </div>
         </div>
+
+        <section className="mt-12 mb-8">
+          <AdUnit placement="top-banner" />
+        </section>
       </div>
 
       {/* Place Details Modal */}

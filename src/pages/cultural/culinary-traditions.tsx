@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import LastUpdated from '@/components/common/LastUpdated';
 import GuideCTA from '@/components/common/GuideCTA';
+import AdUnit from '@/components/common/AdUnit';
 
 export default function CulinaryTraditionsPage() {
 
@@ -189,6 +190,10 @@ export default function CulinaryTraditionsPage() {
               </div>
             </div>
           </div>
+
+          <section className="my-8">
+            <AdUnit placement="mid-content" />
+          </section>
 
           {/* Regional Cuisine Sections */}
           <div className="mt-24">
@@ -488,6 +493,10 @@ export default function CulinaryTraditionsPage() {
                 ))}
               </div>
             </div>
+          </section>
+
+          <section className="mt-12 mb-8">
+            <AdUnit placement="top-banner" />
           </section>
 
           <GuideCTA relatedLinks={[

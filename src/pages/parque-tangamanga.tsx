@@ -5,6 +5,7 @@ import { ClockIcon, MapPinIcon, TicketIcon, SunIcon, UsersIcon, SparklesIcon, He
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import SEO from '@/components/common/SEO';
+import AdUnit from '@/components/common/AdUnit';
 import GuideCTA from '@/components/common/GuideCTA';
 import LastUpdated from '@/components/common/LastUpdated';
 import Head from 'next/head';
@@ -187,6 +188,8 @@ export default function ParqueTangamanga() {
                 {t('tangamanga.quickAnswer.lastVerified')}
               </p>
             </section>
+
+            <section className="my-8"><AdUnit placement="mid-content" /></section>
 
             {/* Quick Navigation */}
             <div className="bg-white rounded-xl p-6 shadow-lg">
@@ -1157,6 +1160,8 @@ export default function ParqueTangamanga() {
             </ul>
           </section>
         </div>
+
+        <section className="mt-12 mb-8"><AdUnit placement="top-banner" /></section>
 
         <div className="container mx-auto px-4">
           <GuideCTA relatedLinks={[

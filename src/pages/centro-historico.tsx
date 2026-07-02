@@ -17,6 +17,7 @@ import {
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import SEO from '@/components/common/SEO';
+import AdUnit from '@/components/common/AdUnit';
 import GuideCTA from '@/components/common/GuideCTA';
 import { motion } from 'framer-motion';
 
@@ -267,6 +268,8 @@ export default function CentroHistorico() {
                 </div>
               </div>
             </section>
+
+            <section className="my-8"><AdUnit placement="mid-content" /></section>
 
             {/* Points of Interest */}
             <section className="bg-white rounded-xl p-8 shadow-lg">
@@ -723,6 +726,8 @@ export default function CentroHistorico() {
           </div>
         </div>
       </div>
+
+      <section className="mt-12 mb-8"><AdUnit placement="top-banner" /></section>
 
       <div className="container mx-auto px-4 py-8">
         <GuideCTA relatedLinks={[

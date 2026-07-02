@@ -13,6 +13,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { Event } from '@/types';
 import { supabase } from '@/lib/supabase';
+import { buildEventPath, buildEventSlug, extractIdPrefix, isFullUuid } from '@/lib/event-slug';
 import SEO from '@/components/common/SEO';
 import AdUnit from '@/components/common/AdUnit';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -26,7 +27,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   try {
     const { data: events, error } = await supabase
       .from('events')
-      .select("*")
+      .select('id, title, category')
       .order('start_date', { ascending: true });
 
     if (error) throw error;
@@ -34,7 +35,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const paths = events?.map((event) => ({
       params: {
         category: event.category,
-        id: event.id,
+        id: buildEventSlug(event),
       },
     })) || [];
 
@@ -51,23 +52,54 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 };
 
+// Locale-aware permanent redirect (getStaticProps redirects don't add the
+// locale prefix automatically).
+function eventRedirect(event: { id: string; title: string; category: string }, locale?: string) {
+  const prefix = locale && locale !== 'en' ? `/${locale}` : '';
+  return {
+    redirect: {
+      destination: `${prefix}${buildEventPath(event)}`,
+      permanent: true,
+    },
+    revalidate: 600,
+  } as const;
+}
+
 export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   try {
     const category = params?.category as string;
-    const id = params?.id as string;
+    const param = params?.id as string;
 
-    // Fetch the specific event
-    const { data: event, error } = await supabase
-      .from('events')
-      .select("*")
-      .eq('id', id)
-      .single();
+    let event: Event | null = null;
 
-    if (error) {
-      if (error.code === 'PGRST116') {
-        return { notFound: true };
+    if (isFullUuid(param)) {
+      // Legacy UUID URL — resolve and 301 to the slug form.
+      const { data, error } = await supabase.from('events').select('*').eq('id', param).single();
+      if (error) {
+        if (error.code === 'PGRST116') return { notFound: true };
+        throw error;
       }
-      throw error;
+      return eventRedirect(data, locale);
+    }
+
+    const idPrefix = extractIdPrefix(param);
+    if (!idPrefix) return { notFound: true };
+
+    // No slug column in the DB: match on the uuid prefix encoded in the slug.
+    // The events table is small (tens of rows), so this filter is cheap.
+    const { data: candidates, error } = await supabase
+      .from('events')
+      .select('*')
+      .filter('id', 'gte', `${idPrefix}-0000-0000-0000-000000000000`)
+      .filter('id', 'lte', `${idPrefix}-ffff-ffff-ffff-ffffffffffff`)
+      .limit(1);
+    if (error) throw error;
+    event = candidates?.[0] ?? null;
+    if (!event) return { notFound: true };
+
+    // Canonicalize: stale titles or wrong category 301 to the current slug.
+    if (param !== buildEventSlug(event) || category !== event.category) {
+      return eventRedirect(event, locale);
     }
 
     // Fetch related events from the same category
@@ -75,7 +107,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
       .from('events')
       .select("*")
       .eq('category', category)
-      .neq('id', id)
+      .neq('id', event.id)
       .gte('end_date', new Date().toISOString())
       .order('start_date', { ascending: true })
       .limit(3);
@@ -85,7 +117,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
     return {
       props: {
         ...(await serverSideTranslations(locale ?? 'es', ['common'])),
-        event: event || null,
+        event,
         relatedEvents: relatedEvents || [],
       },
       revalidate: 600,
@@ -187,7 +219,7 @@ export default function EventDetail({ event, relatedEvents }: EventDetailProps) 
           "name": event.title,
           "startDate": event.start_date,
           "endDate": event.end_date,
-          "url": `https://www.sanluisway.com/events/${event.category}/${event.id}`,
+          "url": `https://www.sanluisway.com${buildEventPath(event)}`,
           "inLanguage": "es-MX",
           ...(event.description && { "description": event.description }),
           ...(event.image_url && { "image": [event.image_url] }),
@@ -399,7 +431,7 @@ export default function EventDetail({ event, relatedEvents }: EventDetailProps) 
               {relatedEvents.map((relatedEvent) => (
                 <Link
                   key={relatedEvent.id}
-                  href={`/events/${relatedEvent.category}/${relatedEvent.id}`}
+                  href={buildEventPath(relatedEvent)}
                   className="group"
                 >
                   <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">

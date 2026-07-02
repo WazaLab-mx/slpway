@@ -13,6 +13,7 @@ import {
   ShoppingBagIcon,
 } from '@heroicons/react/24/outline';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import AdUnit from '@/components/common/AdUnit';
 
 interface ContactFormData {
   name: string;
@@ -172,6 +173,10 @@ export default function LocalExperiences({ recaptchaSiteKey }: { recaptchaSiteKe
               </div>
             ))}
           </div>
+
+          <section className="my-8">
+            <AdUnit placement="mid-content" />
+          </section>
         </div>
       </div>
 
@@ -257,6 +262,10 @@ export default function LocalExperiences({ recaptchaSiteKey }: { recaptchaSiteKe
                 </form>
               )}
             </div>
+          </section>
+
+          <section className="mt-12 mb-8">
+            <AdUnit placement="top-banner" />
           </section>
         </div>
       </div>

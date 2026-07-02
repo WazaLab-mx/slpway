@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ResponsiveImage } from '@/components/common/ResponsiveImage';
 import LastUpdated from '@/components/common/LastUpdated';
+import AdUnit from '@/components/common/AdUnit';
 
 // Food destinations data
 const foodExperiences = [
@@ -149,6 +150,8 @@ const FoodieGuidePage: NextPage = () => {
           </div>
         </div>
       </section>
+
+      <section className="my-8"><AdUnit placement="mid-content" /></section>
 
       {/* Food Experiences List */}
       <section className="py-16">
@@ -529,6 +532,8 @@ const FoodieGuidePage: NextPage = () => {
           </div>
         </div>
       </section>
+
+      <section className="mt-12 mb-8"><AdUnit placement="top-banner" /></section>
 
       {/* CTA Section */}
       <section className="py-16 bg-amber-50">

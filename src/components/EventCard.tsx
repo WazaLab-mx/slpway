@@ -2,6 +2,7 @@ import { Event } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import { CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { buildEventPath } from '@/lib/event-slug';
 import {
   formatDate,
   getDayNumber,
@@ -25,7 +26,7 @@ export default function EventCard({ event, variant = 'grid' }: EventCardProps) {
 
   return (
     <Link
-      href={`/events/${event.category}/${event.id}`}
+      href={buildEventPath(event)}
       className="group flex flex-col bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden hover:-translate-y-1 h-full"
     >
       {/* Image */}
@@ -102,7 +103,7 @@ function CompactCard({
 }) {
   return (
     <Link
-      href={`/events/${event.category}/${event.id}`}
+      href={buildEventPath(event)}
       className="group flex items-center gap-4 bg-white rounded-xl p-3 shadow-card hover:shadow-card-hover transition-all duration-200 hover:-translate-y-0.5"
     >
       {/* Date block */}

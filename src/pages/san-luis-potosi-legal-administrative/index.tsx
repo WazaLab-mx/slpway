@@ -13,6 +13,7 @@ import {
   GlobeAmericasIcon
 } from '@heroicons/react/24/outline';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import AdUnit from '@/components/common/AdUnit';
 
 interface ContactFormData {
   name: string;
@@ -167,6 +168,10 @@ export default function LegalAdministrativeServices({ recaptchaSiteKey }: { reca
               </div>
             ))}
           </div>
+
+          <section className="my-8">
+            <AdUnit placement="mid-content" />
+          </section>
         </div>
       </div>
 
@@ -253,6 +258,10 @@ export default function LegalAdministrativeServices({ recaptchaSiteKey }: { reca
                 </form>
               )}
             </div>
+          </section>
+
+          <section className="mt-12 mb-8">
+            <AdUnit placement="top-banner" />
           </section>
         </div>
       </div>

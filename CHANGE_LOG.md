@@ -4,6 +4,32 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-01] feat(revenue/seo): Consent Mode v2 + AdUnits en 50 páginas + eventos con slug + tracking /advertise
+
+**Contexto:** Segunda tanda de la consultoría 2026-07-01 — monetización y SEO técnico.
+
+**1. Consent Mode v2 + gating EEA (`src/pages/_app.tsx`):**
+- `gtag('consent','default')`: granted global (audiencia MX/US, no requiere banner) + denied con `wait_for_update:500` para región EEA+UK+CH (31 códigos). GA4/Google Ads/AdSense lo respetan automáticamente.
+- Meta Pixel y Clarity NO se cargan para visitantes con timezone `Europe/*` (sin CMP certificado para ellos, mejor no disparar — GDPR/ePrivacy).
+- **PENDIENTE (acción del dueño):** activar AdSense "Privacy & messaging" → mensaje GDPR (CMP certificado de Google) en la consola de AdSense.
+
+**2. AdUnits en 50 páginas sin ads (3 agentes en paralelo):**
+- 16 páginas `/category/*`, 10 hubs `/san-luis-potosi-*`, 8 cultural (`/cultural/*`, cultural-attractions, traditional-cuisine), 16 landing/event pages (centro-historico, parque-tangamanga(-ii), weekend-getaways, farmers-markets, free-events, food-festivals, breakfast-spots, family-friendly, festival-primavera-2026, foodie-guide, potosino-wine-scene, neighborhoods/[slug], fenapo-2026, maraton-tangamanga-2026, cara-sucia).
+- Patrón: `mid-content` tras la primera sección de contenido + `top-banner` antes del CTA final. Nunca above-the-fold (protege LCP). En fenapo-2026 con banda blanca sobre secciones oscuras.
+
+**3. URLs de eventos UUID → slug (sin DDL):**
+- Nuevo `src/lib/event-slug.ts`: slug = `titulo-slugificado-{8 hex del uuid}` (ej. `medio-maraton-uaslp-2026-047fcef9`). Resolución por prefijo de uuid (`.filter gte/lte`) — los cambios de título no rompen URLs viejas. Sin columna nueva en DB (agregar `slug` real requiere login interactivo de Supabase CLI; este patrón es drop-in compatible si se agrega después).
+- `events/[category]/[id].tsx`: acepta UUID (301 → slug, locale-aware), slug con título viejo (301 → canónico) y slug canónico (render). getStaticPaths genera slugs.
+- Links actualizados: EventCard (x2), EventHeroCarousel, EventsCarousel, events/index y [category]/index (JSON-LD), [id].tsx (JSON-LD + relacionados), family-friendly-activities, sitemap (`fetchEventUrls`).
+- Tests: `__tests__/event-slug.test.ts` (9 casos) — verde.
+- Nota: se corrigió un import mal insertado por script en EventCard.tsx (detectado por agentes).
+
+**4. Tracking del funnel /advertise:**
+- `ConversionEvents.ctaClick('advertise_inquiry', subject, '/advertise')` en los 6 CTAs (hero, tarjetas de opciones, 3 paquetes, Start My Campaign, Information Request, mailto). Ahora GA4 mide qué oferta genera consultas.
+- Self-serve checkout de sponsorships pendiente: requiere precio por edición + Stripe Payment Link (decisión del dueño).
+
+---
+
 ## [2026-07-01] content(fenapo): deep-dive de artistas FENAPO 2026 publicado + interlinking
 
 **Contexto:** El plan de contenido decía "talent deep-dive en julio, cuando el cartel esté 100% confirmado". El cartel salió el 27 de mayo; la guía de preparación de abril prometía esta segunda guía. GSC muestra "fenapo" con 1,600+ impresiones y posición ~8 — ventana crítica antes de agosto.

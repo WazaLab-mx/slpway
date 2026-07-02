@@ -6,6 +6,7 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { neighborhoods, getNeighborhoodBySlug, getAllNeighborhoodSlugs } from '@/data/neighborhoods';
 import ShareButton from '@/components/sharing/ShareButton';
+import AdUnit from '@/components/common/AdUnit';
 
 interface NeighborhoodPageProps {
   neighborhood: typeof neighborhoods[0];
@@ -119,6 +120,8 @@ export default function NeighborhoodPage({ neighborhood }: NeighborhoodPageProps
             </div>
           </div>
         </section>
+
+        <section className="my-8"><AdUnit placement="mid-content" /></section>
 
         {/* Pros & Cons */}
         <section className="py-16 bg-gray-50">
@@ -246,6 +249,8 @@ export default function NeighborhoodPage({ neighborhood }: NeighborhoodPageProps
             </div>
           </section>
         )}
+
+        <section className="mt-12 mb-8"><AdUnit placement="top-banner" /></section>
 
         {/* CTA Section */}
         <section className="py-16 bg-primary text-white">

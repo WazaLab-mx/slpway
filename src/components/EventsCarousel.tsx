@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ChevronLeftIcon, ChevronRightIcon, CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { Event } from '@/types';
+import { buildEventPath } from '@/lib/event-slug';
 
 interface EventsCarouselProps {
   events: Event[];
@@ -144,7 +145,7 @@ export default function EventsCarousel({
 
                 {/* Event CTA */}
                 <Link
-                  href={`/events/${event.category}/${event.id}`}
+                  href={buildEventPath(event)}
                   className="inline-flex items-center gap-2 text-primary hover:text-primary-dark font-medium text-sm transition-colors"
                   aria-label={`View event details for ${event.title}`}
                 >

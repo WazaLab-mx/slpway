@@ -8,6 +8,7 @@ import PlaceCard from '@/components/PlaceCard';
 import PlaceModal from '@/components/PlaceModal';
 import FeaturedPlaces from '@/components/FeaturedPlaces';
 import B2BBanner from '@/components/B2BBanner';
+import AdUnit from '@/components/common/AdUnit';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 interface RestaurantsWithPlaygroundsPageProps {
@@ -81,6 +82,12 @@ const RestaurantsWithPlaygroundsPage: NextPage<RestaurantsWithPlaygroundsPagePro
           </div>
         </section>
 
+        <section className="my-8">
+          <div className="container mx-auto px-4">
+            <AdUnit placement="mid-content" />
+          </div>
+        </section>
+
         <section className="py-16 px-4 bg-white">
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">Tips for Dining with Kids</h2>
@@ -119,6 +126,12 @@ const RestaurantsWithPlaygroundsPage: NextPage<RestaurantsWithPlaygroundsPagePro
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="mt-12 mb-8">
+          <div className="container mx-auto px-4">
+            <AdUnit placement="top-banner" />
           </div>
         </section>
 

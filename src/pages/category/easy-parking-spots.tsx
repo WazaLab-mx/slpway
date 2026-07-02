@@ -7,6 +7,7 @@ import { supabase } from '@/lib/supabase';
 import PlaceCard from '@/components/PlaceCard';
 import PlaceModal from '@/components/PlaceModal';
 import FeaturedPlaces from '@/components/FeaturedPlaces';
+import AdUnit from '@/components/common/AdUnit';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 interface EasyParkingSpotsPageProps {
@@ -80,6 +81,12 @@ const EasyParkingSpotsPage: NextPage<EasyParkingSpotsPageProps> = ({ places }) =
           </div>
         </section>
 
+        <section className="my-8">
+          <div className="container mx-auto px-4">
+            <AdUnit placement="mid-content" />
+          </div>
+        </section>
+
         <section className="py-16 px-4 bg-white">
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">Parking Tips in San Luis Potosí</h2>
@@ -118,6 +125,12 @@ const EasyParkingSpotsPage: NextPage<EasyParkingSpotsPageProps> = ({ places }) =
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="mt-12 mb-8">
+          <div className="container mx-auto px-4">
+            <AdUnit placement="top-banner" />
           </div>
         </section>
 

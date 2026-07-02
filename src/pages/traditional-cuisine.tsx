@@ -7,6 +7,7 @@ import PlaceModal from '@/components/PlaceModal';
 import FeaturedPlaces from '@/components/FeaturedPlaces';
 import SEO from '@/components/common/SEO';
 import GuideCTA from '@/components/common/GuideCTA';
+import AdUnit from '@/components/common/AdUnit';
 
 interface TraditionalCuisinePageProps {
   places: Place[];
@@ -81,6 +82,12 @@ const TraditionalCuisinePage: NextPage<TraditionalCuisinePageProps> = ({ places 
         />
       )}
 
+      <section className="my-8">
+        <div className="container mx-auto px-4">
+          <AdUnit placement="mid-content" />
+        </div>
+      </section>
+
       {/* All Traditional Restaurants */}
       <section className="py-16 px-4">
         <div className="container mx-auto">
@@ -94,6 +101,12 @@ const TraditionalCuisinePage: NextPage<TraditionalCuisinePageProps> = ({ places 
               />
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="mt-12 mb-8">
+        <div className="container mx-auto px-4">
+          <AdUnit placement="top-banner" />
         </div>
       </section>
 

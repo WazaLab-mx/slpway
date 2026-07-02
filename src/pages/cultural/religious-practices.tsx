@@ -5,6 +5,7 @@ import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import LastUpdated from '@/components/common/LastUpdated';
 import GuideCTA from '@/components/common/GuideCTA';
+import AdUnit from '@/components/common/AdUnit';
 
 export default function ReligiousPracticesPage() {
 
@@ -189,6 +190,10 @@ export default function ReligiousPracticesPage() {
               </div>
             </div>
           </div>
+
+          <section className="my-8">
+            <AdUnit placement="mid-content" />
+          </section>
 
           {/* Key Spiritual Traditions Sections */}
           <div className="mt-24">
@@ -537,6 +542,10 @@ export default function ReligiousPracticesPage() {
                 ))}
               </div>
             </div>
+          </section>
+
+          <section className="mt-12 mb-8">
+            <AdUnit placement="top-banner" />
           </section>
 
           <GuideCTA relatedLinks={[

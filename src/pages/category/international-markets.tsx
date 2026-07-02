@@ -7,6 +7,7 @@ import { supabase } from '@/lib/supabase';
 import PlaceCard from '@/components/PlaceCard';
 import PlaceModal from '@/components/PlaceModal';
 import FeaturedPlaces from '@/components/FeaturedPlaces';
+import AdUnit from '@/components/common/AdUnit';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 interface InternationalMarketsPageProps {
@@ -57,6 +58,12 @@ const InternationalMarketsPage: NextPage<InternationalMarketsPageProps> = ({ pla
           />
         )}
 
+        <section className="my-8">
+          <div className="container mx-auto px-4">
+            <AdUnit placement="mid-content" />
+          </div>
+        </section>
+
         <section className="py-12">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-gray-900 mb-8">All International Markets</h2>
@@ -75,6 +82,12 @@ const InternationalMarketsPage: NextPage<InternationalMarketsPageProps> = ({ pla
                 No places found in this category yet. Check back soon!
               </p>
             )}
+          </div>
+        </section>
+
+        <section className="mt-12 mb-8">
+          <div className="container mx-auto px-4">
+            <AdUnit placement="top-banner" />
           </div>
         </section>
 

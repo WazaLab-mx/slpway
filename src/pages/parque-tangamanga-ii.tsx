@@ -13,6 +13,7 @@ import {
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import SEO from '@/components/common/SEO';
+import AdUnit from '@/components/common/AdUnit';
 import GuideCTA from '@/components/common/GuideCTA';
 import LastUpdated from '@/components/common/LastUpdated';
 
@@ -199,6 +200,8 @@ export default function ParqueTangamanga2() {
               </p>
             </section>
 
+            <section className="my-8"><AdUnit placement="mid-content" /></section>
+
             {/* Quick Facts */}
             <section className="bg-white rounded-2xl shadow-lg p-8 border-2 border-gray-100">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('tangamanga2.quickFacts.title')}</h2>
@@ -325,6 +328,7 @@ export default function ParqueTangamanga2() {
         </div>
 
         <div className="container mx-auto px-4 pb-12">
+          <section className="mt-12 mb-8"><AdUnit placement="top-banner" /></section>
           <GuideCTA
             relatedLinks={[
               { href: '/parque-tangamanga', label: 'Parque Tangamanga I', labelEs: 'Parque Tangamanga I' },

@@ -15,6 +15,7 @@ import SEO from '@/components/common/SEO';
 import NewsletterBanner from '@/components/NewsletterBanner';
 import { getCategoryTitle } from '@/utils/eventHelpers';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { buildEventPath } from '@/lib/event-slug';
 
 interface EventsPageProps {
   events: Event[];
@@ -115,11 +116,11 @@ export default function EventsIndex({ events, categoryCounts }: EventsPageProps)
             position: idx + 1,
             item: {
               '@type': 'Event',
-              '@id': `https://www.sanluisway.com/events/${event.category}/${event.id}`,
+              '@id': `https://www.sanluisway.com${buildEventPath(event)}`,
               name: event.title,
               startDate: event.start_date,
               endDate: event.end_date,
-              url: `https://www.sanluisway.com/events/${event.category}/${event.id}`,
+              url: `https://www.sanluisway.com${buildEventPath(event)}`,
               inLanguage: 'es-MX',
               eventStatus: 'https://schema.org/EventScheduled',
               eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
