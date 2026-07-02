@@ -4,6 +4,19 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-02] content: plan evergreen COMPLETO — Day Trips, Renting, Healthcare, SLP vs Querétaro
+
+**4 posts más publicados (EN+ES, FAQPage JSON-LD x2, fuentes con cautelas, verificados en vivo + Indexing API x8 URLs):**
+
+1. **`/blog/renting-in-san-luis-potosi-foreigner-2026`** (ID 479947c4): el muro del fiador y 4 salidas (póliza jurídica 30–70% de un mes +IVA con proveedores en SLP), términos estándar (topes de renta solo existen en CDMX), documentos, portales con inventario jul 2026, manual anti-fraudes (verificar escritura+predial), comprobante de domicilio (internet a tu nombre), derechos (desalojo 6+ meses, tesis SCJN de arrendamiento verbal en SLP), estrategia amueblado-primero.
+2. **`/blog/day-trips-from-san-luis-potosi-2026`** (ID 9a72ec89) — **cierra el Tier 1 (5/5)**: 7 escapadas verificadas (Cerro de San Pedro con Ruta 39, Santa María del Río + Ojo Caliente, Gogorrón relanzado 2023 + hacienda de Mask of Zorro, Sierra de Álvarez, Guadalcázar/Candelas, Media Luna, Real de Catorce) + recuadro honesto "la Huasteca NO es day trip". Cautelas: La Joyita eliminada, Eisenstein eliminado, Guadalcázar no es Pueblo Mágico.
+3. **`/blog/healthcare-san-luis-potosi-expats-2026`** (ID 562ce673): hospitales con honestidad (HLS top-50 nacional, NO es Christus Muguerza; Angeles único con 24/7 confirmado), Doctoralia sin filtro de inglés (workflow + TocDoc), consultorios de farmacia $50–150 + ley de antibióticos 2010, costos de emergencia sin seguro (nacionales, $80–150k evento), Medicare NO funciona (hoja oficial), IMSS Mod 33 letra chica completa, dental México-wide. Farmacias San Pablo eliminada (sin sucursales SLP). Hero corregido post-publicación.
+4. **`/blog/san-luis-potosi-vs-queretaro-expats-2026`** (ID 43a13e82): marcador honesto QRO 4–SLP 3–1 empate. QRO gana percepción (ENSU 35.3 vs 57.6), vuelos (2.4M vs 835k pax), informalidad (39 vs 55.7%), hospital #4 nacional; SLP gana costo (vivienda 25–40% menor), calma y naturaleza. "Impuesto del boom": crisis hídrica QRO (déficit acuífero, 300 colonias sin agua sep 2025, data centers) CON espejo honesto de El Realito. Sin TomTom (ninguna ciudad aparece), sin "miles de americanos" (no verificable). Verificado ANTES: no existía comparativo QRO (solo SMA) — cero duplicación.
+
+**PLAN EDITORIAL EVERGREEN COMPLETO: 10/13 publicados en 2 días.** Restan solo los 3 estacionales con ventana: Xantolo (~20 sep), Día de Muertos SLP (~1 oct), Navidad/posadas (~15 nov).
+
+---
+
 ## [2026-07-02] content: 3 posts más — Where to Stay, Is SLP Safe 2026, Cost of Living 2026
 
 **Posts publicados (todos EN+ES completos, FAQPage JSON-LD x2, fuentes, verificados en vivo + Indexing API):**
