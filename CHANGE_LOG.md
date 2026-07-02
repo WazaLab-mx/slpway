@@ -4,6 +4,27 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-01] feat: Eliminar bookings definitivamente + CTAs de contacto directo trackeadas
+
+**Decisión de negocio:** No queremos ser responsables de reservaciones que no controlamos (operación del negocio). En lugar de intermediar bookings, mandamos el lead directo al negocio y lo MEDIMOS — ese conteo ("tu listing recibió N contactos este mes") es el argumento de venta para el listing de pago (250 MXN/mes).
+
+**Cambios principales:**
+1. Eliminado el sistema de bookings completo (código muerto desde SAN-17, marzo 2026): `BookingForm.tsx`, `BookingManager.tsx`, `BookingList.tsx`, `api/bookings/{create,list,cancel,manage}.ts`, `__tests__/integration/booking-flow.test.ts`. Las tablas de Supabase se conservan (datos históricos), solo se quita el código.
+2. Nuevo evento GA4 `business_contact_click` en `src/lib/analytics.ts` (`ConversionEvents.businessContactClick`) con `contact_type` (whatsapp|phone|website|instagram|directions), `place_id`, `place_name`.
+3. `places/[id].tsx`: botón **WhatsApp** (verde, primero en Actions) con mensaje pre-llenado que menciona San Luis Way (atribución visible para el negocio). Helper exportado `buildWhatsAppUrl` normaliza números MX (+52). Tracking añadido a teléfono, website, Instagram y Get Directions.
+4. `cultural-tours/index.tsx`: reescrito wording de "booking" → "inquiry" (el form ya enviaba a `/api/contact`; ahora el copy promete conectar con el operador, no reservar).
+
+**Tests:** `__tests__/whatsapp-url.test.ts` (5 casos: código de país, atribución, números inválidos, formato) — todos en verde. Typecheck limpio en archivos tocados (errores restantes de `tsc` son pre-existentes en `api/v1/*` y tests viejos).
+
+**Archivos afectados:**
+- `src/lib/analytics.ts` — nuevo evento businessContactClick | Estado: Exitoso
+- `src/pages/places/[id].tsx` — WhatsApp CTA + tracking en todos los enlaces de contacto | Estado: Exitoso
+- `src/pages/cultural-tours/index.tsx` — wording inquiry | Estado: Exitoso
+- `src/components/Booking{Form,Manager,List}.tsx`, `src/pages/api/bookings/*`, `__tests__/integration/booking-flow.test.ts` — eliminados | Estado: Exitoso
+- `__tests__/whatsapp-url.test.ts` — nuevo | Estado: Exitoso
+
+---
+
 ## [2026-06-08] newsletter: "Now Open" nunca vacío + editor muestra TODAS las secciones
 
 **Problema 1 — "Now Open / Around Town":** el generador a veces escribía "no encontramos nada que recomendar". El prompt permitía rendirse y las queries de búsqueda estaban hardcodeadas a 2024/2025.

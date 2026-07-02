@@ -46,6 +46,15 @@ export const ConversionEvents = {
   outboundAffiliateClick: (partner: string, destination: string, page: string) =>
     trackEvent('outbound_click', { link_type: 'affiliate', partner, destination, page }),
 
+  // Lead we hand to a listed business (whatsapp | phone | website | instagram | directions).
+  // These counts back the B2B pitch: "your listing received N direct contacts this month".
+  businessContactClick: (contactType: string, placeId: string, placeName: string) =>
+    trackEvent('business_contact_click', {
+      contact_type: contactType,
+      place_id: placeId,
+      place_name: placeName,
+    }),
+
   ctaClick: (ctaId: string, ctaText: string, page: string) =>
     trackEvent('cta_click', { cta_id: ctaId, cta_text: ctaText, page }),
 

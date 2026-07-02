@@ -299,7 +299,7 @@ export default function CulturalTours() {
                   }}
                   className="px-8 py-4 bg-blue-600 text-white rounded-full font-bold text-lg hover:bg-blue-500 transition-colors duration-300 shadow-md hover:shadow-xl transform hover:-translate-y-0.5"
                 >
-                  Book Your Tour Now
+                  Request Tour Info
                 </button>
                 <button
                   onClick={() => {
@@ -417,7 +417,7 @@ export default function CulturalTours() {
                         }}
                         className="bg-amber-600 text-white px-6 py-2 rounded-full hover:bg-amber-500 transition-colors shadow-md hover:shadow-lg"
                       >
-                        Book Now
+                        Request Info
                       </button>
                     </div>
                   </div>
@@ -432,9 +432,9 @@ export default function CulturalTours() {
           <div className="container mx-auto max-w-2xl">
             <div className="text-center mb-12">
               <div className="w-16 h-1 bg-amber-500 mx-auto mb-4"></div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-3">Book Your Tour</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-3">Plan Your Tour</h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Fill out the form below to request a tour booking. We'll get back to you within 24 hours.
+                Tell us what you're interested in and we'll connect you with the right tour operator within 24 hours.
               </p>
             </div>
 
@@ -585,17 +585,17 @@ export default function CulturalTours() {
                 disabled={isSubmitting || !recaptchaValue}
                 className="w-full bg-amber-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-amber-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-md"
               >
-                {isSubmitting ? 'Sending...' : 'Submit Booking Request'}
+                {isSubmitting ? 'Sending...' : 'Send Inquiry'}
               </button>
 
               {submitStatus === 'success' && (
                 <div className="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
-                  <p className="text-green-600 text-center font-medium">Your booking request has been sent successfully!</p>
+                  <p className="text-green-600 text-center font-medium">Your inquiry has been sent successfully!</p>
                 </div>
               )}
               {submitStatus === 'error' && (
                 <div className="mt-4 p-3 bg-red-50 border border-red-200 rounded-lg">
-                  <p className="text-red-600 text-center font-medium">Failed to send booking request. Please try again.</p>
+                  <p className="text-red-600 text-center font-medium">Failed to send your inquiry. Please try again.</p>
                 </div>
               )}
             </form>
