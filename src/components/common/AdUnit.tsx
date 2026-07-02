@@ -72,25 +72,30 @@ const AdUnit: React.FC<AdUnitProps> = ({
     };
   }, [finalAdSlot, finalAdFormat]);
 
+  // Reserving vertical space is what keeps ads from shifting the page as
+  // they load (CrUX had CLS at 0.25 with 25% of users in "poor"). 280px
+  // matches the most common responsive-ad render height.
   const defaultStyle: React.CSSProperties = placement === 'sidebar'
     ? { display: 'inline-block', width: 300, height: 250 }
     : placement === 'in-article'
-      ? { display: 'block', textAlign: 'center' as const }
-      : { display: 'block' };
+      ? { display: 'block', textAlign: 'center' as const, minHeight: 280 }
+      : { display: 'block', minHeight: 280 };
 
   // Render the <ins> tag on both server and client so Google's crawler can
   // see the ad placement and so hydration doesn't flash missing ads.
   return (
-    <ins
-      ref={adRef}
-      className={`adsbygoogle${className ? ` ${className}` : ''}`}
-      style={style || defaultStyle}
-      data-ad-client={AD_CLIENT}
-      data-ad-slot={finalAdSlot}
-      data-ad-format={finalAdFormat}
-      data-full-width-responsive={placement !== 'sidebar' ? 'true' : undefined}
-      {...(placement === 'in-article' ? { 'data-ad-layout': 'in-article' } : {})}
-    />
+    <div style={placement === 'sidebar' ? undefined : { minHeight: 280 }}>
+      <ins
+        ref={adRef}
+        className={`adsbygoogle${className ? ` ${className}` : ''}`}
+        style={style || defaultStyle}
+        data-ad-client={AD_CLIENT}
+        data-ad-slot={finalAdSlot}
+        data-ad-format={finalAdFormat}
+        data-full-width-responsive={placement !== 'sidebar' ? 'true' : undefined}
+        {...(placement === 'in-article' ? { 'data-ad-layout': 'in-article' } : {})}
+      />
+    </div>
   );
 };
 
