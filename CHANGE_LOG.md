@@ -4,6 +4,25 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-02] fix(conversion): 7 bugs que mataban conversión + política sin-cuentas-públicas
+
+**Contexto:** QA en vivo con navegador (consultoría 2.0) encontró funnels rotos en silencio. Además, decisión del dueño: **sin login/signup público por ahora** — los flujos de negocio pasan a venta directa vía contacto.
+
+**Fixes:**
+1. **Tarjetas de /places clickeables** — antes era IMPOSIBLE llegar al detalle desde el directorio (0 anchors). Imagen y título ahora son Link + "View details →" (solo tab places; services no tiene detalle).
+2. **Contact lee `?subject=`** — los CTAs de /advertise perdían el contexto del paquete; useEffect + setValue lo precarga.
+3. **Reviews: causa raíz = la tabla `reviews` NUNCA existió** (API 500 en cada página de lugar). API ahora degrada a [] en 42P01; migración `20260702000000_create_reviews.sql` lista para cuando se reactive; ReviewForm desmontado y sección de reviews oculta si está vacía (sin cuentas no se puede reseñar).
+4. **i18n reparado en /subscribe y /signin** — mostraban claves crudas (nav.home…) por falta de serverSideTranslations.
+5. **CSP: agregado `https://ad.doubleclick.net`** a connect-src — las conversiones de Google Ads estaban silenciosamente bloqueadas en todo el sitio.
+6. **Política sin-cuentas:** /business/subscription ya no expulsa a anónimos (precios visibles; "Suscribirse" → /contact con el plan como subject); /submit-listing/business redirige a contacto con subject "Listar mi negocio" en vez de signin. Header ya estaba limpio (menú solo aparece con sesión).
+7. **Pivote del maratón** — banner post-evento ("la 2026 se corrió el 28 de junio") con CTA "Avísame del 2027" → /subscribe, para convertir el equity de la página #1 de GSC de la semana en subs.
+
+**También (mismo día, commit previo):** AdUnit reserva min-height 280px contra el CLS 0.25 de CrUX.
+
+**Pendientes detectados en el QA para siguiente ronda:** errores de hidratación en posts de blog (12/página), branding viejo "Directory SLP" en títulos de signin y la-gran-via, imagen remota lh5.googleusercontent rechazada por el optimizador en /places, fechas confusas de eventos "ongoing" en this-week.
+
+---
+
 ## [2026-07-02] content: link recíproco SMA→QRO en el comparativo de abril
 
 Parche directo en Supabase (sin cambios de código): el post `san-luis-potosi-vs-san-miguel-allende-expats-2026` ahora incluye un recuadro "¿Comparando más ciudades?" con link al nuevo comparativo de Querétaro, insertado antes del cierre en las 4 columnas de contenido (EN box en content/de/ja, ES box en content_es). Verificado en vivo tras revalidación ISR (EN y ES). La serie de comparativas queda enlazada en ambos sentidos: SMA ↔ QRO.

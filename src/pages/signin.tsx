@@ -3,6 +3,7 @@ import Head from 'next/head';
 import AuthForm from '@/components/auth/AuthForm';
 import { useAuth } from '@/lib/supabase-auth';
 import { logger } from '@/lib/logger';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const SignInPage = () => {
   const { user, session, isLoading } = useAuth();
@@ -94,10 +95,11 @@ const SignInPage = () => {
   );
 };
 
-export async function getServerSideProps({ }: { locale: string }) {
+export async function getServerSideProps({ locale }: { locale?: string }) {
   try {
     return {
       props: {
+        ...(await serverSideTranslations(locale ?? 'en', ['common'])),
       },
     };
   } catch (error) {

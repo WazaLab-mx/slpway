@@ -3,6 +3,13 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { CheckCircleIcon, SparklesIcon, ClockIcon, UserGroupIcon } from '@heroicons/react/24/solid';
 import { ConversionEvents } from '@/lib/analytics';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+// Header/footer render raw i18n keys without this (NO_I18NEXT_INSTANCE).
+export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+  props: { ...(await serverSideTranslations(locale ?? 'en', ['common'])) },
+});
 
 /**
  * Render the newsletter subscription page for San Luis Way, including the hero signup form, sneak-peek content, benefits grid, final CTA, footer, and a success confirmation view.

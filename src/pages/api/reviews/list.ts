@@ -22,7 +22,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       .order('created_at', { ascending: false });
 
     if (error) {
-      // Review fetch failed
+      // 42P01 = relation does not exist: the reviews table hasn't been
+      // created in this environment yet — treat as "no reviews" instead of
+      // erroring on every place page.
+      if ((error as { code?: string }).code === '42P01') {
+        return res.status(200).json([]);
+      }
       return res.status(500).json({ error: 'Failed to fetch reviews' });
     }
 

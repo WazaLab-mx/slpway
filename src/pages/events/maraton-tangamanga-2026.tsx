@@ -88,6 +88,24 @@ export default function MaratonTangamanga2026() {
         structuredData={structuredData as Record<string, unknown>}
       />
 
+      {/* Post-event banner: the 2026 race ran June 28. This page is still the
+          top organic entry for "maraton tangamanga" queries — keep the equity
+          and convert it into newsletter signups until the 2027 page exists. */}
+      <section className="bg-gradient-to-r from-emerald-700 to-teal-700 text-white py-5 px-4">
+        <div className="container mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm md:text-base leading-relaxed">
+            <strong>🏁 La edición 2026 se corrió el 28 de junio — ¡gracias, corredores!</strong>{' '}
+            Publicaremos fechas e inscripciones del Maratón Tangamanga 2027 en cuanto se anuncien.
+          </p>
+          <Link
+            href="/subscribe"
+            className="shrink-0 bg-white text-emerald-700 font-bold px-5 py-2.5 rounded-full hover:bg-emerald-50 transition-colors text-sm"
+          >
+            Avísame del 2027
+          </Link>
+        </div>
+      </section>
+
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-emerald-950 via-teal-900 to-blue-950 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-20"

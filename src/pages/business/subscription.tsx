@@ -43,11 +43,8 @@ const SubscriptionPage = () => {
   const [validatedCoupon, setValidatedCoupon] = useState<any>(null);
   const [couponError, setCouponError] = useState('');
 
-  useEffect(() => {
-    if (!user && !isLoading) {
-      router.push('/signin?redirect=/business/subscription');
-    }
-  }, [user, isLoading, router]);
+  // Public accounts are intentionally disabled for now: pricing stays
+  // readable by anyone; only the subscribe action branches on auth.
 
   // Track pricing page view
   useEffect(() => {
@@ -111,9 +108,12 @@ const SubscriptionPage = () => {
     try {
       console.log('Starting subscription process');
 
-      // Make sure user is defined
+      // No public signup yet — route interested businesses to direct contact
+      // with the chosen plan preselected as the subject.
       if (!user) {
-        throw new Error('You must be logged in to subscribe');
+        const planLabel = selectedPlan === 'yearly' ? 'Plan Anual $2,500 MXN' : 'Plan Mensual $250 MXN';
+        router.push(`/contact?subject=${encodeURIComponent(`Quiero listar mi negocio — ${planLabel}`)}`);
+        return;
       }
 
       const userId = (user as { id: string }).id;

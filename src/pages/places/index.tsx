@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState, useMemo, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { Place, Service } from '@/types';
@@ -444,16 +445,31 @@ const PlacesPage: React.FC<PlacesPageProps> = ({ places, featuredPlaces, service
               <div id="items-section" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {currentItems.map((item) => (
                   <div key={item.id} className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="relative w-full h-40 mb-4 rounded-lg overflow-hidden bg-gray-100">
-                      <PlaceImage
-                        src={item.image_url || LOGO_PLACEHOLDER}
-                        alt={item.name}
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    </div>
+                    {activeTab === 'places' ? (
+                      <Link href={`/places/${item.id}`} className="block relative w-full h-40 mb-4 rounded-lg overflow-hidden bg-gray-100">
+                        <PlaceImage
+                          src={item.image_url || LOGO_PLACEHOLDER}
+                          alt={item.name}
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                      </Link>
+                    ) : (
+                      <div className="relative w-full h-40 mb-4 rounded-lg overflow-hidden bg-gray-100">
+                        <PlaceImage
+                          src={item.image_url || LOGO_PLACEHOLDER}
+                          alt={item.name}
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
+                      </div>
+                    )}
                     <div className="flex items-start justify-between mb-2">
-                      <h3 className="font-semibold text-lg text-gray-900 flex-1">{item.name}</h3>
+                      {activeTab === 'places' ? (
+                        <Link href={`/places/${item.id}`} className="font-semibold text-lg text-gray-900 flex-1 hover:text-primary transition-colors">{item.name}</Link>
+                      ) : (
+                        <h3 className="font-semibold text-lg text-gray-900 flex-1">{item.name}</h3>
+                      )}
                       <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs ml-2 capitalize">
                         {item.category}
                       </span>
@@ -490,6 +506,14 @@ const PlacesPage: React.FC<PlacesPageProps> = ({ places, featuredPlaces, service
                         </div>
                       )}
                     </div>
+                    {activeTab === 'places' && (
+                      <Link
+                        href={`/places/${item.id}`}
+                        className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:text-primary-dark transition-colors"
+                      >
+                        View details →
+                      </Link>
+                    )}
                   </div>
                 ))}
               </div>

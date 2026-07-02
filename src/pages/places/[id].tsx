@@ -9,7 +9,6 @@ import AdUnit from '@/components/common/AdUnit';
 import Breadcrumbs from '@/components/common/Breadcrumbs';
 import { PlaceDetailSkeleton } from '@/components/common/Skeleton';
 import B2BBanner from '@/components/B2BBanner';
-import ReviewForm from '@/components/ReviewForm';
 import ReviewList from '@/components/ReviewList';
 import { ConversionEvents } from '@/lib/analytics';
 import RelatedContent from '@/components/common/RelatedContent';
@@ -225,14 +224,14 @@ export default function PlacePage({ place, error }: { place: Place | null; error
                 <AdUnit placement="in-article" />
               </div>
 
-              {/* Reviews */}
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h2 className="text-xl font-semibold text-gray-900 mb-4">Reviews</h2>
-                <ReviewList reviews={reviews} isLoading={reviewsLoading} />
-                <div className="mt-6 pt-6 border-t border-gray-100">
-                  <ReviewForm placeId={place.id} onReviewSubmitted={fetchReviews} />
+              {/* Reviews: shown only when they exist. Submission (auth-gated)
+                  is on hold while public accounts are disabled. */}
+              {reviews.length > 0 && (
+                <div className="bg-white rounded-xl p-6 shadow-sm">
+                  <h2 className="text-xl font-semibold text-gray-900 mb-4">Reviews</h2>
+                  <ReviewList reviews={reviews} isLoading={reviewsLoading} />
                 </div>
-              </div>
+              )}
 
               <RelatedContent links={relatedLinksForPlace(place.category)} />
 

@@ -68,9 +68,10 @@ export default function SubmitBusinessListing() {
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
-    // Redirect if not authenticated
+    // Public accounts are disabled for now — route business owners straight
+    // to the contact form so the listing happens through direct sales.
     if (!user && !isLoading) {
-      router.push('/signin?redirect=/submit-listing/business');
+      router.push('/contact?subject=' + encodeURIComponent('Listar mi negocio en San Luis Way'));
     } else if (user) {
       fetchBusinessProfile();
     }

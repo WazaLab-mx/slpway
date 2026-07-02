@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useState, useRef, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { useRouter } from 'next/router';
 import ReCAPTCHA from 'react-google-recaptcha';
 import SEO from '@/components/common/SEO';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -37,8 +38,18 @@ export default function Contact() {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors }
   } = useForm<ContactFormData>();
+
+  // Advertise/package CTAs land here with ?subject= — without this the lead
+  // arrives with no context about which offer they wanted.
+  const router = useRouter();
+  useEffect(() => {
+    if (router.isReady && typeof router.query.subject === 'string' && router.query.subject) {
+      setValue('subject', router.query.subject);
+    }
+  }, [router.isReady, router.query.subject, setValue]);
 
   useEffect(() => {
     async function fetchStats() {
