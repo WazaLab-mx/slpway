@@ -4,6 +4,12 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-02] content: link recíproco SMA→QRO en el comparativo de abril
+
+Parche directo en Supabase (sin cambios de código): el post `san-luis-potosi-vs-san-miguel-allende-expats-2026` ahora incluye un recuadro "¿Comparando más ciudades?" con link al nuevo comparativo de Querétaro, insertado antes del cierre en las 4 columnas de contenido (EN box en content/de/ja, ES box en content_es). Verificado en vivo tras revalidación ISR (EN y ES). La serie de comparativas queda enlazada en ambos sentidos: SMA ↔ QRO.
+
+---
+
 ## [2026-07-02] content: plan evergreen COMPLETO — Day Trips, Renting, Healthcare, SLP vs Querétaro
 
 **4 posts más publicados (EN+ES, FAQPage JSON-LD x2, fuentes con cautelas, verificados en vivo + Indexing API x8 URLs):**
