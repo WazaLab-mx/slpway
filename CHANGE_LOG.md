@@ -4,6 +4,16 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-02] content: post Huasteca Potosina (Tier 1 del plan editorial EN) + calendario de eventos renovado
+
+**1. Nuevo post publicado**: `/blog/huasteca-potosina-itinerary-2026` (ID 854d4244), vía `scripts/publish-huasteca-potosina-itinerary.js`. Primer contenido del sitio sobre la Huasteca (hueco #1 del plan editorial EN). EN + ES completos; de/ja con metas traducidas. Incluye: itinerarios 3/5/7 días, tabla de precios 2026 verificados (Las Pozas oficial $180+$30 guía, Tamul $150–250, Tamtoc solo domingos), recuadro del sistema de reservación de Las Pozas, temporada de agua turquesa (nov–abr), hospedaje, FAQPage JSON-LD 6 preguntas ×2 idiomas, sección de fuentes (GEO). Basado en dossier de investigación con fuente por dato; cifras no confirmadas publicadas como rangos. Imágenes existentes de /images/outdoors/. Verificado en vivo (EN y ES 200) + Indexing API notificada. Preparado para afiliados GetYourGuide/Viator (menciona tours con precios; falta alta en programas).
+
+**2. Calendario de eventos renovado** (agente, solo DB): 38 pasados respaldados en `backups/events-past-backup-2026-07-02.json` y eliminados; 15 eventos verificados agregados con fuente (Festival Lila López, Yuridia, Eslabón Armado, Xantolo, Kany García, Enjambre, Arjona dic 7, Guadalupe…); fecha de Alan Parsons corregida (feb 6 pospuesto → 18 oct, Superboletos) — las otras 4 "discrepancias" eran lectura UTC, estaban bien. Total: 44 eventos futuros.
+
+**Plan editorial EN aprobado** (en curso): Tier 1 turismo (Huasteca ✓, Xilitla deep-dive, Real de Catorce, Where to Stay, Day Trips), Tier 2 expat (safety 2026, cost of living refresh, SLP vs QRO, healthcare, renting), Tier 3 estacional (Xantolo ~sep 20, Muertos ~oct 1, Navidad ~nov 15). Cadencia objetivo: 2/semana.
+
+---
+
 ## [2026-07-02] feat(ads): cobertura completa de AdSense — listings de eventos, factchecks, in-article en posts largos
 
 **Contexto:** El dueño pidió monetizar páginas EN desaprovechadas sin saturar. Hallazgo clave: `/events/all` (página #1 de tráfico orgánico) tenía CERO ads, igual que los 13 fact-checks EN, brands, resources index, cultural-tours y spouse-hub.
