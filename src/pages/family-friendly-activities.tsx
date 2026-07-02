@@ -279,11 +279,11 @@ export default function FamilyFriendlyActivities({ familyEvents = [] }: { family
   const isEs = locale === 'es';
 
   const pageTitle = isEs
-    ? 'Family Friendly Activities en San Luis Potosí — Guía Completa de Actividades Familiares con Precios y Horarios'
-    : 'Family Friendly Activities in San Luis Potosí — Complete Guide with Prices, Hours & Plans';
+    ? 'Parques y Actividades para Niños en San Luis Potosí — 30+ Planes con Precios y Horarios'
+    : 'Best Parks for Kids & Family Activities in San Luis Potosí — 30+ Plans with Prices & Hours';
   const pageDesc = isEs
-    ? '30+ planes familiares en SLP con precios, horarios y edades. Parques, trampolines, museos, go-karts y más — encuentra el plan perfecto para este fin de semana.'
-    : '30+ family plans in San Luis Potosí with prices, hours and age ranges. Parks, trampolines, museums, go-karts and more — find the perfect weekend plan in one click.';
+    ? 'Los mejores parques para niños y 30+ planes familiares en SLP con precios, horarios y edades: Tangamanga, trampolines, museos, go-karts y más para este fin de semana.'
+    : 'The best parks for kids and 30+ family activities in San Luis Potosí with prices, hours and age ranges: Tangamanga, trampolines, museums, go-karts and more.';
 
   return (
     <>

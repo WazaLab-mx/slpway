@@ -137,11 +137,11 @@ export default function BreakfastSpotsSLP() {
   const isEs = locale === 'es';
 
   const title = isEs
-    ? 'Mejores Lugares para Desayunar en San Luis Potosí — 7 Spots que los Locales Eligen'
-    : 'Best Breakfast Spots in San Luis Potosí — 7 Places Locals Actually Go';
+    ? 'Mejores Desayunos y Brunch en San Luis Potosí — 7 Spots que los Locales Eligen'
+    : 'Best Breakfast & Brunch Spots in San Luis Potosí — Where Locals Actually Eat';
   const description = isEs
-    ? 'Los 7 mejores spots para desayunar en SLP: enchiladas potosinas, gorditas de mercado, brunch moderno y café de especialidad. Direcciones, horarios y qué ordenar.'
-    : '7 best breakfast spots in SLP: enchiladas potosinas, street-market gorditas, modern brunch and specialty coffee. Addresses, hours, and what to order.';
+    ? 'Los 7 mejores lugares de desayuno y brunch en SLP: enchiladas potosinas, gorditas de mercado, brunch moderno y café de especialidad. Direcciones, horarios y qué ordenar.'
+    : 'The 7 best breakfast and brunch spots in San Luis Potosí: enchiladas potosinas, street-market gorditas, modern brunch and specialty coffee. Addresses, hours, and what to order.';
 
   return (
     <>

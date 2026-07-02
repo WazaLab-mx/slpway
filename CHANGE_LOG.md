@@ -4,6 +4,18 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-01] seo: titles/metas alineados a queries reales de GSC (quick wins)
+
+**Contexto:** GSC Q2 2026 muestra queries rankeando en top 10 con 0 clics porque el title no contiene la palabra buscada: "best brunch spots near me" (1,117 imp, pos 5.7) y "best parks for kids near me" (419 imp, pos 5.7).
+
+**Cambios:**
+- `breakfast-spots-san-luis-potosi.tsx`: title EN ahora "Best Breakfast & Brunch Spots…" (agrega "Brunch"); ES "Mejores Desayunos y Brunch…". Descriptions actualizadas igual.
+- `family-friendly-activities.tsx`: title EN ahora "Best Parks for Kids & Family Activities…" (antes no mencionaba parques); ES "Parques y Actividades para Niños…". Title anterior tenía 100+ caracteres (se truncaba en SERP); el nuevo es más corto y front-loaded.
+
+**Nota:** el tercer quick win ("medio maraton uaslp 2026") apunta a una URL UUID de evento — se resuelve con la migración UUID→slug (backlog mes 1).
+
+---
+
 ## [2026-07-01] fix(seo): contador honesto de suscriptores + robots.txt único + 301 eventos 2025
 
 **Contexto:** Auditoría de negocio 2026-07-01. Tres fugas de credibilidad/SEO detectadas.
