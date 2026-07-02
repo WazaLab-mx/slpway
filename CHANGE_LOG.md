@@ -4,6 +4,16 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-02] content: deep-dive Xilitla & Las Pozas (Tier 1 #2) + interlink con Huasteca
+
+**Nuevo post**: `/blog/xilitla-las-pozas-guide-2026` (ID f908dc09), vía `scripts/publish-xilitla-las-pozas-guide.js`. EN + ES completos; de/ja metas traducidas. Contenido: historia verificada de Edward James (contrato con Dalí 1937–38, retratos de Magritte, leyenda real presentada como leyenda), llegada a Xilitla 1945 con Plutarco Gastélum, helada de 1962 → flores de concreto, US$5M+ financiados subastando su colección surrealista, estructuras icónicas con nombres, Fondo Xilitla/CEMEX 2007, UNESCO tentativa 2009, Monumento Artístico 2012. Correcciones importantes vs guías viejas: **ya no se permite nadar en las pozas**, drones prohibidos, tours en inglés 10 AM y 3 PM. Sección del pueblo (exconvento 1553, Museo Leonora Carrington Xilitla 2018 → interlink al artículo Carrington existente, café, El Castillo) + Sótano de las Huahuas y Cueva del Salitre. FAQPage JSON-LD 6 preguntas ×2 idiomas, fuentes con discrepancias atribuidas (27 vs 36 estructuras). Imágenes normalizadas: `xilitla-las-pozas-pools.webp`, `xilitla-pueblo-magico.jpg` (copiadas de rutas con espacios).
+
+**Interlinks**: Huasteca itinerary ↔ Xilitla deep-dive (recuadro de Las Pozas en ambos idiomas, post actualizado en Supabase); Xilitla → artículo Leonora Carrington. Verificado en vivo (EN/ES 200) + Indexing API notificada.
+
+**Plan editorial: siguiente es Real de Catorce (#3 Tier 1).**
+
+---
+
 ## [2026-07-02] content: post Huasteca Potosina (Tier 1 del plan editorial EN) + calendario de eventos renovado
 
 **1. Nuevo post publicado**: `/blog/huasteca-potosina-itinerary-2026` (ID 854d4244), vía `scripts/publish-huasteca-potosina-itinerary.js`. Primer contenido del sitio sobre la Huasteca (hueco #1 del plan editorial EN). EN + ES completos; de/ja con metas traducidas. Incluye: itinerarios 3/5/7 días, tabla de precios 2026 verificados (Las Pozas oficial $180+$30 guía, Tamul $150–250, Tamtoc solo domingos), recuadro del sistema de reservación de Las Pozas, temporada de agua turquesa (nov–abr), hospedaje, FAQPage JSON-LD 6 preguntas ×2 idiomas, sección de fuentes (GEO). Basado en dossier de investigación con fuente por dato; cifras no confirmadas publicadas como rangos. Imágenes existentes de /images/outdoors/. Verificado en vivo (EN y ES 200) + Indexing API notificada. Preparado para afiliados GetYourGuide/Viator (menciona tours con precios; falta alta en programas).

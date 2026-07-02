@@ -221,6 +221,7 @@ ${pricesTable(false)}
     <li class="flex items-start gap-2 text-gray-800"><span class="text-amber-600 mt-1">3.</span><span><strong>Your entry time is strict</strong> — miss it and there's no refund. Visits are guided groups of max 25, ~1.5 h; no free wandering.</span></li>
     <li class="flex items-start gap-2 text-gray-800"><span class="text-amber-600 mt-1">4.</span><span><strong>Closed Tuesdays.</strong> Open Wed–Mon 9 AM–6 PM, last entry 4 PM. Box office from 8 AM (7 AM weekends).</span></li>
   </ul>
+  <p class="text-sm text-gray-700 mt-4 pt-3 border-t border-amber-200">Want the full story — Edward James, Dalí, the 1962 frost — plus the town guide? Read our <a href="/blog/xilitla-las-pozas-guide-2026" class="text-emerald-700 underline font-semibold">complete Xilitla & Las Pozas deep-dive</a>.</p>
 </div>
 <img src="${IMG.xilitla}" alt="Las Pozas surrealist garden in Xilitla" class="w-full rounded-2xl shadow-lg mb-6" loading="lazy" />
 </section>
@@ -378,6 +379,7 @@ ${pricesTable(true)}
     <li class="flex items-start gap-2 text-gray-800"><span class="text-amber-600 mt-1">3.</span><span><strong>Tu horario de entrada es estricto</strong> — si lo pierdes no hay reembolso. Solo grupos guiados de máx. 25 personas, ~1.5 h; no puedes recorrerlo libre.</span></li>
     <li class="flex items-start gap-2 text-gray-800"><span class="text-amber-600 mt-1">4.</span><span><strong>Cierra los martes.</strong> Abre mié–lun 9 AM–6 PM, último acceso 4 PM. Taquilla desde las 8 AM (7 AM en fin de semana).</span></li>
   </ul>
+  <p class="text-sm text-gray-700 mt-4 pt-3 border-t border-amber-200">¿Quieres la historia completa — Edward James, Dalí, la helada del 62 — y la guía del pueblo? Lee nuestro <a href="/blog/xilitla-las-pozas-guide-2026" class="text-emerald-700 underline font-semibold">deep-dive completo de Xilitla y Las Pozas</a>.</p>
 </div>
 <img src="${IMG.xilitla}" alt="Jardín surrealista de Las Pozas en Xilitla" class="w-full rounded-2xl shadow-lg mb-6" loading="lazy" />
 </section>
