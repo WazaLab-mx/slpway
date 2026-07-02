@@ -1,21 +1,23 @@
 // Mock Supabase client for tests
 export const supabase = {
   from: jest.fn().mockImplementation(() => {
-    // Create a chainable mock object with all methods
-    const mockChain = {
-      select: jest.fn().mockReturnValue(mockChain),
+    // Create a chainable mock object with all methods. Self-referencing
+    // methods are attached after creation so the initializer is legal TS.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const mockChain: any = {
+      select: jest.fn(),
       insert: jest.fn().mockImplementation(() => ({
         select: jest.fn().mockReturnValue({
           data: [{ id: 'test-id' }],
           error: null
         })
       })),
-      update: jest.fn().mockReturnValue(mockChain),
-      delete: jest.fn().mockReturnValue(mockChain),
-      eq: jest.fn().mockReturnValue(mockChain),
-      or: jest.fn().mockReturnValue(mockChain),
-      gte: jest.fn().mockReturnValue(mockChain),
-      order: jest.fn().mockReturnValue(mockChain),
+      update: jest.fn(),
+      delete: jest.fn(),
+      eq: jest.fn(),
+      or: jest.fn(),
+      gte: jest.fn(),
+      order: jest.fn(),
       limit: jest.fn().mockResolvedValue({
         data: [{
           id: 'test-event-1',
@@ -29,6 +31,10 @@ export const supabase = {
         error: null
       })
     };
+    for (const m of ['select', 'update', 'delete', 'eq', 'or', 'gte', 'order']) {
+      mockChain[m].mockReturnValue(mockChain);
+    }
+
     return mockChain;
   })
 };

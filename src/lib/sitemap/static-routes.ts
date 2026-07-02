@@ -20,6 +20,7 @@ export const STATIC_ROUTES: StaticRoute[] = [
   { path: '/community',                               changefreq: 'monthly', priority: 0.6 },
   { path: '/places',                                  changefreq: 'daily',   priority: 0.9 },
   { path: '/events/all',                              changefreq: 'daily',   priority: 0.9 },
+  { path: '/events/this-week',                        changefreq: 'daily',   priority: 0.9 },
   { path: '/blog',                                    changefreq: 'daily',   priority: 0.9 },
   { path: '/brands',                                  changefreq: 'weekly',  priority: 0.8 },
   { path: '/restaurants',                             changefreq: 'weekly',  priority: 0.8 },

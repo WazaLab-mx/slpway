@@ -51,8 +51,10 @@ interface ParseFailure {
   error: string;
 }
 
+// Input type is `any` because these schemas transform (string query params
+// coerced to numbers/defaults), so schema input ≠ output T.
 export function parseQuery<T>(
-  schema: z.ZodSchema<T>,
+  schema: z.ZodType<T, z.ZodTypeDef, any>,
   query: Record<string, unknown>
 ): ParseSuccess<T> | ParseFailure {
   const result = schema.safeParse(query);

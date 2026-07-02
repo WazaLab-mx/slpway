@@ -4,6 +4,33 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-01] feat(growth): /events/this-week + RelatedContent + typecheck 100% limpio
+
+**Contexto:** Tercera tanda de la consultoría 2026-07-01.
+
+**1. Nueva página `/events/this-week`:**
+- Eventos de los próximos 7 días desde Supabase, ISR cada hora (`revalidate: 3600`) — contenido fresco semanal sin cron. Bilingüe ES/EN por locale, ItemList JSON-LD con URLs slug, EventCard reutilizado, 2 AdUnits, NewsletterBanner. Link desde `/events` y agregada al sitemap (priority 0.9, daily).
+- La ruta estática gana sobre `/events/[category]`, sin conflicto.
+
+**2. Interlinking sistemático:**
+- `src/lib/related-links.ts` (lógica de mapeo: categoría de lugar/evento → hubs y guías relevantes) + `src/components/common/RelatedContent.tsx` (presentación). Montado en `places/[id]` y `events/[category]/[id]`. Tests: `__tests__/related-links.test.ts` (4 casos).
+
+**3. FIX CRÍTICO — sitemap:** `src/lib/sitemap/dynamic.ts` usaba `buildEventPath` sin importarlo (bug introducido en la tanda 2, script de reemplazo no agregó el import). El sitemap se genera en runtime → habría tirado la sección de eventos en producción. Corregido antes de que el deploy anterior lo expusiera (verificado: sitemap live seguía sirviendo 200 con build previo).
+
+**4. Verificación en producción de slugs (tanda 2):** UUID → **308** → slug → **200** confirmado live (`/events/music/a1eae9fb-…` → `/events/music/liv-kristine-live-at-bunker-57-a1eae9fb`). El 404 de `047fcef9` es correcto: ese evento ya no existe en la tabla.
+
+**5. Typecheck del repo 100% limpio (`npx tsc --noEmit` → 0 errores):**
+- `parseQuery` de api/v1 ahora acepta esquemas con transformación (`z.ZodType<T, ZodTypeDef, any>`) — arregla los 7 endpoints v1.
+- `packages/` excluido del tsconfig raíz (mcp-server tiene su propio build).
+- `scripts/test-newsletter-{validator,html-pipeline}.ts` convertidos a módulos (`export {}`) — colisionaban funciones globales.
+- `src/lib/__mocks__/supabase.ts`: mockChain auto-referencial reestructurado.
+- `__tests__/blog.test.ts` y `contact-flow.test.ts`: tipos anotados.
+- **Eliminados 5 tests muertos** que importaban módulos inexistentes: `signup-fix.test.tsx`, `auth-test.test.tsx`, `simple-auth.test.tsx`, `api/__tests__/add-test-cultural-event.test.ts`, `api/__tests__/test-cultural-events.test.ts`.
+
+**Backlog conocido:** 22 tests pre-existentes fallan en 7 suites (blog, contact-stats, currency, email-functionality, listings-banner, newsletter-generator, next-i18next-config) — verificado con `git stash` que fallaban idéntico ANTES de estos cambios. Pendiente de sesión dedicada.
+
+---
+
 ## [2026-07-01] feat(revenue/seo): Consent Mode v2 + AdUnits en 50 páginas + eventos con slug + tracking /advertise
 
 **Contexto:** Segunda tanda de la consultoría 2026-07-01 — monetización y SEO técnico.

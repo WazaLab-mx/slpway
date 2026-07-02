@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import { buildEventPath } from '@/lib/event-slug';
 import type { SitemapEntry } from './locale';
 
 /**

@@ -16,6 +16,8 @@ import { supabase } from '@/lib/supabase';
 import { buildEventPath, buildEventSlug, extractIdPrefix, isFullUuid } from '@/lib/event-slug';
 import SEO from '@/components/common/SEO';
 import AdUnit from '@/components/common/AdUnit';
+import RelatedContent from '@/components/common/RelatedContent';
+import { relatedLinksForEvent } from '@/lib/related-links';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 interface EventDetailProps {
@@ -465,6 +467,13 @@ export default function EventDetail({ event, relatedEvents }: EventDetailProps) 
           </div>
         </section>
       )}
+
+      {/* Systematic cross-links */}
+      <section className="px-4 pb-4 bg-gray-50">
+        <div className="container mx-auto">
+          <RelatedContent links={relatedLinksForEvent(event.category)} />
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-16 px-4 bg-gradient-to-r from-primary to-primary-dark text-white">

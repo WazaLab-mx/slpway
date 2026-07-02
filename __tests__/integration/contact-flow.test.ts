@@ -31,7 +31,7 @@ jest.mock('@/lib/logger', () => ({
 // Set env vars needed by handler
 process.env.NEXT_PUBLIC_SUPABASE_URL = 'http://localhost:54321';
 process.env.SUPABASE_SERVICE_ROLE_KEY = 'test-service-role-key';
-process.env.NODE_ENV = 'test';
+(process.env as { NODE_ENV?: string }).NODE_ENV = 'test';
 
 import contactHandler from '@/pages/api/contact';
 

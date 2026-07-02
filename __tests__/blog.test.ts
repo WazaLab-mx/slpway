@@ -43,7 +43,7 @@ describe('Blog Data Fetching', () => {
       eq: jest.fn().mockReturnThis(),
       order: jest.fn().mockReturnThis(),
       // Mock the resolved value for the query
-      then: (resolve) => resolve({ data: [mockPost, mockPostWithoutTranslation], error: null }),
+      then: (resolve: (value: unknown) => unknown) => resolve({ data: [mockPost, mockPostWithoutTranslation], error: null }),
     });
 
     const posts = await getBlogPosts();
@@ -104,7 +104,7 @@ describe('Blog Data Fetching', () => {
       select: jest.fn().mockReturnThis(),
       eq: jest.fn().mockReturnThis(),
       order: jest.fn().mockReturnThis(),
-      then: (resolve) => resolve({ data: null, error: new Error('Database connection failed') }),
+      then: (resolve: (value: unknown) => unknown) => resolve({ data: null, error: new Error('Database connection failed') }),
     });
 
     const posts = await getBlogPosts();

@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { Event } from '@/types';
 import { supabase } from '@/lib/supabase';
 import EventHeroCarousel from '@/components/EventHeroCarousel';
@@ -161,6 +162,13 @@ export default function EventsIndex({ events, categoryCounts }: EventsPageProps)
             showCounts
             counts={categoryCounts}
           />
+
+          <Link
+            href="/events/this-week"
+            className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-dark transition-colors"
+          >
+            📅 ¿Solo quieres ver esta semana? → Eventos de los próximos 7 días
+          </Link>
 
           {filteredEvents.length === 0 && (
             <div className="mt-8">

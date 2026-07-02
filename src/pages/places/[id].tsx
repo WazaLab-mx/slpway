@@ -12,6 +12,8 @@ import B2BBanner from '@/components/B2BBanner';
 import ReviewForm from '@/components/ReviewForm';
 import ReviewList from '@/components/ReviewList';
 import { ConversionEvents } from '@/lib/analytics';
+import RelatedContent from '@/components/common/RelatedContent';
+import { relatedLinksForPlace } from '@/lib/related-links';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 // Mexican numbers need the 52 country code for wa.me deep links.
@@ -231,6 +233,8 @@ export default function PlacePage({ place, error }: { place: Place | null; error
                   <ReviewForm placeId={place.id} onReviewSubmitted={fetchReviews} />
                 </div>
               </div>
+
+              <RelatedContent links={relatedLinksForPlace(place.category)} />
 
               <B2BBanner variant="inline" />
             </div>
