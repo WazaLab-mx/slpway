@@ -1,0 +1,93 @@
+{
+  "slug": "demo",
+  "name": "Antojitos Doña Lupe",
+  "tagline": "Cocina potosina de barrio, hecha a mano todos los días",
+  "description": [
+    "Todo empezó en 1987 con un comal, un molcajete y la receta de gorditas que la abuela Lupe trajo de Villa de Reyes. Lo que era un puesto de banqueta sobre la Avenida Carranza se convirtió, antojito a antojito, en el comedor donde hoy desayunan tres generaciones de vecinos del Centro.",
+    "Aquí la masa se amasa en la madrugada, las salsas se muelen en molcajete y el asado de boda se cuece a fuego lento como manda la tradición potosina. No hay atajos ni congelados: cada gordita sale del comal directo a su plato, como debe ser.",
+    "Venga con hambre y sin prisa. Le recibimos con café de olla, un banquito junto a la cocina y el mismo sazón de siempre: el de la casa, el de Doña Lupe."
+  ],
+  "theme": {
+    "primary": "#B0402A",
+    "accent": "#C98A2D",
+    "dark": "#2B1811"
+  },
+  "hero": {
+    "image": "https://images.unsplash.com/photo-1613514785940-daed07799d9b?auto=format&fit=crop&w=1920&q=80",
+    "badge": "Desde 1987"
+  },
+  "storyImage": "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=1000&q=80",
+  "gallery": [
+    "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?auto=format&fit=crop&w=1000&q=80",
+    "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&w=1000&q=80",
+    "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=1000&q=80",
+    "https://images.unsplash.com/photo-1534352956036-cd81e27dd615?auto=format&fit=crop&w=1000&q=80",
+    "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80"
+  ],
+  "menu": [
+    {
+      "category": "Gorditas de comal",
+      "items": [
+        { "name": "Gordita de queso con rajas", "desc": "Queso ranchero y rajas de chile poblano", "price": 22 },
+        { "name": "Gordita de chicharrón prensado", "desc": "Guisado en salsa roja de la casa", "price": 24 },
+        { "name": "Gordita de asado de boda", "desc": "Nuestro guiso estrella, en masa recién torteada", "price": 28 },
+        { "name": "Gordita de nopales con queso", "desc": "Nopales tiernos guisados con cebolla", "price": 22 },
+        { "name": "Gordita de picadillo", "desc": "Res molida con papa y zanahoria", "price": 24 }
+      ]
+    },
+    {
+      "category": "Especialidades potosinas",
+      "items": [
+        { "name": "Enchiladas potosinas (orden de 5)", "desc": "Masa con chile ancho, queso fresco y crema", "price": 75 },
+        { "name": "Asado de boda", "desc": "Cerdo en chile colorado, con arroz y frijoles de la olla", "price": 110 },
+        { "name": "Tacos rojos potosinos", "desc": "Dorados en manteca, con lechuga, queso y verdura", "price": 70 },
+        { "name": "Molcajete Doña Lupe", "desc": "Para compartir: cecina, chorizo, nopal y queso asadero", "price": 165 }
+      ]
+    },
+    {
+      "category": "Antojitos",
+      "items": [
+        { "name": "Flautas de pollo (orden de 4)", "desc": "Con crema, queso y salsa verde", "price": 65 },
+        { "name": "Sopes con tinga", "desc": "Tinga de pollo casera sobre sope de maíz", "price": 58 },
+        { "name": "Quesadilla de flor de calabaza", "desc": "En tortilla hecha a mano", "price": 32 },
+        { "name": "Tostadas de cueritos", "desc": "Con col, crema y salsa de la casa", "price": 30 }
+      ]
+    },
+    {
+      "category": "Bebidas y postres",
+      "items": [
+        { "name": "Agua fresca del día", "desc": "Pregunte por el sabor: jamaica, horchata o tamarindo", "price": 25 },
+        { "name": "Café de olla", "desc": "Con piloncillo y canela", "price": 28 },
+        { "name": "Chocolate caliente", "desc": "Batido a mano, espumoso", "price": 35 },
+        { "name": "Arroz con leche", "desc": "Receta de la abuela, con pasas", "price": 30 }
+      ]
+    }
+  ],
+  "hours": [
+    { "days": "Martes a viernes", "hours": "8:00 – 18:00" },
+    { "days": "Sábado y domingo", "hours": "8:00 – 19:00" },
+    { "days": "Lunes", "hours": "Cerrado" }
+  ],
+  "address": "Av. Venustiano Carranza 850, Centro, San Luis Potosí",
+  "mapsQuery": "Av. Venustiano Carranza 850, Centro, San Luis Potosí, S.L.P.",
+  "phone": "444 123 4567",
+  "whatsapp": true,
+  "instagram": "antojitosdonalupe",
+  "facebook": "AntojitosDonaLupe",
+  "testimonials": [
+    {
+      "text": "Las enchiladas potosinas más ricas del Centro. Vengo cada domingo con mi familia desde hace quince años y el sazón no cambia.",
+      "author": "Marisol G., vecina de Tequisquiapan"
+    },
+    {
+      "text": "El asado de boda sabe al de las fiestas de rancho. Se nota que todo lo hacen en casa, hasta las tortillas.",
+      "author": "Don Ramón H., cliente de toda la vida"
+    },
+    {
+      "text": "Llevé a unos amigos extranjeros a desayunar gorditas y quedaron encantados. Trato de familia y precios justos.",
+      "author": "Andrea M., guía de turistas"
+    }
+  ],
+  "established": 1987,
+  "geo": { "lat": 22.1497, "lng": -100.9942 }
+}

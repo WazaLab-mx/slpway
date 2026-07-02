@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 // import { CartProvider } from '@/lib/cart-context'; // MARKETPLACE DISABLED
 import React from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import Script from 'next/script';
 import { Inter, Crimson_Pro } from 'next/font/google';
 
@@ -47,6 +48,10 @@ const Toaster = dynamic(() => import('@/components/common/Toaster'), {
 const supabaseClient = createPagesBrowserClient();
 
 function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  // Client business pages (/negocios/*) must feel like the business's own
+  // site — no San Luis Way chrome.
+  const bareLayout = router.pathname.startsWith('/negocios/');
   return (
     <>
       <Head>
@@ -194,13 +199,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <AuthProvider>
             {/* MARKETPLACE DISABLED - Removed CartProvider */}
             <div className={`min-h-screen flex flex-col ${inter.variable} ${crimsonPro.variable}`}>
-              <Header />
+              {/* Client business pages (/negocios/*) render bare: they must
+                  feel like the business's own site, not a San Luis Way page. */}
+              {!bareLayout && <Header />}
               <main className="flex-grow">
                 <ErrorBoundary>
                   <Component {...pageProps} />
                 </ErrorBoundary>
               </main>
-              <Footer />
+              {!bareLayout && <Footer />}
             </div>
 
             <Toaster />

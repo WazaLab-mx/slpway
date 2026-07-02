@@ -4,6 +4,24 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-02] feat(product): template de páginas web para negocios ($3,000 MXN) + demo /negocios/demo
+
+**Nuevo producto:** páginas web one-page para negocios locales sin sitio (44 prospectos identificados en el directorio). Construido con pipeline de 2 agentes (frontend-expert construye → design-reviewer critica con screenshots Playwright e itera; calificación 5.5→8.5).
+
+**Arquitectura (cliente nuevo = 1 archivo JSON, cero código):**
+- Ruta `src/pages/negocios/[slug].tsx` — getStaticPaths lee `src/data/business-pages/*.json`; tema por cliente vía CSS custom properties (`--biz-primary/accent/dark`).
+- `_app.tsx`: bareLayout para `/negocios/*` — sin header/footer de San Luis Way, la página se siente del negocio.
+- Componentes en `src/components/business-page/`: Hero (scrim cinematográfico, badge "Desde X"), Historia, Menú con puntos conductores (SEO-visible, imprimible), Galería mosaico editorial (feature 2×2 con 5+ fotos), Testimonios, Visítenos (horarios+mapa embed+tel), WhatsApp flotante (aparece tras 60% scroll), footer con badge "Sitio hecho por San Luis Way" → /media-kit.
+- SEO self-contained: JSON-LD Restaurant con hasMenu/MenuSection/MenuItem en MXN, GeoCoordinates, openingHours, OG completo.
+- **Blindaje clave del reviewer:** reset scoped `.biz-page` — el CSS global del sitio (h1-h6/p con colores forzados) contaminaba el template; ahora aislado permanentemente.
+- Demo: `demo.json` — "Antojitos Doña Lupe" (ficticio), 4 categorías/17 platillos, fotos Unsplash verificadas visualmente, storyImage separada de galería.
+
+**Media kit actualizado:** 4o producto "Tu página web — $3,000 MXN pago único" con link a la demo; grid a 2x2.
+
+**Dominio propio del cliente (fase 2, cuando se venda):** Netlify domain alias + middleware por hostname (~1h de config). Documentado como upsell.
+
+---
+
 ## [2026-07-02] feat(b2b): página /media-kit + lista de outreach WhatsApp
 
 **1. `/media-kit`** (src/pages/media-kit.tsx, bilingüe ES/EN por locale): la herramienta de ventas B2B con SOLO números verificables (constante STATS, actualizar trimestralmente): 850+ subs / 30% apertura (Beehiiv jul 2026), +378% clics de Google T2 vs T1, 30,000+ impresiones/trimestre, 35+ guías, 40+ eventos, 116 negocios, 4 idiomas. Secciones: stats con fuentes citadas, perfil de audiencia (expats corredor BMW/GM + potosinos + viajeros), callout de temporada FENAPO (espacios limitados), 3 productos con CTA a /contact con subject etiquetado (listing $250/mes, patrocinio newsletter, paquetes $1,500–5,000), tracking GA4 `cta_click` media_kit. Enlazada desde el hero de /advertise. Sin ads (es herramienta de venta, no contenido).

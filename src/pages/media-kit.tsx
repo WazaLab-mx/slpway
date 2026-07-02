@@ -56,6 +56,15 @@ export default function MediaKit() {
       subject: 'Patrocinio de newsletter — Media Kit',
     },
     {
+      name: t('Your business website', 'Tu página web'),
+      price: '$3,000 MXN ' + t('one-time', 'pago único'),
+      body: t(
+        'A beautiful one-page website for your business — menu, photos, hours, map and WhatsApp button — live in days at sanluisway.com/negocios/your-business. See the demo: sanluisway.com/negocios/demo. Your own domain available as an add-on.',
+        'Una página web hermosa para tu negocio — menú, fotos, horarios, mapa y botón de WhatsApp — lista en días en sanluisway.com/negocios/tu-negocio. Mira la demo: sanluisway.com/negocios/demo. Dominio propio disponible como extra.'
+      ),
+      subject: 'Página web $3,000 — Media Kit',
+    },
+    {
       name: t('Campaign packages', 'Paquetes de campaña'),
       price: '$1,500 – $5,000+ MXN/mes',
       body: t('Site banners, sponsored content, brand stories and recurring newsletter presence, bundled — Basic, Premium and Enterprise tiers.', 'Banners en el sitio, contenido patrocinado, brand stories y presencia recurrente en el newsletter, en paquete — niveles Basic, Premium y Enterprise.'),
@@ -160,7 +169,7 @@ export default function MediaKit() {
         <section className="py-14 px-4 bg-gray-50">
           <div className="container mx-auto max-w-5xl">
             <h2 className="text-3xl font-bold font-serif text-gray-900 mb-8 text-center">{t('Ways to work with us', 'Formas de trabajar con nosotros')}</h2>
-            <div className="grid md:grid-cols-3 gap-5">
+            <div className="grid md:grid-cols-2 gap-5">
               {products.map((p) => (
                 <div key={p.name} className="bg-white rounded-2xl border-2 border-gray-100 p-6 flex flex-col shadow-sm">
                   <h3 className="font-bold text-lg text-gray-900 mb-1">{p.name}</h3>
