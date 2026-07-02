@@ -57,6 +57,13 @@ export default function BusinessPage({ business }: BusinessPageProps) {
         /* Neutralize the main site's global typography rules (globals.css sets
            fixed colors and margins on h1-h6/p) so the business page is styled
            exclusively by its own components + theme tokens. */
+        /* Auto Ads must never render inside client pages — kill any injected
+           unit and Google's anchor/vignette containers while on this page. */
+        .biz-page ins.adsbygoogle,
+        ins.adsbygoogle[data-anchor-status],
+        .google-auto-placed {
+          display: none !important;
+        }
         .biz-page :is(h1, h2, h3, h4, h5, h6, p) {
           color: inherit;
           margin-bottom: 0;

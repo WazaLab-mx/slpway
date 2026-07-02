@@ -183,13 +183,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       {/* AdSense — afterInteractive so the script loads reliably after hydration
           but still doesn't block LCP. lazyOnload was too unreliable: on pages
-          without user interaction the script never loaded and ads never showed. */}
-      <Script
-        id="adsense"
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7339948154887436"
-        strategy="afterInteractive"
-        crossOrigin="anonymous"
-      />
+          without user interaction the script never loaded and ads never showed.
+          NEVER on client business pages (/negocios/*): Auto Ads was injecting
+          banners into pages we sell — third-party ads there are unacceptable. */}
+      {!bareLayout && (
+        <Script
+          id="adsense"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7339948154887436"
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+        />
+      )}
 
       <ErrorBoundary>
         <SessionContextProvider
