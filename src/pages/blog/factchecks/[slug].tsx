@@ -6,6 +6,7 @@ import path from 'path';
 import { marked } from 'marked';
 import SEO from '@/components/common/SEO';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import AdUnit from '@/components/common/AdUnit';
 import {
   parseFactCheck,
   buildClaimReviewSchema,
@@ -442,6 +443,10 @@ export default function FactCheckPage({ slug, content, report }: FactCheckPagePr
                 </div>
               </section>
             )}
+
+            <section className="my-8">
+              <AdUnit placement="in-article" />
+            </section>
 
             {/* Full original markdown content — kept for context and for older reports that don't parse cleanly */}
             <details className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8 mb-8">

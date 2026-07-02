@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { getAllBrands, getBrandBySlug, generateBrandSlug, Brand } from '../../lib/brands';
 import SEO from '@/components/common/SEO';
+import AdUnit from '@/components/common/AdUnit';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 interface BrandPageProps {
@@ -122,6 +123,10 @@ export default function BrandPage({ brand }: BrandPageProps) {
                 </div>
               )}
             </div>
+
+            <section className="my-8">
+              <AdUnit placement="mid-content" />
+            </section>
           </div>
         </div>
       </section>

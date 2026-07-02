@@ -15,6 +15,7 @@ import NewsletterBanner from '@/components/NewsletterBanner';
 import { getCategoryTitle } from '@/utils/eventHelpers';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { buildEventPath } from '@/lib/event-slug';
+import AdUnit from '@/components/common/AdUnit';
 
 interface EventsPageProps {
   events: Event[];
@@ -211,6 +212,10 @@ export default function EventsPage({ events, allEvents, categoryCounts, category
           )}
 
           {/* Newsletter CTA */}
+          <section className="my-8">
+            <AdUnit placement="mid-content" />
+          </section>
+
           <NewsletterBanner variant="mid-content" className="mb-12" />
         </div>
       </div>

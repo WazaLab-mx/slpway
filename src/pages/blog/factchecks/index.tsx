@@ -4,6 +4,7 @@ import Link from 'next/link';
 import fs from 'fs';
 import path from 'path';
 import SEO from '@/components/common/SEO';
+import AdUnit from '@/components/common/AdUnit';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { motion } from 'framer-motion';
@@ -544,6 +545,10 @@ export default function FactChecksPage({ factchecks }: FactChecksPageProps) {
                 </motion.div>
               )}
             </div>
+
+            <section className="my-8">
+              <AdUnit placement="mid-content" />
+            </section>
 
             <motion.div
               initial={{ opacity: 0 }}

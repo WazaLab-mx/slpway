@@ -5,6 +5,7 @@ import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import B2BBanner from '@/components/B2BBanner';
+import AdUnit from '@/components/common/AdUnit';
 import LastUpdated from '@/components/common/LastUpdated';
 import GuideCTA from '@/components/common/GuideCTA';
 
@@ -231,6 +232,12 @@ export default function ResourcesHubPage() {
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="my-8">
+          <div className="container mx-auto px-4">
+            <AdUnit placement="mid-content" />
           </div>
         </section>
 

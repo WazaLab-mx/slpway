@@ -10,6 +10,7 @@ import NewsletterBanner from '@/components/NewsletterBanner';
 import GuideCTA from '@/components/common/GuideCTA';
 import ShareButton from '@/components/sharing/ShareButton';
 import AdUnit from '@/components/common/AdUnit';
+import { splitHtmlForAd } from '@/lib/split-html-for-ad';
 import AffiliateGrid from '@/components/affiliate/AffiliateGrid';
 import { getAffiliateProductsForPost } from '@/data/affiliate-products';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -186,10 +187,28 @@ export default function BlogPostPage({ post, relatedPosts }: BlogPostPageProps) 
             <AdUnit placement="top-banner" />
           </div>
 
-          <div
-            className="prose prose-lg max-w-none prose-headings:scroll-mt-24"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+          {(() => {
+            // Long posts get an in-article unit mid-content, split at a safe
+            // </section> boundary; short posts render unsplit as before.
+            const split = splitHtmlForAd(post.content);
+            if (!split) {
+              return (
+                <div
+                  className="prose prose-lg max-w-none prose-headings:scroll-mt-24"
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                />
+              );
+            }
+            return (
+              <div className="prose prose-lg max-w-none prose-headings:scroll-mt-24">
+                <div dangerouslySetInnerHTML={{ __html: split[0] }} />
+                <div className="my-10 not-prose">
+                  <AdUnit placement="in-article" />
+                </div>
+                <div dangerouslySetInnerHTML={{ __html: split[1] }} />
+              </div>
+            );
+          })()}
 
           <div className="my-10">
             <AdUnit placement="in-article" />

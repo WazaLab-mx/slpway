@@ -3,6 +3,7 @@ import { useState, useRef } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
 import ReCAPTCHA from "react-google-recaptcha";
+import AdUnit from '@/components/common/AdUnit';
 import {
   ClockIcon,
   UserGroupIcon,
@@ -424,6 +425,12 @@ export default function CulturalTours() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="my-8">
+          <div className="container mx-auto px-4">
+            <AdUnit placement="mid-content" />
           </div>
         </section>
 

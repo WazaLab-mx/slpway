@@ -4,6 +4,7 @@ import { GetStaticProps } from 'next';
 import { useState, useMemo } from 'react';
 import { Brand, getAllBrands, generateBrandSlug } from '@/lib/brands';
 import SEO from '@/components/common/SEO';
+import AdUnit from '@/components/common/AdUnit';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 interface BrandsPageProps {
@@ -310,6 +311,12 @@ export default function BrandsPage({ brands }: BrandsPageProps) {
           </div>
         </section>
       )}
+
+      <section className="my-8">
+        <div className="container mx-auto px-4">
+          <AdUnit placement="mid-content" />
+        </div>
+      </section>
 
       {/* Call to Action Section */}
       <section className="py-16 bg-primary text-white">

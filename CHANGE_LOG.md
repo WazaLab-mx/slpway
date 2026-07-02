@@ -4,6 +4,21 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-02] feat(ads): cobertura completa de AdSense — listings de eventos, factchecks, in-article en posts largos
+
+**Contexto:** El dueño pidió monetizar páginas EN desaprovechadas sin saturar. Hallazgo clave: `/events/all` (página #1 de tráfico orgánico) tenía CERO ads, igual que los 13 fact-checks EN, brands, resources index, cultural-tours y spouse-hub.
+
+**Cambios:**
+1. **Listings de eventos** (`events/index.tsx`, `events/[category]/index.tsx`): 1 unidad mid-content entre el timeline y el newsletter banner.
+2. **Fact-checks**: template `factchecks/[slug].tsx` 1 unidad in-article antes del reporte original colapsado (arriba se mantiene limpio — es activo de confianza/GEO); índice 1 unidad.
+3. **Páginas restantes** (agente): brands index + [slug], resources index, cultural-tours, spouse-hub (2), arrival-checklist (2). neighborhoods ya tenía.
+4. **In-article a mitad de posts largos**: nuevo `src/lib/split-html-for-ad.ts` — divide el HTML del post en el `</section>` más cercano a la mitad (solo posts >8KB con ≥2 secciones, corte entre 20–80%; si no, render sin cambios). Integrado en `blog/[slug].tsx`. Validado contra posts reales: corta al 44–49%. Tests: `__tests__/split-html-for-ad.test.ts` (5 casos).
+5. Fix: import de AdUnit mal insertado por script en factchecks/[slug] (reparado por agente).
+
+**Filosofía de colocación:** nunca above-the-fold, 1 unidad en listings, 2 máximo en contenido largo, 3 solo en posts 2,000+ palabras (top + mid + end).
+
+---
+
 ## [2026-07-01] feat(growth): /events/this-week + RelatedContent + typecheck 100% limpio
 
 **Contexto:** Tercera tanda de la consultoría 2026-07-01.

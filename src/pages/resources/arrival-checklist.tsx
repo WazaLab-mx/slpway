@@ -7,6 +7,7 @@ import { useTranslation } from 'next-i18next';
 import LastUpdated from '@/components/common/LastUpdated';
 import GuideCTA from '@/components/common/GuideCTA';
 import AffiliateCard from '@/components/affiliate/AffiliateCard';
+import AdUnit from '@/components/common/AdUnit';
 
 interface ChecklistItem {
   id: string;
@@ -278,6 +279,12 @@ export default function ArrivalChecklistPage() {
           </div>
         </section>
 
+        <section className="my-8">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <AdUnit placement="mid-content" />
+          </div>
+        </section>
+
         {/* Recommended Essentials */}
         <section className="py-12">
           <div className="container mx-auto px-4 max-w-4xl">
@@ -334,6 +341,12 @@ export default function ArrivalChecklistPage() {
                 ))}
               </div>
             </section>
+          </div>
+        </section>
+
+        <section className="my-8">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <AdUnit placement="top-banner" />
           </div>
         </section>
 

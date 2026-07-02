@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import AffiliateGrid from '@/components/affiliate/AffiliateGrid';
+import AdUnit from '@/components/common/AdUnit';
 
 const activities = [
   { category: 'fitnessWellness', icon: '🧘', items: [
@@ -445,6 +446,10 @@ export default function SpouseHubPage() {
               </div>
             </section>
           )}
+
+          <section className="my-8">
+            <AdUnit placement="mid-content" />
+          </section>
         </div>
 
         <div className="container mx-auto px-4 max-w-6xl">
@@ -456,6 +461,12 @@ export default function SpouseHubPage() {
             ]}
           />
         </div>
+
+        <section className="my-8">
+          <div className="container mx-auto px-4">
+            <AdUnit placement="top-banner" />
+          </div>
+        </section>
 
         {/* Final CTA */}
         <section className="bg-gray-900 py-16">
