@@ -4,6 +4,18 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-02] content: 3 posts más — Where to Stay, Is SLP Safe 2026, Cost of Living 2026
+
+**Posts publicados (todos EN+ES completos, FAQPage JSON-LD x2, fuentes, verificados en vivo + Indexing API):**
+
+1. **`/blog/where-to-stay-san-luis-potosi-2026`** (ID 4dfb5ba3, Tier 1 #4): zonas explicadas (Centro peatonal, Carranza foodie, Lomas ejecutivo, corredor Juárez para FENAPO — el Recinto está en Col. Satélite: no hospedarse ahí), tablas de hoteles verificados por presupuesto con tarifas jul 2026 (Booking/KAYAK/oficiales), estacionalidad (Semana Santa y agosto pico; diciembre = temporada de gangas ~53% ocupación), aeropuerto/taxi/apps. Nota anti-confusión Hilton Tower→Hyatt Regency 2023. Preparado para links de Booking.com afiliado.
+2. **`/blog/is-san-luis-potosi-safe-2026`** (ID 3e79595a, Tier 2 #1): alerta EE.UU. Nivel 2 sin restricciones (29 may 2026) con explicación del wording "terrorism"; SESNSP -54% 2025 / -81% ene-may 2026 (mayor baja nacional) CON recuadro de cautela (preliminar, reportado por el estado, magnitud no auditada); capital 8.2/100k atribuida al alcalde; ENSU T1 2026 (57.6%, -14.8 pts YoY, próxima edición 24 jul); comparación honesta vs Austin/Denver/Boston (FBI 2024); sección "dónde está el riesgo" con el ataque al autobús dic 2025 (sin heridos) y manual de la Huasteca; policía turística, apps, 911.
+3. **`/blog/cost-of-living-san-luis-potosi-2026`** (ID 67fbd7ae, Tier 2 #2): tipo de cambio 17.54 (Banxico 2 jul) con el ángulo "tus dólares compran 6-8% menos"; rentas por colonia de anuncios reales jul 2026; CFE 2026 (cargo fijo nuevo + trampa DAC), izzi alza marzo, MetroRed GRATIS; comida con inflación callejera 2026; IMSS Modalidad 33 tablas 2026; presupuestos 4 perfiles ($800-$4,000 USD); comparativas CDMX +21%/QRO +8%/San Antonio +66% (crowdsourced, señalado). **El post 2025 quedó parchado con banner de actualización** apuntando al 2026 (las 4 columnas de contenido).
+
+**Marcador del plan editorial: 6 de 13 publicados en 2 días** (Huasteca, Xilitla, Real de Catorce, Where to Stay, Safety, Cost of Living). Siguen: Day Trips (#5 Tier 1, rápido — enlaza todo lo publicado), SLP vs Querétaro, Healthcare, Renting; estacionales en sep-nov.
+
+---
+
 ## [2026-07-02] content: Real de Catorce deep-dive (Tier 1 #3)
 
 **Nuevo post**: `/blog/real-de-catorce-guide-2026` (ID 9e0a0476), vía `scripts/publish-real-de-catorce-guide.js`. EN + ES completos. Historia verificada con cronología del INAH (48 minas en un mes en 1782, primera dinamita de México 1873, casa de moneda cerrada por Maximiliano 1866), Túnel de Ogarrio, willys/caballos con precios, sección Wirikuta/wixárika con inscripción UNESCO jul 2025 + recuadro legal del peyote (arts. 245 LGS, 194-195 CPF, NOM-059 — sin romantizar), tabla de hoteles, y gancho 2026: 800 aniversario de San Francisco → fiesta de octubre récord. Cautelas editoriales del dossier aplicadas (nombre como leyenda, población "15,000 — la leyenda dice 40,000", Treasure of the Sierra Madre omitida por inverificable). FAQPage JSON-LD 6×2 idiomas. Interlinks: weekend-getaways + Huasteca. Verificado en vivo + Indexing API.
