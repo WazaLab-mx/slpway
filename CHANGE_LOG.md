@@ -4,6 +4,12 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-03] chore(home): guardarraíl de tono en temas de conversación
+
+Tras decisión del dueño: el bloque "De qué se habla" permite debates/virales/controversias de eventos/deportes/cultura/decisiones urbanas, pero EVITA inseguridad, crimen, violencia, nota roja y estadísticas de percepción de inseguridad (el sitio promueve SLP a turistas/expats). Prompt actualizado en los 3 sitios de generación (update-headlines.ts, netlify fn, update-news-now.js). Verificado en vivo: temas cívicos/culturales/comunitarios, cero inseguridad.
+
+---
+
 ## [2026-07-03] feat(home): bloque "De qué se habla en San Luis" (temas de conversación)
 
 Nuevo bloque en TodayInSLP: 3 temas que dominan la conversación social de SLP ahora mismo (debates, virales, controversias, eventos que la ciudad comenta) — distinto del bloque de noticias positivas. Generación SEPARADA con OpenAI Responses API + gpt-4o-mini + web_search (prompt de "editor de conversación social", permite temas positivos o controversiales pero reales y con fuente; sin rumores ni difamación).

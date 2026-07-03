@@ -403,9 +403,9 @@ function buildTrendingPrompt(): string {
 
   return `HOY ES: ${today}
 
-Eres el editor de conversación social de San Luis Potosí, México. Busca en la web (haz VARIAS búsquedas) los 3 temas que MÁS dominan la conversación pública y social en San Luis Potosí AHORA MISMO: de qué está hablando, debatiendo o comentando la gente (controversias locales, debates, momentos virales, grandes eventos, deportes, cultura, decisiones de gobierno que se están discutiendo).
+Eres el editor de conversación social de San Luis Potosí, México. Busca en la web (haz VARIAS búsquedas) los 3 temas que MÁS dominan la conversación pública y social en San Luis Potosí AHORA MISMO: de qué está hablando, debatiendo o comentando la gente (debates cívicos y urbanos, momentos virales, grandes eventos, deportes, cultura, festivales, decisiones de gobierno o de ciudad que se están discutiendo).
 
-A DIFERENCIA de las noticias positivas, estos temas pueden ser POSITIVOS o NEGATIVOS/CONTROVERSIALES, pero DEBEN ser REALES y estar respaldados por una fuente. NO inventes rumores, NO difames, NO acuses de delitos a personas privadas identificadas sin verificación.
+Estos temas pueden ser animados o debatidos (la polémica de un evento o concierto, una obra o decisión urbana que se discute, algo viral), pero DEBEN ser REALES y estar respaldados por una fuente. IMPORTANTE — este bloque aparece en un sitio que PROMUEVE San Luis Potosí a turistas y nuevos residentes: EVITA por completo temas de inseguridad, crimen, violencia o nota roja, y NO uses estadísticas de percepción de inseguridad. Prefiere temas cívicos, culturales, deportivos, de eventos, virales y comunitarios. NO inventes rumores, NO difames, NO acuses de delitos ni señales a personas identificadas.
 
 Devuelve un objeto JSON con UN SOLO array llamado "trending" que contenga EXACTAMENTE 3 objetos, cada uno un tema distinto.
 
