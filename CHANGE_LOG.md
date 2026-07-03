@@ -4,6 +4,16 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-03] feat(i18n): traducciones reales de/ja — Ola 3 (cierra de+ja 20/20)
+
+Tercera ola, 8 posts, mismo pipeline: renting, vs-queretaro, vs-san-miguel-allende, fenapo-familias, fenapo-artistas, fenapo-guia-preparacion, semana-santa, procesion-del-silencio. Con esto los 20 posts que estaban en espejo-inglés quedan traducidos de verdad a alemán y japonés.
+
+Verificado en los 8: content_de/content_ja reales, tag counts idénticos EN=DE=JA (338/330/977/516/534/680/428/432), JSON-LD válido donde existe (4 posts no tienen), hrefs/img src byte-idénticos, cifras/fechas/nombres intactos. Eventos 2026 traducidos exacto sin alterar fechas (Semana Santa Mar 27–Abr 11, Good Friday 3 abr 2026; FENAPO Ago 7–30; cartel de 39 artistas verbatim; términos legales fiador/obligado solidario/póliza jurídica preservados).
+
+Progreso: 20/54. Falta la última fase: 14 posts que solo necesitan japonés (varios ya con alemán real: Leonora Carrington, minería, inmigración, arte potosino, etc.).
+
+---
+
 ## [2026-07-03] feat(i18n): traducciones reales de/ja — Ola 2 (6 guías viaje/expat)
 
 Segunda ola, mismo pipeline (1 agente/post, scripts/translate-<slug>.js idempotente): day-trips, real-de-catorce, xilitla, cost-of-living, ultimate-guide-living (insignia, 52K chars), healthcare (contenido médico).
