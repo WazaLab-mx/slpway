@@ -4,6 +4,20 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-03] feat(content): 5 posts nuevos — gaps de la auditoría + mini-hub FENAPO
+
+**Frente 2 del plan post-auditoría** (5 agentes de investigación en paralelo; cada hecho con fuente URL; regla editorial nueva del dueño aplicada: contenido de ediciones de eventos usa SOLO datos confirmados de la edición actual, nada de años anteriores ni etiquetado):
+
+1. **fenapo-2026-boletos-precios-como-llegar** (ES-first, gap #1: cluster 1,660 impr): gratuidad 2026 por decreto, slpfastticket.com único canal (límite 4 boletos, taquilla custodiada), precios Palenque 2026 por zona ($700–5,500), hallazgo propio: Terrazas del Foro de paga (Katy Perry $4,500–6,500), MetroRed L3, hoteles cercanos.
+2. **things-to-do-san-luis-potosi-2026** (gap #2: "things to do" rankeaba pos 58 sin página): hub de 50 items en 9 secciones con **47 links internos** — el multiplicador de interlinking del sitio. Precios de museos verificados julio 2026 (Carrington $55/mié gratis, Máscara $20, Federico Silva $30/dom gratis). Precauciones de nuestros factchecks aplicadas.
+3. **san-luis-potosi-airport-guide** (gap #5): Ponciano Arriaga/OMA, 834,795 pax 2025 (+13.4%), 6 aerolíneas ~12 destinos (Volaris 10 rutas desde jun 2026), taxi $275 tarifa fija, Uber "funciona pero legalmente en disputa" (El Financiero mar 2026), 8 arrendadoras, vs QRO/BJX/MEX. Ruta Atlanta no corroborada → omitida. Hero Unsplash verificado (3 candidatas rechazadas).
+4. **san-luis-potosi-weather-best-time-to-visit** (gap #4): normales SMN 1991–2020 — el agente detectó serie corrupta en la estación 24070 (la que todos citan) y usó 24069+24111 con rangos; tabla 12 meses ciudad + Ciudad Valles (24012); contraste altiplano BSh vs Huasteca húmeda como sección núcleo; veredictos por intención (ciudad oct–abr, cascadas nov–mar, FENAPO 7–30 ago).
+5. **fenapo-2026-con-ninos-guia-familias** (pedido del dueño): solo datos 2026 — 60 juegos gratis (antes ~45, capacitación+inspecciones), Tierra Ganadera en la expo (Festival del Cabrito), Estrellitas Potosinas (3–19 años), picks editoriales de shows familiares del lineup verificado; lo no anunciado marcado explícito "aún no se anuncia para 2026".
+
+Todos: FAQPage JSON-LD, 4 locales, links internos cruzados (mini-hub FENAPO: artistas ↔ boletos ↔ familias ↔ evento), verificados en vivo (200) y notificados al Indexing API. El título ES de where-to-stay ya apuntaba a "Dónde Hospedarse" — gap #6 descartado sin duplicar contenido.
+
+---
+
 ## [2026-07-02] feat(seo): resolución de los 10 hallazgos de la auditoría (3 agentes en paralelo)
 
 **Auditoría base:** scratchpad/seo-audit-2026-07-02.md (GSC+GA4+PSI). Todo validado en local antes del único deploy.
