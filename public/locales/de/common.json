@@ -1189,29 +1189,39 @@
   },
   "maraton2026": {
     "seo": {
-      "title": "Tangamanga-Marathon 2026 — 40. Jubiläum | San Luis Potosí",
-      "description": "BMW Internationaler Tangamanga-Marathon 2026: 28. Juni. 40. Jubiläum. 5K, 10K, 21K & 42K. World Athletics & FMAA zertifiziert. Anmeldung, Strecke und Läuferguide.",
-      "keywords": "tangamanga marathon 2026, marathon san luis potosi, halbmarathon slp, 42k tangamanga"
+      "title": "Tangamanga-Marathon 2026 — Ergebnisse & Guide | San Luis Potosí",
+      "description": "Ergebnisse des BMW Internationalen Tangamanga-Marathons 2026 (40. Jubiläum, 28. Juni): Sieger und Zeiten über 42K, 21K und 10K, Strecke durch den Tangamanga-Park und Läuferguide. Termine 2027, sobald bekannt.",
+      "keywords": "tangamanga marathon 2026, tangamanga marathon ergebnisse, marathon san luis potosi, halbmarathon slp, 42k tangamanga"
     },
     "hero": {
       "badge": "40. JUBILÄUM",
       "date": "28. Juni 2026",
       "title": "Tangamanga-Marathon",
       "subtitle": "BMW Internationaler Marathon — 40. Ausgabe",
-      "description": "Einer der ältesten und prestigeträchtigsten Straßenläufe Mexikos feiert 40 Jahre. Laufe durch den Tangamanga-Park und die Altstadt von San Luis Potosí in 4 Distanzen.",
-      "cta": "Jetzt anmelden",
+      "description": "Einer der ältesten und prestigeträchtigsten Straßenläufe Mexikos feierte am 28. Juni 2026 sein 40-jähriges Jubiläum. Sieh dir die Ergebnisse 2026 an, den Streckenguide durch den Tangamanga-Park und die Altstadt sowie alle Infos für dein nächstes Rennen in San Luis Potosí.",
+      "cta": "Ergebnisse 2026 ansehen",
       "ctaRoute": "Strecke ansehen",
       "location": "San Luis Potosí, Hauptstadt des Bundesstaates San Luis Potosí, Mexiko"
     },
     "stats": {
       "edition": "Ausgabe",
       "editionValue": "40.",
-      "runners": "Läufer",
-      "runnersValue": "15.000+",
+      "runners": "Läufer 2026",
+      "runnersValue": "7.000+",
       "distances": "Distanzen",
       "distancesValue": "4",
       "certified": "Zertifizierung",
       "certifiedValue": "World Athletics"
+    },
+    "results": {
+      "title": "Ergebnisse 2026",
+      "subtitle": "Sieger der 40. Ausgabe, gelaufen am Sonntag, 28. Juni 2026, bei angenehmem Wetter mit leichtem Nieselregen.",
+      "men": "Männer",
+      "women": "Frauen",
+      "participantsLabel": "Teilnehmer",
+      "participantsValue": "Über 7.000 Läufer",
+      "sourceNote": "Ergebnisse berichtet von lokalen Medien aus San Luis Potosí:",
+      "nextEdition": "Termine und Anmeldung für den Tangamanga-Marathon 2027 werden hier veröffentlicht, sobald die Organisatoren sie bekanntgeben."
     },
     "distances": {
       "title": "Kategorien & Distanzen",
@@ -1314,9 +1324,9 @@
       "a10": "Ja, aber mit niedriger Lautstärke, um Anweisungen von Streckenposten und Einsatzfahrzeugen zu hören."
     },
     "cta": {
-      "title": "Laufe den Tangamanga-Marathon 2026",
-      "description": "Feiere 40 Jahre Geschichte bei einem der ikonischsten Straßenläufe Mexikos. 4 Distanzen, zertifizierte Strecke.",
-      "register": "Jetzt anmelden",
+      "title": "Der Tangamanga-Marathon, Jahr für Jahr",
+      "description": "Die 40. Ausgabe wurde am 28. Juni 2026 gelaufen. Folge der offiziellen Website für Termine und Anmeldung 2027 und entdecke weitere Events und Guides für San Luis Potosí.",
+      "register": "Offizielle Marathon-Website",
       "moreEvents": "Mehr Events in SLP"
     }
   },

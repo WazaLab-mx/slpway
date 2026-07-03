@@ -4,6 +4,18 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-03] content(maraton): página actualizada con resultados REALES 2026
+
+Página maraton-tangamanga-2026.tsx pasada a estado post-evento evergreen con resultados verificados (40ª edición, corrida 28-jun-2026). Datos cruzados en 3+ medios (El Sol de San Luis, Global Media, Pulso SLP):
+- 42K: Bonyface Kaplagat Kangogo 2:29:32 (H) / Anahí Rivera 2:53:17 (M)
+- 21K: Kalid Galván 1:11:22 (H) / Berenice Rodríguez 1:25:21 (M)
+- 10K: Manuel Martínez 32:13 (H) / Melissa Quintanilla 38:12 (M)
+- +7,000 corredores, patrocinio BMW, garúa ligera.
+
+Sección "Resultados 2026" con cards por distancia + atribución de fuentes + nota hacia 2027. Hero/CTA reenfocados a "ver resultados 2026". Metas SEO + bloque results en los 4 idiomas. NO se inventó nada: precio de premios y ganadores de 5K OMITIDOS (sin fuente); conflicto de tiempo femenil 42K resuelto a favor del nombre que 3+ medios declaran campeona. Verificado contra fuente real. tsc limpio.
+
+---
+
 ## [2026-07-03] feat(home): quitar maratón del carrusel + FENAPO primero + noticias sin sesgo de gobierno
 
 1) EventCarouselBanner: eliminado el slide del Maratón Tangamanga (ya se corrió el 28-jun-2026) y FENAPO movido al PRIMER lugar (prioridad estos meses). Quedan fenapo + country fest.

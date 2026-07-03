@@ -23,6 +23,21 @@ const DISTANCE_COLORS = [
 ] as const;
 const DISTANCE_ACCENTS = ['text-emerald-400', 'text-teal-400', 'text-blue-400', 'text-indigo-400'] as const;
 
+// Verified 2026 results (40th edition, run June 28, 2026). Winners' names and
+// times are factual data cross-checked across Global Media, El Sol de San Luis,
+// Código San Luis and Pulso SLP — kept out of i18n since they are proper nouns.
+const RESULTS_2026 = [
+  { key: 'marathon', men: { name: 'Bonyface Kaplagat Kangogo', time: '2:29:32' }, women: { name: 'Anahí Rivera', time: '2:53:17' } },
+  { key: 'halfMarathon', men: { name: 'Kalid Galván', time: '1:11:22' }, women: { name: 'Berenice Rodríguez', time: '1:25:21' } },
+  { key: 'tenK', men: { name: 'Manuel Martínez', time: '32:13' }, women: { name: 'Melissa Quintanilla', time: '38:12' } },
+] as const;
+
+const RESULT_SOURCES = [
+  { label: 'Global Media', url: 'https://www.globalmedia.mx/articles/bonyface_kaplagat_y_anahi_rivera_son_los_ganadores_del_40_aniversario_del_maraton_tangamanga_2026' },
+  { label: 'El Sol de San Luis', url: 'https://oem.com.mx/elsoldesanluis/deportes/bonyface-kaplagat-y-anahi-rivera-ganan-el-40-maraton-internacional-tangamanga-2026-30829886' },
+  { label: 'Pulso SLP', url: 'https://pulsoslp.com.mx/meta/surgen-ganadores-del-maraton-tangamanga/2061821' },
+] as const;
+
 export default function MaratonTangamanga2026() {
   const { t } = useTranslation('common');
 
@@ -94,8 +109,9 @@ export default function MaratonTangamanga2026() {
       <section className="bg-gradient-to-r from-emerald-700 to-teal-700 text-white py-5 px-4">
         <div className="container mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm md:text-base leading-relaxed">
-            <strong>🏁 La edición 2026 se corrió el 28 de junio — ¡gracias, corredores!</strong>{' '}
-            Publicaremos fechas e inscripciones del Maratón Tangamanga 2027 en cuanto se anuncien.
+            <strong>🏁 La 40ª edición se corrió el 28 de junio de 2026 — ¡gracias, corredores!</strong>{' '}
+            Campeones del maratón (42K): Bonyface Kaplagat (varonil) y Anahí Rivera (femenil).{' '}
+            <a href="#results" className="underline font-semibold">Ver todos los resultados</a>. Fechas del 2027 en cuanto se anuncien.
           </p>
           <Link
             href="/subscribe"
@@ -149,9 +165,7 @@ export default function MaratonTangamanga2026() {
             </div>
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://maratontangamanga.com/"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#results"
                 className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3 rounded-full inline-flex items-center gap-2 transition-colors"
               >
                 {t('maraton2026.hero.cta')}
@@ -166,6 +180,59 @@ export default function MaratonTangamanga2026() {
               </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* 2026 Results */}
+      <section id="results" className="py-16 px-4 bg-gray-900 text-white">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-500/30 rounded-full px-4 py-1.5 mb-4">
+              <TrophyIcon className="w-4 h-4 text-emerald-400" />
+              <span className="text-emerald-300 text-xs font-bold uppercase tracking-widest">
+                {t('maraton2026.results.title')}
+              </span>
+            </div>
+            <h2 className="text-3xl font-bold font-serif mb-3">{t('maraton2026.results.title')}</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">{t('maraton2026.results.subtitle')}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {RESULTS_2026.map((r) => (
+              <div key={r.key} className="bg-gray-800 border border-gray-700 rounded-xl p-5">
+                <p className="text-lg font-bold text-emerald-400 mb-4">
+                  {t(`maraton2026.distances.${r.key}.name`)}
+                </p>
+                {([['men', r.men], ['women', r.women]] as const).map(([genderKey, winner]) => (
+                  <div key={genderKey} className="mb-3 last:mb-0">
+                    <p className="text-xs uppercase tracking-wider text-gray-500">
+                      {t(`maraton2026.results.${genderKey}`)}
+                    </p>
+                    <p className="text-white font-semibold leading-tight">{winner.name}</p>
+                    <p className="text-teal-300 text-sm font-mono">{winner.time}</p>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 bg-gray-800 border border-gray-700 rounded-xl p-5 flex items-center gap-3">
+            <span className="text-2xl flex-shrink-0">🏅</span>
+            <div>
+              <p className="text-xs uppercase tracking-wider text-gray-500">{t('maraton2026.results.participantsLabel')}</p>
+              <p className="text-white font-semibold">{t('maraton2026.results.participantsValue')}</p>
+            </div>
+          </div>
+          <p className="mt-6 text-sm text-gray-400 leading-relaxed">
+            {t('maraton2026.results.sourceNote')}{' '}
+            {RESULT_SOURCES.map((s, i) => (
+              <span key={s.url}>
+                <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 underline">
+                  {s.label}
+                </a>
+                {i < RESULT_SOURCES.length - 1 ? ', ' : '.'}
+              </span>
+            ))}
+          </p>
+          <p className="mt-4 text-sm text-gray-500 leading-relaxed">{t('maraton2026.results.nextEdition')}</p>
         </div>
       </section>
 

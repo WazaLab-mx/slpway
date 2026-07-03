@@ -1224,29 +1224,39 @@
   },
   "maraton2026": {
     "seo": {
-      "title": "Maratón Tangamanga 2026 — 40 Aniversario | San Luis Potosí",
-      "description": "BMW Maratón Internacional Tangamanga 2026: 28 de junio. 40 Aniversario. 5K, 10K, 21K y 42K. Certificado por World Athletics y FMAA. Inscripción, ruta, guía del corredor y toda la información.",
-      "keywords": "maraton tangamanga 2026, maraton san luis potosi, medio maraton slp, carrera 10k slp, 42k tangamanga, inscripcion maraton tangamanga"
+      "title": "Maratón Tangamanga 2026 — Resultados y Guía | San Luis Potosí",
+      "description": "Resultados del BMW Maratón Internacional Tangamanga 2026 (40 aniversario, 28 de junio): ganadores de 42K, 21K y 10K con sus tiempos, ruta por el Parque Tangamanga y guía del corredor. Fechas del 2027 en cuanto se anuncien.",
+      "keywords": "maraton tangamanga 2026, resultados maraton tangamanga, ganadores maraton tangamanga 2026, maraton san luis potosi, medio maraton slp, 42k tangamanga"
     },
     "hero": {
       "badge": "40 ANIVERSARIO",
       "date": "28 de Junio, 2026",
       "title": "Maratón Tangamanga",
       "subtitle": "BMW Maratón Internacional — 40ª Edición",
-      "description": "Una de las carreras más antiguas y prestigiosas de México celebra 40 años. Corre por el Parque Tangamanga y el Centro Histórico de San Luis Potosí en 4 distancias.",
-      "cta": "Inscríbete",
+      "description": "Una de las carreras más antiguas y prestigiosas de México celebró sus 40 años el 28 de junio de 2026. Consulta los resultados de la edición 2026, la guía del recorrido por el Parque Tangamanga y el Centro Histórico, y toda la información para preparar tu próxima carrera en San Luis Potosí.",
+      "cta": "Ver resultados 2026",
       "ctaRoute": "Ver ruta",
       "location": "San Luis Potosí, capital del estado de San Luis Potosí, México"
     },
     "stats": {
       "edition": "Edición",
       "editionValue": "40ª",
-      "runners": "Corredores",
-      "runnersValue": "15,000+",
+      "runners": "Corredores 2026",
+      "runnersValue": "7,000+",
       "distances": "Distancias",
       "distancesValue": "4",
       "certified": "Certificación",
       "certifiedValue": "World Athletics"
+    },
+    "results": {
+      "title": "Resultados 2026",
+      "subtitle": "Ganadores de la 40ª edición, corrida el domingo 28 de junio de 2026 con clima agradable y ligera llovizna.",
+      "men": "Varonil",
+      "women": "Femenil",
+      "participantsLabel": "Participantes",
+      "participantsValue": "Más de 7,000 corredores",
+      "sourceNote": "Resultados reportados por medios locales de San Luis Potosí:",
+      "nextEdition": "Las fechas e inscripciones del Maratón Tangamanga 2027 se publicarán aquí en cuanto la organización las anuncie."
     },
     "distances": {
       "title": "Categorías y Distancias",
@@ -1349,9 +1359,9 @@
       "a10": "Sí, se permite el uso de audífonos, pero se recomienda usarlos a bajo volumen para escuchar instrucciones de los jueces y vehículos de emergencia."
     },
     "cta": {
-      "title": "Corre el Maratón Tangamanga 2026",
-      "description": "Celebra 40 años de historia en una de las carreras más emblemáticas de México. 4 distancias, ruta certificada y el paisaje de San Luis Potosí.",
-      "register": "Inscríbete ahora",
+      "title": "El Maratón Tangamanga, año con año",
+      "description": "La 40ª edición se corrió el 28 de junio de 2026. Sigue el sitio oficial para conocer las fechas e inscripciones del 2027, y explora más eventos y guías de San Luis Potosí.",
+      "register": "Sitio oficial del maratón",
       "moreEvents": "Ver más eventos en SLP"
     }
   },
