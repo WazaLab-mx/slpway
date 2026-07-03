@@ -332,7 +332,11 @@
       "bookTour": "Reservar Tour Cultural",
       "colonialArch": "Arquitectura Colonial",
       "traditionalFestivals": "Festivales Tradicionales",
-      "localArtisans": "Artesanos Locales"
+      "localArtisans": "Artesanos Locales",
+      "customs": {
+        "title": "Costumbres y Etiqueta",
+        "description": "Tradiciones locales, costumbres sociales y la etiqueta cotidiana que dan forma a la vida en San Luis Potosí"
+      }
     },
     "outdoors": {
       "badge": "Más Allá de la Ciudad",

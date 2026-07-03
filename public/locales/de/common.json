@@ -332,7 +332,11 @@
       "bookTour": "Kulturtour buchen",
       "colonialArch": "Kolonialarchitektur",
       "traditionalFestivals": "Traditionelle Feste",
-      "localArtisans": "Lokale Kunsthandwerker"
+      "localArtisans": "Lokale Kunsthandwerker",
+      "customs": {
+        "title": "Bräuche & Etikette",
+        "description": "Lokale Traditionen, gesellschaftliche Bräuche und die alltägliche Etikette, die das Leben in San Luis Potosí prägen"
+      }
     },
     "outdoors": {
       "badge": "Jenseits der Stadt",

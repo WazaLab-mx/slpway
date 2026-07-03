@@ -337,7 +337,11 @@
       "bookTour": "文化ツアーを予約",
       "colonialArch": "植民地建築",
       "traditionalFestivals": "伝統的な祭り",
-      "localArtisans": "地元の職人"
+      "localArtisans": "地元の職人",
+      "customs": {
+        "title": "習慣とエチケット",
+        "description": "サン・ルイス・ポトシの日常を形づくる地元の伝統、社会的な習慣、日々のエチケット"
+      }
     },
     "outdoors": {
       "badge": "街の外へ",
