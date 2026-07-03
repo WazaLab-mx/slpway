@@ -340,7 +340,7 @@ export default function EditProductListing() {
   return (
     <>
       <Head>
-        <title>Edit Product | Directory SLP</title>
+        <title>Edit Product | San Luis Way</title>
         <meta name="description" content="Edit your product listing" />
       </Head>
 

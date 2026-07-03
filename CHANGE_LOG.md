@@ -4,6 +4,26 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-03] feat(factcheck+geo+debt): 5 factchecks, correcciones, branding, canonical eventos
+
+**Factcheck de los 5 posts nuevos** (5 agentes; formato parser → ClaimReview autodescubierto; badge "Artículo verificado" aparece solo):
+- Clima 9.3 · FENAPO familias 9.3 · FENAPO boletos 9.2 · Aeropuerto 9.0 · Things-to-do 8.2. **Cero claims FALSE/OUTDATED** en los 5.
+- Correcciones aplicadas (editando script fuente + republicando, DB y fuente sincronizados):
+  - things-to-do: Teatro de la Paz inauguración 4-dic→4-nov-1894; Museo Federico Silva dirección Obregón 4/Plaza San Francisco→Obregón 80/Jardín San Juan de Dios; tranvía $50–120→$100–150; Museo de la Máscara horarios mar–vie 10–18→lun–sáb 10–21, dom 11–19.
+  - clima: rango temporada seca 21–27°C→21–30°C (auto-contradicción con su propia tabla; abril llega a 29–30°C).
+
+**GEO:** los 5 posts agregados a llms.txt como recursos prioritarios.
+
+**Frente 3 (parcial — sesión interrumpida por límite de créditos):**
+- Branding "Directory SLP"→"San Luis Way" en ~15 páginas + manifest.json (business/*, account, order-confirmation, signin/signup, contact, listings, places/*).
+- Fix de tests: currency.ts (formatter Intl a nivel módulo) + next-i18next-config.test.ts (esperaba default 'es'/'zh' inexistente → 'en' + en/es/de/ja). Suites fallando 7→5, tests 22→11.
+- Canonical de eventos DB → /es/ (contenido español idéntico en 4 locales; consolida el cluster, arregla "jergas fest" rankeando en /ja/).
+- **Split i18n REVERTIDO**: un agente lo dejó a medias (movió keys fuera de common.json sin registrar namespaces ni actualizar páginas → habría roto 6 páginas con keys crudas). Restaurado a estado seguro; se rehará en corrida dedicada.
+
+Backlog pendiente: 5 suites jest pre-existentes (blog, newsletter-generator, email-functionality, listings-banner, contact-stats), split i18n, errores de hidratación del blog, fechas "en curso" en this-week.
+
+---
+
 ## [2026-07-03] feat(content): 5 posts nuevos — gaps de la auditoría + mini-hub FENAPO
 
 **Frente 2 del plan post-auditoría** (5 agentes de investigación en paralelo; cada hecho con fuente URL; regla editorial nueva del dueño aplicada: contenido de ediciones de eventos usa SOLO datos confirmados de la edición actual, nada de años anteriores ni etiquetado):

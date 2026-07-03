@@ -219,6 +219,13 @@ export default function EventDetail({ event, relatedEvents }: EventDetailProps) 
         }
         ogImage={event.image_url || '/og-image.jpg'}
         keywords={`${event.title}, eventos san luis potosi, ${event.category} san luis potosi, que hacer en san luis potosi, agenda slp`}
+        // DB events are Spanish-only content served identically at all 4
+        // locale URLs. Canonicalize every locale variant (including /es/
+        // itself) to the /es/ URL so Google consolidates the cluster on the
+        // honest Spanish canonical instead of self-selecting arbitrary
+        // locales. Overrides the global self-referential canonical from
+        // HreflangAlternates via the shared key="canonical".
+        canonicalUrl={`/es${buildEventPath(event)}`}
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Event",

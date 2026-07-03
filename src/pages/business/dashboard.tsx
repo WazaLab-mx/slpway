@@ -507,7 +507,7 @@ export default function BusinessDashboardPage() {
   return (
     <>
       <Head>
-        <title>Business Dashboard | Directory SLP</title>
+        <title>Business Dashboard | San Luis Way</title>
         <meta name="description" content="Manage your business listings and subscriptions" />
       </Head>
 

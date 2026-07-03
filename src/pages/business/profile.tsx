@@ -534,8 +534,8 @@ export default function BusinessProfilePage() {
   return (
     <>
       <Head>
-        <title>Business Profile | Directory SLP</title>
-        <meta name="description" content="Manage your business profile on Directory SLP" />
+        <title>Business Profile | San Luis Way</title>
+        <meta name="description" content="Manage your business profile on San Luis Way" />
       </Head>
 
       <main className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">

@@ -29,7 +29,7 @@ export default function SignUpPage() {
   return (
     <>
       <Head>
-        <title>Create Account | Directory SLP</title>
+        <title>Create Account | San Luis Way</title>
         <meta name="description" content="Sign up for an account to access all features and make purchases." />
       </Head>
 

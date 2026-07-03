@@ -86,7 +86,7 @@ export default function BusinessListingDetail({ businessListing }: ListingDetail
   return (
     <>
       <Head>
-        <title>{businessListing.title} | Directory SLP</title>
+        <title>{businessListing.title} | San Luis Way</title>
         <meta name="description" content={businessListing.description} />
         {currentImage && <meta property="og:image" content={currentImage} />}
       </Head>

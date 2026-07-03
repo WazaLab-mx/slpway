@@ -65,7 +65,7 @@ const SignInPage = () => {
   return (
     <>
       <Head>
-        <title>{'Sign In'} | Directory SLP</title>
+        <title>{'Sign In'} | San Luis Way</title>
         <meta name="description" content={'Sign in to your account to access all features.'} />
       </Head>
 

@@ -7,7 +7,7 @@ const LaGranVia: NextPage = () => {
   return (
     <>
       <Head>
-        <title>La Gran Vía - Historic Spanish Bakery in San Luis Potosí | Directory SLP</title>
+        <title>La Gran Vía - Historic Spanish Bakery in San Luis Potosí | San Luis Way</title>
         <meta name="description" content="Discover La Gran Vía, a historic Spanish bakery in San Luis Potosí known for its authentic pastries, artisanal bread, and century-old recipes. Experience the taste of tradition since 1930." />
         <meta property="og:title" content="La Gran Vía - Historic Spanish Bakery in San Luis Potosí" />
         <meta property="og:description" content="Discover La Gran Vía, a historic Spanish bakery in San Luis Potosí known for its authentic pastries, artisanal bread, and century-old recipes. Experience the taste of tradition since 1930." />

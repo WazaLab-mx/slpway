@@ -241,7 +241,7 @@ export default function CreateServiceListing() {
   return (
     <>
       <Head>
-        <title>Add New Service | Directory SLP</title>
+        <title>Add New Service | San Luis Way</title>
         <meta name="description" content="Add a new service to your business profile" />
       </Head>
 

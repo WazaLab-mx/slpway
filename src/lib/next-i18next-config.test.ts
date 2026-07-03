@@ -8,10 +8,8 @@ describe('next-i18next configuration', () => {
   it('exports i18n settings with expected locales and default locale', () => {
     expect(nextI18NextConfig).toBeDefined();
     expect(nextI18NextConfig.i18n).toBeDefined();
-    expect(nextI18NextConfig.i18n.defaultLocale).toBe('es');
-    expect(nextI18NextConfig.i18n.locales).toEqual(
-      expect.arrayContaining(['es', 'en', 'zh', 'ja', 'de'])
-    );
+    expect(nextI18NextConfig.i18n.defaultLocale).toBe('en');
+    expect(nextI18NextConfig.i18n.locales).toEqual(['en', 'es', 'de', 'ja']);
   });
 
   it('defines namespaces and default namespace', () => {

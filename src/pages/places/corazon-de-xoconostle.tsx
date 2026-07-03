@@ -7,7 +7,7 @@ const CorazonDeXoconostle: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Corazón de Xoconostle - Artisanal Products & Cultural Experience | Directory SLP</title>
+        <title>Corazón de Xoconostle - Artisanal Products & Cultural Experience | San Luis Way</title>
         <meta name="description" content="Experience the essence of San Luis Potosí through Corazón de Xoconostle's artisanal products. Discover traditional xoconostle delicacies, local crafts, and authentic cultural experiences." />
         <meta property="og:title" content="Corazón de Xoconostle - Artisanal Products & Cultural Experience" />
         <meta property="og:description" content="Experience the essence of San Luis Potosí through Corazón de Xoconostle's artisanal products. Discover traditional xoconostle delicacies, local crafts, and authentic cultural experiences." />

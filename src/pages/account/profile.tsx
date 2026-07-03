@@ -301,7 +301,7 @@ export default function ProfilePage() {
   return (
     <>
       <Head>
-        <title>{'Edit Profile'} | Directory SLP</title>
+        <title>{'Edit Profile'} | San Luis Way</title>
         <meta name="description" content={'Update your profile information and address.'} />
       </Head>
 

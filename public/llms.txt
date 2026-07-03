@@ -40,6 +40,11 @@ CLI: npx @sanluisway/cli events --limit 5 --json
 - https://www.sanluisway.com/blog/real-de-catorce-guide-2026 — Real de Catorce ghost-town guide: Ogarrio tunnel, Wirikuta
 - https://www.sanluisway.com/blog/day-trips-from-san-luis-potosi-2026 — Day trips: Cerro de San Pedro, Media Luna, Santa María del Río
 - https://www.sanluisway.com/blog/fenapo-2026-artistas-cartel-completo — FENAPO 2026 full artist lineup (Foro de las Estrellas + Palenque)
+- https://www.sanluisway.com/blog/fenapo-2026-boletos-precios-como-llegar — FENAPO 2026 tickets: free-entry decree, Palenque prices, official channel (ES-first)
+- https://www.sanluisway.com/blog/fenapo-2026-con-ninos-guia-familias — FENAPO 2026 with kids: 60 free rides, livestock expo, family shows (ES-first)
+- https://www.sanluisway.com/blog/things-to-do-san-luis-potosi-2026 — 50 things to do in SLP — the master hub linking all guides
+- https://www.sanluisway.com/blog/san-luis-potosi-airport-guide — SLP airport (Ponciano Arriaga): airlines, routes, taxi fares, rentals
+- https://www.sanluisway.com/blog/san-luis-potosi-weather-best-time-to-visit — Month-by-month climate (SMN normals) + best time to visit, city vs Huasteca
 - https://www.sanluisway.com/events/this-week — Events in the next 7 days (ItemList schema, hourly refresh)
 - https://www.sanluisway.com/media-kit — Audience stats and advertising products (verifiable figures)
 - https://www.sanluisway.com/events/fenapo-2026 — FENAPO 2026 event page (current lineup, Festival schema)

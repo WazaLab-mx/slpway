@@ -227,7 +227,7 @@ export default function CreateProductListing() {
   return (
     <>
       <Head>
-        <title>Add New Product | Directory SLP</title>
+        <title>Add New Product | San Luis Way</title>
         <meta name="description" content="Add a new product to your business profile" />
       </Head>
 

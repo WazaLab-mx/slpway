@@ -156,8 +156,8 @@ const SubscriptionSuccessPage = () => {
   return (
     <>
       <Head>
-        <title>¡Suscripción Confirmada! | Directory SLP</title>
-        <meta name="description" content="Tu suscripción de negocio en Directory SLP ha sido confirmada. Comienza a crear listados ahora." />
+        <title>¡Suscripción Confirmada! | San Luis Way</title>
+        <meta name="description" content="Tu suscripción de negocio en San Luis Way ha sido confirmada. Comienza a crear listados ahora." />
       </Head>
 
       <div className="bg-gray-50 py-16 min-h-screen">
@@ -174,7 +174,7 @@ const SubscriptionSuccessPage = () => {
                     : 'Estado de Suscripción'}
               </h1>
               <p className="text-xl text-gray-700">
-                {businessName ? `¡Bienvenido ${businessName}!` : '¡Bienvenido a Directory SLP!'}
+                {businessName ? `¡Bienvenido ${businessName}!` : '¡Bienvenido a San Luis Way!'}
               </p>
             </div>
 
@@ -182,7 +182,7 @@ const SubscriptionSuccessPage = () => {
               <div className="mb-8 text-center">
                 <p className="text-lg text-gray-700 mb-4">
                   {subscriptionStatus === 'active'
-                    ? 'Gracias por subscribirte a Directory SLP. Tu negocio ahora es parte de nuestra comunidad. ¡Tu perfil ya está activo y puedes comenzar a crear listados!'
+                    ? 'Gracias por subscribirte a San Luis Way. Tu negocio ahora es parte de nuestra comunidad. ¡Tu perfil ya está activo y puedes comenzar a crear listados!'
                     : subscriptionStatus === 'pending'
                       ? 'Tu pago está siendo procesado. Pronto recibirás una confirmación por correo electrónico cuando tu suscripción esté activa.'
                       : 'No pudimos confirmar el estado de tu suscripción. Si acabas de completar el pago, por favor espera unos minutos mientras procesamos tu información.'}
@@ -213,7 +213,7 @@ const SubscriptionSuccessPage = () => {
                   <div className="bg-gray-50 p-5 rounded-lg border border-gray-200">
                     <BuildingOfficeIcon className="h-10 w-10 text-primary mb-3" />
                     <h3 className="font-medium text-gray-900 mb-2">Perfil de Negocio</h3>
-                    <p className="text-gray-600">Perfil profesional personalizado para tu negocio visible a toda la comunidad de Directory SLP.</p>
+                    <p className="text-gray-600">Perfil profesional personalizado para tu negocio visible a toda la comunidad de San Luis Way.</p>
                   </div>
                   <div className="bg-gray-50 p-5 rounded-lg border border-gray-200">
                     <PresentationChartLineIcon className="h-10 w-10 text-primary mb-3" />
@@ -253,7 +253,7 @@ const SubscriptionSuccessPage = () => {
                       <CheckCircleIcon className="h-6 w-6 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
                       <div>
                         <span className="font-medium">Comparte tu perfil:</span>
-                        <p className="text-gray-600">Usa las redes sociales para promocionar tu presencia en Directory SLP y atraer más clientes.</p>
+                        <p className="text-gray-600">Usa las redes sociales para promocionar tu presencia en San Luis Way y atraer más clientes.</p>
                       </div>
                     </li>
                   </ul>

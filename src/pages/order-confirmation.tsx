@@ -6,7 +6,7 @@ export default function OrderConfirmationPage() {
   return (
     <>
       <Head>
-        <title>Order Confirmation | Directory SLP</title>
+        <title>Order Confirmation | San Luis Way</title>
         <meta name="description" content="Marketplace temporalmente desactivado." />
       </Head>
 

@@ -135,7 +135,7 @@ export default function BusinessContactPage({ businessListing }: ContactPageProp
   return (
     <>
       <Head>
-        <title>Contact {businessName} | Directory SLP</title>
+        <title>Contact {businessName} | San Luis Way</title>
         <meta name="description" content={`Contact ${businessName} - ${businessListing.description}`} />
         {currentImage && <meta property="og:image" content={currentImage} />}
       </Head>

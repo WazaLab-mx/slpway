@@ -7,7 +7,7 @@ const ElRicardito: NextPage = () => {
   return (
     <>
       <Head>
-        <title>El Ricardito - Authentic Mexican Restaurant in San Luis Potosí | Directory SLP</title>
+        <title>El Ricardito - Authentic Mexican Restaurant in San Luis Potosí | San Luis Way</title>
         <meta name="description" content="Discover El Ricardito, a hidden gem in San Luis Potosí offering authentic Mexican cuisine. Experience traditional flavors, warm hospitality, and a cozy atmosphere in the heart of the city." />
         <meta property="og:title" content="El Ricardito - Authentic Mexican Restaurant in San Luis Potosí" />
         <meta property="og:description" content="Discover El Ricardito, a hidden gem in San Luis Potosí offering authentic Mexican cuisine. Experience traditional flavors, warm hospitality, and a cozy atmosphere in the heart of the city." />
