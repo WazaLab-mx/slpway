@@ -4,6 +4,16 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-03] feat(i18n): traducción japonés — Ola 5 (cierra el proyecto)
+
+Últimos 6 ja-only: fin-de-semana-familiar, top-5-cozy-cafes, san-luis-rey-tranvia, corazon-de-xoconostle, la-gran-via, ultimate-guide-living-expat (89K chars EN, 2253 tags). Solo content_ja, content_de intacto.
+
+Verificado: content_ja real+no vacío, tag counts EN=JA (729/254/398/342/214/2253), content_de byte-idéntico, hrefs/img src intactos, precios/venues/nombres propios preservados. CTA de contacto existente traducido sin agregar reservas (regla B2B respetada).
+
+ESTADO FINAL DEL PROYECTO: de 42 posts → DE real 42/42 (100%), JA real 40/42. Los 2 sin JA son los 2025 superados (excluidos a propósito, candidatos a redirect a sus versiones 2026). Punto de partida era DE 22/42, JA 8/42. Cada traducción vive en scripts/translate-*.js versionable y re-ejecutable. Resuelve además el duplicate-content de/ja (antes /de y /ja servían cuerpos en inglés idénticos).
+
+---
+
 ## [2026-07-03] feat(i18n): traducción japonés — Ola 4 (6 posts ja-only)
 
 Fase final: posts que ya tenían alemán real pero content_ja vacío (renderizaban inglés bajo /ja/). Traducido SOLO content_ja, sin tocar content_de. 6 posts: leonora-carrington, potosino-art-history, mining-history-baroque, foreign-direct-investment, navigating-immigration, checklist-mudanza (scripts/translate-ja-<slug>.js).
