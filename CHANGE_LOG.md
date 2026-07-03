@@ -4,6 +4,16 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-03] chore(seo): redirect + archivo de 2 posts 2025 superados
+
+Los 2 posts 2025 que quedaron fuera de la traducción (superados por sus versiones 2026):
+- /blog/cost-of-living-san-luis-potosi-2025 → 308 → /blog/cost-of-living-san-luis-potosi-2026
+- /blog/guia-completa-rentar-casa-san-luis-potosi-2025 → 308 → /blog/renting-in-san-luis-potosi-foreigner-2026
+
+Redirects 308 (permanent) en next.config.js consolidan el ranking hacia las versiones vigentes. Además status='archived' (scripts/archive-superseded-2025-posts.js) los saca del sitemap, getStaticPaths, related-posts y blog index (todos filtran status='published'). Posts published: 42 → 40. El redirect intercepta antes de getStaticProps, así que las URLs viejas 308-redirigen limpio.
+
+---
+
 ## [2026-07-03] feat(i18n): traducción japonés — Ola 5 (cierra el proyecto)
 
 Últimos 6 ja-only: fin-de-semana-familiar, top-5-cozy-cafes, san-luis-rey-tranvia, corazon-de-xoconostle, la-gran-via, ultimate-guide-living-expat (89K chars EN, 2253 tags). Solo content_ja, content_de intacto.

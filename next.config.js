@@ -143,6 +143,19 @@ const nextConfig = {
         destination: '/blog/fenapo-2026-guia-preparacion',
         permanent: true,
       },
+      {
+        // 2025 cost-of-living guide superseded by the 2026 edition. Redirect
+        // consolidates ranking signal onto the current, fully-localized post.
+        source: '/blog/cost-of-living-san-luis-potosi-2025',
+        destination: '/blog/cost-of-living-san-luis-potosi-2026',
+        permanent: true,
+      },
+      {
+        // 2025 rental guide superseded by the 2026 foreigner renting guide.
+        source: '/blog/guia-completa-rentar-casa-san-luis-potosi-2025',
+        destination: '/blog/renting-in-san-luis-potosi-foreigner-2026',
+        permanent: true,
+      },
       // /listings is temporarily disabled (the page client-redirects to /).
       // Surface that as a true 301 so Google deindexes it cleanly instead
       // of treating the soft-redirect page as a duplicate.
