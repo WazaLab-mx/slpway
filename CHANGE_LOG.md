@@ -4,6 +4,16 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-03] feat(i18n): traducciones reales de/ja — Ola 2 (6 guías viaje/expat)
+
+Segunda ola, mismo pipeline (1 agente/post, scripts/translate-<slug>.js idempotente): day-trips, real-de-catorce, xilitla, cost-of-living, ultimate-guide-living (insignia, 52K chars), healthcare (contenido médico).
+
+Verificado independientemente en los 6: content_de/content_ja reales (≠ inglés), tag counts idénticos EN=DE=JA (200/427/418/322/929/276), JSON-LD válido en ambos idiomas, hrefs/img src byte-idénticos, precios/cifras/nombres de instituciones intactos (visa/UMA, IMSS Modalidad 33, tipo de cambio, Wixárika/Huichol respetados). Xilitla: se corrigió transliteración katakana → Latin en 8 nombres propios obligatorios.
+
+Progreso: 12/54 (Ola 1 + Ola 2). Pendiente: 8 de+ja restantes (renting, vs-qro, vs-sma, fenapo×4, semana-santa, procesion-silencio, familias) + 14 solo-ja + eventos.
+
+---
+
 ## [2026-07-03] feat(i18n): traducciones reales de/ja — Ola 1 (6 guías evergreen)
 
 Reemplazados los "espejo del inglés" en content_de/content_ja por traducciones nativas reales (alemán formal "Sie", japonés registro cortés です・ます). 6 agentes traductores en paralelo, uno por post; cada uno escribe scripts/translate-<slug>.js (idempotente, upsert por slug) → versionable y re-ejecutable.
