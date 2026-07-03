@@ -4,6 +4,18 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-03] feat(i18n): traducciones reales de/ja — Ola 1 (6 guías evergreen)
+
+Reemplazados los "espejo del inglés" en content_de/content_ja por traducciones nativas reales (alemán formal "Sie", japonés registro cortés です・ます). 6 agentes traductores en paralelo, uno por post; cada uno escribe scripts/translate-<slug>.js (idempotente, upsert por slug) → versionable y re-ejecutable.
+
+Posts: things-to-do (hub), is-san-luis-potosi-safe (post sensible — 40 tokens de datos de seguridad byte-idénticos), airport, where-to-stay, weather (84 celdas de tabla intactas), huasteca.
+
+Preservado en los 6: estructura HTML exacta (tag counts idénticos EN/DE/JA), hrefs byte-idénticos, JSON-LD válido (verificado independientemente: 12/12 bloques parsean), nombres de lugares/precios/fechas/estadísticas sin cambios. Solo se tradujo prosa y valores de texto del JSON-LD.
+
+Contexto: de 42 posts, 20 eran espejo en de+ja y 14 solo faltaban ja. Esta ola cubre 6 de los 20. Pendiente: Ola 2 (expat/relocación: healthcare, renting, vs-qro, vs-sma, ultimate-guide, cost-of-living), Ola 3 (14 posts solo-ja), Ola final (eventos hiperlocales FENAPO/Semana Santa).
+
+---
+
 ## [2026-07-03] feat(factcheck+geo+debt): 5 factchecks, correcciones, branding, canonical eventos
 
 **Factcheck de los 5 posts nuevos** (5 agentes; formato parser → ClaimReview autodescubierto; badge "Artículo verificado" aparece solo):
