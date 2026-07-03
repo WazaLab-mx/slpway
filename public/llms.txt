@@ -29,6 +29,19 @@ CLI: npx @sanluisway/cli events --limit 5 --json
 - https://www.sanluisway.com/parque-tangamanga — 411-ha urban park guide
 - https://www.sanluisway.com/parque-tangamanga-ii — Sports park guide (archery, auto racing, running)
 - https://www.sanluisway.com/resources/living-guide — Living guide with visa (UMA) rules, cost of living, neighborhoods
+- https://www.sanluisway.com/blog/is-san-luis-potosi-safe-2026 — Safety analysis with ENSU/INEGI + US State Dept advisory data (2026)
+- https://www.sanluisway.com/blog/cost-of-living-san-luis-potosi-2026 — Cost of living 2026: rent, utilities, groceries with sourced ranges
+- https://www.sanluisway.com/blog/healthcare-san-luis-potosi-expats-2026 — Healthcare guide: hospitals, IMSS enrollment, insurance costs
+- https://www.sanluisway.com/blog/renting-in-san-luis-potosi-foreigner-2026 — Renting as a foreigner: aval, póliza jurídica, documents
+- https://www.sanluisway.com/blog/where-to-stay-san-luis-potosi-2026 — Where to stay: neighborhood-by-neighborhood hotel guide
+- https://www.sanluisway.com/blog/san-luis-potosi-vs-queretaro-expats-2026 — SLP vs Querétaro comparison for expats (2026)
+- https://www.sanluisway.com/blog/huasteca-potosina-itinerary-2026 — Huasteca Potosina 3–5 day itinerary with verified logistics
+- https://www.sanluisway.com/blog/xilitla-las-pozas-guide-2026 — Xilitla & Las Pozas surrealist garden guide (Edward James)
+- https://www.sanluisway.com/blog/real-de-catorce-guide-2026 — Real de Catorce ghost-town guide: Ogarrio tunnel, Wirikuta
+- https://www.sanluisway.com/blog/day-trips-from-san-luis-potosi-2026 — Day trips: Cerro de San Pedro, Media Luna, Santa María del Río
+- https://www.sanluisway.com/blog/fenapo-2026-artistas-cartel-completo — FENAPO 2026 full artist lineup (Foro de las Estrellas + Palenque)
+- https://www.sanluisway.com/events/this-week — Events in the next 7 days (ItemList schema, hourly refresh)
+- https://www.sanluisway.com/media-kit — Audience stats and advertising products (verifiable figures)
 - https://www.sanluisway.com/events/fenapo-2026 — FENAPO 2026 event page (current lineup, Festival schema)
 
 ## Structured Data Available

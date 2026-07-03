@@ -4,6 +4,24 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-02] feat(factcheck): 11 reportes nuevos + ~40 correcciones a posts + GEO llms.txt
+
+**Factcheck masivo (11 agentes investigadores en paralelo, /factcheck skill):** un reporte por cada post nuevo, 141 claims verificados en total contra fuentes primarias (INEGI, SESNSP, travel.state.gov, IMSS, CONAGUA, gobierno estatal, Numbeo, Booking). Reportes en public/factchecks/*.md (formato parser → ClaimReview JSON-LD por claim, autodescubiertos por /blog/factchecks).
+
+**Scores:** SLP vs QRO 9.3 · Day trips 9.2 · Costo de vida 9.1 · FENAPO 8.7 · Real de Catorce 8.6 · Xilitla 8.5 · Where to stay 8.0 · Renta 7.6 · Huasteca 7.6 · Seguridad 7.0 (21 claims) · Salud 6.9.
+
+**Correcciones aplicadas a Supabase** (scripts/apply-factcheck-corrections-2026-07.js, idempotente, 8 posts, EN+ES+de/ja+JSON-LD embebido):
+- FENAPO: boletos Palenque → slpfastticket.com (canal oficial del gobierno estatal; eticket.mx no tiene el evento); removido "77ª edición" no corroborado (EN+ES).
+- Seguridad: tabla EE.UU. corregida (Boston 8.4→removido, real 3.7; Austin 8.2→6.6); conflictos vecinales etiquetados trimestre-contra-trimestre; homicidios 444→207 (-53%) SESNSP consolidado; ataque autobús 27-dic (confirmado 30-dic); tasa nacional unificada en 17.5.
+- Salud: Hospital Lomas ya no "el único" en Top-50 Funsalud (La Bene 2024, Especialidades 2025); cuotas IMSS Mod. 33 actualizadas a tabla mar2026–feb2027 ($14,350 en 40–49).
+- Huasteca: Puente de Dios $70→$100–200 (cambio mar 2026), cierre 5–7pm; sequía Tamul recurrió abr–may 2026.
+- Where to stay: ocupación FENAPO ~70%→45–55% (edición 2025, asociación hotelera).
+- Costo de vida: brecha CDMX 21%→24% (Numbeo 2-jul-2026). Real de Catorce: ~260km→~220km. Xilitla: razón de prohibición de nado neutralizada.
+
+**GEO:** llms.txt +14 recursos prioritarios (los 11 posts nuevos + this-week + media-kit); llms-full.txt actualizado con pointer a factchecks.
+
+---
+
 ## [2026-07-02] feat(ui): imágenes de fondo en 27 heroes planos + barrido de contraste
 
 **Contexto:** El dueño reportó heroes de "plasta de color liso". Inventario (agente Explore): ~30 heroes planos. Criterio del dueño aplicado: fotos reales de SLP del repo primero, temáticas de Unsplash después (close-ups de objetos/ambientes), NUNCA pueblos que aparenten ser San Luis sin serlo.

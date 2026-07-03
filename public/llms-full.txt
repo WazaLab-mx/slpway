@@ -2,7 +2,7 @@
 SAN LUIS WAY — COMPLETE API REFERENCE FOR AI AGENTS
 ================================================================================
 
-Last updated: 2026-04-11
+Last updated: 2026-07-02
 Source: https://www.sanluisway.com/agent-connect
 
 
@@ -735,6 +735,11 @@ MCP Server docs:        https://www.sanluisway.com/agent-connect#mcp
 CLI docs:               https://www.sanluisway.com/agent-connect#cli
 XML Sitemap:            https://www.sanluisway.com/sitemap.xml
 Short discovery file:   https://www.sanluisway.com/llms.txt
+Priority content list:  see llms.txt — 20+ GEO-optimized guides (safety, cost
+                        of living, healthcare, renting, Huasteca, Xilitla,
+                        Real de Catorce, FENAPO 2026) each with FAQPage JSON-LD,
+                        cited primary sources and dated fact-check reports at
+                        https://www.sanluisway.com/blog/factchecks
 This file:              https://www.sanluisway.com/llms-full.txt
 
 For questions or issues: https://www.sanluisway.com/contact
