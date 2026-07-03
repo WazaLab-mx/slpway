@@ -4,7 +4,7 @@ import { logger } from '@/lib/logger';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
-const anthropicApiKey = process.env.ANTHROPIC_API_KEY;
+const openaiApiKey = process.env.OPENAI_API_KEY;
 
 const MAX_AI_ATTEMPTS = 3;
 const AI_RETRY_BASE_MS = 1500;
@@ -53,8 +53,8 @@ export default async function handler(
     return res.status(500).json({ error: 'Missing Supabase credentials' });
   }
 
-  if (!anthropicApiKey) {
-    return res.status(500).json({ error: 'Missing ANTHROPIC_API_KEY' });
+  if (!openaiApiKey) {
+    return res.status(500).json({ error: 'Missing OPENAI_API_KEY' });
   }
 
   const supabase = createClient(supabaseUrl, supabaseServiceKey);
@@ -64,9 +64,9 @@ export default async function handler(
 
   for (let attempt = 1; attempt <= MAX_AI_ATTEMPTS; attempt++) {
     try {
-      aiResults = await fetchNewsWithClaude();
+      aiResults = await fetchNewsWithOpenAI();
       if (aiResults) break;
-      lastError = 'fetchNewsWithClaude returned null';
+      lastError = 'fetchNewsWithOpenAI returned null';
     } catch (err) {
       lastError = err instanceof Error ? err.message : String(err);
       logger.error(`Attempt ${attempt} failed:`, lastError);
@@ -78,7 +78,7 @@ export default async function handler(
 
   if (!aiResults || aiResults.communityNews.length === 0 || aiResults.headlines.length === 0) {
     return res.status(502).json({
-      error: 'Claude fetch failed — leaving existing data untouched',
+      error: 'OpenAI fetch failed — leaving existing data untouched',
       lastError,
       attempts: MAX_AI_ATTEMPTS
     });
@@ -157,83 +157,190 @@ function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function fetchNewsWithClaude(): Promise<{ communityNews: CommunityNews[]; headlines: NewsHeadline[] } | null> {
-  if (!anthropicApiKey) return null;
+const NEWS_CATEGORIES = ['social', 'community', 'culture', 'local'] as const;
 
+function buildNewsPrompt(): string {
   const today = new Date().toLocaleDateString('es-MX', {
     weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
     timeZone: 'America/Mexico_City'
   });
 
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': anthropicApiKey,
-      'anthropic-version': '2023-06-01'
-    },
-    body: JSON.stringify({
-      model: 'claude-sonnet-4-6',
-      max_tokens: 10000,
-      tools: [{
-        type: 'web_search_20250305',
-        name: 'web_search',
-        max_uses: 3
-      }],
-      messages: [{
-        role: 'user',
-        content: `HOY ES: ${today}
+  return `HOY ES: ${today}
 
-Busca noticias POSITIVAS/NEUTRALES de San Luis Potosí, México para HOY o esta semana.
+Eres el editor de noticias locales de San Luis Potosí, México. Busca en la web (haz VARIAS búsquedas) noticias POSITIVAS o NEUTRALES de San Luis Potosí de hoy o esta semana (comunidad, cultura, vida local, economía, empleo, gobierno, turismo, seguridad).
 
-IMPORTANTE - 4 IDIOMAS: Cada campo de texto debe tener versiones en español (_es), inglés (_en), alemán (_de) y japonés (_ja).
-IMPORTANTE - RESÚMENES DETALLADOS: 2-3 oraciones con cifras específicas, nombres de empresas/funcionarios, fechas, e impacto.
-IMPORTANTE - URLs REALES: Cada item DEBE incluir el campo "url" con un enlace REAL y verificable a la nota original (medio mexicano: elsoldesanluis.com.mx, planoinformativo.com, pulsoslp.com.mx, slp.gob.mx, codigosanluis.com, etc.). NUNCA inventes URLs. Si no tienes una URL real, omite ese item.
+Devuelve un objeto JSON con UN SOLO array llamado "news" que contenga EXACTAMENTE 8 objetos, cada uno una noticia real y distinta.
 
-CRÍTICO - FORMATO DE SALIDA: Tu respuesta DEBE empezar EXACTAMENTE con el carácter '{' y terminar EXACTAMENTE con '}'. NO escribas preámbulo, NO escribas explicación, NO uses markdown, NO uses backticks. SOLO el objeto JSON.
+Cada objeto DEBE tener estos campos:
+- "title_es","title_en","title_de","title_ja": el titular en 4 idiomas (español, inglés, alemán, japonés).
+- "summary_es","summary_en","summary_de","summary_ja": resumen de 2-3 oraciones en 4 idiomas, con cifras, nombres, fechas e impacto. Texto limpio, SIN URLs ni citas markdown.
+- "category": una de "community","culture","local","social".
+- "source": nombre del medio (ej. "El Sol de San Luis", "Pulso SLP", "Gobierno SLP").
+- "url": enlace REAL y verificable a la nota original (elsoldesanluis.com.mx, planoinformativo.com, pulsoslp.com.mx, slp.gob.mx, codigosanluis.com, imei.slp.gob.mx, quadratin.com.mx, etc.). La URL va SOLO en este campo. NUNCA inventes URLs.
+- "priority": número entero.
 
-Formato exacto:
+CRÍTICO - FORMATO: Tu respuesta DEBE empezar con '{' y terminar con '}'. Sin preámbulo, sin explicación, sin markdown, sin backticks. SOLO el objeto JSON con las 8 noticias.`;
+}
 
-{"communityNews":[{"title_es":"...","title_en":"...","title_de":"...","title_ja":"...","summary_es":"...","summary_en":"...","summary_de":"...","summary_ja":"...","category":"community","priority":1,"url":"https://..."}],"headlines":[{"text_es":"...","text_en":"...","text_de":"...","text_ja":"...","summary_es":"...","summary_en":"...","summary_de":"...","summary_ja":"...","source":"...","url":"https://...","priority":1}]}
+// OpenAI Responses API returns web citations as inline markdown; strip them so
+// only clean prose reaches the DB, and drop tracking params from real URLs.
+function stripCitations(value: unknown): unknown {
+  if (typeof value !== 'string') return value;
+  return value
+    .replace(/\s*\(\[[^\]]*\]\([^)]*\)\)/g, '')
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .trim();
+}
 
-Genera exactamente 3 communityNews y 5 headlines, todos con URL real.`
-      }]
-    })
-  });
+function cleanUrl(url: unknown): string | undefined {
+  if (typeof url !== 'string' || !url) return undefined;
+  return url.replace(/([?&])utm_[^=]+=[^&]*/g, '$1').replace(/[?&]$/, '');
+}
+
+function sanitizeItem<T>(item: T): T {
+  const out: Record<string, unknown> = {};
+  for (const [key, val] of Object.entries(item as Record<string, unknown>)) {
+    out[key] = key === 'url' ? cleanUrl(val) : stripCitations(val);
+  }
+  return out as T;
+}
+
+function extractJsonObject(text: string): any | null {
+  const fenced = text.match(/```(?:json)?\s*([\s\S]*?)\s*```/);
+  const raw = fenced ? fenced[1].trim() : text;
+  const start = raw.indexOf('{');
+  if (start === -1) return null;
+  let depth = 0;
+  let end = -1;
+  for (let i = start; i < raw.length; i++) {
+    const ch = raw[i];
+    if (ch === '{') depth++;
+    else if (ch === '}') { depth--; if (depth === 0) { end = i; break; } }
+    else if (ch === '"') {
+      i++;
+      while (i < raw.length && raw[i] !== '"') { if (raw[i] === '\\') i++; i++; }
+    }
+  }
+  if (end === -1) return null;
+  const jsonStr = raw.substring(start, end + 1);
+  try {
+    return JSON.parse(jsonStr);
+  } catch {
+    try {
+      return JSON.parse(jsonStr.replace(/,\s*([}\]])/g, '$1'));
+    } catch {
+      return null;
+    }
+  }
+}
+
+async function callOpenAIResponses(prompt: string): Promise<Response> {
+  const toolTypes = ['web_search', 'web_search_preview'];
+  let lastResponse: Response | null = null;
+  for (const toolType of toolTypes) {
+    const response = await fetch('https://api.openai.com/v1/responses', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${openaiApiKey}`
+      },
+      body: JSON.stringify({
+        model: 'gpt-4o-mini',
+        tools: [{ type: toolType }],
+        input: prompt,
+        max_output_tokens: 9000
+      })
+    });
+    if (response.ok) return response;
+    lastResponse = response;
+    // Only fall back to the preview tool name when the tool type was rejected.
+    if (response.status !== 400) break;
+  }
+  return lastResponse as Response;
+}
+
+function extractResponsesText(data: any): string {
+  if (typeof data.output_text === 'string' && data.output_text.trim()) {
+    return data.output_text;
+  }
+  let text = '';
+  for (const item of data.output || []) {
+    if (item.type === 'message') {
+      for (const c of item.content || []) {
+        if (c.type === 'output_text') text += c.text;
+      }
+    }
+  }
+  return text;
+}
+
+async function fetchNewsWithOpenAI(): Promise<{ communityNews: CommunityNews[]; headlines: NewsHeadline[] } | null> {
+  if (!openaiApiKey) return null;
+
+  const response = await callOpenAIResponses(buildNewsPrompt());
 
   if (!response.ok) {
     const errBody = await response.text().catch(() => '');
-    throw new Error(`Anthropic API ${response.status}: ${errBody.slice(0, 300)}`);
+    throw new Error(`OpenAI API ${response.status}: ${errBody.slice(0, 300)}`);
   }
 
   const data = await response.json();
-
-  let content = '';
-  for (const block of data.content || []) {
-    if (block.type === 'text') {
-      content += block.text;
-    }
-  }
+  const content = extractResponsesText(data);
 
   if (!content) {
-    throw new Error('Claude returned no text content');
+    throw new Error('OpenAI returned no text content');
   }
 
-  const jsonMatch = content.match(/\{[\s\S]*\}/);
-  if (!jsonMatch) {
-    throw new Error('No JSON found in Claude response');
+  const parsed = extractJsonObject(content);
+  if (!parsed) {
+    throw new Error(`No JSON found in OpenAI response: ${content.slice(0, 200)}`);
   }
 
-  const parsed = JSON.parse(jsonMatch[0]);
-
-  if (!Array.isArray(parsed.communityNews) || !Array.isArray(parsed.headlines)) {
-    throw new Error('Claude JSON missing communityNews or headlines arrays');
+  if (!Array.isArray(parsed.news)) {
+    throw new Error('OpenAI JSON missing news array');
   }
 
-  return {
-    communityNews: parsed.communityNews.slice(0, 3),
-    headlines: parsed.headlines.slice(0, 5)
-  };
+  const items = (parsed.news as Record<string, unknown>[])
+    .map(n => sanitizeItem(n))
+    .filter(n =>
+      n.url &&
+      n.title_es && n.title_en && n.title_de && n.title_ja &&
+      n.summary_es && n.summary_en && n.summary_de && n.summary_ja
+    );
+
+  if (items.length < 8) {
+    throw new Error(`OpenAI returned too few valid news items (${items.length}, need 8)`);
+  }
+
+  const communityNews: CommunityNews[] = items.slice(0, 3).map((n, i) => ({
+    title_es: n.title_es as string,
+    title_en: n.title_en as string,
+    title_de: n.title_de as string,
+    title_ja: n.title_ja as string,
+    summary_es: n.summary_es as string,
+    summary_en: n.summary_en as string,
+    summary_de: n.summary_de as string,
+    summary_ja: n.summary_ja as string,
+    category: NEWS_CATEGORIES.includes(n.category as any) ? (n.category as CommunityNews['category']) : 'community',
+    priority: i + 1,
+    url: n.url as string
+  }));
+
+  const headlines: NewsHeadline[] = items.slice(3, 8).map((n, i) => ({
+    text_es: n.title_es as string,
+    text_en: n.title_en as string,
+    text_de: n.title_de as string,
+    text_ja: n.title_ja as string,
+    summary_es: n.summary_es as string,
+    summary_en: n.summary_en as string,
+    summary_de: n.summary_de as string,
+    summary_ja: n.summary_ja as string,
+    source: (n.source as string) || 'San Luis Potosí',
+    priority: i + 1,
+    url: n.url as string
+  }));
+
+  return { communityNews, headlines };
 }
 
 function getExpiryDate(days = 1): string {

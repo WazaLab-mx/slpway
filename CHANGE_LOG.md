@@ -4,6 +4,21 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-03] feat(cost): noticias del home migradas de Claude a OpenAI gpt-4o-mini
+
+El generador de noticias/titulares diarios del home usaba claude-sonnet-4-6 con web_search (caro). Migrado a OpenAI Responses API + gpt-4o-mini + tool web_search (fallback a web_search_preview). ~<1 centavo por corrida vs ~10-20x con Claude Sonnet; el cron corre 4x/día → ahorro recurrente grande.
+
+3 puntos migrados (todos llamaban a api.anthropic.com directo):
+- src/pages/api/cron/update-headlines.ts (API route)
+- netlify/functions/scheduled-news-update-background.js (el cron REAL de producción, cada 6h)
+- scripts/update-news-now.js (trigger manual; conserva su fallback getDefaultNews)
+
+Diseño clave: gpt-4o-mini no emite 2 arrays con conteos fijos de forma confiable, así que se le pide UN array `news` de 8 items y se parte por código (3→communityNews, 5→headlines mapeando title_*→text_*). Se preserva el contrato exacto del insert a Supabase. Añadido: extractor de JSON con llaves balanceadas (tolera fences/comas colgantes), stripCitations (quita citas markdown inline de gpt-4o-mini), cleanUrl (quita utm_*), y validación ≥8 items con URL + 4 idiomas que dispara el retry de 3 intentos existente.
+
+Verificado en vivo: 3 communityNews + 5 headlines, URLs reales y actuales (quadratin, potosinoticias, eleconomista, elheraldoslp), 4 idiomas, categorías válidas. OPENAI_API_KEY ya estaba en producción (lo usan los features de newsletter). ANTHROPIC_API_KEY sin tocar. Sin toggles. tsc limpio.
+
+---
+
 ## [2026-07-03] fix(tests): 5 suites en verde (Frente 3) — 293/293 tests pasan
 
 5 suites fallaban por desincronización test/implementación. Arreglado el lado correcto en cada una (2 eran regresiones reales de código):
