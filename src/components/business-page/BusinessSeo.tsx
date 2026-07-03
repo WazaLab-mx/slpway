@@ -82,7 +82,7 @@ export default function BusinessSeo({ business }: BusinessSeoProps) {
       <title>{title}</title>
       <meta name="description" content={metaDescription} />
       <meta name="theme-color" content={theme.primary} />
-      <link rel="canonical" href={url} />
+      <link rel="canonical" href={url} key="canonical" />
 
       <meta property="og:type" content="restaurant.restaurant" />
       <meta property="og:title" content={title} />

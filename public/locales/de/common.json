@@ -48,6 +48,7 @@
     "resources": "Ressourcen",
     "spouseHub": "Spouse Hub",
     "events": "Veranstaltungen",
+    "thisWeek": "Diese Woche",
     "blog": "Blog",
     "about": "Über uns",
     "faq": "FAQ",
@@ -308,6 +309,7 @@
       "title": "Kulturkalender",
       "description": "Von Kunstausstellungen bis zu traditionellen Festen",
       "viewAll": "Alle Veranstaltungen ansehen",
+      "thisWeek": "Was diese Woche in San Luis Potosí los ist",
       "until": "Bis"
     },
     "culture": {
@@ -1443,6 +1445,11 @@
       "description": "Du bist nicht allein. Ressourcen, Gemeinschaft, Aktivitäten, Freiwilligenarbeit, Müttergruppen und Arbeitsideen für begleitende Partner in SLP."
     }
   },
+  "eventBusinessCta": {
+    "question": "Haben Sie ein Unternehmen?",
+    "pitch": "Erreichen Sie die Menschen, die ihre Woche in SLP planen — werben Sie bei uns.",
+    "cta": "Bei uns werben"
+  },
   "newsletterBanner": {
     "freeWeekly": "Kostenloser Wöchentlicher Newsletter",
     "insiderGuide": "Ihr Insider-Führer für",
@@ -1748,16 +1755,16 @@
   },
   "fenapo2026": {
     "seo": {
-      "title": "FENAPO 2026 — Nationale Messe von Potosí | San Luis Potosí",
-      "description": "FENAPO 2026: Mexikos traditionsreichste Messe, 7.–30. August in San Luis Potosí. Komplettes Line-up: Katy Perry, Mötley Crüe, Bizarrap, Grupo Firme, Los Tigres del Norte. Kostenloses Foro de las Estrellas, Palenque, Gastronomie und Fahrgeschäfte.",
+      "title": "FENAPO 2026 (Feria Nacional Potosina) — Mexikos Nationalmesse: Termine, Line-up & Tickets",
+      "description": "FENAPO 2026 — die Feria Nacional Potosina, Mexikos Nationalmesse — läuft vom 7.–30. August in San Luis Potosí. Komplettes Line-up: Katy Perry, Mötley Crüe, Bizarrap, Grupo Firme, Los Tigres del Norte. Freier Eintritt, kostenlose Foro-de-las-Estrellas-Konzerte, Palenque-Tickets, Gastronomie und Fahrgeschäfte.",
       "keywords": "fenapo 2026, feria nacional potosina, fenapo san luis potosi, fenapo programm 2026"
     },
     "hero": {
       "badge": "AUSGABE 2026",
       "date": "7.–30. August 2026",
-      "title": "FENAPO 2026",
-      "subtitle": "Feria Nacional Potosina",
-      "description": "Mexikos traditionsreichste Messe kehrt mit Konzerten, Gastronomie, Kultur und Unterhaltung für die ganze Familie zurück. Komplettes Line-up: Katy Perry, Mötley Crüe, Bizarrap, Grupo Firme, Los Tigres del Norte, Gloria Trevi und viele mehr.",
+      "title": "FENAPO 2026 (Feria Nacional Potosina)",
+      "subtitle": "Mexikos Nationalmesse in San Luis Potosí",
+      "description": "Die FENAPO — Feria Nacional Potosina — ist Mexikos Nationalmesse und kehrt mit Konzerten, Gastronomie, Kultur und Unterhaltung für die ganze Familie nach San Luis Potosí zurück. Komplettes Line-up: Katy Perry, Mötley Crüe, Bizarrap, Grupo Firme, Los Tigres del Norte, Gloria Trevi und viele mehr.",
       "cta": "Offizielle Website",
       "ctaArtists": "Künstler ansehen",
       "location": "San Luis Potosí, Hauptstadt des Bundesstaates San Luis Potosí, Mexiko"
@@ -1799,6 +1806,25 @@
       "palenqueNote": "14 Abende · Ticket",
       "deepDiveCta": "Zum kompletten Künstler-Guide: welche Abende lohnen sich",
       "freeNotice": "Die Konzerte im Foro de las Estrellas, die Fahrgeschäfte, der Parkplatz und der Messeeintritt sind dieses Jahr per Dekret des Gouverneurs von San Luis Potosí kostenlos."
+    },
+    "tickets": {
+      "title": "FENAPO 2026 Tickets & Preise",
+      "subtitle": "Kurz gesagt: Fast alles ist kostenlos — nur der Palenque verlangt Eintritt.",
+      "entryTitle": "Messeeintritt: kostenlos",
+      "entryDesc": "Der Eintritt aufs Messegelände ist 2026 kostenlos — ebenso die Fahrgeschäfte, das Parken und alle Konzerte im Foro de las Estrellas (früher Teatro del Pueblo), per Dekret des Gouverneurs. Kein Ticket nötig: An großen Abenden früh kommen, um nah an die Bühne zu gelangen.",
+      "palenqueTitle": "Palenque-Tickets",
+      "palenqueDesc": "Der Palenque ist der einzige kostenpflichtige Veranstaltungsort der FENAPO. Preise variieren nach Künstler und Zone: General $700–$1.300 MXN, Dorada $1.100–$3.600, VIP $1.700–$4.600, Diamante $1.900–$5.500. Nur über slpfastticket.com kaufen — den offiziellen, von der Landesregierung angekündigten Kanal — oder an der Palenque-Kasse. Wiederverkäufer meiden.",
+      "lineupTitle": "Welcher Palenque-Abend lohnt sich?",
+      "lineupDesc": "Unser kompletter Künstler-Guide schlüsselt alle 14 Palenque-Abende mit Ticket und die 21 kostenlosen Foro-de-las-Estrellas-Konzerte auf — mit Tipps, welche Shows zuerst ausverkauft sind.",
+      "lineupCta": "Zum kompletten FENAPO-2026-Line-up-Guide",
+      "thisWeekCta": "Alles sehen, was diese Woche in SLP los ist"
+    },
+    "related": {
+      "title": "Ähnliche Guides",
+      "artistas": "FENAPO 2026 Line-up: alle Künstler, Abend für Abend",
+      "stay": "Wo übernachten in San Luis Potosí (Guide 2026)",
+      "safe": "Ist San Luis Potosí sicher? Was die Daten 2026 sagen",
+      "thisWeek": "Was diese Woche in San Luis Potosí los ist"
     },
     "areas": {
       "title": "Messebereiche",
@@ -1853,7 +1879,7 @@
       "venue": "Recinto Ferial de la FENAPO",
       "address": "Av. Fco. Martínez de la Vega Nr. 255, San Luis Potosí",
       "byCarTitle": "Mit dem Auto",
-      "byCarDesc": "Ausreichend Parkplätze. Vom Zentrum Av. Salvador Nava Richtung Süden (~15 Min.).",
+      "byCarDesc": "Ausreichend Parkplätze — 2026 laut Ankündigung des Gouverneurs kostenlos. Vom Zentrum Av. Salvador Nava Richtung Süden (~15 Min.).",
       "byTransitTitle": "ÖPNV",
       "byTransitDesc": "Buslinien: 10, 12, 17. Spezialbusse während der Messe. Taxis und Uber verfügbar.",
       "byPlaneTitle": "Vom Flughafen",
@@ -1880,7 +1906,7 @@
       "q3": "Ist der allgemeine Eintritt kostenlos?",
       "a3": "Ja. 2026 sind der Eintritt zum Gelände, die Konzerte im Foro de las Estrellas, die Fahrgeschäfte und der Parkplatz per Dekret des Gouverneurs kostenlos. Nur der Palenque erfordert ein separates Ticket.",
       "q4": "Gibt es Parkplätze?",
-      "a4": "Ja, auf dem Gelände und in der Nähe. Am Wochenende früh kommen.",
+      "a4": "Ja — und 2026 ist das Parken auf dem Gelände laut Gouverneur kostenlos. Private Parkplätze in der Nähe können Gebühren verlangen. Am Wochenende früh kommen.",
       "q5": "Darf man Essen mitbringen?",
       "a5": "Nein. Es gibt eine große Gastronomie-Zone mit Optionen für jedes Budget.",
       "q6": "Wann hat die Messe geöffnet?",

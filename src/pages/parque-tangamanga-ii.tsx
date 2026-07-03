@@ -335,6 +335,9 @@ export default function ParqueTangamanga2() {
               { href: '/parque-tangamanga', label: 'Parque Tangamanga I', labelEs: 'Parque Tangamanga I' },
               { href: '/events/maraton-tangamanga-2026', label: 'BMW Marathon 2026', labelEs: 'Maratón BMW 2026' },
               { href: '/family-friendly-activities', label: 'Family Activities', labelEs: 'Actividades Familiares' },
+              { href: '/blog/day-trips-from-san-luis-potosi-2026', label: 'Day Trips from San Luis Potosí (2026)', labelEs: 'Escapadas de un Día desde San Luis Potosí (2026)' },
+              { href: '/blog/is-san-luis-potosi-safe-2026', label: 'Is San Luis Potosí Safe? (2026)', labelEs: '¿Es Seguro San Luis Potosí? (2026)' },
+              { href: '/blog/huasteca-potosina-itinerary-2026', label: 'Huasteca Potosina Itinerary (2026)', labelEs: 'Itinerario por la Huasteca Potosina (2026)' },
               { href: '/places', label: 'All Places', labelEs: 'Todos los Lugares' },
             ]}
           />

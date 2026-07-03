@@ -9,6 +9,15 @@ interface BrandPageProps {
   brand: Brand;
 }
 
+// Brands that duplicate a /places listing: canonicalize the brand page to the
+// place page so Google consolidates impressions on one URL (GSC July 2026
+// audit: Tortas Oscar's split ~665 impressions between the two pages).
+// Keyed by brand id (stable even if the slug is regenerated).
+const BRAND_CANONICAL_PLACE: Record<string, string> = {
+  // Tortas Oscar´s (brand) → Tortas Oscar´s (place, category local-food)
+  'b8d17c56-66c1-400e-a35d-4006d706b472': '/places/cd46fbf7-d2a0-44dc-bdd3-ce970f4284b0',
+};
+
 export default function BrandPage({ brand }: BrandPageProps) {
 
   if (!brand) {
@@ -22,6 +31,7 @@ export default function BrandPage({ brand }: BrandPageProps) {
         description={brand.description || `Discover ${brand.name}, a local brand from San Luis Potosí.`}
         ogImage={brand.image_url || '/images/placeholder.jpg'}
         ogType="article"
+        canonicalUrl={BRAND_CANONICAL_PLACE[brand.id]}
       />
 
       {/* Hero Image */}

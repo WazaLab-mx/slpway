@@ -281,11 +281,11 @@ export default function FamilyFriendlyActivities({ familyEvents = [] }: { family
   const isEs = locale === 'es';
 
   const pageTitle = isEs
-    ? 'Parques y Actividades para Niños en San Luis Potosí — 30+ Planes con Precios y Horarios'
-    : 'Best Parks for Kids & Family Activities in San Luis Potosí — 30+ Plans with Prices & Hours';
+    ? 'Parques para Niños en San Luis Potosí: los 12 mejores + 30 actividades familiares (precios y horarios)'
+    : 'Parks for Kids in San Luis Potosí: 12 Best + 30 Family Activities (Prices & Hours)';
   const pageDesc = isEs
-    ? 'Los mejores parques para niños y 30+ planes familiares en SLP con precios, horarios y edades: Tangamanga, trampolines, museos, go-karts y más para este fin de semana.'
-    : 'The best parks for kids and 30+ family activities in San Luis Potosí with prices, hours and age ranges: Tangamanga, trampolines, museums, go-karts and more.';
+    ? 'Parques para niños en San Luis Potosí: los 12 mejores más 30 actividades familiares con precios, horarios y edades — Tangamanga, trampolines, museos, go-karts y más para este fin de semana.'
+    : 'Parks for kids in San Luis Potosí: the 12 best plus 30 family activities with prices, hours and age ranges — Tangamanga, trampolines, museums, go-karts and more for this weekend.';
 
   return (
     <>
@@ -298,7 +298,6 @@ export default function FamilyFriendlyActivities({ familyEvents = [] }: { family
 
       <Head>
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-        <link rel="canonical" href="https://www.sanluisway.com/family-friendly-activities" />
         <meta property="og:url" content="https://www.sanluisway.com/family-friendly-activities" />
         <meta property="og:locale" content={isEs ? 'es_MX' : 'en_US'} />
 

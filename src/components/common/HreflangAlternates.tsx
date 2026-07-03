@@ -35,7 +35,7 @@ export default function HreflangAlternates() {
 
   return (
     <Head>
-      <link rel="canonical" href={canonicalUrl} />
+      <link rel="canonical" href={canonicalUrl} key="canonical" />
       {LOCALES.map((locale) => (
         <link
           key={`hreflang-${locale}`}

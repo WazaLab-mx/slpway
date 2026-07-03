@@ -8,6 +8,15 @@ interface SEOProps {
   ogImage?: string;
   ogType?: 'website' | 'article';
   noIndex?: boolean;
+  /**
+   * Canonical override for pages that duplicate another URL (e.g. a brand
+   * page whose content lives on a /places/{id} page). Accepts a site-relative
+   * path ("/places/abc") or an absolute URL. When set, this component emits
+   * the canonical link pointing there. Note: HreflangAlternates (mounted
+   * globally in _app.tsx) still emits the self-referential canonical, so use
+   * this only for consolidation cases where the duplicate signal is desired.
+   */
+  canonicalUrl?: string;
   article?: {
     publishedTime?: string;
     modifiedTime?: string;
@@ -25,6 +34,7 @@ const SEO: React.FC<SEOProps> = ({
   ogImage = '/og-image.jpg',
   ogType = 'website',
   noIndex = false,
+  canonicalUrl: canonicalOverride,
   article,
   structuredData,
 }) => {
@@ -43,7 +53,9 @@ const SEO: React.FC<SEOProps> = ({
     return cleanPath ? `${siteUrl}/${locale}${cleanPath}` : `${siteUrl}/${locale}`;
   };
 
-  const canonicalUrl = urlForLocale(currentLocale);
+  const canonicalUrl = canonicalOverride
+    ? (canonicalOverride.startsWith('http') ? canonicalOverride : `${siteUrl}${canonicalOverride}`)
+    : urlForLocale(currentLocale);
   const siteName = "San Luis Way";
   const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
   const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
@@ -57,7 +69,10 @@ const SEO: React.FC<SEOProps> = ({
       {/* Canonical AND hreflang alternates are emitted globally from _app.tsx
           (HreflangAlternates) so EVERY page gets them, not just those that
           import this SEO component. That keeps this component focused on
-          per-page title/description/OG metadata. */}
+          per-page title/description/OG metadata. Exception: when a page passes
+          canonicalUrl, it is consolidating into another URL and we emit that
+          canonical here. */}
+      {canonicalOverride && <link rel="canonical" href={canonicalUrl} key="canonical" />}
 
       {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />

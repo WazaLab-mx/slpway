@@ -89,7 +89,9 @@ export default function SafetyGuidePage() {
         <meta name="keywords" content="San Luis Potosí safety, is SLP safe, crime statistics Mexico, safe neighborhoods SLP, expat safety Mexico" />
         <meta property="og:title" content="Is San Luis Potosí Safe? Complete Safety Guide" />
         <meta property="og:description" content="Comprehensive safety analysis with verified data, local perception, and practical tips for living in SLP." />
-        <link rel="canonical" href="https://www.sanluisway.com/resources/safety-guide" />
+        {/* Canonical is emitted globally (locale-aware) by HreflangAlternates in _app.tsx.
+            A second hardcoded EN canonical here conflicted with it on /es|/de|/ja and
+            broke the hreflang cluster. */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

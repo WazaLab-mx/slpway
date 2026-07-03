@@ -56,8 +56,8 @@ export default function EventsThisWeek({ events, weekStart, weekEnd }: ThisWeekP
   const isEs = locale === 'es';
 
   const title = isEs
-    ? 'Eventos Esta Semana en San Luis Potosí — Agenda Actualizada'
-    : 'Events This Week in San Luis Potosí — Updated Agenda';
+    ? 'Qué hacer esta semana en San Luis Potosí — eventos y conciertos'
+    : "What's Happening in San Luis Potosí This Week — Events, Concerts & Plans";
   const description = isEs
     ? `Qué hacer esta semana en San Luis Potosí (${formatRange(weekStart, weekEnd, 'es')}): conciertos, deportes, cultura y ferias. Agenda actualizada cada semana.`
     : `What to do this week in San Luis Potosí (${formatRange(weekStart, weekEnd, 'en')}): concerts, sports, culture and fairs. Updated weekly.`;
@@ -107,7 +107,7 @@ export default function EventsThisWeek({ events, weekStart, weekEnd }: ThisWeekP
               {formatRange(weekStart, weekEnd, locale)}
             </p>
             <h1 className="text-4xl md:text-5xl font-bold font-serif mb-4 text-white">
-              {isEs ? 'Eventos esta semana en San Luis Potosí' : 'Events this week in San Luis Potosí'}
+              {isEs ? 'Qué hacer esta semana en San Luis Potosí' : "What's happening in San Luis Potosí this week"}
             </h1>
             <p className="text-white/80 max-w-2xl mx-auto">
               {isEs

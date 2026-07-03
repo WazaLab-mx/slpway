@@ -139,18 +139,18 @@ export default function BreakfastSpotsSLP() {
   const isEs = locale === 'es';
 
   const title = isEs
-    ? 'Mejores Desayunos y Brunch en San Luis Potosí — 7 Spots que los Locales Eligen'
-    : 'Best Breakfast & Brunch Spots in San Luis Potosí — Where Locals Actually Eat';
+    ? 'Desayunos en San Luis Potosí: los 7 mejores lugares abiertos hoy (enchiladas potosinas y más)'
+    : 'Breakfast in San Luis Potosí: 7 Best Spots Open Now (Enchiladas Potosinas & More)';
   const description = isEs
-    ? 'Los 7 mejores lugares de desayuno y brunch en SLP: enchiladas potosinas, gorditas de mercado, brunch moderno y café de especialidad. Direcciones, horarios y qué ordenar.'
-    : 'The 7 best breakfast and brunch spots in San Luis Potosí: enchiladas potosinas, street-market gorditas, modern brunch and specialty coffee. Addresses, hours, and what to order.';
+    ? 'Los 7 mejores lugares para desayunar en San Luis Potosí: enchiladas potosinas, gorditas de mercado y café de especialidad, abiertos desde las 7 AM. Direcciones, horarios y qué ordenar.'
+    : 'The 7 best breakfast spots in San Luis Potosí: enchiladas potosinas, street-market gorditas and specialty coffee, open from 7 AM. Addresses, hours, and what to order.';
 
   return (
     <>
       <SEO
         title={title}
         description={description}
-        keywords="breakfast San Luis Potosí, best breakfast SLP, enchiladas potosinas, gorditas SLP, brunch San Luis Potosi, specialty coffee San Luis Potosi, La Parroquia Potosina, El Meson de San Pascual"
+        keywords="breakfast San Luis Potosí, best breakfast SLP, enchiladas potosinas, gorditas SLP, desayunos San Luis Potosi, specialty coffee San Luis Potosi, La Parroquia Potosina, El Meson de San Pascual"
         structuredData={{
           '@context': 'https://schema.org',
           '@type': 'ItemList',
@@ -206,6 +206,18 @@ export default function BreakfastSpotsSLP() {
         </section>
 
         <section className="container mx-auto px-4 max-w-4xl py-12">
+          {/* Cross-link: weekend brunch lives on the blog guide (de-cannibalization) */}
+          <aside className="mb-8 bg-indigo-50 border-2 border-indigo-200 rounded-xl p-5 flex items-start gap-3">
+            <span className="text-2xl shrink-0" aria-hidden>🥂</span>
+            <p className="text-gray-800">
+              {isEs ? '¿Buscas brunch de fin de semana? Checa nuestra guía de los ' : 'Looking for weekend brunch? See our guide to the '}
+              <Link href="/blog/best-brunch-spots-san-luis-potosi" className="font-semibold text-indigo-700 hover:text-indigo-900 underline">
+                {isEs ? 'mejores lugares de brunch en San Luis Potosí' : 'best brunch spots in San Luis Potosí'}
+              </Link>
+              {isEs ? ' — 10 lugares con precios y horarios.' : ' — 10 spots with prices and hours.'}
+            </p>
+          </aside>
+
           <div className="space-y-6">
             {spots.map((s) => (
               <article key={s.name} className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
@@ -254,10 +266,13 @@ export default function BreakfastSpotsSLP() {
           <section className="mt-12 mb-8"><AdUnit placement="top-banner" /></section>
 
           <GuideCTA relatedLinks={[
+            { href: '/blog/best-brunch-spots-san-luis-potosi', label: 'Best Brunch Spots in San Luis Potosí', labelEs: 'Mejores Lugares de Brunch en San Luis Potosí' },
             { href: '/farmers-markets-san-luis-potosi', label: 'Farmers Markets in SLP', labelEs: 'Tianguis y Mercados en SLP' },
             { href: '/food-festivals-san-luis-potosi', label: 'Food Festivals in SLP', labelEs: 'Festivales Gastronómicos en SLP' },
             { href: '/traditional-cuisine', label: 'Traditional Potosino Cuisine', labelEs: 'Cocina Tradicional Potosina' },
             { href: '/restaurants', label: 'Restaurant Directory', labelEs: 'Directorio de Restaurantes' },
+            { href: '/blog/cost-of-living-san-luis-potosi-2026', label: 'Cost of Living in San Luis Potosí (2026)', labelEs: 'Costo de Vida en San Luis Potosí (2026)' },
+            { href: '/blog/where-to-stay-san-luis-potosi-2026', label: 'Where to Stay in San Luis Potosí (2026)', labelEs: 'Dónde Hospedarte en San Luis Potosí (2026)' },
           ]} />
         </section>
       </main>

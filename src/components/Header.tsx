@@ -104,6 +104,13 @@ export default function Header() {
               {t('nav.explore')}
             </Link>
             <Link
+              href="/events/this-week"
+              onClick={closeMenu}
+              className="block py-2.5 px-3 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-all duration-150 active:scale-98 font-medium"
+            >
+              {t('nav.thisWeek', 'This Week')}
+            </Link>
+            <Link
               href="/resources"
               onClick={closeMenu}
               className="block py-2.5 px-3 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-all duration-150 active:scale-98 font-medium"

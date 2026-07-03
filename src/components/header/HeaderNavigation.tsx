@@ -82,6 +82,7 @@ const HeaderNavigation = memo(function HeaderNavigation() {
       <Link href="/" className={linkClass('/')}>{t('nav.home')}</Link>
       <Link href="/places" className={linkClass('/places')}>{t('nav.explore')}</Link>
       <Link href="/events" className={linkClass('/events')}>{t('nav.events')}</Link>
+      <Link href="/events/this-week" className={linkClass('/events/this-week')}>{t('nav.thisWeek', 'This Week')}</Link>
       <Link href="/blog" className={linkClass('/blog')}>{t('nav.blog')}</Link>
 
       {/* More dropdown */}

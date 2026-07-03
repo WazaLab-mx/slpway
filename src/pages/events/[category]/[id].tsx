@@ -16,9 +16,12 @@ import { supabase } from '@/lib/supabase';
 import { buildEventPath, buildEventSlug, extractIdPrefix, isFullUuid } from '@/lib/event-slug';
 import SEO from '@/components/common/SEO';
 import AdUnit from '@/components/common/AdUnit';
+import NewsletterBanner from '@/components/NewsletterBanner';
 import RelatedContent from '@/components/common/RelatedContent';
 import { relatedLinksForEvent } from '@/lib/related-links';
+import { ConversionEvents } from '@/lib/analytics';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 interface EventDetailProps {
   event: Event | null;
@@ -160,6 +163,7 @@ const formatTime = (dateString: string) => {
 
 export default function EventDetail({ event, relatedEvents }: EventDetailProps) {
   const router = useRouter();
+  const { t } = useTranslation('common');
 
   if (router.isFallback) {
     return (
@@ -354,6 +358,15 @@ export default function EventDetail({ event, relatedEvents }: EventDetailProps) 
         </div>
       </section>
 
+      {/* Newsletter capture — the event audience (locals planning their week)
+          is exactly the newsletter audience, so it sits high on the page.
+          Statically rendered compact card: no layout shift. */}
+      <section className="px-4 pt-8 bg-white">
+        <div className="container mx-auto max-w-4xl">
+          <NewsletterBanner variant="minimal" />
+        </div>
+      </section>
+
       {/* Event Details */}
       <section className="py-16 px-4 bg-white">
         <div className="container mx-auto">
@@ -369,6 +382,21 @@ export default function EventDetail({ event, relatedEvents }: EventDetailProps) 
 
               <div className="mb-12">
                 <AdUnit placement="in-article" />
+              </div>
+
+              {/* Business advertising CTA */}
+              <div className="rounded-2xl border border-gray-200 bg-gray-50 p-6 flex flex-col sm:flex-row sm:items-center gap-4">
+                <div className="flex-1">
+                  <p className="font-bold text-gray-900">{t('eventBusinessCta.question')}</p>
+                  <p className="text-sm text-gray-600">{t('eventBusinessCta.pitch')}</p>
+                </div>
+                <Link
+                  href="/media-kit"
+                  onClick={() => ConversionEvents.ctaClick('advertise_inquiry', 'event_page', router.asPath)}
+                  className="inline-flex items-center justify-center whitespace-nowrap px-5 py-2.5 rounded-full bg-gray-900 text-white text-sm font-semibold hover:bg-gray-800 transition-colors"
+                >
+                  {t('eventBusinessCta.cta')}
+                </Link>
               </div>
             </div>
 
@@ -443,6 +471,7 @@ export default function EventDetail({ event, relatedEvents }: EventDetailProps) 
                           src={relatedEvent.image_url}
                           alt={relatedEvent.title}
                           fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                           className="object-cover"
                         />
                       </div>

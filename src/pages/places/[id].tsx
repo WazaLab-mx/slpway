@@ -132,11 +132,21 @@ export default function PlacePage({ place, error }: { place: Place | null; error
     ? place.category.charAt(0).toUpperCase() + place.category.slice(1).replace('-', ' ')
     : 'Place';
 
+  // Food places get "Menu" in the title; everything else gets "Prices".
+  const isFoodPlace = ['restaurant', 'cafe', 'bar', 'local-food', 'food', 'bakery'].includes(place.category || '');
+  const isEs = router.locale === 'es';
+  const seoTitle = isEs
+    ? `${place.name} — ${categoryLabel} en San Luis Potosí: horarios y ubicación`
+    : `${place.name} — ${categoryLabel} in San Luis Potosí: Hours, ${isFoodPlace ? 'Menu' : 'Prices'} & Location`;
+  const seoDescription = isEs
+    ? place.description || `Descubre ${place.name} en San Luis Potosí. ${place.address ? `Ubicado en ${place.address}.` : ''} Horarios, reseñas y cómo llegar en San Luis Way.`
+    : place.description || `Discover ${place.name} in San Luis Potosí. ${place.address ? `Located at ${place.address}.` : ''} Find hours, reviews, and more on San Luis Way.`;
+
   return (
     <>
       <SEO
-        title={`${place.name} — ${categoryLabel} in San Luis Potosí`}
-        description={place.description || `Discover ${place.name} in San Luis Potosí. ${place.address ? `Located at ${place.address}.` : ''} Find hours, reviews, and more on San Luis Way.`}
+        title={seoTitle}
+        description={seoDescription}
         keywords={`${place.name}, ${place.category || 'place'}, San Luis Potosí, SLP, ${place.tags?.join(', ') || ''}`}
         ogImage={place.imageUrl || '/images/logo.jpeg'}
         structuredData={buildPlaceStructuredData(place)}

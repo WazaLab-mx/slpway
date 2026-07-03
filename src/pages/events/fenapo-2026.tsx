@@ -300,6 +300,52 @@ export default function Fenapo2026() {
         </div>
       </section>
 
+      {/* Tickets & Prices */}
+      <section id="tickets" className="py-16 px-4 bg-gray-900 text-white">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold font-serif mb-3">{t('fenapo2026.tickets.title')}</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">{t('fenapo2026.tickets.subtitle')}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div className="bg-gray-800 rounded-2xl p-6 border border-green-900/60">
+              <h3 className="font-bold text-lg text-green-400 mb-3 flex items-center gap-2">
+                <span aria-hidden>🎟️</span>
+                {t('fenapo2026.tickets.entryTitle')}
+              </h3>
+              <p className="text-gray-300 text-sm leading-relaxed">{t('fenapo2026.tickets.entryDesc')}</p>
+            </div>
+            <div className="bg-gray-800 rounded-2xl p-6 border border-amber-900/60">
+              <h3 className="font-bold text-lg text-amber-300 mb-3 flex items-center gap-2">
+                <TicketIcon className="w-5 h-5" />
+                {t('fenapo2026.tickets.palenqueTitle')}
+              </h3>
+              <p className="text-gray-300 text-sm leading-relaxed">{t('fenapo2026.tickets.palenqueDesc')}</p>
+            </div>
+          </div>
+          <div className="bg-purple-950/40 border border-purple-800/50 rounded-2xl p-6">
+            <h3 className="font-bold text-lg text-purple-300 mb-2">{t('fenapo2026.tickets.lineupTitle')}</h3>
+            <p className="text-gray-300 text-sm leading-relaxed mb-4">{t('fenapo2026.tickets.lineupDesc')}</p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/blog/fenapo-2026-artistas-cartel-completo"
+                className="inline-flex items-center gap-2 bg-purple-700 hover:bg-purple-600 text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-colors"
+              >
+                {t('fenapo2026.tickets.lineupCta')}
+                <span aria-hidden>→</span>
+              </Link>
+              <Link
+                href="/events/this-week"
+                className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-colors"
+              >
+                {t('fenapo2026.tickets.thisWeekCta')}
+                <span aria-hidden>→</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Confirmed Artists */}
       <section id="artists" className="py-16 px-4 bg-gray-900 text-white">
         <div className="container mx-auto max-w-5xl">
@@ -495,6 +541,32 @@ export default function Fenapo2026() {
                 <p className="font-bold text-white mb-2">{t(`fenapo2026.faq.q${i + 1}`)}</p>
                 <p className="text-gray-400 text-sm leading-relaxed">{t(`fenapo2026.faq.a${i + 1}`)}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related guides */}
+      <section className="py-16 px-4 bg-gray-900 text-white">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-2xl font-bold font-serif mb-8 text-center">{t('fenapo2026.related.title')}</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {(
+              [
+                { href: '/blog/fenapo-2026-artistas-cartel-completo', key: 'artistas' },
+                { href: '/blog/where-to-stay-san-luis-potosi-2026', key: 'stay' },
+                { href: '/blog/is-san-luis-potosi-safe-2026', key: 'safe' },
+                { href: '/events/this-week', key: 'thisWeek' },
+              ] as const
+            ).map(({ href, key }) => (
+              <Link
+                key={key}
+                href={href}
+                className="flex items-center gap-3 bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-purple-700 rounded-xl p-4 text-sm font-semibold text-gray-200 transition-colors"
+              >
+                <span className="text-purple-400" aria-hidden>→</span>
+                {t(`fenapo2026.related.${key}`)}
+              </Link>
             ))}
           </div>
         </div>

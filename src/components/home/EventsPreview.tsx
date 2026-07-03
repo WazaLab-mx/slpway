@@ -111,6 +111,20 @@ export default function EventsPreview({ events }: EventsPreviewProps) {
           }
         `}</style>
 
+        {/* This-week deep link — routes weekly-intent searches to /events/this-week */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/events/this-week"
+            className="inline-flex items-center gap-3 bg-primary/10 hover:bg-primary/20 border border-primary/30 text-primary-900 px-8 py-4 rounded-full font-semibold transition-all group"
+          >
+            <CalendarIcon className="w-5 h-5 text-primary" />
+            {t('homepage.events.thisWeek')}
+            <svg className="w-5 h-5 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </div>
+
         <div className="mt-12 text-center md:hidden">
           <Link
             href="/events/all"

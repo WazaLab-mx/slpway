@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { EnvelopeIcon, XMarkIcon, SparklesIcon, CalendarDaysIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { CheckCircleIcon } from '@heroicons/react/24/solid';
 import { useTranslation } from 'next-i18next';
+import { ConversionEvents } from '@/lib/analytics';
 
 interface NewsletterBannerProps {
   variant?: 'hero' | 'mid-content' | 'sticky' | 'minimal' | 'blog-end';
@@ -37,6 +38,12 @@ const NewsletterBanner: React.FC<NewsletterBannerProps> = ({
       const data = await response.json();
 
       if (!response.ok) throw new Error(data.message || 'Subscription failed');
+
+      // GA4 + Meta + Google Ads conversion. Was never fired from this
+      // component before, so banner signups were invisible in analytics.
+      if (!data.alreadySubscribed) {
+        ConversionEvents.newsletterSignup(`website_${variant}`);
+      }
 
       setStatus('success');
       setMessage(data.alreadySubscribed ? t('newsletterBanner.alreadySubscribed') : t('newsletterBanner.welcomeAboard'));

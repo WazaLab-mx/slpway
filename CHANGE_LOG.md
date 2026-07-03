@@ -4,6 +4,29 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-02] feat(seo): resolución de los 10 hallazgos de la auditoría (3 agentes en paralelo)
+
+**Auditoría base:** scratchpad/seo-audit-2026-07-02.md (GSC+GA4+PSI). Todo validado en local antes del único deploy.
+
+**Eventos y redirects (hallazgos #1, #10):**
+- /events/feria-de-la-enchilada-2026 restaurada (285 impr rankeando a un 404): recap 2026 verificado (4–12 abr, Soledad; enchilada potosina = Patrimonio Cultural del estado) + vigía 2027.
+- /events/copa-potosi-2026 (calendario por fases verificado + resultados finales) y /events/medio-maraton-uaslp-2026 (27-sep-2026, inscripciones; corregida edición 42→43 con fuente).
+- 308s de las 3 URLs uuid en next.config.js. Estándar: evento expirado redirige, nunca 404.
+
+**Contenido/titles (hallazgos #2–#6, tortas):**
+- FENAPO-2026: H1 "(Feria Nacional Potosina)", secciones Boletos (slpfastticket.com)/Palenque/Cómo llegar, links a artistas + guías. 4 locales.
+- Breakfast/brunch des-canibalizados: títulos por intención + cross-links de ancla exacta (código + Supabase vía scripts/apply-seo-title-fixes-2026-07.js idempotente).
+- Rewrites: family-friendly (Parks for Kids...), cultural/festivals (2026 Dates Tickets), this-week (What's Happening This Week), template de places ({name} — {category}: Hours, Menu & Location).
+- Links internos a los 11 posts invisibles desde farmers-markets, tangamanga I/II, fenapo, breakfast. "This Week" en Header (desktop+mobile) y homepage.
+- Tortas Oscar: canonical de brand → place (prop canonicalUrl en SEO.tsx).
+
+**Conversiones/perf (hallazgos #7–#9):**
+- NewsletterBanner (minimal) tras hero en events/[category]/[id] + CTA "¿Tienes un negocio?" → /media-kit con ctaClick. **Fix raíz: NewsletterBanner nunca disparaba newsletterSignup a GA4** — conversiones invisibles en todo el sitio, ahora sí cuentan.
+- /places: payload -53% (198→94 KB, proyección de 12 campos vs select *), 4→2 queries, filtro de precio reparado (price_level→priceLevel era no-op). **Fix raíz: ISR de /places fallaba 500** por lh5.googleusercontent no permitido en next/image → allowlist *.googleusercontent.com.
+- Hreflang: causa raíz = canonicals EN hardcodeados duplicados en 5 páginas de recursos (Google descartaba el cluster y rankeaba /de/ para "is san luis potosi safe") → removidos. Canonical dedupe global con key="canonical" compartido (HreflangAlternates/SEO/BusinessSeo); el de página gana. "jergas fest" /ja/: contenido idéntico en 4 locales — pendiente decisión de producto (localizar o canonical a /es/).
+
+---
+
 ## [2026-07-02] feat(blog): badge automático de fact-check en posts
 
 `blog/[slug].tsx` detecta en build si existe `public/factchecks/<slug>.md` y muestra bajo el byline un pill verde "Artículo verificado — ver reporte de fact-check" (EN/ES) enlazando a `/blog/factchecks/<slug>`. Cero trabajo por post: los 24 posts con reporte (13 previos que nunca tuvieron link, incl. SMA, + 11 nuevos) quedan enlazados automáticamente, y cualquier post futuro se enlaza al publicar su .md. Verificado en local: badge presente EN+ES, ausente en posts sin reporte, href correcto.

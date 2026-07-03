@@ -418,7 +418,7 @@ export default function SchoolGuidePage() {
         <meta property="og:description" content="Complete guide to education options in San Luis Potosí. Find the perfect school for your children with detailed information on enrollment, costs, and curriculum." />
         <meta property="og:url" content="https://www.sanluisway.com/resources/school-guide" />
         <meta property="og:type" content="article" />
-        <link rel="canonical" href="https://www.sanluisway.com/resources/school-guide" />
+        {/* Canonical emitted globally (locale-aware) by HreflangAlternates in _app.tsx. */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

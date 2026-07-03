@@ -1,5 +1,4 @@
 import { GetStaticProps } from 'next';
-import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -142,9 +141,9 @@ export default function EventsIndex({ events, categoryCounts }: EventsPageProps)
         }}
       />
 
-      <Head>
-        <link rel="canonical" href="https://www.sanluisway.com/events" />
-      </Head>
+      {/* Canonical emitted globally (locale-aware) by HreflangAlternates in _app.tsx.
+          The hardcoded EN canonical that lived here conflicted with it on the
+          /es, /de and /ja variants and broke the hreflang cluster. */}
 
       {hasHero && <EventHeroCarousel events={heroEvents} />}
 

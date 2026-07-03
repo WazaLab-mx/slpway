@@ -507,7 +507,7 @@ export default function HealthGuidePage() {
         <title>Ultimate Health Services Guide San Luis Potosí | Healthcare for Expats</title>
         <meta name="description" content="Complete guide to healthcare in San Luis Potosí. Hospitals, clinics, specialists, insurance options, pharmacies, and step-by-step guides for expats." />
         <meta name="keywords" content="San Luis Potosí healthcare, hospitals SLP, doctors Mexico, health insurance expats, pharmacies San Luis Potosí" />
-        <link rel="canonical" href="https://www.sanluisway.com/resources/health-guide" />
+        {/* Canonical emitted globally (locale-aware) by HreflangAlternates in _app.tsx. */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

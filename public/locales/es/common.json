@@ -48,6 +48,7 @@
     "resources": "Recursos",
     "spouseHub": "Spouse Hub",
     "events": "Eventos",
+    "thisWeek": "Esta semana",
     "blog": "Blog",
     "about": "Acerca de",
     "faq": "Preguntas Frecuentes",
@@ -308,6 +309,7 @@
       "title": "Calendario Cultural",
       "description": "Desde exposiciones de arte hasta festivales tradicionales",
       "viewAll": "Ver Todos los Eventos",
+      "thisWeek": "Qué hacer esta semana en San Luis Potosí",
       "until": "Hasta"
     },
     "culture": {
@@ -1478,6 +1480,11 @@
       "description": "No estás sola. Recursos, comunidad, actividades, voluntariado, grupos de mamás e ideas de trabajo para parejas acompañantes en SLP."
     }
   },
+  "eventBusinessCta": {
+    "question": "¿Tienes un negocio?",
+    "pitch": "Llega a quienes planean su semana en SLP — anúnciate.",
+    "cta": "Anúnciate"
+  },
   "newsletterBanner": {
     "freeWeekly": "Newsletter Semanal Gratuito",
     "insiderGuide": "Tu Guía Insider de",
@@ -1783,16 +1790,16 @@
   },
   "fenapo2026": {
     "seo": {
-      "title": "FENAPO 2026 — Feria Nacional Potosina | San Luis Potosí",
-      "description": "FENAPO 2026: La feria más tradicional de México, del 7 al 30 de agosto en San Luis Potosí. Cartel completo: Katy Perry, Mötley Crüe, Bizarrap, Grupo Firme, Los Tigres del Norte. Foro de las Estrellas gratis, Palenque, gastronomía y juegos mecánicos.",
+      "title": "FENAPO 2026 (Feria Nacional Potosina) — la feria nacional de México: fechas, cartel y boletos",
+      "description": "FENAPO 2026 — la Feria Nacional Potosina, la feria nacional de México — del 7 al 30 de agosto en San Luis Potosí. Cartel completo: Katy Perry, Mötley Crüe, Bizarrap, Grupo Firme, Los Tigres del Norte. Entrada gratis, Foro de las Estrellas gratis, boletos del Palenque, gastronomía y juegos mecánicos.",
       "keywords": "fenapo 2026, feria nacional potosina, fenapo san luis potosi, cartelera fenapo 2026, grupo firme fenapo, palenque fenapo, teatro del pueblo fenapo"
     },
     "hero": {
       "badge": "EDICIÓN 2026",
       "date": "7–30 de agosto, 2026",
-      "title": "FENAPO 2026",
-      "subtitle": "Feria Nacional Potosina",
-      "description": "La feria más tradicional de México regresa a San Luis Potosí con conciertos, gastronomía, cultura y entretenimiento para toda la familia. Cartel completo: Katy Perry, Mötley Crüe, Bizarrap, Grupo Firme, Los Tigres del Norte, Gloria Trevi y muchos más.",
+      "title": "FENAPO 2026 (Feria Nacional Potosina)",
+      "subtitle": "La feria nacional de México, en San Luis Potosí",
+      "description": "La FENAPO — Feria Nacional Potosina — es la feria nacional de México, y regresa a San Luis Potosí con conciertos, gastronomía, cultura y entretenimiento para toda la familia. Cartel completo: Katy Perry, Mötley Crüe, Bizarrap, Grupo Firme, Los Tigres del Norte, Gloria Trevi y muchos más.",
       "cta": "Sitio oficial",
       "ctaArtists": "Ver artistas",
       "location": "San Luis Potosí, capital del estado de San Luis Potosí, México"
@@ -1834,6 +1841,25 @@
       "palenqueNote": "14 noches · boleto",
       "deepDiveCta": "Ver la guía completa de artistas y qué noches elegir",
       "freeNotice": "Los conciertos del Foro de las Estrellas, juegos mecánicos, estacionamiento y entrada a la feria serán gratuitos este año por decreto del Gobernador de San Luis Potosí."
+    },
+    "tickets": {
+      "title": "Boletos FENAPO 2026 y precios",
+      "subtitle": "La versión corta: casi todo es gratis — solo el Palenque cobra entrada.",
+      "entryTitle": "Entrada a la feria: gratis",
+      "entryDesc": "La entrada al recinto ferial es gratuita en 2026 — igual que los juegos mecánicos, el estacionamiento y todos los conciertos del Foro de las Estrellas (antes Teatro del Pueblo), por decreto del gobernador del estado. No necesitas boleto para nada de eso: llega temprano en las noches fuertes para quedar cerca del escenario.",
+      "palenqueTitle": "Boletos del Palenque",
+      "palenqueDesc": "El Palenque es el único foro con costo en la FENAPO. Los precios varían por artista y zona: General $700–$1,300 MXN, Dorada $1,100–$3,600, VIP $1,700–$4,600, Diamante $1,900–$5,500. Compra únicamente en slpfastticket.com — el canal oficial anunciado por el gobierno del estado — o en la taquilla del Palenque. Evita revendedores.",
+      "lineupTitle": "¿Qué noche del Palenque vale la pena?",
+      "lineupDesc": "Nuestra guía completa de artistas desglosa las 14 noches con boleto del Palenque y los 21 conciertos gratis del Foro de las Estrellas, con tips de qué shows se agotan primero.",
+      "lineupCta": "Ver la guía completa del cartel FENAPO 2026",
+      "thisWeekCta": "Ver todo lo que hay esta semana en SLP"
+    },
+    "related": {
+      "title": "Guías relacionadas",
+      "artistas": "Cartel FENAPO 2026: todos los artistas, noche por noche",
+      "stay": "Dónde hospedarte en San Luis Potosí (guía 2026)",
+      "safe": "¿Es seguro San Luis Potosí? Lo que dicen los datos 2026",
+      "thisWeek": "Qué hacer esta semana en San Luis Potosí"
     },
     "areas": {
       "title": "Áreas de la Feria",
@@ -1888,7 +1914,7 @@
       "venue": "Recinto Ferial de la FENAPO",
       "address": "Av. Fco. Martínez de la Vega No. 255, San Luis Potosí",
       "byCarTitle": "En auto",
-      "byCarDesc": "Estacionamiento amplio dentro y fuera del recinto. Desde el centro, toma Av. Salvador Nava hacia el sur (~15 min). Espera tráfico en horas pico de la feria.",
+      "byCarDesc": "Estacionamiento amplio dentro y fuera del recinto — gratuito en 2026 por anuncio del Gobernador. Desde el centro, toma Av. Salvador Nava hacia el sur (~15 min). Espera tráfico en horas pico de la feria.",
       "byTransitTitle": "Transporte público",
       "byTransitDesc": "Rutas de camión: 10, 12, 17. Servicios especiales de transporte operan durante la feria. Taxis y Uber disponibles.",
       "byPlaneTitle": "Desde el aeropuerto",
@@ -1915,7 +1941,7 @@
       "q3": "¿La entrada general es gratuita?",
       "a3": "Sí. En 2026 la entrada al recinto ferial, los conciertos del Foro de las Estrellas, los juegos mecánicos y el estacionamiento son gratuitos por decreto del Gobernador. Solo el Palenque requiere boleto aparte.",
       "q4": "¿Hay estacionamiento?",
-      "a4": "Sí, hay estacionamiento dentro del recinto y en lotes aledaños. El costo varía. Llega temprano los fines de semana para encontrar lugar.",
+      "a4": "Sí — y en 2026 el estacionamiento dentro del recinto es gratuito por anuncio del Gobernador. Los lotes privados aledaños pueden cobrar. Llega temprano los fines de semana para encontrar lugar.",
       "q5": "¿Se puede llevar comida al recinto?",
       "a5": "No se permite ingresar alimentos ni bebidas al recinto. Hay una amplia zona gastronómica con opciones para todos los presupuestos.",
       "q6": "¿Cuál es el horario de la feria?",

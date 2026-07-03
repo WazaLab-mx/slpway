@@ -26,11 +26,11 @@ export default function FestivalsPage() {
   return (
     <>
       <Head>
-        <title>Festivals &amp; Cultural Events in San Luis Potosí | San Luis Way</title>
-        <meta name="description" content="Discover the vibrant festivals and cultural events of San Luis Potosí, with expat-friendly guides explaining traditions and customs." />
-        <meta name="keywords" content="San Luis Potosí festivals, cultural events, traditional celebrations, Feria Nacional Potosina, Festival de la Luz, Día de los Muertos" />
-        <meta property="og:title" content="Festivals & Cultural Events in San Luis Potosí | San Luis Way" />
-        <meta property="og:description" content="Experience the vibrant cultural celebrations and traditions of San Luis Potosí." />
+        <title>Food &amp; Cultural Festivals in San Luis Potosí 2026 — Dates, Tickets, Free Events | San Luis Way</title>
+        <meta name="description" content="Food and cultural festivals in San Luis Potosí for 2026: dates, tickets and free events — FENAPO, Festival de Primavera, Procesión del Silencio, Día de Muertos and more." />
+        <meta name="keywords" content="food festivals San Luis Potosí, San Luis Potosí festivals 2026, cultural events, traditional celebrations, Feria Nacional Potosina, Festival de la Luz, Día de los Muertos, free events SLP" />
+        <meta property="og:title" content="Food & Cultural Festivals in San Luis Potosí 2026 — Dates, Tickets, Free Events" />
+        <meta property="og:description" content="Food and cultural festivals in San Luis Potosí for 2026: dates, tickets and free events — FENAPO, Festival de Primavera, Procesión del Silencio and more." />
         <meta property="og:image" content="/images/festivals.jpeg" />
         <script
           type="application/ld+json"
@@ -38,8 +38,8 @@ export default function FestivalsPage() {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Article',
-              headline: 'Festivals & Cultural Events in San Luis Potosí',
-              description: 'Discover the vibrant festivals and cultural events of San Luis Potosí, with expat-friendly guides explaining traditions and customs.',
+              headline: 'Food & Cultural Festivals in San Luis Potosí 2026 — Dates, Tickets, Free Events',
+              description: 'Food and cultural festivals in San Luis Potosí for 2026: dates, tickets and free events — FENAPO, Festival de Primavera, Procesión del Silencio, Día de Muertos and more.',
               datePublished: '2025-01-01',
               dateModified: '2026-04-10',
               author: {

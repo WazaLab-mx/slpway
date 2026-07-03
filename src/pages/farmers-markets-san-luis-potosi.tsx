@@ -253,6 +253,9 @@ export default function FarmersMarketsSLP() {
             { href: '/traditional-cuisine', label: 'Traditional Potosino Cuisine', labelEs: 'Cocina Tradicional Potosina' },
             { href: '/free-events-san-luis-potosi', label: 'Free Events in SLP', labelEs: 'Eventos Gratis en SLP' },
             { href: '/places', label: 'Browse All Places in SLP', labelEs: 'Todos los Lugares en SLP' },
+            { href: '/blog/cost-of-living-san-luis-potosi-2026', label: 'Cost of Living in San Luis Potosí (2026)', labelEs: 'Costo de Vida en San Luis Potosí (2026)' },
+            { href: '/blog/where-to-stay-san-luis-potosi-2026', label: 'Where to Stay in San Luis Potosí (2026)', labelEs: 'Dónde Hospedarte en San Luis Potosí (2026)' },
+            { href: '/blog/day-trips-from-san-luis-potosi-2026', label: 'Day Trips from San Luis Potosí (2026)', labelEs: 'Escapadas de un Día desde San Luis Potosí (2026)' },
           ]} />
         </section>
       </main>

@@ -48,6 +48,7 @@
     "resources": "Resources",
     "spouseHub": "Spouse Hub",
     "events": "Events",
+    "thisWeek": "This Week",
     "blog": "Blog",
     "about": "About",
     "faq": "FAQ",
@@ -308,6 +309,7 @@
       "title": "Cultural Calendar",
       "description": "From art exhibitions to traditional festivals",
       "viewAll": "View All Events",
+      "thisWeek": "What's happening this week in San Luis Potosí",
       "until": "Until"
     },
     "culture": {
@@ -1478,6 +1480,11 @@
       "description": "You're not alone. Resources, community, activities, volunteering, mom groups, and work ideas for accompanying partners in SLP."
     }
   },
+  "eventBusinessCta": {
+    "question": "Own a business?",
+    "pitch": "Reach the people planning their week in SLP — advertise with us.",
+    "cta": "Advertise with us"
+  },
   "newsletterBanner": {
     "freeWeekly": "Free Weekly Newsletter",
     "insiderGuide": "Your Insider Guide to",
@@ -1783,16 +1790,16 @@
   },
   "fenapo2026": {
     "seo": {
-      "title": "FENAPO 2026 — National Potosino Fair | San Luis Potosí",
-      "description": "FENAPO 2026: Mexico's most traditional fair, August 7–30 in San Luis Potosí. Full lineup: Katy Perry, Mötley Crüe, Bizarrap, Grupo Firme, Los Tigres del Norte. Free Foro de las Estrellas, Palenque, gastronomy and rides.",
+      "title": "FENAPO 2026 (Feria Nacional Potosina) — Mexico's National Fair: Dates, Lineup & Tickets",
+      "description": "FENAPO 2026 — the Feria Nacional Potosina, Mexico's national fair — runs August 7–30 in San Luis Potosí. Full lineup: Katy Perry, Mötley Crüe, Bizarrap, Grupo Firme, Los Tigres del Norte. Free entry, free Foro de las Estrellas concerts, Palenque tickets, gastronomy and rides.",
       "keywords": "fenapo 2026, feria nacional potosina, fenapo san luis potosi, fenapo lineup 2026, grupo firme fenapo, palenque fenapo, teatro del pueblo"
     },
     "hero": {
       "badge": "2026 EDITION",
       "date": "August 7–30, 2026",
-      "title": "FENAPO 2026",
-      "subtitle": "Feria Nacional Potosina",
-      "description": "Mexico's most traditional fair returns to San Luis Potosí with concerts, gastronomy, culture and entertainment for the whole family. Full lineup: Katy Perry, Mötley Crüe, Bizarrap, Grupo Firme, Los Tigres del Norte, Gloria Trevi and many more.",
+      "title": "FENAPO 2026 (Feria Nacional Potosina)",
+      "subtitle": "Mexico's National Fair in San Luis Potosí",
+      "description": "FENAPO — the Feria Nacional Potosina — is Mexico's national fair, and it returns to San Luis Potosí with concerts, gastronomy, culture and entertainment for the whole family. Full lineup: Katy Perry, Mötley Crüe, Bizarrap, Grupo Firme, Los Tigres del Norte, Gloria Trevi and many more.",
       "cta": "Official website",
       "ctaArtists": "See artists",
       "location": "San Luis Potosí, capital of the state of San Luis Potosí, Mexico"
@@ -1834,6 +1841,25 @@
       "palenqueNote": "14 nights · ticketed",
       "deepDiveCta": "Read the full artist guide and which nights to pick",
       "freeNotice": "Foro de las Estrellas concerts, mechanical rides, parking, and fair entry will be free this year per the Governor of San Luis Potosí."
+    },
+    "tickets": {
+      "title": "FENAPO 2026 Tickets & Prices",
+      "subtitle": "The short version: almost everything is free — only the Palenque charges admission.",
+      "entryTitle": "Fair entry: free",
+      "entryDesc": "Entry to the fairgrounds is free in 2026 — and so are the mechanical rides, parking and every Foro de las Estrellas (formerly Teatro del Pueblo) concert, by decree of the state governor. No ticket needed for any of them: arrive early on big nights to get close to the stage.",
+      "palenqueTitle": "Palenque tickets",
+      "palenqueDesc": "The Palenque is the only ticketed venue at FENAPO. Prices vary by artist and zone: General $700–$1,300 MXN, Dorada $1,100–$3,600, VIP $1,700–$4,600, Diamante $1,900–$5,500. Buy only at slpfastticket.com — the official channel announced by the SLP state government — or at the Palenque box office. Avoid resellers.",
+      "lineupTitle": "Which Palenque night is worth it?",
+      "lineupDesc": "Our full artist guide breaks down all 14 ticketed Palenque nights and the 21 free Foro de las Estrellas concerts, with tips on which shows sell out first.",
+      "lineupCta": "See the full FENAPO 2026 lineup guide",
+      "thisWeekCta": "See everything happening in SLP this week"
+    },
+    "related": {
+      "title": "Related guides",
+      "artistas": "FENAPO 2026 lineup: every artist, night by night",
+      "stay": "Where to stay in San Luis Potosí (2026 guide)",
+      "safe": "Is San Luis Potosí safe? What the 2026 data says",
+      "thisWeek": "What's happening in San Luis Potosí this week"
     },
     "areas": {
       "title": "Fair Areas",
@@ -1888,7 +1914,7 @@
       "venue": "Recinto Ferial de la FENAPO",
       "address": "Av. Fco. Martínez de la Vega No. 255, San Luis Potosí",
       "byCarTitle": "By car",
-      "byCarDesc": "Ample parking inside and outside the venue. From downtown, take Av. Salvador Nava south (~15 min). Expect traffic during peak fair hours.",
+      "byCarDesc": "Ample parking inside and outside the venue — free in 2026 per the Governor's announcement. From downtown, take Av. Salvador Nava south (~15 min). Expect traffic during peak fair hours.",
       "byTransitTitle": "Public transit",
       "byTransitDesc": "Bus routes: 10, 12, 17. Special transport services operate during the fair. Taxis and Uber available.",
       "byPlaneTitle": "From the airport",
@@ -1915,7 +1941,7 @@
       "q3": "Is general admission free?",
       "a3": "Yes. In 2026 entry to the fairgrounds, the Foro de las Estrellas concerts, mechanical rides and parking are all free by the Governor's decree. Only the Palenque requires a separate ticket.",
       "q4": "Is there parking?",
-      "a4": "Yes, parking is available inside the venue and in nearby lots. Cost varies. Arrive early on weekends to find a spot.",
+      "a4": "Yes — and in 2026 parking inside the venue is free per the Governor's announcement. Nearby private lots may charge. Arrive early on weekends to find a spot.",
       "q5": "Can I bring food into the venue?",
       "a5": "Outside food and drinks are not allowed. There's a large gastronomy zone with options for all budgets.",
       "q6": "What are the fair hours?",

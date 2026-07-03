@@ -19,7 +19,10 @@ const nextConfig = {
       { protocol: 'https', hostname: 'static.wixstatic.com' },
       { protocol: 'https', hostname: 'assets.seobotai.com' },
       { protocol: 'https', hostname: 'images.unsplash.com' },
-      { protocol: 'https', hostname: 'lh3.googleusercontent.com' },
+      // Google Places photos rotate across lhN subdomains (lh3, lh5, ...).
+      // Only lh3 was allowed, so next/image threw for lh5-hosted rows and
+      // the /places ISR regeneration failed with a 500.
+      { protocol: 'https', hostname: '*.googleusercontent.com' },
       { protocol: 'https', hostname: 'sanluisway.com' },
       { protocol: 'https', hostname: 'www.sanluisway.com' },
     ],
@@ -172,6 +175,32 @@ const nextConfig = {
       {
         source: '/events/xantolo-2025',
         destination: '/cultural/festivals',
+        permanent: true,
+      },
+      // UUID event pages with real GSC equity → curated human-slug pages
+      // (2026-07 SEO audit). The regex catches both the raw uuid URL
+      // (/events/culinary/c119d963-...) and the slugified variant that ends
+      // with the 8-hex uuid prefix (/events/culinary/feria-...-c119d963).
+      // Next.js applies these to every locale (/es, /de, /ja) automatically.
+      {
+        // Feria Nacional de la Enchilada (event row deleted from DB;
+        // full uuid c119d963-767f-48ec-bf57-bc7bb5e5b640 per GSC).
+        source: '/events/culinary/:slug(.*c119d963.*)',
+        destination: '/events/feria-de-la-enchilada-2026',
+        permanent: true,
+      },
+      {
+        // Copa Potosí 2026 (event row deleted from DB;
+        // full uuid 047fcef9-d422-46e1-af57-f029c08144ce per GSC).
+        source: '/events/sports/:slug(.*047fcef9.*)',
+        destination: '/events/copa-potosi-2026',
+        permanent: true,
+      },
+      {
+        // Medio Maratón UASLP 2026 (row 395181a0-ee04-40a4-9895-c5da87f4c039
+        // still exists in Supabase; the curated page supersedes it).
+        source: '/events/sports/:slug(.*395181a0.*)',
+        destination: '/events/medio-maraton-uaslp-2026',
         permanent: true,
       },
     ];

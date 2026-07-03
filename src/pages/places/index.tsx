@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useMemo, useCallback } from 'react';
 import { useRouter } from 'next/router';
-import { Place, Service } from '@/types';
 import { supabase } from '@/lib/supabase';
 import SEO from '@/components/common/SEO';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -14,11 +13,28 @@ import AdUnit from '@/components/common/AdUnit';
 
 const LOGO_PLACEHOLDER = '/images/logo.jpeg';
 
+// Slim projection of a place/service row. Only the fields this page renders
+// or filters on are serialized into __NEXT_DATA__ — shipping full rows
+// (hours, coordinates, socials, timestamps, review blobs) for the entire
+// directory was the main driver of the 7s+ FCP on mobile.
+interface DirectoryEntry {
+  id: string;
+  name: string;
+  category: string;
+  description: string | null;
+  image_url: string | null;
+  phone: string | null;
+  website: string | null;
+  address: string | null;
+  location: string | null;
+  rating?: number | null;
+  priceLevel?: number | null;
+  featured: boolean;
+}
+
 interface PlacesPageProps {
-  places: Place[];
-  featuredPlaces: Place[];
-  services: Service[];
-  featuredServices: Service[];
+  places: DirectoryEntry[];
+  services: DirectoryEntry[];
 }
 
 const PlaceImage = ({ src, alt, className, sizes }: { src: string; alt: string; className?: string; sizes?: string }) => {
@@ -48,7 +64,7 @@ const PlaceImage = ({ src, alt, className, sizes }: { src: string; alt: string; 
 
 const ITEMS_PER_PAGE = 12;
 
-const PlacesPage: React.FC<PlacesPageProps> = ({ places, featuredPlaces, services, featuredServices }) => {
+const PlacesPage: React.FC<PlacesPageProps> = ({ places, services }) => {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState<'places' | 'services'>(
     (router.query.tab as string) === 'services' ? 'services' : 'places'
@@ -118,7 +134,12 @@ const PlacesPage: React.FC<PlacesPageProps> = ({ places, featuredPlaces, service
   const totalPages = Math.ceil(filteredAndSorted.length / ITEMS_PER_PAGE);
   const currentItems = filteredAndSorted.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE);
   const totalItems = activeTab === 'places' ? places.length : services.length;
-  const currentFeatured = activeTab === 'places' ? featuredPlaces : featuredServices;
+  // Featured entries are a subset of the main list (same created_at ordering),
+  // so derive them instead of serializing a second copy in page props.
+  const currentFeatured = useMemo(
+    () => (activeTab === 'places' ? places : services).filter((item) => item.featured).slice(0, 6),
+    [places, services, activeTab]
+  );
 
   const handleTabChange = (tab: 'places' | 'services') => {
     setActiveTab(tab);
@@ -542,59 +563,43 @@ const PlacesPage: React.FC<PlacesPageProps> = ({ places, featuredPlaces, service
   );
 };
 
+// Strip each row down to what the page actually renders/filters on.
+// Rows are fetched with select('*') (schema-safe) but only this slim shape
+// is serialized into the statically generated page.
+function toDirectoryEntry(row: Record<string, unknown>): DirectoryEntry {
+  const str = (key: string) => (typeof row[key] === 'string' && row[key] ? (row[key] as string) : null);
+  const num = (key: string) => (typeof row[key] === 'number' ? (row[key] as number) : null);
+  return {
+    id: String(row.id),
+    name: String(row.name ?? ''),
+    category: String(row.category ?? ''),
+    description: str('description'),
+    image_url: str('image_url'),
+    phone: str('phone'),
+    website: str('website'),
+    address: str('address'),
+    location: str('location'),
+    rating: num('rating'),
+    priceLevel: num('price_level'),
+    featured: row.featured === true || row.featured === 'true',
+  };
+}
+
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   try {
-    // Fetch all places
-    const { data: places, error: placesError } = await supabase
-      .from('places')
-      .select("*")
-      .order('created_at', { ascending: false });
+    const [placesResult, servicesResult] = await Promise.all([
+      supabase.from('places').select('*').order('created_at', { ascending: false }),
+      supabase.from('services').select('*').order('created_at', { ascending: false }),
+    ]);
 
-    if (placesError) {
-      console.error('Error fetching places:', placesError);
-    }
-
-    // Fetch featured places
-    const { data: featuredPlaces, error: featuredPlacesError } = await supabase
-      .from('places')
-      .select("*")
-      .eq('featured', true)
-      .order('created_at', { ascending: false })
-      .limit(6);
-
-    if (featuredPlacesError) {
-      console.error('Error fetching featured places:', featuredPlacesError);
-    }
-
-    // Fetch all services
-    const { data: services, error: servicesError } = await supabase
-      .from('services')
-      .select("*")
-      .order('created_at', { ascending: false });
-
-    if (servicesError) {
-      console.error('Error fetching services:', servicesError);
-    }
-
-    // Fetch featured services
-    const { data: featuredServices, error: featuredServicesError } = await supabase
-      .from('services')
-      .select("*")
-      .eq('featured', true)
-      .order('created_at', { ascending: false })
-      .limit(6);
-
-    if (featuredServicesError) {
-      console.error('Error fetching featured services:', featuredServicesError);
-    }
+    if (placesResult.error) console.error('Error fetching places:', placesResult.error);
+    if (servicesResult.error) console.error('Error fetching services:', servicesResult.error);
 
     return {
       props: {
         ...(await serverSideTranslations(locale ?? 'es', ['common'])),
-        places: places || [],
-        featuredPlaces: featuredPlaces || [],
-        services: services || [],
-        featuredServices: featuredServices || [],
+        places: (placesResult.data || []).map(toDirectoryEntry),
+        services: (servicesResult.data || []).map(toDirectoryEntry),
       },
       revalidate: 3600,
     };
@@ -604,9 +609,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       props: {
         ...(await serverSideTranslations(locale ?? 'es', ['common'])),
         places: [],
-        featuredPlaces: [],
         services: [],
-        featuredServices: [],
       },
       revalidate: 3600,
     };
