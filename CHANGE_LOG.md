@@ -4,6 +4,18 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-03] feat(i18n): traducción japonés — Ola 4 (6 posts ja-only)
+
+Fase final: posts que ya tenían alemán real pero content_ja vacío (renderizaban inglés bajo /ja/). Traducido SOLO content_ja, sin tocar content_de. 6 posts: leonora-carrington, potosino-art-history, mining-history-baroque, foreign-direct-investment, navigating-immigration, checklist-mudanza (scripts/translate-ja-<slug>.js).
+
+Verificado: content_ja real y no vacío en los 6, tag counts idénticos EN=JA (410/477/398/556/699/536), content_de INTACTO (byte-idéntico al valor previo), hrefs/img src byte-idénticos, cifras/nombres propios preservados (empresas BMW/GM/Bosch…, INM/FMM/UMA, Federico Silva, montos FDI, umbrales migratorios). Nombres propios en Latin (no katakana), registro です・ます.
+
+Decisión editorial: se EXCLUYEN 2 posts 2025 superados (cost-of-living-2025, guia-completa-rentar-2025) para no propagar info desactualizada al japonés — candidatos a redirect/retiro hacia sus versiones 2026.
+
+Progreso: 26/54 (de+ja 20/20 + 6 ja-only). Falta Ola 5: 6 ja-only restantes (fin-de-semana-familiar, top-5-cozy-cafes, san-luis-rey-tranvia, corazon-de-xoconostle, la-gran-via, ultimate-guide-living-expat).
+
+---
+
 ## [2026-07-03] feat(i18n): traducciones reales de/ja — Ola 3 (cierra de+ja 20/20)
 
 Tercera ola, 8 posts, mismo pipeline: renting, vs-queretaro, vs-san-miguel-allende, fenapo-familias, fenapo-artistas, fenapo-guia-preparacion, semana-santa, procesion-del-silencio. Con esto los 20 posts que estaban en espejo-inglés quedan traducidos de verdad a alemán y japonés.
