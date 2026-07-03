@@ -4,6 +4,18 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-03] feat(affiliate): +1 producto Mercado Libre (catre plegable) → 9 total
+
+Agregado catre plegable para acampar Raganet DP039 (MLM44295159) a AFFILIATE_PRODUCTS:
+- id catre-plegable-acampar, audience tourist, precio $780–1,400 MXN (oferta $779 / regular $1,399)
+- link afiliado meli.la/1wGPi8K, tags camping/hiking/huasteca/real-de-catorce/sierra
+- título + descripción en 4 idiomas (es/en/de/ja), imagen catre.webp 500x500
+- test actualizado 8→9 productos; aparece en páginas tourist (outdoors, visit, weekend-getaways)
+
+Nota sobre links ML: el "Generador de productos recomendados" de ML Afiliados enruta TODOS los links a través del perfil social del afiliado (/social/db20260410194942) POR DISEÑO — no es un bug. La comisión sí se rastrea (matt_tool=17146436 sobrevive hasta el producto). No existe opción "directo al producto" en ese programa; los links de vitrina pagan comisión. Pendiente decidido aparte: no se regeneran los 8 links existentes (ya pagan).
+
+---
+
 ## [2026-07-03] feat(cost): noticias del home migradas de Claude a OpenAI gpt-4o-mini
 
 El generador de noticias/titulares diarios del home usaba claude-sonnet-4-6 con web_search (caro). Migrado a OpenAI Responses API + gpt-4o-mini + tool web_search (fallback a web_search_preview). ~<1 centavo por corrida vs ~10-20x con Claude Sonnet; el cron corre 4x/día → ahorro recurrente grande.

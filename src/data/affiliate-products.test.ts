@@ -7,8 +7,8 @@ import {
 } from './affiliate-products';
 
 describe('affiliate-products data', () => {
-  it('exports exactly 8 products', () => {
-    expect(AFFILIATE_PRODUCTS).toHaveLength(8);
+  it('exports exactly 9 products', () => {
+    expect(AFFILIATE_PRODUCTS).toHaveLength(9);
   });
 
   it('every product has required fields with non-empty values', () => {

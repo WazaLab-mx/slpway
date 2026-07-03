@@ -96,6 +96,16 @@ export const AFFILIATE_PRODUCTS: AffiliateProduct[] = [
     image: { src: '/images/affiliate/blackdiamond.webp', width: 500, height: 500 },
     tags: ['outdoor', 'camping', 'real-de-catorce', 'night-gear'],
   },
+  {
+    id: 'catre-plegable-acampar',
+    audience: 'tourist',
+    titleKey: 'affiliate.products.catre.title',
+    descriptionKey: 'affiliate.products.catre.description',
+    priceRangeMxn: '$780–1,400 MXN',
+    affiliateUrl: 'https://meli.la/1wGPi8K',
+    image: { src: '/images/affiliate/catre.webp', width: 500, height: 500 },
+    tags: ['outdoor', 'camping', 'hiking', 'huasteca', 'real-de-catorce', 'sierra'],
+  },
 ];
 
 export function getAffiliateProduct(id: string): AffiliateProduct | undefined {
