@@ -121,6 +121,8 @@ function sanitizeItem(item) {
 
 const NEWS_CATEGORIES = ['social', 'community', 'culture', 'local'];
 
+const TRENDING_CATEGORIES = ['debate', 'viral', 'event', 'controversy', 'culture', 'sports', 'community'];
+
 function buildNewsPrompt(today) {
   return `HOY ES: ${today}
 
@@ -176,6 +178,72 @@ function extractResponsesText(data) {
     }
   }
   return text;
+}
+
+function buildTrendingPrompt(today) {
+  return `HOY ES: ${today}
+
+Eres el editor de conversación social de San Luis Potosí, México. Busca en la web (haz VARIAS búsquedas) los 3 temas que MÁS dominan la conversación pública y social en San Luis Potosí AHORA MISMO: de qué está hablando, debatiendo o comentando la gente (controversias locales, debates, momentos virales, grandes eventos, deportes, cultura, decisiones de gobierno que se están discutiendo).
+
+A DIFERENCIA de las noticias positivas, estos temas pueden ser POSITIVOS o NEGATIVOS/CONTROVERSIALES, pero DEBEN ser REALES y estar respaldados por una fuente. NO inventes rumores, NO difames, NO acuses de delitos a personas privadas identificadas sin verificación.
+
+Devuelve un objeto JSON con UN SOLO array llamado "trending" que contenga EXACTAMENTE 3 objetos, cada uno un tema distinto.
+
+Cada objeto DEBE tener estos campos:
+- "title_es","title_en","title_de","title_ja": el tema en 4 idiomas (español, inglés, alemán, japonés), corto.
+- "summary_es","summary_en","summary_de","summary_ja": 2-3 oraciones en 4 idiomas que expliquen QUÉ se está diciendo y POR QUÉ es tendencia. Texto limpio, SIN URLs ni citas markdown.
+- "category": una de "debate","viral","event","controversy","culture","sports","community".
+- "source": nombre del medio o plataforma (ej. "El Sol de San Luis", "Pulso SLP", "X/Twitter", "Facebook").
+- "url": enlace REAL y verificable (nota local que cubre el tema o fuente pública). La URL va SOLO en este campo. NUNCA inventes URLs.
+- "priority": número entero.
+
+CRÍTICO - FORMATO: Tu respuesta DEBE empezar con '{' y terminar con '}'. Sin preámbulo, sin explicación, sin markdown, sin backticks. SOLO el objeto JSON con los 3 temas.`;
+}
+
+async function fetchTrendingTopics() {
+  if (!openaiApiKey) return [];
+
+  const today = new Date().toLocaleDateString('es-MX', {
+    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+    timeZone: 'America/Mexico_City'
+  });
+
+  const response = await callOpenAIResponses(buildTrendingPrompt(today));
+
+  if (!response || !response.ok) {
+    console.error('   Error de API (trending):', response ? response.status : 'no-response');
+    return [];
+  }
+
+  const data = await response.json();
+  const content = extractResponsesText(data);
+  if (!content) return [];
+
+  const parsed = extractJSON(content);
+  if (!parsed || !Array.isArray(parsed.trending)) {
+    return [];
+  }
+
+  const items = parsed.trending.map(sanitizeItem).filter(n =>
+    n.url &&
+    n.title_es && n.title_en && n.title_de && n.title_ja &&
+    n.summary_es && n.summary_en && n.summary_de && n.summary_ja
+  );
+
+  return items.slice(0, 3).map((n, i) => ({
+    title_es: n.title_es,
+    title_en: n.title_en,
+    title_de: n.title_de,
+    title_ja: n.title_ja,
+    summary_es: n.summary_es,
+    summary_en: n.summary_en,
+    summary_de: n.summary_de,
+    summary_ja: n.summary_ja,
+    category: TRENDING_CATEGORIES.includes(n.category) ? n.category : 'community',
+    source: n.source || 'San Luis Potosí',
+    priority: i + 1,
+    url: n.url
+  }));
 }
 
 async function fetchNewsWithOpenAI() {
@@ -431,6 +499,41 @@ async function updateNews() {
     console.error('   Error insertando community news:', communityError.message);
   } else {
     console.log(`   ✓ ${communityToInsert.length} noticias comunitarias insertadas`);
+  }
+
+  // Trending topics run alongside the news flow but MUST NOT break it.
+  try {
+    const trending = await fetchTrendingTopics();
+    if (trending.length > 0) {
+      await supabase.from('trending_topics').update({ active: false }).eq('active', true);
+      const trendingToInsert = trending.map(t => ({
+        title_es: t.title_es,
+        title_en: t.title_en || t.title_es,
+        title_de: t.title_de || t.title_en,
+        title_ja: t.title_ja || t.title_en,
+        summary_es: t.summary_es,
+        summary_en: t.summary_en || t.summary_es,
+        summary_de: t.summary_de || t.summary_en,
+        summary_ja: t.summary_ja || t.summary_en,
+        category: t.category,
+        source: t.source || null,
+        url: t.url || null,
+        priority: t.priority,
+        active: true
+      }));
+      const { error: trendingError } = await supabase
+        .from('trending_topics')
+        .insert(trendingToInsert);
+      if (trendingError) {
+        console.error('   Error insertando trending topics:', trendingError.message);
+      } else {
+        console.log(`   ✓ ${trendingToInsert.length} temas de tendencia insertados`);
+      }
+    } else {
+      console.log('   Sin temas de tendencia (no-fatal)');
+    }
+  } catch (err) {
+    console.error('   Trending fetch falló (no-fatal):', err && err.message ? err.message : String(err));
   }
 }
 

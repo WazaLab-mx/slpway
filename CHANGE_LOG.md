@@ -4,6 +4,19 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-03] feat(home): bloque "De qué se habla en San Luis" (temas de conversación)
+
+Nuevo bloque en TodayInSLP: 3 temas que dominan la conversación social de SLP ahora mismo (debates, virales, controversias, eventos que la ciudad comenta) — distinto del bloque de noticias positivas. Generación SEPARADA con OpenAI Responses API + gpt-4o-mini + web_search (prompt de "editor de conversación social", permite temas positivos o controversiales pero reales y con fuente; sin rumores ni difamación).
+
+- Tabla trending_topics (scripts/create-trending-topics-table.sql — CORRER EN SUPABASE SQL EDITOR): espejo de community_news, 4 idiomas, category, source, url, priority, active, trigger updated_at, índice (active,priority), grants anon/authenticated.
+- Generación en los 3 sitios (update-headlines.ts, netlify fn de prod, update-news-now.js): fetchTrendingTopics() en try/catch NO-FATAL después de las noticias; rotación active=false + insert. Si falla, va a errors[] sin romper noticias.
+- dashboard-data.ts sirve trendingTopics; TodayInSLP.tsx muestra 3 cards (título/resumen/chip de categoría/link a fuente) en el idioma activo, responsive, no renderiza nada si está vacío.
+- i18n 4 idiomas: trendingTitle/trendingSubtitle/trendingCategories.
+
+Verificado en vivo: 3 temas reales con URLs (liderempresarial, potosinoticias, planoinformativo) y 4 idiomas. tsc limpio, 293/293 tests. Inactivo hasta correr el SQL + poblar con el cron. Costo extra: ~1 centavo/corrida (2ª llamada gpt-4o-mini).
+
+---
+
 ## [2026-07-03] feat(affiliate): +1 producto Mercado Libre (catre plegable) → 9 total
 
 Agregado catre plegable para acampar Raganet DP039 (MLM44295159) a AFFILIATE_PRODUCTS:

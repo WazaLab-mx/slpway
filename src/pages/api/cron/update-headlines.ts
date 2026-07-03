@@ -37,6 +37,23 @@ interface NewsHeadline {
   url?: string;
 }
 
+type TrendingCategory = 'debate' | 'viral' | 'event' | 'controversy' | 'culture' | 'sports' | 'community';
+
+interface TrendingTopic {
+  title_es: string;
+  title_en: string;
+  title_de: string;
+  title_ja: string;
+  summary_es: string;
+  summary_en: string;
+  summary_de: string;
+  summary_ja: string;
+  category: TrendingCategory;
+  source: string;
+  priority: number;
+  url?: string;
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -145,9 +162,42 @@ export default async function handler(
       .lt('created_at', new Date(Date.now() - 1000).toISOString());
   }
 
+  // Trending topics run alongside the news flow but MUST NOT break it.
+  let trendingInserted = 0;
+  try {
+    const trending = await fetchTrendingTopics();
+    if (trending.length > 0) {
+      await supabase.from('trending_topics').update({ active: false }).eq('active', true);
+      const { error: trendingInsertError } = await supabase
+        .from('trending_topics')
+        .insert(trending.map(t => ({
+          title_es: t.title_es,
+          title_en: t.title_en || t.title_es,
+          title_de: t.title_de || t.title_en,
+          title_ja: t.title_ja || t.title_en,
+          summary_es: t.summary_es,
+          summary_en: t.summary_en || t.summary_es,
+          summary_de: t.summary_de || t.summary_en,
+          summary_ja: t.summary_ja || t.summary_en,
+          category: t.category,
+          source: t.source || null,
+          url: t.url || null,
+          priority: t.priority,
+          active: true
+        })));
+      if (trendingInsertError) {
+        errors.push(`Trending insert: ${trendingInsertError.message}`);
+      } else {
+        trendingInserted = trending.length;
+      }
+    }
+  } catch (err) {
+    errors.push(`Trending: ${err instanceof Error ? err.message : String(err)}`);
+  }
+
   return res.status(errors.length ? 500 : 200).json({
     success: errors.length === 0,
-    message: `Inserted ${communityNews.length} community news, ${headlines.length} headlines`,
+    message: `Inserted ${communityNews.length} community news, ${headlines.length} headlines, ${trendingInserted} trending`,
     errors: errors.length ? errors : undefined,
     timestamp: new Date().toISOString()
   });
@@ -158,6 +208,8 @@ function sleep(ms: number): Promise<void> {
 }
 
 const NEWS_CATEGORIES = ['social', 'community', 'culture', 'local'] as const;
+
+const TRENDING_CATEGORIES = ['debate', 'viral', 'event', 'controversy', 'culture', 'sports', 'community'] as const;
 
 function buildNewsPrompt(): string {
   const today = new Date().toLocaleDateString('es-MX', {
@@ -341,6 +393,81 @@ async function fetchNewsWithOpenAI(): Promise<{ communityNews: CommunityNews[]; 
   }));
 
   return { communityNews, headlines };
+}
+
+function buildTrendingPrompt(): string {
+  const today = new Date().toLocaleDateString('es-MX', {
+    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+    timeZone: 'America/Mexico_City'
+  });
+
+  return `HOY ES: ${today}
+
+Eres el editor de conversación social de San Luis Potosí, México. Busca en la web (haz VARIAS búsquedas) los 3 temas que MÁS dominan la conversación pública y social en San Luis Potosí AHORA MISMO: de qué está hablando, debatiendo o comentando la gente (controversias locales, debates, momentos virales, grandes eventos, deportes, cultura, decisiones de gobierno que se están discutiendo).
+
+A DIFERENCIA de las noticias positivas, estos temas pueden ser POSITIVOS o NEGATIVOS/CONTROVERSIALES, pero DEBEN ser REALES y estar respaldados por una fuente. NO inventes rumores, NO difames, NO acuses de delitos a personas privadas identificadas sin verificación.
+
+Devuelve un objeto JSON con UN SOLO array llamado "trending" que contenga EXACTAMENTE 3 objetos, cada uno un tema distinto.
+
+Cada objeto DEBE tener estos campos:
+- "title_es","title_en","title_de","title_ja": el tema en 4 idiomas (español, inglés, alemán, japonés), corto.
+- "summary_es","summary_en","summary_de","summary_ja": 2-3 oraciones en 4 idiomas que expliquen QUÉ se está diciendo y POR QUÉ es tendencia. Texto limpio, SIN URLs ni citas markdown.
+- "category": una de "debate","viral","event","controversy","culture","sports","community".
+- "source": nombre del medio o plataforma (ej. "El Sol de San Luis", "Pulso SLP", "X/Twitter", "Facebook").
+- "url": enlace REAL y verificable (nota local que cubre el tema o fuente pública). La URL va SOLO en este campo. NUNCA inventes URLs.
+- "priority": número entero.
+
+CRÍTICO - FORMATO: Tu respuesta DEBE empezar con '{' y terminar con '}'. Sin preámbulo, sin explicación, sin markdown, sin backticks. SOLO el objeto JSON con los 3 temas.`;
+}
+
+async function fetchTrendingTopics(): Promise<TrendingTopic[]> {
+  if (!openaiApiKey) return [];
+
+  const response = await callOpenAIResponses(buildTrendingPrompt());
+
+  if (!response.ok) {
+    const errBody = await response.text().catch(() => '');
+    throw new Error(`OpenAI API ${response.status}: ${errBody.slice(0, 300)}`);
+  }
+
+  const data = await response.json();
+  const content = extractResponsesText(data);
+
+  if (!content) {
+    throw new Error('OpenAI returned no text content for trending');
+  }
+
+  const parsed = extractJsonObject(content);
+  if (!parsed) {
+    throw new Error(`No JSON found in trending response: ${content.slice(0, 200)}`);
+  }
+
+  if (!Array.isArray(parsed.trending)) {
+    throw new Error('OpenAI JSON missing trending array');
+  }
+
+  const items = (parsed.trending as Record<string, unknown>[])
+    .map(n => sanitizeItem(n))
+    .filter(n =>
+      n.url &&
+      n.title_es && n.title_en && n.title_de && n.title_ja &&
+      n.summary_es && n.summary_en && n.summary_de && n.summary_ja
+    );
+
+  return items.slice(0, 3).map((n, i) => ({
+    title_es: n.title_es as string,
+    title_en: n.title_en as string,
+    title_de: n.title_de as string,
+    title_ja: n.title_ja as string,
+    summary_es: n.summary_es as string,
+    summary_en: n.summary_en as string,
+    summary_de: n.summary_de as string,
+    summary_ja: n.summary_ja as string,
+    category: TRENDING_CATEGORIES.includes(n.category as any) ? (n.category as TrendingCategory) : 'community',
+    source: (n.source as string) || 'San Luis Potosí',
+    priority: i + 1,
+    url: n.url as string
+  }));
 }
 
 function getExpiryDate(days = 1): string {

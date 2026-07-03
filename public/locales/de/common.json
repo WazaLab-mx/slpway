@@ -692,7 +692,18 @@
     "community": "Gemeinschaft",
     "culture": "Kultur",
     "local": "Lokal",
-    "dailyTip": "Entdecken Sie jeden Tag etwas Neues über San Luis Potosí."
+    "dailyTip": "Entdecken Sie jeden Tag etwas Neues über San Luis Potosí.",
+    "trendingTitle": "Worüber San Luis spricht",
+    "trendingSubtitle": "Die Themen, die die Stadt gerade bewegen",
+    "trendingCategories": {
+      "debate": "Debatte",
+      "viral": "Viral",
+      "event": "Veranstaltung",
+      "controversy": "Kontroverse",
+      "culture": "Kultur",
+      "sports": "Sport",
+      "community": "Gemeinschaft"
+    }
   },
   "blog": {
     "title": "Aus dem Blog",

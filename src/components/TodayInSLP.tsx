@@ -15,9 +15,11 @@ import {
   SparklesIcon,
   BuildingOfficeIcon,
   ChevronLeftIcon,
-  ChevronRightIcon
+  ChevronRightIcon,
+  FireIcon,
+  ChatBubbleLeftRightIcon
 } from '@heroicons/react/24/outline';
-import type { WeatherData, ExchangeRate, NewsHeadline, CommunityNews } from '@/lib/api/dashboard-data';
+import type { WeatherData, ExchangeRate, NewsHeadline, CommunityNews, TrendingTopic } from '@/lib/api/dashboard-data';
 import { getTipOfTheDay } from '@/data/daily-tips';
 
 interface TodayEvent {
@@ -31,6 +33,19 @@ interface TodayInSLPProps {
   todayEvents?: TodayEvent[];
 }
 
+const TRENDING_CHIP_STYLES: Record<TrendingTopic['category'], { iconBg: string; iconText: string; chip: string }> = {
+  debate: { iconBg: 'bg-amber-100', iconText: 'text-amber-600', chip: 'bg-amber-100 text-amber-700' },
+  viral: { iconBg: 'bg-pink-100', iconText: 'text-pink-600', chip: 'bg-pink-100 text-pink-700' },
+  event: { iconBg: 'bg-indigo-100', iconText: 'text-indigo-600', chip: 'bg-indigo-100 text-indigo-700' },
+  controversy: { iconBg: 'bg-red-100', iconText: 'text-red-600', chip: 'bg-red-100 text-red-700' },
+  culture: { iconBg: 'bg-violet-100', iconText: 'text-violet-600', chip: 'bg-violet-100 text-violet-700' },
+  sports: { iconBg: 'bg-emerald-100', iconText: 'text-emerald-600', chip: 'bg-emerald-100 text-emerald-700' },
+  community: { iconBg: 'bg-blue-100', iconText: 'text-blue-600', chip: 'bg-blue-100 text-blue-700' }
+};
+
+const trendingChipClasses = (category: TrendingTopic['category']) =>
+  TRENDING_CHIP_STYLES[category] || TRENDING_CHIP_STYLES.community;
+
 const TodayInSLP: React.FC<TodayInSLPProps> = ({ todayEvents = [] }) => {
   const { t } = useTranslation('common');
   const { locale } = useRouter();
@@ -42,6 +57,7 @@ const TodayInSLP: React.FC<TodayInSLPProps> = ({ todayEvents = [] }) => {
   const [exchangeRates, setExchangeRates] = useState<ExchangeRate[]>([]);
   const [headlines, setHeadlines] = useState<NewsHeadline[]>([]);
   const [communityNews, setCommunityNews] = useState<CommunityNews[]>([]);
+  const [trendingTopics, setTrendingTopics] = useState<TrendingTopic[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   // Fetch dashboard data from API
@@ -55,6 +71,7 @@ const TodayInSLP: React.FC<TodayInSLPProps> = ({ todayEvents = [] }) => {
           if (data.exchangeRates?.length) setExchangeRates(data.exchangeRates);
           if (data.headlines?.length) setHeadlines(data.headlines);
           if (data.communityNews?.length) setCommunityNews(data.communityNews);
+          if (data.trendingTopics?.length) setTrendingTopics(data.trendingTopics);
         }
       } catch (error) {
         console.error('Failed to fetch dashboard data:', error);
@@ -483,6 +500,71 @@ const TodayInSLP: React.FC<TodayInSLPProps> = ({ todayEvents = [] }) => {
               ) : (
                 <div
                   key={news.id}
+                  className="bg-white rounded-xl p-4 shadow-md border border-gray-100 hover:shadow-lg transition-shadow"
+                >
+                  {cardInner}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        )}
+
+        {/* Trending Conversation Topics — what the city is talking about */}
+        {trendingTopics.length > 0 && (
+        <div className="mt-6">
+          <div className="flex items-center gap-2 mb-1">
+            <FireIcon className="w-5 h-5 text-secondary" />
+            <h3 className="font-semibold text-gray-800">
+              {t('todayInSLP.trendingTitle')}
+            </h3>
+          </div>
+          <p className="text-sm text-gray-500 mb-4">
+            {t('todayInSLP.trendingSubtitle')}
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {trendingTopics.map((topic) => {
+              const chipClasses = trendingChipClasses(topic.category);
+              const cardInner = (
+                <div className="flex items-start gap-3">
+                  <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${chipClasses.iconBg}`}>
+                    <ChatBubbleLeftRightIcon className={`w-5 h-5 ${chipClasses.iconText}`} />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <span className={`inline-block text-xs font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full ${chipClasses.chip}`}>
+                      {t(`todayInSLP.trendingCategories.${topic.category}`)}
+                    </span>
+                    <h4 className="font-semibold text-gray-900 text-sm mt-1.5 line-clamp-2">
+                      {getLocalizedText(topic.titleEs, topic.titleEn, topic.titleDe, topic.titleJa)}
+                    </h4>
+                    <p className="text-gray-600 text-xs mt-1 line-clamp-3">
+                      {getLocalizedText(topic.summaryEs, topic.summaryEn, topic.summaryDe, topic.summaryJa)}
+                    </p>
+                    {topic.sourceUrl && (
+                      <span className="inline-flex items-center gap-1 text-xs font-medium text-secondary mt-2">
+                        {topic.source ? `${topic.source} →` : t('todayInSLP.readMore', 'Read more')}
+                        <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </span>
+                    )}
+                  </div>
+                </div>
+              );
+
+              return topic.sourceUrl ? (
+                <a
+                  key={topic.id}
+                  href={topic.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white rounded-xl p-4 shadow-md border border-gray-100 hover:shadow-lg hover:border-secondary/30 transition-all block"
+                >
+                  {cardInner}
+                </a>
+              ) : (
+                <div
+                  key={topic.id}
                   className="bg-white rounded-xl p-4 shadow-md border border-gray-100 hover:shadow-lg transition-shadow"
                 >
                   {cardInner}

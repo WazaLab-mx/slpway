@@ -727,7 +727,18 @@
     "community": "Community",
     "culture": "Culture",
     "local": "Local",
-    "dailyTip": "Discover something new about San Luis Potosí every day."
+    "dailyTip": "Discover something new about San Luis Potosí every day.",
+    "trendingTitle": "What San Luis Is Talking About",
+    "trendingSubtitle": "The topics buzzing across the city right now",
+    "trendingCategories": {
+      "debate": "Debate",
+      "viral": "Viral",
+      "event": "Event",
+      "controversy": "Controversy",
+      "culture": "Culture",
+      "sports": "Sports",
+      "community": "Community"
+    }
   },
   "blog": {
     "title": "From the Blog",

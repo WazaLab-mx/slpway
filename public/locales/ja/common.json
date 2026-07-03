@@ -744,7 +744,18 @@
     "community": "コミュニティ",
     "culture": "文化",
     "local": "ローカル",
-    "dailyTip": "毎日サンルイスポトシの新しい発見をお届けします。"
+    "dailyTip": "毎日サンルイスポトシの新しい発見をお届けします。",
+    "trendingTitle": "サンルイスで話題のこと",
+    "trendingSubtitle": "いま街で盛り上がっている話題",
+    "trendingCategories": {
+      "debate": "議論",
+      "viral": "バイラル",
+      "event": "イベント",
+      "controversy": "論争",
+      "culture": "文化",
+      "sports": "スポーツ",
+      "community": "コミュニティ"
+    }
   },
   "festivalBanner": {
     "badge": "3月28日〜4月4日 2026",

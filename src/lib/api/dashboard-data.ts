@@ -68,11 +68,30 @@ export interface CommunityNews {
   publishedAt: string;
 }
 
+export type TrendingCategory =
+  | 'debate' | 'viral' | 'event' | 'controversy' | 'culture' | 'sports' | 'community';
+
+export interface TrendingTopic {
+  id: string;
+  titleEs: string;
+  titleEn: string;
+  titleDe: string;
+  titleJa: string;
+  summaryEs: string;
+  summaryEn: string;
+  summaryDe: string;
+  summaryJa: string;
+  category: TrendingCategory;
+  source?: string;
+  sourceUrl?: string;
+}
+
 export interface DashboardData {
   weather: WeatherData | null;
   exchangeRates: ExchangeRate[];
   headlines: NewsHeadline[];
   communityNews: CommunityNews[];
+  trendingTopics: TrendingTopic[];
   lastUpdated: string;
 }
 
@@ -542,14 +561,65 @@ export async function fetchCommunityNews(): Promise<CommunityNews[]> {
 }
 
 /**
+ * Fetch trending conversation topics from Supabase
+ * Returns empty array if no active data exists or the table is missing.
+ */
+export async function fetchTrendingTopics(): Promise<TrendingTopic[]> {
+  if (!supabaseUrl || !supabaseAnonKey) {
+    console.warn('Supabase not configured for trending topics');
+    return [];
+  }
+
+  try {
+    const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+    const { data, error } = await supabase
+      .from('trending_topics')
+      .select('id, title_es, title_en, title_de, title_ja, summary_es, summary_en, summary_de, summary_ja, category, source, url')
+      .eq('active', true)
+      .order('priority', { ascending: true })
+      .order('created_at', { ascending: false })
+      .limit(3);
+
+    if (error) {
+      console.error('Error fetching trending topics:', error);
+      return [];
+    }
+
+    if (!data || data.length === 0) {
+      return [];
+    }
+
+    return data.map(n => ({
+      id: n.id,
+      titleEs: n.title_es,
+      titleEn: n.title_en || n.title_es,
+      titleDe: n.title_de || n.title_en || n.title_es,
+      titleJa: n.title_ja || n.title_en || n.title_es,
+      summaryEs: n.summary_es || '',
+      summaryEn: n.summary_en || n.summary_es || '',
+      summaryDe: n.summary_de || n.summary_en || n.summary_es || '',
+      summaryJa: n.summary_ja || n.summary_en || n.summary_es || '',
+      category: n.category as TrendingCategory,
+      source: n.source || undefined,
+      sourceUrl: n.url || undefined
+    }));
+  } catch (error) {
+    console.error('Error fetching trending topics:', error);
+    return [];
+  }
+}
+
+/**
  * Fetch all dashboard data
  */
 export async function fetchDashboardData(): Promise<DashboardData> {
-  const [weather, exchangeRates, headlines, communityNews] = await Promise.all([
+  const [weather, exchangeRates, headlines, communityNews, trendingTopics] = await Promise.all([
     fetchWeatherData(),
     fetchExchangeRates(),
     fetchHeadlines(),
-    fetchCommunityNews()
+    fetchCommunityNews(),
+    fetchTrendingTopics()
   ]);
 
   return {
@@ -557,6 +627,7 @@ export async function fetchDashboardData(): Promise<DashboardData> {
     exchangeRates,
     headlines,
     communityNews,
+    trendingTopics,
     lastUpdated: new Date().toISOString()
   };
 }
