@@ -20,31 +20,6 @@ interface EventSlide {
 
 const slides: EventSlide[] = [
   {
-    key: 'countryFest',
-    href: '/events/cara-sucia-country-fest-2026',
-    image: '/images/events/cara-sucia-country-fest-2026-banner.png',
-    imageFit: 'cover',
-    gradient: 'from-stone-950/80 via-amber-900/60 to-orange-950/80',
-    badgeBg: 'bg-amber-400/20 border-amber-400/40',
-    badgeText: 'text-amber-200',
-    badgeDot: 'bg-amber-400',
-    ctaGradient: 'from-amber-400 to-amber-500',
-    ctaHover: 'hover:from-amber-300 hover:to-amber-400',
-    ctaShadow: 'shadow-amber-500/25',
-  },
-  {
-    key: 'maraton',
-    href: '/events/maraton-tangamanga-2026',
-    image: '/images/events/maraton-runners.jpg',
-    gradient: 'from-emerald-950/80 via-teal-900/70 to-blue-950/80',
-    badgeBg: 'bg-amber-400/20 border-amber-400/30',
-    badgeText: 'text-amber-300',
-    badgeDot: 'bg-amber-400',
-    ctaGradient: 'from-amber-400 to-amber-500',
-    ctaHover: 'hover:from-amber-300 hover:to-amber-400',
-    ctaShadow: 'shadow-amber-500/25',
-  },
-  {
     key: 'fenapo',
     href: '/events/fenapo-2026',
     image: '/images/events/fenapo-2026-logo.png',
@@ -57,6 +32,19 @@ const slides: EventSlide[] = [
     ctaGradient: 'from-purple-400 to-purple-500',
     ctaHover: 'hover:from-purple-300 hover:to-purple-400',
     ctaShadow: 'shadow-purple-500/25',
+  },
+  {
+    key: 'countryFest',
+    href: '/events/cara-sucia-country-fest-2026',
+    image: '/images/events/cara-sucia-country-fest-2026-banner.png',
+    imageFit: 'cover',
+    gradient: 'from-stone-950/80 via-amber-900/60 to-orange-950/80',
+    badgeBg: 'bg-amber-400/20 border-amber-400/40',
+    badgeText: 'text-amber-200',
+    badgeDot: 'bg-amber-400',
+    ctaGradient: 'from-amber-400 to-amber-500',
+    ctaHover: 'hover:from-amber-300 hover:to-amber-400',
+    ctaShadow: 'shadow-amber-500/25',
   },
 ];
 

@@ -4,6 +4,18 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-03] feat(home): quitar maratón del carrusel + FENAPO primero + noticias sin sesgo de gobierno
+
+1) EventCarouselBanner: eliminado el slide del Maratón Tangamanga (ya se corrió el 28-jun-2026) y FENAPO movido al PRIMER lugar (prioridad estos meses). Quedan fenapo + country fest.
+
+2) Sesgo de gobierno en noticias IA (queja del dueño: el ticker parecía alimentado por gobierno/Gallardo). Reescrito buildNewsPrompt en los 3 sitios: línea editorial INDEPENDIENTE, prioriza sociedad civil (comunidad, cultura, arte, deportes, gastronomía, negocios, universidades, ciencia, ambiente), EVITA boletines/comunicados como logros, NO destacar gobernador/alcalde/funcionarios, máx 1 de 8 noticias de gobierno y neutral, variar fuentes (máx 2 del mismo medio), preferir medios independientes sobre .gob.mx. buildTrendingPrompt: + regla anti-propaganda (no aprobación/logros/imagen de funcionarios; gobierno solo como debate ciudadano neutral).
+
+Probado en vivo (update-news-now.js con prompt nuevo): noticias se diversificaron (feria de empleo, bomberos, OVNIs, deporte juvenil, cultura) vs el "Gobierno Estatal impulsa..." anterior. tsc limpio, node checks OK.
+
+La página del maratón se actualiza aparte (resultados 2026 reales, en proceso).
+
+---
+
 ## [2026-07-03] chore(home): guardarraíl de tono en temas de conversación
 
 Tras decisión del dueño: el bloque "De qué se habla" permite debates/virales/controversias de eventos/deportes/cultura/decisiones urbanas, pero EVITA inseguridad, crimen, violencia, nota roja y estadísticas de percepción de inseguridad (el sitio promueve SLP a turistas/expats). Prompt actualizado en los 3 sitios de generación (update-headlines.ts, netlify fn, update-news-now.js). Verificado en vivo: temas cívicos/culturales/comunitarios, cero inseguridad.

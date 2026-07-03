@@ -126,7 +126,9 @@ const TRENDING_CATEGORIES = ['debate', 'viral', 'event', 'controversy', 'culture
 function buildNewsPrompt(today) {
   return `HOY ES: ${today}
 
-Eres el editor de noticias locales de San Luis Potosí, México. Busca en la web (haz VARIAS búsquedas) noticias POSITIVAS o NEUTRALES de San Luis Potosí de hoy o esta semana (comunidad, cultura, vida local, economía, empleo, gobierno, turismo, seguridad).
+Eres el editor de noticias locales de San Luis Potosí, México, con una línea editorial INDEPENDIENTE (este sitio NO es del gobierno). Busca en la web (haz VARIAS búsquedas en MEDIOS DISTINTOS) noticias POSITIVAS o NEUTRALES de San Luis Potosí de hoy o esta semana. Prioriza a la SOCIEDAD CIVIL: comunidad, cultura, arte, deportes, gastronomía, negocios y emprendimiento local, universidades, ciencia, medio ambiente, turismo y vida cotidiana.
+
+EVITA EL SESGO DE GOBIERNO: NO tomes boletines ni comunicados oficiales presentados como logros; NO destaques al gobernador, al alcalde ni a funcionarios; NO uses lenguaje propagandístico. Si una nota trata sobre una obra o programa público, redáctala NEUTRAL y factual (qué es, a quién sirve), SIN atribuir mérito ni elogiar a autoridades. Como MÁXIMO 1 de las 8 noticias puede tocar temas de gobierno, y solo si es de utilidad real para el ciudadano. Varía las fuentes: no más de 2 noticias del mismo medio.
 
 Devuelve un objeto JSON con UN SOLO array llamado "news" que contenga EXACTAMENTE 8 objetos, cada uno una noticia real y distinta.
 
@@ -134,8 +136,8 @@ Cada objeto DEBE tener estos campos:
 - "title_es","title_en","title_de","title_ja": el titular en 4 idiomas (español, inglés, alemán, japonés).
 - "summary_es","summary_en","summary_de","summary_ja": resumen de 2-3 oraciones en 4 idiomas, con cifras, nombres, fechas e impacto. Texto limpio, SIN URLs ni citas markdown.
 - "category": una de "community","culture","local","social".
-- "source": nombre del medio (ej. "El Sol de San Luis", "Pulso SLP", "Gobierno SLP").
-- "url": enlace REAL y verificable a la nota original (elsoldesanluis.com.mx, planoinformativo.com, pulsoslp.com.mx, slp.gob.mx, codigosanluis.com, imei.slp.gob.mx, quadratin.com.mx, etc.). La URL va SOLO en este campo. NUNCA inventes URLs.
+- "source": nombre del medio independiente (ej. "El Sol de San Luis", "Pulso SLP", "Astrolabio", "La Orquesta", "Código San Luis"). Evita citar "Gobierno SLP" como fuente.
+- "url": enlace REAL y verificable a la nota original en MEDIOS INDEPENDIENTES (elsoldesanluis.com.mx, planoinformativo.com, pulsoslp.com.mx, codigosanluis.com, quadratin.com.mx, astrolabio.com.mx, laorquesta.mx, eluniversalslp.com.mx, etc.). Prefiere medios independientes sobre sitios .gob.mx. La URL va SOLO en este campo. NUNCA inventes URLs.
 - "priority": número entero.
 
 CRÍTICO - FORMATO: Tu respuesta DEBE empezar con '{' y terminar con '}'. Sin preámbulo, sin explicación, sin markdown, sin backticks. SOLO el objeto JSON con las 8 noticias.`;
@@ -185,7 +187,7 @@ function buildTrendingPrompt(today) {
 
 Eres el editor de conversación social de San Luis Potosí, México. Busca en la web (haz VARIAS búsquedas) los 3 temas que MÁS dominan la conversación pública y social en San Luis Potosí AHORA MISMO: de qué está hablando, debatiendo o comentando la gente (debates cívicos y urbanos, momentos virales, grandes eventos, deportes, cultura, festivales, decisiones de gobierno o de ciudad que se están discutiendo).
 
-Estos temas pueden ser animados o debatidos (la polémica de un evento o concierto, una obra o decisión urbana que se discute, algo viral), pero DEBEN ser REALES y estar respaldados por una fuente. IMPORTANTE — este bloque aparece en un sitio que PROMUEVE San Luis Potosí a turistas y nuevos residentes: EVITA por completo temas de inseguridad, crimen, violencia o nota roja, y NO uses estadísticas de percepción de inseguridad. Prefiere temas cívicos, culturales, deportivos, de eventos, virales y comunitarios. NO inventes rumores, NO difames, NO acuses de delitos ni señales a personas identificadas.
+Estos temas pueden ser animados o debatidos (la polémica de un evento o concierto, una obra o decisión urbana que se discute, algo viral), pero DEBEN ser REALES y estar respaldados por una fuente. IMPORTANTE — este bloque aparece en un sitio INDEPENDIENTE que PROMUEVE San Luis Potosí a turistas y nuevos residentes: (1) EVITA por completo temas de inseguridad, crimen, violencia o nota roja, y NO uses estadísticas de percepción de inseguridad; (2) NO conviertas esto en propaganda de gobierno — NO uses temas de aprobación, logros o imagen del gobernador, alcalde o funcionarios; si un tema toca al gobierno, enmárcalo como DEBATE ciudadano y de forma neutral, nunca como elogio. Prefiere temas cívicos, culturales, deportivos, de eventos, virales y comunitarios. NO inventes rumores, NO difames, NO acuses de delitos ni señales a personas identificadas.
 
 Devuelve un objeto JSON con UN SOLO array llamado "trending" que contenga EXACTAMENTE 3 objetos, cada uno un tema distinto.
 
