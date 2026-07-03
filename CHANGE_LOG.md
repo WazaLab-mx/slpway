@@ -4,6 +4,19 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-03] fix(tests): 5 suites en verde (Frente 3) — 293/293 tests pasan
+
+5 suites fallaban por desincronización test/implementación. Arreglado el lado correcto en cada una (2 eran regresiones reales de código):
+- contact-stats: REGRESIÓN real — contact.tsx fetcheaba placesCount/servicesCount pero el bloque que los mostraba (con testids) se había borrado. Restaurado el display.
+- listings-banner: REGRESIÓN real — ListingsBanner.tsx había perdido toda la i18n (strings hardcodeados). Restaurado useTranslation + t() con copy idéntico vía defaults. (+ 2 fixes de mock en el test).
+- blog.test.ts: mock apuntaba a @/lib/supabase pero blog.ts usa createClient de @supabase/supabase-js (memoizado) + esquema viejo. Test actualizado, blog.ts intacto.
+- newsletter-generator: template dejó placeholders de imagen por diseño + helper de fechas cambió a ventana móvil 7 días. Test actualizado robusto a fechas.
+- email-functionality: label real es "Email" (test exigía /contact.*email/) + faltaban campos requeridos. Test actualizado, componente intacto.
+
+Resultado: 40/40 suites, 293/293 tests, tsc limpio.
+
+---
+
 ## [2026-07-03] chore(seo): redirect + archivo de 2 posts 2025 superados
 
 Los 2 posts 2025 que quedaron fuera de la traducción (superados por sus versiones 2026):

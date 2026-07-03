@@ -1,9 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
 import { BuildingStorefrontIcon, CheckBadgeIcon, MagnifyingGlassIcon, MapPinIcon } from '@heroicons/react/24/outline';
 
 const ListingsBanner: React.FC = () => {
+  const { t } = useTranslation('common');
 
   return (
     <section className="py-16 px-4 bg-gradient-to-br from-indigo-50 via-purple-50 to-blue-50 relative overflow-hidden">
@@ -20,15 +22,15 @@ const ListingsBanner: React.FC = () => {
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-medium">
               <BuildingStorefrontIcon className="w-4 h-4" />
-              {'Local Business Directory'}
+              {t('listingsBanner.badge', 'Local Business Directory')}
             </div>
 
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-              {'Find Trusted Local Businesses'}
+              {t('listingsBanner.title', 'Find Trusted Local Businesses')}
             </h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              {'Connect with verified businesses and service providers in San Luis Potosí. From restaurants to professional services, discover everything you need in one place.'}
+              {t('listingsBanner.description', 'Connect with verified businesses and service providers in San Luis Potosí. From restaurants to professional services, discover everything you need in one place.')}
             </p>
 
             {/* Features List */}
@@ -39,10 +41,10 @@ const ListingsBanner: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 text-sm">
-                    {'Verified Businesses'}
+                    {t('listingsBanner.features.verified.title', 'Verified Businesses')}
                   </h4>
                   <p className="text-gray-600 text-sm">
-                    {'All listings are verified and actively maintained'}
+                    {t('listingsBanner.features.verified.description', 'All listings are verified and actively maintained')}
                   </p>
                 </div>
               </div>
@@ -53,10 +55,10 @@ const ListingsBanner: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 text-sm">
-                    {'Easy Search'}
+                    {t('listingsBanner.features.search.title', 'Easy Search')}
                   </h4>
                   <p className="text-gray-600 text-sm">
-                    {'Filter by category and location'}
+                    {t('listingsBanner.features.search.description', 'Filter by category and location')}
                   </p>
                 </div>
               </div>
@@ -67,10 +69,10 @@ const ListingsBanner: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 text-sm">
-                    {'Local Focus'}
+                    {t('listingsBanner.features.local.title', 'Local Focus')}
                   </h4>
                   <p className="text-gray-600 text-sm">
-                    {'Exclusively San Luis Potosí businesses'}
+                    {t('listingsBanner.features.local.description', 'Exclusively San Luis Potosí businesses')}
                   </p>
                 </div>
               </div>
@@ -81,10 +83,10 @@ const ListingsBanner: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 text-sm">
-                    {'Direct Contact'}
+                    {t('listingsBanner.features.contact.title', 'Direct Contact')}
                   </h4>
                   <p className="text-gray-600 text-sm">
-                    {'Phone, address, and website info'}
+                    {t('listingsBanner.features.contact.description', 'Phone, address, and website info')}
                   </p>
                 </div>
               </div>
@@ -96,7 +98,7 @@ const ListingsBanner: React.FC = () => {
                 href="/listings"
                 className="inline-flex items-center justify-center px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg transition-colors shadow-md hover:shadow-lg group"
               >
-                {'Browse Businesses'}
+                {t('listingsBanner.browseCTA', 'Browse Businesses')}
                 <svg className="w-5 h-5 ml-2 transform transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
@@ -106,7 +108,7 @@ const ListingsBanner: React.FC = () => {
                 href="/business/dashboard"
                 className="inline-flex items-center justify-center px-6 py-3 bg-white hover:bg-gray-50 text-indigo-600 font-semibold rounded-lg border-2 border-indigo-600 transition-colors"
               >
-                {'List Your Business'}
+                {t('listingsBanner.listCTA', 'List Your Business')}
               </Link>
             </div>
           </div>
@@ -130,15 +132,15 @@ const ListingsBanner: React.FC = () => {
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
                     <div className="text-2xl font-bold text-indigo-600">100+</div>
-                    <div className="text-xs text-gray-600">{'Businesses'}</div>
+                    <div className="text-xs text-gray-600">{t('listingsBanner.stats.businesses', 'Businesses')}</div>
                   </div>
                   <div>
                     <div className="text-2xl font-bold text-green-600">✓</div>
-                    <div className="text-xs text-gray-600">{'Verified'}</div>
+                    <div className="text-xs text-gray-600">{t('listingsBanner.stats.verified', 'Verified')}</div>
                   </div>
                   <div>
                     <div className="text-2xl font-bold text-purple-600">24/7</div>
-                    <div className="text-xs text-gray-600">{'Available'}</div>
+                    <div className="text-xs text-gray-600">{t('listingsBanner.stats.available', 'Available')}</div>
                   </div>
                 </div>
               </div>

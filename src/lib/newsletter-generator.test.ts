@@ -1,14 +1,19 @@
 import { NEWSLETTER_TEMPLATE, CLOSING_AND_FOOTER_HTML, getCurrentNewsletterDates } from './newsletter-generator';
-import { format } from 'date-fns';
+import { format, addDays } from 'date-fns';
 
 describe('newsletter template structure', () => {
-  it('exposes the hero and highlight image placeholders', () => {
-    expect(NEWSLETTER_TEMPLATE).toContain('[HERO_IMAGE_URL]');
-    expect(NEWSLETTER_TEMPLATE).toContain('[HERO_IMAGE_ALT]');
-    expect(NEWSLETTER_TEMPLATE).toContain('[TOP_PICK_IMAGE_URL]');
-    expect(NEWSLETTER_TEMPLATE).toContain('[TOP_PICK_IMAGE_ALT]');
-    expect(NEWSLETTER_TEMPLATE).toContain('[ESCAPE_IMAGE_URL]');
-    expect(NEWSLETTER_TEMPLATE).toContain('[ESCAPE_IMAGE_ALT]');
+  it('exposes the core content placeholders the generator fills', () => {
+    // The template is intentionally image-free (system prompt forbids <img>
+    // tags in AI content), so it exposes text/content slots rather than
+    // hero/highlight image placeholders.
+    expect(NEWSLETTER_TEMPLATE).toContain('[WEEK_DATE_RANGE]');
+    expect(NEWSLETTER_TEMPLATE).toContain('[OPENING_HOOK_TEXT]');
+    expect(NEWSLETTER_TEMPLATE).toContain('[WEATHER_SUMMARY]');
+    expect(NEWSLETTER_TEMPLATE).toContain('[NEWS_HEADLINE_1]');
+    expect(NEWSLETTER_TEMPLATE).toContain('[EVENT_NAME_1]');
+    expect(NEWSLETTER_TEMPLATE).toContain('[SPOT_NAME]');
+    expect(NEWSLETTER_TEMPLATE).toContain('[DESTINATION_NAME]');
+    expect(NEWSLETTER_TEMPLATE).toContain('[BLOG_POST_TITLE]');
   });
 
   it('has a placeholder for the closing footer that gets injected programmatically', () => {
@@ -31,11 +36,16 @@ describe('getCurrentNewsletterDates helper', () => {
     const result = getCurrentNewsletterDates(referenceDate);
 
     expect(result.currentDate).toBe(format(referenceDate, 'MMMM d, yyyy'));
+    // The helper returns a rolling window: today through today + 7 days.
+    expect(result.weekStartDate).toEqual(referenceDate);
+    expect(result.weekEndDate).toEqual(addDays(referenceDate, 7));
     expect(result.dateRangeStr).toBe(
       `${format(result.weekStartDate, 'MMMM d')} - ${format(result.weekEndDate, 'MMMM d, yyyy')}`
     );
-    expect(result.weekStartDate.getDay()).toBe(1); // Monday
-    expect(result.weekEndDate.getDay()).toBe(0); // Sunday
+    const diffDays = Math.round(
+      (result.weekEndDate.getTime() - result.weekStartDate.getTime()) / (1000 * 60 * 60 * 24)
+    );
+    expect(diffDays).toBe(7);
   });
 });
 

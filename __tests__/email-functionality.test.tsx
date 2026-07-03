@@ -72,7 +72,7 @@ describe('Email Functionality Tests', () => {
     });
 
     fireEvent.change(screen.getByLabelText(/category/i), {
-      target: { value: 'test-category' }
+      target: { value: 'relocation' }
     });
 
     fireEvent.change(screen.getByLabelText(/description/i), {
@@ -87,15 +87,45 @@ describe('Email Functionality Tests', () => {
       target: { value: '+52 444 123 4567' }
     });
 
-    fireEvent.change(screen.getByLabelText(/contact.*email/i), {
+    fireEvent.change(screen.getByLabelText(/email/i), {
       target: { value: 'test@example.com' }
+    });
+
+    // Fill remaining required fields so the form passes constraint validation
+    fireEvent.change(screen.getByLabelText(/service area/i), {
+      target: { value: 'San Luis Potosí City' }
+    });
+
+    fireEvent.change(screen.getByLabelText(/availability/i), {
+      target: { value: 'Mon-Fri: 9:00-17:00' }
+    });
+
+    fireEvent.change(screen.getByLabelText(/qualifications/i), {
+      target: { value: 'Certified professional' }
+    });
+
+    fireEvent.change(screen.getByLabelText(/experience/i), {
+      target: { value: '5 years of experience' }
+    });
+
+    fireEvent.change(screen.getByLabelText(/pricing/i), {
+      target: { value: 'Starting at $500' }
+    });
+
+    fireEvent.change(screen.getByLabelText(/profile image/i), {
+      target: {
+        files: [new File(['image'], 'profile.png', { type: 'image/png' })]
+      }
     });
 
     // Accept terms
     fireEvent.click(screen.getByLabelText(/terms and conditions/i));
 
-    // Submit form
-    fireEvent.click(screen.getByRole('button', { name: /submit listing/i }));
+    // Submit form. jsdom cannot run constraint validation on the required
+    // file input, so dispatch the form's submit event directly to exercise
+    // the email submission handler.
+    const form = screen.getByRole('button', { name: /submit listing/i }).closest('form')!;
+    fireEvent.submit(form);
 
     // Wait for API call
     await waitFor(() => {

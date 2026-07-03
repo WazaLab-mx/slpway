@@ -142,6 +142,27 @@ export default function Contact() {
               <p className="text-xl text-primary font-semibold mt-8">
                 If you have questions, need assistance, or have a cool project we can collaborate on, just say hi and reach out!
               </p>
+
+              <div className="mt-12 grid grid-cols-2 gap-8 max-w-md mx-auto">
+                <div className="text-center">
+                  <span
+                    data-testid="places-count"
+                    className="block text-4xl font-bold text-primary"
+                  >
+                    {statsLoading ? '...' : stats.placesCount ?? '—'}
+                  </span>
+                  <span className="text-sm text-gray-600">Places</span>
+                </div>
+                <div className="text-center">
+                  <span
+                    data-testid="services-count"
+                    className="block text-4xl font-bold text-primary"
+                  >
+                    {statsLoading ? '...' : stats.servicesCount ?? '—'}
+                  </span>
+                  <span className="text-sm text-gray-600">Services</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>

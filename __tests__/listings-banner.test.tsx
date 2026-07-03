@@ -18,8 +18,8 @@ jest.mock('next/router', () => ({
 
 // Mock Next.js Link
 jest.mock('next/link', () => {
-  return ({ children, href }: { children: React.ReactNode; href: string }) => (
-    <a href={href}>{children}</a>
+  return ({ children, href, className }: { children: React.ReactNode; href: string; className?: string }) => (
+    <a href={href} className={className}>{children}</a>
   );
 });
 
@@ -131,7 +131,7 @@ describe('ListingsBanner', () => {
     render(<ListingsBanner />);
 
     // Check for responsive grid classes
-    const gridContainer = screen.getByText('Find Trusted Local Businesses').closest('div')?.parentElement?.parentElement;
+    const gridContainer = screen.getByText('Find Trusted Local Businesses').closest('div')?.parentElement;
     expect(gridContainer).toHaveClass('grid', 'grid-cols-1', 'lg:grid-cols-2');
   });
 });
