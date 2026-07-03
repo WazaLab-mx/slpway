@@ -4,6 +4,12 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-02] feat(blog): badge automático de fact-check en posts
+
+`blog/[slug].tsx` detecta en build si existe `public/factchecks/<slug>.md` y muestra bajo el byline un pill verde "Artículo verificado — ver reporte de fact-check" (EN/ES) enlazando a `/blog/factchecks/<slug>`. Cero trabajo por post: los 24 posts con reporte (13 previos que nunca tuvieron link, incl. SMA, + 11 nuevos) quedan enlazados automáticamente, y cualquier post futuro se enlaza al publicar su .md. Verificado en local: badge presente EN+ES, ausente en posts sin reporte, href correcto.
+
+---
+
 ## [2026-07-02] feat(factcheck): 11 reportes nuevos + ~40 correcciones a posts + GEO llms.txt
 
 **Factcheck masivo (11 agentes investigadores en paralelo, /factcheck skill):** un reporte por cada post nuevo, 141 claims verificados en total contra fuentes primarias (INEGI, SESNSP, travel.state.gov, IMSS, CONAGUA, gobierno estatal, Numbeo, Booking). Reportes en public/factchecks/*.md (formato parser → ClaimReview JSON-LD por claim, autodescubiertos por /blog/factchecks).

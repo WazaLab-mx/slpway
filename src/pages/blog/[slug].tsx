@@ -14,10 +14,14 @@ import { splitHtmlForAd } from '@/lib/split-html-for-ad';
 import AffiliateGrid from '@/components/affiliate/AffiliateGrid';
 import { getAffiliateProductsForPost } from '@/data/affiliate-products';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useRouter } from 'next/router';
+import fs from 'fs';
+import path from 'path';
 
 interface BlogPostPageProps {
   post: BlogPost;
   relatedPosts: Pick<BlogPost, 'slug' | 'title' | 'imageUrl' | 'category'>[];
+  hasFactcheck: boolean;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -60,11 +64,18 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps> = async (context)
     relatedPosts.push(...fillPosts);
   }
 
+  // A post is "fact-checked" when a published investigation report exists
+  // for its slug — the badge and link render automatically, no per-post work.
+  const hasFactcheck = fs.existsSync(
+    path.join(process.cwd(), 'public', 'factchecks', `${slug}.md`)
+  );
+
   return {
     props: {
       ...(await serverSideTranslations(locale ?? 'es', ['common'])),
       post,
       relatedPosts,
+      hasFactcheck,
     },
     revalidate: 60,
   };
@@ -77,7 +88,9 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps> = async (context)
  * @param post - The blog post data used to populate page content, SEO fields, metadata, and structured data
  * @returns A JSX element representing the rendered blog post page
  */
-export default function BlogPostPage({ post, relatedPosts }: BlogPostPageProps) {
+export default function BlogPostPage({ post, relatedPosts, hasFactcheck }: BlogPostPageProps) {
+  const { locale = 'en' } = useRouter();
+  const isEs = locale === 'es';
   // Use dedicated SEO fields when available, fallback to title/excerpt
   const seoTitle = post.metaTitle || post.title;
   const seoDescription = post.metaDescription || post.excerpt;
@@ -180,6 +193,19 @@ export default function BlogPostPage({ post, relatedPosts }: BlogPostPageProps) 
             modifiedAt={post.createdAt}
             className="text-gray-600"
           />
+          {hasFactcheck && (
+            <Link
+              href={`/blog/factchecks/${post.slug}`}
+              className="mt-4 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-1.5 text-sm font-medium text-emerald-800 hover:bg-emerald-100 transition-colors"
+            >
+              <svg className="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              {isEs
+                ? 'Artículo verificado — ver reporte de fact-check'
+                : 'Fact-checked article — read the verification report'}
+            </Link>
+          )}
         </div>
 
         <div className="container mx-auto max-w-3xl px-4 pb-12">
