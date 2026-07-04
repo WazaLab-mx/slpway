@@ -312,9 +312,9 @@ function buildTrendingPrompt() {
 
   return `HOY ES: ${today}
 
-Eres el editor de conversación social de San Luis Potosí, México. Busca en la web (haz VARIAS búsquedas) los 3 temas que MÁS dominan la conversación pública y social en San Luis Potosí AHORA MISMO: de qué está hablando, debatiendo o comentando la gente (debates cívicos y urbanos, momentos virales, grandes eventos, deportes, cultura, festivales, decisiones de gobierno o de ciudad que se están discutiendo).
+Eres el editor de conversación social de San Luis Potosí, México. Busca en la web (haz VARIAS búsquedas) los 3 temas MÁS comentados en la conversación pública y social de San Luis Potosí AHORA MISMO: de qué está hablando la gente (momentos virales, grandes eventos, festivales, conciertos, deportes, cultura, gastronomía, debates cívicos y urbanos). Los 3 temas DEBEN ser de asuntos DISTINTOS entre sí (no repitas el mismo tema con otras palabras) e incluir VARIEDAD: al menos uno cultural, festivo, deportivo o viral POSITIVO, no solo problemas o quejas urbanas (baches, ruido, tráfico).
 
-Estos temas pueden ser animados o debatidos (la polémica de un evento o concierto, una obra o decisión urbana que se discute, algo viral), pero DEBEN ser REALES y estar respaldados por una fuente. IMPORTANTE — este bloque aparece en un sitio INDEPENDIENTE que PROMUEVE San Luis Potosí a turistas y nuevos residentes: (1) EVITA por completo temas de inseguridad, crimen, violencia o nota roja, y NO uses estadísticas de percepción de inseguridad; (2) NO conviertas esto en propaganda de gobierno — NO uses temas de aprobación, logros o imagen del gobernador, alcalde o funcionarios; si un tema toca al gobierno, enmárcalo como DEBATE ciudadano y de forma neutral, nunca como elogio. Prefiere temas cívicos, culturales, deportivos, de eventos, virales y comunitarios. NO inventes rumores, NO difames, NO acuses de delitos ni señales a personas identificadas.
+Estos temas pueden ser animados o debatidos (la polémica de un evento o concierto, una obra o decisión urbana que se discute, algo viral), pero DEBEN ser REALES y estar respaldados por una fuente. IMPORTANTE — este bloque aparece en un sitio INDEPENDIENTE que PROMUEVE San Luis Potosí a turistas y nuevos residentes: (1) EVITA por completo temas de inseguridad, crimen, violencia o nota roja, y NO uses estadísticas de percepción de inseguridad; (2) NO conviertas esto en propaganda de gobierno — NO uses temas de aprobación, logros o imagen del gobernador, alcalde o funcionarios, ni operativos, programas, obras o campañas de gobierno (aunque suenen neutrales); si un tema toca al gobierno, enmárcalo como DEBATE ciudadano y de forma neutral, nunca como elogio. Prefiere temas cívicos, culturales, deportivos, de eventos, virales y comunitarios. NO inventes rumores, NO difames, NO acuses de delitos ni señales a personas identificadas.
 
 Devuelve un objeto JSON con UN SOLO array llamado "trending" que contenga EXACTAMENTE 3 objetos, cada uno un tema distinto.
 
@@ -329,34 +329,68 @@ Cada objeto DEBE tener estos campos:
 CRÍTICO - FORMATO: Tu respuesta DEBE empezar con '{' y terminar con '}'. Sin preámbulo, sin explicación, sin markdown, sin backticks. SOLO el objeto JSON con los 3 temas.`;
 }
 
-async function fetchTrendingTopics(apiKey) {
-  const response = await callOpenAIResponses(apiKey, buildTrendingPrompt());
+// gpt-4o-mini ignores negative prompt constraints when local media is
+// dominated by insecurity/government-PR topics, so we HARD-FILTER them in
+// code (safety net) and retry to accumulate 3 clean topics.
+const BANNED_TRENDING = /\b(inseguridad|ensu|crimen|criminal|violen|homicid|feminicid|secuestr|delito|delincuen|nota roja|narco|asesinat|balacera|ejecuci[oó]n)\b/i;
+const GOV_PR_TRENDING = /\b(gallardo|gobernador|alcalde|edil|funcionari|mandatario estatal|aprobaci[oó]n del|desempe[ñn]o del|operativo|ayuntamiento|secretar[ií]a|gobierno del estado|gobierno (estatal|municipal)|obra p[uú]blica|programa (estatal|municipal|de gobierno|social)|rescate del centro)\b/i;
 
-  if (!response || !response.ok) {
-    const errBody = response ? await response.text().catch(() => '') : '';
-    const status = response ? response.status : 'no-response';
-    throw new Error(`OpenAI API ${status}: ${String(errBody).slice(0, 300)}`);
-  }
+function isBannedTrending(item) {
+  const txt = `${item.title_es || ''} ${item.summary_es || ''}`;
+  return BANNED_TRENDING.test(txt) || GOV_PR_TRENDING.test(txt);
+}
 
-  const data = await response.json();
-  const content = extractResponsesText(data);
-
-  if (!content) {
-    throw new Error('OpenAI returned no text content for trending');
-  }
-
-  const parsed = extractJSON(content);
-  if (!parsed || !Array.isArray(parsed.trending)) {
-    throw new Error('OpenAI JSON missing trending array');
-  }
-
-  const items = parsed.trending.map(sanitizeItem).filter(n =>
-    n.url &&
-    n.title_es && n.title_en && n.title_de && n.title_ja &&
-    n.summary_es && n.summary_en && n.summary_de && n.summary_ja
+// Significant words (len >= 6, accent-stripped) to catch near-duplicate topics.
+function trendingSigWords(title) {
+  return new Set(
+    String(title || '').toLowerCase()
+      .normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .replace(/[^a-z0-9\s]/g, ' ')
+      .split(/\s+/)
+      .filter(w => w.length >= 6)
   );
+}
 
-  return items.slice(0, 3).map((n, i) => ({
+function trendingTooSimilar(a, accepted) {
+  return accepted.some(b => {
+    let shared = 0;
+    for (const w of a) if (b.has(w)) shared++;
+    return shared >= 2;
+  });
+}
+
+async function fetchTrendingTopics(apiKey) {
+  const clean = [];
+  const acceptedWords = [];
+  const MAX_ATTEMPTS = 4;
+
+  for (let attempt = 0; attempt < MAX_ATTEMPTS && clean.length < 3; attempt++) {
+    const response = await callOpenAIResponses(apiKey, buildTrendingPrompt());
+    if (!response || !response.ok) continue;
+
+    const data = await response.json();
+    const content = extractResponsesText(data);
+    if (!content) continue;
+
+    const parsed = extractJSON(content);
+    if (!parsed || !Array.isArray(parsed.trending)) continue;
+
+    for (const raw of parsed.trending) {
+      const n = sanitizeItem(raw);
+      const valid = n.url &&
+        n.title_es && n.title_en && n.title_de && n.title_ja &&
+        n.summary_es && n.summary_en && n.summary_de && n.summary_ja;
+      if (!valid || isBannedTrending(n)) continue;
+
+      const words = trendingSigWords(n.title_es);
+      if (trendingTooSimilar(words, acceptedWords)) continue;
+      acceptedWords.push(words);
+      clean.push(n);
+      if (clean.length >= 3) break;
+    }
+  }
+
+  return clean.slice(0, 3).map((n, i) => ({
     title_es: n.title_es,
     title_en: n.title_en,
     title_de: n.title_de,

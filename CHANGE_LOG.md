@@ -4,6 +4,19 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-03] fix(trending): filtro en código anti-gobierno/inseguridad + dedup + activación
+
+El dueño corrió el SQL y activó trending_topics, pero gpt-4o-mini IGNORABA las exclusiones del prompt (los medios de SLP están saturados de gobierno) — el primer poblado sacó "Inseguridad 70.9%" y "Aprobación de Gallardo 75%". Solución robusta (no depender solo del prompt) en los 3 generadores:
+
+1) Filtro en código (red de seguridad): BANNED_TRENDING (inseguridad/crimen/violencia/ENSU/narco…) + GOV_PR_TRENDING (gallardo/gobernador/alcalde/funcionario/operativo/ayuntamiento/secretaría/gobierno estatal-municipal/obra pública/programa de gobierno/rescate del centro). Cualquier tema que haga match se descarta.
+2) Reintentos: fetchTrendingTopics ahora itera hasta 4 veces acumulando temas limpios hasta juntar 3 (antes 1 sola llamada).
+3) Dedup por solapamiento de palabras significativas (len>=6, sin acentos): descarta casi-duplicados que la dedup exacta no atrapaba (2x "conflictos vecinales").
+4) Prompt reorientado a cultura/música/deportes/gastronomía/eventos/virales + exige temas DISTINTOS y variedad positiva; guardarraíl ampliado para excluir operativos/programas/obras de gobierno aunque suenen neutrales.
+
+Verificado en vivo: tras el filtro, poblado final = Festival Brava Foodys MX / Concierto Liv Kristine / Feria de Empleo (cero gobierno, cero inseguridad, cero duplicados). tsc limpio (corregido TS2802 iterando Set con forEach), node checks OK. Bloque "temas de conversación" ya visible en el home.
+
+---
+
 ## [2026-07-03] content(maraton): página actualizada con resultados REALES 2026
 
 Página maraton-tangamanga-2026.tsx pasada a estado post-evento evergreen con resultados verificados (40ª edición, corrida 28-jun-2026). Datos cruzados en 3+ medios (El Sol de San Luis, Global Media, Pulso SLP):
