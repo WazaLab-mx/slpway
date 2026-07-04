@@ -40,6 +40,19 @@ CREATE TRIGGER trigger_trending_topics_updated_at
   FOR EACH ROW
   EXECUTE FUNCTION update_trending_topics_updated_at();
 
--- Grant permissions for anon role (for public API access)
+-- Row Level Security (mirrors news_headlines: public reads active rows only)
+ALTER TABLE trending_topics ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "Allow public read access to active trending" ON trending_topics;
+CREATE POLICY "Allow public read access to active trending"
+ON trending_topics FOR SELECT
+USING (active = true);
+
+DROP POLICY IF EXISTS "Allow service role full access trending" ON trending_topics;
+CREATE POLICY "Allow service role full access trending"
+ON trending_topics FOR ALL
+USING (auth.role() = 'service_role');
+
+-- Grant base privileges (RLS still gates row visibility)
 GRANT SELECT ON trending_topics TO anon;
 GRANT SELECT ON trending_topics TO authenticated;
