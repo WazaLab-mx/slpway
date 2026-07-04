@@ -7,6 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import LastUpdated from '@/components/common/LastUpdated';
 import GuideCTA from '@/components/common/GuideCTA';
 import AdUnit from '@/components/common/AdUnit';
+import LiveMusicVenues from '@/components/cultural/LiveMusicVenues';
 
 export default function MusicDancePage() {
   const [activeGenre, setActiveGenre] = useState('mariachi');
@@ -23,6 +24,14 @@ export default function MusicDancePage() {
     {
       question: 'What is the Danza de los Huehues?',
       answer: 'The Danza de los Huehues (Dance of the Old Ones) is performed during Xantolo celebrations in the Huasteca region. Dancers wear carved wooden masks, costumes representing old men and women, and perform comedic, satirical dances honoring the dead.',
+    },
+    {
+      question: 'Where can I see live music in San Luis Potosí city?',
+      answer: 'The capital has options for every taste: Estación Wadley for indie, rock and ska gigs; Chau! Resto in the Centro for live music and DJ evenings; Café Bar 500 Noches for bohemian trova and singer-songwriter nights; the Teatro de la Paz for the Orquesta Sinfónica de San Luis Potosí, opera and ballet; and the Centro de las Artes Centenario for concerts, recitals and its resident jazz ensemble.',
+    },
+    {
+      question: 'What is son huasteco?',
+      answer: 'Son huasteco (widely known as huapango) is the traditional trio music of the Huasteca — one musician on the jarana huasteca, one on the quinta huapanguera and one on violin, with high falsetto singing and improvised verses. Its two signatures are the ornamented, improvised violin line and the falsetto voice, and it is almost always paired with zapateado dancing on a wooden platform.',
     },
   ];
 
@@ -170,7 +179,7 @@ export default function MusicDancePage() {
               headline: 'Traditional Music & Dance of San Luis Potosí',
               description: 'Discover the rich musical traditions of San Luis Potosí - from mariachi and huapango to traditional dances. Your guide to experiencing authentic Mexican music and culture.',
               datePublished: '2025-01-01',
-              dateModified: '2026-04-10',
+              dateModified: '2026-07-04',
               author: {
                 '@type': 'Person',
                 '@id': 'https://www.sanluisway.com/about#editorial-team',
@@ -224,7 +233,7 @@ export default function MusicDancePage() {
               <h1 className="font-serif text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
                 Music & Dance Traditions
               </h1>
-              <LastUpdated date="2026-04-07" className="text-gray-300 mb-4" />
+              <LastUpdated date="2026-07-04" className="text-gray-300 mb-4" />
               <p className="text-white/90 text-xl leading-relaxed">
                 Discover the vibrant sounds and movements that define Mexican culture, from mariachi serenades to regional huapango
               </p>
@@ -347,6 +356,9 @@ export default function MusicDancePage() {
             </section>
           </div>
         </section>
+
+        {/* Live Music Venues Section */}
+        <LiveMusicVenues />
 
         {/* Traditional Dances Section */}
         <section className="py-20 bg-gradient-to-b from-gray-50 to-white">

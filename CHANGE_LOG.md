@@ -4,6 +4,14 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-04] feat(cultural/music-dance): sección de venues de música en vivo + arreglo RLS trending
+
+1) Página /cultural/music-dance: nueva sección "Where to See Live Music in San Luis Potosí" con venues REALES verificados (fuentes cruzadas): Chau! Resto, Estación Wadley (el dueño escribió "Huadley" — la grafía real es Wadley), Café Bar 500 Noches, Teatro de la Paz (OSSLP), Centro de las Artes Centenario, y foros de música tradicional (huapango/son huasteco, framing general sin inventar peñas). Modular: src/data/liveMusicVenues.ts + src/components/cultural/LiveMusicVenues.tsx, estilo Tailwind igual a la página. +2 FAQs verificables (feed a JSON-LD). Sin lenguaje de reserva; links reales a sitios/redes oficiales. Solo Teatro usa imagen real (asset existente); los demás son banners CSS gradiente (cero 404) listos para foto del dueño. Omitidos por falta de verificación: horarios, cover, teléfonos, eventos específicos. La Clave Azul descartada (está en Guanajuato). tsc limpio.
+
+2) fix RLS trending_topics: tenía RLS activo sin policy de SELECT → anon (el sitio) leía 0 filas y el bloque del home salía vacío. Añadidas policies (lectura pública de activos + service_role full) en scripts/fix-trending-topics-rls.sql; original actualizado. El dueño debe correr el SQL.
+
+---
+
 ## [2026-07-03] fix(trending): filtro en código anti-gobierno/inseguridad + dedup + activación
 
 El dueño corrió el SQL y activó trending_topics, pero gpt-4o-mini IGNORABA las exclusiones del prompt (los medios de SLP están saturados de gobierno) — el primer poblado sacó "Inseguridad 70.9%" y "Aprobación de Gallardo 75%". Solución robusta (no depender solo del prompt) en los 3 generadores:
