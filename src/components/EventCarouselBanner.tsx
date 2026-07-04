@@ -33,19 +33,6 @@ const slides: EventSlide[] = [
     ctaHover: 'hover:from-purple-300 hover:to-purple-400',
     ctaShadow: 'shadow-purple-500/25',
   },
-  {
-    key: 'countryFest',
-    href: '/events/cara-sucia-country-fest-2026',
-    image: '/images/events/cara-sucia-country-fest-2026-banner.png',
-    imageFit: 'cover',
-    gradient: 'from-stone-950/80 via-amber-900/60 to-orange-950/80',
-    badgeBg: 'bg-amber-400/20 border-amber-400/40',
-    badgeText: 'text-amber-200',
-    badgeDot: 'bg-amber-400',
-    ctaGradient: 'from-amber-400 to-amber-500',
-    ctaHover: 'hover:from-amber-300 hover:to-amber-400',
-    ctaShadow: 'shadow-amber-500/25',
-  },
 ];
 
 const EventCarouselBanner = () => {
