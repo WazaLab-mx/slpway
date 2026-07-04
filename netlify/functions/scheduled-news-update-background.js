@@ -332,8 +332,8 @@ CRÍTICO - FORMATO: Tu respuesta DEBE empezar con '{' y terminar con '}'. Sin pr
 // gpt-4o-mini ignores negative prompt constraints when local media is
 // dominated by insecurity/government-PR topics, so we HARD-FILTER them in
 // code (safety net) and retry to accumulate 3 clean topics.
-const BANNED_TRENDING = /\b(inseguridad|ensu|crimen|criminal|violen|homicid|feminicid|secuestr|delito|delincuen|nota roja|narco|asesinat|balacera|ejecuci[oó]n)\b/i;
-const GOV_PR_TRENDING = /\b(gallardo|gobernador|alcalde|edil|funcionari|mandatario estatal|aprobaci[oó]n del|desempe[ñn]o del|operativo|ayuntamiento|secretar[ií]a|gobierno del estado|gobierno (estatal|municipal)|obra p[uú]blica|programa (estatal|municipal|de gobierno|social)|rescate del centro)\b/i;
+const BANNED_TRENDING = /\b(inseguridad|ensu|crimen|criminal|violen|homicid|feminicid|secuestr|delito|delincuen|nota roja|narco|asesinat|balacera|ejecuci[oó]n|inundaci|desbordamiento|torrencial|socav[oó]n|derrumbe)\b/i;
+const GOV_PR_TRENDING = /\b(gallardo|gobernador|alcalde|edil|funcionari|mandatario estatal|aprobaci[oó]n del|desempe[ñn]o del|operativo|ayuntamiento|cabildo|regidor|s[ií]ndico|diputad|congreso del estado|legislatura|secretar[ií]a|gobierno del estado|gobierno (estatal|municipal)|obra p[uú]blica|programa (estatal|municipal|de gobierno|social)|rescate del centro)\b/i;
 
 function isBannedTrending(item) {
   const txt = `${item.title_es || ''} ${item.summary_es || ''}`;

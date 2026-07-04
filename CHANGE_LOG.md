@@ -4,6 +4,14 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-04] fix(trending): RLS resuelto en vivo + filtro reforzado (cabildo/desastres)
+
+RLS: el dueño corrió fix-trending-topics-rls.sql; verificado que anon lee 3 filas y el API de producción las devuelve → el bloque "temas de conversación" YA aparece en el home.
+
+Filtro reforzado: el cron había repoblado con una batch que se coló ("Cabildo aprueba estímulos" = gobierno; "Lluvias torrenciales" = desastre). Agregado a GOV_PR_TRENDING: cabildo, regidor, síndico, diputados, congreso del estado, legislatura. Agregado a BANNED_TRENDING: inundaciones, desbordamiento, torrencial, socavón, derrumbe. Refrescado: batch resultante = Festival de la Cantera / Atlético Potosino (deportes) / debate centro comercial — limpia. Aplicado a los 3 generadores. tsc limpio.
+
+---
+
 ## [2026-07-04] feat(cultural/music-dance): sección de venues de música en vivo + arreglo RLS trending
 
 1) Página /cultural/music-dance: nueva sección "Where to See Live Music in San Luis Potosí" con venues REALES verificados (fuentes cruzadas): Chau! Resto, Estación Wadley (el dueño escribió "Huadley" — la grafía real es Wadley), Café Bar 500 Noches, Teatro de la Paz (OSSLP), Centro de las Artes Centenario, y foros de música tradicional (huapango/son huasteco, framing general sin inventar peñas). Modular: src/data/liveMusicVenues.ts + src/components/cultural/LiveMusicVenues.tsx, estilo Tailwind igual a la página. +2 FAQs verificables (feed a JSON-LD). Sin lenguaje de reserva; links reales a sitios/redes oficiales. Solo Teatro usa imagen real (asset existente); los demás son banners CSS gradiente (cero 404) listos para foto del dueño. Omitidos por falta de verificación: horarios, cover, teléfonos, eventos específicos. La Clave Azul descartada (está en Guanajuato). tsc limpio.
