@@ -4,6 +4,12 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-11] feat(cultural/music-dance): fotos en las tarjetas de venues
+
+Las 6 tarjetas de música en vivo ahora muestran imagen (antes 5 eran banners CSS). Copias webp optimizadas (~800x360, quality 80) generadas con sharp desde assets reales del repo, en public/images/cultural/venues/. Fotos REALES del lugar: Teatro de la Paz y Centro de las Artes (blog/leonora carrington/centro de las artes.jpeg). Representativas (imágenes de bares/vida nocturna/música en vivo de SLP, no la foto propia del venue, marcadas para reemplazo): Chau! Resto, Estación Wadley, Café 500 Noches, foros tradicionales. Comentario del data file actualizado indicando cuáles son reales vs representativas. tsc limpio.
+
+---
+
 ## [2026-07-04] fix(trending): RLS resuelto en vivo + filtro reforzado (cabildo/desastres)
 
 RLS: el dueño corrió fix-trending-topics-rls.sql; verificado que anon lee 3 filas y el API de producción las devuelve → el bloque "temas de conversación" YA aparece en el home.
