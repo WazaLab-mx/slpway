@@ -4,6 +4,14 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-13] data(events): auditar y corregir 5 imágenes mal-emparejadas del cultural_calendar
+
+Tras arreglar la de salsa, se auditaron las 13 imágenes del cultural_calendar (descarga + revisión visual una por una). Correctas (8): Teatro de la Paz, Centro de las Artes, Salsa (ya arreglada), Feria del Rebozo (póster FEREB real), FENAPO 2026, Fiestas Patrias (desfile de charros — apropiado para septiembre patrio), Global Beer Fest, Alan Parsons. Mismatches (5) corregidos: **Festival de la Huasteca** mostraba un póster comercial de FENAHUAP (evento distinto) → trío huasteco + baile de zapateado en tarima; **Virgen de la Asunción** duplicaba el póster de música del Rebozo → procesión mariana con rebozos; **San Luis Rey de Francia** reusaba el desfile de charros genérico → catedral al anochecer con procesión de velas; **San Miguel Arcángel** reusaba el mismo desfile de charros → estatua del arcángel con espada en procesión; **San Francisco / Real de Catorce** duplicaba el edificio del Teatro de la Paz → peregrinación en el pueblo minero del desierto con imagen del santo.
+
+Patrón: varias imágenes eran fotos/pósters reales reutilizados como genéricos (el desfile de charros salía en 3 eventos; el póster FEREB en 2; el Teatro de la Paz en 2). Fix: 5 imágenes nuevas generadas con OpenAI gpt-image-1 (1536x1024, quality high), optimizadas con sharp a jpg 1280x853 q82 (~140–266KB), upsert al MISMO path en `blog-images/events/`, y `events.image_url` actualizado con cache-buster `?v=20260713b`. Prompts temáticos y atemporales (sin texto/logos, sin artistas ni año específicos — cumple regla de no-info-de-años-previos). Script one-off: `scripts/fix-event-images-audit.js`. Solo cambios de datos/storage + el script (sin diff de UI). Verificado visualmente: las 5 nuevas imágenes coinciden con su evento.
+
+---
+
 ## [2026-07-13] data(events): corregir imagen incorrecta de "Hobby Salsa Fest 2026"
 
 La imagen del evento mostraba un desfile de CHARROS a caballo (charrería) — nada que ver con salsa. Era un archivo equivocado subido a `blog-images/events/hobby-salsa-fest.jpg`. Se generó una imagen acertada (pareja bailando salsa, banda latina, luces de escenario, sin charros ni caballos) con OpenAI gpt-image-1, optimizada con sharp a jpg 1280x853 q82 (171KB), y se hizo upsert al mismo path. Se actualizó `events.image_url` del row con cache-buster `?v=20260713` para refresco inmediato en dev+prod. Solo cambio de datos/storage (sin diff de código). NOTA: las imágenes de eventos se generan por IA (script gemini-3-pro-image-preview) o son fotos subidas manualmente; esta era una foto real mal etiquetada → conviene auditar el resto de las 13 imágenes del cultural_calendar por posibles mismatches.
