@@ -4,6 +4,12 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-13] refactor(newsletter): split del generador monolítico en 9 módulos
+
+`newsletter-generator.ts` pasó de 2697 → 773 líneas (−71%) partiéndolo en módulos cohesivos, sin cambiar comportamiento (extracción verbatim con sed; re-exports preservan la API pública para importadores: generate.ts, newsletter-sections.ts, tests). Módulos nuevos en src/lib/: `newsletter-template.ts` (NEWSLETTER_TEMPLATE + CLOSING_AND_FOOTER_HTML, 579), `newsletter-prompt.ts` (buildNewsletterPrompt + contexto tipado, 572), `newsletter-html.ts` (clean/responsive/placeholders/utm/hero+blog images, 278), `newsletter-links.ts` (validación de URLs + HEAD checks, 205), `newsletter-comunidad.ts` (182), `newsletter-ads.ts` (161), `newsletter-subject.ts` (digest + subject/preview, 115), `newsletter-supabase.ts` (getSupabaseClient compartido, 16). El main queda como orquestador (generateWeeklyNewsletter + helpers de fecha/hora/FX + persistencia). Quitados imports muertos (createClient, startOfWeek, endOfWeek). tsc exit 0 en todo el proyecto, 21/21 tests pasando. Motivo: el archivo violaba la regla de ~200 líneas y mezclaba template, prompt, validación, ads, imágenes y orquestación.
+
+---
+
 ## [2026-07-13] feat(newsletter): imágenes reales (hero rotativo + foto del blog destacado)
 
 El newsletter deja de ser 100% texto. Se inyectan 2 imágenes REALES de nuestra DB, nunca URLs de la IA (que darían 404): 1) HERO tras el saludo, arriba del primer card — foto curada de `featured_photos` (misma fuente que el home, filtrada active), rotando por semana (`weekIndex % photos.length`) para no repetir; 2) foto del artículo destacado (`blog_posts.image_url`) dentro de su tarjeta "From the Blog", resuelta haciendo match del slug del link /blog/<slug> contra los posts ya traídos. Se conserva `removeAllImages` (mata cualquier imagen alucinada por la IA); la inyección corre en el paso 7.6, DESPUÉS de limpiar, así que solo salen imágenes verificadas — se mantiene la garantía de cero-hallucination. Todo con estilos inline email-safe (width 100%/max-width, border-radius) → responsivo sin depender de <style>. Ambas funciones son no-op si falta la foto/anchor (nunca tiran contenido). Nota: la "foto del evento top" quedó fuera a propósito — los Top Picks los investiga la IA por web, no son filas de DB con imagen confiable. +4 tests (15/15 pasando), tsc limpio.
