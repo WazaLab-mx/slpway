@@ -310,7 +310,10 @@
       "description": "From art exhibitions to traditional festivals",
       "viewAll": "View All Events",
       "thisWeek": "What's happening this week in San Luis Potosí",
-      "until": "Until"
+      "until": "Until",
+      "details": "View details",
+      "prev": "Previous",
+      "next": "Next"
     },
     "culture": {
       "badge": "Cultural Heritage",

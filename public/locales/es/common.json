@@ -310,7 +310,10 @@
       "description": "Desde exposiciones de arte hasta festivales tradicionales",
       "viewAll": "Ver Todos los Eventos",
       "thisWeek": "Qué hacer esta semana en San Luis Potosí",
-      "until": "Hasta"
+      "until": "Hasta",
+      "details": "Ver detalles",
+      "prev": "Anterior",
+      "next": "Siguiente"
     },
     "culture": {
       "badge": "Herencia Cultural",

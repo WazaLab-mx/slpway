@@ -4,6 +4,12 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-13] feat(home): reemplazar marquee de Cultural Calendar por carrusel interactivo
+
+El "cintillo" de eventos (marquee auto-scroll `scroll 40s linear infinite`, tarjetas duplicadas y NO clickeables) se reemplazó por un carrusel interactivo en `EventsPreview.tsx`. Ahora: tarjetas con imagen real del evento (los 13 eventos del calendario tienen image_url; fallback a gradiente si faltara), **cada tarjeta linkea al evento** (`buildEventPath`) — antes ni siquiera eran clickeables; badge de fecha + categoría (colores por categoría), ubicación, "Until" en multi-día, y CTA "View details". Navegación: flechas prev/next (desktop), dots (uno por evento, activo se alarga), swipe nativo en móvil (scroll-snap), autoplay suave de 6s que pausa en hover/touch y respeta `prefers-reduced-motion`. Responsive: 1 tarjeta+peek (móvil) / ~2 (sm) / ~3 (lg). i18n completo (nuevas keys details/prev/next en en/es/de/ja). Verificado con Playwright en desktop y móvil (screenshots), tsc exit 0. Motivo: el marquee iba muy lento y no aportaba (sin imágenes, sin links, sin control del usuario).
+
+---
+
 ## [2026-07-13] fix(newsletter): subject/preview y Comunidad a OpenAI (Gemini sin quota) + hero fallback
 
 Diagnóstico sobre un newsletter real generado: (1) el subject/preview salían genéricos porque `generateSubjectAndPreview` usaba gemini-2.0-flash y el GOOGLE_API_KEY del proyecto tiene la quota de Gemini agotada (429 "limit: 0", free tier) → siempre caía al fallback. El digest era perfecto (694 chars). (2) El hero no aparecía porque `featured_photos` tiene 0 filas activas (la tabla está vacía). Las imágenes del blog y los UTMs por sección sí funcionaban.

@@ -310,7 +310,10 @@
       "description": "Von Kunstausstellungen bis zu traditionellen Festen",
       "viewAll": "Alle Veranstaltungen ansehen",
       "thisWeek": "Was diese Woche in San Luis Potosí los ist",
-      "until": "Bis"
+      "until": "Bis",
+      "details": "Details ansehen",
+      "prev": "Zurück",
+      "next": "Weiter"
     },
     "culture": {
       "badge": "Kulturelles Erbe",

@@ -315,7 +315,10 @@
       "description": "アート展示会から伝統的な祭りまで",
       "viewAll": "すべてのイベントを見る",
       "thisWeek": "今週のサンルイスポトシのイベント",
-      "until": "まで"
+      "until": "まで",
+      "details": "詳細を見る",
+      "prev": "前へ",
+      "next": "次へ"
     },
     "culture": {
       "badge": "文化遺産",
