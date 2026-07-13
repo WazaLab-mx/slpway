@@ -1,4 +1,11 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import OpenAI from 'openai';
+
+// Subject/preview run on OpenAI (the primary generator), not Gemini: the
+// project's Gemini free-tier quota is exhausted, so a Gemini call here always
+// 429s and silently falls back to the generic subject.
+const openai = process.env.OPENAI_API_KEY
+  ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+  : null;
 
 // Strips HTML tags and normalizes whitespace/entities to plain readable text.
 function stripTagsToText(html: string): string {
@@ -49,7 +56,7 @@ export function extractContentDigest(html: string): string {
 /**
  * Generates an open-rate-optimized subject line and preview text from the
  * edition's actual top story/event, instead of the old generic date-based
- * strings. Uses a cheap Gemini call and falls back to the generic values on any
+ * strings. Uses an OpenAI call and falls back to the generic values on any
  * failure so generation never breaks over this.
  */
 export async function generateSubjectAndPreview(
@@ -62,7 +69,7 @@ export async function generateSubjectAndPreview(
   };
 
   const digest = extractContentDigest(html);
-  if (!digest || digest.length < 30 || !process.env.GOOGLE_API_KEY) {
+  if (!digest || digest.length < 30 || !openai) {
     return fallback;
   }
 
@@ -90,15 +97,19 @@ Return ONLY valid JSON, no markdown, no code fences:
 {"subject":"...","previewText":"..."}`;
 
   try {
-    const model = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY).getGenerativeModel({
-      model: 'gemini-2.0-flash',
-      generationConfig: { maxOutputTokens: 200, temperature: 0.85 },
+    const response = await openai.responses.create({
+      model: 'gpt-5.4',
+      instructions: 'You write email subject lines and preview text. Return ONLY valid JSON.',
+      input: prompt,
+      max_output_tokens: 1000,
     });
-    const result = await model.generateContent(prompt);
-    let text = result.response.text().trim();
+    let text = (response.output_text || '').trim();
     text = text.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/\s*```$/i, '');
+    // Be tolerant of any surrounding prose — grab the first JSON object.
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) return fallback;
 
-    const parsed = JSON.parse(text);
+    const parsed = JSON.parse(jsonMatch[0]);
     const subject = typeof parsed.subject === 'string' ? parsed.subject.trim() : '';
     const previewText = typeof parsed.previewText === 'string' ? parsed.previewText.trim() : '';
 

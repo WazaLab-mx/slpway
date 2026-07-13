@@ -230,10 +230,24 @@ export async function generateWeeklyNewsletter(customContent?: string) {
       heroPhoto = photos[weekIndex % photos.length] as { image_url: string; title: string | null };
       console.log(`   ✅ Hero photo: "${heroPhoto.title || 'untitled'}"`);
     } else {
-      console.log('   ⚠️ No active featured_photos — newsletter ships without a hero image');
+      console.log('   ⚠️ No active featured_photos — will fall back to a recent blog image');
     }
   } catch (e) {
     console.log('   ⚠️ Could not fetch featured_photos:', e);
+  }
+
+  // Fallback hero: if featured_photos is empty, rotate through recent blog post
+  // images (real, DB-hosted). Keeps a hero on every edition even before the
+  // featured_photos table is curated.
+  if (!heroPhoto && blogPosts && blogPosts.length > 0) {
+    const withImage = (blogPosts as Array<{ image_url?: string | null; title?: string | null; title_en?: string | null }>)
+      .filter((p) => p.image_url);
+    if (withImage.length > 0) {
+      const weekIndex = Math.floor(dates.weekStartDate.getTime() / (7 * 24 * 3600 * 1000));
+      const bp = withImage[weekIndex % withImage.length];
+      heroPhoto = { image_url: bp.image_url as string, title: bp.title_en || bp.title || 'San Luis Potosí' };
+      console.log('   ↩️ Hero fallback: using a recent blog image');
+    }
   }
 
   console.log('1.6. Fetching previously used content to avoid repetition...');

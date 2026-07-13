@@ -4,6 +4,14 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-13] fix(newsletter): subject/preview y Comunidad a OpenAI (Gemini sin quota) + hero fallback
+
+Diagnóstico sobre un newsletter real generado: (1) el subject/preview salían genéricos porque `generateSubjectAndPreview` usaba gemini-2.0-flash y el GOOGLE_API_KEY del proyecto tiene la quota de Gemini agotada (429 "limit: 0", free tier) → siempre caía al fallback. El digest era perfecto (694 chars). (2) El hero no aparecía porque `featured_photos` tiene 0 filas activas (la tabla está vacía). Las imágenes del blog y los UTMs por sección sí funcionaban.
+
+Fixes: `newsletter-subject.ts` y `newsletter-comunidad.ts` ahora usan OpenAI (gpt-5.4, responses API — el generador primario que sí funciona) en vez de Gemini; parsing tolerante (extrae el primer objeto JSON). Verificado con la key real: subject "💃 Salsa fest, road closures & rainy mañanas | July 13–July 20" + preview coherente. `newsletter-generator.ts`: si `featured_photos` está vacía, el hero cae a una imagen de blog reciente (rotando por semana), así siempre hay hero. tsc exit 0, 21/21 tests. Pendiente del dueño: poblar `featured_photos` (active=true) para el hero curado; y actualizar la quota/billing de Gemini si se quiere reactivar el fallback de generación.
+
+---
+
 ## [2026-07-13] docs(newsletter): reescritura del style guide para reflejar el sistema real
 
 `NEWSLETTER_STYLE_GUIDE.md` (1154 líneas) describía un sistema obsoleto (8 pilares, sección de memes, imágenes obligatorias vía AI, template viejo con gradientes) que no coincidía en nada con el generador real. Reescrito (~180 líneas) reflejando la realidad: layout de 4 cards (This Week at a Glance / What's On / Expat Toolkit / Go Deeper) + Comunidad/CTA/footer; pipeline real (tiempo autoritativo, inyección de clima/FX/tiempo, dedup de 8 tablas, GPT-5.4 primario + Gemini fallback); política de imágenes (removeAllImages + hero de featured_photos rotativo + foto del blog de DB, la IA nunca emite <img>); subject/preview auto desde la historia estrella; utm_content por sección que compone con Beehiiv; reglas editoriales (fechas/geografía/MXN, sin info de años previos, sin sesgo gobierno, sin lenguaje de reserva — refs a memories); flujo human-gated; y el mapa de los 9 módulos. Motivo: el doc confundía a cualquier humano o coding agent que lo consultara.

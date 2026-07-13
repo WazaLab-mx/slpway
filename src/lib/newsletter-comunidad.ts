@@ -1,4 +1,10 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import OpenAI from 'openai';
+
+// Uses OpenAI (the primary generator); the project's Gemini free-tier quota is
+// exhausted, so a Gemini call here always 429s and drops back to raw content.
+const openai = process.env.OPENAI_API_KEY
+  ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+  : null;
 
 // Function to rewrite custom content in a friendly tone using AI
 async function rewriteContentInFriendlyTone(customContent: string): Promise<{ title: string; body: string; cta?: string }> {
@@ -31,21 +37,22 @@ If there's no special code/offer, set cta to null.
 `;
 
   try {
-    const rewriteModel = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY!).getGenerativeModel({
-      model: "gemini-2.0-flash",
-      generationConfig: { maxOutputTokens: 500, temperature: 0.7 }
-    });
+    if (!openai) throw new Error('OpenAI API key not configured');
 
-    console.log('   🤖 Calling Gemini to rewrite content...');
-    const result = await rewriteModel.generateContent(rewritePrompt);
-    const response = await result.response;
-    let text = response.text().trim();
-    console.log('   📄 Gemini response:', text.substring(0, 200) + '...');
+    console.log('   🤖 Calling OpenAI to rewrite content...');
+    const response = await openai.responses.create({
+      model: 'gpt-5.4',
+      instructions: 'You rewrite short community blurbs in a warm, friendly tone. Return ONLY valid JSON.',
+      input: rewritePrompt,
+      max_output_tokens: 1000,
+    });
+    let text = (response.output_text || '').trim();
+    console.log('   📄 OpenAI response:', text.substring(0, 200) + '...');
 
     // Clean up response - remove markdown code blocks if present
     text = text.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/\s*```$/i, '');
-
-    const parsed = JSON.parse(text);
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    const parsed = JSON.parse(jsonMatch ? jsonMatch[0] : text);
     console.log('   ✅ Parsed result - Title:', parsed.title, '| Body length:', parsed.body?.length || 0);
 
     return {
