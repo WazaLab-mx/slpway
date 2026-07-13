@@ -4,6 +4,12 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-13] docs(newsletter): reescritura del style guide para reflejar el sistema real
+
+`NEWSLETTER_STYLE_GUIDE.md` (1154 líneas) describía un sistema obsoleto (8 pilares, sección de memes, imágenes obligatorias vía AI, template viejo con gradientes) que no coincidía en nada con el generador real. Reescrito (~180 líneas) reflejando la realidad: layout de 4 cards (This Week at a Glance / What's On / Expat Toolkit / Go Deeper) + Comunidad/CTA/footer; pipeline real (tiempo autoritativo, inyección de clima/FX/tiempo, dedup de 8 tablas, GPT-5.4 primario + Gemini fallback); política de imágenes (removeAllImages + hero de featured_photos rotativo + foto del blog de DB, la IA nunca emite <img>); subject/preview auto desde la historia estrella; utm_content por sección que compone con Beehiiv; reglas editoriales (fechas/geografía/MXN, sin info de años previos, sin sesgo gobierno, sin lenguaje de reserva — refs a memories); flujo human-gated; y el mapa de los 9 módulos. Motivo: el doc confundía a cualquier humano o coding agent que lo consultara.
+
+---
+
 ## [2026-07-13] refactor(newsletter): split del generador monolítico en 9 módulos
 
 `newsletter-generator.ts` pasó de 2697 → 773 líneas (−71%) partiéndolo en módulos cohesivos, sin cambiar comportamiento (extracción verbatim con sed; re-exports preservan la API pública para importadores: generate.ts, newsletter-sections.ts, tests). Módulos nuevos en src/lib/: `newsletter-template.ts` (NEWSLETTER_TEMPLATE + CLOSING_AND_FOOTER_HTML, 579), `newsletter-prompt.ts` (buildNewsletterPrompt + contexto tipado, 572), `newsletter-html.ts` (clean/responsive/placeholders/utm/hero+blog images, 278), `newsletter-links.ts` (validación de URLs + HEAD checks, 205), `newsletter-comunidad.ts` (182), `newsletter-ads.ts` (161), `newsletter-subject.ts` (digest + subject/preview, 115), `newsletter-supabase.ts` (getSupabaseClient compartido, 16). El main queda como orquestador (generateWeeklyNewsletter + helpers de fecha/hora/FX + persistencia). Quitados imports muertos (createClient, startOfWeek, endOfWeek). tsc exit 0 en todo el proyecto, 21/21 tests pasando. Motivo: el archivo violaba la regla de ~200 líneas y mezclaba template, prompt, validación, ads, imágenes y orquestación.
