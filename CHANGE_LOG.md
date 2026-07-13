@@ -4,6 +4,12 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-13] feat(newsletter): subject line y preview text inteligentes por edición
+
+El generador ya no usa asunto/preview genéricos (`San Luis Way Weekly | <fechas>` + `Your weekly guide...`). Ahora `generateSubjectAndPreview()` (en newsletter-generator.ts) deriva el asunto y el preview de la historia/evento estrella de esa edición vía una llamada barata a Gemini flash, con guardrails (asunto 8-90 chars, formato `emoji + gancho | <fecha corta>`, preview 80-140 chars que complementa sin repetir el asunto). Fallback seguro a los strings genéricos ante cualquier fallo (sin API key, JSON inválido, digest vacío) para que la generación nunca se rompa por esto. `extractContentDigest()` (puro, testeado) extrae opening hook + top news + top event del HTML final. La API generate.ts consume `preview_text` del generador. Motivo: asunto/preview son la mayor palanca de open-rate y estaban 100% genéricos. Sigue human-gated (se crea draft en Beehiiv, el dueño revisa/edita/envía). +3 tests (7/7 pasando), tsc limpio.
+
+---
+
 ## [2026-07-11] feat(cultural/music-dance): fotos en las tarjetas de venues
 
 Las 6 tarjetas de música en vivo ahora muestran imagen (antes 5 eran banners CSS). Copias webp optimizadas (~800x360, quality 80) generadas con sharp desde assets reales del repo, en public/images/cultural/venues/. Fotos REALES del lugar: Teatro de la Paz y Centro de las Artes (blog/leonora carrington/centro de las artes.jpeg). Representativas (imágenes de bares/vida nocturna/música en vivo de SLP, no la foto propia del venue, marcadas para reemplazo): Chau! Resto, Estación Wadley, Café 500 Noches, foros tradicionales. Comentario del data file actualizado indicando cuáles son reales vs representativas. tsc limpio.

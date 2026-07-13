@@ -25,8 +25,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (customContent) {
       logger.log('Custom content provided:', customContent.substring(0, 100) + '...');
     }
-    const { subject, html_content, date_range, link_validation, unfilled_placeholders } = await generateWeeklyNewsletter(customContent);
-    const previewText = `Your weekly guide to San Luis Potosí for ${date_range}`;
+    const { subject, html_content, preview_text, date_range, link_validation, unfilled_placeholders } = await generateWeeklyNewsletter(customContent);
+    const previewText = preview_text || `Your weekly guide to San Luis Potosí for ${date_range}`;
 
     if (link_validation.broken_links_replaced.length > 0) {
       logger.log(

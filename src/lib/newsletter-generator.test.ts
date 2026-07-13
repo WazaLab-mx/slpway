@@ -1,4 +1,10 @@
-import { NEWSLETTER_TEMPLATE, CLOSING_AND_FOOTER_HTML, getCurrentNewsletterDates } from './newsletter-generator';
+import {
+  NEWSLETTER_TEMPLATE,
+  CLOSING_AND_FOOTER_HTML,
+  getCurrentNewsletterDates,
+  extractContentDigest,
+  generateSubjectAndPreview,
+} from './newsletter-generator';
 import { format, addDays } from 'date-fns';
 
 describe('newsletter template structure', () => {
@@ -27,6 +33,44 @@ describe('newsletter template structure', () => {
     ['[CTA_TITLE]', '[CTA_BODY]', '[CTA_BUTTON_LABEL]', '[CTA_BUTTON_LINK]'].forEach((placeholder) => {
       expect(NEWSLETTER_TEMPLATE).toContain(placeholder);
     });
+  });
+});
+
+describe('extractContentDigest', () => {
+  const sampleHtml = `
+    <!-- OPENING HOOK -->
+    <tr><td style="padding: 30px;"><p style="font-size:16px;">¡Hola potosinos! The FENAPO lineup just dropped and the city is buzzing.</p></td></tr>
+    <div>
+      <h3 style="color:#C75B39;">📰 Top News</h3>
+      <div><h4>New bike lane opens on Av. Carranza</h4><p>Details...</p></div>
+      <div><h4>Interapas announces water cuts in zona norte</h4><p>Details...</p></div>
+    </div>
+    <div><h3>⚡ Quick Hits</h3></div>
+    <div>
+      <h3>🌟 This Week's Top Picks</h3>
+      <div><h4>Café Cortao grand opening</h4><p>...</p></div>
+      <a>See All Events</a>
+    </div>
+  `;
+
+  it('extracts the opening hook, top news headlines, and top event', () => {
+    const digest = extractContentDigest(sampleHtml);
+    expect(digest).toContain('OPENING: ¡Hola potosinos!');
+    expect(digest).toContain('New bike lane opens on Av. Carranza');
+    expect(digest).toContain('Interapas announces water cuts');
+    expect(digest).toContain('Café Cortao grand opening');
+  });
+
+  it('returns an empty string when there is no extractable content', () => {
+    expect(extractContentDigest('<div>nothing useful here</div>')).toBe('');
+  });
+});
+
+describe('generateSubjectAndPreview', () => {
+  it('falls back to generic subject/preview when the HTML has no content signals', async () => {
+    const result = await generateSubjectAndPreview('<div>empty</div>', 'July 13 - 20, 2026');
+    expect(result.subject).toBe('San Luis Way Weekly | July 13 - 20, 2026');
+    expect(result.previewText).toBe('Your weekly guide to San Luis Potosí for July 13 - 20, 2026');
   });
 });
 
