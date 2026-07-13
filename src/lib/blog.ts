@@ -56,19 +56,50 @@ function getSupabaseClient(): SupabaseClient {
 
 // --- Data Fetching Functions ---
 
+// Listing queries must NOT pull the full multi-language `content` columns —
+// each post's HTML runs 15–20 KB × 4 locales, so selecting all of them for a
+// list of ~40+ posts transfers megabytes and times out the DB under build-time
+// concurrency. META_FIELDS carries only what cards/paths/SEO need (no content);
+// LIST_FIELDS adds the base English `content` for read-time estimation only
+// (a rough word-count estimate — locale-perfect content isn't needed here).
+const META_FIELDS =
+  'id, slug, title, excerpt, image_url, category, published_at, created_at, tags, title_es, excerpt_es, title_de, excerpt_de, title_ja, excerpt_ja, meta_title, meta_description, meta_title_es, meta_description_es, meta_title_de, meta_description_de, meta_title_ja, meta_description_ja';
+const LIST_FIELDS = `${META_FIELDS}, content`;
+
+function mapRow(post: Record<string, unknown>, locale: SupportedLocale): BlogPost {
+  return {
+    id: post.id as string,
+    slug: post.slug as string,
+    title: getLocalizedField(post, 'title', locale),
+    content: getLocalizedField(post, 'content', locale),
+    excerpt: getLocalizedField(post, 'excerpt', locale),
+    imageUrl: post.image_url as string | undefined,
+    category: post.category as string | undefined,
+    publishedAt: post.published_at as string,
+    createdAt: post.created_at as string,
+    tags: post.tags as string[] | undefined,
+    metaTitle: getLocalizedField(post, 'meta_title', locale),
+    metaDescription: getLocalizedField(post, 'meta_description', locale),
+  };
+}
+
 /**
- * Fetches all published blog posts, ordered by publication date.
- * @param {SupportedLocale} locale - The locale for content (en, es, de). Defaults to 'en'.
- * @returns {Promise<BlogPost[]>} A promise that resolves to an array of blog posts.
+ * Fetches published blog posts including the base `content` (for read-time),
+ * ordered by publication date. Use this only where read-time is displayed
+ * (blog index, homepage carousel). Everything else should use getBlogPostsMeta.
+ * @param locale - The locale for content. Defaults to 'en'.
+ * @param limit - Optional max number of posts to return.
  */
-export async function getBlogPosts(locale: SupportedLocale = 'en'): Promise<BlogPost[]> {
+export async function getBlogPosts(locale: SupportedLocale = 'en', limit?: number): Promise<BlogPost[]> {
   try {
     const client = getSupabaseClient();
-    const { data, error } = await client
+    let query = client
       .from('blog_posts')
-      .select('id, slug, title, content, excerpt, image_url, category, published_at, created_at, tags, title_es, content_es, excerpt_es, title_de, content_de, excerpt_de, title_ja, content_ja, excerpt_ja, meta_title, meta_description, meta_title_es, meta_description_es, meta_title_de, meta_description_de, meta_title_ja, meta_description_ja')
+      .select(LIST_FIELDS)
       .eq('status', 'published')
       .order('published_at', { ascending: false });
+    if (limit) query = query.limit(limit);
+    const { data, error } = await query;
 
     if (error) {
       console.error('Error fetching blog posts:', error.message);
@@ -79,23 +110,45 @@ export async function getBlogPosts(locale: SupportedLocale = 'en'): Promise<Blog
       return [];
     }
 
-    return data.map((post) => ({
-      id: post.id,
-      slug: post.slug,
-      title: getLocalizedField(post, 'title', locale),
-      content: getLocalizedField(post, 'content', locale),
-      excerpt: getLocalizedField(post, 'excerpt', locale),
-      imageUrl: post.image_url,
-      category: post.category,
-      publishedAt: post.published_at,
-      createdAt: post.created_at,
-      tags: post.tags,
-      metaTitle: getLocalizedField(post, 'meta_title', locale),
-      metaDescription: getLocalizedField(post, 'meta_description', locale),
-    }));
+    return data.map((post) => mapRow(post, locale));
   } catch (err) {
     const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred';
     console.error(`Failed to get blog posts: ${errorMessage}`);
+    return [];
+  }
+}
+
+/**
+ * Lightweight listing: published posts WITHOUT any `content` column — for
+ * static paths, related-posts and any list that doesn't show read-time.
+ * Returned posts have `content: ''`.
+ * @param locale - The locale for titles/excerpts/meta. Defaults to 'en'.
+ * @param limit - Optional max number of posts to return.
+ */
+export async function getBlogPostsMeta(locale: SupportedLocale = 'en', limit?: number): Promise<BlogPost[]> {
+  try {
+    const client = getSupabaseClient();
+    let query = client
+      .from('blog_posts')
+      .select(META_FIELDS)
+      .eq('status', 'published')
+      .order('published_at', { ascending: false });
+    if (limit) query = query.limit(limit);
+    const { data, error } = await query;
+
+    if (error) {
+      console.error('Error fetching blog post metas:', error.message);
+      throw new Error(`Database error: ${error.message}`);
+    }
+
+    if (!data) {
+      return [];
+    }
+
+    return data.map((post) => mapRow(post, locale));
+  } catch (err) {
+    const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred';
+    console.error(`Failed to get blog post metas: ${errorMessage}`);
     return [];
   }
 }

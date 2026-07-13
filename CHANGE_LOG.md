@@ -4,6 +4,14 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-13] perf(blog): eliminar statement timeouts en build (queries de listado sin content pesado)
+
+Durante `npm run build` aparecían ~30 errores `canceling statement due to statement timeout` / `Failed to get blog posts`. Causa: `getBlogPosts()` (usada en LISTADOS) hacía `select` incluyendo las 4 columnas `content, content_es, content_de, content_ja` completas (~15-20 KB × 4 por post) SIN `limit` → ~3 MB por query. Amplificador: `blog/[slug].tsx` llamaba `getBlogPosts()` 2× por página (getStaticPaths + getStaticProps para relacionados) → cientos de queries de 3 MB en el build concurrente, agotando el statement timeout de Supabase.
+
+Fix en `src/lib/blog.ts`: (1) `META_FIELDS` (sin ninguna columna content) + `LIST_FIELDS` (= meta + solo `content` base para read-time); helper `mapRow` compartido. (2) Nueva `getBlogPostsMeta(locale, limit?)` — listado ligero sin content (posts con `content:''`). (3) `getBlogPosts(locale, limit?)` ahora trae solo `content` base (no los 3 idiomas extra) — el read-time es una estimación por conteo de palabras, no necesita content por locale — y acepta `limit`. Consumidores: `blog/[slug].tsx` (paths + relacionados, no usan content) → `getBlogPostsMeta`; homepage `index.tsx` → `getBlogPosts(locale, 6)` (antes traía 42 y descartaba 36); `blog/index.tsx` sin cambios (usa read-time, ahora 4x menos payload). Sitemap ya era ligero. Verificado: `npm run build` con 0 timeouts de blog y 774/774 páginas; tsc exit 0.
+
+---
+
 ## [2026-07-13] security(ads): suprimir AdSense en /parque-tangamanga (flag de Safe Browsing)
 
 Google Safe Browsing marcó `/parque-tangamanga` por "ingeniería social". Un agente auditó la página: el código, el repo y el CSP están LIMPIOS (página 100% estática, sin contenido de DB/usuario, sin scripts inyectados, sin redes de anuncios turbias — el CSP no las dejaría cargar). Causa casi segura: un creativo engañoso servido por Google AdSense (`ca-pub-7339948154887436`) rotando en los slots auto de la página. Es un caso común y revisable.

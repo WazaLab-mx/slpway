@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { BlogPost, getBlogPosts, getBlogPostBySlug, SupportedLocale } from '@/lib/blog';
+import { BlogPost, getBlogPostsMeta, getBlogPostBySlug, SupportedLocale } from '@/lib/blog';
 import SEO from '@/components/common/SEO';
 import Breadcrumbs from '@/components/common/Breadcrumbs';
 import Byline from '@/components/common/Byline';
@@ -25,7 +25,7 @@ interface BlogPostPageProps {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await getBlogPosts();
+  const posts = await getBlogPostsMeta();
   const paths = posts.map((post) => ({
     params: { slug: post.slug },
   }));
@@ -49,7 +49,7 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps> = async (context)
   }
 
   // Fetch related posts by matching category
-  const allPosts = await getBlogPosts();
+  const allPosts = await getBlogPostsMeta();
   const relatedPosts = allPosts
     .filter((p) => p.slug !== slug && p.category === post.category)
     .slice(0, 3)

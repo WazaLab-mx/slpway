@@ -79,8 +79,8 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     // Fetch featured brands
     const featuredBrandsData = await getRandomPotosinoBrands(6);
 
-    // Fetch blog posts for carousel
-    const blogPostsData = await getBlogPosts(blogLocale);
+    // Fetch blog posts for carousel (only the 6 shown; content included for read-time)
+    const blogPostsData = await getBlogPosts(blogLocale, 6);
 
     return {
       props: {
