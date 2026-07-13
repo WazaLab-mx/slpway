@@ -1527,6 +1527,45 @@ function injectFooterIntoNewsletter(html: string): string {
   return html + CLOSING_AND_FOOTER_HTML;
 }
 
+// Builds an email-safe hero image row from a DB-hosted photo. Inline styles
+// only (no <style> dependency); max-width keeps it responsive on mobile.
+export function buildHeroImageHtml(photo: { image_url: string; title?: string | null }): string {
+  const alt = (photo.title || 'San Luis Potosí').replace(/"/g, '&quot;');
+  return `
+          <!-- HERO IMAGE -->
+          <tr>
+            <td style="padding: 4px 24px 12px 24px;">
+              <img src="${photo.image_url}" alt="${alt}" width="552" style="width: 100%; max-width: 552px; height: auto; display: block; border-radius: 12px;" />
+            </td>
+          </tr>`;
+}
+
+// Injects the hero image directly above the first content card. No-op if the
+// anchor isn't found so a missing card never drops content.
+export function injectHeroImage(
+  html: string,
+  photo: { image_url: string; title?: string | null } | null
+): string {
+  if (!photo?.image_url || !html.includes('<!-- CARD 1')) return html;
+  return html.replace('<!-- CARD 1', `${buildHeroImageHtml(photo).trim()}\n\n          <!-- CARD 1`);
+}
+
+// Injects the featured blog post's real image into the "From the Blog" card by
+// matching the card's /blog/<slug> link back to the fetched posts. No-op if the
+// post or its image_url can't be resolved — never injects an unverified URL.
+export function injectFeaturedBlogImage(
+  html: string,
+  blogPosts: Array<{ slug: string; image_url?: string | null; title?: string | null; title_en?: string | null }>
+): string {
+  const anchorMatch = html.match(/href="[^"]*\/blog\/([a-z0-9-]+)[^"]*"[^>]*>\s*Read the Full Story/i);
+  if (!anchorMatch) return html;
+  const post = blogPosts.find((p) => p.slug === anchorMatch[1]);
+  if (!post?.image_url) return html;
+  const alt = (post.title_en || post.title || 'San Luis Way').replace(/"/g, '&quot;');
+  const img = `<img src="${post.image_url}" alt="${alt}" width="520" style="width: 100%; max-width: 520px; height: auto; display: block; border-radius: 8px; margin: 0 0 12px 0;" />`;
+  return html.replace(/(<span[^>]*>FEATURED<\/span>)/i, `${img}$1`);
+}
+
 // Strips HTML tags and normalizes whitespace/entities to plain readable text.
 function stripTagsToText(html: string): string {
   return html
@@ -1673,7 +1712,7 @@ export async function generateWeeklyNewsletter(customContent?: string) {
   console.log('1.5. Fetching real blog posts from DB...');
   const { data: blogPosts } = await supabase
     .from('blog_posts')
-    .select('slug, title, title_en, excerpt, excerpt_en, category')
+    .select('slug, title, title_en, excerpt, excerpt_en, category, image_url')
     .eq('status', 'published')
     .order('published_at', { ascending: false })
     .limit(10);
@@ -1683,6 +1722,27 @@ export async function generateWeeklyNewsletter(customContent?: string) {
     const excerpt = post.excerpt_en || post.excerpt;
     return `- "${title}" (${post.category || 'general'}) - URL: https://www.sanluisway.com/blog/${post.slug}\n  Excerpt: ${excerpt}`;
   }).join('\n\n') || 'No blog posts available.';
+
+  // Fetch a curated hero photo — a real, DB-hosted image (same source as the
+  // homepage). Rotates weekly so consecutive editions don't reuse the same shot.
+  console.log('1.7. 🖼️ Fetching hero photo from featured_photos...');
+  let heroPhoto: { image_url: string; title: string | null } | null = null;
+  try {
+    const { data: photos, error: photosError } = await supabase
+      .from('featured_photos')
+      .select('image_url, title')
+      .eq('active', true)
+      .order('created_at', { ascending: false });
+    if (!photosError && photos && photos.length > 0) {
+      const weekIndex = Math.floor(dates.weekStartDate.getTime() / (7 * 24 * 3600 * 1000));
+      heroPhoto = photos[weekIndex % photos.length] as { image_url: string; title: string | null };
+      console.log(`   ✅ Hero photo: "${heroPhoto.title || 'untitled'}"`);
+    } else {
+      console.log('   ⚠️ No active featured_photos — newsletter ships without a hero image');
+    }
+  } catch (e) {
+    console.log('   ⚠️ Could not fetch featured_photos:', e);
+  }
 
   console.log('1.6. Fetching previously used content to avoid repetition...');
 
@@ -2558,6 +2618,18 @@ Overall Summary: ${weatherForecast.summary}
   // click tracking, added later in the API route).
   console.log('7.5. 🏷️ Adding per-section utm_content to internal links...');
   htmlContent = addUtmTracking(htmlContent);
+
+  // Inject verified, DB-sourced images: a rotating hero (featured_photos) above
+  // the first card, and the featured blog post's real thumbnail in its card.
+  // Runs AFTER removeAllImages (step 4) so only these known-good images ship —
+  // the AI never supplies image URLs (they'd 404), preserving the
+  // no-hallucinated-images guarantee.
+  console.log('7.6. 🖼️ Injecting hero + featured blog images...');
+  htmlContent = injectHeroImage(htmlContent, heroPhoto);
+  htmlContent = injectFeaturedBlogImage(
+    htmlContent,
+    (blogPosts || []) as Array<{ slug: string; image_url?: string | null; title?: string | null; title_en?: string | null }>
+  );
 
   // Extract and save content to avoid repetition in future newsletters
   console.log('7. 💾 Extracting and saving content to prevent repetition...');

@@ -4,6 +4,12 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-13] feat(newsletter): imágenes reales (hero rotativo + foto del blog destacado)
+
+El newsletter deja de ser 100% texto. Se inyectan 2 imágenes REALES de nuestra DB, nunca URLs de la IA (que darían 404): 1) HERO tras el saludo, arriba del primer card — foto curada de `featured_photos` (misma fuente que el home, filtrada active), rotando por semana (`weekIndex % photos.length`) para no repetir; 2) foto del artículo destacado (`blog_posts.image_url`) dentro de su tarjeta "From the Blog", resuelta haciendo match del slug del link /blog/<slug> contra los posts ya traídos. Se conserva `removeAllImages` (mata cualquier imagen alucinada por la IA); la inyección corre en el paso 7.6, DESPUÉS de limpiar, así que solo salen imágenes verificadas — se mantiene la garantía de cero-hallucination. Todo con estilos inline email-safe (width 100%/max-width, border-radius) → responsivo sin depender de <style>. Ambas funciones son no-op si falta la foto/anchor (nunca tiran contenido). Nota: la "foto del evento top" quedó fuera a propósito — los Top Picks los investiga la IA por web, no son filas de DB con imagen confiable. +4 tests (15/15 pasando), tsc limpio.
+
+---
+
 ## [2026-07-13] feat(newsletter): utm_content por sección (compone con auto-UTM de Beehiiv)
 
 Todos los links a sanluisway.com del newsletter llevan `utm_content=<slug-sección>` para que GA4 muestre qué sección generó cada clic. `addUtmTracking()` (puro, testeado) ubica cada link por posición vs marcadores de sección (comentarios `<!-- CARD 1/2/3/4 -->`, COMUNIDAD, CALL TO ACTION, EXPLORE, CLOSING) → slugs: this-week-glance / whats-on / expat-toolkit / go-deeper / comunidad / cta / explore-grid / footer / header. Usa `URL.searchParams` (preserva query existentes como /blog?category=food). Links externos y placeholders de Beehiiv ([UNSUBSCRIBE_URL]) intactos.

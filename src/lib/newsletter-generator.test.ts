@@ -5,6 +5,8 @@ import {
   extractContentDigest,
   generateSubjectAndPreview,
   addUtmTracking,
+  injectHeroImage,
+  injectFeaturedBlogImage,
 } from './newsletter-generator';
 import { format, addDays } from 'date-fns';
 
@@ -107,6 +109,50 @@ describe('addUtmTracking', () => {
     const html = `<a href="https://elsoldesanluis.com.mx/nota">news</a><a href="[UNSUBSCRIBE_URL]">unsub</a>`;
     const out = addUtmTracking(html);
     expect(out).toBe(html);
+  });
+});
+
+describe('injectHeroImage', () => {
+  const photo = { image_url: 'https://cdn.example.com/slp.jpg', title: 'Centro Histórico' };
+
+  it('inserts a hero <img> with src and alt above the first card', () => {
+    const html = `<tr><td>hook</td></tr>\n<!-- CARD 1: THIS WEEK AT A GLANCE -->`;
+    const out = injectHeroImage(html, photo);
+    expect(out).toContain('src="https://cdn.example.com/slp.jpg"');
+    expect(out).toContain('alt="Centro Histórico"');
+    // Hero must precede the first card.
+    expect(out.indexOf('cdn.example.com/slp.jpg')).toBeLessThan(out.indexOf('<!-- CARD 1'));
+  });
+
+  it('is a no-op when there is no hero photo or no card anchor', () => {
+    const html = `<!-- CARD 1: X -->`;
+    expect(injectHeroImage(html, null)).toBe(html);
+    expect(injectHeroImage('<div>no card</div>', photo)).toBe('<div>no card</div>');
+  });
+});
+
+describe('injectFeaturedBlogImage', () => {
+  const posts = [
+    { slug: 'potosino-art', image_url: 'https://cdn.example.com/art.jpg', title_en: 'Potosino Art' },
+    { slug: 'other-post', image_url: 'https://cdn.example.com/other.jpg', title_en: 'Other' },
+  ];
+  const cardHtml = `
+    <div>
+      <span style="background:#C75B39;">FEATURED</span>
+      <h4>Potosino Art</h4>
+      <a href="https://www.sanluisway.com/blog/potosino-art?utm_content=go-deeper">Read the Full Story →</a>
+    </div>`;
+
+  it('injects the matched post image (by slug) into the featured card', () => {
+    const out = injectFeaturedBlogImage(cardHtml, posts);
+    expect(out).toContain('src="https://cdn.example.com/art.jpg"');
+    expect(out).toContain('alt="Potosino Art"');
+    expect(out).not.toContain('other.jpg');
+  });
+
+  it('is a no-op when the slug does not match any post with an image', () => {
+    const html = cardHtml.replace('potosino-art?', 'missing-post?');
+    expect(injectFeaturedBlogImage(html, posts)).toBe(html);
   });
 });
 
