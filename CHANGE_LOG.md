@@ -4,6 +4,20 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-13] security(ads): suprimir AdSense en /parque-tangamanga (flag de Safe Browsing)
+
+Google Safe Browsing marcó `/parque-tangamanga` por "ingeniería social". Un agente auditó la página: el código, el repo y el CSP están LIMPIOS (página 100% estática, sin contenido de DB/usuario, sin scripts inyectados, sin redes de anuncios turbias — el CSP no las dejaría cargar). Causa casi segura: un creativo engañoso servido por Google AdSense (`ca-pub-7339948154887436`) rotando en los slots auto de la página. Es un caso común y revisable.
+
+Fix de código (paso 3 del plan, reversible): se suprimen TODOS los ads en `/parque-tangamanga` y `/parque-tangamanga-ii` hasta que pase la revisión de seguridad. (1) `_app.tsx`: nuevo flag `adsSuppressed` (por pathname) que además de `!bareLayout` bloquea la carga del script `adsbygoogle.js` en esas rutas (evita Auto Ads). (2) Se removieron los 2 `<AdUnit>` in-content (mid-content + top-banner) de cada página y sus imports. Verificado: 0 ocurrencias de `adsbygoogle.js` en el HTML de ambas páginas, tsc exit 0, `npm run build` genera 774/774 (incluidas ambas). Pendiente del dueño (requiere acceso a AdSense/Search Console): bloquear categorías de anuncios engañosos en AdSense (Descargas/software, Hazte rico rápido; activar Better Ads Standards), y solicitar revisión en Search Console → Problemas de seguridad. Al pasar la revisión, revertir esta supresión para reactivar ingresos.
+
+---
+
+## [2026-07-13] fix(cls): header renderiza en SSR (elimina salto de layout de ~70px en móvil, 45 URLs)
+
+Search Console reportaba CLS > 0.25 en móvil en 45 URLs (ejemplo `/events/fenapo-2026`, CLS 0.33). Causa raíz (vía agente): `Header.tsx` usaba un gate `mounted` (`useState(false)` + `useEffect(setMounted(true))` + `if (!mounted) return null`) que renderizaba NADA en SSR; tras la hidratación el header sticky completo (~70px: barra de acento + logo h-12 + py-3 + borde) se montaba arriba y empujaba TODO el contenido hacia abajo → salto de ~70px en cada página (vive en el layout de `_app.tsx`). Fix: eliminado el gate `mounted` (state, useEffect e import) para que el header se renderice server-side y su altura quede reservada en el HTML inicial. Seguridad de hidratación verificada: sub-componentes deterministas en SSR (HeaderNavigation/Search/LanguageSwitcher usan useRouter/useTranslation; HeaderUserMenu devuelve null con user falsy, y user es null en server y primer render cliente). Otros candidatos ya estaban bien (AdUnit reserva min-height 280px; fuentes con display swap; imágenes con next/image fill en padres dimensionados). tsc exit 0, `npm run build` exit 0 (774 páginas), 304 tests pasando. Único cambio de fuente: `Header.tsx`.
+
+---
+
 ## [2026-07-13] content(blog): nuevo artículo de vida nocturna (bares, cantinas, mezcalerías) en 4 locales
 
 Nuevo post publicado (`blog_posts`, slug `best-bars-nightlife-mezcal-san-luis-potosi-2026`, categoría Food & Drink — el hueco de contenido más obvio del blog). Cubre la vida nocturna de SLP por zonas (Centro/cantinas, Av. Universidad/cerveza artesanal, Av. Carranza/antros, Lomas/lounges) con venues REALES verificados por búsqueda web: La Piquería y Bolívar (mezcal), Pulquería Coneja de la Luna (pulque), Callejón 7B, La Oruga y La Cebada, La Legendaria (cerveza), y cantinas históricas La Histórica Cantina de Autor, Bar Tampico, El Peñasquito, La Consentida — con direcciones, especialidad y ambiente. Incluye tips prácticos (horarios, Didi/Uber, etiqueta del mezcal, precios aprox. con caveats, edad legal). Estructura GEO igual que los demás posts: lead + caja `speakable` + cards + caja de tips + CTA + FAQPage JSON-LD (5 preguntas). Links internos a /san-luis-potosi-airport-guide, /is-san-luis-potosi-safe-2026, /best-brunch-spots-san-luis-potosi, /things-to-do-san-luis-potosi-2026, /subscribe.

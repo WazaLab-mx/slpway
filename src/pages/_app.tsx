@@ -52,6 +52,10 @@ function App({ Component, pageProps }: AppProps) {
   // Client business pages (/negocios/*) must feel like the business's own
   // site — no San Luis Way chrome.
   const bareLayout = router.pathname.startsWith('/negocios/');
+  // Google Safe Browsing flagged /parque-tangamanga for a deceptive AdSense
+  // creative (social engineering). Suppress all ads on these pages until the
+  // security review clears; the page content itself is clean/static.
+  const adsSuppressed = router.pathname === '/parque-tangamanga' || router.pathname === '/parque-tangamanga-ii';
   return (
     <>
       <Head>
@@ -186,7 +190,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           without user interaction the script never loaded and ads never showed.
           NEVER on client business pages (/negocios/*): Auto Ads was injecting
           banners into pages we sell — third-party ads there are unacceptable. */}
-      {!bareLayout && (
+      {!bareLayout && !adsSuppressed && (
         <Script
           id="adsense"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7339948154887436"
