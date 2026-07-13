@@ -4,6 +4,12 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-13] feat(newsletter): UTM tracking por sección en links internos
+
+Todos los links a sanluisway.com del newsletter ahora llevan UTMs para que GA4 atribuya el tráfico al newsletter y a la sección exacta que generó el clic. `addUtmTracking()` (puro, testeado) recorre el HTML, ubica cada link por posición vs marcadores de sección (comentarios `<!-- CARD 1/2/3/4 -->`, COMUNIDAD, CALL TO ACTION, EXPLORE, CLOSING) y añade utm_source=newsletter, utm_medium=email, utm_campaign=weekly_<fecha-ancla>, utm_content=<slug-sección> (this-week-glance / whats-on / expat-toolkit / go-deeper / comunidad / cta / explore-grid / footer / header). Usa `URL.searchParams` → preserva query existentes (p.ej. /blog?category=food). Links externos (fuentes de noticias, maps, ticketing) y placeholders de Beehiiv ([UNSUBSCRIBE_URL]) quedan intactos. Corre en el pipeline después de validar links (los HEAD checks usan URLs limpias) y antes de inyectar ads (los ads llevan su propio tracking de clic). Motivo: cierra el loop editorial human-gated — datos por sección para decidir qué rotar/cortar. Nota: si Beehiiv tiene auto-UTM activado, conviene desactivarlo para no pisar utm_content. +4 tests (11/11 pasando), tsc limpio.
+
+---
+
 ## [2026-07-13] feat(newsletter): subject line y preview text inteligentes por edición
 
 El generador ya no usa asunto/preview genéricos (`San Luis Way Weekly | <fechas>` + `Your weekly guide...`). Ahora `generateSubjectAndPreview()` (en newsletter-generator.ts) deriva el asunto y el preview de la historia/evento estrella de esa edición vía una llamada barata a Gemini flash, con guardrails (asunto 8-90 chars, formato `emoji + gancho | <fecha corta>`, preview 80-140 chars que complementa sin repetir el asunto). Fallback seguro a los strings genéricos ante cualquier fallo (sin API key, JSON inválido, digest vacío) para que la generación nunca se rompa por esto. `extractContentDigest()` (puro, testeado) extrae opening hook + top news + top event del HTML final. La API generate.ts consume `preview_text` del generador. Motivo: asunto/preview son la mayor palanca de open-rate y estaban 100% genéricos. Sigue human-gated (se crea draft en Beehiiv, el dueño revisa/edita/envía). +3 tests (7/7 pasando), tsc limpio.

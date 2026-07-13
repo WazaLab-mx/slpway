@@ -1248,6 +1248,66 @@ async function validateAndCleanUrls(html: string): Promise<LinkValidationResult>
   return verifySanluiswayLinks(staticPass);
 }
 
+// Section markers (in document order) used to attribute each internal link to
+// the newsletter section it lives in, so GA4's utm_content tells us which
+// section drove the click. Markers are the HTML comments the template/footer
+// already carry; cleanHtmlForBeehiiv preserves generic comments.
+const NEWSLETTER_SECTION_MARKERS: Array<{ marker: string; slug: string }> = [
+  { marker: '<!-- CARD 1', slug: 'this-week-glance' },
+  { marker: '<!-- CARD 2', slug: 'whats-on' },
+  { marker: '<!-- CARD 3', slug: 'expat-toolkit' },
+  { marker: '<!-- CARD 4', slug: 'go-deeper' },
+  { marker: '<!-- COMUNIDAD', slug: 'comunidad' },
+  { marker: '<!-- CALL TO ACTION', slug: 'cta' },
+  { marker: '<!-- EXPLORE SAN LUIS WAY', slug: 'explore-grid' },
+  { marker: '<!-- CLOSING', slug: 'footer' },
+];
+
+// Appends UTM params to a sanluisway.com URL without clobbering existing query
+// params (e.g. /blog?category=food). Returns the URL untouched if it can't be
+// parsed.
+function appendUtmParams(url: string, campaign: string, content: string): string {
+  try {
+    const u = new URL(url);
+    u.searchParams.set('utm_source', 'newsletter');
+    u.searchParams.set('utm_medium', 'email');
+    u.searchParams.set('utm_campaign', campaign);
+    u.searchParams.set('utm_content', content);
+    return u.toString();
+  } catch {
+    return url;
+  }
+}
+
+/**
+ * Tags every sanluisway.com link with UTM parameters so GA4 attributes the
+ * traffic to the newsletter (utm_source/medium/campaign) and to the specific
+ * section that drove the click (utm_content). External links (news sources,
+ * maps, ticketing) and Beehiiv placeholders like [UNSUBSCRIBE_URL] are left
+ * untouched. Pure/deterministic for unit testing.
+ */
+export function addUtmTracking(html: string, campaign: string): string {
+  const boundaries = NEWSLETTER_SECTION_MARKERS
+    .map(({ marker, slug }) => ({ pos: html.indexOf(marker), slug }))
+    .filter((b) => b.pos !== -1)
+    .sort((a, b) => a.pos - b.pos);
+
+  const sectionForIndex = (idx: number): string => {
+    let current = 'header';
+    for (const b of boundaries) {
+      if (b.pos <= idx) current = b.slug;
+      else break;
+    }
+    return current;
+  };
+
+  const hrefRegex = /href=(["'])(https?:\/\/(?:www\.)?sanluisway\.com[^"']*)\1/gi;
+  return html.replace(hrefRegex, (match, quote, url, offset) => {
+    const section = sectionForIndex(offset as number);
+    return `href=${quote}${appendUtmParams(url, campaign, section)}${quote}`;
+  });
+}
+
 // Function to rewrite custom content in a friendly tone using AI
 async function rewriteContentInFriendlyTone(customContent: string): Promise<{ title: string; body: string; cta?: string }> {
   console.log('   📝 rewriteContentInFriendlyTone called with:', customContent.substring(0, 100) + '...');
@@ -2489,6 +2549,14 @@ Overall Summary: ${weatherForecast.summary}
   console.log('7. 🔗 Validating and cleaning URLs...');
   const linkValidation = await validateAndCleanUrls(htmlContent);
   htmlContent = linkValidation.html;
+
+  // Add UTM tracking to every sanluisway.com link so GA4 attributes traffic to
+  // the newsletter and to the section that drove each click. Runs AFTER link
+  // validation (HEAD checks use clean URLs) and BEFORE ad injection (ads carry
+  // their own click tracking, added later in the API route).
+  console.log('7.5. 🏷️ Adding UTM tracking to internal links...');
+  const utmCampaign = `weekly_${format(dates.weekStartDate, 'yyyy-MM-dd')}`;
+  htmlContent = addUtmTracking(htmlContent, utmCampaign);
 
   // Extract and save content to avoid repetition in future newsletters
   console.log('7. 💾 Extracting and saving content to prevent repetition...');
