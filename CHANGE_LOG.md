@@ -4,9 +4,11 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
-## [2026-07-13] feat(newsletter): UTM tracking por sección en links internos
+## [2026-07-13] feat(newsletter): utm_content por sección (compone con auto-UTM de Beehiiv)
 
-Todos los links a sanluisway.com del newsletter ahora llevan UTMs para que GA4 atribuya el tráfico al newsletter y a la sección exacta que generó el clic. `addUtmTracking()` (puro, testeado) recorre el HTML, ubica cada link por posición vs marcadores de sección (comentarios `<!-- CARD 1/2/3/4 -->`, COMUNIDAD, CALL TO ACTION, EXPLORE, CLOSING) y añade utm_source=newsletter, utm_medium=email, utm_campaign=weekly_<fecha-ancla>, utm_content=<slug-sección> (this-week-glance / whats-on / expat-toolkit / go-deeper / comunidad / cta / explore-grid / footer / header). Usa `URL.searchParams` → preserva query existentes (p.ej. /blog?category=food). Links externos (fuentes de noticias, maps, ticketing) y placeholders de Beehiiv ([UNSUBSCRIBE_URL]) quedan intactos. Corre en el pipeline después de validar links (los HEAD checks usan URLs limpias) y antes de inyectar ads (los ads llevan su propio tracking de clic). Motivo: cierra el loop editorial human-gated — datos por sección para decidir qué rotar/cortar. Nota: si Beehiiv tiene auto-UTM activado, conviene desactivarlo para no pisar utm_content. +4 tests (11/11 pasando), tsc limpio.
+Todos los links a sanluisway.com del newsletter llevan `utm_content=<slug-sección>` para que GA4 muestre qué sección generó cada clic. `addUtmTracking()` (puro, testeado) ubica cada link por posición vs marcadores de sección (comentarios `<!-- CARD 1/2/3/4 -->`, COMUNIDAD, CALL TO ACTION, EXPLORE, CLOSING) → slugs: this-week-glance / whats-on / expat-toolkit / go-deeper / comunidad / cta / explore-grid / footer / header. Usa `URL.searchParams` (preserva query existentes como /blog?category=food). Links externos y placeholders de Beehiiv ([UNSUBSCRIBE_URL]) intactos.
+
+DECISIÓN basada en evidencia: inspeccioné el último envío real (post 12-ene) vía API de Beehiiv → Beehiiv YA auto-agrega utm_source=sanluisway.beehiiv.com, utm_medium=newsletter, utm_campaign=<slug-post> y _bhlid a cada link, pero NUNCA pone utm_content. Ese ajuste de Beehiiv es dashboard-only (no expuesto por API). Por eso setear SOLO utm_content compone limpio con Beehiiv sin llaves duplicadas ni tocar el dashboard (v1 seteaba source/medium/campaign también → habría duplicado los de Beehiiv). Reporte en GA4: dimensión "Session manual ad content" (o "Manual ad content") = la sección. +4 tests (11/11 pasando), tsc limpio.
 
 ---
 

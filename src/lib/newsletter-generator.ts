@@ -1263,15 +1263,11 @@ const NEWSLETTER_SECTION_MARKERS: Array<{ marker: string; slug: string }> = [
   { marker: '<!-- CLOSING', slug: 'footer' },
 ];
 
-// Appends UTM params to a sanluisway.com URL without clobbering existing query
-// params (e.g. /blog?category=food). Returns the URL untouched if it can't be
-// parsed.
-function appendUtmParams(url: string, campaign: string, content: string): string {
+// Sets utm_content on a sanluisway.com URL without clobbering existing query
+// params (e.g. /blog?category=food). Returns the URL untouched if unparseable.
+function appendUtmContent(url: string, content: string): string {
   try {
     const u = new URL(url);
-    u.searchParams.set('utm_source', 'newsletter');
-    u.searchParams.set('utm_medium', 'email');
-    u.searchParams.set('utm_campaign', campaign);
     u.searchParams.set('utm_content', content);
     return u.toString();
   } catch {
@@ -1280,13 +1276,18 @@ function appendUtmParams(url: string, campaign: string, content: string): string
 }
 
 /**
- * Tags every sanluisway.com link with UTM parameters so GA4 attributes the
- * traffic to the newsletter (utm_source/medium/campaign) and to the specific
- * section that drove the click (utm_content). External links (news sources,
- * maps, ticketing) and Beehiiv placeholders like [UNSUBSCRIBE_URL] are left
- * untouched. Pure/deterministic for unit testing.
+ * Tags every sanluisway.com link with utm_content = the section it lives in, so
+ * GA4 can report which newsletter section drove each click.
+ *
+ * We deliberately set ONLY utm_content: Beehiiv already auto-appends
+ * utm_source / utm_medium / utm_campaign (per-edition) to every link on send,
+ * and it never sets utm_content. Setting only the missing dimension means our
+ * tags compose with Beehiiv's instead of producing duplicate query keys — no
+ * dashboard change required. External links (news sources, maps, ticketing) and
+ * Beehiiv placeholders like [UNSUBSCRIBE_URL] are left untouched.
+ * Pure/deterministic for unit testing.
  */
-export function addUtmTracking(html: string, campaign: string): string {
+export function addUtmTracking(html: string): string {
   const boundaries = NEWSLETTER_SECTION_MARKERS
     .map(({ marker, slug }) => ({ pos: html.indexOf(marker), slug }))
     .filter((b) => b.pos !== -1)
@@ -1304,7 +1305,7 @@ export function addUtmTracking(html: string, campaign: string): string {
   const hrefRegex = /href=(["'])(https?:\/\/(?:www\.)?sanluisway\.com[^"']*)\1/gi;
   return html.replace(hrefRegex, (match, quote, url, offset) => {
     const section = sectionForIndex(offset as number);
-    return `href=${quote}${appendUtmParams(url, campaign, section)}${quote}`;
+    return `href=${quote}${appendUtmContent(url, section)}${quote}`;
   });
 }
 
@@ -2550,13 +2551,13 @@ Overall Summary: ${weatherForecast.summary}
   const linkValidation = await validateAndCleanUrls(htmlContent);
   htmlContent = linkValidation.html;
 
-  // Add UTM tracking to every sanluisway.com link so GA4 attributes traffic to
-  // the newsletter and to the section that drove each click. Runs AFTER link
-  // validation (HEAD checks use clean URLs) and BEFORE ad injection (ads carry
-  // their own click tracking, added later in the API route).
-  console.log('7.5. 🏷️ Adding UTM tracking to internal links...');
-  const utmCampaign = `weekly_${format(dates.weekStartDate, 'yyyy-MM-dd')}`;
-  htmlContent = addUtmTracking(htmlContent, utmCampaign);
+  // Tag every sanluisway.com link with utm_content = its section, so GA4 shows
+  // which section drove each click. Beehiiv supplies source/medium/campaign on
+  // send; we only add the section dimension it lacks. Runs AFTER link validation
+  // (HEAD checks use clean URLs) and BEFORE ad injection (ads carry their own
+  // click tracking, added later in the API route).
+  console.log('7.5. 🏷️ Adding per-section utm_content to internal links...');
+  htmlContent = addUtmTracking(htmlContent);
 
   // Extract and save content to avoid repetition in future newsletters
   console.log('7. 💾 Extracting and saving content to prevent repetition...');

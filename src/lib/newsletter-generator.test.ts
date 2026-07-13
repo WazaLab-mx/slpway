@@ -76,15 +76,14 @@ describe('generateSubjectAndPreview', () => {
 });
 
 describe('addUtmTracking', () => {
-  const campaign = 'weekly_2026-07-13';
-
-  it('tags a sanluisway.com link with all four UTM params and the section slug', () => {
+  it('tags a sanluisway.com link with the section slug via utm_content only', () => {
     const html = `<!-- CARD 2: WHAT'S ON --><a href="https://www.sanluisway.com/events">See All Events</a>`;
-    const out = addUtmTracking(html, campaign);
-    expect(out).toContain('utm_source=newsletter');
-    expect(out).toContain('utm_medium=email');
-    expect(out).toContain('utm_campaign=weekly_2026-07-13');
+    const out = addUtmTracking(html);
     expect(out).toContain('utm_content=whats-on');
+    // Beehiiv supplies these on send — we must NOT add them (avoids dup keys).
+    expect(out).not.toContain('utm_source=');
+    expect(out).not.toContain('utm_medium=');
+    expect(out).not.toContain('utm_campaign=');
   });
 
   it('attributes links to the correct section by document position', () => {
@@ -92,21 +91,21 @@ describe('addUtmTracking', () => {
       <!-- CARD 1: THIS WEEK AT A GLANCE --><a href="https://www.sanluisway.com/events">a</a>
       <!-- CARD 4: GO DEEPER --><a href="https://www.sanluisway.com/blog/x">b</a>
     `;
-    const out = addUtmTracking(html, campaign);
+    const out = addUtmTracking(html);
     expect(out).toMatch(/sanluisway\.com\/events\?[^"']*utm_content=this-week-glance/);
     expect(out).toMatch(/sanluisway\.com\/blog\/x\?[^"']*utm_content=go-deeper/);
   });
 
   it('preserves existing query params', () => {
     const html = `<!-- CARD 4: GO DEEPER --><a href="https://www.sanluisway.com/blog?category=food">food</a>`;
-    const out = addUtmTracking(html, campaign);
+    const out = addUtmTracking(html);
     expect(out).toContain('category=food');
     expect(out).toContain('utm_content=go-deeper');
   });
 
   it('leaves external links and Beehiiv placeholders untouched', () => {
     const html = `<a href="https://elsoldesanluis.com.mx/nota">news</a><a href="[UNSUBSCRIBE_URL]">unsub</a>`;
-    const out = addUtmTracking(html, campaign);
+    const out = addUtmTracking(html);
     expect(out).toBe(html);
   });
 });
