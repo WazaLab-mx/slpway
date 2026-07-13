@@ -4,6 +4,12 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-13] data(events): corregir imagen incorrecta de "Hobby Salsa Fest 2026"
+
+La imagen del evento mostraba un desfile de CHARROS a caballo (charrería) — nada que ver con salsa. Era un archivo equivocado subido a `blog-images/events/hobby-salsa-fest.jpg`. Se generó una imagen acertada (pareja bailando salsa, banda latina, luces de escenario, sin charros ni caballos) con OpenAI gpt-image-1, optimizada con sharp a jpg 1280x853 q82 (171KB), y se hizo upsert al mismo path. Se actualizó `events.image_url` del row con cache-buster `?v=20260713` para refresco inmediato en dev+prod. Solo cambio de datos/storage (sin diff de código). NOTA: las imágenes de eventos se generan por IA (script gemini-3-pro-image-preview) o son fotos subidas manualmente; esta era una foto real mal etiquetada → conviene auditar el resto de las 13 imágenes del cultural_calendar por posibles mismatches.
+
+---
+
 ## [2026-07-13] feat(home): reemplazar marquee de Cultural Calendar por carrusel interactivo
 
 El "cintillo" de eventos (marquee auto-scroll `scroll 40s linear infinite`, tarjetas duplicadas y NO clickeables) se reemplazó por un carrusel interactivo en `EventsPreview.tsx`. Ahora: tarjetas con imagen real del evento (los 13 eventos del calendario tienen image_url; fallback a gradiente si faltara), **cada tarjeta linkea al evento** (`buildEventPath`) — antes ni siquiera eran clickeables; badge de fecha + categoría (colores por categoría), ubicación, "Until" en multi-día, y CTA "View details". Navegación: flechas prev/next (desktop), dots (uno por evento, activo se alarga), swipe nativo en móvil (scroll-snap), autoplay suave de 6s que pausa en hover/touch y respeta `prefers-reduced-motion`. Responsive: 1 tarjeta+peek (móvil) / ~2 (sm) / ~3 (lg). i18n completo (nuevas keys details/prev/next en en/es/de/ja). Verificado con Playwright en desktop y móvil (screenshots), tsc exit 0. Motivo: el marquee iba muy lento y no aportaba (sin imágenes, sin links, sin control del usuario).
