@@ -4,6 +4,14 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-13] feat(discover): título Discover separado del título SEO
+
+Del método del podcast (Gem/Gagan Ghotra): en Discover el título es un HOOK para frenar el scroll, distinto del título SEO por keyword. Se agregó un `discover_title` (hook) separado del `<title>`/`meta_title` (SEO). Migración: `supabase/migrations/20260713_add_discover_title.sql` (columnas `discover_title` + `_es/_de/_ja`, nullable — corrida por el dueño en Supabase). `blog.ts`: `BlogPost.discoverTitle` (`string|null`), añadido al select + mapeo de `getBlogPostBySlug` (localizado, `|| null` porque Next no serializa `undefined`). `SEO.tsx`: nuevo prop `ogTitle` que desacopla `og:title`/`twitter:title` del `<title>`. `blog/[slug].tsx`: `displayTitle = post.discoverTitle || post.title` alimenta H1 + `og:title` + `headline` del JSON-LD + share; el `<title>` sigue usando `meta_title` (SEO). Fallback transparente: con `discover_title` NULL (los 42 posts actuales) todo cae a `title`, sin cambio visual. `npm run build` exit 0, 782/782 páginas, tsc 0. Uso: setear `discover_title` en un post le da un titular-hook para Discover manteniendo el título SEO.
+
+Con esto quedan hechos #1 (autores), #2 (título Discover) y el fix de frescura; #3 fue el diagnóstico (0 impresiones Discover en 180d).
+
+---
+
 ## [2026-07-13] feat(authors): sistema de autores con 2 personas (E-E-A-T para Discover/SEO)
 
 Para Google Discover y el core update de feb 2026 (evalúa E-E-A-T por tema y premia experiencia de primera mano), el blog usaba un autor genérico "San Luis Way Editorial". Se crearon 2 personas seudónimo con bio creíble y avatar: **Mariana Cordero** (Editora de Cultura y Vida Local — nativa potosina; cubre cultura/eventos/gastronomía/historia/viajes) y **Daniel Cross** (Editor de Vida Expat y Relocation — expat de Austin desde 2021; cubre trámites/rentas/salud/costo de vida). Avatares generados con gpt-image-1 (headshots realistas), optimizados con sharp (512×512 jpg q85) → `blog-images/authors/`.

@@ -3,6 +3,12 @@ import { useRouter } from 'next/router';
 
 interface SEOProps {
   title: string;
+  /**
+   * Optional hook/Discover headline for social + Discover cards. When set,
+   * og:title and twitter:title use this instead of the SEO <title>, so the
+   * scroll-stopping headline can differ from the keyword-optimized title tag.
+   */
+  ogTitle?: string;
   description?: string;
   keywords?: string;
   ogImage?: string;
@@ -29,6 +35,7 @@ const DEFAULT_LOCALE = 'en';
 
 const SEO: React.FC<SEOProps> = ({
   title,
+  ogTitle,
   description,
   keywords,
   ogImage = '/og-image.jpg',
@@ -58,6 +65,8 @@ const SEO: React.FC<SEOProps> = ({
     : urlForLocale(currentLocale);
   const siteName = "San Luis Way";
   const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+  const socialTitleBase = ogTitle || title;
+  const socialTitle = socialTitleBase.includes(siteName) ? socialTitleBase : `${socialTitleBase} | ${siteName}`;
   const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 
   return (
@@ -75,7 +84,7 @@ const SEO: React.FC<SEOProps> = ({
       {canonicalOverride && <link rel="canonical" href={canonicalUrl} key="canonical" />}
 
       {/* Open Graph */}
-      <meta property="og:title" content={fullTitle} />
+      <meta property="og:title" content={socialTitle} />
       {description && <meta property="og:description" content={description} />}
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={canonicalUrl} />
@@ -87,7 +96,7 @@ const SEO: React.FC<SEOProps> = ({
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={fullTitle} />
+      <meta name="twitter:title" content={socialTitle} />
       {description && <meta name="twitter:description" content={description} />}
       <meta name="twitter:image" content={absoluteOgImage} />
 

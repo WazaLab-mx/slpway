@@ -96,11 +96,14 @@ export default function BlogPostPage({ post, relatedPosts, hasFactcheck }: BlogP
   // Use dedicated SEO fields when available, fallback to title/excerpt
   const seoTitle = post.metaTitle || post.title;
   const seoDescription = post.metaDescription || post.excerpt;
+  // Discover/social/H1 use the hook headline when set; the <title> tag stays SEO.
+  const displayTitle = post.discoverTitle || post.title;
 
   return (
     <>
       <SEO
         title={seoTitle}
+        ogTitle={displayTitle}
         description={seoDescription}
         keywords={post.tags?.join(', ')}
         ogImage={post.imageUrl || '/og-image.jpg'}
@@ -120,7 +123,7 @@ export default function BlogPostPage({ post, relatedPosts, hasFactcheck }: BlogP
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Article",
-              "headline": seoTitle,
+              "headline": displayTitle,
               "description": seoDescription,
               "image": post.imageUrl || "https://www.sanluisway.com/og-image.jpg",
               "datePublished": post.publishedAt,
@@ -170,12 +173,12 @@ export default function BlogPostPage({ post, relatedPosts, hasFactcheck }: BlogP
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex flex-col items-center justify-center">
               <h1 className="max-w-4xl text-center text-4xl font-bold text-white md:text-5xl px-4">
-                {post.title}
+                {displayTitle}
               </h1>
               <div className="mt-6">
-                <ShareButton 
-                  title={post.title} 
-                  text={post.excerpt ? `Read "${post.title}": ` : undefined}
+                <ShareButton
+                  title={displayTitle}
+                  text={post.excerpt ? `Read "${displayTitle}": ` : undefined}
                   size="lg"
                 />
               </div>
