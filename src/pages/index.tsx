@@ -216,7 +216,7 @@ export default function Home({ events = [], featuredAdvertisers = [], featuredBr
               url: 'https://www.sanluisway.com',
               name: 'San Luis Way',
               publisher: { '@id': 'https://www.sanluisway.com/#organization' },
-              inLanguage: ['en', 'es'],
+              inLanguage: ['en', 'es', 'de', 'ja'],
               potentialAction: {
                 '@type': 'SearchAction',
                 target: {

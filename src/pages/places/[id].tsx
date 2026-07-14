@@ -35,6 +35,16 @@ const CATEGORY_TO_SCHEMA: Record<string, string> = {
   'live-music': 'MusicVenue',
 };
 
+// Valid schema.org openingHours short form, e.g. "Mo-Fr 09:00-17:00" or
+// "Mo-Fr 09:00-14:00, Sa 16:00-20:00". A regex literal keeps \d unescaped.
+const SCHEMA_HOURS_RE =
+  /^(Mo|Tu|We|Th|Fr|Sa|Su)(-(Mo|Tu|We|Th|Fr|Sa|Su))?( (Mo|Tu|We|Th|Fr|Sa|Su)(-(Mo|Tu|We|Th|Fr|Sa|Su))?)* ([01]\d|2[0-3]):[0-5]\d-([01]\d|2[0-3]):[0-5]\d(, (Mo|Tu|We|Th|Fr|Sa|Su)(-(Mo|Tu|We|Th|Fr|Sa|Su))?( (Mo|Tu|We|Th|Fr|Sa|Su)(-(Mo|Tu|We|Th|Fr|Sa|Su))?)* ([01]\d|2[0-3]):[0-5]\d-([01]\d|2[0-3]):[0-5]\d)*$/;
+
+/** True only for valid schema.org openingHours short form, e.g. "Mo-Fr 09:00-17:00". */
+function isSchemaOpeningHours(value: string): boolean {
+  return SCHEMA_HOURS_RE.test(value.trim());
+}
+
 function buildPlaceStructuredData(place: Place) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sanluisway.com';
   const schemaType = CATEGORY_TO_SCHEMA[place.category] || 'LocalBusiness';
@@ -81,7 +91,12 @@ function buildPlaceStructuredData(place: Place) {
     };
   }
 
-  if (place.hours) {
+  // Only emit openingHours when the value already matches the schema.org
+  // short format ("Mo-Fr 09:00-17:00"). The DB stores free-text hours
+  // ("7:00 am - 9:30 pm", "Mon - Sat: 13 Hrs...") which are INVALID as
+  // openingHours and would poison the whole structured-data block. The
+  // human-readable hours still render on the page regardless.
+  if (place.hours && isSchemaOpeningHours(place.hours)) {
     data.openingHours = place.hours;
   }
 
