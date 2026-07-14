@@ -450,3 +450,11 @@ El título SEO y el de Discover **pueden y suelen diferir**: uno gana la búsque
 - ❌ `No vas a creer lo que pasó en la FENAPO` (clickbait vacío que no cumple → prohibido)
 
 > **Nota multi-idioma:** escribe el hook en los 4 locales (`discover_title`, `discover_title_es`, `discover_title_de`, `discover_title_ja`). No traduzcas literal — adapta el hook al lector de cada idioma.
+
+### Imagen ≥ 1200px (requisito duro de Discover)
+
+Discover solo muestra la **tarjeta de imagen grande** (la que genera CTR) cuando la imagen del post es **≥ 1200px de ancho**. Por debajo, el post aparece como thumbnail chico y pierde casi todo el CTR.
+
+- El `image_url` del post (que alimenta hero + `og:image` + `image` del JSON-LD) debe ser **≥ 1200px de ancho**. Target: **1536×1024** si se genera con `gpt-image-1`, o ≥1200px si es foto real.
+- Verifica con `node scripts/audit-discover-image-widths.mjs` tras agregar posts (reporta cualquier <1200px, resolviendo rutas locales y remotas).
+- Near-miss → `scripts/upscale-discover-heroes.mjs` (lanczos3, preserva la foto real). Muy baja-res → `scripts/regenerate-discover-heroes.mjs`.
