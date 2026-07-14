@@ -1,5 +1,6 @@
 import { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
+import SEO from '@/components/common/SEO';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ResponsiveImage } from '@/components/common/ResponsiveImage';
@@ -56,13 +57,44 @@ const WineScenePage: NextPage = () => {
 
   return (
     <>
+      <SEO
+        title="Discover the Potosino Wine Scene | Sponsored by La Gran Vía"
+        ogTitle="The desert wine region nobody's talking about yet"
+        description="Explore the emerging wine regions of San Luis Potosí, from boutique vineyards to stunning wineries, and discover the unique terroir that's putting Potosino wines on the map."
+        keywords="San Luis Potosí wine, Potosino vineyards, Mexican wine regions, wine tourism Mexico, San Miguelito wines, Catorce wine region, wine tasting in SLP, La Gran Vía restaurant"
+        ogImage="/images/sponsored/potosino-wine.jpg"
+        ogType="article"
+        article={{ publishedTime: '2026-04-07', modifiedTime: '2026-07-14' }}
+      />
       <Head>
-        <title>Discover the Potosino Wine Scene | Sponsored by La Gran Vía</title>
-        <meta
-          name="description"
-          content="Explore the emerging wine regions of San Luis Potosí, from boutique vineyards to stunning wineries, and discover the unique terroir that's putting Potosino wines on the map."
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Article',
+              headline: "The desert wine region nobody's talking about yet",
+              description:
+                "San Luis Potosí's emerging wine scene: boutique vineyards, high-altitude terroir and where to taste Potosino wines.",
+              image: 'https://www.sanluisway.com/images/sponsored/potosino-wine.jpg',
+              datePublished: '2026-04-07',
+              dateModified: '2026-07-14',
+              author: {
+                '@type': 'Person',
+                '@id': 'https://www.sanluisway.com/authors/mariana-cordero#person',
+                name: 'Mariana Cordero',
+                url: 'https://www.sanluisway.com/authors/mariana-cordero',
+              },
+              publisher: {
+                '@type': 'Organization',
+                '@id': 'https://www.sanluisway.com/#organization',
+                name: 'San Luis Way',
+                logo: { '@type': 'ImageObject', url: 'https://www.sanluisway.com/og-image.jpg' },
+              },
+              mainEntityOfPage: 'https://www.sanluisway.com/guides/potosino-wine-scene',
+            }),
+          }}
         />
-        <meta name="keywords" content="San Luis Potosí wine, Potosino vineyards, Mexican wine regions, wine tourism Mexico, San Miguelito wines, Catorce wine region, wine tasting in SLP, La Gran Vía restaurant" />
       </Head>
 
       {/* Hero Section */}

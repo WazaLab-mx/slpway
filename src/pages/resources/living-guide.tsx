@@ -128,6 +128,9 @@ export default function LivingGuidePage() {
         <meta name="keywords" content="San Luis Potosí expat guide, living in SLP, cost of living Mexico, expat visa Mexico, neighborhoods SLP" />
         <meta property="og:title" content="Ultimate Guide to Living in San Luis Potosí | Expat Guide" />
         <meta property="og:url" content="https://www.sanluisway.com/resources/living-guide" />
+        <meta property="og:image" content="https://www.sanluisway.com/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -139,7 +142,12 @@ export default function LivingGuidePage() {
               "description": "Comprehensive 2026 guide covering visas (UMA rules), cost of living, neighborhoods, healthcare, coworking — for expats, digital nomads, and slow travelers.",
               "datePublished": "2025-01-01",
               "dateModified": "2026-03-17",
-              "author": { "@type": "Organization", "name": "San Luis Way", "url": "https://www.sanluisway.com" },
+              "author": {
+                "@type": "Person",
+                "@id": "https://www.sanluisway.com/authors/daniel-cross#person",
+                "name": "Daniel Cross",
+                "url": "https://www.sanluisway.com/authors/daniel-cross"
+              },
               "publisher": { "@type": "Organization", "name": "San Luis Way", "url": "https://www.sanluisway.com" },
               "mainEntityOfPage": "https://www.sanluisway.com/resources/living-guide",
               "speakable": {

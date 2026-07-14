@@ -190,9 +190,10 @@ export default function FactCheckPage({ slug, content, report }: FactCheckPagePr
               datePublished: report.verificationDateISO || undefined,
               dateModified: report.verificationDateISO || undefined,
               author: {
-                '@type': 'Organization',
-                name: 'San Luis Way',
-                url: 'https://www.sanluisway.com',
+                '@type': 'Person',
+                '@id': 'https://www.sanluisway.com/authors/mariana-cordero#person',
+                name: 'Mariana Cordero',
+                url: 'https://www.sanluisway.com/authors/mariana-cordero',
               },
               publisher: {
                 '@type': 'Organization',

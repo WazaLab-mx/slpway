@@ -1,5 +1,6 @@
 import { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
+import SEO from '@/components/common/SEO';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ResponsiveImage } from '@/components/common/ResponsiveImage';
@@ -60,13 +61,44 @@ const FoodieGuidePage: NextPage = () => {
 
   return (
     <>
+      <SEO
+        title="The Ultimate Foodie Guide to SLP | Sponsored by La Legendaria"
+        ogTitle="Where San Luis Potosí really eats: the foodie guide"
+        description="Explore San Luis Potosí's vibrant culinary scene from street tacos to fine dining, paired with local craft beers from La Legendaria Microbrewery."
+        keywords="San Luis Potosí food, SLP cuisine, Mexican gastronomy, La Legendaria beer pairings, enchiladas potosinas, restaurants in SLP, street food, craft beer, food tourism Mexico"
+        ogImage="/images/food/traditional-potosino-main.jpg"
+        ogType="article"
+        article={{ publishedTime: '2026-04-07', modifiedTime: '2026-07-14' }}
+      />
       <Head>
-        <title>The Ultimate Foodie Guide to SLP | Sponsored by La Legendaria</title>
-        <meta
-          name="description"
-          content="Explore San Luis Potosí's vibrant culinary scene from street tacos to fine dining, paired with local craft beers from La Legendaria Microbrewery."
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Article',
+              headline: 'Where San Luis Potosí really eats: the foodie guide',
+              description:
+                "San Luis Potosí's culinary scene from street tacos to fine dining, paired with local craft beer from La Legendaria.",
+              image: 'https://www.sanluisway.com/images/food/traditional-potosino-main.jpg',
+              datePublished: '2026-04-07',
+              dateModified: '2026-07-14',
+              author: {
+                '@type': 'Person',
+                '@id': 'https://www.sanluisway.com/authors/mariana-cordero#person',
+                name: 'Mariana Cordero',
+                url: 'https://www.sanluisway.com/authors/mariana-cordero',
+              },
+              publisher: {
+                '@type': 'Organization',
+                '@id': 'https://www.sanluisway.com/#organization',
+                name: 'San Luis Way',
+                logo: { '@type': 'ImageObject', url: 'https://www.sanluisway.com/og-image.jpg' },
+              },
+              mainEntityOfPage: 'https://www.sanluisway.com/guides/foodie-guide',
+            }),
+          }}
         />
-        <meta name="keywords" content="San Luis Potosí food, SLP cuisine, Mexican gastronomy, La Legendaria beer pairings, enchiladas potosinas, restaurants in SLP, street food, craft beer, food tourism Mexico" />
       </Head>
 
       {/* Hero Section */}

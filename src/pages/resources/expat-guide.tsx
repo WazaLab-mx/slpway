@@ -86,7 +86,7 @@ export default function ExpatGuidePage() {
         <meta name="keywords" content="San Luis Potosí expat guide, living in SLP, healthcare San Luis Potosí, housing SLP, expat transportation Mexico, banking for expats, immigration Mexico" />
         <meta property="og:title" content="Complete Expat Guide to San Luis Potosí | Essential Info" />
         <meta property="og:description" content="Everything you need to know about living in San Luis Potosí as an expat." />
-        <meta property="og:image" content="/images/cultura-2.jpg" />
+        <meta property="og:image" content="/og-image.jpg" />
         <meta property="og:url" content="https://www.sanluisway.com/resources/expat-guide" />
         <script
           type="application/ld+json"

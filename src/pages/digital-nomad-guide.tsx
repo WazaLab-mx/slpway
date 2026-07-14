@@ -150,7 +150,12 @@ export default function DigitalNomadGuidePage() {
               headline: 'Digital Nomad Guide to San Luis Potosí',
               description: 'Complete guide for digital nomads and remote workers considering San Luis Potosí, Mexico. Coworking, internet, cost of living, visas and lifestyle.',
               image: 'https://www.sanluisway.com/images/hero-bg.jpg',
-              author: { '@type': 'Organization', name: 'San Luis Way' },
+              author: {
+                '@type': 'Person',
+                '@id': 'https://www.sanluisway.com/authors/daniel-cross#person',
+                name: 'Daniel Cross',
+                url: 'https://www.sanluisway.com/authors/daniel-cross',
+              },
               publisher: { '@type': 'Organization', name: 'San Luis Way', logo: { '@type': 'ImageObject', url: 'https://www.sanluisway.com/og-image.jpg' } },
               datePublished: '2026-04-13',
               dateModified: '2026-04-13',

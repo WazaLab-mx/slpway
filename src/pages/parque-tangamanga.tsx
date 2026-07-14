@@ -85,7 +85,7 @@ export default function ParqueTangamanga() {
         title="Parque Tangamanga I: Guía Completa del Parque Urbano de San Luis Potosí"
         description="411 ha gratis en SLP: zoológico, planetario, acuario, jardín japonés y 400,000 árboles. Horarios, cómo llegar, qué no perderte — planea tu visita."
         keywords="parque tangamanga, parque tangamanga san luis potosi, tangamanga slp, zoo san luis potosi, planetario slp, parque urbano mexico, actividades familiares san luis potosi, jardin japones tangamanga"
-        ogImage="/images/parque-tangamanga/hero.jpg"
+        ogImage="/images/parque-tangamanga/historical.jpg"
         structuredData={tangamangaStructuredData}
       />
 

@@ -32,7 +32,7 @@ export default function CulinaryTraditionsPage() {
         <meta name="keywords" content="San Luis Potosí food, Mexican cuisine, regional dishes, traditional recipes, food culture" />
         <meta property="og:title" content="Culinary Traditions of San Luis Potosí | San Luis Way" />
         <meta property="og:description" content="Discover the flavors, ingredients, and culinary heritage that define San Luis Potosí's unique food culture." />
-        <meta property="og:image" content="/images/cultural/culinary-traditions.jpeg" />
+        <meta property="og:image" content="/images/cultural/culinary-traditions.jpg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -75,7 +75,7 @@ export default function CulinaryTraditionsPage() {
         <section className="relative h-[40vh] min-h-[300px] bg-secondary">
           <div className="absolute inset-0">
             <Image
-              src="/images/cultural/culinary-traditions.jpeg"
+              src="/images/cultural/culinary-traditions.jpg"
               alt="Traditional dishes from San Luis Potosí"
               fill
               className="object-cover opacity-50"

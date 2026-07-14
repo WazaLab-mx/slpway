@@ -86,7 +86,7 @@ export default function VisitSanLuisPotosiPage() {
         <meta name="keywords" content="visit San Luis Potosí, things to do SLP, San Luis Potosí travel guide, tourist attractions SLP, Huasteca Potosina, Real de Catorce, colonial Mexico, UNESCO heritage" />
         <meta property="og:title" content={t('visitGuide.meta.title')} />
         <meta property="og:description" content={t('visitGuide.meta.description')} />
-        <meta property="og:image" content="/images/cultura-1.jpg" />
+        <meta property="og:image" content="/images/cultural/san-luis-potosi-cathedral.jpg" />
         <meta property="og:url" content="https://www.sanluisway.com/visit-san-luis-potosi" />
         <script
           type="application/ld+json"
@@ -97,7 +97,7 @@ export default function VisitSanLuisPotosiPage() {
               name: 'San Luis Potosí',
               description: 'Colonial city in central Mexico known for baroque architecture, rich cultural heritage, and gateway to the Huasteca Potosina region.',
               url: 'https://www.sanluisway.com/visit-san-luis-potosi',
-              image: 'https://www.sanluisway.com/images/cultura-1.jpg',
+              image: 'https://www.sanluisway.com/images/cultural/san-luis-potosi-cathedral.jpg',
               geo: { '@type': 'GeoCoordinates', latitude: 22.1565, longitude: -100.9855 },
               includesAttraction: [
                 { '@type': 'TouristAttraction', name: 'Centro Histórico', sameAs: 'https://www.sanluisway.com/centro-historico' },

@@ -1,5 +1,7 @@
 import { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
+import SEO from '@/components/common/SEO';
+import LastUpdated from '@/components/common/LastUpdated';
 import Link from 'next/link';
 import Image from 'next/image';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -76,13 +78,44 @@ const WeekendGetawaysPage: NextPage = () => {
 
   return (
     <>
+      <SEO
+        title="Weekend Getaways from San Luis Potosí — Real de Catorce, Huasteca, Media Luna"
+        ogTitle="3 weekend escapes 2 hours from San Luis Potosí"
+        description="Escape SLP this weekend: Real de Catorce, Huasteca Potosina, Media Luna. 2-day itineraries with prices, drive times and what to book — start planning in 2 minutes."
+        keywords="weekend getaways, San Luis Potosí, Corazón de Xoconostle, Huasteca Potosina, Real de Catorce, Media Luna, travel, adventure, tourism, Mexico"
+        ogImage="/images/sponsored/weekend-getaways.jpg"
+        ogType="article"
+        article={{ publishedTime: '2026-04-07', modifiedTime: '2026-07-14' }}
+      />
       <Head>
-        <title>Weekend Getaways from San Luis Potosí — Real de Catorce, Huasteca, Media Luna</title>
-        <meta
-          name="description"
-          content="Escape SLP this weekend: Real de Catorce, Huasteca Potosina, Media Luna. 2-day itineraries with prices, drive times and what to book — start planning in 2 minutes."
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Article',
+              headline: '3 weekend escapes 2 hours from San Luis Potosí',
+              description:
+                'Real de Catorce, Huasteca Potosina and Media Luna: 2-day weekend itineraries from San Luis Potosí with prices, activities and where to stay.',
+              image: 'https://www.sanluisway.com/images/sponsored/weekend-getaways.jpg',
+              datePublished: '2026-04-07',
+              dateModified: '2026-07-14',
+              author: {
+                '@type': 'Person',
+                '@id': 'https://www.sanluisway.com/authors/mariana-cordero#person',
+                name: 'Mariana Cordero',
+                url: 'https://www.sanluisway.com/authors/mariana-cordero',
+              },
+              publisher: {
+                '@type': 'Organization',
+                '@id': 'https://www.sanluisway.com/#organization',
+                name: 'San Luis Way',
+                logo: { '@type': 'ImageObject', url: 'https://www.sanluisway.com/og-image.jpg' },
+              },
+              mainEntityOfPage: 'https://www.sanluisway.com/weekend-getaways',
+            }),
+          }}
         />
-        <meta name="keywords" content="weekend getaways, San Luis Potosí, Corazón de Xoconostle, Huasteca Potosina, Real de Catorce, Media Luna, travel, adventure, tourism, Mexico" />
       </Head>
 
       {/* Hero Section */}
@@ -100,9 +133,10 @@ const WeekendGetawaysPage: NextPage = () => {
             <span className="text-white/90 text-sm font-medium uppercase tracking-wider">
               SPONSORED CONTENT
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mt-2 mb-6">
+            <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mt-2 mb-4">
               Weekend Getaways in San Luis Potosí
             </h1>
+            <LastUpdated date="2026-07-14" className="text-gray-200 mb-4" />
             <p className="text-lg text-gray-200 mb-4">
               As the week comes to an end, there's a whisper among the cobblestone streets of San Luis Potosí—a call to adventure just a short drive away. Escape the routine with these carefully curated weekend adventures by <Link href="https://www.corazondexoconostle.com/index.php/en/" className="text-white underline hover:no-underline font-medium" target="_blank" rel="noopener noreferrer">Corazón de Xoconostle</Link>, the premier adventure guides who have spent over a decade discovering the hidden gems and secret paths of this magnificent region.
             </p>
