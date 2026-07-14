@@ -7,6 +7,7 @@ import SEO from '@/components/common/SEO';
 import Breadcrumbs from '@/components/common/Breadcrumbs';
 import Byline from '@/components/common/Byline';
 import { getAuthorForPost, localizedAuthorField } from '@/lib/authors';
+import { buildFaqSchema } from '@/lib/faq-schema';
 import NewsletterBanner from '@/components/NewsletterBanner';
 import GuideCTA from '@/components/common/GuideCTA';
 import ShareButton from '@/components/sharing/ShareButton';
@@ -98,6 +99,8 @@ export default function BlogPostPage({ post, relatedPosts, hasFactcheck }: BlogP
   const seoDescription = post.metaDescription || post.excerpt;
   // Discover/social/H1 use the hook headline when set; the <title> tag stays SEO.
   const displayTitle = post.discoverTitle || post.title;
+  // FAQPage schema from the post's own FAQ section (Q&A rich results + GEO).
+  const faqSchema = buildFaqSchema(post.content);
 
   return (
     <>
@@ -159,6 +162,12 @@ export default function BlogPostPage({ post, relatedPosts, hasFactcheck }: BlogP
             })
           }}
         />
+        {faqSchema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          />
+        )}
       </Head>
 
       <main className="bg-white">
