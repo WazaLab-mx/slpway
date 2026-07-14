@@ -11,6 +11,7 @@ export interface BlogPost {
   category?: string;
   publishedAt: string;
   createdAt: string;
+  updatedAt?: string;
   tags?: string[];
   metaTitle?: string;
   metaDescription?: string;
@@ -63,7 +64,7 @@ function getSupabaseClient(): SupabaseClient {
 // LIST_FIELDS adds the base English `content` for read-time estimation only
 // (a rough word-count estimate — locale-perfect content isn't needed here).
 const META_FIELDS =
-  'id, slug, title, excerpt, image_url, category, published_at, created_at, tags, title_es, excerpt_es, title_de, excerpt_de, title_ja, excerpt_ja, meta_title, meta_description, meta_title_es, meta_description_es, meta_title_de, meta_description_de, meta_title_ja, meta_description_ja';
+  'id, slug, title, excerpt, image_url, category, published_at, created_at, updated_at, tags, title_es, excerpt_es, title_de, excerpt_de, title_ja, excerpt_ja, meta_title, meta_description, meta_title_es, meta_description_es, meta_title_de, meta_description_de, meta_title_ja, meta_description_ja';
 const LIST_FIELDS = `${META_FIELDS}, content`;
 
 function mapRow(post: Record<string, unknown>, locale: SupportedLocale): BlogPost {
@@ -77,6 +78,7 @@ function mapRow(post: Record<string, unknown>, locale: SupportedLocale): BlogPos
     category: post.category as string | undefined,
     publishedAt: post.published_at as string,
     createdAt: post.created_at as string,
+    updatedAt: (post.updated_at as string | undefined) ?? undefined,
     tags: post.tags as string[] | undefined,
     metaTitle: getLocalizedField(post, 'meta_title', locale),
     metaDescription: getLocalizedField(post, 'meta_description', locale),
@@ -169,7 +171,7 @@ export async function getBlogPostBySlug(slug: string, locale: SupportedLocale = 
     const client = getSupabaseClient();
     const { data, error } = await client
       .from('blog_posts')
-      .select('id, slug, title, content, excerpt, image_url, category, published_at, created_at, tags, title_es, content_es, excerpt_es, title_de, content_de, excerpt_de, title_ja, content_ja, excerpt_ja, meta_title, meta_description, meta_title_es, meta_description_es, meta_title_de, meta_description_de, meta_title_ja, meta_description_ja')
+      .select('id, slug, title, content, excerpt, image_url, category, published_at, created_at, updated_at, tags, title_es, content_es, excerpt_es, title_de, content_de, excerpt_de, title_ja, content_ja, excerpt_ja, meta_title, meta_description, meta_title_es, meta_description_es, meta_title_de, meta_description_de, meta_title_ja, meta_description_ja')
       .eq('slug', slug)
       .eq('status', 'published')
       .single();
@@ -197,6 +199,7 @@ export async function getBlogPostBySlug(slug: string, locale: SupportedLocale = 
       category: data.category,
       publishedAt: data.published_at,
       createdAt: data.created_at,
+      updatedAt: data.updated_at ?? undefined,
       tags: data.tags,
       metaTitle: getLocalizedField(data, 'meta_title', locale),
       metaDescription: getLocalizedField(data, 'meta_description', locale),

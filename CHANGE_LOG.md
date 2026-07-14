@@ -4,6 +4,12 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-13] seo(discover): dateModified real (updated_at) para señal de frescura
+
+Preparando el sitio para Google Discover (que usa `dateModified` como señal de frescura), se detectó que el post usaba `createdAt` tanto en `article.modifiedTime` (SEO/OG) como en el `dateModified` del Article JSON-LD — así, actualizar un post nunca reflejaba una fecha de modificación nueva. Fix: se añadió `updated_at` a la capa de datos (`BlogPost.updatedAt`, `META_FIELDS`, `getBlogPostBySlug` select + mapeo, `mapRow`) y `blog/[slug].tsx` ahora usa `post.updatedAt || post.publishedAt` en ambos lugares. `max-image-preview:large` ya estaba (vía SEO.tsx), requisito clave de Discover ya cubierto. tsc exit 0. (El plan completo de Discover se entregó al usuario; el resto son acciones editoriales: bylines de autor con bio, cadencia de publicación, framing temporal "esta semana".)
+
+---
+
 ## [2026-07-13] perf(blog): eliminar statement timeouts en build (queries de listado sin content pesado)
 
 Durante `npm run build` aparecían ~30 errores `canceling statement due to statement timeout` / `Failed to get blog posts`. Causa: `getBlogPosts()` (usada en LISTADOS) hacía `select` incluyendo las 4 columnas `content, content_es, content_de, content_ja` completas (~15-20 KB × 4 por post) SIN `limit` → ~3 MB por query. Amplificador: `blog/[slug].tsx` llamaba `getBlogPosts()` 2× por página (getStaticPaths + getStaticProps para relacionados) → cientos de queries de 3 MB en el build concurrente, agotando el statement timeout de Supabase.

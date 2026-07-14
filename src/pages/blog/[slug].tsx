@@ -105,7 +105,7 @@ export default function BlogPostPage({ post, relatedPosts, hasFactcheck }: BlogP
         ogType="article"
         article={{
           publishedTime: post.publishedAt,
-          modifiedTime: post.createdAt,
+          modifiedTime: post.updatedAt || post.publishedAt,
           tags: post.tags
         }}
       />
@@ -122,7 +122,7 @@ export default function BlogPostPage({ post, relatedPosts, hasFactcheck }: BlogP
               "description": seoDescription,
               "image": post.imageUrl || "https://www.sanluisway.com/og-image.jpg",
               "datePublished": post.publishedAt,
-              "dateModified": post.createdAt,
+              "dateModified": post.updatedAt || post.publishedAt,
               "author": {
                 "@type": "Person",
                 "@id": "https://www.sanluisway.com/about#editorial-team",
