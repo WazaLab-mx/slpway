@@ -36,6 +36,7 @@ export default function EventCard({ event, variant = 'grid' }: EventCardProps) {
             src={event.image_url!}
             alt={event.title}
             fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 384px"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
