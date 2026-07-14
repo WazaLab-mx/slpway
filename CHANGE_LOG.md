@@ -4,6 +4,14 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-13] content(discover): hooks en los 7 posts de eventos + lineamientos en style guides
+
+Se escribieron `discover_title` (hook, 4 locales) para los 7 posts de categoría Events (FENAPO ×4, Festival del Vino, Semana Santa, Procesión del Silencio) siguiendo las reglas del podcast: una emoción/una promesa, ~40–60 chars, que cumplen la promesa, con hechos de la edición 2026 confirmados (ej. "FENAPO 2026 is free — the one ticket you actually need"; "Katy Perry, Mötley Crüe & Bizarrap — free at FENAPO 2026"; "The night San Luis Potosí falls silent: the 2026 procession"). Script one-off: `scripts/set-event-discover-titles.mjs`. Los hooks alimentan H1 + og:title + headline; el `<title>` SEO se mantiene.
+
+Además, se documentaron los lineamientos de títulos Discover en TODOS los style guides de posts para que se apliquen nativamente en el futuro: sección canónica completa en `BLOG_STYLE_GUIDE.md` (+ TOC) y `BLOG_POST_TITLES.md`, y un bloque compacto (con ejemplo + pointer a la guía canónica) al final de los 5 guides por formato (checklist, comparison, deep-dive, itinerary, ultimate-guide). Reglas cubiertas: hook vs título SEO, una emoción/promesa, 40–60 chars, no clickbait vacío, imagen que cuenta otra historia, 4 locales, y respeto a reglas editoriales (edición actual, sin sesgo gobierno).
+
+---
+
 ## [2026-07-13] feat(discover): título Discover separado del título SEO
 
 Del método del podcast (Gem/Gagan Ghotra): en Discover el título es un HOOK para frenar el scroll, distinto del título SEO por keyword. Se agregó un `discover_title` (hook) separado del `<title>`/`meta_title` (SEO). Migración: `supabase/migrations/20260713_add_discover_title.sql` (columnas `discover_title` + `_es/_de/_ja`, nullable — corrida por el dueño en Supabase). `blog.ts`: `BlogPost.discoverTitle` (`string|null`), añadido al select + mapeo de `getBlogPostBySlug` (localizado, `|| null` porque Next no serializa `undefined`). `SEO.tsx`: nuevo prop `ogTitle` que desacopla `og:title`/`twitter:title` del `<title>`. `blog/[slug].tsx`: `displayTitle = post.discoverTitle || post.title` alimenta H1 + `og:title` + `headline` del JSON-LD + share; el `<title>` sigue usando `meta_title` (SEO). Fallback transparente: con `discover_title` NULL (los 42 posts actuales) todo cae a `title`, sin cambio visual. `npm run build` exit 0, 782/782 páginas, tsc 0. Uso: setear `discover_title` en un post le da un titular-hook para Discover manteniendo el título SEO.

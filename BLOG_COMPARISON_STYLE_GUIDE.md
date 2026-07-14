@@ -984,3 +984,13 @@ https://www.amazon.com/dp/[ASIN]?tag=glamlocalstor-20
 **Version:** 1.0
 
 > 💡 **Important Note:** ALL comparison posts MUST include product links from our Amazon inventory with the affiliate tag `glamlocalstor-20`. Comparison articles without product integration will NOT be published.
+
+---
+
+## Título para Google Discover (`discover_title`)
+
+Además del título SEO, todo post necesita un **`discover_title`** (hook) en los 4 locales (`discover_title`, `_es`, `_de`, `_ja`): **una emoción / una promesa**, ~40–60 caracteres, que frene el scroll y **SIEMPRE cumpla** lo que promete (nunca clickbait vacío). Habla a la persona, no a keywords. Alimenta el **H1 + `og:title` + `headline` (JSON-LD)**; el `<title>` SEO se queda en `meta_title`. Si se deja vacío, cae a `title`.
+
+Ejemplo — SEO `<title>`: `FENAPO 2026: Tickets, Prices & How to Get There` → `discover_title`: `FENAPO 2026 is free — the one ticket you actually need`.
+
+Guía completa: **BLOG_STYLE_GUIDE.md → "Títulos para Google Discover"**.

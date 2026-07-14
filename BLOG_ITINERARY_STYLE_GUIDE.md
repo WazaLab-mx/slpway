@@ -1782,3 +1782,13 @@ Target keywords like:
 **Versión:** 1.0
 
 > 💡 **Nota Importante:** Los itinerarios deben ser prácticos y realistas. Siempre incluir tiempos de traslado, costos detallados, y alternativas para diferentes presupuestos. NUNCA incluir información no verificada—todas las recomendaciones deben estar respaldadas por fuentes confiables (sitios oficiales de turismo, reviews verificados, expertos locales).
+
+---
+
+## Título para Google Discover (`discover_title`)
+
+Además del título SEO, todo post necesita un **`discover_title`** (hook) en los 4 locales (`discover_title`, `_es`, `_de`, `_ja`): **una emoción / una promesa**, ~40–60 caracteres, que frene el scroll y **SIEMPRE cumpla** lo que promete (nunca clickbait vacío). Habla a la persona, no a keywords. Alimenta el **H1 + `og:title` + `headline` (JSON-LD)**; el `<title>` SEO se queda en `meta_title`. Si se deja vacío, cae a `title`.
+
+Ejemplo — SEO `<title>`: `FENAPO 2026: Tickets, Prices & How to Get There` → `discover_title`: `FENAPO 2026 is free — the one ticket you actually need`.
+
+Guía completa: **BLOG_STYLE_GUIDE.md → "Títulos para Google Discover"**.

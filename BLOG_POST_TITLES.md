@@ -1,5 +1,33 @@
 # Títulos de Blog Posts - San Luis Potosí
 
+> ⚠️ Los títulos de abajo son **títulos SEO** (para el tag `<title>` / búsqueda). Para Google Discover, cada post necesita ADEMÁS un **`discover_title`** (hook). Ver reglas abajo.
+
+## Títulos para Google Discover (`discover_title`)
+
+Discover **empuja** contenido a un feed en móvil: el título debe **frenar el scroll**, no ganar keywords. Cada post tiene un campo `discover_title` (con `_es` / `_de` / `_ja`) separado del título SEO; si está vacío, cae a `title`. Alimenta el **H1 + `og:title` + `headline` (JSON-LD) + share**; el `<title>` SEO sigue usando `meta_title`.
+
+**Reglas del hook:**
+1. Una **emoción**, una **promesa** — "¿qué gano si hago clic?".
+2. Habla a la persona, **no al algoritmo** (cero keyword stuffing).
+3. **~40–60 caracteres.**
+4. Curiosidad/suspenso, pero **SIEMPRE cumple** — un clickbait que decepciona mata el sitio.
+5. Ingredientes: números concretos, "gratis", dato sorprendente, cita entre comillas.
+6. Solo hechos de la **edición actual** confirmados; sin sesgo pro-gobierno.
+7. Escríbelo en los **4 locales** (adapta el hook, no traduzcas literal).
+
+**SEO `<title>` vs `discover_title` (ejemplos reales):**
+
+| SEO `<title>` (keywords) | `discover_title` (hook) |
+|---|---|
+| FENAPO 2026: Tickets, Prices & How to Get There | FENAPO 2026 is free — the one ticket you actually need |
+| FENAPO 2026 Full Lineup: Every Artist, Date by Date | Katy Perry, Mötley Crüe & Bizarrap — free at FENAPO 2026 |
+| SLP International Wine Festival 2026: Complete Guide | 500 wines in one weekend: SLP's Wine Festival returns |
+| Procesión del Silencio 2026: Route, Schedule, Tickets | The night San Luis Potosí falls silent: the 2026 procession |
+
+Guía canónica completa: **BLOG_STYLE_GUIDE.md → "Títulos para Google Discover"**.
+
+---
+
 ## Análisis y Guías Profundas
 
 1. Análisis 2025 del Costo de Vida Real en San Luis Potosí: ¿Cuánto necesitas para vivir cómodamente?

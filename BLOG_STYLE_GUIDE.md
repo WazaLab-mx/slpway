@@ -14,6 +14,7 @@
 - [Blockquotes](#blockquotes)
 - [Llamadas a la Acción](#llamadas-a-la-acción)
 - [Ejemplos Completos](#ejemplos-completos)
+- [Títulos para Google Discover](#títulos-para-google-discover-discover_title)
 
 ---
 
@@ -407,3 +408,45 @@ Todos los blog posts deben usar esta estructura base:
 **Versión:** 1.0
 
 > 💡 **Nota:** Este style guide debe actualizarse cada vez que se introduzcan nuevos componentes o se modifiquen los existentes para mantener la consistencia en todo el sitio.
+
+---
+
+## Títulos para Google Discover (`discover_title`)
+
+Google Discover **empuja** contenido a un feed personalizado en móvil (no es búsqueda): el título tiene que **frenar el scroll**, no ganar keywords. Por eso cada post tiene un campo **`discover_title`** (con `_es` / `_de` / `_ja`) separado del título SEO. Si se deja vacío, cae automáticamente a `title`.
+
+### Dónde impacta cada título
+
+| Campo | Alimenta | Objetivo |
+|---|---|---|
+| `meta_title` (o `title`) | el `<title>` del tag | SEO / búsqueda (keywords, intención) |
+| **`discover_title`** | **H1 + `og:title` + `headline` (JSON-LD) + botón de compartir** | Discover / redes (el *hook*) |
+
+El título SEO y el de Discover **pueden y suelen diferir**: uno gana la búsqueda, el otro frena el scroll.
+
+### Reglas del hook (lo que funciona en Discover)
+
+1. **Una emoción, una promesa.** El lector debe pensar *"¿qué gano si hago clic?"*.
+2. **Habla a la persona, no al algoritmo.** Cero keyword stuffing; usa el vocabulario de tu audiencia. Discover es *push*, no *pull*.
+3. **~40–60 caracteres.**
+4. **Curiosidad/suspenso — pero SIEMPRE cumple.** Un clickbait que decepciona destruye el watch-time y, a la larga, mata la visibilidad del sitio. Regla simple: si tú harías clic *y* el artículo cumple, va bien.
+5. **Ingredientes potentes:** números concretos, "gratis", un dato sorprendente, una cita/testimonio entre comillas.
+6. **La imagen cuenta OTRA historia** que complementa el título (como un thumbnail de YouTube), no lo repite.
+7. **Respeta las reglas editoriales:** solo hechos de la **edición actual** confirmados (nunca info de años previos), sin sesgo pro-gobierno, geografía/fechas correctas.
+
+### SEO `<title>` vs `discover_title`
+
+| SEO `<title>` (keywords) | `discover_title` (hook) |
+|---|---|
+| FENAPO 2026: Tickets, Prices & How to Get There | FENAPO 2026 is free — the one ticket you actually need |
+| FENAPO 2026 Full Lineup: Every Artist, Date by Date | Katy Perry, Mötley Crüe & Bizarrap — free at FENAPO 2026 |
+| Procesión del Silencio 2026: Route, Schedule, Tickets | The night San Luis Potosí falls silent: the 2026 procession |
+
+### Haz / No hagas
+
+- ✅ `500 vinos en un fin de semana: vuelve el Festival del Vino`
+- ❌ `Festival Internacional del Vino SLP 2026: Guía Completa de la 14ª Edición` (eso es el título SEO, no un hook)
+- ✅ `60 juegos gratis: cómo llevar a los niños a la FENAPO 2026`
+- ❌ `No vas a creer lo que pasó en la FENAPO` (clickbait vacío que no cumple → prohibido)
+
+> **Nota multi-idioma:** escribe el hook en los 4 locales (`discover_title`, `discover_title_es`, `discover_title_de`, `discover_title_ja`). No traduzcas literal — adapta el hook al lector de cada idioma.

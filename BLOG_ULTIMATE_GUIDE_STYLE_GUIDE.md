@@ -1771,3 +1771,13 @@ Ultimate Guides are cornerstone content - they should serve as hubs that connect
 **Version:** 1.0
 
 > **Editorial Note:** Ultimate Guides represent our commitment to providing comprehensive, thoroughly researched, and verified information. Every fact, statistic, and recommendation must be traceable to a reliable source. When information cannot be verified, it should not be included. Quality and accuracy always take precedence over comprehensiveness.
+
+---
+
+## Título para Google Discover (`discover_title`)
+
+Además del título SEO, todo post necesita un **`discover_title`** (hook) en los 4 locales (`discover_title`, `_es`, `_de`, `_ja`): **una emoción / una promesa**, ~40–60 caracteres, que frene el scroll y **SIEMPRE cumpla** lo que promete (nunca clickbait vacío). Habla a la persona, no a keywords. Alimenta el **H1 + `og:title` + `headline` (JSON-LD)**; el `<title>` SEO se queda en `meta_title`. Si se deja vacío, cae a `title`.
+
+Ejemplo — SEO `<title>`: `FENAPO 2026: Tickets, Prices & How to Get There` → `discover_title`: `FENAPO 2026 is free — the one ticket you actually need`.
+
+Guía completa: **BLOG_STYLE_GUIDE.md → "Títulos para Google Discover"**.
