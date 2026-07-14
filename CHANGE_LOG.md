@@ -4,6 +4,14 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-13] perf(images): recomprimir imágenes de public/ (–64% en las pesadas, bandwidth)
+
+El sitio (Netlify) cayó con 503 `usage_exceeded`. Auditoría de bandwidth: `public/` pesaba 85 MB; **53 imágenes >400KB sumaban 62.5 MB**, con monstruos servidos crudos (`tangamanga-zoo.jpg` 7.3MB, `expat-guide-infographic.png` 6.8MB —usada como og:image—, `Metropolitan_Cathedral.jpg` 2.4MB) y 28 fotos guardadas como PNG (35.9 MB). Nota: `next/image` optimiza para el navegador, pero los `<img>` planos + og:images sirven el original crudo y el Image CDN de Netlify igual descarga el original gigante para transformarlo. Además 22 posts usan `image_url` local (servido por Netlify).
+
+Fix: `scripts/optimize-public-images.mjs` recomprime in-place toda imagen >400KB → resize máx 1920px + re-encode (JPG mozjpeg q80 / WebP q80 / PNG paleta q82), y solo sobreescribe si queda más chico (nunca agranda). **Mismo nombre de archivo → cero cambios de código/DB.** Resultado: 52/53 recomprimidas, 62.5 MB → 22.8 MB (–64%); `public/` total 85 MB → 45 MB. Verificado visualmente: foto JPG (tangamanga-zoo 7.3MB→406KB) impecable, infografía con texto legible, PNG-foto con paleta (hero FENAPO en DB) sin posterización. Los originales quedan en git por si hay que revertir. Aclaración: el "housing hero usado 113×" fue un falso positivo de mi grep por stem `hero` (matchea cualquier "hero"); real: 2 usos. Pendiente 2ª pasada: borrar huérfanos (0 refs) tras cruce triple src + DB image_url + DB content HTML.
+
+---
+
 ## [2026-07-13] content(discover): hooks en los 7 posts de eventos + lineamientos en style guides
 
 Se escribieron `discover_title` (hook, 4 locales) para los 7 posts de categoría Events (FENAPO ×4, Festival del Vino, Semana Santa, Procesión del Silencio) siguiendo las reglas del podcast: una emoción/una promesa, ~40–60 chars, que cumplen la promesa, con hechos de la edición 2026 confirmados (ej. "FENAPO 2026 is free — the one ticket you actually need"; "Katy Perry, Mötley Crüe & Bizarrap — free at FENAPO 2026"; "The night San Luis Potosí falls silent: the 2026 procession"). Script one-off: `scripts/set-event-discover-titles.mjs`. Los hooks alimentan H1 + og:title + headline; el `<title>` SEO se mantiene.
