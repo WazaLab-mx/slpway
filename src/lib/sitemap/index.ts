@@ -5,6 +5,7 @@ import {
   fetchEventUrls,
   fetchBrandUrls,
   fetchFactcheckUrls,
+  fetchAuthorUrls,
 } from './dynamic';
 import {
   LOCALES,
@@ -79,7 +80,8 @@ export async function buildSitemapXml(): Promise<string> {
   ]);
 
   const factchecks = fetchFactcheckUrls();
-  const all = [...staticEntries, ...blog, ...places, ...events, ...brands, ...factchecks];
+  const authors = fetchAuthorUrls();
+  const all = [...staticEntries, ...blog, ...places, ...events, ...brands, ...factchecks, ...authors];
   const body = expandLocaleEntries(all).join('\n');
 
   return `<?xml version="1.0" encoding="UTF-8"?>

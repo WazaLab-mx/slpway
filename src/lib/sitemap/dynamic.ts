@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import { buildEventPath } from '@/lib/event-slug';
+import { AUTHOR_SLUGS } from '@/lib/authors';
 import type { SitemapEntry } from './locale';
 
 /**
@@ -25,6 +26,17 @@ function getServerClient() {
   const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !anon) throw new Error('Supabase env vars missing for sitemap generation');
   return createClient(url, anon);
+}
+
+export function fetchAuthorUrls(): SitemapEntry[] {
+  // Author bio pages establish E-E-A-T authorship for Google Discover.
+  // Slugs are a fixed set defined in src/lib/authors.ts.
+  return AUTHOR_SLUGS.map((slug) => ({
+    path: `/authors/${slug}`,
+    lastmod: TODAY(),
+    changefreq: 'monthly',
+    priority: 0.5,
+  }));
 }
 
 export async function fetchBlogUrls(): Promise<SitemapEntry[]> {
