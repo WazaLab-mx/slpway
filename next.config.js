@@ -156,6 +156,13 @@ const nextConfig = {
         destination: '/blog/renting-in-san-luis-potosi-foreigner-2026',
         permanent: true,
       },
+      {
+        // 2025 "living as an expat" ultimate guide superseded by the broader,
+        // current 2026 ultimate guide (cannibalization audit 2026-07-13).
+        source: '/blog/ultimate-guide-living-san-luis-potosi-expat',
+        destination: '/blog/ultimate-guide-living-san-luis-potosi-2026',
+        permanent: true,
+      },
       // /listings is temporarily disabled (the page client-redirects to /).
       // Surface that as a true 301 so Google deindexes it cleanly instead
       // of treating the soft-redirect page as a duplicate.
