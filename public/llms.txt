@@ -45,6 +45,12 @@ CLI: npx @sanluisway/cli events --limit 5 --json
 - https://www.sanluisway.com/blog/things-to-do-san-luis-potosi-2026 — 50 things to do in SLP — the master hub linking all guides
 - https://www.sanluisway.com/blog/san-luis-potosi-airport-guide — SLP airport (Ponciano Arriaga): airlines, routes, taxi fares, rentals
 - https://www.sanluisway.com/blog/san-luis-potosi-weather-best-time-to-visit — Month-by-month climate (SMN normals) + best time to visit, city vs Huasteca
+- https://www.sanluisway.com/blog/leonora-carrington-san-luis-potosi-museo-centro-artes-surrealism — Leonora Carrington & surrealism in SLP: Museo Leonora Carrington, Centro de las Artes (ClaimReview-verified)
+- https://www.sanluisway.com/blog/san-luis-potosi-mining-history-baroque-architecture-cultural-legacy — Silver-mining history & baroque architecture: colonial legacy, Centro Histórico (ClaimReview-verified)
+- https://www.sanluisway.com/blog/mexico-2026-stopover-san-luis-potosi — World Cup 2026 stopover guide: SLP as a base between host cities (ClaimReview-verified)
+- https://www.sanluisway.com/blog/foreign-direct-investment-slp-job-market-foreign-professionals — FDI & job market: automotive/aerospace clusters, jobs for foreign professionals (ClaimReview-verified)
+- https://www.sanluisway.com/blog/best-parks-for-kids-san-luis-potosi — Best parks for kids: Tangamanga, playgrounds, family amenities (parent-tested, ClaimReview-verified)
+- https://www.sanluisway.com/blog/best-brunch-spots-san-luis-potosi — Best brunch spots locals actually pick in SLP (ClaimReview-verified)
 - https://www.sanluisway.com/events/this-week — Events in the next 7 days (ItemList schema, hourly refresh)
 - https://www.sanluisway.com/media-kit — Audience stats and advertising products (verifiable figures)
 - https://www.sanluisway.com/events/fenapo-2026 — FENAPO 2026 event page (current lineup, Festival schema)
