@@ -44,7 +44,8 @@ export async function fetchBlogUrls(): Promise<SitemapEntry[]> {
   const { data, error } = await supabase
     .from('blog_posts')
     .select('slug, updated_at, published_at')
-    .eq('status', 'published');
+    .eq('status', 'published')
+    .lte('published_at', new Date().toISOString()); // scheduled posts join the sitemap on their date
   if (error || !data) return [];
   return data.map((row) => ({
     path: `/blog/${row.slug}`,

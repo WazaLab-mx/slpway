@@ -101,6 +101,7 @@ export async function getBlogPosts(locale: SupportedLocale = 'en', limit?: numbe
       .from('blog_posts')
       .select(LIST_FIELDS)
       .eq('status', 'published')
+      .lte('published_at', new Date().toISOString()) // scheduled posts stay hidden until their date
       .order('published_at', { ascending: false });
     if (limit) query = query.limit(limit);
     const { data, error } = await query;
@@ -136,6 +137,7 @@ export async function getBlogPostsMeta(locale: SupportedLocale = 'en', limit?: n
       .from('blog_posts')
       .select(META_FIELDS)
       .eq('status', 'published')
+      .lte('published_at', new Date().toISOString()) // scheduled posts stay hidden until their date
       .order('published_at', { ascending: false });
     if (limit) query = query.limit(limit);
     const { data, error } = await query;
@@ -176,6 +178,7 @@ export async function getBlogPostBySlug(slug: string, locale: SupportedLocale = 
       .select('id, slug, title, discover_title, discover_title_es, discover_title_de, discover_title_ja, content, excerpt, image_url, category, published_at, created_at, updated_at, tags, title_es, content_es, excerpt_es, title_de, content_de, excerpt_de, title_ja, content_ja, excerpt_ja, meta_title, meta_description, meta_title_es, meta_description_es, meta_title_de, meta_description_de, meta_title_ja, meta_description_ja')
       .eq('slug', slug)
       .eq('status', 'published')
+      .lte('published_at', new Date().toISOString()) // scheduled posts 404 until their date
       .single();
 
     if (error) {
