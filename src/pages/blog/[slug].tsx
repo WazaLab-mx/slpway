@@ -6,6 +6,7 @@ import { BlogPost, getBlogPostsMeta, getBlogPostBySlug, SupportedLocale } from '
 import SEO from '@/components/common/SEO';
 import Breadcrumbs from '@/components/common/Breadcrumbs';
 import Byline from '@/components/common/Byline';
+import { getAuthorForPost, localizedAuthorField } from '@/lib/authors';
 import NewsletterBanner from '@/components/NewsletterBanner';
 import GuideCTA from '@/components/common/GuideCTA';
 import ShareButton from '@/components/sharing/ShareButton';
@@ -91,6 +92,7 @@ export const getStaticProps: GetStaticProps<BlogPostPageProps> = async (context)
 export default function BlogPostPage({ post, relatedPosts, hasFactcheck }: BlogPostPageProps) {
   const { locale = 'en' } = useRouter();
   const isEs = locale === 'es';
+  const author = getAuthorForPost(post.category);
   // Use dedicated SEO fields when available, fallback to title/excerpt
   const seoTitle = post.metaTitle || post.title;
   const seoDescription = post.metaDescription || post.excerpt;
@@ -125,10 +127,11 @@ export default function BlogPostPage({ post, relatedPosts, hasFactcheck }: BlogP
               "dateModified": post.updatedAt || post.publishedAt,
               "author": {
                 "@type": "Person",
-                "@id": "https://www.sanluisway.com/about#editorial-team",
-                "name": "San Luis Way Editorial",
-                "url": "https://www.sanluisway.com/about",
-                "jobTitle": "Editorial Team",
+                "@id": `https://www.sanluisway.com/authors/${author.slug}#person`,
+                "name": author.name,
+                "url": `https://www.sanluisway.com/authors/${author.slug}`,
+                "image": author.avatarUrl,
+                "jobTitle": localizedAuthorField(author.role, locale),
                 "worksFor": {
                   "@type": "Organization",
                   "@id": "https://www.sanluisway.com/#organization",
@@ -190,8 +193,12 @@ export default function BlogPostPage({ post, relatedPosts, hasFactcheck }: BlogP
           />
           <Byline
             publishedAt={post.publishedAt}
-            modifiedAt={post.createdAt}
-            className="text-gray-600"
+            modifiedAt={post.updatedAt || post.publishedAt}
+            authorName={author.name}
+            authorUrl={`/authors/${author.slug}`}
+            authorAvatarUrl={author.avatarUrl}
+            authorRole={localizedAuthorField(author.role, locale)}
+            className="text-gray-700"
           />
           {hasFactcheck && (
             <Link

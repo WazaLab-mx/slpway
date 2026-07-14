@@ -4,6 +4,16 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-07-13] feat(authors): sistema de autores con 2 personas (E-E-A-T para Discover/SEO)
+
+Para Google Discover y el core update de feb 2026 (evalúa E-E-A-T por tema y premia experiencia de primera mano), el blog usaba un autor genérico "San Luis Way Editorial". Se crearon 2 personas seudónimo con bio creíble y avatar: **Mariana Cordero** (Editora de Cultura y Vida Local — nativa potosina; cubre cultura/eventos/gastronomía/historia/viajes) y **Daniel Cross** (Editor de Vida Expat y Relocation — expat de Austin desde 2021; cubre trámites/rentas/salud/costo de vida). Avatares generados con gpt-image-1 (headshots realistas), optimizados con sharp (512×512 jpg q85) → `blog-images/authors/`.
+
+Implementación: `src/lib/authors.ts` (personas con role+bio en 4 locales, mapeo categoría→autor vía `getAuthorForPost`, `getAuthorBySlug`, `AUTHOR_SLUGS`; categorías expat→Daniel, resto→Mariana — sin columna en DB). `Byline.tsx` extendido con variante rica (avatar + nombre + rol, retrocompatible). `blog/[slug].tsx`: byline visible con foto que linkea a `/authors/[slug]`, y `author` del Article JSON-LD ahora es un `Person` real (name/url/image/jobTitle) en vez del editorial genérico. Nueva página `/authors/[slug].tsx` (bio + ProfilePage/Person JSON-LD + lista de artículos del autor, 4 locales). tsc exit 0; `npm run build` genera las 8 páginas de autor (2×4 locales). Script one-off: `scripts/generate-author-avatars.mjs`.
+
+Contexto: auditoría de Discover (GSC) mostró 0 impresiones en 180 días → el sitio nunca ha entrado a Discover; este es el paso #1 de los requisitos de entrada (autor firmado). Siguiente pendiente: campo "título Discover" separado del título SEO (#2).
+
+---
+
 ## [2026-07-13] seo(discover): dateModified real (updated_at) para señal de frescura
 
 Preparando el sitio para Google Discover (que usa `dateModified` como señal de frescura), se detectó que el post usaba `createdAt` tanto en `article.modifiedTime` (SEO/OG) como en el `dateModified` del Article JSON-LD — así, actualizar un post nunca reflejaba una fecha de modificación nueva. Fix: se añadió `updated_at` a la capa de datos (`BlogPost.updatedAt`, `META_FIELDS`, `getBlogPostBySlug` select + mapeo, `mapRow`) y `blog/[slug].tsx` ahora usa `post.updatedAt || post.publishedAt` en ambos lugares. `max-image-preview:large` ya estaba (vía SEO.tsx), requisito clave de Discover ya cubierto. tsc exit 0. (El plan completo de Discover se entregó al usuario; el resto son acciones editoriales: bylines de autor con bio, cadencia de publicación, framing temporal "esta semana".)

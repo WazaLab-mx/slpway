@@ -10,6 +10,10 @@ interface BylineProps {
   authorName?: string;
   /** Author bio URL — href on the byline link. Defaults to /about. */
   authorUrl?: string;
+  /** Author avatar URL — when set, renders a photo chip (E-E-A-T signal). */
+  authorAvatarUrl?: string;
+  /** Author role/title shown under the name when an avatar is present. */
+  authorRole?: string;
   className?: string;
 }
 
@@ -51,6 +55,8 @@ export default function Byline({
   modifiedAt,
   authorName = 'San Luis Way Editorial',
   authorUrl = '/about',
+  authorAvatarUrl,
+  authorRole,
   className = '',
 }: BylineProps) {
   const { locale } = useRouter();
@@ -61,6 +67,46 @@ export default function Byline({
   const showModified = modifiedAt && publishedAt && modifiedAt.slice(0, 10) !== publishedAt.slice(0, 10);
   const dateToShow = showModified ? modifiedAt! : publishedAt;
   const dateLabel = showModified ? labels.updated : '';
+
+  const dateNode = dateToShow && (
+    <time dateTime={dateToShow}>
+      {dateLabel ? `${dateLabel} ` : ''}
+      {formatDate(dateToShow, intlLocale)}
+    </time>
+  );
+
+  // Rich variant: photo chip with name + role, used for named authors.
+  if (authorAvatarUrl) {
+    return (
+      <div className={`flex items-center gap-3 text-sm ${className}`}>
+        <Link href={authorUrl} className="shrink-0">
+          {/* Plain img with fixed dimensions avoids next/image remote config and reserves space (no CLS). */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={authorAvatarUrl}
+            alt={authorName}
+            width={44}
+            height={44}
+            loading="lazy"
+            className="h-11 w-11 rounded-full object-cover border border-gray-200"
+          />
+        </Link>
+        <div className="leading-tight">
+          <div>
+            {labels.by}{' '}
+            <Link href={authorUrl} className="font-semibold hover:underline">
+              {authorName}
+            </Link>
+          </div>
+          <div className="text-xs text-gray-500">
+            {authorRole}
+            {authorRole && dateToShow ? ' · ' : ''}
+            {dateNode}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={`flex flex-wrap items-center gap-x-2 gap-y-1 text-sm ${className}`}>
@@ -73,10 +119,7 @@ export default function Byline({
       {dateToShow && (
         <>
           <span aria-hidden="true">·</span>
-          <time dateTime={dateToShow}>
-            {dateLabel ? `${dateLabel} ` : ''}
-            {formatDate(dateToShow, intlLocale)}
-          </time>
+          {dateNode}
         </>
       )}
     </div>
