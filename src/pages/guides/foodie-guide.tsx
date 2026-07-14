@@ -113,8 +113,8 @@ const FoodieGuidePage: NextPage = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-black/70 to-black/60" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-amber-300 text-sm font-medium uppercase tracking-wider">
-              SPONSORED CONTENT
+            <span className="text-amber-300/90 text-xs font-medium tracking-wide">
+              Editorial guide · In partnership with La Legendaria
             </span>
             <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mt-2 mb-6">
               The Ultimate Foodie Guide to San Luis Potosí

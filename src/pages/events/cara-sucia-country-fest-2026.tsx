@@ -96,7 +96,7 @@ export default function CaraSuciaCountryFest2026() {
         title={t('countryFest2026.seo.title')}
         description={t('countryFest2026.seo.description')}
         keywords={t('countryFest2026.seo.keywords')}
-        ogImage="/images/events/cara-sucia-country-fest-2026-banner.png"
+        ogImage="/images/events/cara-sucia-hero.jpg"
         structuredData={structuredData as Record<string, unknown>}
       />
 

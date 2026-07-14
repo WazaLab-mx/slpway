@@ -175,7 +175,7 @@ export default function Fenapo2026() {
         title={t('fenapo2026.seo.title')}
         description={t('fenapo2026.seo.description')}
         keywords={t('fenapo2026.seo.keywords')}
-        ogImage="/images/events/fenapo-2026-logo.png"
+        ogImage="/images/events/fenapo-fair.jpg"
         structuredData={structuredData as Record<string, unknown>}
       />
 

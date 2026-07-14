@@ -130,8 +130,8 @@ const WeekendGetawaysPage: NextPage = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-black/70 to-black/60" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-white/90 text-sm font-medium uppercase tracking-wider">
-              SPONSORED CONTENT
+            <span className="text-white/80 text-xs font-medium tracking-wide">
+              Editorial guide · In partnership with Corazón de Xoconostle
             </span>
             <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mt-2 mb-4">
               Weekend Getaways in San Luis Potosí

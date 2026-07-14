@@ -109,8 +109,8 @@ const WineScenePage: NextPage = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-black/70 to-black/60" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-red-300 text-sm font-medium uppercase tracking-wider">
-              SPONSORED CONTENT
+            <span className="text-red-300/90 text-xs font-medium tracking-wide">
+              Editorial guide · In partnership with La Gran Vía
             </span>
             <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mt-2 mb-6">
               Discover the Potosino Wine Scene
