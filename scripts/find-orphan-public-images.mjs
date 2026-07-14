@@ -47,17 +47,33 @@ for (const [table, cols] of dbSources) {
 }
 
 // 3) An image is "used" if its basename OR its /rel path appears in the haystack.
+const noExt = (rel) => rel.replace(/\.(jpg|jpeg|png|webp|avif|gif|svg)$/i, '');
+const usedBases = new Set(); // extensionless paths of referenced files (protect format siblings)
 const orphans = [];
 for (const f of files) {
   const base = path.basename(f.rel);
-  if (haystack.includes(f.rel) || haystack.includes(base)) continue;
+  if (haystack.includes(f.rel) || haystack.includes(base)) { usedBases.add(noExt(f.rel)); continue; }
   orphans.push(f);
 }
-orphans.sort((a, b) => b.size - a.size);
 
-const totalOrphan = orphans.reduce((n, f) => n + f.size, 0);
+// Protect orphans that are format-siblings of a referenced image (image.ts fallback).
+const deletable = orphans.filter((f) => !usedBases.has(noExt(f.rel)));
+const protectedSiblings = orphans.filter((f) => usedBases.has(noExt(f.rel)));
+
+const totalDel = deletable.reduce((n, f) => n + f.size, 0);
 const totalAll = files.reduce((n, f) => n + f.size, 0);
 console.log(`public/ images: ${files.length} files, ${(totalAll / 1048576).toFixed(1)} MB`);
-console.log(`Orphans (not referenced in src or DB): ${orphans.length} files, ${(totalOrphan / 1048576).toFixed(1)} MB\n`);
-for (const f of orphans.slice(0, 40)) console.log(`  ${(f.size / 1024).toFixed(0).padStart(6)}KB  ${f.rel}`);
-if (orphans.length > 40) console.log(`  ... and ${orphans.length - 40} more`);
+console.log(`Deletable orphans: ${deletable.length} files, ${(totalDel / 1048576).toFixed(1)} MB`);
+console.log(`Protected format-siblings (kept): ${protectedSiblings.length}\n`);
+
+const DELETE = process.argv.includes('--delete');
+for (const f of deletable) {
+  console.log(`  ${DELETE ? 'DEL ' : '    '}${(f.size / 1024).toFixed(0).padStart(6)}KB  ${f.rel}`);
+  if (DELETE) fs.unlinkSync(f.abs);
+}
+if (protectedSiblings.length) {
+  console.log('\nProtected (format sibling of a used image):');
+  for (const f of protectedSiblings) console.log(`      ${f.rel}`);
+}
+if (!DELETE) console.log('\n(dry run — pass --delete to remove)');
+else console.log(`\nDeleted ${deletable.length} files, freed ${(totalDel / 1048576).toFixed(1)} MB.`);
