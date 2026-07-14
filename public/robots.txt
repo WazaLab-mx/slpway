@@ -1,5 +1,8 @@
 # robots.txt for San Luis Way (sanluisway.com)
-# Updated: 2026-04-06
+# Updated: 2026-07-13
+# Note: /_next/ is intentionally NOT disallowed — Googlebot must fetch the
+# app's JS/CSS to render pages and the /_next/image optimized images for
+# Google Images + Discover large-image cards.
 
 # Default rules for all crawlers
 User-agent: *
@@ -8,7 +11,6 @@ Allow: /.well-known/
 Disallow: /api/
 Disallow: /account/
 Disallow: /business/
-Disallow: /_next/
 Disallow: /signin
 Disallow: /signup
 Disallow: /signin-*

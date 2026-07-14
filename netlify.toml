@@ -81,3 +81,24 @@
   for = "/_next/static/*"
   [headers.values]
     Netlify-CDN-Cache-Control = "public, max-age=31536000, immutable"
+
+# Raw public/ images (og:image crawlers, plain <img>, CSS backgrounds). These
+# paths are content-stable but not hash-fingerprinted, so cache a week and
+# revalidate in the background instead of immutable — an image swap still
+# propagates within the SWR window.
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Netlify-CDN-Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+    Cache-Control = "public, max-age=604800"
+
+# Favicons + PWA manifest change rarely.
+[[headers]]
+  for = "/favicon*"
+  [headers.values]
+    Netlify-CDN-Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Netlify-CDN-Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
