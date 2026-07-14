@@ -101,6 +101,9 @@ export default function BlogPostPage({ post, relatedPosts, hasFactcheck }: BlogP
   const displayTitle = post.discoverTitle || post.title;
   // FAQPage schema from the post's own FAQ section (Q&A rich results + GEO).
   const faqSchema = buildFaqSchema(post.content);
+  // Speakable (GEO/assistants): only when the content carries the anchored
+  // quick-answer block, so the selector always resolves.
+  const hasQuickAnswer = post.content.includes('id="quick-answer"');
 
   return (
     <>
@@ -158,7 +161,13 @@ export default function BlogPostPage({ post, relatedPosts, hasFactcheck }: BlogP
                 "@id": `https://www.sanluisway.com/blog/${post.slug}`
               },
               "keywords": post.tags?.join(', ') || '',
-              "articleSection": post.category || "Expat Guide"
+              "articleSection": post.category || "Expat Guide",
+              ...(hasQuickAnswer && {
+                "speakable": {
+                  "@type": "SpeakableSpecification",
+                  "cssSelector": ["#quick-answer"]
+                }
+              })
             })
           }}
         />

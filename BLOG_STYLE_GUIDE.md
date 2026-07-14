@@ -451,6 +451,22 @@ El título SEO y el de Discover **pueden y suelen diferir**: uno gana la búsque
 
 > **Nota multi-idioma:** escribe el hook en los 4 locales (`discover_title`, `discover_title_es`, `discover_title_de`, `discover_title_ja`). No traduzcas literal — adapta el hook al lector de cada idioma.
 
+### Bloque Quick Answer (GEO — obligatorio en cada post)
+
+Todo post inicia con un bloque **Quick Answer**: la respuesta directa de 2–3 frases a la pregunta central del lector. Es lo primero que extraen Perplexity/ChatGPT/AI Overviews, y activa el `SpeakableSpecification` que emite `blog/[slug]` (asistentes de voz).
+
+- **Markup exacto** (el `id="quick-answer"` es lo que dispara el Speakable):
+  ```html
+  <div id="quick-answer" class="not-prose bg-blue-50 border-l-4 border-blue-500 rounded-r-xl p-5 mb-8">
+    <p class="text-xs font-bold text-blue-700 uppercase tracking-wider mb-2">Quick Answer</p>
+    <p class="text-gray-800 text-base leading-relaxed m-0">…respuesta directa…</p>
+  </div>
+  ```
+- **Etiqueta por idioma:** Quick Answer / Respuesta rápida / Kurzantwort / 早わかり.
+- **Contenido:** el dato más útil al frente; números/nombres/fechas concretos **del propio artículo** (cero invención). 220–340 caracteres (100–180 en JA).
+- Va **antes** de todo el contenido, en las 4 columnas (`content`, `content_es`, `content_de`, `content_ja`).
+- Backfill/regeneración: `node scripts/add-quick-answers.mjs [slug]` (idempotente — no duplica si el ancla ya existe).
+
 ### Imagen ≥ 1200px (requisito duro de Discover)
 
 Discover solo muestra la **tarjeta de imagen grande** (la que genera CTR) cuando la imagen del post es **≥ 1200px de ancho**. Por debajo, el post aparece como thumbnail chico y pierde casi todo el CTR.
