@@ -181,6 +181,7 @@ describe('buildSitemapXml integration', () => {
       fetchEventUrls: jest.fn().mockResolvedValue([]),
       fetchBrandUrls: jest.fn().mockResolvedValue([]),
       fetchFactcheckUrls: jest.fn().mockReturnValue([]),
+      fetchAuthorUrls: jest.fn().mockReturnValue([]),
     }));
   });
 
