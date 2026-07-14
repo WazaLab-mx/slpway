@@ -47,6 +47,7 @@ describe('Blog Data Fetching', () => {
     mockFrom.mockReturnValue({
       select: jest.fn().mockReturnThis(),
       eq: jest.fn().mockReturnThis(),
+      lte: jest.fn().mockReturnThis(),
       order: jest.fn().mockReturnThis(),
       then: (resolve: (value: unknown) => unknown) =>
         resolve({ data: [mockPost, mockPostWithoutTranslation], error: null }),
@@ -68,6 +69,7 @@ describe('Blog Data Fetching', () => {
     mockFrom.mockReturnValue({
       select: jest.fn().mockReturnThis(),
       eq: jest.fn().mockReturnThis(),
+      lte: jest.fn().mockReturnThis(),
       single: jest.fn().mockResolvedValue({ data: mockPost, error: null }),
     });
 
@@ -83,6 +85,7 @@ describe('Blog Data Fetching', () => {
     mockFrom.mockReturnValue({
       select: jest.fn().mockReturnThis(),
       eq: jest.fn().mockReturnThis(),
+      lte: jest.fn().mockReturnThis(),
       single: jest.fn().mockResolvedValue({ data: mockPost, error: null }),
     });
 
@@ -97,6 +100,7 @@ describe('Blog Data Fetching', () => {
     mockFrom.mockReturnValue({
       select: jest.fn().mockReturnThis(),
       eq: jest.fn().mockReturnThis(),
+      lte: jest.fn().mockReturnThis(),
       single: jest.fn().mockResolvedValue({ data: mockPostWithoutTranslation, error: null }),
     });
 
@@ -112,6 +116,7 @@ describe('Blog Data Fetching', () => {
     mockFrom.mockReturnValue({
       select: jest.fn().mockReturnThis(),
       eq: jest.fn().mockReturnThis(),
+      lte: jest.fn().mockReturnThis(),
       single: jest.fn().mockResolvedValue({ data: null, error: { message: 'Not found', code: 'PGRST116' } }),
     });
 
@@ -123,6 +128,7 @@ describe('Blog Data Fetching', () => {
     mockFrom.mockReturnValue({
       select: jest.fn().mockReturnThis(),
       eq: jest.fn().mockReturnThis(),
+      lte: jest.fn().mockReturnThis(),
       order: jest.fn().mockReturnThis(),
       then: (resolve: (value: unknown) => unknown) =>
         resolve({ data: null, error: new Error('Database connection failed') }),
