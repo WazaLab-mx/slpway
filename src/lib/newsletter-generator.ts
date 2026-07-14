@@ -1,4 +1,3 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
 import OpenAI from 'openai';
 import { format, addDays } from 'date-fns';
 import { fetchWeatherForecast, WeatherForecast, fetchExchangeRates } from './api/dashboard-data';
@@ -91,23 +90,8 @@ Retrieved at: ${new Date().toISOString()}
   }
 }
 
-// Initialize Gemini with SEARCH GROUNDING
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY!);
-const model = genAI.getGenerativeModel({
-  model: "gemini-2.0-flash",
-  tools: [
-    {
-      googleSearch: {}
-    } as never,
-  ],
-  generationConfig: {
-    maxOutputTokens: 16384,
-    temperature: 0.95,
-    topP: 0.95,
-  }
-});
-
-// Initialize OpenAI as fallback
+// Primary (and only) generator: OpenAI. Gemini was removed — the project's
+// quota is exhausted (every call 429s), so it was a dead fallback.
 const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
   : null;
@@ -125,6 +109,9 @@ RULES:
 - Generate HTML that fills the provided template placeholders with real content
 - USE web_search for anything time-sensitive (events, news, business hours, current prices) — do not rely on training data for dated facts`;
 
+const OPENAI_MAX_ATTEMPTS = 3;
+const OPENAI_TIMEOUT_MS = 180_000; // web_search rounds can be slow, but not unbounded
+
 async function generateWithOpenAI(prompt: string): Promise<string> {
   if (!openai) {
     throw new Error('OpenAI API key not configured');
@@ -133,17 +120,35 @@ async function generateWithOpenAI(prompt: string): Promise<string> {
   // Use the Responses API with the web_search_preview tool so gpt-5.4 can
   // ground events/news/business info in live search results rather than
   // training data. Chat completions don't support web_search directly.
-  const response = await openai.responses.create({
-    model: 'gpt-5.4',
-    tools: [{ type: 'web_search_preview' }],
-    instructions: OPENAI_NEWSLETTER_SYSTEM,
-    input: prompt,
-    max_output_tokens: 16384,
-    temperature: 0.9,
-    top_p: 0.95,
-  });
-
-  return response.output_text || '';
+  // Real resilience lives here: retries with backoff + explicit timeout
+  // (the old Gemini fallback was dead — project quota is exhausted, every
+  // call 429s — so it only masked failures).
+  let lastError: unknown;
+  for (let attempt = 1; attempt <= OPENAI_MAX_ATTEMPTS; attempt++) {
+    try {
+      const response = await openai.responses.create(
+        {
+          model: 'gpt-5.4',
+          tools: [{ type: 'web_search_preview' }],
+          instructions: OPENAI_NEWSLETTER_SYSTEM,
+          input: prompt,
+          max_output_tokens: 16384,
+          temperature: 0.9,
+          top_p: 0.95,
+        },
+        { timeout: OPENAI_TIMEOUT_MS },
+      );
+      return response.output_text || '';
+    } catch (err) {
+      lastError = err;
+      const msg = err instanceof Error ? err.message : String(err);
+      console.warn(`OpenAI attempt ${attempt}/${OPENAI_MAX_ATTEMPTS} failed: ${msg}`);
+      if (attempt < OPENAI_MAX_ATTEMPTS) {
+        await new Promise((r) => setTimeout(r, 2000 * attempt)); // 2s, 4s
+      }
+    }
+  }
+  throw lastError instanceof Error ? lastError : new Error(String(lastError));
 }
 
 // This module now orchestrates generation; the building blocks live in focused
@@ -204,13 +209,15 @@ export async function generateWeeklyNewsletter(customContent?: string) {
   console.log('1.5. Fetching real blog posts from DB...');
   const { data: blogPosts } = await supabase
     .from('blog_posts')
-    .select('slug, title, title_en, excerpt, excerpt_en, category, image_url')
+    .select('slug, title, title_en, discover_title, excerpt, excerpt_en, category, image_url')
     .eq('status', 'published')
     .order('published_at', { ascending: false })
     .limit(10);
 
   const blogPostsList = blogPosts?.map(post => {
-    const title = post.title_en || post.title;
+    // Prefer the Discover hook headline — it's written to stop the scroll,
+    // which is exactly what an email teaser needs. SEO title is the fallback.
+    const title = post.discover_title || post.title_en || post.title;
     const excerpt = post.excerpt_en || post.excerpt;
     return `- "${title}" (${post.category || 'general'}) - URL: https://www.sanluisway.com/blog/${post.slug}\n  Excerpt: ${excerpt}`;
   }).join('\n\n') || 'No blog posts available.';
@@ -513,29 +520,11 @@ Overall Summary: ${weatherForecast.summary}
 
   } catch (openaiError: unknown) {
     const errorMessage = openaiError instanceof Error ? openaiError.message : String(openaiError);
-    console.error("OpenAI Generation Error:", errorMessage);
-
-    // Fallback to Gemini (with googleSearch grounding — useful for live events)
-    if (process.env.GOOGLE_API_KEY) {
-      try {
-        console.log('4. 🔄 Falling back to Gemini 2.0 Flash...');
-        const result = await model.generateContent(prompt);
-        const response = await result.response;
-        htmlContent = response.text();
-
-        if (htmlContent.trim().toLowerCase().startsWith('<html') || htmlContent.trim().toLowerCase().startsWith('<!doctype')) {
-          if (htmlContent.includes('error') || htmlContent.includes('Error') || htmlContent.length < 1000) {
-            throw new Error('Gemini returned an HTML error page instead of newsletter content');
-          }
-        }
-        console.log('5. ✅ Gemini fallback successful');
-      } catch (geminiError) {
-        console.error("Gemini Fallback Error:", geminiError);
-        throw new Error(`Both OpenAI and Gemini failed. OpenAI error: ${errorMessage}`);
-      }
-    } else {
-      throw new Error(`OpenAI failed: ${errorMessage}. Add GOOGLE_API_KEY to .env as fallback`);
-    }
+    console.error("OpenAI Generation Error (after retries):", errorMessage);
+    // No Gemini fallback: the project's Gemini quota is exhausted (every call
+    // 429s), so it only masked failures. generateWithOpenAI already retried
+    // with backoff — a failure here is real and should surface to the admin.
+    throw new Error(`Newsletter generation failed after ${OPENAI_MAX_ATTEMPTS} OpenAI attempts: ${errorMessage}`);
   }
 
   // Clean up markdown code fences if present

@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import { timingSafeEqual } from 'crypto';
 import { createClient } from '@supabase/supabase-js';
 import { generateWeeklyNewsletter, injectAdsIntoHtml, AdPlacementData } from '@/lib/newsletter-generator';
 import { createPost } from '@/lib/beehiiv-service';
@@ -15,7 +16,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   const adminKey = req.headers['x-admin-key'];
-  if (adminKey !== process.env.NEWSLETTER_ADMIN_KEY) {
+  const expectedKey = process.env.NEWSLETTER_ADMIN_KEY;
+  // Constant-time comparison; header can be string | string[], reject arrays.
+  const provided = typeof adminKey === 'string' ? Buffer.from(adminKey) : null;
+  const expected = expectedKey ? Buffer.from(expectedKey) : null;
+  const authorized =
+    provided !== null &&
+    expected !== null &&
+    provided.length === expected.length &&
+    timingSafeEqual(provided, expected);
+  if (!authorized) {
     return res.status(401).json({ message: 'Unauthorized' });
   }
 

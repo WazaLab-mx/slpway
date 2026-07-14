@@ -13,8 +13,8 @@ Accurate reference for how the **San Luis Way Weekly** is generated, structured,
 | **Audience** | Expats, repatriados, tourists, and locals in San Luis Potosí |
 | **Tone** | Friendly, informed, conversational — a knowledgeable friend who lives in SLP |
 | **Language** | English primary, Spanish sprinkled naturally for local flavor |
-| **Delivery** | Beehiiv (publication `pub_e94d7f88…`, ~850 active subs) |
-| **Model** | OpenAI GPT-5.4 (primary, web-search grounded) → Gemini 2.0 Flash (fallback, Google Search grounded) |
+| **Delivery** | Beehiiv (publication `pub_c633c459…` — the NEW account; old `pub_e94d7f88` is dead) |
+| **Model** | OpenAI GPT-5.4 (web-search grounded; 3 attempts with backoff — no Gemini fallback, its quota is dead) |
 
 **Philosophy:** not an events calendar — a weekly *digest of Potosino life*: news that affects daily life, events worth attending, practical expat know-how, and culture/discovery. Every item is specific and actionable (real dates, addresses, MXN prices, +52 numbers).
 
