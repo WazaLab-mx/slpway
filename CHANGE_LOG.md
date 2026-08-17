@@ -4,6 +4,20 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-08-17] feat(news): pipeline RSS + curación LLM — adiós a las búsquedas web de pago
+
+**Contexto:** el cron de noticias (`scheduled-news-update-background`) llevaba 35 días muerto (última corrida exitosa 2026-07-13 19:04 UTC) porque los créditos de OpenAI se agotaron: cada corrida usaba gpt-4o-mini + web_search a $10–25 USD por 1,000 búsquedas (~$0.60–1.20/día). El cintillo quedó vacío (headlines expiran a 3 días) y los trending congelados en julio. Tras recargar créditos se decidió eliminar la dependencia de búsqueda web.
+
+**Nuevo pipeline** (~$0.01–0.02 por corrida, solo tokens — $10 USD ≈ 1+ año):
+1. `netlify/functions/lib/rss-feeds.js` — descarga y parsea los feeds RSS de medios locales (gratis): El Sol de San Luis (**`/local/rss`**, no `/rss.xml` que es 100% contenido nacional OEM), Astrolabio, Código San Luis, La Orquesta. UA de navegador (Astrolabio da 403 a UAs de bot), tolerante a feeds caídos, dedup por URL, ventana 72h, máx 60 items.
+2. `netlify/functions/lib/news-curation.js` — gpt-4o-mini SOLO cura/clasifica/resume/traduce (4 locales). Structured outputs con JSON Schema estricto (garantiza todas las llaves), temperature 0.2 escalando +0.3 por reintento. Pide 12 candidatas news + 3 trending.
+3. Guardas en CÓDIGO (no solo prompt): (a) URLs resueltas por índice de nota con verificación de coincidencia de título y recuperación por overlap de palabras — **el modelo no puede inventar ni equivocar enlaces**; (b) filtros BANNED (nota roja/desastres) sobre el texto curado Y sobre la nota original; (c) GOV_PR adicional para trending, también contra la nota original enlazada (antes un título limpio podía colar una nota de gobierno); (d) dedup por URL y por similitud de títulos; (e) fallback de idiomas (ja/de←en←es), español obligatorio.
+4. Handler: publica 3 community + 5 headlines + 3 trending; aceptación degradada con ≥6 news válidas (cintillo de 3-4) antes que fallar; si trending sale vacío conserva los anteriores activos; si OpenAI/feeds fallan del todo, NO toca datos existentes.
+
+**Tests:** `__tests__/news-rss-pipeline.test.ts` (11 tests: parser RSS/CDATA/entidades, ventana temporal, validación de URLs, filtros banned/gov, resolución por índice+título, dedup, error handling). Suite completa: 314/314 verde.
+
+**Verificado en vivo:** múltiples corridas E2E contra feeds/OpenAI/Supabase reales; contenido publicado con URLs reales verificadas, sin sesgo gobierno, 4 idiomas. Cron sigue en `0 1,7,13,19 * * *`.
+
 ## [2026-07-13] perf(images): recomprimir imágenes de public/ (–64% en las pesadas, bandwidth)
 
 El sitio (Netlify) cayó con 503 `usage_exceeded`. Auditoría de bandwidth: `public/` pesaba 85 MB; **53 imágenes >400KB sumaban 62.5 MB**, con monstruos servidos crudos (`tangamanga-zoo.jpg` 7.3MB, `expat-guide-infographic.png` 6.8MB —usada como og:image—, `Metropolitan_Cathedral.jpg` 2.4MB) y 28 fotos guardadas como PNG (35.9 MB). Nota: `next/image` optimiza para el navegador, pero los `<img>` planos + og:images sirven el original crudo y el Image CDN de Netlify igual descarga el original gigante para transformarlo. Además 22 posts usan `image_url` local (servido por Netlify).

@@ -12,9 +12,10 @@
   package = "@netlify/plugin-nextjs"
 
 # Scheduled function for news updates: every 6h (01/07/13/19 UTC) so a single
-# failed Claude call has multiple chances to recover within the same day.
-# Background variant (-background suffix) allows up to 15-min runtime — the
-# Anthropic web_search round-trip can exceed the 60s sync scheduled-fn cap.
+# failed curation call has multiple chances to recover within the same day.
+# Pipeline: local RSS feeds (free) -> gpt-4o-mini curation/translation (tokens
+# only, no web-search fees). Background variant (-background suffix) allows up
+# to 15-min runtime for feed fetches + up to 3 curation attempts.
 [functions."scheduled-news-update-background"]
   schedule = "0 1,7,13,19 * * *"
 
