@@ -164,9 +164,9 @@ import { getSupabaseClient } from './newsletter-supabase';
 import { validateAndCleanUrls } from './newsletter-links';
 import { injectComunidadSection } from './newsletter-comunidad';
 import { generateSubjectAndPreview } from './newsletter-subject';
+import { auditSmartBrevity } from './newsletter-smart-brevity';
 import {
   cleanHtmlForBeehiiv,
-  injectResponsiveStyles,
   detectUnfilledPlaceholders,
   CRITICAL_PLACEHOLDERS,
   removeAllImages,
@@ -566,15 +566,20 @@ Overall Summary: ${weatherForecast.summary}
     );
   }
 
-  // Clean HTML for Beehiiv compatibility (remove <head>, class attributes)
+  // Clean HTML for Beehiiv compatibility (remove <head>, styles, classes).
+  // No <style> re-injection: the draft is pasted manually into the Beehiiv
+  // post editor, which keeps semantic structure and discards CSS anyway.
   console.log('6. 🧹 Cleaning HTML for Beehiiv compatibility...');
   htmlContent = cleanHtmlForBeehiiv(htmlContent);
 
-  // Inject responsive + dark-mode-safe styles. MUST happen after cleaning —
-  // cleanHtmlForBeehiiv wipes the <head>, which is where any AI-returned
-  // @media rules would have lived.
-  console.log('6.5. 📱 Injecting responsive styles...');
-  htmlContent = injectResponsiveStyles(htmlContent);
+  // Smart Brevity format audit — non-fatal, surfaces drift to the admin log.
+  const brevityAudit = auditSmartBrevity(htmlContent);
+  if (!brevityAudit.ok) {
+    console.warn('6.5. ⚠️ Smart Brevity audit warnings:');
+    brevityAudit.warnings.forEach((w) => console.warn(`      - ${w}`));
+  } else {
+    console.log('6.5. ✅ Smart Brevity audit passed');
+  }
 
   // Validate and clean URLs (static cleanup + async HEAD verification of sanluisway.com links)
   console.log('7. 🔗 Validating and cleaning URLs...');
@@ -698,11 +703,14 @@ Overall Summary: ${weatherForecast.summary}
     console.error('   ⚠️ Could not save spot:', e);
   }
 
-  // Save "Spanish Corner" phrases
+  // Save "Spanish Corner" phrases — markup-agnostic: the first two quoted
+  // strings after the heading (the Smart Brevity template renders them as
+  // bullets, older editions used <div> pairs).
   try {
-    const phrase1Match = htmlContent.match(/🗣️ Spanish Corner[\s\S]*?"([^"]{2,50})"/i);
-    const phrase2Match = htmlContent.match(/🗣️ Spanish Corner[\s\S]*?<div[^>]*>[\s\S]*?<\/div>\s*<div[^>]*>[\s\S]*?"([^"]{2,50})"/i);
-    const phrases = [phrase1Match?.[1], phrase2Match?.[1]].filter(Boolean);
+    const spanishSection = htmlContent.match(/🗣️ Spanish Corner([\s\S]{0,1200})/i)?.[1] || '';
+    const phrases = Array.from(spanishSection.matchAll(/"([^"]{2,50})"/g))
+      .map((m) => m[1])
+      .slice(0, 2);
     for (const phrase of phrases) {
       if (phrase && phrase.length > 2) {
         await supabase.from('newsletter_phrases').insert({ phrase });

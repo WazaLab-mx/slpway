@@ -8,6 +8,7 @@ import OpenAI from 'openai';
 import { format, addDays } from 'date-fns';
 import { fetchWeatherForecast } from './api/dashboard-data';
 import { fetchAuthoritativeNow, fetchUsdMxnForPrompt } from './newsletter-generator';
+import { SMART_BREVITY_RULES } from './newsletter-smart-brevity';
 
 const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
@@ -651,12 +652,18 @@ You are the editor of "San Luis Way Weekly", a newsletter for expats and locals 
 ║  💰 Prices in MXN (Mexican pesos) | 📞 Phone numbers start with +52     ║
 ╚══════════════════════════════════════════════════════════════════════════╝
 
+${SMART_BREVITY_RULES}
+
 ${prompt}
 
 Current section being replaced:
 ${currentHtml.substring(0, 500)}...
 
-Generate a fresh, engaging replacement. Match the HTML structure and styling of the original.
+Generate a fresh replacement in Smart Brevity form: keep the section's HTML
+comment and heading text EXACTLY as in the original, keep its simple semantic
+markup (<h3>/<h4>/<p>/<ul>/<strong>/<a>), and apply the Smart Brevity rules to
+the writing (one-sentence ledes, bold axioms, one-line bullets, word caps).
+No inline styles, no <table>, no <img>.
 Return ONLY the raw HTML, no markdown code blocks.
 `;
 

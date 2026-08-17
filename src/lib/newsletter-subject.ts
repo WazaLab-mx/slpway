@@ -26,7 +26,9 @@ function stripTagsToText(html: string): string {
 export function extractContentDigest(html: string): string {
   const parts: string[] = [];
 
-  const hookMatch = html.match(/<!-- OPENING HOOK -->[\s\S]*?<td[^>]*>([\s\S]*?)<\/td>/i);
+  // Capture the hook up to the next structural marker. Works for the current
+  // markup-light template (plain <p> tags) and legacy table editions alike.
+  const hookMatch = html.match(/<!-- OPENING HOOK -->([\s\S]*?)(?:<!-- (?:AD_PLACEMENT|CARD 1)|<hr|$)/i);
   if (hookMatch) {
     const hook = stripTagsToText(hookMatch[1]);
     if (hook) parts.push(`OPENING: ${hook.slice(0, 400)}`);

@@ -4,6 +4,25 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-08-17] feat(newsletter): formato Smart Brevity (Axios) para San Luis Way Weekly
+
+**Qué cambió:** todo newsletter futuro se genera en formato Smart Brevity — el framework de los fundadores de Axios — para dar la información sin rollo: headlines ≤6 palabras, ledes de UNA oración (≤30 palabras), axiomas en negritas ("Why it matters:", "By the numbers:", "Go deeper:", "The details:", "What to do:"), bullets de una idea por línea, "1 big thing" abriendo con la historia más importante de la semana y "1 fun thing" (Did You Know) cerrando en tono ligero. El newsletter sigue en inglés (audiencia expat) con español natural salpicado.
+
+**Flujo de envío:** el envío ahora es MANUAL desde el editor de Beehiiv. El output del generador es HTML semántico simple (h2-h4, strong, ul, a, hr — sin estilos inline, sin tablas) optimizado para copiar/pegar en el editor de posts de Beehiiv, que conserva estructura y descarta CSS. Flujo de un paso: POST /api/newsletter/generate (header x-admin-key) → el draft queda en Supabase y (best-effort) como draft en Beehiiv → copiar el HTML al editor de Beehiiv → revisar y enviar. subject y preview_text vienen en la respuesta del endpoint para pegarlos en los campos de Beehiiv.
+
+**Archivos:**
+- `src/lib/newsletter-smart-brevity.ts` (NUEVO): reglas del formato (fuente única para generación y regeneración por sección), vocabulario de axiomas, y `auditSmartBrevity()` — auditoría post-generación no fatal que loguea desvíos (axiomas faltantes, ledes largos, falta de bullets/kickers).
+- `src/lib/newsletter-template.ts`: template reescrito como HTML semántico sin estilos con estructura Smart Brevity. Se conservaron TODOS los anclajes load-bearing (comentarios HTML de sección, textos de headings, estructura h4+p) de los que dependen el parser del editor admin, addUtmTracking, los saves anti-repetición y la inyección de imágenes. Footer simplificado (Beehiiv pone su propio footer/unsubscribe).
+- `src/lib/newsletter-prompt.ts`: spec editorial reescrita — presupuestos de palabras por sección, axiomas obligatorios, output paste-friendly, y guardrail explícito de independencia editorial (sin PR de gobierno, sin nota roja). Se conservan todos los datos verificados inyectados (clima real, tipo de cambio real, posts reales del blog, listas anti-repetición).
+- `src/lib/newsletter-sections.ts`: la regeneración por sección del editor admin ahora inyecta las mismas reglas Smart Brevity y exige conservar anclajes.
+- `src/lib/newsletter-generator.ts`: auditoría Smart Brevity en el pipeline (warnings en log), regex de frases del Spanish Corner ahora markup-agnóstico; se eliminó la inyección de <style> responsivo (irrelevante para pegado manual; Beehiiv lo descarta).
+- `src/lib/newsletter-html.ts`: limpieza de líneas de axioma con placeholder sin llenar; se eliminó `injectResponsiveStyles` (código muerto).
+- `src/lib/newsletter-subject.ts`: extractor del hook compatible con el template sin tablas (y con ediciones legacy).
+
+**Tests:** `newsletter-smart-brevity.test.ts` (NUEVO, 9 tests: reglas, axiomas, auditoría con fixtures buena/mala, prompt con guardrails) + `newsletter-generator.test.ts` actualizado (estructura Smart Brevity del template + anclajes load-bearing). Suite completa: 324/324 en verde. Verificado con render de fixture: auditoría pasa y el HTML pega limpio en editor (solo estructura semántica).
+
+---
+
 ## [2026-08-17] feat(news): pipeline RSS + curación LLM — adiós a las búsquedas web de pago
 
 **Contexto:** el cron de noticias (`scheduled-news-update-background`) llevaba 35 días muerto (última corrida exitosa 2026-07-13 19:04 UTC) porque los créditos de OpenAI se agotaron: cada corrida usaba gpt-4o-mini + web_search a $10–25 USD por 1,000 búsquedas (~$0.60–1.20/día). El cintillo quedó vacío (headlines expiran a 3 días) y los trending congelados en julio. Tras recargar créditos se decidió eliminar la dependencia de búsqueda web.

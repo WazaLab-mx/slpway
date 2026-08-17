@@ -1,42 +1,5 @@
 import { CLOSING_AND_FOOTER_HTML } from './newsletter-template';
 
-/**
- * Injects a <style> block with mobile @media rules + dark-mode opt-out at the
- * top of the cleaned newsletter HTML. Must run AFTER cleanHtmlForBeehiiv,
- * which strips <head> and any AI-returned <style> blocks — otherwise this CSS
- * would never reach the email client.
- *
- * Attribute selectors (e.g. td[style*="padding: 30px"]) are used so we don't
- * depend on class attributes (also stripped by Beehiiv's templating layer).
- * Gmail iOS/Android, Apple Mail, and Yahoo Mail honor @media + color-scheme.
- * Outlook ignores @media but the base inline styles already render fine on
- * desktop widths.
- */
-export function injectResponsiveStyles(html: string): string {
-  const responsiveCss = `
-<style>
-  :root { color-scheme: light; supported-color-schemes: light; }
-  @media only screen and (max-width: 620px) {
-    table[width="600"] { width: 100% !important; }
-    td[style*="padding: 30px"] { padding: 20px 16px !important; }
-    td[style*="padding: 40px 30px"] { padding: 28px 20px !important; }
-    td[style*="padding: 20px 30px"] { padding: 16px 18px !important; }
-    h1[style*="font-size: 28px"] { font-size: 24px !important; }
-    h2[style*="font-size: 24px"] { font-size: 20px !important; }
-    h2[style*="font-size: 20px"] { font-size: 18px !important; }
-    h2[style*="font-size: 18px"] { font-size: 17px !important; }
-    p[style*="font-size: 16px"] { font-size: 15px !important; line-height: 1.6 !important; }
-  }
-  @media (prefers-color-scheme: dark) {
-    /* Apple Mail / iOS Mail force-invert light emails. Forcing light
-       color-scheme via the :root rule above handles Gmail + Apple Mail.
-       Everything else falls back to the inline light-theme styles. */
-  }
-</style>
-`;
-  return responsiveCss + html;
-}
-
 // Critical placeholders — if any remain in final HTML the newsletter is broken
 // enough that we'd rather fail generation than ship a malformed edition.
 export const CRITICAL_PLACEHOLDERS = new Set([
@@ -81,8 +44,11 @@ export function cleanHtmlForBeehiiv(html: string): string {
   cleaned = cleaned.replace(/\[[^\]]*what it is[^\]]*\]/gi, '');
   cleaned = cleaned.replace(/\[[^\]]*why check it out[^\]]*\]/gi, '');
 
-  // Remove lines that only contain "→ Why it matters:" with no content
+  // Remove Smart Brevity axiom lines whose content placeholder went unfilled
+  // (e.g. "<p><strong>Why it matters:</strong> </p>" after placeholder strip)
   cleaned = cleaned.replace(/<p[^>]*>→ Why it matters:\s*<\/p>/gi, '');
+  cleaned = cleaned.replace(/<p[^>]*>\s*<strong>[^<:]{2,30}:<\/strong>\s*<\/p>/gi, '');
+  cleaned = cleaned.replace(/<li[^>]*>\s*<strong>[^<:]{2,30}:<\/strong>\s*<\/li>/gi, '');
 
   // Remove empty list items
   cleaned = cleaned.replace(/<li[^>]*>\s*<\/li>/gi, '');

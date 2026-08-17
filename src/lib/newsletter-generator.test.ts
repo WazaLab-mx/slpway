@@ -27,9 +27,30 @@ describe('newsletter template structure', () => {
 
   it('has a placeholder for the closing footer that gets injected programmatically', () => {
     expect(CLOSING_AND_FOOTER_HTML).toContain('Hasta la próxima');
-    expect(CLOSING_AND_FOOTER_HTML).toContain('🌐 Website');
+    expect(CLOSING_AND_FOOTER_HTML).toContain('https://www.sanluisway.com');
     // Footer is now injected programmatically via injectFooterIntoNewsletter()
     expect(NEWSLETTER_TEMPLATE).toContain('<!-- CLOSING_FOOTER_PLACEHOLDER -->');
+  });
+
+  it('is structured as Smart Brevity: 1 big thing, bold axioms, fun-thing closer', () => {
+    expect(NEWSLETTER_TEMPLATE).toContain('1 big thing');
+    expect(NEWSLETTER_TEMPLATE).toContain('1 fun thing');
+    const axioms = NEWSLETTER_TEMPLATE.match(/<strong>Why it matters:<\/strong>/g) || [];
+    expect(axioms.length).toBeGreaterThanOrEqual(3);
+    // Paste-friendly for the Beehiiv editor: structure over styling.
+    expect(NEWSLETTER_TEMPLATE).not.toContain('<table');
+    expect(NEWSLETTER_TEMPLATE).not.toContain('style="');
+  });
+
+  it('keeps the load-bearing section anchors used by parser/utm/save machinery', () => {
+    [
+      '<!-- OPENING HOOK -->', '<!-- CARD 1', '<!-- CARD 2', '<!-- CARD 3', '<!-- CARD 4',
+      '<!-- NEWS SECTION -->', '<!-- MARKET WATCH -->', '<!-- SPOT OF THE WEEK -->',
+      '<!-- COMUNIDAD_PLACEHOLDER -->', '<!-- CALL TO ACTION -->',
+      '📰 Top News', '⚡ Quick Hits', "This Week's Top Picks", '✨ NOW OPEN',
+      '🧠 Did You Know?', '🌿 Weekend Escape', '🗣️ Spanish Corner', '🙋 Ask an Expat',
+      '✨ Community Spotlight', 'Read the Full Story',
+    ].forEach((anchor) => expect(NEWSLETTER_TEMPLATE).toContain(anchor));
   });
 
   it('includes the new CTA placeholders', () => {
