@@ -4,6 +4,20 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-08-26] fix(news): cintillo pisado a diario por un cron fantasma en repo mirror
+
+**Síntoma:** el cintillo mostraba titulares viejos/duplicados (Fenapo "abre" del 7-ago) aunque el cron de Netlify (`scheduled-news-update-background`, RSS + gpt-4o-mini, cada 6h) corría bien y escribía batches frescos a las 01/07/13/19 UTC.
+
+**Causa raíz:** el repo mirror `waza-agency/directory-SLP` (sin uso, último push por Dependabot 21-jul) tenía ACTIVOS los GitHub Actions `daily-news-update.yml` (cron `0 13 * * *`, ejecutaba con delay ~13:30-13:56 UTC) y `weekly-newsletter.yml` (lunes 13:00 UTC). El daily hacía POST a `https://www.sanluisway.com/api/cron/update-headlines` con `CRON_SECRET` → corría el pipeline LEGACY de web search (fuentes fuera de RSS: quadratin, eluniversal, lavozdesanluis…), desactivaba el batch RSS de las 13:01 e insertaba uno peor con duplicados. El run terminaba en 504 (timeout del edge) pero la función ya había escrito. Evidencia: runs 08-24 13:53 / 08-25 13:52 / 08-26 13:56 UTC = timestamps exactos de los rows malos. Los otros mirrors (`drunkenberger/directory-SLP`, `drunkenberger/slpway`, `drunkenberger/slpway-archived-polluted`) ya estaban deshabilitados desde abril; éste se pasó por alto en el commit c33c177.
+
+**Fix:** `gh workflow disable` de ambos workflows en `waza-agency/directory-SLP`. Relanzado el pipeline RSS localmente (`node -e require(netlify fn).handler`) → 3 noticias + 5 titulares + 3 trending frescos a las 14:38 UTC. El caché (Durable CDN s-maxage=600 + caché en memoria de 10 min en `/api/dashboard-data`) expiró solo; a las 14:42 UTC el endpoint en vivo ya servía el batch nuevo.
+
+**Nota newsletter:** el weekly del mirror pegaba a `/api/newsletter/cron/generate-weekly?mode=live`, ruta que ya no existe (404) → sus runs "success" no generaron nada. Último draft en BD: 13-jul.
+
+**Pendiente (decisión del dueño):** eliminar `src/pages/api/cron/update-headlines.ts` (pipeline web-search legacy, ya nadie legítimo lo llama) y rotar `CRON_SECRET` en Netlify para que ningún cron olvidado pueda volver a pisar el cintillo.
+
+---
+
 ## [2026-08-17] feat(newsletter): formato Smart Brevity (Axios) para San Luis Way Weekly
 
 **Qué cambió:** todo newsletter futuro se genera en formato Smart Brevity — el framework de los fundadores de Axios — para dar la información sin rollo: headlines ≤6 palabras, ledes de UNA oración (≤30 palabras), axiomas en negritas ("Why it matters:", "By the numbers:", "Go deeper:", "The details:", "What to do:"), bullets de una idea por línea, "1 big thing" abriendo con la historia más importante de la semana y "1 fun thing" (Did You Know) cerrando en tono ligero. El newsletter sigue en inglés (audiencia expat) con español natural salpicado.
