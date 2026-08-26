@@ -316,7 +316,10 @@
       "next": "Siguiente",
       "seoSuffix": "Eventos en San Luis Potosí",
       "seoFallback": "{{title}}. {{date}} en {{location}}, San Luis Potosí. Consulta fecha, horario, ubicación y detalles del evento.",
-      "keywords": "eventos san luis potosi, que hacer en san luis potosi, agenda slp"
+      "keywords": "eventos san luis potosi, que hacer en san luis potosi, agenda slp",
+      "familyTitle": "Para toda la familia",
+      "familySubtitle": "Shows, talleres, ferias y tradiciones que les encantarán a los niños",
+      "familyMore": "Más actividades familiares"
     },
     "culture": {
       "badge": "Herencia Cultural",

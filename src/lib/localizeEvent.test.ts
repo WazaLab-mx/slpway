@@ -60,6 +60,14 @@ describe('localizeEvent', () => {
     expect(out.id).toBe('1');
   });
 
+  it('strips the per-locale columns from the output (smaller page props / API payloads)', () => {
+    const out = localizeEvent(base, 'es') as Record<string, unknown>;
+    for (const key of ['title_es', 'title_de', 'title_ja', 'description_es', 'description_de', 'description_ja']) {
+      expect(out).not.toHaveProperty(key);
+    }
+    expect(localizeEvent(base, 'en')).not.toHaveProperty('title_es');
+  });
+
   it('works on rows that were selected without the locale columns', () => {
     const { title_es, description_es, title_de, description_de, title_ja, description_ja, ...plain } = base;
     void [title_es, description_es, title_de, description_de, title_ja, description_ja];

@@ -316,7 +316,10 @@
       "next": "Weiter",
       "seoSuffix": "Veranstaltungen in San Luis Potosí",
       "seoFallback": "{{title}}. {{date}} in {{location}}, San Luis Potosí. Datum, Uhrzeit, Ort und Details zur Veranstaltung.",
-      "keywords": "veranstaltungen san luis potosi, was tun in san luis potosi, slp veranstaltungskalender"
+      "keywords": "veranstaltungen san luis potosi, was tun in san luis potosi, slp veranstaltungskalender",
+      "familyTitle": "Für die ganze Familie",
+      "familySubtitle": "Shows, Workshops, Feste und Traditionen, die Kinder lieben",
+      "familyMore": "Mehr Familienaktivitäten"
     },
     "culture": {
       "badge": "Kulturelles Erbe",

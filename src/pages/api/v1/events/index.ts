@@ -34,14 +34,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(500).json(apiError('DB_ERROR', 'Failed to fetch events'));
     }
 
-    // Strip the per-locale columns from the public payload — consumers get one
-    // title/description in the requested language, same shape as before.
-    const events = localizeEvents(data || [], lang).map(
-      ({ title_es, title_de, title_ja, description_es, description_de, description_ja, base_title, ...rest }) => {
-        void [title_es, title_de, title_ja, description_es, description_de, description_ja, base_title];
-        return rest;
-      }
-    );
+    // localizeEvents resolves one title/description for `lang` and drops the
+    // per-locale columns — public payload keeps its previous shape.
+    const events = localizeEvents(data || [], lang).map(({ base_title, ...rest }) => {
+      void base_title;
+      return rest;
+    });
 
     setCacheHeaders(res);
     return res.status(200).json(apiSuccess(events, { total: events.length, limit }));

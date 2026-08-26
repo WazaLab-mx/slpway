@@ -40,6 +40,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
     const { data: eventsData, error } = await supabase
       .from('events')
       .select('*')
+      .gte('end_date', new Date().toISOString())
       .order('start_date', { ascending: true });
     if (error) throw error;
 

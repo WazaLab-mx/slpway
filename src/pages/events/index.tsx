@@ -15,6 +15,7 @@ import SEO from '@/components/common/SEO';
 import NewsletterBanner from '@/components/NewsletterBanner';
 import { getCategoryTitle } from '@/utils/eventHelpers';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 import { buildEventPath } from '@/lib/event-slug';
 import { localizeEvents } from '@/lib/localizeEvent';
 import AdUnit from '@/components/common/AdUnit';
@@ -26,9 +27,12 @@ interface EventsPageProps {
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   try {
+    // Only events that haven't ended: the hero carousel takes `featured` rows
+    // from this list, so past featured events would otherwise linger there.
     const { data: eventsData, error } = await supabase
       .from('events')
       .select('*')
+      .gte('end_date', new Date().toISOString())
       .order('start_date', { ascending: true });
     if (error) throw error;
 
@@ -68,6 +72,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
 export default function EventsIndex({ events, categoryCounts }: EventsPageProps) {
   const router = useRouter();
+  const { t } = useTranslation('common');
   const [selectedCategory, setSelectedCategory] = useState<EventCategory>('all' as EventCategory);
   const [filteredEvents, setFilteredEvents] = useState<Event[]>(events);
   const [searchTerm, setSearchTerm] = useState('');
@@ -99,6 +104,7 @@ export default function EventsIndex({ events, categoryCounts }: EventsPageProps)
 
   const heroEvents = events.filter((e) => e.featured).slice(0, 5);
   const hasHero = heroEvents.length > 0;
+  const familyEvents = events.filter((e) => e.family_friendly).slice(0, 6);
 
   return (
     <>
@@ -181,6 +187,26 @@ export default function EventsIndex({ events, categoryCounts }: EventsPageProps)
             <div className="mt-8">
               <EventComingUp events={filteredEvents} count={5} />
             </div>
+          )}
+
+          {!searchTerm && familyEvents.length > 0 && (
+            <section className="mb-12">
+              <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-6">
+                <div>
+                  <h2 className="font-display text-2xl font-bold text-gray-900">
+                    👨‍👩‍👧‍👦 {t('homepage.events.familyTitle')}
+                  </h2>
+                  <p className="text-gray-600 mt-1">{t('homepage.events.familySubtitle')}</p>
+                </div>
+                <Link
+                  href="/family-friendly-activities"
+                  className="text-sm font-semibold text-primary hover:text-primary-dark transition-colors"
+                >
+                  {t('homepage.events.familyMore')} →
+                </Link>
+              </div>
+              <EventList events={familyEvents} />
+            </section>
           )}
 
           {filteredEvents.length > 0 && (
