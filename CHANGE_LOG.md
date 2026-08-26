@@ -4,6 +4,22 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-08-26] fix(newsletter): prueba real de generación Smart Brevity — 2 bugs corregidos
+
+**Prueba:** dev server (`npm run dev`, :3001) + `POST /api/newsletter/generate` con `x-admin-key`. Dos corridas (76 s y 63 s), ambas 200. Formato Smart Brevity verificado en el HTML real: "1 big thing" abre, "1 fun thing" cierra, ≥3 "Why it matters:", axiomas en negritas, bullets; `auditSmartBrevity` pasa. Drafts guardados en Supabase (`newsletters` 8ce75a56…, y la 2ª corrida).
+
+**Bug 1 — hero image con markup de tabla:** `buildHeroImageHtml` seguía inyectando `<tr><td style=…>` (herencia del template de tablas) dentro del HTML semántico nuevo → `<tr>` huérfano sin `<table>` al pegar en Beehiiv. Ahora emite `<p><img src alt /></p>`. Test nuevo: sin `<tr|<td|style=`.
+
+**Bug 2 — validador de links con falsos positivos:** `/events/fenapo-2026` y `/blog/que-comer-en-la-fenapo-2026` (ambos 200 en prod) fueron reescritos a `/events` porque el HEAD con timeout de 5 s falló una vez (render ISR frío en Netlify) y un timeout se trataba igual que un 404. Ahora: timeout 8 s, 1 reintento tras 1.5 s, y solo un status no-2xx definitivo reescribe el link; un link inalcanzable se conserva y se reporta en `unreachableLinks` (log de advertencia). Tests nuevos en `newsletter-links.test.ts` (4 casos con fetch mockeado).
+
+**No es bug:** el draft en Beehiiv falla con 403 `SEND_API_NOT_ENTERPRISE_PLAN` — la API de crear posts requiere plan Max/Enterprise. El flujo diseñado (copiar el HTML del response al editor de Beehiiv) sigue siendo el camino.
+
+**Observado, sin cambiar:** algunos h4 fuera de la sección de noticias superan 6 palabras (títulos de eventos/blog inyectados con datos verificados); el audit solo revisa ledes/axiomas, no longitud de headlines. Los errores de `tsc` en `__tests__/news-rss-pipeline.test.ts` son preexistentes.
+
+Tests: 30/30 en los 3 suites de newsletter.
+
+---
+
 ## [2026-08-26] fix(news): cintillo pisado a diario por un cron fantasma en repo mirror
 
 **Síntoma:** el cintillo mostraba titulares viejos/duplicados (Fenapo "abre" del 7-ago) aunque el cron de Netlify (`scheduled-news-update-background`, RSS + gpt-4o-mini, cada 6h) corría bien y escribía batches frescos a las 01/07/13/19 UTC.

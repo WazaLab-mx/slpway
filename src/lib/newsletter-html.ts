@@ -204,17 +204,14 @@ export function injectFooterIntoNewsletter(html: string): string {
   return html + CLOSING_AND_FOOTER_HTML;
 }
 
-// Builds an email-safe hero image row from a DB-hosted photo. Inline styles
-// only (no <style> dependency); max-width keeps it responsive on mobile.
+// Builds the hero image block from a DB-hosted photo. Semantic markup only:
+// the newsletter is pasted into Beehiiv's editor, which keeps <p>/<img> and
+// discards table layout and inline CSS.
 export function buildHeroImageHtml(photo: { image_url: string; title?: string | null }): string {
   const alt = (photo.title || 'San Luis Potosí').replace(/"/g, '&quot;');
   return `
-          <!-- HERO IMAGE -->
-          <tr>
-            <td style="padding: 4px 24px 12px 24px;">
-              <img src="${photo.image_url}" alt="${alt}" width="552" style="width: 100%; max-width: 552px; height: auto; display: block; border-radius: 12px;" />
-            </td>
-          </tr>`;
+<!-- HERO IMAGE -->
+<p><img src="${photo.image_url}" alt="${alt}" /></p>`;
 }
 
 // Injects the hero image directly above the first content card. No-op if the

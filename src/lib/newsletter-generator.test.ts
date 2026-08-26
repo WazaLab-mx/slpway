@@ -145,6 +145,12 @@ describe('injectHeroImage', () => {
     expect(out.indexOf('cdn.example.com/slp.jpg')).toBeLessThan(out.indexOf('<!-- CARD 1'));
   });
 
+  it('emits semantic markup only — no table rows/cells or inline styles (Beehiiv paste flow)', () => {
+    const out = injectHeroImage('<!-- CARD 1: THIS WEEK AT A GLANCE -->', photo);
+    expect(out).not.toMatch(/<tr|<td|style=/i);
+    expect(out).toMatch(/<p>\s*<img [^>]*\/>\s*<\/p>/);
+  });
+
   it('is a no-op when there is no hero photo or no card anchor', () => {
     const html = `<!-- CARD 1: X -->`;
     expect(injectHeroImage(html, null)).toBe(html);

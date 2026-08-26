@@ -87,25 +87,37 @@ function isDomainAllowed(url: string): boolean {
   }
 }
 
-/**
- * Verifies a single sanluisway.com URL by issuing a HEAD request.
- * Follows redirects (a 200 after redirect is still considered valid).
- * Times out after 5 seconds to avoid hanging the newsletter build.
- */
-async function isSanluiswayUrlValid(url: string): Promise<boolean> {
+type UrlCheck = 'ok' | 'broken' | 'unreachable';
+
+const HEAD_TIMEOUT_MS = 8000;
+const HEAD_RETRY_DELAY_MS = 1500;
+
+async function headOnce(url: string): Promise<UrlCheck> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), HEAD_TIMEOUT_MS);
   try {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 5000);
-    const resp = await fetch(url, {
-      method: 'HEAD',
-      redirect: 'follow',
-      signal: controller.signal,
-    });
-    clearTimeout(timeout);
-    return resp.ok;
+    const resp = await fetch(url, { method: 'HEAD', redirect: 'follow', signal: controller.signal });
+    return resp.ok ? 'ok' : 'broken';
   } catch {
-    return false;
+    // Timeout / network error: no verdict on the URL itself.
+    return 'unreachable';
+  } finally {
+    clearTimeout(timeout);
   }
+}
+
+/**
+ * Verifies a single sanluisway.com URL via HEAD (redirects followed).
+ * Only a definitive non-2xx status counts as broken. A timeout or network
+ * error is retried once; if still unreachable, the link is left alone —
+ * cold ISR renders on Netlify can exceed the timeout, and rewriting a valid
+ * URL to the generic fallback is worse than keeping it.
+ */
+async function checkSanluiswayUrl(url: string): Promise<UrlCheck> {
+  const first = await headOnce(url);
+  if (first !== 'unreachable') return first;
+  await new Promise((r) => setTimeout(r, HEAD_RETRY_DELAY_MS));
+  return headOnce(url);
 }
 
 /**
@@ -147,6 +159,7 @@ function staticallyCleanUrls(html: string): string {
 export interface LinkValidationResult {
   html: string;
   brokenLinks: string[];
+  unreachableLinks: string[];
   totalSanluiswayLinks: number;
 }
 
@@ -164,20 +177,26 @@ async function verifySanluiswayLinks(html: string): Promise<LinkValidationResult
   }
 
   if (urlsInHtml.size === 0) {
-    return { html, brokenLinks: [], totalSanluiswayLinks: 0 };
+    return { html, brokenLinks: [], unreachableLinks: [], totalSanluiswayLinks: 0 };
   }
 
   const uniqueUrls = Array.from(urlsInHtml);
   console.log(`   🔍 Verifying ${uniqueUrls.length} sanluisway.com link(s)...`);
 
   const results = await Promise.all(
-    uniqueUrls.map(async (url) => ({ url, valid: await isSanluiswayUrlValid(url) }))
+    uniqueUrls.map(async (url) => ({ url, check: await checkSanluiswayUrl(url) }))
   );
 
-  const brokenUrls = results.filter((r) => !r.valid).map((r) => r.url);
+  const unreachableUrls = results.filter((r) => r.check === 'unreachable').map((r) => r.url);
+  if (unreachableUrls.length > 0) {
+    console.warn(`   ⚠️ ${unreachableUrls.length} link(s) unreachable after retry — kept as-is, verify manually:`);
+    unreachableUrls.forEach((u) => console.warn(`      - ${u}`));
+  }
+
+  const brokenUrls = results.filter((r) => r.check === 'broken').map((r) => r.url);
   if (brokenUrls.length === 0) {
-    console.log('   ✅ All sanluisway.com links verified (200 OK)');
-    return { html, brokenLinks: [], totalSanluiswayLinks: uniqueUrls.length };
+    if (unreachableUrls.length === 0) console.log('   ✅ All sanluisway.com links verified (200 OK)');
+    return { html, brokenLinks: [], unreachableLinks: unreachableUrls, totalSanluiswayLinks: uniqueUrls.length };
   }
 
   console.warn(`   ⚠️ Found ${brokenUrls.length} broken link(s), replacing with fallback:`);
@@ -191,7 +210,7 @@ async function verifySanluiswayLinks(html: string): Promise<LinkValidationResult
     cleaned = cleaned.replace(replaceRegex, `href="${FALLBACK_URL}"`);
   }
 
-  return { html: cleaned, brokenLinks: brokenUrls, totalSanluiswayLinks: uniqueUrls.length };
+  return { html: cleaned, brokenLinks: brokenUrls, unreachableLinks: unreachableUrls, totalSanluiswayLinks: uniqueUrls.length };
 }
 
 /**
