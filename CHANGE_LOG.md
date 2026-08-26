@@ -30,7 +30,7 @@ Tests: 30/30 en los 3 suites de newsletter.
 
 **Nota newsletter:** el weekly del mirror pegaba a `/api/newsletter/cron/generate-weekly?mode=live`, ruta que ya no existe (404) → sus runs "success" no generaron nada. Último draft en BD: 13-jul.
 
-**Pendiente (decisión del dueño):** eliminar `src/pages/api/cron/update-headlines.ts` (pipeline web-search legacy, ya nadie legítimo lo llama) y rotar `CRON_SECRET` en Netlify para que ningún cron olvidado pueda volver a pisar el cintillo.
+**Hardening (aprobado por el dueño, mismo día):** eliminado `src/pages/api/cron/update-headlines.ts` — el pipeline web-search legacy (OpenAI Responses + web_search, ~fuentes fuera de RSS). Era el único consumidor de `CRON_SECRET`; esa variable en Netlify queda muerta y puede borrarse. El único escritor de `news_headlines`/`community_news`/`trending_topics` es ahora `netlify/functions/scheduled-news-update-background.js` (RSS + gpt-4o-mini, cada 6 h). Cualquier cron olvidado que siga pegando a `/api/cron/update-headlines` recibirá 404 sin tocar datos.
 
 ---
 
