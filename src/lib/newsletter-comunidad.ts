@@ -73,32 +73,35 @@ If there's no special code/offer, set cta to null.
   }
 }
 
-// Function to generate Comunidad section HTML from rewritten content
-function generateComunidadSection(title: string, body: string, cta?: string): string {
+// Comunidad block as semantic HTML (the newsletter is pasted into Beehiiv's
+// editor, which keeps headings/paragraphs and discards layout + inline CSS).
+// The section comment and the "🤝 Comunidad" heading are load-bearing anchors
+// for the section parser, per-section UTM tagging and the admin editor.
+export function generateComunidadSection(title: string, body: string, cta?: string): string {
   if (!body || !body.trim()) {
     return '';
   }
 
-  const ctaHtml = cta
-    ? `<p style="margin: 15px 0 0 0; font-size: 14px;"><span style="background-color: #F3E8FF; color: #7C3AED; padding: 6px 14px; border-radius: 4px; font-weight: bold;">${cta}</span></p>`
-    : '';
+  const ctaLine = cta ? `\n<p><strong>${cta}</strong></p>` : '';
 
-  return `
-          <!-- COMUNIDAD SECTION - CUSTOM CONTENT -->
-          <tr>
-            <td style="padding: 30px; background-color: #FDF4FF;">
-              <h2 style="font-size: 20px; color: #1F2937; margin-bottom: 15px;">
-                🤝 Comunidad
-              </h2>
-              <p style="font-size: 14px; color: #6B7280; margin-bottom: 20px;">From our community to yours</p>
-              <div style="background-color: #FFFFFF; border: 1px solid #E9D5FF; border-left: 4px solid #A855F7; border-radius: 8px; padding: 20px;">
-                <h3 style="font-size: 16px; margin: 0 0 12px 0; color: #7C3AED;">${title}</h3>
-                <p style="margin: 0; font-size: 14px; color: #4B5563; line-height: 1.7;">${body}</p>
-                ${ctaHtml}
-              </div>
-            </td>
-          </tr>
-`;
+  return `<!-- COMUNIDAD SECTION - CUSTOM CONTENT -->
+<h3>🤝 Comunidad</h3>
+<p><em>From our community to yours</em></p>
+<h4>${title}</h4>
+<p>${body}</p>${ctaLine}`;
+}
+
+// Places the block at the template's placeholder, else right before the CTA
+// anchor, else at the end — never drops content.
+export function placeComunidadSection(html: string, sectionHtml: string): string {
+  if (html.includes('<!-- COMUNIDAD_PLACEHOLDER -->')) {
+    return html.replace('<!-- COMUNIDAD_PLACEHOLDER -->', sectionHtml);
+  }
+  if (html.includes('<!-- CALL TO ACTION -->')) {
+    return html.replace('<!-- CALL TO ACTION -->', `${sectionHtml}\n\n<!-- CALL TO ACTION -->`);
+  }
+  console.warn('   ⚠️ No Comunidad anchor found — appending section at the end');
+  return `${html}\n\n${sectionHtml}`;
 }
 
 // Function to inject Comunidad section into newsletter HTML
@@ -121,70 +124,5 @@ export async function injectComunidadSection(html: string, customContent: string
   }
 
   console.log(`   📝 Comunidad HTML generated (${comunidadHtml.length} chars)`);
-
-  // Try multiple injection patterns in order of preference
-
-  // Pattern 1: Look for the placeholder comment
-  if (html.includes('<!-- COMUNIDAD_PLACEHOLDER -->')) {
-    console.log('   ✅ Found COMUNIDAD_PLACEHOLDER, injecting there');
-    return html.replace('<!-- COMUNIDAD_PLACEHOLDER -->', comunidadHtml);
-  }
-
-  // Pattern 2: Look for <!-- CALL TO ACTION --> comment
-  if (html.includes('<!-- CALL TO ACTION -->')) {
-    console.log('   ✅ Found CALL TO ACTION comment, injecting before it');
-    return html.replace('<!-- CALL TO ACTION -->', comunidadHtml + '\n\n          <!-- CALL TO ACTION -->');
-  }
-
-  // Pattern 3: Look for CTA section by background color #C75B39
-  const ctaByColorPattern = /(<tr>\s*<td[^>]*background-color:\s*#C75B39)/i;
-  if (ctaByColorPattern.test(html)) {
-    console.log('   ✅ Found CTA by background color, injecting before it');
-    return html.replace(ctaByColorPattern, comunidadHtml + '\n\n          $1');
-  }
-
-  // Pattern 4: Look for "From the Blog" section and inject after it
-  const blogEndPattern = /(📖 From the Blog[\s\S]*?<\/div>\s*<\/td>\s*<\/tr>)/i;
-  if (blogEndPattern.test(html)) {
-    console.log('   ✅ Found From the Blog section, injecting after it');
-    return html.replace(blogEndPattern, '$1\n\n' + comunidadHtml);
-  }
-
-  // Pattern 5: Look for Pro Tip section and inject after it
-  const proTipEndPattern = /(💡 Expat Pro Tip[\s\S]*?<\/td>\s*<\/tr>)/i;
-  if (proTipEndPattern.test(html)) {
-    console.log('   ✅ Found Pro Tip section, injecting after it');
-    return html.replace(proTipEndPattern, '$1\n\n' + comunidadHtml);
-  }
-
-  // Pattern 6: Look for any section with terracotta/CTA background
-  const terracottaPattern = /(<tr>\s*<td[^>]*style="[^"]*background[^"]*#[Cc]75[Bb]39)/i;
-  if (terracottaPattern.test(html)) {
-    console.log('   ✅ Found terracotta section, injecting before it');
-    return html.replace(terracottaPattern, comunidadHtml + '\n\n          $1');
-  }
-
-  // Pattern 7: Fallback - inject before CLOSING_FOOTER_PLACEHOLDER
-  if (html.includes('<!-- CLOSING_FOOTER_PLACEHOLDER -->')) {
-    console.log('   ✅ Found CLOSING_FOOTER_PLACEHOLDER, injecting before it');
-    return html.replace('<!-- CLOSING_FOOTER_PLACEHOLDER -->', comunidadHtml + '\n\n          <!-- CLOSING_FOOTER_PLACEHOLDER -->');
-  }
-
-  // Pattern 8: Last resort - inject before the last </table>
-  const lastTablePattern = /(<\/table>\s*<\/td>\s*<\/tr>\s*<\/table>)/i;
-  if (lastTablePattern.test(html)) {
-    console.log('   ✅ Found closing table structure, injecting before it');
-    return html.replace(lastTablePattern, comunidadHtml + '\n\n          $1');
-  }
-
-  console.log('   ⚠️ Could not find ANY injection point for Comunidad section!');
-  console.log('   📄 HTML snippet (first 500 chars):', html.substring(0, 500));
-
-  // Absolute fallback - append before </body>
-  if (html.includes('</body>')) {
-    console.log('   ✅ Fallback: injecting before </body>');
-    return html.replace('</body>', comunidadHtml + '\n</body>');
-  }
-
-  return html;
+  return placeComunidadSection(html, comunidadHtml);
 }

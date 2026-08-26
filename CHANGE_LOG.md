@@ -4,6 +4,18 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-08-26] fix(newsletter): bloque Comunidad migrado a HTML semántico
+
+**Por qué:** `generateComunidadSection` (se inyecta solo cuando el admin manda `customContent`) seguía emitiendo `<tr><td style=…>` + `<div>` con borde lateral morado — herencia del template de tablas — dentro del HTML semántico del formato Smart Brevity. Al pegar en Beehiiv quedaba un `<tr>` huérfano y sin estilos. Mismo defecto que el hero image corregido hoy.
+
+**Qué cambió (`src/lib/newsletter-comunidad.ts`):**
+- El bloque ahora es `<!-- COMUNIDAD SECTION - CUSTOM CONTENT -->` + `<h3>🤝 Comunidad</h3>` + `<p><em>From our community to yours</em></p>` + `<h4>título</h4>` + `<p>cuerpo</p>` + `<p><strong>CTA</strong></p>` (opcional). h3 porque su vecino en el template es "✨ Community Spotlight" (h3), justo antes de "🎁 1 fun thing". Anclas preservadas: el comentario `<!-- COMUNIDAD` (parser de secciones, UTM por sección, editor admin) y el texto `🤝 Comunidad` (fallback del parser).
+- Inyección reducida a 3 rutas (`placeComunidadSection`, exportada y testeada): placeholder `<!-- COMUNIDAD_PLACEHOLDER -->` → antes de `<!-- CALL TO ACTION -->` → al final. Eliminados 6 fallbacks que buscaban `</td></tr>`, colores de fondo `#C75B39` o `</table>` — imposibles de coincidir en el template actual.
+
+**Verificado:** generación real en dev server con `customContent` (promo Café Cortao) → el bloque aparece entre Community Spotlight y "1 fun thing", título/cuerpo reescritos por terra, código `SLWAY15` en negritas, 0 `<tr>/<td>/<div>` en todo el newsletter. Tests nuevos `newsletter-comunidad.test.ts` (6 casos); 42/42 en los 5 suites de newsletter; tsc limpio.
+
+---
+
 ## [2026-08-26] feat(newsletter): modelo gpt-5.4 → GPT-5.6 (sol / terra)
 
 **Por qué:** decisión del dueño de pasar el newsletter a GPT-5.6. La API no expone `gpt-5.6` a secas sino tres tiers: `gpt-5.6-sol` (razonamiento más profundo, $5/$30 por 1M tokens), `gpt-5.6-terra` (equilibrado ≈ gpt-5.5 a mitad de precio, $2.50/$15) y `gpt-5.6-luna` (rápido/barato, $1/$6). Verificado contra `GET /v1/models` con la key del proyecto.
