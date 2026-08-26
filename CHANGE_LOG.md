@@ -4,6 +4,20 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-08-26] data(events): limpieza de pasados, +26 eventos confirmados sep-2026→mar-2027, sección familiar
+
+**Síntoma:** "eventos destacados" con eventos de julio el 26 de agosto. **Causa:** `/events` consultaba TODOS los eventos sin filtrar por fecha y el carrusel hero tomaba los `featured=true` de esa lista (Hobby Salsa Fest 16-jul, Danza Contemporánea, Rebozo, Festival de la Huasteca, San Luis Rey…). **Fix de código** (commit 0027aea): `/events` y `/events/[category]` solo traen `end_date >= now`. **Fix de datos:** 17 eventos pasados eliminados (respaldo local en scratchpad `past-events-backup-2026-08-26.json`).
+
+**Sección "Para toda la familia"** en `/events` (i18n en/es/de/ja): eventos con `family_friendly=true`, máx. 6, enlace a `/family-friendly-activities`. Marcados como familiares los existentes que lo son: FENAPO 2026, Fiestas Patrias, Museo Leonora Carrington, Liga MX Atlético, Fiesta de San Miguel Arcángel, Fiesta de San Francisco (Real de Catorce), más Xantolo y Guadalupe que ya lo estaban.
+
+**+26 eventos** (3 agentes de investigación web en paralelo: conciertos/shows, festivales-tradiciones-deporte, niños-familia; ~40 candidatos → 26 tras curar). Criterio: fecha + sede confirmadas en 2026 por venue, boletera (Ticketmania, Arema, eTicket, Fever, ShowTicket, Spartan, FilmFreeway/Festhome), gobierno (INPODE, Sectur/Cultura SLP) o medio local (El Sol, Plano Informativo, Potosinoticias, Excélsior). **Descartados:** duplicados de la BD (Yuridia, Eslabón, Caifanes, Humbe, Enjambre, Serial Villa de Pozos, Spartan/El Sol repetidos), solo-agregador (Shazam/Songkick: Ill Niño, Dying Fetus, Antidoping, Jacinto), Día de Muertos capital y 434 Aniversario (fuente 2025 / "tradicionalmente" = info de ediciones pasadas, regla del sitio), Club Libanés (fecha inconsistente: "domingo 26 oct" no existe en 2026). Procesión del Silencio 2027 entra solo con hechos fijos (Viernes Santo 26-mar-2027, desde 1954, gratis desde la calle; programa pendiente de Cultura SLP).
+
+Lista: Reyno (5-sep), Raúl Di Blasio (11-sep), 5K familiar Bomberos (13-sep), CEART Pingüicas/Iniciación Artística y talleres IPBA desde 3 años (sep–dic), Isabel Fernández stand-up (26-sep), Álvaro Díaz (1-oct), Torneo Sin Límites San Luis Open tenis (1–4 oct), Expo Potosí Industrial (8–9 oct), Intocable (16-oct, featured), Carrera Panamericana etapa SLP (21–22 oct, featured, gratis), Spartan Race + Kids Race (31-oct), Auténticos Caligaris (1-nov, featured), José Ramones (6-nov), Candlelight Ed Sheeran & Coldplay/Taylor Swift (7-nov), Serial Trail Rioverde (7–8 nov), Austin TV (12-nov), FICSLP XIV (27–28 nov, featured), Manuel Medrano (28-nov), 7ª Carrera El Sol con infantiles (29-nov), Festival de Cine de Xilitla (2–6 dic), Daniel Boaventura (5-dic), Serial Trail final Soledad (5–6 dic), Candlelight Queen/Navidad (17-dic), Avatar (24-ene-2027), Procesión del Silencio 2027 (26-mar-2027, featured).
+
+**Herramientas:** `scripts/import-events.mjs <json> [--dry-run]` (valida, evita duplicados por título+fecha, fechas ancladas a mediodía CDMX o `start_time`) + `scripts/translate-events.mjs` para de/ja. JSON curado en scratchpad `events-curated.json`. Total en BD: 53 eventos vigentes, 0 pasados.
+
+---
+
 ## [2026-08-26] feat(events): eventos por idioma (title/description es·de·ja) — fin de los eventos "en español" con inglés seleccionado
 
 **Síntoma:** con el sitio en inglés, muchos eventos se veían en español. **Causa:** la tabla `events` tenía un solo `title`/`description` sin idioma; 18 de los 27 eventos próximos estaban en inglés y los 9 cargados el 2026-07-02 (Ballarta, La Santa Cecilia, Yuridia, Eslabón Armado, Xantolo, Kany García, Enjambre, Arjona, Virgen de Guadalupe) en español. El selector de idioma no podía traducir lo que no existía.
