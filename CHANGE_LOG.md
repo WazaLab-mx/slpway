@@ -4,6 +4,25 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-08-26] data(events): búsqueda profunda — +55 eventos confirmados y 4 correcciones a datos heredados
+
+**Segunda pasada** (5 agentes en paralelo: grandes venues/boleteras; gastronomía-ferias-expos; deporte; Huasteca/regiones/tradiciones; cultura-teatro-niños-navidad; ~90 candidatos). Mismo criterio de curación: fecha+sede confirmadas en 2026 por venue/boletera/organizador/gobierno/medio local; fuera agregadores, "por confirmar", info de ediciones pasadas y duplicados.
+
+**+55 eventos**, entre ellos: LXXXII Congreso y Campeonato Nacional Charro (Arena Potosí, 8-oct→1-nov, FMCH; featured), Vendimia Pozo de Luna (26-sep; featured), Festival Internacional San Luis en Primavera 2027 (1–15 abr 2027; featured), Atlético de San Luis Femenil (4 fechas), Santos del Potosí LNBP (3 series), lucha libre Noche de Leyendas, 12 carreras/rodadas (Cruz Roja, A la Mexicana, DAPSA, Skarch, Real del Potosí, Club Libanés, Camino al Mictlán, Marathon.TV, GFNY + Kids, Ultra Real de Catorce, Wirikuta Bike, Circuito Coconal, Reto 3 Haciendas), Falcon Games, Xantolo Handball, ferias de Charcas y Tierranueva, Muestra Nacional de Danzón, Festival de Danzón de Soledad, cabalgata de Tamuín, Club Huastecos Off Road; conciertos/shows: Elefante, Aleks Syntek, El Trono de México, Edición Especial, Hermanos Pérez Meza, Bohemio, MC Davo, Jacinto, Rondalla de Saltillo, Carlos Cuevas, Elías Medina, tributos sinfónicos (Juan Gabriel, Metallica, José José, Luis Miguel), tributos Beatles y Soda Stereo; teatro/danza: Esquizofrenia (Rafael Perrín), El Hombre de la Mancha, Siete Veces Adiós, Grease (Tec), dos Cascanueces (World Ballet Tour 23-nov, Ballet de Mari El 4-dic); stand-up Alexa Zuart y El Perra Madre; Papá Sobre Ruedas.
+
+**Correcciones a filas heredadas (cargadas 25-nov-2025 con datos de la edición anterior — regla del sitio: solo edición actual):**
+- Oktobeerfest / Global Beer Fest: BD decía 26-sep en Ecomuseo Tangamanga; confirmado por el Instagram oficial @global_beer_fest → **sábado 17-oct-2026, Museo Francisco Cossío** (el 21-mar fue la edición de primavera). Corregido.
+- Medio Maratón UASLP: BD decía "42nd Edition"; El Sol 24-ago-2026 → **XLIII edición**, 27-sep, capital + Ciudad Valles, 21K/10K/5K, $500/$450, cierre 13-sep. Corregido.
+- Grand Prix de Atletismo FENAPO: BD 29–31 ago; en realidad fue **21–23 ago** (El Sol, Código San Luis) → ya pasó, eliminado.
+- Copa Tigre de Taekwondo FENAPO: sin fecha 2026 confirmada (la de 2025 fue 30-ago; la única "fuente" era nuestra propia página) → eliminado. Respaldo local de ambas en scratchpad.
+- Liga MX: la entrada genérica (jul–nov) se reemplazó por el **calendario exacto de local** del Apertura 2026 (5-sep Chivas, 19-sep Necaxa, 11-oct Santos, 20-oct Querétaro, 30-oct Atlas, 6-nov Juárez; Palestra/atleticodesanluis.mx).
+
+**Descartados con razón:** Romería de Covadonga (sede no confirmada), Festival de Jazz JMZ y Festival de Cine UASLP (sedes por anunciar), Expo Mi Evento, feria de Tamuín dic (programa pendiente), exposiciones sin fecha de cierre, listados solo en agregadores, y "Prófugos del Anexo" en Arena Potosí (solo un post no oficial).
+
+Total en BD tras esta pasada: 106 eventos vigentes, 0 pasados; de/ja generados con `translate-events.mjs`.
+
+---
+
 ## [2026-08-26] data(events): limpieza de pasados, +26 eventos confirmados sep-2026→mar-2027, sección familiar
 
 **Síntoma:** "eventos destacados" con eventos de julio el 26 de agosto. **Causa:** `/events` consultaba TODOS los eventos sin filtrar por fecha y el carrusel hero tomaba los `featured=true` de esa lista (Hobby Salsa Fest 16-jul, Danza Contemporánea, Rebozo, Festival de la Huasteca, San Luis Rey…). **Fix de código** (commit 0027aea): `/events` y `/events/[category]` solo traen `end_date >= now`. **Fix de datos:** 17 eventos pasados eliminados (respaldo local en scratchpad `past-events-backup-2026-08-26.json`).
