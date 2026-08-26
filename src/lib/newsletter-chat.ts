@@ -12,6 +12,7 @@
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import OpenAI from 'openai';
+import { NEWSLETTER_FAST_MODEL } from './newsletter-models';
 
 const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
@@ -143,17 +144,15 @@ export async function chatEditHtml(req: ChatEditRequest): Promise<ChatEditResult
   let lastError: unknown = null;
 
   // Use the Responses API to match the working pattern elsewhere in this
-  // codebase (newsletter-generator.ts, newsletter-sections.ts). Chat
-  // Completions doesn't accept gpt-5.4 and trips on response_format.
+  // codebase (newsletter-generator.ts, newsletter-sections.ts). No
+  // temperature/top_p: GPT-5.6 is a reasoning model and rejects them.
   if (openai) {
     try {
       const res = await openai.responses.create({
-        model: 'gpt-5.4',
+        model: NEWSLETTER_FAST_MODEL,
         instructions: SYSTEM_PROMPT,
         input: userPrompt,
         max_output_tokens: maxOutputTokens,
-        temperature: 0.4,
-        top_p: 0.95,
       });
       const text = res.output_text || '';
       const parsed = extractJson(text);

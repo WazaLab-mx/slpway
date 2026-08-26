@@ -110,16 +110,17 @@ RULES:
 - USE web_search for anything time-sensitive (events, news, business hours, current prices) — do not rely on training data for dated facts`;
 
 const OPENAI_MAX_ATTEMPTS = 3;
-const OPENAI_TIMEOUT_MS = 180_000; // web_search rounds can be slow, but not unbounded
+const OPENAI_TIMEOUT_MS = 300_000; // gpt-5.6-sol + web_search measured ~150-180s per edition; not unbounded
 
 async function generateWithOpenAI(prompt: string): Promise<string> {
   if (!openai) {
     throw new Error('OpenAI API key not configured');
   }
 
-  // Use the Responses API with the web_search_preview tool so gpt-5.4 can
+  // Use the Responses API with the web_search_preview tool so the model can
   // ground events/news/business info in live search results rather than
   // training data. Chat completions don't support web_search directly.
+  // No temperature/top_p: GPT-5.6 is a reasoning model and rejects them.
   // Real resilience lives here: retries with backoff + explicit timeout
   // (the old Gemini fallback was dead — project quota is exhausted, every
   // call 429s — so it only masked failures).
@@ -128,13 +129,11 @@ async function generateWithOpenAI(prompt: string): Promise<string> {
     try {
       const response = await openai.responses.create(
         {
-          model: 'gpt-5.4',
+          model: NEWSLETTER_MODEL,
           tools: [{ type: 'web_search_preview' }],
           instructions: OPENAI_NEWSLETTER_SYSTEM,
           input: prompt,
           max_output_tokens: 16384,
-          temperature: 0.9,
-          top_p: 0.95,
         },
         { timeout: OPENAI_TIMEOUT_MS },
       );
@@ -160,6 +159,7 @@ export { addUtmTracking, injectHeroImage, injectFeaturedBlogImage } from './news
 export { extractContentDigest, generateSubjectAndPreview } from './newsletter-subject';
 
 import { buildNewsletterPrompt } from './newsletter-prompt';
+import { NEWSLETTER_MODEL } from './newsletter-models';
 import { getSupabaseClient } from './newsletter-supabase';
 import { validateAndCleanUrls } from './newsletter-links';
 import { injectComunidadSection } from './newsletter-comunidad';

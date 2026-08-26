@@ -9,6 +9,7 @@ import { format, addDays } from 'date-fns';
 import { fetchWeatherForecast } from './api/dashboard-data';
 import { fetchAuthoritativeNow, fetchUsdMxnForPrompt } from './newsletter-generator';
 import { SMART_BREVITY_RULES } from './newsletter-smart-brevity';
+import { NEWSLETTER_FAST_MODEL } from './newsletter-models';
 
 const openai = process.env.OPENAI_API_KEY
   ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
@@ -676,19 +677,18 @@ Return ONLY the raw HTML, no markdown code blocks.
     return out;
   };
 
-  // Try OpenAI with web_search_preview first (Responses API — gpt-5.4 can
-  // ground events/news in live search), fall back to Gemini.
+  // Try OpenAI with web_search_preview first (Responses API — the model can
+  // ground events/news in live search), fall back to Gemini. No
+  // temperature/top_p: GPT-5.6 is a reasoning model and rejects them.
   let lastError: unknown = null;
   if (openai) {
     try {
       const res = await openai.responses.create({
-        model: 'gpt-5.4',
+        model: NEWSLETTER_FAST_MODEL,
         tools: [{ type: 'web_search_preview' }],
         instructions: 'You generate HTML newsletter sections for "San Luis Way Weekly" (San Luis Potosí, México). Return ONLY the raw HTML section, no markdown fences. Use web_search for time-sensitive facts (events, news, hours, prices).',
         input: fullPrompt,
         max_output_tokens: 2000,
-        temperature: 0.9,
-        top_p: 0.95,
       });
       const newHtml = cleanOutput(res.output_text || '');
       if (!newHtml || newHtml.length < 20) throw new Error('OpenAI returned empty or truncated content');

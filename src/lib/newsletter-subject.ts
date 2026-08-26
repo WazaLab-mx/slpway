@@ -1,4 +1,5 @@
 import OpenAI from 'openai';
+import { NEWSLETTER_FAST_MODEL } from './newsletter-models';
 
 // Subject/preview run on OpenAI (the primary generator), not Gemini: the
 // project's Gemini free-tier quota is exhausted, so a Gemini call here always
@@ -100,7 +101,7 @@ Return ONLY valid JSON, no markdown, no code fences:
 
   try {
     const response = await openai.responses.create({
-      model: 'gpt-5.4',
+      model: NEWSLETTER_FAST_MODEL,
       instructions: 'You write email subject lines and preview text. Return ONLY valid JSON.',
       input: prompt,
       max_output_tokens: 1000,

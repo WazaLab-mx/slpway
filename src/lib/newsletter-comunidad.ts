@@ -1,4 +1,5 @@
 import OpenAI from 'openai';
+import { NEWSLETTER_FAST_MODEL } from './newsletter-models';
 
 // Uses OpenAI (the primary generator); the project's Gemini free-tier quota is
 // exhausted, so a Gemini call here always 429s and drops back to raw content.
@@ -41,7 +42,7 @@ If there's no special code/offer, set cta to null.
 
     console.log('   🤖 Calling OpenAI to rewrite content...');
     const response = await openai.responses.create({
-      model: 'gpt-5.4',
+      model: NEWSLETTER_FAST_MODEL,
       instructions: 'You rewrite short community blurbs in a warm, friendly tone. Return ONLY valid JSON.',
       input: rewritePrompt,
       max_output_tokens: 1000,

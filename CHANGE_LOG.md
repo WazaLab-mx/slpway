@@ -4,6 +4,21 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-08-26] feat(newsletter): modelo gpt-5.4 → GPT-5.6 (sol / terra)
+
+**Por qué:** decisión del dueño de pasar el newsletter a GPT-5.6. La API no expone `gpt-5.6` a secas sino tres tiers: `gpt-5.6-sol` (razonamiento más profundo, $5/$30 por 1M tokens), `gpt-5.6-terra` (equilibrado ≈ gpt-5.5 a mitad de precio, $2.50/$15) y `gpt-5.6-luna` (rápido/barato, $1/$6). Verificado contra `GET /v1/models` con la key del proyecto.
+
+**Qué cambió:**
+- Nuevo `src/lib/newsletter-models.ts` con `NEWSLETTER_MODEL = 'gpt-5.6-sol'` (generación completa semanal, 1 vez/semana → calidad sobre velocidad) y `NEWSLETTER_FAST_MODEL = 'gpt-5.6-terra'` (subject/preview, sección Comunidad, regenerar sección, chat de edición — llamadas cortas/interactivas). Un solo lugar para cambiar de tier.
+- Los tres tiers son modelos de razonamiento y rechazan `temperature`/`top_p` (`Unsupported parameter`) → eliminados de las 5 llamadas a `openai.responses.create`. `web_search_preview` sí funciona en los tres (probado).
+- `OPENAI_TIMEOUT_MS` 180 s → 300 s: con sol la edición completa tardó 185 s de punta a punta (vs 63-76 s con gpt-5.4).
+
+**Verificado:** generación real en dev server con sol → 200, Smart Brevity audit OK, "1 big thing"/"1 fun thing", 3× "Why it matters:", 11 listas, 4/4 links internos verificados, 0 placeholders. tsc limpio, 30/30 tests de newsletter.
+
+**Nota:** los fallbacks a `gemini-2.0-flash` en `newsletter-sections.ts` y `newsletter-chat.ts` siguen siendo código muerto (cuota Gemini agotada) — sin tocar en este cambio.
+
+---
+
 ## [2026-08-26] fix(newsletter): prueba real de generación Smart Brevity — 2 bugs corregidos
 
 **Prueba:** dev server (`npm run dev`, :3001) + `POST /api/newsletter/generate` con `x-admin-key`. Dos corridas (76 s y 63 s), ambas 200. Formato Smart Brevity verificado en el HTML real: "1 big thing" abre, "1 fun thing" cierra, ≥3 "Why it matters:", axiomas en negritas, bullets; `auditSmartBrevity` pasa. Drafts guardados en Supabase (`newsletters` 8ce75a56…, y la 2ª corrida).
