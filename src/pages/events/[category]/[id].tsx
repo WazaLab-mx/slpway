@@ -14,6 +14,7 @@ import {
 import { Event } from '@/types';
 import { supabase } from '@/lib/supabase';
 import { buildEventPath, buildEventSlug, extractIdPrefix, isFullUuid } from '@/lib/event-slug';
+import { localizeEvent, localizeEvents } from '@/lib/localizeEvent';
 import SEO from '@/components/common/SEO';
 import AdUnit from '@/components/common/AdUnit';
 import NewsletterBanner from '@/components/NewsletterBanner';
@@ -122,8 +123,8 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
     return {
       props: {
         ...(await serverSideTranslations(locale ?? 'es', ['common'])),
-        event,
-        relatedEvents: relatedEvents || [],
+        event: localizeEvent(event, locale),
+        relatedEvents: localizeEvents(relatedEvents || [], locale),
       },
       revalidate: 600,
     };
@@ -140,30 +141,29 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   }
 };
 
-// Helper function to format date consistently
-const formatDate = (dateString: string) => {
-  const date = new Date(dateString);
-  return date.toLocaleDateString('es-ES', {
+// BCP-47 tags per site locale, for date formatting and JSON-LD inLanguage.
+const LANGUAGE_TAGS: Record<string, string> = { en: 'en-US', es: 'es-MX', de: 'de-DE', ja: 'ja-JP' };
+const languageTag = (locale: string) => LANGUAGE_TAGS[locale] ?? 'es-MX';
+
+const formatDate = (dateString: string, locale: string) =>
+  new Date(dateString).toLocaleDateString(languageTag(locale), {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-    timeZone: 'America/Mexico_City'
+    timeZone: 'America/Mexico_City',
   });
-};
 
-// Helper function to format time
-const formatTime = (dateString: string) => {
-  const date = new Date(dateString);
-  return date.toLocaleTimeString('es-ES', {
+const formatTime = (dateString: string, locale: string) =>
+  new Date(dateString).toLocaleTimeString(languageTag(locale), {
     hour: '2-digit',
     minute: '2-digit',
-    timeZone: 'America/Mexico_City'
+    timeZone: 'America/Mexico_City',
   });
-};
 
 export default function EventDetail({ event, relatedEvents }: EventDetailProps) {
   const router = useRouter();
   const { t } = useTranslation('common');
+  const locale = router.locale ?? 'es';
 
   if (router.isFallback) {
     return (
@@ -211,29 +211,24 @@ export default function EventDetail({ event, relatedEvents }: EventDetailProps) 
   return (
     <>
       <SEO
-        title={`${event.title} — ${formatDate(event.start_date)} | Eventos en San Luis Potosí`}
+        title={`${event.title} — ${formatDate(event.start_date, locale)} | ${t('homepage.events.seoSuffix')}`}
         description={
           event.description
             ? event.description.slice(0, 155)
-            : `${event.title}. ${formatDate(event.start_date)} en ${event.location}, San Luis Potosí. Consulta fecha, horario, ubicación y detalles del evento.`
+            : t('homepage.events.seoFallback', { title: event.title, date: formatDate(event.start_date, locale), location: event.location })
         }
         ogImage={event.image_url || '/og-image.jpg'}
-        keywords={`${event.title}, eventos san luis potosi, ${event.category} san luis potosi, que hacer en san luis potosi, agenda slp`}
-        // DB events are Spanish-only content served identically at all 4
-        // locale URLs. Canonicalize every locale variant (including /es/
-        // itself) to the /es/ URL so Google consolidates the cluster on the
-        // honest Spanish canonical instead of self-selecting arbitrary
-        // locales. Overrides the global self-referential canonical from
-        // HreflangAlternates via the shared key="canonical".
-        canonicalUrl={`/es${buildEventPath(event)}`}
+        keywords={`${event.title}, ${event.category} san luis potosi, ${t('homepage.events.keywords')}`}
+        // Events now carry per-locale copy (title_es/de/ja …), so each locale
+        // URL keeps the self-referential canonical from HreflangAlternates.
         structuredData={{
           "@context": "https://schema.org",
           "@type": "Event",
           "name": event.title,
           "startDate": event.start_date,
           "endDate": event.end_date,
-          "url": `https://www.sanluisway.com${buildEventPath(event)}`,
-          "inLanguage": "es-MX",
+          "url": `https://www.sanluisway.com${locale === 'en' ? '' : `/${locale}`}${buildEventPath(event)}`,
+          "inLanguage": languageTag(locale),
           ...(event.description && { "description": event.description }),
           ...(event.image_url && { "image": [event.image_url] }),
           "location": {
@@ -303,9 +298,9 @@ export default function EventDetail({ event, relatedEvents }: EventDetailProps) 
                 <div>
                   <p className="text-sm text-white/70">Fecha</p>
                   <p className="font-medium">
-                    {formatDate(event.start_date)}
+                    {formatDate(event.start_date, locale)}
                     {event.end_date && event.end_date !== event.start_date && (
-                      <> - {formatDate(event.end_date)}</>
+                      <> - {formatDate(event.end_date, locale)}</>
                     )}
                   </p>
                 </div>
@@ -318,7 +313,7 @@ export default function EventDetail({ event, relatedEvents }: EventDetailProps) 
                 <div>
                   <p className="text-sm text-white/70">Hora</p>
                   <p className="font-medium">
-                    {formatTime(event.start_date)} - {formatTime(event.end_date)}
+                    {formatTime(event.start_date, locale)} - {formatTime(event.end_date, locale)}
                   </p>
                 </div>
               </div>
@@ -416,9 +411,9 @@ export default function EventDetail({ event, relatedEvents }: EventDetailProps) 
                     <CalendarIcon className="w-5 h-5 text-gray-600 mt-0.5 flex-shrink-0" />
                     <div>
                       <p className="font-medium">Fecha</p>
-                      <p className="text-gray-600">{formatDate(event.start_date)}</p>
+                      <p className="text-gray-600">{formatDate(event.start_date, locale)}</p>
                       {event.end_date && event.end_date !== event.start_date && (
-                        <p className="text-gray-600">{formatDate(event.end_date)}</p>
+                        <p className="text-gray-600">{formatDate(event.end_date, locale)}</p>
                       )}
                     </div>
                   </div>
@@ -428,7 +423,7 @@ export default function EventDetail({ event, relatedEvents }: EventDetailProps) 
                     <div>
                       <p className="font-medium">Hora</p>
                       <p className="text-gray-600">
-                        {formatTime(event.start_date)} - {formatTime(event.end_date)}
+                        {formatTime(event.start_date, locale)} - {formatTime(event.end_date, locale)}
                       </p>
                     </div>
                   </div>
@@ -489,7 +484,7 @@ export default function EventDetail({ event, relatedEvents }: EventDetailProps) 
                       </h3>
                       <div className="flex items-center text-sm text-gray-600 mb-2">
                         <CalendarIcon className="w-4 h-4 mr-2" />
-                        {formatDate(relatedEvent.start_date)}
+                        {formatDate(relatedEvent.start_date, locale)}
                       </div>
                       <div className="flex items-center text-sm text-gray-600">
                         <MapPinIcon className="w-4 h-4 mr-2" />

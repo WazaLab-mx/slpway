@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { supabaseAdmin } from '@/lib/api/supabase-admin';
+import { EVENT_LOCALE_COLUMNS, localizeEvents } from '@/lib/localizeEvent';
 import { guides } from '@/data/guides';
 import { outdoorActivities } from '@/data/outdoor';
 import { cultureSites } from '@/data/culture';
@@ -32,11 +33,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (type === 'all' || type === 'events') {
       const { data } = await supabaseAdmin
         .from('events')
-        .select('title, description, category, start_date')
+        .select(`title, description, category, start_date, ${EVENT_LOCALE_COLUMNS}`)
         .or(`title.ilike.${pattern},description.ilike.${pattern}`)
         .limit(limit);
-      for (const e of data || []) {
-        results.push({ type: 'event', slug: e.title, title: e.title, description: e.description ?? undefined });
+      for (const e of localizeEvents(data || [], lang)) {
+        results.push({ type: 'event', slug: e.base_title, title: e.title, description: e.description ?? undefined });
       }
     }
 

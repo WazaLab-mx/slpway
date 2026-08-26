@@ -63,6 +63,15 @@ export interface Event {
   family_friendly?: boolean;
   cost?: string | null;
   organizer?: string | null;
+  // Per-locale copy; title/description are the English base (see localizeEvent).
+  title_es?: string | null;
+  title_de?: string | null;
+  title_ja?: string | null;
+  description_es?: string | null;
+  description_de?: string | null;
+  description_ja?: string | null;
+  /** English base title preserved after localization, used for URL slugs. */
+  base_title?: string;
 }
 
 export interface Service {

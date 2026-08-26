@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { supabaseAdmin } from '@/lib/api/supabase-admin';
 import { apiSuccess, apiError, setCacheHeaders, methodNotAllowed } from '@/lib/api/v1/response';
 import { eventsQuerySchema, parseQuery } from '@/lib/api/v1/validate';
+import { EVENT_LOCALE_COLUMNS, localizeEvents } from '@/lib/localizeEvent';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'GET') return methodNotAllowed(res);
@@ -12,11 +13,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   const { limit, category, from, to } = parsed.data;
+  // Optional ?lang=es|de|ja localizes title/description; defaults to English.
+  const lang = (req.query.lang as string) || 'en';
 
   try {
     let query = supabaseAdmin
       .from('events')
-      .select('id, title, description, start_date, end_date, location, category, image_url, featured')
+      .select(`id, title, description, start_date, end_date, location, category, image_url, featured, ${EVENT_LOCALE_COLUMNS}`)
       .gte('end_date', new Date().toISOString())
       .order('start_date', { ascending: true })
       .limit(limit);
@@ -31,8 +34,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(500).json(apiError('DB_ERROR', 'Failed to fetch events'));
     }
 
+    // Strip the per-locale columns from the public payload — consumers get one
+    // title/description in the requested language, same shape as before.
+    const events = localizeEvents(data || [], lang).map(
+      ({ title_es, title_de, title_ja, description_es, description_de, description_ja, base_title, ...rest }) => {
+        void [title_es, title_de, title_ja, description_es, description_de, description_ja, base_title];
+        return rest;
+      }
+    );
+
     setCacheHeaders(res);
-    return res.status(200).json(apiSuccess(data || [], { total: data?.length || 0, limit }));
+    return res.status(200).json(apiSuccess(events, { total: events.length, limit }));
   } catch {
     return res.status(500).json(apiError('INTERNAL_ERROR', 'Internal server error'));
   }

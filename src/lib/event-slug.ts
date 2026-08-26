@@ -15,13 +15,20 @@ export function slugifyEventTitle(title: string): string {
     .replace(/-+$/, '');
 }
 
-export function buildEventSlug(event: { id: string; title: string }): string {
-  const base = slugifyEventTitle(event.title);
+interface SluggableEvent {
+  id: string;
+  title: string;
+  /** Set by localizeEvent(); slugs always derive from the English base title. */
+  base_title?: string | null;
+}
+
+export function buildEventSlug(event: SluggableEvent): string {
+  const base = slugifyEventTitle(event.base_title || event.title);
   const suffix = event.id.slice(0, 8).toLowerCase();
   return base ? `${base}-${suffix}` : suffix;
 }
 
-export function buildEventPath(event: { id: string; title: string; category: string }): string {
+export function buildEventPath(event: SluggableEvent & { category: string }): string {
   return `/events/${event.category}/${buildEventSlug(event)}`;
 }
 

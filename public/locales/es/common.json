@@ -313,7 +313,10 @@
       "until": "Hasta",
       "details": "Ver detalles",
       "prev": "Anterior",
-      "next": "Siguiente"
+      "next": "Siguiente",
+      "seoSuffix": "Eventos en San Luis Potosí",
+      "seoFallback": "{{title}}. {{date}} en {{location}}, San Luis Potosí. Consulta fecha, horario, ubicación y detalles del evento.",
+      "keywords": "eventos san luis potosi, que hacer en san luis potosi, agenda slp"
     },
     "culture": {
       "badge": "Herencia Cultural",

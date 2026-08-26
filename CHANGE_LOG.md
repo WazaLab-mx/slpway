@@ -4,6 +4,28 @@ Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---
 
+## [2026-08-26] feat(events): eventos por idioma (title/description es·de·ja) — fin de los eventos "en español" con inglés seleccionado
+
+**Síntoma:** con el sitio en inglés, muchos eventos se veían en español. **Causa:** la tabla `events` tenía un solo `title`/`description` sin idioma; 18 de los 27 eventos próximos estaban en inglés y los 9 cargados el 2026-07-02 (Ballarta, La Santa Cecilia, Yuridia, Eslabón Armado, Xantolo, Kany García, Enjambre, Arjona, Virgen de Guadalupe) en español. El selector de idioma no podía traducir lo que no existía.
+
+**Esquema:** `supabase/migrations/20260826_add_event_translations.sql` — `title_es/_de/_ja`, `description_es/_de/_ja` (text, nullable). `title`/`description` siguen siendo el inglés base, mismo esquema que `blog_posts`. Corrida por el dueño en Supabase.
+
+**Código:**
+- `src/lib/localizeEvent.ts`: `localizeEvent(event, locale)` / `localizeEvents` eligen la columna del locale con fallback por campo al inglés, y conservan `base_title` (inglés). `EVENT_LOCALE_COLUMNS` para selects explícitos. 9 tests.
+- `src/lib/event-slug.ts`: `buildEventSlug` usa `base_title || title` → **la URL de un evento es la misma en los 4 locales** (slug inglés + prefijo de id). Sin esto cada click en es/de/ja habría hecho 301 al slug del título localizado. Test que lo pinza. Las URLs viejas en español de los 9 eventos siguen resolviendo por el prefijo de id y hacen 301 al slug nuevo.
+- Localización en `getStaticProps` (donde siempre hay `locale`), así `EventCard`/`EventsPreview`/carruseles no cambian: `events/index`, `events/[category]/index`, `events/[category]/[id]` (evento + relacionados), `events/this-week`, home `index`, `cultural/index`, `family-friendly-activities`.
+- `events/[category]/[id].tsx`: eliminado el canonical forzado a `/es` (la justificación "eventos solo en español" ya no aplica; vuelve el canonical self-referential por locale de HreflangAlternates). SEO title/description/keywords vía i18n (`homepage.events.seoSuffix/seoFallback/keywords` en en/es/de/ja), `inLanguage` y fechas (`toLocaleDateString`) por locale en lugar de `es-ES` fijo.
+- API v1: `/api/v1/events?lang=es|de|ja` y `/api/v1/search?lang=` devuelven title/description localizados (columnas `_xx` no se exponen; misma forma de payload). `search` usa `base_title` como slug.
+- Tipos: `Event` (types/index.ts) y `Database.events` (types/supabase.ts) con las 6 columnas + `base_title`.
+
+**Datos:** `scripts/translate-events.mjs [--all] [--dry-run]` — gpt-5.6-terra genera en/es/de/ja por evento; si el origen está en español, mueve el español a `_es` y escribe la traducción inglesa en `title`/`description`. Idempotente (salta filas con los 3 locales llenos); por defecto solo eventos vigentes. Aborta con mensaje claro si la migración no se ha corrido.
+
+**Pendiente:** los eventos se cargan fuera de este repo (Studio/admin). Cada evento nuevo queda solo en su idioma de captura hasta correr el script de nuevo — correrlo después de cargar eventos.
+
+Verificado: tsc limpio; 92/92 tests (localize, slug, API v1, newsletter); los 4 `common.json` válidos.
+
+---
+
 ## [2026-08-26] fix(newsletter): bloque Comunidad migrado a HTML semántico
 
 **Por qué:** `generateComunidadSection` (se inyecta solo cuando el admin manda `customContent`) seguía emitiendo `<tr><td style=…>` + `<div>` con borde lateral morado — herencia del template de tablas — dentro del HTML semántico del formato Smart Brevity. Al pegar en Beehiiv quedaba un `<tr>` huérfano y sin estilos. Mismo defecto que el hero image corregido hoy.

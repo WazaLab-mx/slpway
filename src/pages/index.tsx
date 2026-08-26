@@ -17,6 +17,7 @@ import {
 } from '@/components/home';
 import { supabase, getSafetyDateBuffer, filterUpcomingEvents } from '@/lib/supabase';
 import { getBlogPostsBySlugs, getBlogPosts, SupportedLocale } from '@/lib/blog';
+import { localizeEvents } from '@/lib/localizeEvent';
 import { getRandomPotosinoBrands } from '@/lib/brands';
 import TangamangaBanner from '@/components/TangamangaBanner';
 import CentroHistoricoBanner from '@/components/CentroHistoricoBanner';
@@ -61,7 +62,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       .limit(12);
 
     if (eventsError) throw eventsError;
-    const events = filterUpcomingEvents(eventsData).slice(0, 8);
+    const events = localizeEvents(filterUpcomingEvents(eventsData).slice(0, 8), locale);
 
     const blogLocale = (locale || 'en') as SupportedLocale;
 

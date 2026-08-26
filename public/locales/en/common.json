@@ -313,7 +313,10 @@
       "until": "Until",
       "details": "View details",
       "prev": "Previous",
-      "next": "Next"
+      "next": "Next",
+      "seoSuffix": "Events in San Luis Potosí",
+      "seoFallback": "{{title}}. {{date}} at {{location}}, San Luis Potosí. Date, time, venue and event details.",
+      "keywords": "events san luis potosi, things to do in san luis potosi, slp agenda"
     },
     "culture": {
       "badge": "Cultural Heritage",

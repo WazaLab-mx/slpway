@@ -7,6 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Event } from '@/types';
 import { supabase } from '@/lib/supabase';
 import { buildEventPath } from '@/lib/event-slug';
+import { localizeEvents } from '@/lib/localizeEvent';
 import EventCard from '@/components/EventCard';
 import SEO from '@/components/common/SEO';
 import AdUnit from '@/components/common/AdUnit';
@@ -34,7 +35,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale ?? 'es', ['common'])),
-      events: events || [],
+      events: localizeEvents(events || [], locale),
       weekStart: now.toISOString(),
       weekEnd: weekEnd.toISOString(),
     },

@@ -210,6 +210,12 @@ export interface Database {
           family_friendly: boolean
           cost: string | null
           organizer: string | null
+          title_es: string | null
+          title_de: string | null
+          title_ja: string | null
+          description_es: string | null
+          description_de: string | null
+          description_ja: string | null
         }
         Insert: {
           id?: string
@@ -228,6 +234,12 @@ export interface Database {
           family_friendly?: boolean
           cost?: string | null
           organizer?: string | null
+          title_es?: string | null
+          title_de?: string | null
+          title_ja?: string | null
+          description_es?: string | null
+          description_de?: string | null
+          description_ja?: string | null
         }
         Update: {
           id?: string
@@ -246,6 +258,12 @@ export interface Database {
           family_friendly?: boolean
           cost?: string | null
           organizer?: string | null
+          title_es?: string | null
+          title_de?: string | null
+          title_ja?: string | null
+          description_es?: string | null
+          description_de?: string | null
+          description_ja?: string | null
         }
       }
       featured_photos: {

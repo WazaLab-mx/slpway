@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import { Event } from '@/types';
 import { supabase } from '@/lib/supabase';
+import { localizeEvents } from '@/lib/localizeEvent';
 import { CalendarIcon, MapPinIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import EventList from '@/components/EventList';
 import SEO from '@/components/common/SEO';
@@ -617,7 +618,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     return {
       props: {
         ...(await serverSideTranslations(locale ?? 'es', ['common'])),
-        events: events || [],
+        events: localizeEvents(events || [], locale),
       },
     };
   } catch (error) {

@@ -11,6 +11,7 @@ import GuideCTA from '@/components/common/GuideCTA';
 import { supabase } from '@/lib/supabase';
 import { Event } from '@/types';
 import { buildEventPath } from '@/lib/event-slug';
+import { localizeEvents } from '@/lib/localizeEvent';
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const { data: familyEvents } = await supabase
@@ -24,7 +25,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale ?? 'es', ['common'])),
-      familyEvents: familyEvents || [],
+      familyEvents: localizeEvents(familyEvents || [], locale),
     },
     revalidate: 3600,
   };

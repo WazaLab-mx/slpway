@@ -15,6 +15,7 @@ import NewsletterBanner from '@/components/NewsletterBanner';
 import { getCategoryTitle } from '@/utils/eventHelpers';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { buildEventPath } from '@/lib/event-slug';
+import { localizeEvents } from '@/lib/localizeEvent';
 import AdUnit from '@/components/common/AdUnit';
 
 interface EventsPageProps {
@@ -42,7 +43,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
       .order('start_date', { ascending: true });
     if (error) throw error;
 
-    const allEvents = eventsData || [];
+    const allEvents = localizeEvents(eventsData || [], locale);
     let filteredEvents = allEvents;
     if (category !== 'all') {
       const filterCategory = category === 'cultural' ? 'arts-culture' : category;
