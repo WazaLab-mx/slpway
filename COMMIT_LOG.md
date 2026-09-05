@@ -1,5 +1,14 @@
 # Commit Log
 
+## 2026-09-05 — feat: refresh homepage editorial design
+
+- Baseline: 0f3a06d. Locate this commit by subject to review or revert its complete design change.
+- Files: HeroSection.tsx, ExploreSection.tsx, DiningSection.tsx, HomeDesign.test.tsx, home-editorial.css, pages/index.tsx, pages/_app.tsx, four common.json locale resources, and local project logs.
+- Behavior: functional #explore anchor with four discovery links; stable hero text; all six dining links preserved; responsive grids; reduced-motion styles; Inter body font applied correctly.
+- Visual direction: deep blue-green, warm paper backgrounds, brand yellow, serif headings, rounded photography, restrained entry and hover motion.
+- Validation: 22/22 component tests, targeted lint, diff whitespace check, desktop visual review, mobile width/element geometry, and browser anchor navigation. Existing TypeScript RSS test errors recorded in CHANGE_LOG.md.
+- Reversal: revert only this design commit to restore prior layout and fonts; no database migration or dependency changes required.
+
 Log detallado de todos los commits realizados en el proyecto San Luis Way.
 
 ---

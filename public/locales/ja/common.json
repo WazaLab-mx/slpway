@@ -251,7 +251,18 @@
     "healthcareDesc": "小児科医やファミリードクターを見つけるガイダンス"
   },
   "homepage": {
+    "explore": {
+      "title": "何を見つけよう？",
+      "description": "次のお出かけはここから。",
+      "events": "イベント",
+      "dining": "グルメ",
+      "culture": "アートと文化",
+      "outdoors": "アウトドア"
+    },
     "hero": {
+      "editorialTitle": "あなたらしく楽しむ",
+      "editorialDescription": "歴史ある街並み、新しい味との出会い、心に残る一日。あなたらしいサンルイスポトシを見つけよう。",
+      "photoTitle": "街の中心",
       "badge": "サンルイスポトシガイド",
       "titlePrefix": "あなたの",
       "titleSuffix": "ライフ",

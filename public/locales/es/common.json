@@ -246,7 +246,18 @@
     "healthcareDesc": "Orientación para encontrar pediatras y médicos familiares"
   },
   "homepage": {
+    "explore": {
+      "title": "¿Qué te gustaría descubrir?",
+      "description": "Tu próximo plan empieza aquí.",
+      "events": "Eventos y planes",
+      "dining": "Dónde comer",
+      "culture": "Arte y cultura",
+      "outdoors": "Al aire libre"
+    },
     "hero": {
+      "editorialTitle": "Encuentra tu lugar en",
+      "editorialDescription": "Calles con historia, sabores que sorprenden y planes que valen la pena. Descubre San Luis Potosí a tu manera.",
+      "photoTitle": "El corazón de la ciudad",
       "badge": "Tu Guía de San Luis Potosí",
       "titlePrefix": "Tu Vida",
       "titleSuffix": "en",

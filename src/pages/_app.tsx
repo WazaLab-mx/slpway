@@ -1,4 +1,5 @@
 import '@/styles/globals.css';
+import '@/styles/home-editorial.css';
 import type { AppProps } from 'next/app';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -206,7 +207,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         >
           <AuthProvider>
             {/* MARKETPLACE DISABLED - Removed CartProvider */}
-            <div className={`min-h-screen flex flex-col ${inter.variable} ${crimsonPro.variable}`}>
+            <div className={`min-h-screen flex flex-col font-sans ${inter.variable} ${crimsonPro.variable}`}>
               {/* Client business pages (/negocios/*) render bare: they must
                   feel like the business's own site, not a San Luis Way page. */}
               {!bareLayout && <Header />}

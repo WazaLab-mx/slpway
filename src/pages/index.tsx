@@ -1,8 +1,9 @@
-import React, { useState, Suspense, lazy, useMemo } from 'react';
+import React, { useState, Suspense, lazy } from 'react';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { Place, Event as DirectoryEvent } from '@/types';
 import SEO from '@/components/common/SEO';
+import ExploreSection from '@/components/home/ExploreSection';
 import {
   HeroSection,
   EventsPreview,
@@ -113,23 +114,6 @@ export default function Home({ events = [], featuredAdvertisers = [], featuredBr
   const { t } = useTranslation('common');
   const { locale } = useRouter();
 
-  const glitchWords = useMemo(() => [
-    t('homepage.hero.glitchWords.word1'),
-    t('homepage.hero.glitchWords.word2'),
-    t('homepage.hero.glitchWords.word3'),
-    t('homepage.hero.glitchWords.word4'),
-    t('homepage.hero.glitchWords.word5'),
-    t('homepage.hero.glitchWords.word6'),
-    t('homepage.hero.glitchWords.word7'),
-    t('homepage.hero.glitchWords.word8'),
-    t('homepage.hero.glitchWords.word9'),
-    t('homepage.hero.glitchWords.word10'),
-    t('homepage.hero.glitchWords.word11'),
-    t('homepage.hero.glitchWords.word12'),
-    t('homepage.hero.glitchWords.word13'),
-    t('homepage.hero.glitchWords.word14'),
-  ], [t]);
-
   // Outdoor activities data — resolved from shared data file
   const outdoorActivities = outdoorData.map((a) => ({
     id: a.slug,
@@ -155,7 +139,7 @@ export default function Home({ events = [], featuredAdvertisers = [], featuredBr
     }));
 
   return (
-    <div className="slp-root bg-white">
+    <div className="slp-root home-editorial">
       <SEO
         title="San Luis Potosí Guide: Explore, Live & Thrive in SLP"
         description="Your complete guide to San Luis Potosí, Mexico. Curated restaurants, events, neighborhoods, cultural attractions and resources for travelers, digital nomads and expats."
@@ -239,7 +223,8 @@ export default function Home({ events = [], featuredAdvertisers = [], featuredBr
         <BetaBanner />
 
         {/* HERO SECTION */}
-        <HeroSection glitchWords={glitchWords} />
+        <HeroSection />
+        <ExploreSection />
 
         {/* AGENT CONNECT BANNER - Terminal Dark */}
         <AgentConnectBanner />

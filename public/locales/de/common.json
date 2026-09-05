@@ -246,7 +246,18 @@
     "healthcareDesc": "Hilfe bei der Suche nach Kinderärzten und Hausärzten"
   },
   "homepage": {
+    "explore": {
+      "title": "Was möchtest du entdecken?",
+      "description": "Dein nächstes Erlebnis beginnt hier.",
+      "events": "Veranstaltungen",
+      "dining": "Essen & Trinken",
+      "culture": "Kunst & Kultur",
+      "outdoors": "Draußen unterwegs"
+    },
     "hero": {
+      "editorialTitle": "Finde deinen Weg in",
+      "editorialDescription": "Straßen voller Geschichte, überraschende Aromen und unvergessliche Erlebnisse. Entdecke San Luis Potosí auf deine Art.",
+      "photoTitle": "Das Herz der Stadt",
       "badge": "Ihr Reiseführer für San Luis Potosí",
       "titlePrefix": "Ihr",
       "titleSuffix": "Leben in",

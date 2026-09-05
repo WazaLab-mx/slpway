@@ -246,7 +246,18 @@
     "healthcareDesc": "Guidance on finding pediatricians and family doctors"
   },
   "homepage": {
+    "explore": {
+      "title": "What will you discover?",
+      "description": "Your next great day starts here.",
+      "events": "Events & plans",
+      "dining": "Food & drink",
+      "culture": "Arts & culture",
+      "outdoors": "The outdoors"
+    },
     "hero": {
+      "editorialTitle": "Find your own way in",
+      "editorialDescription": "Storied streets, unexpected flavors, and days worth remembering. Discover San Luis Potosí your way.",
+      "photoTitle": "The heart of the city",
       "badge": "Your Guide to San Luis Potosí",
       "titlePrefix": "Your",
       "titleSuffix": "Life in",

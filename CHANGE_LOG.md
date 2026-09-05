@@ -1,5 +1,18 @@
 # Change Log
 
+## [2026-09-05] Editorial homepage refresh
+
+- Rebuilt the hero with a two-column layout, unobscured city photography, clear calls to action, and stable translated headings.
+- Added ExploreSection with four discovery routes and a real target for the previously unresolved #explore action.
+- Redesigned all six dining cards and adjusted spacing, backgrounds, headings, featured cards, and the final CTA using scoped home-editorial.css.
+- Applied Inter at the app wrapper where the font variables exist, correcting the inherited Times New Roman body fallback.
+- Added Spanish, English, German, and Japanese copy. Kept data fetching, advertisements, existing sections, and destination routes.
+- Added five component/integration cases using real translation resources. All 22 component tests pass; changed TSX files pass lint; git diff --check passes.
+- Browser: desktop hero and discovery visually reviewed; #explore navigation exercised; 390px mobile layout measured without horizontal overflow. Mobile screenshot capture timed out in the browser extension, so mobile verification used rendered DOM geometry.
+- Full TypeScript check reports eight existing number/string errors in __tests__/news-rss-pipeline.test.ts, unrelated to these changes. No full production build run.
+- Independent review completed; reduced-motion root scrolling and translated hero assertions corrected.
+- Preexisting deleted xantolo image, tsconfig.tsbuildinfo edits, and sc/ remain outside this change.
+
 Log de todos los cambios exitosos realizados en el proyecto San Luis Way.
 
 ---

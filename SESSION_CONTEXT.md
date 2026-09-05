@@ -1,5 +1,13 @@
 # Session Context Log - Coding Agent
 
+## Session 2026-09-05 — Homepage design
+
+User requested a more dynamic, professional site. Implemented an editorial homepage: split hero, discovery navigation, dining cards, scoped section styling, four-language copy, and app-level Inter font correction. Home styles live in src/styles/home-editorial.css and are imported by _app.tsx; new links live in ExploreSection.tsx. Existing backend/data flows and homepage sections are preserved.
+
+Validation: 22 component tests pass; lint for changed TSX files passes; browser desktop review and mobile geometry checks completed. Mobile screenshots timed out. Global tsc has eight existing errors in __tests__/news-rss-pipeline.test.ts (numeric overrides typed as strings). Reviewer suggestions addressed: reduced-motion html/body scrolling and hero translation assertions.
+
+Commit subject: feat: refresh homepage editorial design. Baseline: 0f3a06d. Unrelated working changes (deleted xantolo image, tsconfig.tsbuildinfo, sc/) were present at session start and must not be included or reverted.
+
 ## Project: San Luis Way (directory-SLP)
 
 **Last Updated:** 2026-03-25
