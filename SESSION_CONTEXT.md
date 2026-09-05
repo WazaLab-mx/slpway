@@ -1,5 +1,9 @@
 # Session Context Log - Coding Agent
 
+## Follow-up 2026-09-05 — TypeScript clean
+
+Resolved all eight RSS test type errors mentioned below. localized() now accepts field-specific overrides inferred from localizedDefaults plus optional numeric item. Full repository tsc --noEmit --incremental false passes; all 11 RSS tests and targeted lint pass. Commit subject: fix: correct RSS test fixture override types. Baseline: fdd2db6. No production code changed.
+
 ## Session 2026-09-05 — Homepage design
 
 User requested a more dynamic, professional site. Implemented an editorial homepage: split hero, discovery navigation, dining cards, scoped section styling, four-language copy, and app-level Inter font correction. Home styles live in src/styles/home-editorial.css and are imported by _app.tsx; new links live in ExploreSection.tsx. Existing backend/data flows and homepage sections are preserved.

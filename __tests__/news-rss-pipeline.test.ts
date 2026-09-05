@@ -27,11 +27,15 @@ const RSS_FIXTURE = `<?xml version="1.0" encoding="UTF-8"?>
   </item>
 </channel></rss>`;
 
-const localized = (over: Record<string, string> = {}) => ({
+const localizedDefaults = {
   title_es: 'Título', title_en: 'Title', title_de: 'Titel', title_ja: 'タイトル',
   summary_es: 'Resumen.', summary_en: 'Summary.', summary_de: 'Zusammenfassung.', summary_ja: '要約。',
   category: 'culture', source: 'Medio de Prueba', priority: 1,
   url: 'https://medio.mx/jazz-slp',
+};
+
+const localized = (over: Partial<typeof localizedDefaults> & { item?: number } = {}) => ({
+  ...localizedDefaults,
   ...over,
 });
 

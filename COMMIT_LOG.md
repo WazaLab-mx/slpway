@@ -1,5 +1,14 @@
 # Commit Log
 
+## 2026-09-05 — fix: correct RSS test fixture override types
+
+- Baseline: fdd2db6. Resolves the eight TypeScript errors recorded during the homepage refresh.
+- Files: __tests__/news-rss-pipeline.test.ts, CHANGE_LOG.md, COMMIT_LOG.md, SESSION_CONTEXT.md.
+- Cause: Record<string, string> rejected numeric item references in eight existing pipeline test inputs.
+- Fix: infer existing field types from localizedDefaults and explicitly allow optional numeric item overrides. Runtime test data and production modules are unchanged.
+- Validation: repository-wide TypeScript check passes with no errors; 11 RSS tests pass; targeted ESLint and diff whitespace checks pass.
+- Reversal: revert this commit to restore the previous helper signature (which reintroduces the eight type errors); no migration needed.
+
 ## 2026-09-05 — feat: refresh homepage editorial design
 
 - Baseline: 0f3a06d. Locate this commit by subject to review or revert its complete design change.

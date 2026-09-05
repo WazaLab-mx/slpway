@@ -1,5 +1,12 @@
 # Change Log
 
+## [2026-09-05] Fix RSS test TypeScript errors
+
+- Reproduced all eight TS2322 errors in __tests__/news-rss-pipeline.test.ts: localized() incorrectly restricted every override to a string despite numeric item indices.
+- Extracted localizedDefaults and typed overrides as Partial<typeof localizedDefaults> & { item?: number }, preserving string fields and numeric priority/item types without any or compiler suppression.
+- Verification: full tsc --noEmit --incremental false exits 0; all 11 RSS parsing, validation, and pipeline tests pass; targeted ESLint and git diff --check pass.
+- Only the test helper and project logs changed. Production behavior and unrelated working files remain unchanged.
+
 ## [2026-09-05] Editorial homepage refresh
 
 - Rebuilt the hero with a two-column layout, unobscured city photography, clear calls to action, and stable translated headings.
