@@ -1,5 +1,14 @@
 # Commit Log
 
+## 2026-09-07 — fix: separate community news from verified social trends
+
+- Baseline: da96ce6; scoped changes in news curation, scheduled publisher, dashboard data, shared editorial policy, regression tests and these logs.
+- Cause: independent community/trending tables received the same RSS articles, with no cross-section exclusion or social-evidence requirement.
+- Result: community-first editorial instructions; trends require source and summary evidence of social discussion; duplicate stories are removed, tracking parameters normalized while article/video identifiers survive, and trends expire from display after 72 hours. Empty successful curation retires old trends; failed inserts preserve them.
+- Validation: production capture reproduces the issue; 48 suites / 363 tests passed, plus final targeted 24 tests after query-identity review fix; TypeScript and build passed. Live updater completed successfully with 3 community items, 5 headlines and no verified social trends.
+- Rollback: revert this scoped commit; no schema migration. Prior active data is in ignored backups/home-news-before-separation-2026-09-07.json. If restoring content, restore those active rows and deactivate this refresh's rows; reverting code alone does not restore database state.
+- Known limit: social evidence comes from current RSS reporting, not direct access to social-platform trends. The section stays hidden when no eligible topics exist.
+
 ## 2026-09-05 — fix: correct RSS test fixture override types
 
 - Baseline: fdd2db6. Resolves the eight TypeScript errors recorded during the homepage refresh.

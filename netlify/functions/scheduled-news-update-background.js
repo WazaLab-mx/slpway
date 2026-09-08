@@ -69,6 +69,7 @@ const handler = async () => {
   const communityNews = curated.news.slice(0, 3);
   const headlines = curated.news.slice(3, 8);
   const trending = curated.trending;
+  const trendingBatchStartedAt = new Date().toISOString();
 
   console.log('Inserting fresh community_news rows...');
   let communityInserted = 0;
@@ -142,7 +143,6 @@ const handler = async () => {
   let trendingInserted = 0;
   if (trending.length > 0) {
     try {
-      await supabase.from('trending_topics').update({ active: false }).eq('active', true);
       const { error: trendingInsertError } = await supabase
         .from('trending_topics')
         .insert(trending.map((t, i) => ({
@@ -165,6 +165,9 @@ const handler = async () => {
         console.error('Trending insert error:', trendingInsertError.message);
       } else {
         trendingInserted = trending.length;
+        const { error } = await supabase.from('trending_topics')
+          .update({ active: false }).eq('active', true).lt('created_at', trendingBatchStartedAt);
+        if (error) errors.push(`Trending deactivate: ${error.message}`);
       }
     } catch (err) {
       const msg = err && err.message ? err.message : String(err);
@@ -172,7 +175,10 @@ const handler = async () => {
       console.error('Trending update failed (non-fatal):', msg);
     }
   } else {
-    console.log('No clean trending topics this run — keeping previous ones active.');
+    console.log('No verified social trends this run — retiring previous topics.');
+    const { error } = await supabase.from('trending_topics')
+      .update({ active: false }).eq('active', true).lt('created_at', trendingBatchStartedAt);
+    if (error) errors.push(`Trending deactivate: ${error.message}`);
   }
 
   const success = errors.length === 0;

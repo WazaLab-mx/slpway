@@ -1,5 +1,13 @@
 # Change Log
 
+## [2026-09-07] Community Life / social trend separation
+
+- Reproduced three repeated cards via screenshot and public dashboard API; preserved the public response as a regression fixture.
+- Traced duplication to RSS curation, not component state. Added community-interest priorities, source-backed social-conversation requirements, cross-section deduplication and 72-hour trending freshness.
+- Added tests for unsupported trend claims, distinct topics, medical "viral" false positives, tracking URLs and content-identifying query parameters. Four initial regressions failed; final targeted suite passes 24 tests. Full suite passed 48 suites / 363 tests before the two final URL regressions. TypeScript and production build passed.
+- Saved active rows locally, then ran the corrected scheduled updater: 3 community items, 5 headlines, 0 social trends; no eligible social evidence in 45 current feed items. Prior rows retained inactive for recovery. Backup: backups/home-news-before-separation-2026-09-07.json (ignored).
+- Reviewed before commit; corrected URL normalization based on review. No unrelated working changes included.
+
 ## [2026-09-05] Fix RSS test TypeScript errors
 
 - Reproduced all eight TS2322 errors in __tests__/news-rss-pipeline.test.ts: localized() incorrectly restricted every override to a string despite numeric item indices.

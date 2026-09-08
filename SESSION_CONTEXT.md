@@ -1,5 +1,15 @@
 # Session Context Log - Coding Agent
 
+## Session 2026-09-07 — Separate community news from social trends
+
+User reported identical Community Life and What San Luis Is Talking About cards. Confirmed all three titles/URLs in the public dashboard response; the two tables were distinct but RSS curation reused the same stories and treated prominence as social buzz. Captured public data in __tests__/fixtures/home-news-2026-09-07.json.
+
+Implemented shared news-section-policy.js: source-backed platform + conversation signals, story matching across tracking links and rewritten titles, and dashboard deduplication. Curation now prioritizes concrete community usefulness for the first three news items and requires explicit social conversation for 0–3 trends; source text and generated summaries are both checked. Trends cannot overlap the eight published news items. Dashboard excludes trends older than 72 hours and filters 12 candidates before choosing three. Successful empty curation retires old trends; insertion failures retain previous rows. No database migration or new credentials.
+
+Validation: initial four regression tests failed as expected; full suite passed (48 suites / 363 tests), followed by 24 passing targeted tests after two query-identity regressions were added. TypeScript and production build passed. Independent review found query parameters identifying articles/videos must be preserved; fixed and tested. Existing unrelated dirty files remain untouched: xantolo-image-1.jpg deletion, tsconfig.tsbuildinfo, sc/.
+
+Ran the corrected updater against live Supabase: success, 3 community items, 5 headlines, 0 verified social trends from 45 feeds items. Active rows before the refresh are backed up in ignored backups/home-news-before-separation-2026-09-07.json. Existing UI hides empty trend sections. Limitation: this remains RSS-reported social conversation, not direct platform monitoring; no verified trends were available in this run. Commit subject: fix: separate community news from verified social trends. Baseline: da96ce6.
+
 ## Follow-up 2026-09-05 — TypeScript clean
 
 Resolved all eight RSS test type errors mentioned below. localized() now accepts field-specific overrides inferred from localizedDefaults plus optional numeric item. Full repository tsc --noEmit --incremental false passes; all 11 RSS tests and targeted lint pass. Commit subject: fix: correct RSS test fixture override types. Baseline: fdd2db6. No production code changed.

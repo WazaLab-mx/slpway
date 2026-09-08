@@ -2,6 +2,7 @@
 // 4-locale translation. No web search — URLs must come from the feed items,
 // enforced in code so the model can never invent a link.
 const NEWS_CATEGORIES = ['social', 'community', 'culture', 'local'];
+const { hasSocialEvidence, sameStory } = require('../../../src/lib/news-section-policy');
 const TRENDING_CATEGORIES = ['debate', 'viral', 'event', 'controversy', 'culture', 'sports', 'community'];
 
 // Hard content filters (safety net beyond the prompt) — crime/insecurity for
@@ -26,7 +27,8 @@ function isBannedNews(item, feedItem) {
 function isBannedTrending(item, feedItem) {
   const own = itemText(item);
   const feed = feedItemText(feedItem);
-  return BANNED_CONTENT.test(own) || GOV_PR.test(own) || BANNED_CONTENT.test(feed) || GOV_PR.test(feed);
+  return BANNED_CONTENT.test(own) || GOV_PR.test(own) || BANNED_CONTENT.test(feed) || GOV_PR.test(feed)
+    || !hasSocialEvidence(feed) || !hasSocialEvidence(own);
 }
 
 // Place-generic words that appear in most SLP headlines carry no matching signal.
@@ -122,7 +124,9 @@ Eres el editor de un sitio INDEPENDIENTE que promueve San Luis Potosí a turista
 
 TAREA 1 — "news": elige EXACTAMENTE 12 notas POSITIVAS o NEUTRALES, todas distintas entre sí (12 notas DIFERENTES de la lista, nunca repitas una nota), ordenadas de mejor a peor (solo las 8 mejores se publican; las extra son tolerancia). Prioriza sociedad civil: comunidad, cultura, arte, deportes, gastronomía, negocios locales, universidades, ciencia, medio ambiente, turismo y vida cotidiana. EVITA nota roja, inseguridad y desastres. EVITA el sesgo de gobierno: no boletines ni logros oficiales, no destaques a gobernador/alcalde/funcionarios; máximo 1 de las 8 puede tocar temas de gobierno y solo si es de utilidad real al ciudadano, redactada neutral. Máximo 4 notas del mismo medio.
 
-TAREA 2 — "trending": identifica los 3 temas de los que MÁS se está hablando según estas notas (temas con varias notas o claramente destacados). Deben ser asuntos DISTINTOS entre sí, con variedad (al menos uno cultural, festivo, deportivo o positivo). Nada de inseguridad/crimen ni propaganda o figuras de gobierno. Cada tema se respalda con la URL de una de las notas.
+COMMUNITY LIFE: las primeras 3 notas de "news" deben tener utilidad comunitaria concreta: servicios y cambios que afectan a vecinos, iniciativas ciudadanas, oportunidades educativas, actividades inclusivas, voluntariado o espacios públicos. Explica qué cambia para la comunidad y cómo participar cuando la fuente lo indique. No uses boletines de logros oficiales como sustituto de utilidad comunitaria.
+
+TAREA 2 — "trending": elige de 0 a 3 temas con evidencia EXPLÍCITA de conversación en redes sociales en el título o descripción ORIGINAL de la fuente: reacciones, debates, memes o contenido viral en TikTok, Instagram, Facebook, YouTube o X. Que una noticia sea reciente, destacada o aparezca en varios medios NO prueba que sea tendencia. No basta que una institución anuncie algo en Facebook. El resumen debe explicar qué se está comentando y en qué red, sin inventar métricas, reacciones ni popularidad. Los temas y enlaces deben ser DISTINTOS de todas las notas de "news" y entre sí, aunque otros medios cubran el mismo hecho. Nada de inseguridad/crimen ni propaganda o figuras de gobierno. Si las fuentes no documentan conversación social, devuelve "trending": []; nunca rellenes con noticias comunitarias.
 
 Cada objeto de "news" y de "trending" DEBE tener:
 - "title_es","title_en","title_de","title_ja": titular corto en 4 idiomas.
@@ -137,7 +141,7 @@ ${formatFeedItems(feedItems)}
 CRÍTICO — cada elemento de "news" Y TAMBIÉN cada elemento de "trending" es UN SOLO objeto plano con TODAS estas llaves, sin omitir ningún idioma (nunca separes títulos y resúmenes en objetos distintos, nunca acortes los objetos de trending):
 {"item": 4, "category": "culture", "priority": 1, "title_es": "…", "title_en": "…", "title_de": "…", "title_ja": "…", "summary_es": "…", "summary_en": "…", "summary_de": "…", "summary_ja": "…"}
 
-Responde ÚNICAMENTE con un objeto JSON: {"news": [...12 objetos...], "trending": [...3 objetos...]}`;
+Responde ÚNICAMENTE con un objeto JSON: {"news": [...12 objetos...], "trending": [...0 a 3 objetos...]}`;
 }
 
 // Strict JSON Schema (OpenAI structured outputs): guarantees every curated
@@ -252,6 +256,7 @@ async function curateFromFeeds(apiKey, feedItems, temperature = 0.2) {
   const trending = [];
   for (const t of validateCurated(resolveItemRefs(parsed.trending, feedItems), allowedUrls)) {
     if (isBannedTrending(t, byUrl.get(t.url)) || seenTrendingUrls.has(t.url)) continue;
+    if (news.slice(0, 8).some(n => sameStory(n, t))) continue;
     if (!titleMatchesFeedItem(t, byUrl.get(t.url))) continue;
     const words = sigWords(t.title_es);
     if (tooSimilar(words, acceptedWords)) continue;

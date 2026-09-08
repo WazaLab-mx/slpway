@@ -4,6 +4,7 @@
  */
 
 import { createClient } from '@supabase/supabase-js';
+import { selectDistinctTrending } from '@/lib/news-section-policy';
 
 // San Luis Potosí coordinates
 const SLP_LAT = 22.1565;
@@ -577,9 +578,10 @@ export async function fetchTrendingTopics(): Promise<TrendingTopic[]> {
       .from('trending_topics')
       .select('id, title_es, title_en, title_de, title_ja, summary_es, summary_en, summary_de, summary_ja, category, source, url')
       .eq('active', true)
+      .gte('created_at', new Date(Date.now() - 72 * 60 * 60 * 1000).toISOString())
       .order('priority', { ascending: true })
       .order('created_at', { ascending: false })
-      .limit(3);
+      .limit(12);
 
     if (error) {
       console.error('Error fetching trending topics:', error);
@@ -627,7 +629,7 @@ export async function fetchDashboardData(): Promise<DashboardData> {
     exchangeRates,
     headlines,
     communityNews,
-    trendingTopics,
+    trendingTopics: selectDistinctTrending(trendingTopics, communityNews),
     lastUpdated: new Date().toISOString()
   };
 }

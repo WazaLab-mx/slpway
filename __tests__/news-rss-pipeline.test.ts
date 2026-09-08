@@ -89,7 +89,7 @@ describe('news-curation validation and filters', () => {
     expect(isBannedNews(crime)).toBe(true);
     expect(isBannedNews(govPr)).toBe(false); // gov filter is trending-only
     expect(isBannedTrending(govPr)).toBe(true);
-    expect(isBannedTrending(clean)).toBe(false);
+    expect(isBannedTrending(clean)).toBe(true); // ordinary news is not social evidence
   });
 });
 
@@ -127,8 +127,7 @@ describe('curateFromFeeds pipeline', () => {
     const { news, trending } = await curateFromFeeds('sk-test', feedItems);
     expect(news).toHaveLength(1);
     expect(news[0].url).toBe('https://medio.mx/jazz-slp');
-    expect(trending).toHaveLength(1);
-    expect(trending[0].title_es).toBe('Festival gastronómico del centro');
+    expect(trending).toHaveLength(0); // neither feed documents social conversation
   });
 
   it('resolves url/source from the item index, overriding whatever the model wrote', async () => {
