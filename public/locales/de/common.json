@@ -714,7 +714,11 @@
     "local": "Lokal",
     "dailyTip": "Entdecken Sie jeden Tag etwas Neues über San Luis Potosí.",
     "trendingTitle": "Worüber San Luis spricht",
-    "trendingSubtitle": "Die Themen, die die Stadt gerade bewegen",
+    "trendingSubtitle": "Aktuelle Gespräche in lokalen Social-Media-Communitys",
+    "trendingChecked": "Geprüft",
+    "joinConversation": "Zur Diskussion",
+    "trendingLoading": "Lokale Gespräche werden geladen…",
+    "trendingChecking": "Wir prüfen die neuesten Gespräche. Du kannst die Community auch direkt besuchen.",
     "trendingCategories": {
       "debate": "Debatte",
       "viral": "Viral",

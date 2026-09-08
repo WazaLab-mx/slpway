@@ -19,6 +19,9 @@
 [functions."scheduled-news-update-background"]
   schedule = "0 1,7,13,19 * * *"
 
+[functions."scheduled-social-trends-background"]
+  schedule = "30 1,7,13,19 * * *"
+
 # Weekly newsletter scheduled trigger is intentionally disabled — newsletter
 # is reviewed and triggered manually each Monday via POST to
 # /api/newsletter/generate with x-admin-key header. The function file

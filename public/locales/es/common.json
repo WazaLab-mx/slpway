@@ -749,7 +749,11 @@
     "local": "Local",
     "dailyTip": "Descubre algo nuevo sobre San Luis Potosí cada día.",
     "trendingTitle": "De qué se habla en San Luis",
-    "trendingSubtitle": "Los temas que tienen a la ciudad conversando",
+    "trendingSubtitle": "Conversaciones activas en comunidades locales de redes sociales",
+    "trendingChecked": "Verificado",
+    "joinConversation": "Ver la conversación",
+    "trendingLoading": "Cargando conversaciones locales…",
+    "trendingChecking": "Estamos revisando las conversaciones más recientes. También puedes explorar la comunidad directamente.",
     "trendingCategories": {
       "debate": "Debate",
       "viral": "Viral",

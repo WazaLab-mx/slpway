@@ -749,7 +749,11 @@
     "local": "Local",
     "dailyTip": "Discover something new about San Luis Potosí every day.",
     "trendingTitle": "What San Luis Is Talking About",
-    "trendingSubtitle": "The topics buzzing across the city right now",
+    "trendingSubtitle": "Active conversations from local social communities",
+    "trendingChecked": "Checked",
+    "joinConversation": "Join the conversation",
+    "trendingLoading": "Loading local conversations…",
+    "trendingChecking": "We’re checking the latest conversations. You can also explore the community directly.",
     "trendingCategories": {
       "debate": "Debate",
       "viral": "Viral",

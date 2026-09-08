@@ -1,7 +1,7 @@
 const { schedule } = require('@netlify/functions');
 const { createClient } = require('@supabase/supabase-js');
 const { fetchAllFeeds } = require('./lib/rss-feeds');
-const { NEWS_CATEGORIES, TRENDING_CATEGORIES, curateFromFeeds } = require('./lib/news-curation');
+const { NEWS_CATEGORIES, curateFromFeeds } = require('./lib/news-curation');
 
 const MAX_AI_ATTEMPTS = 3;
 const AI_RETRY_BASE_MS = 1500;
@@ -68,8 +68,6 @@ const handler = async () => {
 
   const communityNews = curated.news.slice(0, 3);
   const headlines = curated.news.slice(3, 8);
-  const trending = curated.trending;
-  const trendingBatchStartedAt = new Date().toISOString();
 
   console.log('Inserting fresh community_news rows...');
   let communityInserted = 0;
@@ -139,52 +137,10 @@ const handler = async () => {
     if (deactivateErr) errors.push(`Headlines deactivate: ${deactivateErr.message}`);
   }
 
-  // Trending topics run alongside the news flow but MUST NOT break it.
-  let trendingInserted = 0;
-  if (trending.length > 0) {
-    try {
-      const { error: trendingInsertError } = await supabase
-        .from('trending_topics')
-        .insert(trending.map((t, i) => ({
-          title_es: t.title_es,
-          title_en: t.title_en,
-          title_de: t.title_de,
-          title_ja: t.title_ja,
-          summary_es: t.summary_es,
-          summary_en: t.summary_en,
-          summary_de: t.summary_de,
-          summary_ja: t.summary_ja,
-          category: TRENDING_CATEGORIES.includes(t.category) ? t.category : 'community',
-          source: t.source || 'San Luis Potosí',
-          url: t.url,
-          priority: i + 1,
-          active: true,
-        })));
-      if (trendingInsertError) {
-        errors.push(`Trending insert: ${trendingInsertError.message}`);
-        console.error('Trending insert error:', trendingInsertError.message);
-      } else {
-        trendingInserted = trending.length;
-        const { error } = await supabase.from('trending_topics')
-          .update({ active: false }).eq('active', true).lt('created_at', trendingBatchStartedAt);
-        if (error) errors.push(`Trending deactivate: ${error.message}`);
-      }
-    } catch (err) {
-      const msg = err && err.message ? err.message : String(err);
-      errors.push(`Trending: ${msg}`);
-      console.error('Trending update failed (non-fatal):', msg);
-    }
-  } else {
-    console.log('No verified social trends this run — retiring previous topics.');
-    const { error } = await supabase.from('trending_topics')
-      .update({ active: false }).eq('active', true).lt('created_at', trendingBatchStartedAt);
-    if (error) errors.push(`Trending deactivate: ${error.message}`);
-  }
-
   const success = errors.length === 0;
   const response = {
     success,
-    message: `Inserted ${communityInserted} community news, ${headlinesInserted} headlines, ${trendingInserted} trending (from ${feedItems.length} RSS items)`,
+    message: `Inserted ${communityInserted} community news, ${headlinesInserted} headlines (from ${feedItems.length} RSS items)`,
     errors: errors.length ? errors : undefined,
     timestamp: new Date().toISOString(),
   };

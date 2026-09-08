@@ -1,5 +1,14 @@
 # Change Log
 
+## [2026-09-07] Real social sources and always-visible trends
+
+- Retrieved live r/SanLuisPotosi hot posts and recent replies, verified active conversations, and captured real inputs for regression tests. Reduced collection to two feeds after per-thread requests hit rate limits.
+- Added source-bound curation with one conversation per model call; deterministic observed-reply counts; safe replacement preserving previous topics on failure; an independent six-hour social schedule.
+- Published colonche, Continental Tire work discussion and local rock conversation with original links. Stored source evidence locally. Removed news updater writes to trending_topics.
+- Kept trends visible and displayed checked dates in en/es/de/ja. Confirmed component states and link destinations through tests; review corrected historical title/source mismatch and strict lexical matching.
+- Full tests: 52 suites / 381 passed; final social regression suite: 17 passed. TypeScript passed. Requested Tavily key for expanded coverage; pending, not implemented.
+- Restored development newsletter route after build/dev .next collision; HTTP 500 before, HTTP 200 after targeted cache move and dev restart. Production build will run remotely to keep development usable.
+
 ## [2026-09-07] Community Life / social trend separation
 
 - Reproduced three repeated cards via screenshot and public dashboard API; preserved the public response as a regression fixture.

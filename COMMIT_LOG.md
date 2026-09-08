@@ -1,5 +1,16 @@
 # Commit Log
 
+## 2026-09-07 — feat: publish verified local social conversations
+
+- Baseline: 07b5c86. Replaces RSS-news-as-trends with direct Reddit posts plus sampled recent responses. No new secrets or database schema changes.
+- Modules: social-reddit (Atom parsing/activity), social-curation (single-source summaries/translations), social-publisher (safe replacement), separate scheduled-social-trends-background; news updater stops touching trending_topics.
+- UI: extracted SocialTrendsSection always stays visible, displays original discussion links and verification dates, and retains the previous verified selection if upstream refresh fails. Four languages maintained.
+- Tests: real captured public Atom/model data; controlled HTTP storage integration exercises real Supabase client, success and insert/activation failure continuity; four-language component/empty-state tests. 52 suites/381 tests passed, followed by 17 targeted tests after review corrections. TypeScript passed.
+- Data: three original Reddit discussions published; evidence archived in ignored backups/social-trends-evidence-2026-09-07.json. First-turn pre-change news backup remains available.
+- Limitation: Reddit rate-limited repeated development requests. Last good selection is retained; scheduled fetches use two feed requests six hours apart. Tavily key requested but not yet supplied, so no Facebook/Instagram/TikTok/X integration is claimed.
+- Rollback: revert this scoped commit and disable the added social schedule; restore required active data from the local backup as needed. Reverting to 07b5c86 restores the old behavior that can hide/clear the section, which the user explicitly rejected.
+- Development incident: recovered newsletter generator HTTP 500 by moving overwritten build cache and restarting this project's dev server; verified HTTP 200. No newsletter logic or persisted drafts changed.
+
 ## 2026-09-07 — fix: separate community news from verified social trends
 
 - Baseline: da96ce6; scoped changes in news curation, scheduled publisher, dashboard data, shared editorial policy, regression tests and these logs.

@@ -1,5 +1,17 @@
 # Session Context Log - Coding Agent
 
+## Session 2026-09-07 — Direct social conversations and development-server recovery
+
+User rejected hiding the trends section and requested actual social-network conversations. Added direct Reddit Atom ingestion (r/SanLuisPotosi hot posts plus 100 recent replies): posts must be within seven days, have at least two observed replies from two distinct participants, and activity within three days. Uses two requests per refresh, avoids per-thread fanout, excludes inappropriate post topics, and ranks recent participation. Real captured Atom inputs and model output are regression fixtures. Counts explicitly describe observed replies, not full totals or city-wide popularity.
+
+Separate scheduled-social-trends-background runs at 01:30/07:30/13:30/19:30 UTC. The news updater no longer writes or clears trends. Each model call receives a single social source, preventing title/link mixups observed during exploration. Publication stages three inactive rows, activates the new IDs, then retires only previously captured IDs. Failures or inadequate selections retain the last verified content. The dashboard retains active topics and includes their checked date. SocialTrendsSection always renders, with four-language source links and dates.
+
+Published three verified conversations from the current capture: colonche (/1w9clmp/), work at Continental Tire (/1w6sj3y/), local rock venues (/1w7miz2/). Full evidence saved in ignored backups/social-trends-evidence-2026-09-07.json. Reddit subsequently rate-limited repeated development fetches (429); two-feed refresh is scheduled only every six hours. Requested TAVILY_API_KEY in local .env for broader/redundant indexed social search; user has not supplied it yet. Tavily is not implemented or claimed active. Existing Google credentials do not authorize YouTube Data API.
+
+Also restored /admin/newsletter on localhost:3001: running next build had overwritten .next while next dev was active, causing HTTP 500. Stopped only this project's dev parent/server, moved build output to ignored backups/.next-build-backup-20260907, restarted next dev hidden, and verified HTTP 200. Keep development running; use the remote Netlify build for this deployment, not another local build against .next. Logs: dev-server.log, dev-server-error.log. Temporary Jest config excludes that generated backup to avoid indexing it.
+
+Validation: 52 suites / 381 tests passed, then 17 focused social/UI tests after the final regression; TypeScript passed. Independent review caught a mismatched historical fixture and overstrict lexical title matching; both corrected. Baseline: 07b5c86. Commit subject: feat: publish verified local social conversations. Unrelated xantolo deletion, tsconfig.tsbuildinfo and sc/ preserved.
+
 ## Session 2026-09-07 — Separate community news from social trends
 
 User reported identical Community Life and What San Luis Is Talking About cards. Confirmed all three titles/URLs in the public dashboard response; the two tables were distinct but RSS curation reused the same stories and treated prominence as social buzz. Captured public data in __tests__/fixtures/home-news-2026-09-07.json.

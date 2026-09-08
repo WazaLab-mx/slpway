@@ -766,7 +766,11 @@
     "local": "ローカル",
     "dailyTip": "毎日サンルイスポトシの新しい発見をお届けします。",
     "trendingTitle": "サンルイスで話題のこと",
-    "trendingSubtitle": "いま街で盛り上がっている話題",
+    "trendingSubtitle": "地域のソーシャルコミュニティで交わされている会話",
+    "trendingChecked": "確認日",
+    "joinConversation": "会話を見る",
+    "trendingLoading": "地域の会話を読み込み中…",
+    "trendingChecking": "最新の会話を確認しています。コミュニティを直接見ることもできます。",
     "trendingCategories": {
       "debate": "議論",
       "viral": "バイラル",

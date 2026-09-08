@@ -85,6 +85,7 @@ export interface TrendingTopic {
   category: TrendingCategory;
   source?: string;
   sourceUrl?: string;
+  verifiedAt?: string;
 }
 
 export interface DashboardData {
@@ -576,11 +577,10 @@ export async function fetchTrendingTopics(): Promise<TrendingTopic[]> {
 
     const { data, error } = await supabase
       .from('trending_topics')
-      .select('id, title_es, title_en, title_de, title_ja, summary_es, summary_en, summary_de, summary_ja, category, source, url')
+      .select('id, title_es, title_en, title_de, title_ja, summary_es, summary_en, summary_de, summary_ja, category, source, url, created_at')
       .eq('active', true)
-      .gte('created_at', new Date(Date.now() - 72 * 60 * 60 * 1000).toISOString())
-      .order('priority', { ascending: true })
       .order('created_at', { ascending: false })
+      .order('priority', { ascending: true })
       .limit(12);
 
     if (error) {
@@ -604,7 +604,8 @@ export async function fetchTrendingTopics(): Promise<TrendingTopic[]> {
       summaryJa: n.summary_ja || n.summary_en || n.summary_es || '',
       category: n.category as TrendingCategory,
       source: n.source || undefined,
-      sourceUrl: n.url || undefined
+      sourceUrl: n.url || undefined,
+      verifiedAt: n.created_at,
     }));
   } catch (error) {
     console.error('Error fetching trending topics:', error);
