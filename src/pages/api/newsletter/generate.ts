@@ -3,6 +3,7 @@ import { timingSafeEqual } from 'crypto';
 import { createClient } from '@supabase/supabase-js';
 import { generateWeeklyNewsletter, injectAdsIntoHtml, AdPlacementData } from '@/lib/newsletter-generator';
 import { createPost } from '@/lib/beehiiv-service';
+import { renderNewsletterDesign } from '@/lib/newsletter-design';
 import { logger } from '@/lib/logger';
 
 const supabase = createClient(
@@ -91,7 +92,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Create draft in Beehiiv (primary)
     logger.log('Creating draft in Beehiiv...');
-    const beehiivResult = await createPost(subject, finalHtml, {
+    const beehiivResult = await createPost(subject, renderNewsletterDesign(finalHtml), {
       subtitle: previewText,
       audience: 'all',
     });

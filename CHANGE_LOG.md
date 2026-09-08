@@ -5121,3 +5121,11 @@ El script de actualización de noticias ahora traduce automáticamente todo el c
 ---
 
 [2026-03-09] Fix page-agent proxy: strip unsupported params (verbosity, enable_thinking, thinking, reasoning) before forwarding to OpenAI API | Archivos: src/pages/api/page-agent-proxy/[...path].ts | Estado: ✅ Exitoso
+
+## 2026-09-07 - Branded newsletter design
+- Added a deterministic email renderer using site royal blue #00007A, gold #FFCB05, serif headlines, inline CSS, fluid 640px tables and highlighted key paragraphs.
+- Applied the same design to generated/saved previews, section editor, HTML clipboard/export and automatic Beehiiv draft creation. Stored source stays canonical for editing; no editions were sent.
+- Normalized legacy standalone sponsor rows to prevent reordered content, preserved ad links, and resolved relative images to absolute site URLs.
+- Verified actual September 7 draft in browser and added a captured-edition DOM integration regression. Full suite passed 53 suites/385 tests before final regressions; final design tests passed 6/6. Targeted lint passed. Development newsletter route HTTP 200.
+- Beehiiv manual transfer uses HTML Snippet. Downloaded files include UTF-8 and viewport metadata. Actual email-client delivery rendering has not been tested.
+- Rollback baseline: 78c193c. Intended commit: feat: add branded newsletter email design. Pre-existing image deletion, tsconfig.tsbuildinfo and sc/ unchanged.

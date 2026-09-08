@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import NewsletterChatPanel, { ChatScope } from './NewsletterChatPanel';
 import { parseSections, NewsletterSection } from '@/lib/newsletter-section-parser';
+import { renderNewsletterDesign } from '@/lib/newsletter-design';
 
 interface NewsletterEditorProps {
   htmlContent: string;
@@ -275,7 +276,8 @@ export default function NewsletterEditor({
               <h3 className="font-medium text-gray-700 mb-3">Live Preview</h3>
               <div className="bg-white rounded-lg shadow overflow-hidden">
                 <iframe
-                  srcDoc={fullHtml}
+                  srcDoc={renderNewsletterDesign(fullHtml)}
+                  sandbox=""
                   className="w-full h-[600px] border-0"
                   title="Newsletter Preview"
                 />

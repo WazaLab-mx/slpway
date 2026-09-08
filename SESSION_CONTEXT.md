@@ -210,3 +210,11 @@ import Image from 'next/image';
 ---
 
 *This log should be updated at the start of each new session to provide context for the coding agent.*
+
+## 2026-09-07 - Branded newsletter design
+- Added a deterministic email renderer using site royal blue #00007A, gold #FFCB05, serif headlines, inline CSS, fluid 640px tables and highlighted key paragraphs.
+- Applied the same design to generated/saved previews, section editor, HTML clipboard/export and automatic Beehiiv draft creation. Stored source stays canonical for editing; no editions were sent.
+- Normalized legacy standalone sponsor rows to prevent reordered content, preserved ad links, and resolved relative images to absolute site URLs.
+- Verified actual September 7 draft in browser and added a captured-edition DOM integration regression. Full suite passed 53 suites/385 tests before final regressions; final design tests passed 6/6. Targeted lint passed. Development newsletter route HTTP 200.
+- Beehiiv manual transfer uses HTML Snippet. Downloaded files include UTF-8 and viewport metadata. Actual email-client delivery rendering has not been tested.
+- Rollback baseline: 78c193c. Intended commit: feat: add branded newsletter email design. Pre-existing image deletion, tsconfig.tsbuildinfo and sc/ unchanged.

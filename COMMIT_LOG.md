@@ -3515,7 +3515,7 @@ Mientras se mantiene:
 ## Commit: d769cfa8 - 2025-12-31
 **Mensaje:** fix: Add Google Maps image domain to Next.js config
 **Archivos modificados:** next.config.js
-**Descripción detallada:** 
+**Descripción detallada:**
 - Agregado `lh3.googleusercontent.com` a la lista de `domains` permitidos
 - Agregado `lh3.googleusercontent.com` a la lista de `remotePatterns`
 - Esto permite que las imágenes de Google Maps se carguen correctamente en producción
@@ -3524,7 +3524,7 @@ Mientras se mantiene:
 
 ## Commit: 3b654cee - 2026-01-02
 **Mensaje:** feat: Add automatic 4-language translation to news update script
-**Archivos modificados:** 
+**Archivos modificados:**
 - scripts/update-news-now.js
 - src/components/TodayInSLP.tsx
 - src/lib/api/dashboard-data.ts
@@ -3563,3 +3563,11 @@ Cambios en supabase/migrations:
 **Archivos modificados:** src/pages/api/page-agent-proxy/[...path].ts
 **Descripción detallada:** page-agent's modelPatch() function automatically injects verbosity:'low' for GPT models, which OpenAI's API rejects with HTTP 400. The proxy now strips verbosity, enable_thinking, thinking, and reasoning parameters from the request body before forwarding to OpenAI. Changed from sending raw req.body to creating a cleaned copy.
 **Propósito/Razón:** The page-agent widget was completely broken on the live site because every LLM request failed with "Unsupported value: 'verbosity' does not support 'low'" error, retried twice, and then gave up.
+
+## 2026-09-07 - Branded newsletter design
+- Added a deterministic email renderer using site royal blue #00007A, gold #FFCB05, serif headlines, inline CSS, fluid 640px tables and highlighted key paragraphs.
+- Applied the same design to generated/saved previews, section editor, HTML clipboard/export and automatic Beehiiv draft creation. Stored source stays canonical for editing; no editions were sent.
+- Normalized legacy standalone sponsor rows to prevent reordered content, preserved ad links, and resolved relative images to absolute site URLs.
+- Verified actual September 7 draft in browser and added a captured-edition DOM integration regression. Full suite passed 53 suites/385 tests before final regressions; final design tests passed 6/6. Targeted lint passed. Development newsletter route HTTP 200.
+- Beehiiv manual transfer uses HTML Snippet. Downloaded files include UTF-8 and viewport metadata. Actual email-client delivery rendering has not been tested.
+- Rollback baseline: 78c193c. Intended commit: feat: add branded newsletter email design. Pre-existing image deletion, tsconfig.tsbuildinfo and sc/ unchanged.
