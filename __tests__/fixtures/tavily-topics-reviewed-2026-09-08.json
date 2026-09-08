@@ -1,0 +1,34 @@
+[
+  {
+    "title_es": "Aldea Huasteca en X",
+    "summary_es": "El Universal San Luis Potosí destaca la Aldea Huasteca y su conexión con la cultura tének en una publicación de X (Twitter). 1.7K visualizaciones en la página indexada.",
+    "title_en": "Aldea Huasteca on X",
+    "summary_en": "El Universal San Luis Potosí highlights Aldea Huasteca and its connection to tének culture in a post on X (Twitter). 1.7K views shown on the indexed page.",
+    "title_de": "Aldea Huasteca auf X",
+    "summary_de": "El Universal San Luis Potosí stellt Aldea Huasteca und seine Verbindung zur Kultur der Tének in einem Beitrag auf X (Twitter) vor. 1.7K Aufrufe auf der indexierten Seite.",
+    "title_ja": "Xで紹介されたアルデア・ワステカ",
+    "summary_ja": "El Universal San Luis PotosíはX (Twitter)の投稿で、アルデア・ワステカとテネク文化とのつながりを紹介しています。 インデックス済みページに1.7K回の閲覧を表示。",
+    "category": "culture",
+    "source": "X (Twitter) · Tavily",
+    "url": "https://x.com/ElUniversal_SLP/status/2096644220899451029",
+    "evidence": {
+      "platform": "X (Twitter)",
+      "url": "https://x.com/ElUniversal_SLP/status/2096644220899451029",
+      "publishedAt": "2026-09-06T00:00:00.000Z",
+      "metric": {
+        "type": "views",
+        "value": 1700,
+        "display": "1.7K"
+      },
+      "description": "#DestinosPotosinos 🍃 Conoce la Aldea Huasteca, hotel que revive la esencia ancestral de la cultura tének en SLP ✨ ",
+      "dateEvidence": "4:58 PM · Sep 6, 2026",
+      "id": "https://x.com/ElUniversal_SLP/status/2096644220899451029",
+      "title": "#DestinosPotosinos 🍃 Conoce la Aldea Huasteca, hotel que revive la esencia ancestral de la cultura tének en SLP ✨ ",
+      "source": "X (Twitter) · Tavily",
+      "evidenceKind": "indexed_post",
+      "observedAt": "2026-09-08T15:41:34.085Z",
+      "comments": [],
+      "score": 1.6901329173934232
+    }
+  }
+]

@@ -35,4 +35,11 @@ describe('newsletter email design', () => {
     expect(renderNewsletterDesign(html)).toBe(html);
     expect(renderNewsletterDesign('')).toBe('');
   });
+
+  it('uses compact side gutters so mobile readers retain usable text width', () => {
+    const html = renderNewsletterDesign(NEWSLETTER_TEMPLATE);
+    expect(html).toContain('padding:12px 0');
+    expect(html).toContain('padding:24px 16px;font-family:');
+    expect(html).not.toContain('padding:16px 8px');
+  });
 });

@@ -27,7 +27,7 @@ describe('social publication continuity', () => {
       for await (const chunk of request) chunks.push(chunk);
       const body = chunks.length ? JSON.parse(Buffer.concat(chunks).toString()) : null;
       if (request.method === 'GET') {
-        response.end(JSON.stringify(rows.filter(row => row.active).map(row => ({ id: row.id }))));
+        response.end(JSON.stringify(rows.filter(row => row.active)));
       } else if (request.method === 'POST') {
         const inserted = body.map((row: object, index: number) => ({ ...row, id: `new-${index}` }));
         rows.push(...inserted);
@@ -61,7 +61,16 @@ describe('social publication continuity', () => {
   });
 
   test('an empty refresh cannot clear the published section', async () => {
-    await expect(publishSocialTopics(client, [])).rejects.toThrow('At least three');
+    await expect(publishSocialTopics(client, [])).rejects.toThrow('At least one');
     expect(rows.filter(row => row.active).map(row => row.id)).toEqual(['previous-selection']);
+  });
+
+  test('refreshes one topic while retaining two previous sources and their dates', async () => {
+    rows = captured.map((topic, index) => ({ ...topic, id: `previous-${index}`, active: true, created_at: topic.evidence.observedAt }));
+    expect(await publishSocialTopics(client, [captured[0]])).toBe(1);
+    const active = rows.filter(row => row.active);
+    expect(active).toHaveLength(3);
+    expect(new Set(active.map(row => row.url)).size).toBe(3);
+    expect(active.find(row => row.id === 'previous-1')?.created_at).toBe(captured[1].evidence.observedAt);
   });
 });

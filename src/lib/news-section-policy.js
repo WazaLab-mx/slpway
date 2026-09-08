@@ -36,7 +36,7 @@ function sameStory(first, second) {
 function hasSocialEvidence(text) {
   const normalized = normalizeText(text);
   const platform = /\b(redes sociales|reddit|tiktok|facebook|instagram|youtube|twitter|en x|social media)\b/;
-  const conversation = /\b(viral|viralizo|viralizaron|viralizado|viraliza|viralizan|tendencia|tendencias|debate|reacciones|comentarios|respuestas|conversacion|conversaciones|memes|compartido|compartieron|views|reactions|comments|replies|discussion|trending)\b/;
+  const conversation = /\b(viral|viralizo|viralizaron|viralizado|viraliza|viralizan|tendencia|tendencias|debate|reacciones|comentarios|respuestas|conversacion|conversaciones|memes|compartido|compartieron|visualizaciones|views|reactions|comments|replies|discussion|trending)\b/;
   return platform.test(normalized) && conversation.test(normalized);
 }
 

@@ -9,47 +9,34 @@ export interface AdPlacementData {
 export function injectAdsIntoHtml(html: string, ads: AdPlacementData[]): string {
   let result = html;
 
-  const sectionMarkers: Record<string, { top: RegExp; bottom: RegExp | null }> = {
-    top: {
-      top: /<!-- OPENING HOOK -->[\s\S]{0,1500}?<\/td>\s*<\/tr>/i,
-      bottom: /<!-- OPENING HOOK -->[\s\S]{0,1500}?<\/td>\s*<\/tr>\s*<tr>\s*<td[^>]*style="[^"]*background/i
-    },
-    middle: {
-      top: /📖 From the Blog[\s\S]{0,1000}?<\/td>\s*<\/tr>\s*<tr>\s*<td/i,
-      bottom: /📖 From the Blog[\s\S]{0,1000}?<\/td>\s*<\/tr>\s*<tr>\s*<td[^>]*style="[^"]*background.*?C75B39/i
-    },
-    bottom: {
-      top: /cta[\s\S]{0,500}?<\/td>\s*<\/tr>/i,
-      bottom: null
-    }
-  };
-
   for (const ad of ads) {
-    const adHtml = `
-          <tr>
-            <td style="padding: 20px 30px; background-color: #F9FAFB; text-align: center;">
-              <div style="max-width: 600px; margin: 0 auto; border: 1px dashed #d1d5db; border-radius: 8px; padding: 15px;">
-                <p style="font-size: 10px; color: #9ca3af; margin: 0 0 10px 0; text-transform: uppercase;">Sponsored</p>
-                ${wrapAdWithTracking(ad.html, ad.ad_id)}
-              </div>
-            </td>
-          </tr>
-        `;
-
-    const markers = sectionMarkers[ad.placement];
-    if (!markers) continue;
-
-    const insertionPoint = findInsertionPoint(result, ad.placement, markers);
-    
-    if (insertionPoint) {
-      result = result.slice(0, insertionPoint) + adHtml + result.slice(insertionPoint);
-    }
+    const insertionPoint = findInsertionPoint(result, ad.placement);
+    if (insertionPoint === null) continue;
+    const adHtml = `<table data-newsletter-ad="sponsor" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;table-layout:fixed;margin:20px 0">
+<tr><td style="padding:0;text-align:left">
+<p style="font-family:Arial,Helvetica,sans-serif;font-size:10px;line-height:1.5;color:#666666;margin:0 0 8px;text-transform:uppercase;letter-spacing:1px">Sponsored</p>
+${wrapAdWithTracking(ad.html, ad.ad_id)}
+</td></tr></table>`;
+    const ancestors: string[] = [];
+    result.slice(0, insertionPoint).replace(/<(\/?)(table|tbody|thead|tfoot|tr|td|th)\b[^>]*>/gi, (tag, closing, name) => {
+      if (closing) ancestors.pop();
+      else ancestors.push(name.toLowerCase());
+      return tag;
+    });
+    const parent = ancestors[ancestors.length - 1];
+    const insertion = ['table', 'tbody', 'thead', 'tfoot'].includes(parent)
+      ? `<tr><td style="padding:0">${adHtml}</td></tr>` : adHtml;
+    result = result.slice(0, insertionPoint) + insertion + result.slice(insertionPoint);
   }
 
   return result;
 }
 
-function findInsertionPoint(html: string, placement: string, markers: { top: RegExp; bottom: RegExp | null }): number | null {
+function findInsertionPoint(html: string, placement: string): number | null {
+  const marker = `<!-- AD_PLACEMENT_${placement.toUpperCase()} -->`;
+  const markerIndex = html.indexOf(marker);
+  if (markerIndex !== -1) return markerIndex + marker.length;
+
   if (placement === 'top') {
     const match = html.match(/<!-- OPENING HOOK -->[\s\S]{0,2000}?<\/td>\s*<\/tr>/i);
     if (match && match.index !== undefined) {
@@ -78,6 +65,8 @@ function findInsertionPoint(html: string, placement: string, markers: { top: Reg
   }
 
   if (placement === 'bottom') {
+    const closingIndex = html.search(/<!-- CLOSING(?:_FOOTER_PLACEHOLDER)? -->/i);
+    if (closingIndex !== -1) return closingIndex;
     const ctaMatch = html.match(/Discover More of San Luis/i);
     if (ctaMatch && ctaMatch.index !== undefined) {
       const afterCta = html.slice(ctaMatch.index);

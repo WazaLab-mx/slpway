@@ -1,9 +1,19 @@
 import captured from './fixtures/social-topics-2026-09-07.json';
 import sources from './fixtures/social-candidates-2026-09-07.json';
+import indexed from './fixtures/tavily-topics-reviewed-2026-09-08.json';
 const { resolveSocialTopics } = require('../netlify/functions/lib/social-curation');
 const items = captured.map(topic => ({ ...topic, item: sources.findIndex(source => source.url === topic.url) + 1 }));
 
 describe('social curation provenance', () => {
+  test('labels indexed views without inventing sampled replies or participants', () => {
+    const topic = indexed[0];
+    const result = resolveSocialTopics([{ ...topic, item: 1 }], [topic.evidence]);
+    expect(result[0].url).toBe(topic.url);
+    expect(result[0].summary_en).toContain('1.7K views shown on the indexed page');
+    expect(result[0].summary_en).not.toContain('replies observed');
+    expect(resolveSocialTopics([{ ...topic, item: 1 }], [{ ...topic.evidence, metric: null }])).toEqual([]);
+    expect(resolveSocialTopics([{ ...topic, item: 1 }], [{ url: topic.url, observedAt: topic.evidence.observedAt }])).toEqual([]);
+  });
   test('anchors links to observed posts and adds real sampled activity in every language', () => {
     const topics = resolveSocialTopics([{ ...items[0], item: 1, url: 'https://example.org/invented', source: 'invented' }], [sources[1]]);
     expect(topics[0].url).toContain('/comments/1w9clmp/');
