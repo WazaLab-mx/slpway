@@ -1,5 +1,10 @@
 # Change Log
 
+## [2026-09-08] Add missed ChuyMine show
+
+- Added El Show de Elo y Chuy at Teatro de la Paz, September 19, 2026 at 17:00, confirmed by chuymine.com/pages/acerca-de?tab=eventos and TicketNet event 170. Four languages, family-friendly and calendar enabled; ending time and ticket price remain unspecified rather than inferred.
+- Live duplicate query found no existing ChuyMine event. Insert/readback assertions passed for ID 8b697588-0ec8-452f-86e7-6bdd9102f008, date/time, calendar visibility and official ticket link. Backup: backups/events-2026-09-08/chuymine-added.json. Data-only update; no application code changed.
+
 ## [2026-09-08] Xantolo seasonal feature and refreshed events
 
 - Validation: 66 suites / 432 tests passed; TypeScript and targeted ESLint passed. Independent review findings were fixed and re-reviewed. Browser checked desktop/mobile guide, readable hero colors, 390px no overflow, old-URL redirect, home without FENAPO links, ongoing grouping, new-event search, source link and date-only Fotovision structured data. Removed monthly grid height clipping and clamped the live-expiring hero carousel index.

@@ -1,5 +1,10 @@
 # Commit Log
 
+## 2026-09-08 — chore: record verified ChuyMine calendar addition
+
+- Baseline5157d61. User identified the omitted September19 show. Verified official artist calendar and TicketNet https://ventas.ticketnet.com.mx/eventperformances.asp?evt=170 (17:00), checked live duplicates, inserted four-language calendar row8b697588-0ec8-452f-86e7-6bdd9102f008 and asserted readback.
+- Data-only change documented here; code and schema unchanged. Local evidence/rollback: backups/events-2026-09-08/chuymine-before.json and chuymine-added.json. Reverting this log commit does not remove the database record.
+
 ## 2026-09-08 — feat: replace FENAPO with Xantolo and refresh event calendars
 
 - Verification: 66 suites / 432 tests pass, tsc --noEmit --incremental false passes, targeted ESLint passes. Two old integration cases were corrected/restored after the first full run: invalid array input remains safe, and a frozen-clock test now distinguishes ongoing today from already ended today. Final independent review has no blocking findings. Mobile calendar has no 5000px clipping, old month groups become localized ongoing, and carousel shrink no longer crashes.

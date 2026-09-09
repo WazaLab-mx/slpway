@@ -1,5 +1,9 @@
 # Session Context Log - Coding Agent
 
+## Follow-up 2026-09-08 — ChuyMine omission corrected
+
+Added El Show de Elo y Chuy / ChuyMine, Teatro de la Paz, September19 2026 at17:00 after the user identified the omission. Official artist site and TicketNet event170 confirm it. ID8b697588-0ec8-452f-86e7-6bdd9102f008; four locales, family-friendly, add_to_cultural_calendar=true. No duplicate found; live insertion/readback checks passed. Unknown end_time stays null so the internal23:59 expiry bound is not shown as a show end. Official source https://ventas.ticketnet.com.mx/eventperformances.asp?evt=170. Data-only addition brings this refresh to21 inserted entries. Evidence saved under backups/events-2026-09-08/chuymine-*.json. No application-code changes.
+
 ## Session 2026-09-08 — Xantolo and event calendar refresh
 
 Final verification: 66 suites / 432 tests, full TypeScript and targeted ESLint passed. Browser verified 390px geometry, source links, unknown-time schema, locale-preserving redirect, no home FENAPO links and new-event search. Independent review fixes include carousel active-index clamping, hydration-safe coming-up cards, null-end ranges, all-listing expiry coverage, localized ongoing grouping and removal of monthly grid height clipping. No remaining blocking review findings.
