@@ -5,7 +5,10 @@ import { useRouter } from 'next/router';
 import { CalendarIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { Event } from '@/types';
-import { supabase } from '@/lib/supabase';
+import { supabase, getSafetyDateBuffer } from '@/lib/supabase';
+import { filterUpcomingEvents } from '@/lib/event-dates';
+import { getEventSchedule } from '@/lib/event-schedule';
+import { useUpcomingEvents } from '@/hooks/useUpcomingEvents';
 import { buildEventPath } from '@/lib/event-slug';
 import { localizeEvents } from '@/lib/localizeEvent';
 import EventCard from '@/components/EventCard';
@@ -28,14 +31,13 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     .from('events')
     .select('*')
     .lte('start_date', weekEnd.toISOString())
-    .gte('end_date', now.toISOString())
-    .order('start_date', { ascending: true })
-    .limit(24);
+    .or(`end_date.gte.${getSafetyDateBuffer(1)},end_date.is.null`)
+    .order('start_date', { ascending: true });
 
   return {
     props: {
       ...(await serverSideTranslations(locale ?? 'es', ['common'])),
-      events: localizeEvents(events || [], locale),
+      events: localizeEvents(filterUpcomingEvents(events, now).slice(0, 24), locale),
       weekStart: now.toISOString(),
       weekEnd: weekEnd.toISOString(),
     },
@@ -52,7 +54,8 @@ function formatRange(startIso: string, endIso: string, locale: string): string {
   return `${start} – ${end}`;
 }
 
-export default function EventsThisWeek({ events, weekStart, weekEnd }: ThisWeekProps) {
+export default function EventsThisWeek({ events: initialEvents, weekStart, weekEnd }: ThisWeekProps) {
+  const events = useUpcomingEvents(initialEvents);
   const { locale = 'es' } = useRouter();
   const isEs = locale === 'es';
 
@@ -74,8 +77,8 @@ export default function EventsThisWeek({ events, weekStart, weekEnd }: ThisWeekP
       item: {
         '@type': 'Event',
         name: event.title,
-        startDate: event.start_date,
-        endDate: event.end_date,
+        startDate: getEventSchedule(event, locale).startDate,
+        ...(getEventSchedule(event, locale).endDate ? { endDate: getEventSchedule(event, locale).endDate } : {}),
         url: `https://www.sanluisway.com${buildEventPath(event)}`,
         location: { '@type': 'Place', name: event.location, address: 'San Luis Potosí, MX' },
       },

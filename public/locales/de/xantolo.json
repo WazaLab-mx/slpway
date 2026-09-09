@@ -1,0 +1,87 @@
+{
+  "banner": {
+    "badge": "Die Zeit des Erinnerns",
+    "title": "Xantolo & Tag der Toten",
+    "description": "Cempasúchil-Blumen, Opfergaben und lebendige Traditionen. Entdecke San Luis Potosí von der Hauptstadt bis zur Huasteca.",
+    "cta": "Den Xantolo-Reiseführer entdecken"
+  },
+  "hero": {
+    "eyebrow": "San Luis Potosí · Tag der Toten",
+    "subtitle": "Eine Tradition, die uns verbindet.",
+    "description": "Eine Einladung zum Erinnern, Teilen und Kennenlernen des lebendigen Kulturerbes der Huasteca Potosina.",
+    "alt": "Feier zum Tag der Toten in San Luis Potosí",
+    "date": "31. Oktober – 2. November",
+    "dateLabel": "Traditioneller Zeitraum · je nach Gemeinde",
+    "location": "Hauptstadt & Huasteca Potosina"
+  },
+  "status": {
+    "title": "Die Reise planen, das Programm prüfen",
+    "description": "Dies ist ein Kulturführer für 2026. Termine, Veranstaltungsorte, Auftritte und kommunale Aktivitäten warten auf offizielle Bestätigung. Der 31. Oktober–2. November bezeichnet den traditionellen Zeitraum, kein bestätigtes Veranstaltungsprogramm für 2026."
+  },
+  "intro": {
+    "eyebrow": "Mehr als ein Fest",
+    "title": "Erinnerung ist eine lebendige Tradition.",
+    "description": "In der Huasteca heißt Xantolo, die Erinnerung an Verstorbene willkommen zu heißen. Opfergaben, Essen, Musik und Tanz verbinden Familien und Gemeinden. Jede Gemeinschaft prägt die Tradition auf eigene Weise. Begegne ihr als respektvoller Gast."
+  },
+  "places": {
+    "title": "Zwei Wege, die Saison zu entdecken",
+    "capital": {
+      "title": "Die Hauptstadt San Luis Potosí",
+      "description": "Informiere dich im offiziellen Stadtprogramm über Kulturveranstaltungen und öffentliche Altäre. Diese städtischen Feiern unterscheiden sich von den Gemeinschaftsritualen der Huasteca.",
+      "tag": "Kultur in der Stadt"
+    },
+    "huasteca": {
+      "title": "Huasteca Potosina",
+      "description": "Lerne die Tradition in den Gemeinden kennen. Wähle ein Ziel, kontaktiere lokale Gastgeber oder Guides und kläre vor der Reise, welche Aktivitäten Besucher willkommen heißen.",
+      "tag": "Eine Reise zum lebendigen Kulturerbe"
+    }
+  },
+  "traditions": {
+    "title": "Was Xantolo ausmacht",
+    "offerings": {
+      "title": "Altäre & Opfergaben",
+      "description": "Blumen, Kerzen und Speisen ehren geliebte Menschen. Frage, bevor du einen Altar fotografierst oder private Räume betrittst."
+    },
+    "dance": {
+      "title": "Musik & Tanz",
+      "description": "Gemeinschaftstänze und Musik gehören zur Saison. Respektiere die Mitwirkenden, ihren Raum und die Regeln jeder Gemeinschaft."
+    },
+    "food": {
+      "title": "Essen & Erinnerung",
+      "description": "Gemeinsames Essen begleitet das Gedenken. Unterstütze lokale Küchen und frage nach der Bedeutung der Opfergaben."
+    },
+    "remembrance": {
+      "title": "Zeit zum Erinnern",
+      "description": "Friedhofsbesuche und Opfergaben sind Ausdruck des Gedenkens. Respektiere private Momente und bitte vor Fotos um Erlaubnis."
+    }
+  },
+  "planning": {
+    "title": "Achtsam reisen",
+    "transport": {
+      "title": "Den Ausgangspunkt wählen",
+      "description": "Hauptstadt und Huasteca brauchen unterschiedliche Reisepläne. Kläre Unterkunft, Straßenverhältnisse und Rückfahrt mit örtlichen Anbietern."
+    },
+    "essentials": {
+      "title": "Das Wichtigste mitnehmen",
+      "description": "Packe Wasser, bequeme Schuhe, Sonnenschutz und leichten Regenschutz ein. Prüfe vor der Abfahrt das Wetter am Reiseziel."
+    },
+    "family": {
+      "title": "Das eigene Tempo finden",
+      "description": "Plane mit Kindern oder älteren Angehörigen Pausen, einen Treffpunkt und die Rückfahrt vor Abendaktivitäten. Erkundige dich nach Zugänglichkeit und Fußwegen."
+    }
+  },
+  "sources": {
+    "title": "Die Quellen kennenlernen",
+    "description": "Kultureller Hintergrund: INAH und das mexikanische Kulturministerium. Aktuelle Programme findest du bei staatlichen und kommunalen Veranstaltern.",
+    "inah": "INAH · Tag der Toten",
+    "culture": "Kulturministerium · Xantolo"
+  },
+  "actions": {
+    "official": "Offizielle Kulturprogramme ansehen",
+    "calendar": "Zum Veranstaltungskalender"
+  },
+  "seo": {
+    "title": "Xantolo 2026 & Tag der Toten in San Luis Potosí",
+    "description": "Entdecke Xantolo und den Tag der Toten: Traditionen der Huasteca, San Luis Potosís Hauptstadt, respektvolles Reisen und offizielle Programme."
+  }
+}

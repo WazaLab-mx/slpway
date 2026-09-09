@@ -1,6 +1,6 @@
 import { Event } from '@/types';
 import { ClockIcon } from '@heroicons/react/24/outline';
-import { getUpcomingEvents } from '@/utils/eventHelpers';
+import { useUpcomingEvents } from '@/hooks/useUpcomingEvents';
 import EventCard from '@/components/EventCard';
 
 interface EventComingUpProps {
@@ -13,7 +13,9 @@ interface EventComingUpProps {
  * in a compact horizontal card format.
  */
 export default function EventComingUp({ events, count = 5 }: EventComingUpProps) {
-  const upcoming = getUpcomingEvents(events, count);
+  const upcoming = [...useUpcomingEvents(events)]
+    .sort((a, b) => Date.parse(a.start_date) - Date.parse(b.start_date))
+    .slice(0, count);
 
   if (upcoming.length === 0) return null;
 

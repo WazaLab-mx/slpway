@@ -1,8 +1,11 @@
+import { getEventSchedule } from '@/lib/event-schedule';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Event } from '@/types';
-import { supabase } from '@/lib/supabase';
+import { supabase, getSafetyDateBuffer } from '@/lib/supabase';
+import { filterUpcomingEvents } from '@/lib/event-dates';
+import { useUpcomingEvents } from '@/hooks/useUpcomingEvents';
 import EventHeroCarousel from '@/components/EventHeroCarousel';
 import EventCategoryFilter, { EventCategory } from '@/components/EventCategoryFilter';
 import EventSearchBar from '@/components/EventSearchBar';
@@ -40,11 +43,11 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
     const { data: eventsData, error } = await supabase
       .from('events')
       .select('*')
-      .gte('end_date', new Date().toISOString())
+      .or(`end_date.gte.${getSafetyDateBuffer(1)},end_date.is.null`)
       .order('start_date', { ascending: true });
     if (error) throw error;
 
-    const allEvents = localizeEvents(eventsData || [], locale);
+    const allEvents = localizeEvents(filterUpcomingEvents(eventsData), locale);
     let filteredEvents = allEvents;
     if (category !== 'all') {
       const filterCategory = category === 'cultural' ? 'arts-culture' : category;
@@ -88,7 +91,14 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   }
 };
 
-export default function EventsPage({ events, allEvents, categoryCounts, category }: EventsPageProps) {
+export default function EventsPage({ events: initialEvents, allEvents: initialAllEvents, categoryCounts: initialCategoryCounts, category }: EventsPageProps) {
+  const events = useUpcomingEvents(initialEvents);
+  const allEvents = useUpcomingEvents(initialAllEvents);
+  const categoryCounts = Object.fromEntries(Object.keys(initialCategoryCounts).map(category => [
+    category, category === 'all' ? allEvents.length : allEvents.filter(event =>
+      event.category === (category === 'cultural' ? 'arts-culture' : category)
+    ).length,
+  ]));
   const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState<EventCategory>(category as EventCategory);
   const [filteredEvents, setFilteredEvents] = useState<Event[]>(events);
@@ -145,8 +155,9 @@ export default function EventsPage({ events, allEvents, categoryCounts, category
               '@type': 'Event',
               '@id': `https://www.sanluisway.com${buildEventPath(event)}`,
               name: event.title,
-              startDate: event.start_date,
-              endDate: event.end_date,
+              startDate: getEventSchedule(event, router.locale ?? 'es').startDate,
+              ...(getEventSchedule(event, router.locale ?? 'es').endDate
+                ? { endDate: getEventSchedule(event, router.locale ?? 'es').endDate } : {}),
               url: `https://www.sanluisway.com${buildEventPath(event)}`,
               inLanguage: 'es-MX',
               eventStatus: 'https://schema.org/EventScheduled',

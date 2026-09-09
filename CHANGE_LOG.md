@@ -1,5 +1,16 @@
 # Change Log
 
+## [2026-09-08] Xantolo seasonal feature and refreshed events
+
+- Validation: 66 suites / 432 tests passed; TypeScript and targeted ESLint passed. Independent review findings were fixed and re-reviewed. Browser checked desktop/mobile guide, readable hero colors, 390px no overflow, old-URL redirect, home without FENAPO links, ongoing grouping, new-event search, source link and date-only Fotovision structured data. Removed monthly grid height clipping and clamped the live-expiring hero carousel index.
+
+- Replaced the home FENAPO promotion and retired event landing page with a responsive Xantolo / Day of the Dead guide in English, Spanish, German and Japanese. The old URL redirects with its locale preserved; sitemap and related links use the new guide. Retired FENAPO blog guides remain archived but are excluded from home promotion.
+- Distinguished the traditional October 31–November 2 season from unconfirmed municipal programs for 2026. Corrected the existing Xantolo database entry's unsupported times and linked the official culture portal.
+- Audited 106 existing event rows and searched primary sources for September 8, 2026–March 8, 2027. Published 20 unique calendar entries across 11 new programs, including 12 separately dated IMSS theatre performances and 15 family-friendly entries. Added cultural presentations, Fotovision, CEART Noche Patria, theatre and junior golf; no additional confirmed January–March events beyond existing Avatar were found.
+- Stored four-language descriptions, official source URLs and verified times. Unknown times remain null and display as pending; internal full-day expiry bounds do not appear as public schedules or timed structured data. Live readback confirmed every inserted record and no duplicate title/date pairs.
+- Eight expired events are excluded from public calendars; historical records remain available. Cleared promotional flags on two expired records. Shared Mexico City expiry rules retain ongoing events and refresh cached lists in open tabs.
+- Local data rollback/evidence: backups/events-2026-09-08/ includes pre-change snapshots, inserted IDs, final state, curated source data and the fresh INBAL calendar HTML. No secrets or schema changes.
+
 ## [2026-09-07] Real social sources and always-visible trends
 
 - Retrieved live r/SanLuisPotosi hot posts and recent replies, verified active conversations, and captured real inputs for regression tests. Reduced collection to two feeds after per-thread requests hit rate limits.

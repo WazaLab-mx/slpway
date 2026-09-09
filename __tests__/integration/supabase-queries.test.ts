@@ -12,6 +12,9 @@ jest.mock('@/lib/logger', () => ({
 }));
 
 describe('Supabase Query Helpers', () => {
+  beforeEach(() => jest.useFakeTimers().setSystemTime(new Date('2026-09-08T18:00:00Z')));
+  afterEach(() => jest.useRealTimers());
+
   describe('filterUpcomingEvents', () => {
     it('returns empty array for null input', () => {
       expect(filterUpcomingEvents(null)).toEqual([]);
@@ -25,16 +28,19 @@ describe('Supabase Query Helpers', () => {
       expect(filterUpcomingEvents([])).toEqual([]);
     });
 
-    it('includes events starting today', () => {
-      const today = new Date();
-      today.setHours(12, 0, 0, 0);
-
+    it('includes events still ongoing today but excludes those already finished today', () => {
       const events = [
         {
           id: '1',
           title: 'Today Event',
-          start_date: today.toISOString(),
-          end_date: today.toISOString(),
+          start_date: '2026-09-08T09:00:00-06:00',
+          end_date: '2026-09-08T13:00:00-06:00',
+        },
+        {
+          id: 'finished',
+          title: 'Finished Today',
+          start_date: '2026-09-08T08:00:00-06:00',
+          end_date: '2026-09-08T11:00:00-06:00',
         },
       ];
 
@@ -101,7 +107,7 @@ describe('Supabase Query Helpers', () => {
       expect(result[0].title).toBe('Ongoing Festival');
     });
 
-    it('handles events with missing end_date (defaults to 2h after start)', () => {
+    it('includes future events with missing end_date', () => {
       const futureStart = new Date();
       futureStart.setDate(futureStart.getDate() + 1);
 

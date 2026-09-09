@@ -48,7 +48,7 @@ export const STATIC_ROUTES: StaticRoute[] = [
   { path: '/festival-primavera-2026',                 changefreq: 'weekly',  priority: 0.7 },
   { path: '/events/cara-sucia-country-fest-2026',     changefreq: 'weekly',  priority: 0.8 },
   { path: '/events/maraton-tangamanga-2026',          changefreq: 'weekly',  priority: 0.8 },
-  { path: '/events/fenapo-2026',                      changefreq: 'weekly',  priority: 0.8 },
+  { path: '/events/xantolo-2026',                     changefreq: 'weekly',  priority: 0.8 },
   { path: '/events/copa-potosi-2026',                 changefreq: 'weekly',  priority: 0.8 },
   { path: '/events/feria-de-la-enchilada-2026',       changefreq: 'weekly',  priority: 0.8 },
   { path: '/events/medio-maraton-uaslp-2026',         changefreq: 'weekly',  priority: 0.8 },

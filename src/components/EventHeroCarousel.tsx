@@ -20,13 +20,14 @@ export default function EventHeroCarousel({ events }: EventHeroCarouselProps) {
   const [current, setCurrent] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const slides = events.slice(0, 5);
+  const activeIndex = Math.min(current, Math.max(0, slides.length - 1));
 
   const goTo = useCallback(
     (idx: number) => setCurrent((idx + slides.length) % slides.length),
     [slides.length]
   );
-  const next = useCallback(() => goTo(current + 1), [current, goTo]);
-  const prev = useCallback(() => goTo(current - 1), [current, goTo]);
+  const next = useCallback(() => goTo(activeIndex + 1), [activeIndex, goTo]);
+  const prev = useCallback(() => goTo(activeIndex - 1), [activeIndex, goTo]);
 
   useEffect(() => {
     if (isPaused || slides.length <= 1) return;
@@ -36,7 +37,7 @@ export default function EventHeroCarousel({ events }: EventHeroCarouselProps) {
 
   if (slides.length === 0) return null;
 
-  const event = slides[current];
+  const event = slides[activeIndex];
   const catInfo = getCategoryInfo(event.category);
   const hasImage = !!event.image_url;
 
@@ -52,7 +53,7 @@ export default function EventHeroCarousel({ events }: EventHeroCarouselProps) {
         <div
           key={slide.id}
           className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-            idx === current ? 'opacity-100 z-10' : 'opacity-0 z-0'
+            idx === activeIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
           }`}
         >
           {slide.image_url ? (
@@ -146,7 +147,7 @@ export default function EventHeroCarousel({ events }: EventHeroCarouselProps) {
               key={idx}
               onClick={() => goTo(idx)}
               className={`rounded-full transition-all duration-300 ${
-                idx === current
+                idx === activeIndex
                   ? 'w-8 h-2 bg-primary'
                   : 'w-2 h-2 bg-white/40 hover:bg-white/60'
               }`}

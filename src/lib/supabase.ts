@@ -1,3 +1,4 @@
+import { filterUpcomingEvents } from './event-dates';
 import { createPagesBrowserClient } from '@supabase/auth-helpers-nextjs'
 import { Database } from '@/types/supabase'
 import { logger } from './logger'
@@ -83,34 +84,7 @@ export const getFeaturedPlaces = async (locale: SupportedLocale = 'en') => {
   return data.map(place => mapPlaceData(place, locale));
 }
 
-// Helper function to filter events by date consistently across all pages
-export const filterUpcomingEvents = (events: any[] | null) => {
-  if (!events || !Array.isArray(events)) return [];
-
-  const currentDate = new Date();
-  currentDate.setHours(0, 0, 0, 0); // Set to start of day
-
-  return events.filter(event => {
-    // Parse the start date to properly compare regardless of format
-    const eventStartDate = new Date(event.start_date);
-    eventStartDate.setHours(0, 0, 0, 0); // Set to start of day
-
-    // If end_date is missing, create a default end date 2 hours after start
-    let eventEndDate: Date;
-    if (!event.end_date) {
-      eventEndDate = new Date(event.start_date);
-      // Add 2 hours to the start time
-      eventEndDate.setHours(eventEndDate.getHours() + 2);
-    } else {
-      eventEndDate = new Date(event.end_date);
-    }
-
-    // Include events that:
-    // 1. Start today or in the future, OR
-    // 2. Are currently ongoing (end date is today or in the future)
-    return eventStartDate >= currentDate || eventEndDate >= currentDate;
-  });
-};
+export { filterUpcomingEvents } from './event-dates';
 
 // Get a safety buffer date for use in Supabase queries
 export const getSafetyDateBuffer = (daysBack = 7) => {

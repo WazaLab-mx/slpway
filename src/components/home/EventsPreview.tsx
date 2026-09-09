@@ -1,3 +1,4 @@
+import { useUpcomingEvents } from '@/hooks/useUpcomingEvents';
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { Event } from '@/types';
@@ -29,7 +30,8 @@ const CATEGORY_COLORS: Record<string, string> = {
 
 const CARD_GAP = 24; // matches gap-6
 
-export default function EventsPreview({ events }: EventsPreviewProps) {
+export default function EventsPreview({ events: initialEvents }: EventsPreviewProps) {
+  const events = useUpcomingEvents(initialEvents);
   const { t } = useTranslation('common');
   const { locale } = useRouter();
   const trackRef = useRef<HTMLDivElement>(null);
@@ -131,7 +133,8 @@ export default function EventsPreview({ events }: EventsPreviewProps) {
             {items.map((event) => {
               const start = new Date(event.start_date);
               const multiDay =
-                new Date(event.start_date).toDateString() !== new Date(event.end_date).toDateString();
+                !!event.end_date && new Date(event.start_date).toLocaleDateString('en-CA', { timeZone: 'America/Mexico_City' }) !==
+                  new Date(event.end_date).toLocaleDateString('en-CA', { timeZone: 'America/Mexico_City' });
               return (
                 <Link
                   key={event.id}

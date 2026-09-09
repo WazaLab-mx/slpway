@@ -1,172 +1,27 @@
-import { useState, useEffect, useCallback } from 'react';
-import Image from 'next/image';
+﻿import Image from 'next/image';
 import Link from 'next/link';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { useTranslation } from 'next-i18next';
 
-interface EventSlide {
-  key: string;
-  href: string;
-  image: string;
-  imageFit?: 'cover' | 'contain';
-  bgColor?: string;
-  gradient: string;
-  badgeBg: string;
-  badgeText: string;
-  badgeDot: string;
-  ctaGradient: string;
-  ctaHover: string;
-  ctaShadow: string;
-}
-
-const slides: EventSlide[] = [
-  {
-    key: 'fenapo',
-    href: '/events/fenapo-2026',
-    image: '/images/events/fenapo-2026-logo.png',
-    imageFit: 'contain',
-    bgColor: 'bg-black',
-    gradient: 'from-blue-950/80 via-purple-900/70 to-indigo-950/80',
-    badgeBg: 'bg-purple-400/20 border-purple-400/30',
-    badgeText: 'text-purple-300',
-    badgeDot: 'bg-purple-400',
-    ctaGradient: 'from-purple-400 to-purple-500',
-    ctaHover: 'hover:from-purple-300 hover:to-purple-400',
-    ctaShadow: 'shadow-purple-500/25',
-  },
-];
-
-const EventCarouselBanner = () => {
-  const { t } = useTranslation('common');
-  const [current, setCurrent] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const [fading, setFading] = useState(false);
-
-  const goTo = useCallback((index: number) => {
-    setFading(true);
-    setTimeout(() => {
-      setCurrent(index);
-      setFading(false);
-    }, 300);
-  }, []);
-
-  const next = useCallback(() => {
-    goTo((current + 1) % slides.length);
-  }, [current, goTo]);
-
-  useEffect(() => {
-    if (paused) return;
-    const timer = setInterval(next, 6000);
-    return () => clearInterval(timer);
-  }, [paused, next]);
-
-  const slide = slides[current];
-  const ns = `eventCarousel.${slide.key}`;
-
-  const stats = [
-    { value: t(`${ns}.stat1Value`), label: t(`${ns}.stat1Label`) },
-    { value: t(`${ns}.stat2Value`), label: t(`${ns}.stat2Label`) },
-    { value: t(`${ns}.stat3Value`), label: t(`${ns}.stat3Label`) },
-    { value: t(`${ns}.stat4Value`), label: t(`${ns}.stat4Label`) },
-  ];
-
+export default function EventCarouselBanner() {
+  const { t } = useTranslation('xantolo');
   return (
-    <section
-      className="relative overflow-hidden min-h-[420px] md:min-h-[380px]"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-    >
-      {/* Base background color (shown when image uses contain) */}
-      {slide.bgColor && <div className={`absolute inset-0 ${slide.bgColor}`} />}
-
-      {/* Background image */}
-      <div
-        className={
-          slide.imageFit === 'contain'
-            ? 'absolute inset-6 md:inset-10 lg:inset-12'
-            : 'absolute inset-0'
-        }
-      >
-        <Image
-          src={slide.image}
-          alt={t(`${ns}.title`)}
-          fill
-          className={`${slide.imageFit === 'contain' ? 'object-contain' : 'object-cover'} transition-opacity duration-500 ${fading ? 'opacity-0' : 'opacity-100'}`}
-          sizes="100vw"
-          loading="lazy"
-        />
+    <section aria-labelledby="xantolo-banner-title" className="relative isolate overflow-hidden bg-[#101b32] text-white">
+      <div className="absolute inset-0 -z-10 lg:left-1/3">
+        <Image src="/images/events/xantolo-image-3.jpg" alt="" fill sizes="100vw" className="object-cover object-center" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#101b32] via-[#101b32]/85 to-[#101b32]/40" />
       </div>
-
-      {/* Gradient overlay */}
-      <div className={`absolute inset-0 bg-gradient-to-r ${slide.gradient}`} />
-
-      {/* Stars effect */}
-      <div
-        className="absolute inset-0 opacity-20"
-        style={{
-          background:
-            'radial-gradient(2px 2px at 20px 30px, white, transparent), radial-gradient(2px 2px at 40px 70px, white, transparent), radial-gradient(1px 1px at 90px 40px, white, transparent), radial-gradient(1px 1px at 130px 80px, white, transparent), radial-gradient(2px 2px at 160px 30px, white, transparent)',
-          backgroundSize: '200px 100px',
-        }}
-      />
-
-      <div className={`relative container mx-auto px-4 md:px-8 lg:px-16 py-10 md:py-14 transition-opacity duration-300 ${fading ? 'opacity-0' : 'opacity-100'}`}>
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-3xl mx-auto lg:mx-0">
-          {/* Badge */}
-          <div className={`inline-flex items-center gap-2 ${slide.badgeBg} border rounded-full px-4 py-1.5 mb-4`}>
-            <span className={`w-2 h-2 rounded-full ${slide.badgeDot} animate-pulse`} />
-            <span className={`${slide.badgeText} text-xs font-bold uppercase tracking-widest`}>
-              {t(`${ns}.badge`)}
-            </span>
-          </div>
-
-          {/* Title */}
-          <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mb-3 leading-tight drop-shadow-lg">
-            {t(`${ns}.title`)}
-          </h3>
-
-          {/* Description */}
-          <p className="text-white/90 text-sm md:text-base max-w-2xl mb-5 leading-relaxed drop-shadow">
-            {t(`${ns}.description`)}
-          </p>
-
-          {/* Stats */}
-          <div className="flex flex-wrap justify-center lg:justify-start gap-6 mb-6">
-            {stats.map((s) => (
-              <div key={s.label} className="text-center">
-                <p className="text-2xl font-bold text-white drop-shadow">{s.value}</p>
-                <p className="text-xs text-white/70 uppercase tracking-wider">{s.label}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <Link
-            href={slide.href}
-            className={`inline-flex items-center gap-2 bg-gradient-to-r ${slide.ctaGradient} text-white px-8 py-3.5 rounded-full font-bold text-base ${slide.ctaHover} transition-all duration-300 hover:scale-105 shadow-lg ${slide.ctaShadow}`}
-          >
-            {t(`${ns}.cta`)}
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+      <div className="container mx-auto px-5 py-14 md:px-8 md:py-20 lg:px-16">
+        <div className="max-w-2xl">
+          <p className="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-amber-300"><span aria-hidden="true" className="h-px w-8 bg-orange-400" />{t('banner.badge')}</p>
+          <h2 id="xantolo-banner-title" className="font-serif text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">{t('banner.title')}</h2>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-200 md:text-lg">{t('banner.description')}</p>
+          <p className="mt-6 text-sm font-semibold text-amber-200">2026 <span aria-hidden="true" className="mx-2">/</span> {t('hero.location')}</p>
+          <Link href="/events/xantolo-2026" className="group mt-8 inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3.5 font-bold text-slate-950 transition-colors hover:bg-amber-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-300">
+            {t('banner.cta')}<ArrowRightIcon aria-hidden="true" className="h-5 w-5 motion-safe:transition-transform motion-safe:group-hover:translate-x-1" />
           </Link>
-        </div>
-
-        {/* Dots */}
-        <div className="flex justify-center lg:justify-start gap-2 mt-8">
-          {slides.map((s, i) => (
-            <button
-              key={s.key}
-              onClick={() => goTo(i)}
-              aria-label={`Go to ${s.key}`}
-              className={`h-2.5 rounded-full transition-all duration-300 ${
-                i === current ? 'bg-white w-8' : 'bg-white/40 hover:bg-white/60 w-2.5'
-              }`}
-            />
-          ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default EventCarouselBanner;
+}

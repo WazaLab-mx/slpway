@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import { useEventClock } from '@/hooks/useUpcomingEvents';
+import { filterUpcomingEvents } from '@/lib/event-dates';
+import { useId, useState } from 'react';
+import { useRouter } from 'next/router';
 import { Event } from '@/types';
 import { ChevronDownIcon, ChevronUpIcon, CalendarDaysIcon } from '@heroicons/react/24/outline';
 import { groupEventsByMonth } from '@/utils/eventHelpers';
@@ -13,7 +16,16 @@ interface EventMonthlyTimelineProps {
  * Each month section is collapsible and shows a grid of event cards.
  */
 export default function EventMonthlyTimeline({ events }: EventMonthlyTimelineProps) {
-  const grouped = groupEventsByMonth(events);
+  const now = useEventClock();
+  const { locale = 'es' } = useRouter();
+  const upcoming = now ? filterUpcomingEvents(events, now) : events;
+  const ongoing = now ? upcoming.filter(event => Date.parse(event.start_date) <= now.getTime()) : [];
+  const scheduled = now ? upcoming.filter(event => Date.parse(event.start_date) > now.getTime()) : upcoming;
+  const ongoingLabels: Record<string, string> = { es: 'En curso', en: 'Ongoing', de: 'Laufend', ja: '開催中' };
+  const grouped = {
+    ...(ongoing.length ? { [ongoingLabels[locale] || ongoingLabels.en]: ongoing } : {}),
+    ...groupEventsByMonth(scheduled),
+  };
   const months = Object.keys(grouped);
 
   if (months.length === 0) return null;
@@ -47,6 +59,7 @@ function MonthSection({
   defaultOpen: boolean;
 }) {
   const [isOpen, setIsOpen] = useState(defaultOpen);
+  const sectionId = useId();
 
   return (
     <div className="relative pl-14 md:pl-20">
@@ -56,6 +69,8 @@ function MonthSection({
       {/* Month header */}
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+        aria-controls={sectionId}
         className="flex items-center gap-3 w-full text-left group mb-4"
       >
         <CalendarDaysIcon className="w-5 h-5 text-secondary flex-shrink-0" />
@@ -76,9 +91,9 @@ function MonthSection({
 
       {/* Events grid, collapsible */}
       <div
-        className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-hidden transition-all duration-300 ${
-          isOpen ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0'
-        }`}
+        id={sectionId}
+        hidden={!isOpen}
+        className={isOpen ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4' : 'hidden'}
       >
         {events.map((event) => (
           <EventCard key={event.id} event={event} variant="grid" />

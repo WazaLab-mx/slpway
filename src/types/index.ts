@@ -52,6 +52,11 @@ export interface Event {
   description: string | null;
   start_date: string;
   end_date: string;
+  time?: string | null;
+  date?: string | null;
+  start_time?: string | null;
+  end_time?: string | null;
+  website?: string | null;
   location: string;
   category: 'sports' | 'cultural' | 'arts-culture' | 'music' | 'culinary' | 'community-social' | 'wellness' | 'other';
   image_url: string | null;

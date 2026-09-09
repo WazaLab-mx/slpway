@@ -1,3 +1,4 @@
+import { getEventSchedule } from '@/lib/event-schedule';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,7 +13,10 @@ import {
   ArrowLeftIcon
 } from '@heroicons/react/24/outline';
 import { Event } from '@/types';
-import { supabase } from '@/lib/supabase';
+import { supabase, getSafetyDateBuffer } from '@/lib/supabase';
+import { filterUpcomingEvents } from '@/lib/event-dates';
+import { useUpcomingEvents } from '@/hooks/useUpcomingEvents';
+import EventOfficialLink from '@/components/EventOfficialLink';
 import { buildEventPath, buildEventSlug, extractIdPrefix, isFullUuid } from '@/lib/event-slug';
 import { localizeEvent, localizeEvents } from '@/lib/localizeEvent';
 import SEO from '@/components/common/SEO';
@@ -114,9 +118,8 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
       .select("*")
       .eq('category', category)
       .neq('id', event.id)
-      .gte('end_date', new Date().toISOString())
-      .order('start_date', { ascending: true })
-      .limit(3);
+      .or(`end_date.gte.${getSafetyDateBuffer(1)},end_date.is.null`)
+      .order('start_date', { ascending: true });
 
     if (relatedError) throw relatedError;
 
@@ -124,7 +127,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
       props: {
         ...(await serverSideTranslations(locale ?? 'es', ['common'])),
         event: localizeEvent(event, locale),
-        relatedEvents: localizeEvents(relatedEvents || [], locale),
+        relatedEvents: localizeEvents(filterUpcomingEvents(relatedEvents).slice(0, 3), locale),
       },
       revalidate: 600,
     };
@@ -153,14 +156,8 @@ const formatDate = (dateString: string, locale: string) =>
     timeZone: 'America/Mexico_City',
   });
 
-const formatTime = (dateString: string, locale: string) =>
-  new Date(dateString).toLocaleTimeString(languageTag(locale), {
-    hour: '2-digit',
-    minute: '2-digit',
-    timeZone: 'America/Mexico_City',
-  });
-
-export default function EventDetail({ event, relatedEvents }: EventDetailProps) {
+export default function EventDetail({ event, relatedEvents: initialRelatedEvents }: EventDetailProps) {
+  const relatedEvents = useUpcomingEvents(initialRelatedEvents);
   const router = useRouter();
   const { t } = useTranslation('common');
   const locale = router.locale ?? 'es';
@@ -207,6 +204,7 @@ export default function EventDetail({ event, relatedEvents }: EventDetailProps) 
   };
 
   const categoryInfo = getCategoryInfo(event.category);
+  const schedule = getEventSchedule(event, locale);
 
   return (
     <>
@@ -225,8 +223,8 @@ export default function EventDetail({ event, relatedEvents }: EventDetailProps) 
           "@context": "https://schema.org",
           "@type": "Event",
           "name": event.title,
-          "startDate": event.start_date,
-          "endDate": event.end_date,
+          "startDate": schedule.startDate,
+          ...(schedule.endDate ? { "endDate": schedule.endDate } : {}),
           "url": `https://www.sanluisway.com${locale === 'en' ? '' : `/${locale}`}${buildEventPath(event)}`,
           "inLanguage": languageTag(locale),
           ...(event.description && { "description": event.description }),
@@ -313,7 +311,7 @@ export default function EventDetail({ event, relatedEvents }: EventDetailProps) 
                 <div>
                   <p className="text-sm text-white/70">Hora</p>
                   <p className="font-medium">
-                    {formatTime(event.start_date, locale)} - {formatTime(event.end_date, locale)}
+                    {schedule.label}
                   </p>
                 </div>
               </div>
@@ -380,6 +378,7 @@ export default function EventDetail({ event, relatedEvents }: EventDetailProps) 
               <h2 className="text-3xl font-bold mb-6 font-serif">Sobre el evento</h2>
               <div className="prose prose-lg max-w-none mb-12">
                 <p>{event.description}</p>
+                <EventOfficialLink website={event.website} locale={locale} />
               </div>
 
               <div className="mb-12">
@@ -423,7 +422,7 @@ export default function EventDetail({ event, relatedEvents }: EventDetailProps) 
                     <div>
                       <p className="font-medium">Hora</p>
                       <p className="text-gray-600">
-                        {formatTime(event.start_date, locale)} - {formatTime(event.end_date, locale)}
+                        {schedule.label}
                       </p>
                     </div>
                   </div>

@@ -1,4 +1,5 @@
 import { Event } from '@/types';
+import { filterUpcomingEvents } from '@/lib/event-dates';
 
 const TZ = 'America/Mexico_City';
 
@@ -76,10 +77,7 @@ export const groupEventsByMonth = (events: Event[]): Record<string, Event[]> => 
 
 /** Get the next N upcoming events from today */
 export const getUpcomingEvents = (events: Event[], count: number): Event[] => {
-  const now = new Date();
-  now.setHours(0, 0, 0, 0);
-  return events
-    .filter((e) => new Date(e.start_date) >= now)
+  return filterUpcomingEvents(events)
     .sort((a, b) => new Date(a.start_date).getTime() - new Date(b.start_date).getTime())
     .slice(0, count);
 };

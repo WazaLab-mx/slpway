@@ -1,5 +1,16 @@
 # Commit Log
 
+## 2026-09-08 — feat: replace FENAPO with Xantolo and refresh event calendars
+
+- Verification: 66 suites / 432 tests pass, tsc --noEmit --incremental false passes, targeted ESLint passes. Two old integration cases were corrected/restored after the first full run: invalid array input remains safe, and a frozen-clock test now distinguishes ongoing today from already ended today. Final independent review has no blocking findings. Mobile calendar has no 5000px clipping, old month groups become localized ongoing, and carousel shrink no longer crashes.
+
+- Baseline: 2ad04c237c162d5830a7be90aa1274b420c240e0. Scope: seasonal promotion/page, four locale resources, date filtering and schedule presentation, source links, regressions and project logs.
+- Data update: 20 new records / 11 programs / 15 family-friendly entries; 126 total rows, eight expired excluded, two expired promotional flags cleared. Existing Xantolo row 33b6f134-d3ac-4af0-93e5-6fb33b93d385 now describes the traditional season and pending official program rather than unsupported precise times.
+- Primary sources: cultura.slp.gob.mx, slp.gob.mx, eventos.visitasanluispotosi.com, escenariosimsscultura.inba.gob.mx, fmg.org.mx. INBAL search cache was stale; direct HTTP confirmed all twelve theatre performance dates before publication. Separate sessions are separate rows, never a continuous multiweek theatre event.
+- Date precision uses existing database columns: nonnull date marks a curated calendar date, null time/start_time means unknown, and end_time is populated only when known. No SQL migration. A first bulk insert rejected a text marker in SQL time atomically; zero rows inserted by that attempt. Corrected to null and verified the successful batch.
+- Rollback: revert this scoped code commit; database changes require separate restoration from backups/events-2026-09-08/before-1788912758729.json. Added IDs are recorded in inserted.json; after.json stores the final state. Do not revert unrelated xantolo-image-1.jpg deletion, tsconfig.tsbuildinfo or sc/.
+- Production build runs through Netlify after push, preserving the running local development server's .next cache.
+
 ## 2026-09-07 — feat: publish verified local social conversations
 
 - Baseline: 07b5c86. Replaces RSS-news-as-trends with direct Reddit posts plus sampled recent responses. No new secrets or database schema changes.

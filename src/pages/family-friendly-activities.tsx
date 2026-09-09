@@ -8,7 +8,9 @@ import { ArrowLeftIcon, CalendarIcon, MapPinIcon } from '@heroicons/react/24/out
 import SEO from '@/components/common/SEO';
 import AdUnit from '@/components/common/AdUnit';
 import GuideCTA from '@/components/common/GuideCTA';
-import { supabase } from '@/lib/supabase';
+import { supabase, getSafetyDateBuffer } from '@/lib/supabase';
+import { filterUpcomingEvents } from '@/lib/event-dates';
+import { useUpcomingEvents } from '@/hooks/useUpcomingEvents';
 import { Event } from '@/types';
 import { buildEventPath } from '@/lib/event-slug';
 import { localizeEvents } from '@/lib/localizeEvent';
@@ -18,14 +20,13 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     .from('events')
     .select('*')
     .eq('family_friendly', true)
-    .gte('end_date', new Date().toISOString())
-    .order('start_date', { ascending: true })
-    .limit(6);
+    .or(`end_date.gte.${getSafetyDateBuffer(1)},end_date.is.null`)
+    .order('start_date', { ascending: true });
 
   return {
     props: {
       ...(await serverSideTranslations(locale ?? 'es', ['common'])),
-      familyEvents: localizeEvents(familyEvents || [], locale),
+      familyEvents: localizeEvents(filterUpcomingEvents(familyEvents).slice(0, 6), locale),
     },
     revalidate: 3600,
   };
@@ -277,7 +278,8 @@ const colorMap: Record<string, { bg: string; border: string; text: string; badge
   orange: { bg: 'bg-orange-50', border: 'border-orange-300', text: 'text-orange-700', badge: 'bg-orange-600' },
 };
 
-export default function FamilyFriendlyActivities({ familyEvents = [] }: { familyEvents?: Event[] }) {
+export default function FamilyFriendlyActivities({ familyEvents: initialFamilyEvents = [] }: { familyEvents?: Event[] }) {
+  const familyEvents = useUpcomingEvents(initialFamilyEvents);
   const { locale } = useRouter();
   const isEs = locale === 'es';
 

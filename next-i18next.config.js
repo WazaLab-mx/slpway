@@ -7,7 +7,7 @@ module.exports = {
     locales: ['en', 'es', 'de', 'ja'],
     localeDetection: false,
   },
-  ns: ['common'],
+  ns: ['common', 'xantolo'],
   defaultNS: 'common',
   fallbackLng: 'en',
   localePath: path.resolve('./public/locales'),

@@ -1,0 +1,87 @@
+{
+  "banner": {
+    "badge": "La temporada de recordar",
+    "title": "Xantolo y Día de Muertos",
+    "description": "Cempasúchil, ofrendas y tradiciones vivas. Descubre otra cara de San Luis Potosí, de la capital a la Huasteca.",
+    "cta": "Explorar la guía de Xantolo"
+  },
+  "hero": {
+    "eyebrow": "San Luis Potosí · Día de Muertos",
+    "subtitle": "Una tradición que nos reúne.",
+    "description": "Una invitación a recordar, compartir y descubrir el patrimonio vivo de la Huasteca Potosina.",
+    "alt": "Celebración de Día de Muertos en San Luis Potosí",
+    "date": "31 de octubre – 2 de noviembre",
+    "dateLabel": "Temporada tradicional · varía por comunidad",
+    "location": "Capital y Huasteca Potosina"
+  },
+  "status": {
+    "title": "Planea la temporada, confirma el programa",
+    "description": "Esta es una guía cultural para 2026. Las fechas, sedes, presentaciones y actividades municipales están pendientes de confirmación oficial. El 31 de octubre–2 de noviembre corresponde a la temporada tradicional, no a un programa confirmado para 2026."
+  },
+  "intro": {
+    "eyebrow": "Más que una celebración",
+    "title": "La memoria es una tradición viva.",
+    "description": "En la Huasteca, Xantolo es una forma de recibir la memoria de quienes han partido. Las ofrendas, la comida, la música y la danza reúnen a familias y comunidades. Cada comunidad da su propio sentido a la tradición; acércate como un visitante respetuoso."
+  },
+  "places": {
+    "title": "Dos formas de descubrir la temporada",
+    "capital": {
+      "title": "San Luis Potosí capital",
+      "description": "Busca actividades culturales y ofrendas públicas en el programa oficial de la ciudad. Estas celebraciones urbanas son distintas de los rituales comunitarios de la Huasteca.",
+      "tag": "Una escapada cultural urbana"
+    },
+    "huasteca": {
+      "title": "Huasteca Potosina",
+      "description": "Conoce la tradición en su entorno comunitario. Elige un destino, contacta a anfitriones o guías locales y confirma qué actividades reciben visitantes antes de viajar.",
+      "tag": "Un viaje al patrimonio vivo"
+    }
+  },
+  "traditions": {
+    "title": "Lo que da sentido al Xantolo",
+    "offerings": {
+      "title": "Altares y ofrendas",
+      "description": "Flores, velas y alimentos honran a los seres queridos. Pregunta antes de fotografiar un altar o entrar a un espacio familiar."
+    },
+    "dance": {
+      "title": "Música y danza",
+      "description": "Las danzas comunitarias y la música acompañan la temporada. Respeta a sus participantes, su espacio y las reglas de cada comunidad."
+    },
+    "food": {
+      "title": "Sabores y memoria",
+      "description": "La comida compartida acompaña el recuerdo. Apoya a las cocineras y cocineros locales y pregunta qué significa cada ofrenda."
+    },
+    "remembrance": {
+      "title": "Tiempo de recordar",
+      "description": "Las visitas y ofrendas en los panteones son actos de memoria. Respeta los momentos privados y pide permiso antes de tomar fotografías."
+    }
+  },
+  "planning": {
+    "title": "Viaja con cuidado",
+    "transport": {
+      "title": "Elige tu base",
+      "description": "La capital y la Huasteca requieren planes de viaje distintos. Confirma alojamiento, condiciones del camino y transporte de regreso con prestadores locales."
+    },
+    "essentials": {
+      "title": "Lleva lo esencial",
+      "description": "Lleva agua, calzado cómodo, protección solar y una capa ligera para lluvia. Revisa el clima de tu destino antes de salir."
+    },
+    "family": {
+      "title": "Encuentra tu ritmo",
+      "description": "Con niñas, niños o personas mayores, planea descansos, un punto de encuentro y el regreso antes de las actividades nocturnas. Pregunta por accesos y distancias a pie."
+    }
+  },
+  "sources": {
+    "title": "Consulta las fuentes",
+    "description": "Contexto cultural: INAH y Secretaría de Cultura de México. Para programas vigentes, consulta a los organizadores estatales y municipales.",
+    "inah": "INAH · Día de Muertos",
+    "culture": "Secretaría de Cultura · Xantolo"
+  },
+  "actions": {
+    "official": "Consultar programas culturales oficiales",
+    "calendar": "Ver el calendario de eventos"
+  },
+  "seo": {
+    "title": "Xantolo 2026 y Día de Muertos en San Luis Potosí",
+    "description": "Descubre Xantolo y Día de Muertos en San Luis Potosí: tradiciones de la Huasteca, la capital, consejos para visitar y programas oficiales."
+  }
+}

@@ -18,6 +18,7 @@ import {
 } from '@/components/home';
 import { supabase, getSafetyDateBuffer, filterUpcomingEvents } from '@/lib/supabase';
 import { getBlogPostsBySlugs, getBlogPosts, SupportedLocale } from '@/lib/blog';
+import { selectHomeBlogPosts } from '@/lib/home-blog';
 import { localizeEvents } from '@/lib/localizeEvent';
 import { getRandomPotosinoBrands } from '@/lib/brands';
 import TangamangaBanner from '@/components/TangamangaBanner';
@@ -58,9 +59,8 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       .from('events')
       .select("*")
       .eq('add_to_cultural_calendar', true)
-      .gte('end_date', safetyDateString)
-      .order('start_date', { ascending: true })
-      .limit(12);
+      .or(`end_date.gte.${safetyDateString},end_date.is.null`)
+      .order('start_date', { ascending: true });
 
     if (eventsError) throw eventsError;
     const events = localizeEvents(filterUpcomingEvents(eventsData).slice(0, 8), locale);
@@ -81,16 +81,16 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     // Fetch featured brands
     const featuredBrandsData = await getRandomPotosinoBrands(6);
 
-    // Fetch blog posts for carousel (only the 6 shown; content included for read-time)
-    const blogPostsData = await getBlogPosts(blogLocale, 6);
+    // Leave room for current stories after retiring the FENAPO promotion.
+    const blogPostsData = await getBlogPosts(blogLocale, 12);
 
     return {
       props: {
-        ...(await serverSideTranslations(locale ?? 'es', ['common'])),
+        ...(await serverSideTranslations(locale ?? 'es', ['common', 'xantolo'])),
         events: events || [],
         featuredAdvertisers,
         featuredBrands: featuredBrandsData || [],
-        blogPosts: blogPostsData.slice(0, 6) || [],
+        blogPosts: selectHomeBlogPosts(blogPostsData),
       },
       revalidate: 300,
     };
@@ -98,7 +98,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     logger.error('Error fetching data:', error);
     return {
       props: {
-        ...(await serverSideTranslations(locale ?? 'es', ['common'])),
+        ...(await serverSideTranslations(locale ?? 'es', ['common', 'xantolo'])),
         events: [],
         featuredAdvertisers: [],
         featuredBrands: [],

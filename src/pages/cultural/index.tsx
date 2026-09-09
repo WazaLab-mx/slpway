@@ -3,7 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import { Event } from '@/types';
-import { supabase } from '@/lib/supabase';
+import { supabase, getSafetyDateBuffer } from '@/lib/supabase';
+import { filterUpcomingEvents } from '@/lib/event-dates';
+import { useUpcomingEvents } from '@/hooks/useUpcomingEvents';
 import { localizeEvents } from '@/lib/localizeEvent';
 import { CalendarIcon, MapPinIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import EventList from '@/components/EventList';
@@ -16,7 +18,9 @@ interface CulturalPageProps {
   events: Event[];
 }
 
-export default function CulturalPage({ events }: CulturalPageProps) {
+export default function CulturalPage({ events: initialEvents }: CulturalPageProps) {
+
+  const events = useUpcomingEvents(initialEvents);
 
   // Function to format date
   const formatDate = (dateString: string) => {
@@ -600,14 +604,14 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
       .from('events')
       .select("*")
       .eq('add_to_cultural_calendar', true)
-      .gte('end_date', new Date().toISOString())
-      .order('start_date', { ascending: true })
-      .limit(6);
+      .or(`end_date.gte.${getSafetyDateBuffer(1)},end_date.is.null`)
+      .order('start_date', { ascending: true });
 
     if (error) {
       console.error('Supabase error:', error);
       // Return empty events array instead of throwing
       return {
+        revalidate: 300,
         props: {
           ...(await serverSideTranslations(locale ?? 'es', ['common'])),
           events: [],
@@ -616,15 +620,17 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     }
 
     return {
+      revalidate: 300,
       props: {
         ...(await serverSideTranslations(locale ?? 'es', ['common'])),
-        events: localizeEvents(events || [], locale),
+        events: localizeEvents(filterUpcomingEvents(events).slice(0, 6), locale),
       },
     };
   } catch (error) {
     console.error('Error in getStaticProps:', error);
     // Return empty events array on any error
     return {
+      revalidate: 300,
       props: {
         ...(await serverSideTranslations(locale ?? 'es', ['common'])),
         events: [],
