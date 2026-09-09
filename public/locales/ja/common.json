@@ -516,11 +516,11 @@
   },
   "tangamanga": {
     "title": "タンガマンガ公園I",
-    "subtitle": "メキシコ第2位の都市公園 - 自然と冒険が出会う場所",
+    "subtitle": "散策路 · スポーツ · 博物館 · 庭園",
     "hours": "営業時間",
-    "hoursMon": "月曜：6時〜12時",
-    "hoursTueSun": "火〜日：6時〜20時",
-    "hoursNote": "月曜午後は休園",
+    "hoursMon": "月：05:00–11:00",
+    "hoursTueSun": "火〜土：05:00–22:30 · 日：05:00–18:00",
+    "hoursNote": "最終入場：月10:30 · 火〜土21:30 · 日17:00",
     "admission": "入場料",
     "freeEntry": "無料",
     "location": "所在地",
@@ -558,7 +558,7 @@
       "sports3": "ランニングコースと運動エリア",
       "sports4": "子供の遊び場エリア",
       "culturalTitle": "文化施設",
-      "cultural1": "在来種と外来種のいる動物園",
+      "cultural1": "動物園は改修のため一時休園中です。訪問前にCECURTへご確認ください。",
       "cultural2": "天文投影のあるプラネタリウム",
       "cultural3": "インタラクティブ展示のある科学博物館",
       "cultural4": "歴史的なタンナリーの建物にあるタンガマンガ・エコミュージアム",
@@ -584,7 +584,7 @@
       "familyTitle": "ファミリー",
       "family1": "子供の遊び場エリア",
       "family2": "湖でのボート乗り",
-      "family3": "動物園と植物園訪問",
+      "family3": "家族での散歩や屋外遊び",
       "family4": "タンガマンガ・スプラッシュ・ウォーターパーク",
       "family5": "ファミリーフェスティバルとピクニック",
       "family6": "子供向け教育ワークショップ"
@@ -626,11 +626,11 @@
     "faq": {
       "title": "FAQ",
       "q1": "Is the park free?",
-      "a1": "Yes, completely free including zoo and science museum. Planetarium and aquarium have small fees (20-50 MXN).",
+      "a1": "公園の入場は無料です。博物館、スポーツ施設、特別イベントには別途料金がかかる場合があります。 動物園は改修のため一時休園中です。訪問前にCECURTへご確認ください。",
       "q2": "What are the hours?",
-      "a2": "Monday: 5-11 AM. Tuesday-Saturday: 5 AM-10:30 PM. Sunday: 5 AM-6 PM. Zoo: Tuesday-Sunday 9 AM-5 PM.",
+      "a2": "月：05:00–11:00. 火〜土：05:00–22:30 · 日：05:00–18:00. 最終入場：月10:30 · 火〜土21:30 · 日17:00. 動物園は改修のため一時休園中です。訪問前にCECURTへご確認ください。",
       "q3": "What can you do there?",
-      "a3": "Free zoo (100+ species), planetarium, aquarium, science museum, Japanese garden, botanical garden, theater, lakes, running trails, sports courts, bike rental.",
+      "a3": "散歩道や自転車道、スポーツエリア、庭園、掲載中の開催確認済みイベントを楽しめます。各施設の営業時間と入場条件をご確認ください。 動物園は改修のため一時休園中です。訪問前にCECURTへご確認ください。",
       "q4": "Is it safe?",
       "a4": "Yes, well-patrolled during hours. Avoid going alone after dark on weekdays.",
       "q5": "How big is it?",
@@ -642,19 +642,19 @@
       "q8": "How do I get to Parque Tangamanga by public transit?",
       "a8": "The park sits on Av. Dr. Salvador Nava. Several city bus routes stop at the main entrances: Ruta 23, 32, and 52 reach the east side (zoo). Rideshare and taxis drop visitors at any of the 8 gates.",
       "q9": "What can kids do at Parque Tangamanga?",
-      "a9": "Splash aquarium, the free zoo, Laberinto de las Ciencias (science museum), paddle boats on the lake, the Japanese garden, open theater performances on weekends, bike rentals, and multiple playgrounds. Most activities are free.",
+      "a9": "家族での散歩や遊具での遊びに加え、ムセオ・ラベリントの家族向けプログラムとチケットをご確認ください。 動物園は改修のため一時休園中です。訪問前にCECURTへご確認ください。",
       "q10": "What's the difference between Tangamanga I and Tangamanga II?",
       "a10": "Tangamanga I (this page) is the 411-hectare tourist park with the zoo, planetarium, aquarium, and gardens. Tangamanga II is a 189-hectare sports park built over SLP's old airport — focused on archery, running tracks, auto racing, and soccer fields. Both are free and both are in San Luis Potosí city limits.",
       "q11": "Is Parque Tangamanga bigger than Central Park?",
       "a11": "Yes. Parque Tangamanga I covers 411 hectares (1,015 acres), which is 70 hectares larger than New York's Central Park (341 ha / 843 acres). It is the second-largest urban park in Mexico.",
       "q12": "How long does it take to visit Parque Tangamanga?",
-      "a12": "Plan at least 3 to 4 hours for the main attractions (zoo, Japanese garden, lakes). A full visit including the planetarium, Splash aquarium, and Laberinto de las Ciencias takes a full day. Bring water and sunscreen — the park's altitude (1,864 m) and open layout make sun exposure significant.",
+      "a12": "楽しみたい活動をいくつか選び、休憩時間も確保しましょう。博物館やイベントの時間は訪問前に個別にご確認ください。 動物園は改修のため一時休園中です。訪問前にCECURTへご確認ください。",
       "q13": "Are dogs allowed at Parque Tangamanga?",
       "a13": "Yes, dogs are allowed on leash in the public walking areas of Parque Tangamanga I. Dogs are not permitted inside the zoo, planetarium, or aquarium. For an off-leash experience, Parque Tangamanga II has a dedicated fenced pet zone.",
       "q14": "Can I bring food to Parque Tangamanga?",
       "a14": "Yes. Picnics are welcome in the designated lawn areas. Glass containers and alcohol are not permitted. There are also food vendors and small restaurants inside the park, most active on weekends.",
       "q15": "What is the best time to visit Parque Tangamanga?",
-      "a15": "Weekend mornings (8 AM to noon) offer the best experience: cool temperatures, active zoo animals, open food stalls, and free weekend events at the open-air theater. Weekday mornings are quietest. Avoid Monday if you want full access — most attractions close for maintenance Monday afternoons."
+      "a15": "訪問日を決める前に、公園の開園時間と最新のイベント情報をご確認ください。月曜日は整備のため開園時間が短くなります。"
     },
     "maraton": {
       "badge": "Annual Event",
@@ -682,19 +682,15 @@
     },
     "quickAnswer": {
       "title": "Parque Tangamanga I at a glance",
-      "definition": "Parque Tangamanga I is a 411-hectare public urban park in San Luis Potosí, Mexico. It is the second-largest urban park in Mexico and is 70 hectares larger than New York's Central Park. The park opened in 1980 and is operated by CECURT (Centro Cultural Universitario Rafael del Villar). Entry to the park, the zoo, the Laberinto de las Ciencias, and the gardens is free of charge.",
+      "definition": "タンガマンガIは、サン・ルイス・ポトシにある散策路、スポーツエリア、庭園、文化施設を備えた公共都市公園です。公園への入場は無料ですが、各施設やイベントには個別の入場条件があります。 動物園は改修のため一時休園中です。訪問前にCECURTへご確認ください。",
       "keyFactsTitle": "Key facts",
       "keyFacts": [
-        "Size: 411 hectares (1,015 acres) — #2 urban park in Mexico",
-        "Admission: free (planetarium and aquarium charge $20–50 MXN)",
-        "Hours: Tuesday–Saturday 5 AM–10:30 PM · Sunday 5 AM–6 PM · Monday 5–11 AM (maintenance)",
-        "Location: Av. Dr. Salvador Nava, southeast San Luis Potosí",
-        "Opened: 1980 (zoo added in 1985)",
-        "Operator: CECURT (Centro Cultural Universitario Rafael del Villar)",
-        "Trees: over 400,000",
-        "Main attractions: zoo, planetarium, Splash aquarium, Laberinto de las Ciencias, Japanese garden, botanical garden, open-air theater, lakes"
+        "公園の入場は無料です。博物館、スポーツ施設、特別イベントには別途料金がかかる場合があります。",
+        "月：05:00–11:00 · 火〜土：05:00–22:30 · 日：05:00–18:00",
+        "最終入場：月10:30 · 火〜土21:30 · 日17:00",
+        "動物園は改修のため一時休園中です。訪問前にCECURTへご確認ください。"
       ],
-      "lastVerified": "Last verified by San Luis Way editorial team: April 17, 2026"
+      "lastVerified": "公園の開園時間と動物園の状況をCECURTで確認：2026年9月8日。"
     },
     "sources": {
       "title": "Sources used on this page",
@@ -704,7 +700,8 @@
         "INEGI 2020 Census — surrounding demographic data",
         "Maratón Tangamanga — official race organizer (maratontangamanga.com)"
       ]
-    }
+    },
+    "altText": "Parque Tangamanga I — 散策路 · スポーツ · 博物館 · 庭園"
   },
   "circleOfTrust": {
     "badge": "私たちの約束",

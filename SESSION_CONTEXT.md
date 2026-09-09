@@ -243,3 +243,40 @@ import Image from 'next/image';
 - Verified Tavily search and extraction live; published one reviewed X post about Aldea Huasteca showing 1.7K indexed views, retaining previous Reddit topics. Two broad discovery refreshes found no eligible candidates and correctly retained previous selection; Reddit feed returned HTTP 403. Evidence/rollback snapshots saved under ignored backups/. No claim of complete social-platform coverage.
 - Full suite: 56 suites / 400 tests passed before final provenance regression. Final focused verification: 7 suites / 33 tests passed. TypeScript noEmit passed; targeted lint passed. Independent source review identified a Facebook metric delimiter bug, corrected.
 - Baseline a81c5ee. Intended commit: fix: widen newsletter layouts and add Tavily social sources. Pre-existing image deletion, tsconfig.tsbuildinfo and sc/ preserved. No local production build while dev server runs.
+
+## 2026-09-08 - Additional events and Tangamanga I agenda
+- Baseline: d7edcb3. Intended commit: feat: publish Tangamanga I agenda and expand event calendar.
+- Researched primary organizer/ticket sources and compared against all 127 existing rows. Added 15 distinct additional events plus four Tangamanga I programs. Six separate Las cosas extraordinarias performances produce 24 new calendar records, bringing the database to 151 rows. No previous rows deleted; no duplicate title/start pairs.
+- Park additions: San Luis Bowl (September 18-20), Maleu Family Weekend (September 19-20), COSMOS (October 2-4), and Las cosas extraordinarias (October 16-18; six performances). Corrected existing Siddhartha and Enjambre venue labels to explicitly identify Tangamanga I using official sources. Tangamanga II listings remain excluded from the park page.
+- New park agenda uses live database data, ISR every 300 seconds, explicit I/1 venue matching, client expiry, localized cards and canonical event links. Added four-language namespace, empty/error states, responsive single/two/three-column layout, and date-only formatting without timezone shifts.
+- Replaced stale marathon promotion with a past-edition archive link. Corrected official park hours and temporary zoo closure across four-language visitor copy, FAQs and structured data. Sources: https://cecurt.slp.gob.mx/faq/ and organizer pages below.
+- Dates and known start times checked against primary listings/posters. Unknown times remain null; internal full-day bounds are not advertised as confirmed show schedules. No unsupported free-admission claims. The sold-out October 17 18:00 performance is labeled in descriptions as checked September 8. All new titles/descriptions supplied in English, Spanish, German and Japanese.
+- Evidence and rollback: ignored backups/events-more-2026-09-08/ contains before/after snapshots, inserted IDs, payload, research and publisher. Restore only recorded inserted IDs and the two changed venue fields if a data rollback is necessary; Git revert alone does not undo database writes.
+- Validation: 20 park helper/component tests and four official-copy tests passed; TypeScript --noEmit --incremental false passed. Local /es/parque-tangamanga HTTP 200 contains San Luis Bowl, COSMOS and the agenda section. Independent review confirmed date, localization and structured-hours fixes. Browser discovery returned no available browser, so visual desktop/mobile review could not be completed. No local production build was run, preserving the active development server.
+- Pre-existing image deletion, tsconfig.tsbuildinfo change and sc/ left outside this commit. Deployment evidence will be saved under the ignored backup directory.
+- Published program records and primary links:
+  - Pozada — Tribute to Mägo de Oz: 2026-09-19; https://arema.mx/e/20841/tributo-a-mago-de-oz-en-san-luis-potosi
+  - Domingo Aceves — Nunca en Domingo: 2026-09-24; https://arema.mx/e/20780/domingo-aceves%3A-nunca-en-domingo-en-san-luis-potosi
+  - Finísimas Personas — La Gira: 2026-09-25; https://arema.mx/e/20367/finisimas-personas-en-san-luis-potosi
+  - Rata Blanca — México 2026: 2026-09-30; https://arema.mx/e/20974/rata-blanca-mexico-2026-en-san-luis-potosi
+  - Mau Nieto — Stand Up Comedy: 2026-10-01; https://arema.mx/e/20448/mau-nieto-stand-up-comedy-san-luis-potosi
+  - Candlelit Tribute to Luis Miguel and José José: 2026-10-03; https://arema.mx/e/20851/tributo-a-luis-miguel-y-jose-jose-a-la-luz-de-las-velas-en-slp
+  - Z Mägo de Oz — Contacto Directo ft. Z Legacy: 2026-10-10; https://arema.mx/e/20999/z-mago-de-oz-contacto-directo-ft-z-legacy-en-san-luis-potosi
+  - Liz Cerón — Brujaja: 2026-10-22; https://arema.mx/e/20802/liz-ceron-%22brujaja%22-en-san-luis-potosi
+  - Sandro Malandro — Tour 26: 2026-10-23; https://arema.mx/e/20647/sandro-malandro-tour-2026-san-luis
+  - Shey Band — De Norte a Sur: 2026-11-14; https://arema.mx/e/20928/shey-band-de-norte-a-sur-en-san-luis-potosi
+  - Revenge — Metallica Experience: 2026-11-21; https://arema.mx/e/20822/revenge-metallica-experience-en-san-luis-potosi
+  - Lenin Ramírez and El Komander: 2026-11-21; https://arema.mx/e/21120/lenin-ramirez-el-komander-en-san-luis
+  - RENEE in San Luis Potosí: 2026-09-10; https://www.trueticket.com.mx/renee/product/renee-en-san-luis-potosi/
+  - Estupendulo Fest by PICNIC 7B: 2026-10-03; https://solcet.mx/estupendulofest
+  - OktoberFest La Legendaria 2026: 2026-10-24; https://solcet.mx/oktoberfest-lalegendaria
+  - San Luis Bowl 2026 — National Flag Football Tournament: 2026-09-18; https://app.sportwey.com/tournament/7b07bd83-99d8-11f1-93c0-0a2bbad5892d
+  - Malēu Family Weekend Experience 2026: 2026-09-19; https://www.maleustudio.com/
+  - Las cosas extraordinarias — Colectivo Escénico Koëtüs · 18:00: 2026-10-16; https://solcet.mx/lascosasextraordinarias
+  - Las cosas extraordinarias — Colectivo Escénico Koëtüs · 20:00: 2026-10-16; https://solcet.mx/lascosasextraordinarias
+  - Las cosas extraordinarias — Colectivo Escénico Koëtüs · 18:00: 2026-10-17; https://solcet.mx/lascosasextraordinarias
+  - Las cosas extraordinarias — Colectivo Escénico Koëtüs · 20:00: 2026-10-17; https://solcet.mx/lascosasextraordinarias
+  - Las cosas extraordinarias — Colectivo Escénico Koëtüs · 17:00: 2026-10-18; https://solcet.mx/lascosasextraordinarias
+  - Las cosas extraordinarias — Colectivo Escénico Koëtüs · 19:00: 2026-10-18; https://solcet.mx/lascosasextraordinarias
+  - COSMOS Festival Alienígena: 2026-10-02; https://arema.mx/e/20216/cosmos:-festival-alienigena-en-san-luis-potosi?r=1
+- Final targeted ESLint CLI check passed (exit 0). Next lint wrapper was stopped after a prolonged stall; direct ESLint used the existing project configuration.

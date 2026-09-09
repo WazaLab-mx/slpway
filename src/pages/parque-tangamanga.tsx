@@ -1,19 +1,38 @@
 import { GetStaticProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ClockIcon, MapPinIcon, TicketIcon, SunIcon, UsersIcon, SparklesIcon, HeartIcon, TrophyIcon, FireIcon, ArrowTrendingUpIcon, CalendarIcon } from '@heroicons/react/24/outline';
+import { ClockIcon, MapPinIcon, TicketIcon, SunIcon, UsersIcon, SparklesIcon, HeartIcon, TrophyIcon, FireIcon, ArrowTrendingUpIcon } from '@heroicons/react/24/outline';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import SEO from '@/components/common/SEO';
 import GuideCTA from '@/components/common/GuideCTA';
 import LastUpdated from '@/components/common/LastUpdated';
 import Head from 'next/head';
+import TangamangaEvents from '@/components/TangamangaEvents';
+import { Event } from '@/types';
+import { supabase, getSafetyDateBuffer } from '@/lib/supabase';
+import { getTangamangaOneEvents } from '@/lib/park-events';
+import { localizeEvents } from '@/lib/localizeEvent';
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  let events: Event[] = [];
+  let eventsUnavailable = false;
+  try {
+    const { data, error } = await supabase.from('events').select('*')
+      .or(`end_date.gte.${getSafetyDateBuffer(1)},end_date.is.null`)
+      .order('start_date', { ascending: true });
+    if (error) throw error;
+    events = localizeEvents(getTangamangaOneEvents<Event>(data), locale);
+  } catch {
+    eventsUnavailable = true;
+  }
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? 'es', ['common'])),
+      ...(await serverSideTranslations(locale ?? 'es', ['common', 'park-events'])),
+      events,
+      eventsUnavailable,
     },
+    revalidate: 300,
   };
 };
 
@@ -23,7 +42,7 @@ const tangamangaStructuredData = {
   name: 'Parque Tangamanga I',
   alternateName: 'Parque Tangamanga',
   description:
-    'Parque Tangamanga I is one of the largest urban parks in Mexico (411 hectares), located in San Luis Potosí. It features a zoo, planetarium, aquarium, Japanese garden, botanical garden, museums, theater, lakes, sports facilities, and over 400,000 trees.',
+    'Parque Tangamanga I is one of the largest urban parks in Mexico (411 hectares), located in San Luis Potosí. It features gardens, museums, lakes and sports facilities. The zoo is temporarily closed for renovation according to CECURT.',
   url: 'https://www.sanluisway.com/parque-tangamanga',
   image: 'https://www.sanluisway.com/images/parque-tangamanga/hero.jpg',
   address: {
@@ -44,13 +63,25 @@ const tangamangaStructuredData = {
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '06:00',
-      closes: '20:00',
+      dayOfWeek: ['Monday'],
+      opens: '05:00',
+      closes: '11:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '05:00',
+      closes: '22:30',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Sunday'],
+      opens: '05:00',
+      closes: '18:00',
     },
   ],
   amenityFeature: [
-    { '@type': 'LocationFeatureSpecification', name: 'Zoo', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Zoo', value: false },
     { '@type': 'LocationFeatureSpecification', name: 'Planetarium', value: true },
     { '@type': 'LocationFeatureSpecification', name: 'Aquarium', value: true },
     { '@type': 'LocationFeatureSpecification', name: 'Japanese Garden', value: true },
@@ -71,8 +102,9 @@ const tangamangaStructuredData = {
  *
  * @returns The React element for the Parque Tangamanga page
  */
-export default function ParqueTangamanga() {
+export default function ParqueTangamanga({ events = [], eventsUnavailable = false }: { events?: Event[]; eventsUnavailable?: boolean }) {
   const { t } = useTranslation('common');
+  const { t: parkT } = useTranslation('park-events');
 
   const faqs = Array.from({ length: 15 }, (_, i) => ({
     q: t(`tangamanga.faq.q${i + 1}`),
@@ -83,7 +115,7 @@ export default function ParqueTangamanga() {
     <>
       <SEO
         title="Parque Tangamanga I: Guía Completa del Parque Urbano de San Luis Potosí"
-        description="411 ha gratis en SLP: zoológico, planetario, acuario, jardín japonés y 400,000 árboles. Horarios, cómo llegar, qué no perderte — planea tu visita."
+        description="Parque Tangamanga I en SLP: próximos eventos, actividades, museos, jardines y lagos. Consulta la agenda y planea tu visita."
         keywords="parque tangamanga, parque tangamanga san luis potosi, tangamanga slp, zoo san luis potosi, planetario slp, parque urbano mexico, actividades familiares san luis potosi, jardin japones tangamanga"
         ogImage="/images/parque-tangamanga/historical.jpg"
         structuredData={tangamangaStructuredData}
@@ -97,9 +129,9 @@ export default function ParqueTangamanga() {
               '@context': 'https://schema.org',
               '@type': 'Article',
               headline: 'Parque Tangamanga I: Complete Guide to SLP\'s Largest Urban Park',
-              description: '411 hectares, free zoo, planetarium, science museum, Japanese garden and 400,000 trees. Hours, what to do, and visitor tips.',
+              description: 'Tangamanga I Park: upcoming events, museums, gardens, lakes and visitor tips. The zoo is temporarily closed for renovation.',
               datePublished: '2025-01-01',
-              dateModified: '2026-04-17',
+              dateModified: '2026-09-08',
               author: {
                 '@type': 'Person',
                 '@id': 'https://www.sanluisway.com/about#editorial-team',
@@ -151,7 +183,7 @@ export default function ParqueTangamanga() {
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
               {t('tangamanga.title')}
             </h1>
-            <LastUpdated date="2026-04-17" className="text-green-200 mb-2" />
+            <LastUpdated date="2026-09-08" className="text-green-200 mb-2" />
             <p className="text-xl text-white/90 max-w-2xl">
               {t('tangamanga.subtitle')}
             </p>
@@ -161,6 +193,7 @@ export default function ParqueTangamanga() {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16">
+        <TangamangaEvents events={events} unavailable={eventsUnavailable} />
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Main Description */}
           <div className="lg:col-span-2 space-y-12">
@@ -301,27 +334,9 @@ export default function ParqueTangamanga() {
               </div>
             </div>
 
-            {/* Maratón Callout */}
-            <section className="relative overflow-hidden rounded-2xl shadow-2xl" style={{ background: 'linear-gradient(135deg, #064e3b 0%, #134e4a 45%, #1e3a8a 100%)' }}>
-              <div className="absolute inset-0 opacity-20" style={{ background: 'radial-gradient(2px 2px at 20px 30px,white,transparent),radial-gradient(2px 2px at 60px 80px,white,transparent),radial-gradient(1px 1px at 120px 50px,white,transparent),radial-gradient(1px 1px at 180px 100px,white,transparent)', backgroundSize: '200px 130px' }} />
-              <div className="relative p-8 md:p-10 text-white">
-                <span className="inline-block bg-emerald-500/20 border border-emerald-400/40 rounded-full px-3 py-1 text-xs font-semibold text-emerald-200 mb-4">
-                  🏃 {t('tangamanga.maraton.badge')}
-                </span>
-                <h2 className="text-2xl md:text-3xl font-bold mb-3">{t('tangamanga.maraton.title')}</h2>
-                <p className="text-emerald-100 text-lg leading-relaxed mb-6 max-w-3xl">{t('tangamanga.maraton.subtitle')}</p>
-                <div className="flex flex-wrap items-center gap-4">
-                  <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg px-4 py-2 text-sm">
-                    <CalendarIcon className="w-4 h-4 text-emerald-300" />
-                    <span className="font-semibold">{t('tangamanga.maraton.date')}</span>
-                  </span>
-                  <Link href="/events/maraton-tangamanga-2026" className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-white font-bold rounded-lg px-5 py-2.5 transition-colors">
-                    {t('tangamanga.maraton.linkText')}
-                    <span aria-hidden>→</span>
-                  </Link>
-                </div>
-              </div>
-            </section>
+            <Link href="/events/maraton-tangamanga-2026" className="block rounded-xl border border-gray-200 bg-white p-5 text-primary underline hover:text-secondary focus-visible:outline focus-visible:outline-2">
+              {parkT('marathonArchive')}
+            </Link>
 
             {/* Tangamanga I vs II Comparison Table (GEO-optimized) */}
             <section aria-labelledby="comparison-heading" className="speakable bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-100">
@@ -359,7 +374,7 @@ export default function ParqueTangamanga() {
                     </tr>
                     <tr>
                       <td className="p-3 font-semibold text-gray-700">Main attractions</td>
-                      <td className="p-3 text-gray-800">Zoo, planetarium, Splash aquarium, Japanese garden, Laberinto de las Ciencias, theater, lakes</td>
+                      <td className="p-3 text-gray-800">Laberinto de las Ciencias, theater, gardens, lakes. {parkT('zooTitle')}.</td>
                       <td className="p-3 text-gray-800">Archery, auto racing track, sports courts, pet zone, running loops</td>
                     </tr>
                     <tr className="bg-gray-50">
@@ -613,48 +628,10 @@ export default function ParqueTangamanga() {
             </section>
 
             {/* Zoo Section */}
-            <section id="zoo" className="bg-white rounded-xl p-8 shadow-lg scroll-mt-20">
-              <div className="flex items-center space-x-3 mb-6">
-                <span className="text-4xl">🦁</span>
-                <h2 className="text-2xl font-bold">Zoológico de Tangamanga</h2>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <p className="text-gray-700 mb-4">
-                    El zoológico del Parque Tangamanga alberga una variada colección de especies nativas y exóticas. Es uno de los atractivos más visitados del parque, especialmente por familias con niños.
-                  </p>
-                  <h3 className="font-semibold mb-2">Principales Especies:</h3>
-                  <ul className="space-y-2 text-gray-700">
-                    <li className="flex items-start space-x-2">
-                      <span className="text-green-600 mt-1">•</span>
-                      <span>Felinos: leones, tigres, jaguares</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="text-green-600 mt-1">•</span>
-                      <span>Primates: monos araña, capuchinos</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="text-green-600 mt-1">•</span>
-                      <span>Aves: guacamayas, tucanes, águilas</span>
-                    </li>
-                    <li className="flex items-start space-x-2">
-                      <span className="text-green-600 mt-1">•</span>
-                      <span>Reptiles: cocodrilos, serpientes, tortugas</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="space-y-4">
-                  <div className="bg-green-50 p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2">Horarios</h4>
-                    <p className="text-sm text-gray-700">Mar-Dom: 10AM-5PM</p>
-                    <p className="text-sm text-gray-500">Lunes cerrado</p>
-                  </div>
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2">Entrada</h4>
-                    <p className="text-sm text-gray-700">Costo adicional al ingreso del parque</p>
-                  </div>
-                </div>
-              </div>
+            <section id="zoo" aria-labelledby="zoo-heading" className="rounded-xl border border-amber-200 bg-amber-50 p-8 shadow-sm scroll-mt-20">
+              <h2 id="zoo-heading" className="mb-3 text-2xl font-bold text-gray-900">{parkT('zooTitle')}</h2>
+              <p className="mb-4 text-gray-700">{parkT('zooDescription')}</p>
+              <a href="https://cecurt.slp.gob.mx/faq/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline hover:text-secondary">{parkT('source')}</a>
             </section>
 
             {/* Planetarium Section */}

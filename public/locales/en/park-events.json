@@ -1,0 +1,17 @@
+{
+  "familyFriendly": "Family friendly",
+  "categories": {"sports":"Sports","cultural":"Culture","arts-culture":"Arts & culture","music":"Music","culinary":"Food & drink","community-social":"Community","wellness":"Wellness","other":"Other"},
+  "eyebrow": "Park calendar",
+  "title": "Upcoming events at Tangamanga I",
+  "description": "Activities with confirmed dates and venues inside Tangamanga I Park.",
+  "allEvents": "View all events",
+  "emptyTitle": "No upcoming events published",
+  "emptyDescription": "We currently have no active events listed for Tangamanga I. Explore the San Luis Potosí calendar for more things to do.",
+  "unavailableTitle": "The calendar is unavailable",
+  "unavailableDescription": "We could not load park events. Please check again in a few minutes.",
+  "note": "Check times, prices and requirements with the organizer before visiting.",
+  "zooTitle": "Zoo: temporarily closed",
+  "zooDescription": "CECURT reports that the zoo is temporarily closed. Check the current service status before planning a visit.",
+  "source": "Check official information",
+  "marathonArchive": "Read the Tangamanga Marathon 2026 guide (past edition)"
+}

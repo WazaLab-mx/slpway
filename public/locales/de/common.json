@@ -511,10 +511,10 @@
   },
   "tangamanga": {
     "title": "Tangamanga-Park",
-    "subtitle": "Die grüne Lunge von San Luis Potosí - Wo Natur auf Abenteuer trifft",
+    "subtitle": "Wege · Sport · Museum · Gärten",
     "hours": "Öffnungszeiten",
-    "hoursMon": "Mo: 6-11 Uhr",
-    "hoursTueSun": "Di-So: 6-20 Uhr",
+    "hoursMon": "Mo: 05:00–11:00",
+    "hoursTueSun": "Di–Sa: 05:00–22:30 · So: 05:00–18:00",
     "admission": "Eintritt",
     "freeEntry": "Kostenloser Eintritt",
     "location": "Standort",
@@ -540,7 +540,8 @@
       "sports1": "Sportplätze (Fußball, Volleyball, Basketball)",
       "sports2": "Skatepark",
       "sports3": "Laufstrecken",
-      "sports4": "Kletterbereich"
+      "sports4": "Kletterbereich",
+      "cultural1": "Zoo wegen Renovierung vorübergehend geschlossen; erkundige dich vor dem Besuch bei CECURT."
     },
     "activities": {
       "title": "Aktivitäten & Veranstaltungen",
@@ -559,7 +560,7 @@
       "familyTitle": "Familie",
       "family1": "Kinderspielplatz",
       "family2": "Bootsfahrten auf dem See",
-      "family3": "Führungen durch den botanischen Garten",
+      "family3": "Familienspaziergänge und Spielen im Freien",
       "family4": "Umweltbildungsaktivitäten",
       "family5": "Familienfeste"
     },
@@ -586,11 +587,11 @@
     "faq": {
       "title": "Haufig gestellte Fragen zum Parque Tangamanga",
       "q1": "Ist der Eintritt zum Parque Tangamanga kostenlos?",
-      "a1": "Ja. Der Parque Tangamanga I ist komplett kostenlos, einschliesslich Zoo, Wissenschaftsmuseum, Botanischer Garten und alle Wanderwege. Planetarium und Aquarium haben geringe Gebuhren (20-50 MXN).",
+      "a1": "Der Parkeintritt ist kostenlos. Museen, Sportangebote und Sonderveranstaltungen können eigene Eintrittspreise haben. Zoo wegen Renovierung vorübergehend geschlossen; erkundige dich vor dem Besuch bei CECURT.",
       "q2": "Welche Offnungszeiten hat der Parque Tangamanga?",
-      "a2": "Montag: 5 bis 11 Uhr (Wartungstag). Dienstag bis Samstag: 5 bis 22:30 Uhr. Sonntag: 5 bis 18 Uhr. Zoo: Dienstag bis Sonntag 9 bis 17 Uhr.",
+      "a2": "Mo: 05:00–11:00. Di–Sa: 05:00–22:30 · So: 05:00–18:00. Letzter Einlass: Mo 10:30 · Di–Sa 21:30 · So 17:00. Zoo wegen Renovierung vorübergehend geschlossen; erkundige dich vor dem Besuch bei CECURT.",
       "q3": "Was kann man im Parque Tangamanga machen?",
-      "a3": "Kostenloser Zoo mit uber 100 Arten, Planetarium, Aquarium, Wissenschaftsmuseum, Japanischer Garten, Botanischer Garten, Freilichttheater, Seen mit Tretbooten, Lauf- und Radwege, Sportplatze, Picknickplatze und Fahrradverleih.",
+      "a3": "Entdecke Spazier- und Radwege, Sportflächen, Gärten und die bestätigten Veranstaltungen in diesem Guide. Prüfe Öffnungszeiten und Eintritt beim jeweiligen Veranstalter. Zoo wegen Renovierung vorübergehend geschlossen; erkundige dich vor dem Besuch bei CECURT.",
       "q4": "Ist der Parque Tangamanga sicher?",
       "a4": "Ja. Der Park wird wahrend der Offnungszeiten gut bewacht. Vermeiden Sie es, unter der Woche nach Einbruch der Dunkelheit allein zu gehen.",
       "q5": "Wie gross ist der Parque Tangamanga?",
@@ -602,19 +603,19 @@
       "q8": "How do I get to Parque Tangamanga by public transit?",
       "a8": "The park sits on Av. Dr. Salvador Nava. Several city bus routes stop at the main entrances: Ruta 23, 32, and 52 reach the east side (zoo). Rideshare and taxis drop visitors at any of the 8 gates.",
       "q9": "What can kids do at Parque Tangamanga?",
-      "a9": "Splash aquarium, the free zoo, Laberinto de las Ciencias (science museum), paddle boats on the lake, the Japanese garden, open theater performances on weekends, bike rentals, and multiple playgrounds. Most activities are free.",
+      "a9": "Plane einen Spaziergang oder Spielplatzbesuch und prüfe das Familienprogramm sowie die Tickets des Museo Laberinto. Zoo wegen Renovierung vorübergehend geschlossen; erkundige dich vor dem Besuch bei CECURT.",
       "q10": "What's the difference between Tangamanga I and Tangamanga II?",
       "a10": "Tangamanga I (this page) is the 411-hectare tourist park with the zoo, planetarium, aquarium, and gardens. Tangamanga II is a 189-hectare sports park built over SLP's old airport — focused on archery, running tracks, auto racing, and soccer fields. Both are free and both are in San Luis Potosí city limits.",
       "q11": "Is Parque Tangamanga bigger than Central Park?",
       "a11": "Yes. Parque Tangamanga I covers 411 hectares (1,015 acres), which is 70 hectares larger than New York's Central Park (341 ha / 843 acres). It is the second-largest urban park in Mexico.",
       "q12": "How long does it take to visit Parque Tangamanga?",
-      "a12": "Plan at least 3 to 4 hours for the main attractions (zoo, Japanese garden, lakes). A full visit including the planetarium, Splash aquarium, and Laberinto de las Ciencias takes a full day. Bring water and sunscreen — the park's altitude (1,864 m) and open layout make sun exposure significant.",
+      "a12": "Wähle einige Aktivitäten und plane Pausen ein. Prüfe die Öffnungszeiten von Museen und Veranstaltungen vor dem Besuch separat. Zoo wegen Renovierung vorübergehend geschlossen; erkundige dich vor dem Besuch bei CECURT.",
       "q13": "Are dogs allowed at Parque Tangamanga?",
       "a13": "Yes, dogs are allowed on leash in the public walking areas of Parque Tangamanga I. Dogs are not permitted inside the zoo, planetarium, or aquarium. For an off-leash experience, Parque Tangamanga II has a dedicated fenced pet zone.",
       "q14": "Can I bring food to Parque Tangamanga?",
       "a14": "Yes. Picnics are welcome in the designated lawn areas. Glass containers and alcohol are not permitted. There are also food vendors and small restaurants inside the park, most active on weekends.",
       "q15": "What is the best time to visit Parque Tangamanga?",
-      "a15": "Weekend mornings (8 AM to noon) offer the best experience: cool temperatures, active zoo animals, open food stalls, and free weekend events at the open-air theater. Weekday mornings are quietest. Avoid Monday if you want full access — most attractions close for maintenance Monday afternoons."
+      "a15": "Prüfe Parköffnungszeiten und das aktuelle Veranstaltungsprogramm vor deinem Besuch. Montags gelten wegen Wartungsarbeiten verkürzte Zeiten."
     },
     "maraton": {
       "badge": "Annual Event",
@@ -642,19 +643,15 @@
     },
     "quickAnswer": {
       "title": "Parque Tangamanga I at a glance",
-      "definition": "Parque Tangamanga I is a 411-hectare public urban park in San Luis Potosí, Mexico. It is the second-largest urban park in Mexico and is 70 hectares larger than New York's Central Park. The park opened in 1980 and is operated by CECURT (Centro Cultural Universitario Rafael del Villar). Entry to the park, the zoo, the Laberinto de las Ciencias, and the gardens is free of charge.",
+      "definition": "Parque Tangamanga I ist ein öffentlicher Stadtpark in San Luis Potosí mit Wegen, Sportflächen, Gärten und Kulturstätten. Der Parkeintritt ist kostenlos; Attraktionen und Veranstaltungen haben eigene Zugangsbedingungen. Zoo wegen Renovierung vorübergehend geschlossen; erkundige dich vor dem Besuch bei CECURT.",
       "keyFactsTitle": "Key facts",
       "keyFacts": [
-        "Size: 411 hectares (1,015 acres) — #2 urban park in Mexico",
-        "Admission: free (planetarium and aquarium charge $20–50 MXN)",
-        "Hours: Tuesday–Saturday 5 AM–10:30 PM · Sunday 5 AM–6 PM · Monday 5–11 AM (maintenance)",
-        "Location: Av. Dr. Salvador Nava, southeast San Luis Potosí",
-        "Opened: 1980 (zoo added in 1985)",
-        "Operator: CECURT (Centro Cultural Universitario Rafael del Villar)",
-        "Trees: over 400,000",
-        "Main attractions: zoo, planetarium, Splash aquarium, Laberinto de las Ciencias, Japanese garden, botanical garden, open-air theater, lakes"
+        "Der Parkeintritt ist kostenlos. Museen, Sportangebote und Sonderveranstaltungen können eigene Eintrittspreise haben.",
+        "Mo: 05:00–11:00 · Di–Sa: 05:00–22:30 · So: 05:00–18:00",
+        "Letzter Einlass: Mo 10:30 · Di–Sa 21:30 · So 17:00",
+        "Zoo wegen Renovierung vorübergehend geschlossen; erkundige dich vor dem Besuch bei CECURT."
       ],
-      "lastVerified": "Last verified by San Luis Way editorial team: April 17, 2026"
+      "lastVerified": "Parköffnungszeiten und Zoostatus bei CECURT geprüft: 8. September 2026."
     },
     "sources": {
       "title": "Sources used on this page",
@@ -664,7 +661,9 @@
         "INEGI 2020 Census — surrounding demographic data",
         "Maratón Tangamanga — official race organizer (maratontangamanga.com)"
       ]
-    }
+    },
+    "altText": "Parque Tangamanga I — Wege · Sport · Museum · Gärten",
+    "hoursNote": "Letzter Einlass: Mo 10:30 · Di–Sa 21:30 · So 17:00"
   },
   "circleOfTrust": {
     "badge": "Unser Versprechen",

@@ -1,0 +1,17 @@
+{
+  "familyFriendly": "家族向け",
+  "categories": {"sports":"スポーツ","cultural":"文化","arts-culture":"芸術・文化","music":"音楽","culinary":"グルメ","community-social":"地域交流","wellness":"健康","other":"その他"},
+  "eyebrow": "公園のイベント",
+  "title": "タンガマンガIの今後のイベント",
+  "description": "タンガマンガI公園内で開催日時と会場が確認されているイベントです。",
+  "allEvents": "すべてのイベントを見る",
+  "emptyTitle": "今後のイベントは掲載されていません",
+  "emptyDescription": "現在、タンガマンガIの開催予定イベントは登録されていません。サン・ルイス・ポトシのイベント一覧もご覧ください。",
+  "unavailableTitle": "イベント情報を表示できません",
+  "unavailableDescription": "公園のイベントを読み込めませんでした。数分後にもう一度ご確認ください。",
+  "note": "お出かけ前に、時間・料金・参加条件を主催者にご確認ください。",
+  "zooTitle": "動物園：一時休園中",
+  "zooDescription": "CECURTによると、動物園は一時休園中です。訪問を計画する前に、最新の営業状況をご確認ください。",
+  "source": "公式情報を確認する",
+  "marathonArchive": "タンガマンガ・マラソン2026のガイドを見る（終了した大会）"
+}

@@ -1,0 +1,17 @@
+{
+  "familyFriendly": "Para toda la familia",
+  "categories": {"sports":"Deportes","cultural":"Cultura","arts-culture":"Arte y cultura","music":"Música","culinary":"Gastronomía","community-social":"Comunidad","wellness":"Bienestar","other":"Otros"},
+  "eyebrow": "Agenda del parque",
+  "title": "Próximos eventos en Tangamanga I",
+  "description": "Actividades con fecha y sede confirmadas en el Parque Tangamanga I.",
+  "allEvents": "Ver toda la agenda",
+  "emptyTitle": "Sin próximos eventos publicados",
+  "emptyDescription": "Por ahora no tenemos eventos vigentes registrados para Tangamanga I. Consulta la agenda de San Luis Potosí para encontrar otros planes.",
+  "unavailableTitle": "La agenda no está disponible",
+  "unavailableDescription": "No pudimos cargar los eventos del parque. Vuelve a consultar en unos minutos.",
+  "note": "Revisa los horarios, costos y requisitos con el organizador antes de tu visita.",
+  "zooTitle": "Zoológico: cierre temporal",
+  "zooDescription": "CECURT informa que el zoológico está temporalmente cerrado. Consulta el estado del servicio antes de planear una visita.",
+  "source": "Consultar información oficial",
+  "marathonArchive": "Consultar la guía del Maratón Tangamanga 2026 (edición pasada)"
+}
