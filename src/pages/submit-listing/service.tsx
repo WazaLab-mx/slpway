@@ -155,7 +155,7 @@ export default function SubmitServiceListing() {
           phone: formData.phone,
           subject: 'Solicitud de alta de servicio en San Luis Way',
           message: html,
-          to: 'sanluisway@waza.baby',
+          to: 'sanluisway@wazalab.mx',
         }),
       });
 

@@ -106,7 +106,7 @@ export default function PetCareServices({ recaptchaSiteKey }: { recaptchaSiteKey
         body: JSON.stringify({
           ...formData,
           recaptchaToken: recaptchaValue,
-          to: 'sanluisway@waza.baby',
+          to: 'sanluisway@wazalab.mx',
           subject: 'Pet Care Service Request',
         }),
       });

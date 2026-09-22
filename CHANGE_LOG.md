@@ -1,5 +1,16 @@
 # Change Log
 
+## [2026-09-21] Contact address is sanluisway@wazalab.mx
+
+- Replaced public contact addresses (`sanluisway@waza.baby`, `info@sanluisway.com`, `contacto@sanluisway.com`, `community@sanluis.way`, and the contact-form dev recipient) with `sanluisway@wazalab.mx` on footer, forms, legal pages, FAQ, community, media kit, advertise, and the send-email default From.
+- Email functionality tests passed. Rendered pages show the new address. Contact-form From (Resend and the Gmail fallback) is also `sanluisway@wazalab.mx`. Resend will reject that From until wazalab.mx is verified in Resend; the Gmail login in `.env` is still the waza.baby mailbox that holds the app password.
+
+## [2026-09-21] Fact-checks for the 20 blog posts that had none
+
+- Added one report per unpublished-to-the-index slug under `public/factchecks/`, dated September 21, 2026. `/blog/factchecks` lists all 20, and each post slug matches its report so the article badge can link to it.
+- Parser test covers modern reports and the September 21 count lines, including MISLEADING. 2 tests passed.
+- Mining history and FDI already had reports under older filenames; those files were left in place.
+
 ## [2026-09-08] Add missed ChuyMine show
 
 - Added El Show de Elo y Chuy at Teatro de la Paz, September 19, 2026 at 17:00, confirmed by chuymine.com/pages/acerca-de?tab=eventos and TicketNet event 170. Four languages, family-friendly and calendar enabled; ending time and ticket price remain unspecified rather than inferred.

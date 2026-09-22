@@ -105,7 +105,7 @@ export default function CommunityIntegration({ recaptchaSiteKey }: { recaptchaSi
         body: JSON.stringify({
           ...formData,
           recaptchaToken: recaptchaValue,
-          to: 'sanluisway@waza.baby',
+          to: 'sanluisway@wazalab.mx',
           subject: 'Community Integration Inquiry',
         }),
       });

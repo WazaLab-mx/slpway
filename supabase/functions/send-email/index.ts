@@ -18,7 +18,7 @@ serve(async (req) => {
   }
 
   try {
-    const { to, subject, html, from = 'San Luis Way <info@sanluisway.com>', replyTo } = await req.json()
+    const { to, subject, html, from = 'San Luis Way <sanluisway@wazalab.mx>', replyTo } = await req.json()
 
     console.log('Sending email via Supabase:', { to, subject, from, replyTo })
 

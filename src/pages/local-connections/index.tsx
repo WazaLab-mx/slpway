@@ -133,7 +133,7 @@ export default function LocalConnections() {
         body: JSON.stringify({
           ...formData,
           recaptchaToken: recaptchaValue,
-          to: 'sanluisway@waza.baby',
+          to: 'sanluisway@wazalab.mx',
           subject: `Local Service Request: ${formData.serviceCategory} - ${formData.specificService}`
         }),
       });

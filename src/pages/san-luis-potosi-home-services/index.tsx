@@ -124,7 +124,7 @@ const HomeServicesPage = ({ recaptchaSiteKey }: { recaptchaSiteKey: string }) =>
         body: JSON.stringify({
           ...formData,
           recaptchaToken: recaptchaValue,
-          to: 'sanluisway@waza.baby',
+          to: 'sanluisway@wazalab.mx',
           subject: 'Home Service Request',
         }),
       });

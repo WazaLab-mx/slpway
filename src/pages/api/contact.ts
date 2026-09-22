@@ -119,7 +119,7 @@ async function sendEmailViaSMTP(emailData: any) {
     });
 
     const mailOptions = {
-      from: `"San Luis Way" <${process.env.GMAIL_USER}>`,
+      from: 'San Luis Way <sanluisway@wazalab.mx>',
       to: emailData.to,
       replyTo: emailData.replyTo,
       subject: emailData.subject,
@@ -279,10 +279,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     process.env.SUPABASE_SERVICE_ROLE_KEY!
   );
 
-  // Always use sanluisway@waza.baby for all outgoing emails
-  const businessEmail = 'sanluisway@waza.baby';
-  // In development, use the verified email for Resend
-  const actualEmailTo = process.env.NODE_ENV === 'development' ? 'santiago@waza.baby' : businessEmail;
+  const businessEmail = 'sanluisway@wazalab.mx';
 
   // Verify reCAPTCHA (skip in development for testing)
   if (process.env.NODE_ENV === 'production') {
@@ -382,11 +379,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           <div style="background-color: #e8f5e8; border-left: 5px solid #27ae60; padding: 15px; margin-bottom: 25px; border-radius: 5px;">
             <h2 style="color: #27ae60; margin: 0 0 10px 0; font-size: 20px;">🎉 New Customer Lead!</h2>
             <p style="margin: 0; color: #333; font-size: 16px;">You have received a new inquiry through the San Luis Way platform.</p>
-            ${actualEmailTo !== businessEmail ?
-              `<div style="background-color: #fff3cd; border: 1px solid #ffeaa7; padding: 10px; margin-top: 10px; border-radius: 4px;">
-                <strong>⚠️ TESTING MODE:</strong> This email was originally intended for <strong>${businessEmail}</strong>
-              </div>` : ''
-            }
           </div>
 
           <h3 style="color: #333; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">Customer Contact Information</h3>
@@ -448,8 +440,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const emailSubject = `🔥 New Customer Lead from San Luis Way - ${name}`;
 
       const emailData = {
-        to: actualEmailTo,
-        from: 'San Luis Way <onboarding@resend.dev>', // Temporary: using verified domain until sanluisway.com is verified
+        to: businessEmail,
+        from: 'San Luis Way <sanluisway@wazalab.mx>',
         replyTo: email,
         subject: emailSubject,
         html: htmlContent

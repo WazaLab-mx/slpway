@@ -106,7 +106,7 @@ export default function CulturalServices({ recaptchaSiteKey }: { recaptchaSiteKe
         body: JSON.stringify({
           ...formData,
           recaptchaToken: recaptchaValue,
-          to: 'sanluisway@waza.baby',
+          to: 'sanluisway@wazalab.mx',
           subject: 'Cultural Services Inquiry',
         }),
       });

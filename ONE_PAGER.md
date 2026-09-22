@@ -105,7 +105,7 @@
 
 **www.sanluisway.com**
 
-contacto@sanluisway.com
+sanluisway@wazalab.mx
 
 *"Construyamos Juntos el Futuro de SLP"*
 

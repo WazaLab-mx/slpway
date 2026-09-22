@@ -136,7 +136,7 @@ Every sanluisway.com link gets `utm_content=<section-slug>` (`this-week-glance /
 Card header colors: Card 1 `#0C4A6E`, Card 2 `#C75B39`, Card 3 `#5B21B6`, Card 4 `#166534`.
 Fonts: Georgia serif (title/H2), Arial (everything else). Max width 600px, cards `border-radius` 12px, line-height 1.6. Forced light color-scheme (Apple/Gmail dark-mode safe).
 
-**Socials:** [Website](https://www.sanluisway.com) · [Instagram](https://www.instagram.com/sanluisway/) · [TikTok](https://www.tiktok.com/@sanluisway) · info@sanluisway.com
+**Socials:** [Website](https://www.sanluisway.com) · [Instagram](https://www.instagram.com/sanluisway/) · [TikTok](https://www.tiktok.com/@sanluisway) · sanluisway@wazalab.mx
 
 ---
 

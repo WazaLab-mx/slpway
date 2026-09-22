@@ -106,7 +106,7 @@ export default function LegalAdministrativeServices({ recaptchaSiteKey }: { reca
         body: JSON.stringify({
           ...formData,
           recaptchaToken: recaptchaValue,
-          to: 'sanluisway@waza.baby',
+          to: 'sanluisway@wazalab.mx',
           subject: 'Legal & Administrative Service Inquiry',
         }),
       });

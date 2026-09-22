@@ -206,7 +206,7 @@ export default function MediaKit() {
             >
               {t('Contact us', 'Contáctanos')}
             </Link>
-            <p className="text-sm text-gray-500 mt-4">sanluisway@waza.baby</p>
+            <p className="text-sm text-gray-500 mt-4">sanluisway@wazalab.mx</p>
           </div>
         </section>
       </div>

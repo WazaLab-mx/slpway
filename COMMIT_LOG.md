@@ -1,5 +1,13 @@
 # Commit Log
 
+## 2026-09-21 — feat: fact-check remaining posts and switch contact email
+
+- Baseline: 76224a4. Two product changes, no schema and no secrets.
+- Fact-checks: 20 published posts had no `public/factchecks/<slug>.md`, so `/blog/factchecks` and the article badge could not list them. Added one report per slug, dated September 21, 2026. Mining history and FDI already had reports under older filenames and were left in place. Parser test `src/lib/__tests__/factcheck-parser.test.ts` checks modern reports and September 21 count lines, including MISLEADING.
+- Contact: public addresses (`sanluisway@waza.baby`, `info@sanluisway.com`, `contacto@sanluisway.com`, `community@sanluis.way`, contact-form recipient, send-email default From, Resend From, Gmail fallback From) now use `sanluisway@wazalab.mx`. Footer, forms, legal pages, FAQ, community, media kit, advertise, and pitch/newsletter docs included. Email tests: 3 passed. Resend will reject that From until wazalab.mx is verified there. `.env` GMAIL_USER stays on the waza.baby mailbox that holds the app password and was not committed.
+- Left unstaged on purpose: deleted `public/images/events/xantolo-image-1.jpg`, `tsconfig.tsbuildinfo`, `sc/`, and `scripts/export-unfactchecked.js`.
+- Rollback: revert this commit. Fact-check pages disappear with the markdown files. Contact addresses return to the previous mix. No database rows to restore.
+
 ## 2026-09-08 — chore: record verified ChuyMine calendar addition
 
 - Baseline5157d61. User identified the omitted September19 show. Verified official artist calendar and TicketNet https://ventas.ticketnet.com.mx/eventperformances.asp?evt=170 (17:00), checked live duplicates, inserted four-language calendar row8b697588-0ec8-452f-86e7-6bdd9102f008 and asserted readback.

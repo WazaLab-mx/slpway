@@ -304,11 +304,11 @@ export default function Advertise() {
                 </Link>
                 <span className="text-gray-400">•</span>
                 <a
-                  href="mailto:sanluisway@waza.baby"
+                  href="mailto:sanluisway@wazalab.mx"
                   onClick={() => trackInquiry('Email Direct')}
                   className="inline-flex items-center text-primary hover:text-primary-dark font-semibold"
                 >
-                  sanluisway@waza.baby
+                  sanluisway@wazalab.mx
                 </a>
               </div>
             </div>

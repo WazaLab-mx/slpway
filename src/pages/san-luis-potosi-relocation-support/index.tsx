@@ -140,7 +140,7 @@ export default function RelocationSupport() {
         body: JSON.stringify({
           ...formData,
           recaptchaToken: recaptchaValue,
-          to: 'sanluisway@waza.baby',
+          to: 'sanluisway@wazalab.mx',
           subject: 'Relocation Support Request',
           message: `
 Relocation Support Request:

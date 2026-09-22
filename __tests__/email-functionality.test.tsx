@@ -56,7 +56,7 @@ describe('Email Functionality Tests', () => {
           contact_id: 'test-id',
           customer_name: 'Test User',
           customer_email: 'test@example.com',
-          business_email: 'info@sanluisway.com',
+          business_email: 'sanluisway@wazalab.mx',
           email_sent: true,
           email_method: 'resend',
           email_id: 'test-email-id'
@@ -150,7 +150,7 @@ describe('Email Functionality Tests', () => {
       email: 'test@example.com',
       subject: 'Test Subject',
       message: 'Test message',
-      to: 'info@sanluisway.com'
+      to: 'sanluisway@wazalab.mx'
     };
 
     // Mock successful Resend response
@@ -205,7 +205,7 @@ describe('Email Functionality Tests', () => {
         email: 'test@example.com',
         subject: 'Test Subject',
         message: 'Test message',
-        to: 'info@sanluisway.com'
+        to: 'sanluisway@wazalab.mx'
       })
     });
 
