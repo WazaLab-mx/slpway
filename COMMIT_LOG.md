@@ -1,5 +1,15 @@
 # Commit Log
 
+## 2026-09-23 — feat: add Jev-ranked home services finder
+
+- Baseline: b45cb4b. Commit 746c7b4. New table (migration file NOT yet applied to production). No secrets committed; `GOOGLE_PLACES_API_KEY` and `TYPESAFE_API_KEY` exist only in the git-ignored `.env`.
+- Pipeline: `node scripts/home-services/discover.js [--category=plumbing] [--dry-run]`. Places (New) searchText (2 pages × 14 categories, bounded to the SLP/Soledad rectangle) → Tavily web check → one Jev request per provider (6 questions) → `rankScore` → upsert on `google_place_id`. Backups before/after go to `backups/home-services-<date>/`.
+- Ranking weights: rating 0.30 (Bayesian, prior 4.0/10), volume 0.10, satisfaction 0.15, reliability 0.15, noComplaints 0.15, responsive 0.05, verification 0.10. Listed only if OPERATIONAL and Jev servesCategory ≥ 0.5. Emergency badge at Jev ≥ 0.6.
+- UI: `ServiceFinder` on /san-luis-potosi-home-services, rendered only when active providers exist. `POST /api/home-services/match`: live-tested with 11 real phrases; 9 routed confidently and correctly, 1 vague phrase got an alternative, and 1 non-repair request got no match.
+- Refactor: `buildWhatsAppUrl` → `src/lib/whatsapp-url.ts`, and supabase fetch split into `home-services-fetch.ts` to keep supabase-js out of the widget.
+- Tests: pipeline, match API/interpretation, row mapping, component. Full suite 74 suites / 489 tests; tsc and eslint clean.
+- Rollback: revert the commit. If the migration was applied: `DROP TABLE public.home_service_providers;` (restore data from backups/ if needed).
+
 ## 2026-09-23 — feat: add Jev (TypeSafe) editorial guard to news and social curation
 
 - Baseline: 4e8befb. Commit 6211e84. No schema changes; no secrets committed.
