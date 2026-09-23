@@ -1,5 +1,11 @@
 # Commit Log
 
+## 2026-09-23 — feat: fall back to a backup Tavily key when the primary is out of quota
+
+- Baseline: add3f2b. Commit 279ba70. `tavilyPost(keys, path, body)` in social-tavily.js; the cron passes `[TAVILY_API_KEY, TAVILY_API_KEY_BACKUP]`. No secret committed (the key lives only in the local .env; Netlify needs it added).
+- Tests: 3 new cases in `__tests__/social-tavily.test.ts` (fallback on 432, all keys exhausted, no keys). Live check: primary 432 → backup returned 30 results.
+- Rollback: revert the commit; the cron goes back to the single key.
+
 ## 2026-09-23 — fix: harden home services discovery and apply quality floor
 
 - Baseline: cf63e59. Commit f7f6e3f. The migration is now applied in production (by the user), and `home_service_providers` holds 258 active of 464 assessed rows.
