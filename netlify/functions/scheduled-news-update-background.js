@@ -37,7 +37,7 @@ const handler = async () => {
   for (let attempt = 1; attempt <= MAX_AI_ATTEMPTS; attempt++) {
     console.log(`Curation attempt ${attempt}/${MAX_AI_ATTEMPTS}...`);
     try {
-      const result = await curateFromFeeds(openaiApiKey, feedItems, 0.2 + 0.3 * (attempt - 1));
+      const result = await curateFromFeeds(openaiApiKey, feedItems, 0.2 + 0.3 * (attempt - 1), process.env.TYPESAFE_API_KEY);
       if (!best || result.news.length > best.news.length) best = result;
       if (result.news.length >= 8) { curated = result; break; }
       lastError = `Only ${result.news.length} valid news items (want 8)`;

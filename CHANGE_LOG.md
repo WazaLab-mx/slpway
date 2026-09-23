@@ -1,5 +1,13 @@
 # Change Log
 
+## [2026-09-23] Jev (TypeSafe) editorial guard for news and social curation
+
+- New `netlify/functions/lib/typesafe-guard.js`: one Jev (`jev-latest`) request per source item with four questions: Nouls for crime/insecurity, disaster, and government PR, plus a Score for community usefulness. It judges the ORIGINAL feed text, not the model's rewritten title.
+- Policy lives in code (`THRESHOLDS`): drop news at crime/disaster ≥ 0.7; at most one gov-PR item (≥ 0.7) among news; trending/social topics dropped at gov-PR ≥ 0.5. The 3 most community-useful items of the 8 published go first (community cards).
+- Runs after the existing BANNED_CONTENT / GOV_PR regexes, which stay as the hard floor. No `TYPESAFE_API_KEY` or a failed call for an item → that item keeps its regex-only verdict.
+- Wired into `curateFromFeeds` (4th arg) and `scheduled-social-trends-background.js`. `.env.example` gets a `TYPESAFE_API_KEY` placeholder; the real key goes in `.env` and Netlify env vars.
+- Thresholds are initial values; check them against real Netlify logs ("Dropped by Jev") once the key is live.
+
 ## [2026-09-21] Contact address is sanluisway@wazalab.mx
 
 - Replaced public contact addresses (`sanluisway@waza.baby`, `info@sanluisway.com`, `contacto@sanluisway.com`, `community@sanluis.way`, and the contact-form dev recipient) with `sanluisway@wazalab.mx` on footer, forms, legal pages, FAQ, community, media kit, advertise, and the send-email default From.

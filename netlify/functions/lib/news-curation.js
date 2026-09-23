@@ -3,6 +3,7 @@
 // enforced in code so the model can never invent a link.
 const NEWS_CATEGORIES = ['social', 'community', 'culture', 'local'];
 const { hasSocialEvidence, sameStory } = require('../../../src/lib/news-section-policy');
+const { applyJevGuard } = require('./typesafe-guard');
 const TRENDING_CATEGORIES = ['debate', 'viral', 'event', 'controversy', 'culture', 'sports', 'community'];
 
 // Hard content filters (safety net beyond the prompt) — crime/insecurity for
@@ -228,7 +229,8 @@ function resolveItemRefs(items, feedItems) {
 
 // Full pipeline for one attempt: model call -> URL/locale validation -> filters.
 // `temperature` escalates across retries so a failed attempt isn't repeated verbatim.
-async function curateFromFeeds(apiKey, feedItems, temperature = 0.2) {
+// `typesafeApiKey` enables the Jev guard (semantic crime/gov-PR filter + community ranking).
+async function curateFromFeeds(apiKey, feedItems, temperature = 0.2, typesafeApiKey) {
   const allowedUrls = new Set(feedItems.map(i => i.url));
   const byUrl = new Map(feedItems.map(i => [i.url, i]));
   const parsed = await callCurationModel(apiKey, feedItems, temperature);
@@ -266,7 +268,7 @@ async function curateFromFeeds(apiKey, feedItems, temperature = 0.2) {
     if (trending.length >= 3) break;
   }
 
-  return { news, trending };
+  return applyJevGuard(typesafeApiKey, { news, trending }, feedItems);
 }
 
 module.exports = {

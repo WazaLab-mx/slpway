@@ -3,6 +3,7 @@ const { createClient } = require('@supabase/supabase-js');
 const { fetchRedditConversations } = require('./lib/social-reddit');
 const { fetchTavilyConversations } = require('./lib/social-tavily');
 const { curateSocialTopics } = require('./lib/social-curation');
+const { guardSocialTopics } = require('./lib/typesafe-guard');
 const { publishSocialTopics } = require('./lib/social-publisher');
 
 async function updateSocialTrends() {
@@ -23,7 +24,9 @@ async function updateSocialTrends() {
     const { data: community, error } = await supabase.from('community_news')
       .select('title_es, source').eq('active', true);
     if (error) throw new Error(`Read community news: ${error.message}`);
-    const topics = await curateSocialTopics(apiKey, candidates, community.map(item => ({ ...item, url: item.source })));
+    const curated = await curateSocialTopics(apiKey, candidates, community.map(item => ({ ...item, url: item.source })));
+    const topics = await guardSocialTopics(process.env.TYPESAFE_API_KEY, curated);
+    if (!topics.length) throw new Error('All social topics rejected by Jev guard');
     const published = await publishSocialTopics(supabase, topics);
     console.log(`Published ${published} verified social conversations`);
     return { statusCode: 200, body: JSON.stringify({ published, sources: [...new Set(topics.map(topic => topic.evidence.platform))], checkedAt: new Date().toISOString() }) };
