@@ -76,8 +76,27 @@ function collectTavilyConversations(results, now = Date.now()) {
   return [...accepted.values()].sort((a, b) => b.score - a.score).slice(0, 12);
 }
 
-async function fetchTavilyConversations(apiKey) {
-  if (!apiKey) throw new Error('Missing TAVILY_API_KEY');
+// Quota/auth failures on one key (plan limit 432, pay-as-you-go limit 433,
+// rate limit 429, bad key 401) fall through to the next configured key.
+const NEXT_KEY_STATUSES = new Set([401, 429, 432, 433]);
+
+async function tavilyPost(keys, path, body) {
+  let response;
+  for (const key of keys) {
+    response = await fetch(`https://api.tavily.com/${path}`, {
+      method: 'POST', signal: AbortSignal.timeout(60000),
+      headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    if (!NEXT_KEY_STATUSES.has(response.status)) break;
+  }
+  return response;
+}
+
+// `apiKeys`: one key or [primary, backup, ...]; tried in order.
+async function fetchTavilyConversations(apiKeys) {
+  const keys = [].concat(apiKeys).filter(Boolean);
+  if (!keys.length) throw new Error('Missing TAVILY_API_KEY');
   const month = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
   const searches = [
     { query: '"San Luis Potosí" (cultura OR comida OR festival OR concierto) inurl:status', include_domains: ['x.com'] },
@@ -85,12 +104,8 @@ async function fetchTavilyConversations(apiKey) {
     { query: '"San Luis Potosí" comunidad recomendaciones conversación', include_domains: ['facebook.com'] },
   ];
   const batches = await Promise.allSettled(searches.map(async search => {
-    const response = await fetch('https://api.tavily.com/search', {
-      method: 'POST', signal: AbortSignal.timeout(60000),
-      headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...search, search_depth: 'advanced', max_results: 10,
-        time_range: 'week', include_raw_content: 'text', include_answer: false }),
-    });
+    const response = await tavilyPost(keys, 'search', { ...search, search_depth: 'advanced', max_results: 10,
+      time_range: 'week', include_raw_content: 'text', include_answer: false });
     if (!response.ok) throw new Error(`Tavily search HTTP ${response.status}`);
     const data = await response.json();
     return data.results || [];
@@ -102,10 +117,8 @@ async function fetchTavilyConversations(apiKey) {
     .map(result => [result.url, result])).values()].slice(0, 6);
   if (pending.length) {
     try {
-      const response = await fetch('https://api.tavily.com/extract', {
-        method: 'POST', signal: AbortSignal.timeout(60000),
-        headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ urls: pending.map(result => result.url), extract_depth: 'advanced', format: 'text' }),
+      const response = await tavilyPost(keys, 'extract', {
+        urls: pending.map(result => result.url), extract_depth: 'advanced', format: 'text',
       });
       if (!response.ok) throw new Error(`Tavily extraction HTTP ${response.status}`);
       const extracted = await response.json();

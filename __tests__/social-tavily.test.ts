@@ -1,5 +1,5 @@
 import captured from './fixtures/tavily-social-2026-09-07.json';
-const { collectTavilyConversations } = require('../netlify/functions/lib/social-tavily');
+const { collectTavilyConversations, fetchTavilyConversations } = require('../netlify/functions/lib/social-tavily');
 const now = Date.parse('2026-09-08T03:00:00Z');
 
 describe('Tavily social source verification', () => {
@@ -27,5 +27,29 @@ describe('Tavily social source verification', () => {
   test('deduplicates repeated indexed posts', () => {
     const topics = collectTavilyConversations([...captured, ...captured], now);
     expect(new Set(topics.map((topic: any) => topic.url)).size).toBe(topics.length);
+  });
+});
+
+describe('Tavily key fallback', () => {
+  afterEach(() => (global.fetch as jest.Mock)?.mockRestore?.());
+
+  it('switches to the backup key when the primary hits its plan limit', async () => {
+    global.fetch = jest.fn(async (_url: string, init: { headers: { Authorization: string } }) => (
+      init.headers.Authorization === 'Bearer primary'
+        ? { ok: false, status: 432, json: async () => ({}) }
+        : { ok: true, status: 200, json: async () => ({ results: [] }) }
+    )) as any;
+    await expect(fetchTavilyConversations(['primary', 'backup'])).resolves.toEqual([]);
+    const auths = (global.fetch as jest.Mock).mock.calls.map(([, init]) => init.headers.Authorization);
+    expect(auths.filter(a => a === 'Bearer backup')).toHaveLength(3);
+  });
+
+  it('fails when every key is out of quota', async () => {
+    global.fetch = jest.fn().mockResolvedValue({ ok: false, status: 432 }) as any;
+    await expect(fetchTavilyConversations(['primary', 'backup'])).rejects.toThrow('All Tavily social searches failed');
+  });
+
+  it('requires at least one key', async () => {
+    await expect(fetchTavilyConversations([undefined, ''])).rejects.toThrow('Missing TAVILY_API_KEY');
   });
 });

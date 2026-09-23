@@ -11,7 +11,7 @@ async function updateSocialTrends() {
     const { NEXT_PUBLIC_SUPABASE_URL: url, SUPABASE_SERVICE_ROLE_KEY: key, OPENAI_API_KEY: apiKey } = process.env;
     if (!url || !key || !apiKey) throw new Error('Missing social updater credentials');
     const batches = await Promise.allSettled([
-      fetchTavilyConversations(process.env.TAVILY_API_KEY), fetchRedditConversations(),
+      fetchTavilyConversations([process.env.TAVILY_API_KEY, process.env.TAVILY_API_KEY_BACKUP]), fetchRedditConversations(),
     ]);
     for (const batch of batches) if (batch.status === 'rejected') console.warn(batch.reason.message);
     const groups = batches.map(batch => batch.status === 'fulfilled' ? batch.value : []);

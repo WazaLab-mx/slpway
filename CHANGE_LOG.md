@@ -1,5 +1,10 @@
 # Change Log
 
+## [2026-09-23] Tavily backup key for the social-trends cron
+
+- `social-tavily.js` tries `[TAVILY_API_KEY, TAVILY_API_KEY_BACKUP]` in order. On 401/429/432 (plan limit)/433 it moves to the next key, for both search and extract. The primary is currently out of quota (432); the backup was verified live with 30 results.
+- `TAVILY_API_KEY_BACKUP` is in the local `.env` (git-ignored). It must also be added to Netlify env vars for production.
+
 ## [2026-09-23] Home services: first data load + pipeline fixes
 
 - Discovery run for all 14 categories: 464 businesses assessed, 258 active in `home_service_providers`. Backups in `backups/home-services-2026-09-23/`.
