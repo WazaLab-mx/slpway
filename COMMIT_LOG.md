@@ -1,5 +1,15 @@
 # Commit Log
 
+## 2026-09-23 — feat: add Jev (TypeSafe) editorial guard to news and social curation
+
+- Baseline: 4e8befb. Commit 6211e84. No schema changes; no secrets committed.
+- `netlify/functions/lib/typesafe-guard.js` calls `POST https://api.typesafe.ai/v1/systemone` (model `jev-latest`) once per source item, in parallel, with retries on 429/529. Questions: crime (Noul), disaster (Noul), govPr (Noul), communityUtility (Score 0-3).
+- Policy: news dropped at crime/disaster >= 0.7; max one govPr >= 0.7 item; trending and social topics dropped at govPr >= 0.5; top-3 community utility among the 8 published go first.
+- It runs after the BANNED_CONTENT/GOV_PR regexes, which are unchanged. With no key, or when a call fails, items keep their regex-only verdict.
+- Env: `TYPESAFE_API_KEY` is empty in local `.env` and has a placeholder in `.env.example` (git-ignored, not tracked). It must also be set in Netlify env vars.
+- Tests: new `__tests__/typesafe-guard.test.ts` (7 cases). Full suite: 71 suites / 465 tests pass.
+- Rollback: revert this commit. No data to restore.
+
 ## 2026-09-21 — feat: fact-check remaining posts and switch contact email
 
 - Baseline: 76224a4. Two product changes, no schema and no secrets.
