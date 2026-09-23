@@ -1,4 +1,4 @@
-import { buildWhatsAppUrl } from '@/pages/places/[id]';
+import { buildWhatsAppUrl } from '@/lib/whatsapp-url';
 
 describe('buildWhatsAppUrl', () => {
   it('prepends 52 to a 10-digit Mexican number', () => {

@@ -1,5 +1,15 @@
 # Change Log
 
+## [2026-09-23] Home services finder with Jev-evaluated providers
+
+- New table `home_service_providers` (migration `supabase/migrations/20260923_home_service_providers.sql`, public read of active rows only). 14 categories live in `src/lib/home-services-categories.js`, shared by the script, API and UI.
+- Discovery script `scripts/home-services/discover.js`: Google Places (New) text search per category → Tavily web search as a second source (phone confirmed off-Google, social profile) → Jev reads up to 5 reviews (serves category, satisfaction, reliability, serious complaints, fast response, emergencies) → `ranking.js` combines Bayesian Google rating (30%), review volume (10%), Jev judgments (50%) and verification (10%). Review text is never stored. `--category=x --dry-run` supported. Backups go to `backups/home-services-<date>/`.
+- Verification: `auto_verified` = operating on Google + phone + (phone confirmed elsewhere, website or social). The manual badge `slw_verified_at` is set only after SLW confirms by phone/WhatsApp, and re-runs keep it.
+- Widget `ServiceFinder` + `ProviderCard` appear only on `/san-luis-potosi-home-services`, only once active providers exist (ISR 6h). A visitor describes the problem → `POST /api/home-services/match` (Jev Choice over categories + urgency Score, rate limited 10/min) → top 3 in rank order, emergency providers first when urgent, alternatives offered when Jev is unsure. Contacts are WhatsApp/call/web/map tracked as `business_contact_click` (no bookings).
+- `buildWhatsAppUrl` moved from `pages/places/[id].tsx` to `src/lib/whatsapp-url.ts` for reuse.
+- i18n: `homeServiceFinder.*` in es/en/de/ja.
+- Pending: apply the migration, enable Places API (New) and set `GOOGLE_PLACES_API_KEY`, set `TYPESAFE_API_KEY` in Netlify, then run the discovery script.
+
 ## [2026-09-23] Jev (TypeSafe) editorial guard for news and social curation
 
 - New `netlify/functions/lib/typesafe-guard.js`: one Jev (`jev-latest`) request per source item with four questions: Nouls for crime/insecurity, disaster, and government PR, plus a Score for community usefulness. It judges the ORIGINAL feed text, not the model's rewritten title.

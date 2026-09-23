@@ -2777,5 +2777,49 @@
       "subtitle": "Unser Team hilft Ihnen, die perfekte Lösung für Ihre Marke zu finden",
       "sendMessage": "Nachricht senden"
     }
+  },
+  "homeServiceFinder": {
+    "title": "Finde den richtigen Fachbetrieb",
+    "subtitle": "Beschreibe, was bei dir zu Hause los ist, und wir zeigen dir die bestbewerteten Fachleute in San Luis Potosí.",
+    "placeholder": "z. B. die Toilette ist verstopft und Wasser läuft auf den Boden",
+    "submit": "Fachbetrieb finden",
+    "searching": "Suche…",
+    "error": "Wir konnten dein Problem nicht analysieren. Wähle unten eine Kategorie.",
+    "unsure": "Welche davon passt am besten zu deinem Problem?",
+    "noMatch": "Wir konnten die Art der Dienstleistung nicht erkennen. Wähle eine Kategorie.",
+    "urgentNotice": "Das klingt dringend: Betriebe mit Notdienst werden zuerst angezeigt.",
+    "noProviders": "In dieser Kategorie haben wir noch keine bewerteten Fachleute.",
+    "showMore_one": "{{count}} weiteren Fachbetrieb anzeigen",
+    "showMore_other": "{{count}} weitere Fachbetriebe anzeigen",
+    "reviews_one": "({{count}} Google-Bewertung)",
+    "reviews_other": "({{count}} Google-Bewertungen)",
+    "noReviews": "Noch keine Google-Bewertungen",
+    "call": "Anrufen",
+    "website": "Website",
+    "maps": "Karte",
+    "rankingNote": "Sortiert nach Google-Bewertung und Anzahl der Rezensionen, KI-Analyse der Rezensionen (Pünktlichkeit, Qualität, Beschwerden) und Verifizierung. Betriebe zahlen nicht für ihre Position. Kontakt und Vereinbarung direkt mit dem Fachbetrieb.",
+    "badges": {
+      "slwVerified": "Von San Luis Way verifiziert",
+      "autoVerified": "Daten verifiziert",
+      "emergency": "Notdienst",
+      "reliable": "Pünktlich und zuverlässig",
+      "responsive": "Antwortet schnell"
+    },
+    "categories": {
+      "plumbing": "Sanitär",
+      "electrical": "Elektrik",
+      "locksmith": "Schlüsseldienst",
+      "hvac": "Klimaanlagen",
+      "appliance_repair": "Haushaltsgeräte-Reparatur",
+      "carpentry": "Schreinerei",
+      "painting": "Malerarbeiten",
+      "masonry": "Maurerarbeiten",
+      "waterproofing": "Abdichtung",
+      "ironwork": "Schlosserei",
+      "gardening": "Gartenpflege",
+      "cleaning": "Reinigung",
+      "pest_control": "Schädlingsbekämpfung",
+      "glass": "Glas & Aluminium"
+    }
   }
 }

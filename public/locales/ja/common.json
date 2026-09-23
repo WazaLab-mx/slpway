@@ -2827,5 +2827,47 @@
       "subtitle": "あなたのブランドに最適なソリューションを見つけるサポートをします",
       "sendMessage": "メッセージを送る"
     }
+  },
+  "homeServiceFinder": {
+    "title": "ぴったりの専門業者を探す",
+    "subtitle": "ご自宅の困りごとを入力すると、サン・ルイス・ポトシで評価の高い専門業者をご紹介します。",
+    "placeholder": "例：トイレが詰まって床に水があふれている",
+    "submit": "業者を探す",
+    "searching": "検索中…",
+    "error": "内容を分析できませんでした。下のカテゴリーから選んでください。",
+    "unsure": "お困りごとに最も近いのはどれですか？",
+    "noMatch": "サービスの種類を特定できませんでした。カテゴリーを選んでください。",
+    "urgentNotice": "緊急の可能性があります。緊急対応できる業者を先に表示しています。",
+    "noProviders": "このカテゴリーで評価済みの業者はまだいません。",
+    "showMore_other": "さらに{{count}}件を表示",
+    "reviews_other": "（Googleレビュー{{count}}件）",
+    "noReviews": "Googleレビューはまだありません",
+    "call": "電話する",
+    "website": "ウェブサイト",
+    "maps": "地図",
+    "rankingNote": "Googleの評価とレビュー数、AIによるレビュー分析（時間厳守・品質・苦情）、確認状況に基づいて並べています。掲載順は有料ではありません。依頼内容は業者と直接ご相談ください。",
+    "badges": {
+      "slwVerified": "San Luis Way 確認済み",
+      "autoVerified": "情報確認済み",
+      "emergency": "緊急対応可",
+      "reliable": "時間厳守で誠実",
+      "responsive": "対応が早い"
+    },
+    "categories": {
+      "plumbing": "水道・配管",
+      "electrical": "電気工事",
+      "locksmith": "鍵",
+      "hvac": "エアコン",
+      "appliance_repair": "家電修理",
+      "carpentry": "木工",
+      "painting": "塗装",
+      "masonry": "左官・石工",
+      "waterproofing": "防水工事",
+      "ironwork": "鉄工",
+      "gardening": "庭仕事",
+      "cleaning": "清掃",
+      "pest_control": "害虫駆除",
+      "glass": "ガラス・アルミ"
+    }
   }
 }

@@ -18,6 +18,9 @@ import {
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import AdUnit from '@/components/common/AdUnit';
+import ServiceFinder from '@/components/home-services/ServiceFinder';
+import { fetchActiveProviders } from '@/lib/home-services-fetch';
+import type { HomeServiceProvider } from '@/lib/home-services-providers';
 
 interface ContactFormData {
   name: string;
@@ -30,11 +33,13 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     props: {
       ...(await serverSideTranslations(locale ?? 'es', ['common'])),
       recaptchaSiteKey: getRecaptchaSiteKey(),
+      providers: await fetchActiveProviders(),
     },
+    revalidate: 21600,
   };
 };
 
-const HomeServicesPage = ({ recaptchaSiteKey }: { recaptchaSiteKey: string }) => {
+const HomeServicesPage = ({ recaptchaSiteKey, providers }: { recaptchaSiteKey: string; providers: HomeServiceProvider[] }) => {
   const { t } = useTranslation('common');
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
@@ -170,6 +175,14 @@ const HomeServicesPage = ({ recaptchaSiteKey }: { recaptchaSiteKey: string }) =>
           </div>
         </div>
       </div>
+
+      {providers.length > 0 && (
+        <div className="bg-gray-50 py-16">
+          <div className="container mx-auto px-4">
+            <ServiceFinder providers={providers} />
+          </div>
+        </div>
+      )}
 
       <div className="py-16 lg:py-24 bg-white">
         <div className="container mx-auto px-4">

@@ -2810,5 +2810,49 @@
       "subtitle": "Nuestro equipo está aquí para ayudarte a encontrar la solución perfecta para tu marca",
       "sendMessage": "Enviar Mensaje"
     }
+  },
+  "homeServiceFinder": {
+    "title": "Encuentra al profesional indicado",
+    "subtitle": "Cuéntanos qué pasa en tu casa y te mostramos los profesionales mejor evaluados de San Luis Potosí para resolverlo.",
+    "placeholder": "Ej. se tapó el baño y sale agua por el piso",
+    "submit": "Buscar profesional",
+    "searching": "Buscando…",
+    "error": "No pudimos analizar tu problema. Elige una categoría abajo.",
+    "unsure": "¿Cuál de estas se parece más a tu problema?",
+    "noMatch": "No identificamos el tipo de servicio. Elige una categoría.",
+    "urgentNotice": "Parece urgente: mostramos primero a quienes atienden urgencias.",
+    "noProviders": "Aún no tenemos profesionales evaluados en esta categoría.",
+    "showMore_one": "Ver {{count}} profesional más",
+    "showMore_other": "Ver {{count}} profesionales más",
+    "reviews_one": "({{count}} reseña en Google)",
+    "reviews_other": "({{count}} reseñas en Google)",
+    "noReviews": "Sin reseñas en Google todavía",
+    "call": "Llamar",
+    "website": "Sitio web",
+    "maps": "Mapa",
+    "rankingNote": "Orden basado en calificación y número de reseñas de Google, análisis de reseñas con IA (puntualidad, calidad, quejas) y verificación. Los negocios no pagan por aparecer en este orden. Contacta y acuerda directamente con el profesional.",
+    "badges": {
+      "slwVerified": "Verificado por San Luis Way",
+      "autoVerified": "Datos verificados",
+      "emergency": "Atiende urgencias",
+      "reliable": "Puntual y cumplido",
+      "responsive": "Responde rápido"
+    },
+    "categories": {
+      "plumbing": "Plomería",
+      "electrical": "Electricidad",
+      "locksmith": "Cerrajería",
+      "hvac": "Aire acondicionado",
+      "appliance_repair": "Reparación de electrodomésticos",
+      "carpentry": "Carpintería",
+      "painting": "Pintura",
+      "masonry": "Albañilería",
+      "waterproofing": "Impermeabilización",
+      "ironwork": "Herrería",
+      "gardening": "Jardinería",
+      "cleaning": "Limpieza",
+      "pest_control": "Fumigación",
+      "glass": "Vidrios y aluminio"
+    }
   }
 }

@@ -2810,5 +2810,49 @@
       "subtitle": "Our team is here to help you find the perfect solution for your brand",
       "sendMessage": "Send Message"
     }
+  },
+  "homeServiceFinder": {
+    "title": "Find the right professional",
+    "subtitle": "Tell us what's going on at home and we'll show you the best-rated professionals in San Luis Potosí to fix it.",
+    "placeholder": "e.g. the toilet is clogged and water is leaking on the floor",
+    "submit": "Find a professional",
+    "searching": "Searching…",
+    "error": "We couldn't analyze your problem. Pick a category below.",
+    "unsure": "Which of these is closest to your problem?",
+    "noMatch": "We couldn't tell which service you need. Pick a category.",
+    "urgentNotice": "This looks urgent: providers who handle emergencies are shown first.",
+    "noProviders": "We don't have evaluated professionals in this category yet.",
+    "showMore_one": "Show {{count}} more professional",
+    "showMore_other": "Show {{count}} more professionals",
+    "reviews_one": "({{count}} Google review)",
+    "reviews_other": "({{count}} Google reviews)",
+    "noReviews": "No Google reviews yet",
+    "call": "Call",
+    "website": "Website",
+    "maps": "Map",
+    "rankingNote": "Ranked by Google rating and review count, AI analysis of reviews (punctuality, quality, complaints) and verification. Businesses do not pay to appear in this order. Contact and agree terms directly with the professional.",
+    "badges": {
+      "slwVerified": "Verified by San Luis Way",
+      "autoVerified": "Verified details",
+      "emergency": "Handles emergencies",
+      "reliable": "Punctual and reliable",
+      "responsive": "Responds fast"
+    },
+    "categories": {
+      "plumbing": "Plumbing",
+      "electrical": "Electrical",
+      "locksmith": "Locksmith",
+      "hvac": "Air conditioning",
+      "appliance_repair": "Appliance repair",
+      "carpentry": "Carpentry",
+      "painting": "Painting",
+      "masonry": "Masonry",
+      "waterproofing": "Waterproofing",
+      "ironwork": "Ironwork",
+      "gardening": "Gardening",
+      "cleaning": "Cleaning",
+      "pest_control": "Pest control",
+      "glass": "Glass & aluminum"
+    }
   }
 }
