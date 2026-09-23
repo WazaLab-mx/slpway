@@ -15,6 +15,11 @@ const PRIOR_WEIGHT = 10;
 const MIN_SERVES_CATEGORY = 0.5;
 const EMERGENCY_THRESHOLD = 0.6;
 const NEUTRAL = 0.5; // used when there are no reviews to judge
+// Quality floor: a recommendation widget must not surface clearly bad providers.
+const MIN_RATING = 3.5;
+const MIN_REVIEWS = 1; // no reviews = no evidence to recommend
+const MIN_SATISFACTION = 1.0;
+const MAX_COMPLAINTS = 0.8;
 
 // Pulls few-review providers toward the prior so 5.0 from 2 people doesn't beat 4.7 from 200.
 function smoothedRating(rating, count) {
@@ -46,9 +51,13 @@ function rankScore({ rating, reviewCount, jev, autoVerified, slwVerified }) {
   return Math.round(score * 10000) / 10000;
 }
 
-// Listed only if still operating and Jev agrees it actually does this work.
+// Listed only if still operating, Jev agrees it actually does this work, and
+// neither Google's aggregate nor the reviews Jev read show a clearly bad record.
 function isListable(candidate, jev) {
-  return candidate.businessStatus === 'OPERATIONAL' && jev.servesCategory >= MIN_SERVES_CATEGORY;
+  if (candidate.businessStatus !== 'OPERATIONAL' || jev.servesCategory < MIN_SERVES_CATEGORY) return false;
+  if ((candidate.reviewCount || 0) < MIN_REVIEWS || candidate.rating < MIN_RATING) return false;
+  const dissatisfied = jev.satisfaction != null && jev.satisfaction < MIN_SATISFACTION;
+  return !(dissatisfied && jev.seriousComplaints >= MAX_COMPLAINTS);
 }
 
 module.exports = {

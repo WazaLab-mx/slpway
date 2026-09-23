@@ -1,5 +1,5 @@
 const { smoothedRating, isAutoVerified, rankScore, isListable } = require('../scripts/home-services/lib/ranking');
-const { assessPresence, digits } = require('../scripts/home-services/lib/web-presence');
+const { assessPresence, digits, findPresence } = require('../scripts/home-services/lib/web-presence');
 const { toCandidate } = require('../scripts/home-services/lib/places');
 const { evaluateProvider, buildQuestions } = require('../scripts/home-services/lib/jev-evaluate');
 
@@ -36,9 +36,20 @@ describe('ranking', () => {
   });
 
   it('lists only operating providers that Jev says do the work', () => {
-    expect(isListable({ businessStatus: 'OPERATIONAL' }, { servesCategory: 0.8 })).toBe(true);
-    expect(isListable({ businessStatus: 'OPERATIONAL' }, { servesCategory: 0.2 })).toBe(false);
-    expect(isListable({ businessStatus: 'CLOSED_TEMPORARILY' }, { servesCategory: 0.9 })).toBe(false);
+    const rated = { businessStatus: 'OPERATIONAL', rating: 4.4, reviewCount: 20 };
+    expect(isListable(rated, { servesCategory: 0.8 })).toBe(true);
+    expect(isListable(rated, { servesCategory: 0.2 })).toBe(false);
+    expect(isListable({ ...rated, businessStatus: 'CLOSED_TEMPORARILY' }, { servesCategory: 0.9 })).toBe(false);
+  });
+
+  it('applies a quality floor from the Google aggregate and the reviews Jev read', () => {
+    const ok = { businessStatus: 'OPERATIONAL', rating: 4.5, reviewCount: 30 };
+    expect(isListable({ ...ok, rating: 3.2 }, jevStrong)).toBe(false);
+    expect(isListable(ok, { ...jevStrong, satisfaction: 0.4, seriousComplaints: 0.95 })).toBe(false);
+    // Complaints alone lower the rank but do not delist a well-rated provider.
+    expect(isListable(ok, { ...jevStrong, satisfaction: 2, seriousComplaints: 0.95 })).toBe(true);
+    // No reviews at all means no evidence to recommend.
+    expect(isListable({ ...ok, rating: null, reviewCount: 0 }, jevNeutral)).toBe(false);
   });
 });
 
@@ -61,6 +72,19 @@ describe('web presence', () => {
       { url: 'https://otro.mx', title: 'Ferretería Centro', content: '4441234567' },
     ]);
     expect(result).toEqual({ sources: [], phoneConfirmed: false, socialUrl: null });
+  });
+
+  it('retries Firecrawl after a 429 and maps its search results', async () => {
+    const limited = { ok: false, status: 429, headers: { get: () => '0.001' } };
+    const ok = {
+      ok: true, status: 200, headers: { get: () => null },
+      json: async () => ({ data: { web: [{ url: 'https://instagram.com/plomeriahernandez', title: 'Plomería Hernández', description: 'Tel 444 123 4567' }] } }),
+    };
+    global.fetch = jest.fn().mockResolvedValueOnce(limited).mockResolvedValueOnce(ok) as any;
+    const result = await findPresence('fc-key', candidate);
+    expect(global.fetch).toHaveBeenCalledTimes(2);
+    expect(result).toMatchObject({ phoneConfirmed: true, socialUrl: 'https://instagram.com/plomeriahernandez' });
+    (global.fetch as jest.Mock).mockRestore?.();
   });
 
   it('normalizes phones to 10 digits', () => {

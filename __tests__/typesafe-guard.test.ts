@@ -99,4 +99,12 @@ describe('askSystemOne', () => {
     expect(init.headers.Authorization).toBe('Bearer ts-key');
     expect(JSON.parse(init.body).model).toBe('jev-latest');
   });
+
+  it('retries after a timeout', async () => {
+    const timeout = Object.assign(new Error('The operation was aborted due to timeout'), { name: 'TimeoutError' });
+    global.fetch = jest.fn()
+      .mockRejectedValueOnce(timeout)
+      .mockResolvedValueOnce({ ok: true, json: async () => ({ answers: { q: { type: 'noul', noul: 0.9 } } }) }) as any;
+    expect((await askSystemOne('ts-key', 'hola', { q: { type: 'noul', instructions: 'x?' } })).q.noul).toBe(0.9);
+  });
 });

@@ -4,7 +4,7 @@
  * into public.home_service_providers.
  *
  *   node scripts/home-services/discover.js                  # all categories
- *   node scripts/home-services/discover.js --category=plumbing --dry-run
+ *   node scripts/home-services/discover.js --category=plumbing,painting --dry-run
  *
  * Re-running refreshes ratings (Google content must stay fresh) and keeps
  * the manual slw_verified_at badge untouched.
@@ -36,7 +36,7 @@ async function mapLimit(items, limit, fn) {
 
 async function assess(candidate, category, env, slwVerified) {
   const [presence, jev] = await Promise.all([
-    findPresence(env.TAVILY_API_KEY, candidate).catch(err => {
+    findPresence(env.FIRECRAWL_API_KEY, candidate).catch(err => {
       console.warn(`  web check failed for ${candidate.name}: ${err.message}`);
       return { sources: [], phoneConfirmed: false, socialUrl: null };
     }),
@@ -69,11 +69,12 @@ async function assess(candidate, category, env, slwVerified) {
 
 async function main() {
   const env = process.env;
-  for (const key of ['GOOGLE_PLACES_API_KEY', 'TYPESAFE_API_KEY', 'TAVILY_API_KEY', 'NEXT_PUBLIC_SUPABASE_URL', 'SUPABASE_SERVICE_ROLE_KEY']) {
+  for (const key of ['GOOGLE_PLACES_API_KEY', 'TYPESAFE_API_KEY', 'FIRECRAWL_API_KEY', 'NEXT_PUBLIC_SUPABASE_URL', 'SUPABASE_SERVICE_ROLE_KEY']) {
     if (!env[key]) throw new Error(`Missing ${key}`);
   }
-  const only = arg('category');
-  if (only && !CATEGORIES[only]) throw new Error(`Unknown category "${only}". Use one of: ${CATEGORY_KEYS.join(', ')}`);
+  const only = arg('category') ? String(arg('category')).split(',') : null;
+  const unknown = (only || []).filter(c => !CATEGORIES[c]);
+  if (unknown.length) throw new Error(`Unknown category "${unknown}". Use: ${CATEGORY_KEYS.join(', ')}`);
   const dryRun = Boolean(arg('dry-run'));
   const supabase = createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY);
 
@@ -86,10 +87,14 @@ async function main() {
 
   const seen = new Set();
   const rows = [];
-  for (const category of only ? [only] : CATEGORY_KEYS) {
-    const candidates = (await searchCategory(env.GOOGLE_PLACES_API_KEY, CATEGORIES[category].query))
-      .filter(c => !seen.has(c.googlePlaceId));
-    candidates.forEach(c => seen.add(c.googlePlaceId));
+  for (const category of only || CATEGORY_KEYS) {
+    const candidates = [];
+    for (const query of CATEGORIES[category].queries) {
+      for (const c of await searchCategory(env.GOOGLE_PLACES_API_KEY, query)) {
+        if (!seen.has(c.googlePlaceId)) candidates.push(c);
+        seen.add(c.googlePlaceId);
+      }
+    }
     console.log(`${category}: ${candidates.length} candidates`);
     const results = await mapLimit(candidates, CONCURRENCY, c => assess(c, category, env, slwVerified.has(c.googlePlaceId)));
     for (const r of results) {

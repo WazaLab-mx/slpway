@@ -1,5 +1,13 @@
 # Change Log
 
+## [2026-09-23] Home services: first data load + pipeline fixes
+
+- Discovery run for all 14 categories: 464 businesses assessed, 258 active in `home_service_providers`. Backups in `backups/home-services-2026-09-23/`.
+- Tavily hit its plan limit (HTTP 432; this also affects the social-trends cron), so the web check moved to Firecrawl search, which retries on 429 and honors retry-after. Jev calls now also retry on timeout.
+- Categories take several Places queries (`queries`), which lifted painting from 2 to 43 candidates and masonry from 8 to 23. The plumbing description now includes drain unclogging (desazolve).
+- Quality floor in `isListable`: at least 1 review, Google rating ≥ 3.5, and not (Jev satisfaction < 1 with serious complaints ≥ 0.8). Jev correctly rejected supply stores, automotive AC shops and a security-camera installer.
+- `--category` accepts a comma-separated list.
+
 ## [2026-09-23] Home services finder with Jev-evaluated providers
 
 - New table `home_service_providers` (migration `supabase/migrations/20260923_home_service_providers.sql`, public read of active rows only). 14 categories live in `src/lib/home-services-categories.js`, shared by the script, API and UI.

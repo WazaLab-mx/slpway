@@ -1,4 +1,4 @@
-// Second, independent source for each provider: a web search (Tavily) that
+// Second, independent source for each provider: a web search (Firecrawl) that
 // looks for the business outside Google and checks that its phone matches.
 const SOCIAL = /(^|\.)(facebook|instagram|tiktok)\.com$/i;
 const IGNORED = /(^|\.)(google\.[a-z.]+|goo\.gl|waze\.com)$/i;
@@ -36,19 +36,31 @@ function assessPresence(candidate, results) {
   };
 }
 
-async function findPresence(apiKey, candidate) {
-  const response = await fetch('https://api.tavily.com/search', {
+async function search(apiKey, candidate) {
+  return fetch('https://api.firecrawl.dev/v2/search', {
     method: 'POST',
     signal: AbortSignal.timeout(45000),
     headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({
       query: `"${candidate.name}" San Luis Potosí ${candidate.phone || ''}`.trim(),
-      search_depth: 'basic', max_results: 8, include_answer: false,
+      limit: 8, country: 'MX', lang: 'es',
     }),
   });
-  if (!response.ok) throw new Error(`Tavily search HTTP ${response.status}`);
+}
+
+// Firecrawl rate-limits bursts (429); wait as told, then retry.
+async function findPresence(apiKey, candidate, attempts = 4) {
+  let response;
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    response = await search(apiKey, candidate);
+    if (response.status !== 429 || attempt === attempts) break;
+    const wait = Number(response.headers.get('retry-after')) || 15 * attempt;
+    await new Promise(r => setTimeout(r, wait * 1000));
+  }
+  if (!response.ok) throw new Error(`Firecrawl search HTTP ${response.status}`);
   const data = await response.json();
-  return assessPresence(candidate, data.results || []);
+  const results = (data.data?.web || []).map(r => ({ url: r.url, title: r.title || '', content: r.description || '' }));
+  return assessPresence(candidate, results);
 }
 
 module.exports = { assessPresence, findPresence, digits };

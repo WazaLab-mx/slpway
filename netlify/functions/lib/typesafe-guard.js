@@ -45,14 +45,22 @@ const GUARD_QUESTIONS = {
   },
 };
 
+// Retries overload responses (429/529) and timeouts with exponential backoff.
 async function askSystemOne(apiKey, state, questions, attempts = 3) {
   for (let attempt = 1; ; attempt++) {
-    const response = await fetch(ENDPOINT, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
-      signal: AbortSignal.timeout(30000),
-      body: JSON.stringify({ model: 'jev-latest', state, questions }),
-    });
+    let response;
+    try {
+      response = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
+        signal: AbortSignal.timeout(30000),
+        body: JSON.stringify({ model: 'jev-latest', state, questions }),
+      });
+    } catch (err) {
+      if (err.name !== 'TimeoutError' || attempt >= attempts) throw err;
+      await new Promise(r => setTimeout(r, 500 * 2 ** (attempt - 1)));
+      continue;
+    }
     if (response.ok) return (await response.json()).answers;
     if (!RETRYABLE.has(response.status) || attempt >= attempts) {
       const body = await response.text().catch(() => '');
