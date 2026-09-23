@@ -1,5 +1,13 @@
 # Commit Log
 
+## 2026-09-23 — fix: harden home services discovery and apply quality floor
+
+- Baseline: cf63e59. Commit f7f6e3f. The migration is now applied in production (by the user), and `home_service_providers` holds 258 active of 464 assessed rows.
+- Changes: Firecrawl search (v2) as the second source, with 429 retry/backoff; `askSystemOne` retries on TimeoutError; per-category `queries` arrays; `isListable` quality floor (≥1 review, rating ≥3.5, no low-satisfaction + serious-complaints combo); comma-separated `--category`.
+- Verified: full dry run reviewed for plumbing; local browser check at 390px (Jev routed "se tapó el baño…" to plumbing/urgent, emergency providers first, no horizontal scroll); anon-key read works through RLS.
+- Tests: 74 suites / 492 tests. coupon-functionality flaked once under full-suite load and passes in isolation. tsc clean.
+- Rollback: revert the commit. Data: backups/home-services-2026-09-23/before-*.json and assessed-*.json; `UPDATE home_service_providers SET active=false` hides the widget.
+
 ## 2026-09-23 — feat: add Jev-ranked home services finder
 
 - Baseline: b45cb4b. Commit 746c7b4. New table (migration file NOT yet applied to production). No secrets committed; `GOOGLE_PLACES_API_KEY` and `TYPESAFE_API_KEY` exist only in the git-ignored `.env`.
