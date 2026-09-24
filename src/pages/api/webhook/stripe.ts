@@ -236,34 +236,45 @@ async function handleSubscriptionChange(subscription: Stripe.Subscription) {
   const status = subscription.status;
   const currentPeriodEnd = new Date((subscription as Stripe.Subscription & { current_period_end: number }).current_period_end * 1000).toISOString();
 
+  // Determine if the subscription makes the business featured
+  const isFeatured = ['active', 'trialing'].includes(status);
+
   if (businessProfile) {
-    // Update existing business profile
+    // Update existing business profile with featured status
     const { error: updateError } = await supabaseClient
       .from('business_profiles')
       .update({
         subscription_status: status,
         subscription_id: subscription.id,
         subscription_end_date: currentPeriodEnd,
+        is_featured: isFeatured,
         updated_at: new Date().toISOString()
       })
       .eq('id', businessProfile.id);
 
     if (updateError) {
       logger.error('Error updating business profile subscription:', updateError);
+    } else {
+      logger.log(`Business profile ${businessProfile.id} featured status set to: ${isFeatured}`);
     }
   } else {
-    // Create new business profile with subscription
+    // Create new business profile with subscription and featured status
     const { error: createError } = await supabaseClient
       .from('business_profiles')
       .insert({
         user_id: userId,
         subscription_status: status,
         subscription_id: subscription.id,
-        subscription_end_date: currentPeriodEnd
+        subscription_end_date: currentPeriodEnd,
+        is_featured: isFeatured,
+        business_name: 'New Business',
+        business_category: 'Other'
       });
 
     if (createError) {
       logger.error('Error creating business profile with subscription:', createError);
+    } else {
+      logger.log(`New business profile created with featured status: ${isFeatured}`);
     }
   }
 
@@ -316,17 +327,20 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
     }
 
     if (userData) {
-      // Update business profile
+      // Update business profile - remove featured status when subscription is canceled
       const { error: updateError } = await supabaseClient
         .from('business_profiles')
         .update({
           subscription_status: 'canceled',
+          is_featured: false,
           updated_at: new Date().toISOString()
         })
         .eq('user_id', userData.id);
 
       if (updateError) {
         logger.error('Error updating business profile for canceled subscription:', updateError);
+      } else {
+        logger.log(`Removed featured status from business profile for user ${userData.id}`);
       }
     }
 
@@ -338,17 +352,20 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
     return;
   }
 
-  // Update business profile subscription status
+  // Update business profile subscription status and remove featured status
   const { error: updateError } = await supabaseClient
     .from('business_profiles')
     .update({
       subscription_status: 'canceled',
+      is_featured: false,
       updated_at: new Date().toISOString()
     })
     .eq('user_id', userSubscription.user_id);
 
   if (updateError) {
     logger.error('Error updating business profile for canceled subscription:', updateError);
+  } else {
+    logger.log(`Removed featured status from business profile for subscription ${subscription.id}`);
   }
 
   // Also update subscription record

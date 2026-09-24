@@ -10,17 +10,17 @@ export default function SubscriptionCTA({ variant = 'banner', className = '' }: 
     return (
       <div className={`flex items-center justify-between bg-gradient-to-r from-primary/10 to-amber-50 border border-primary/20 rounded-xl px-5 py-4 ${className}`}>
         <div className="flex items-center gap-3">
-          <span className="text-2xl">🏪</span>
+          <span className="text-2xl">⭐</span>
           <div>
             <p className="font-semibold text-gray-900 text-sm">Own a business in SLP?</p>
-            <p className="text-gray-600 text-xs">Get listed and reach 15,000+ visitors monthly</p>
+            <p className="text-gray-600 text-xs">Get featured and reach 15,000+ visitors monthly</p>
           </div>
         </div>
         <Link
           href="/business/subscription"
           className="flex-shrink-0 bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-dark transition-colors"
         >
-          List your business
+          Get Featured
         </Link>
       </div>
     );
@@ -34,16 +34,16 @@ export default function SubscriptionCTA({ variant = 'banner', className = '' }: 
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
           </svg>
         </div>
-        <h3 className="text-xl font-bold text-gray-900 mb-2">Grow Your Business</h3>
+        <h3 className="text-xl font-bold text-gray-900 mb-2">Get Featured</h3>
         <p className="text-gray-600 mb-6 text-sm">
-          Join 100+ local businesses reaching expats and visitors through San Luis Way.
+          Join 100+ local businesses reaching expats and visitors with a Featured directory ad.
           From $250 MXN/month.
         </p>
         <Link
           href="/business/subscription"
           className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-dark transition-colors"
         >
-          Get started
+          Get Featured
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
@@ -59,11 +59,11 @@ export default function SubscriptionCTA({ variant = 'banner', className = '' }: 
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
           <div className="flex-1 text-center md:text-left">
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-              Reach 15,000+ Expats & Visitors Monthly
+              Get Featured — Reach 15,000+ Monthly Visitors
             </h2>
             <p className="text-gray-300 text-lg mb-2">
-              List your business on San Luis Way and get discovered by an engaged
-              international audience actively looking for local services.
+              Featured directory ad on San Luis Way — get discovered by expats and visitors
+              actively looking for businesses like yours.
             </p>
             <div className="flex flex-wrap gap-4 mt-4 justify-center md:justify-start">
               <div className="flex items-center gap-2 text-gray-400 text-sm">
@@ -90,7 +90,7 @@ export default function SubscriptionCTA({ variant = 'banner', className = '' }: 
             href="/business/subscription"
             className="flex-shrink-0 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors shadow-lg"
           >
-            List Your Business
+            Get Featured
           </Link>
         </div>
       </div>

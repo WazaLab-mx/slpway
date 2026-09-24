@@ -55,27 +55,36 @@ export default async function handler(
     const supabase = createClient(supabaseUrl, supabaseKey);
 
         // Extract parameters from request body
-    const { plan, user_id, business_id } = req.body;
+    const { plan, user_id, business_id, customer_email } = req.body;
 
-    if (!plan || !user_id) {
-      return res.status(400).json({ message: 'Missing required fields: plan and user_id' });
+    if (!plan) {
+      return res.status(400).json({ message: 'Missing required field: plan' });
     }
 
-    // Get user details for checkout
-    const { data: userData, error: userError } = await supabase
-      .from('users')
-      .select("*")
-      .eq('id', user_id)
-      .single();
+    let customerEmail = customer_email;
 
-    if (userError) {
-      logger.error('Error fetching user:', userError);
-      return res.status(500).json({ message: 'Error fetching user information' });
+    // If user_id is provided, get user details
+    if (user_id) {
+      const { data: userData, error: userError } = await supabase
+        .from('users')
+        .select("*")
+        .eq('id', user_id)
+        .single();
+
+      if (userError) {
+        logger.error('Error fetching user:', userError);
+        return res.status(500).json({ message: 'Error fetching user information' });
+      }
+
+      if (!userData || !userData.email) {
+        return res.status(404).json({ message: 'User not found or missing email' });
+      }
+
+      customerEmail = userData.email;
     }
 
-    if (!userData || !userData.email) {
-      return res.status(404).json({ message: 'User not found or missing email' });
-    }
+    // For guest checkout, customer_email should be collected by Stripe Checkout
+    logger.log('Creating checkout for:', { user_id, customerEmail: customerEmail ? 'provided' : 'will_collect' });
 
     // Get the right Stripe price ID based on plan
     const stripePriceId = plan === 'yearly' ? YEARLY_PRICE_ID : MONTHLY_PRICE_ID;
@@ -94,13 +103,17 @@ export default async function handler(
       mode: 'subscription',
       success_url: `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/business/subscription-success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/business/subscription`,
-      customer_email: userData.email,
       metadata: {
-        userId: user_id,
+        userId: user_id || null,
         businessId: business_id || null,
         interval: plan,
       }
     };
+
+    // Only set customer_email if we have it; otherwise Stripe will collect it
+    if (customerEmail) {
+      checkoutSessionData.customer_email = customerEmail;
+    }
 
     // Create checkout session
     const checkoutSession = await stripe.checkout.sessions.create(checkoutSessionData);

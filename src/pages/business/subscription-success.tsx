@@ -156,8 +156,8 @@ const SubscriptionSuccessPage = () => {
   return (
     <>
       <Head>
-        <title>¡Suscripción Confirmada! | San Luis Way</title>
-        <meta name="description" content="Tu suscripción de negocio en San Luis Way ha sido confirmada. Comienza a crear listados ahora." />
+        <title>¡Anuncio Destacado Activado! | San Luis Way</title>
+        <meta name="description" content="Tu anuncio destacado en San Luis Way ha sido activado. Tu negocio ahora aparece en posición prioritaria." />
       </Head>
 
       <div className="bg-gray-50 py-16 min-h-screen">
@@ -168,10 +168,10 @@ const SubscriptionSuccessPage = () => {
               <CheckCircleIcon className="h-20 w-20 mx-auto text-green-500 mb-4" />
               <h1 className="text-3xl font-bold text-gray-900 mb-2">
                 {subscriptionStatus === 'active'
-                  ? '¡Suscripción Confirmada!'
+                  ? '¡Anuncio Destacado Activado!'
                   : subscriptionStatus === 'pending'
-                    ? 'Procesando Tu Suscripción'
-                    : 'Estado de Suscripción'}
+                    ? 'Procesando Tu Anuncio'
+                    : 'Estado del Anuncio'}
               </h1>
               <p className="text-xl text-gray-700">
                 {businessName ? `¡Bienvenido ${businessName}!` : '¡Bienvenido a San Luis Way!'}
@@ -182,17 +182,17 @@ const SubscriptionSuccessPage = () => {
               <div className="mb-8 text-center">
                 <p className="text-lg text-gray-700 mb-4">
                   {subscriptionStatus === 'active'
-                    ? 'Gracias por subscribirte a San Luis Way. Tu negocio ahora es parte de nuestra comunidad. ¡Tu perfil ya está activo y puedes comenzar a crear listados!'
+                    ? '¡Gracias por elegir un anuncio destacado en San Luis Way! Tu negocio ahora aparece en posición prioritaria en nuestro directorio y está siendo visto por 15,000+ visitantes mensuales.'
                     : subscriptionStatus === 'pending'
-                      ? 'Tu pago está siendo procesado. Pronto recibirás una confirmación por correo electrónico cuando tu suscripción esté activa.'
-                      : 'No pudimos confirmar el estado de tu suscripción. Si acabas de completar el pago, por favor espera unos minutos mientras procesamos tu información.'}
+                      ? 'Tu pago está siendo procesado. Pronto recibirás una confirmación por correo electrónico cuando tu anuncio destacado esté activo.'
+                      : 'No pudimos confirmar el estado de tu anuncio. Si acabas de completar el pago, por favor espera unos minutos mientras procesamos tu información.'}
                 </p>
                 {subscriptionStatus === 'error' && (
                   <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-4">
                     <p className="text-orange-600">
-                      Si acabas de completar el pago, tu suscripción puede estar siendo procesada.
+                      Si acabas de completar el pago, tu anuncio puede estar siendo procesado.
                       Esto puede tomar hasta 10 minutos. Si continúas viendo este mensaje después de ese tiempo,
-                      por favor contacta a nuestro equipo de soporte.
+                      por favor contacta a nuestro equipo de soporte en sanluisway@wazalab.mx
                     </p>
                     <button
                       onClick={() => window.location.reload()}
@@ -207,23 +207,23 @@ const SubscriptionSuccessPage = () => {
               {/* Benefits section */}
               <div className="mb-8">
                 <h2 className="text-xl font-semibold text-gray-900 mb-4">
-                  Beneficios de tu Suscripción:
+                  Beneficios de tu Anuncio Destacado:
                 </h2>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="bg-gray-50 p-5 rounded-lg border border-gray-200">
                     <BuildingOfficeIcon className="h-10 w-10 text-primary mb-3" />
-                    <h3 className="font-medium text-gray-900 mb-2">Perfil de Negocio</h3>
-                    <p className="text-gray-600">Perfil profesional personalizado para tu negocio visible a toda la comunidad de San Luis Way.</p>
+                    <h3 className="font-medium text-gray-900 mb-2">Posición Prioritaria</h3>
+                    <p className="text-gray-600">Tu negocio aparece destacado en la parte superior del directorio, donde más clientes lo verán primero.</p>
                   </div>
                   <div className="bg-gray-50 p-5 rounded-lg border border-gray-200">
                     <PresentationChartLineIcon className="h-10 w-10 text-primary mb-3" />
-                    <h3 className="font-medium text-gray-900 mb-2">10 Listados de Servicios</h3>
-                    <p className="text-gray-600">Publica hasta 10 servicios o productos diferentes para mostrar todo lo que ofreces.</p>
+                    <h3 className="font-medium text-gray-900 mb-2">Perfil Completo</h3>
+                    <p className="text-gray-600">Perfil personalizado con fotos, horarios, WhatsApp y toda la información que necesitas mostrar.</p>
                   </div>
                   <div className="bg-gray-50 p-5 rounded-lg border border-gray-200">
                     <MegaphoneIcon className="h-10 w-10 text-primary mb-3" />
-                    <h3 className="font-medium text-gray-900 mb-2">Visibilidad</h3>
-                    <p className="text-gray-600">Destaca en los resultados de búsqueda y llega a más clientes potenciales.</p>
+                    <h3 className="font-medium text-gray-900 mb-2">15,000+ Visitantes</h3>
+                    <p className="text-gray-600">Alcanza expats, turistas y locales buscando activamente negocios como el tuyo cada mes.</p>
                   </div>
                 </div>
               </div>

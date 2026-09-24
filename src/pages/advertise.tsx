@@ -183,6 +183,11 @@ export default function Advertise() {
             <div className="max-w-4xl mx-auto text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('advertise.packages.title')}</h2>
               <p className="text-lg md:text-xl text-gray-600">{t('advertise.packages.subtitle')}</p>
+              <div className="mt-6 p-4 bg-blue-50 border-2 border-blue-200 rounded-lg text-center">
+                <p className="text-gray-800">
+                  <strong>New:</strong> Get a <Link href="/business/subscription" className="text-primary font-bold underline">Featured Directory Ad</Link> for $250 MXN/month — priority placement in our directory reaching 15,000+ monthly visitors.
+                </p>
+              </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {PACKAGES.map(({ key, subject, highlighted }) => (
