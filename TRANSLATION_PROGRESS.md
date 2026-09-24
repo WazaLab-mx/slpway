@@ -80,6 +80,12 @@ src/pages/resources/living-guide.tsx
 ## Branch
 `cursor/translate-ultimate-guides-seo-0715`
 
+## Pull Request
+https://github.com/WazaLab-mx/slpway/pull/3
+
+## Status
+Living Guide complete and ready for review. Pattern established for remaining guides.
+
 ## Notes
 - All facts, figures, prices, addresses kept accurate and unchanged
 - Internal links localized where matching locale route exists
