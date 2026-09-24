@@ -1,5 +1,13 @@
 # Commit Log
 
+## 2026-09-23 — refactor: remove unused subscription coupon feature
+
+- Baseline: 5ab3707 (plus log commit). Commit aaf6108. The user confirmed coupons are no longer used.
+- Code removed: the coupon UI in business/subscription.tsx, api/coupons/validate.ts, the coupon block plus `allow_promotion_codes` plus `metadata.couponCode` in create-subscription.ts, `handleCouponUsage` in webhook/stripe.ts, and `applyCoupon` in analytics.ts.
+- Tests: coupon-functionality.test.tsx deleted, 2 coupon cases removed from subscription-flow (6 remain and pass), and the stripe coupons mock removed from helpers. Added src/types/jest-dom.d.ts to keep jest-dom types global. Full suite 73 suites / 491 tests; tsc and eslint clean.
+- Not done: the DB objects admin_coupons, coupon_usage and business_profiles.coupon_* remain.
+- Rollback: revert the commit.
+
 ## 2026-09-23 — feat: reframe home services as an independent-business directory
 
 - Baseline: 1be47b3 (plus log commit). Commit 4ae1f11. User asked: make clear that the services are independent and unrelated to SLW, English as default, don't show "our services", and link the finder from the header, footer and guides.
