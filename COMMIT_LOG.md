@@ -1,5 +1,12 @@
 # Commit Log
 
+## 2026-09-23 — fix: replace inaccurate enchiladas potosinas image
+
+- Baseline: 7bb7a8c. Commit ebbb2c3. New asset `public/images/food/enchiladas-potosinas-hero.jpg` (gpt-image-1, approved by user); 4 pages repointed.
+- DB (after deploy): `blog_posts.image_url` for enchiladas-potosinas-historia-donde-comer, and the body refs in best-brunch-spots-san-luis-potosi, mexico-2026-stopover-san-luis-potosi and direct-flights-from-texas-to-san-luis-potosi. Backup in backups/enchiladas-image-2026-09-23/.
+- The old `enchiladas-potosinas.jpg` is kept for now; delete it in a later batch once nothing references it.
+- Rollback: revert the commit and restore the DB rows from the backup.
+
 ## 2026-09-23 — feat: fall back to a backup Tavily key when the primary is out of quota
 
 - Baseline: add3f2b. Commit 279ba70. `tavilyPost(keys, path, body)` in social-tavily.js; the cron passes `[TAVILY_API_KEY, TAVILY_API_KEY_BACKUP]`. No secret committed (the key lives only in the local .env; Netlify needs it added).
