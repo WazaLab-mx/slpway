@@ -1,5 +1,32 @@
 # Commit Log
 
+## 2026-09-24 — feat: add SEO pillar pages for visas/residency and cost of living
+
+- Baseline: Previous commit. Commit a764510. PR #4 created (draft).
+- Owner approval: correct data that needs correcting, generate images for the posts, and publish them. Drafts attached under uploads/.
+- New pages created:
+  - `/resources/mexico-visas-residency-san-luis-potosi` — Complete guide to Mexican immigration from SLP: FMM visitor permits, temporary resident (economic solvency, family unity, work-based), permanent resident pathways, 2026 solvency thresholds with UMA calculations, INM canje process, 2026 derechos, post-card steps (CURP/RFC/SAT/banking/IMSS), common mistakes, FAQ.
+  - `/resources/cost-of-living-san-luis-potosi` — Comprehensive monthly budget guide: snapshots by profile (frugal single, comfortable single/nomad, couple, family of four), rent by neighborhood (Lomas/Pedregal/Villa Magna/Centro/Tequis/budget), utilities (CFE/INTERAPAS/gas/internet/mobile), food/groceries, restaurants, transportation, healthcare costs, school costs, detailed line-item budget tables with source traceability, city comparisons (SLP vs CDMX/Querétaro/Mérida/San Antonio).
+- Data corrections applied per owner instructions:
+  - INM SLP: Official Calle Muñoz 362 address (09:00–15:00, phone 444 833 1959) from inm.gob.mx used; conflicting addresses from older site pages noted but not used.
+  - IOM hours conflict: Official INM 09:00–15:00 preferred; caveat added to call ahead since some third-party sources list 09:00–14:00.
+  - Temporary→permanent: Described as typical practice (commonly four years) with explicit note to confirm Reglamento article for applicant's specific ground; not absolute for every ground.
+  - Remote work on FMM: Gray-area warning only; no enforcement stats or invented numbers.
+  - San Diego 2026 solvency PDFs: Both conflicting official amounts listed ($75,950/$4,510 vs $68,241/$4,049) with warning that applicants must confirm which sheet their consulate uses.
+  - Cooking gas / import premium / car-ownership monthly / coworking rates: Qualitative guidance only where no concrete SLP mid-2026 figure could be verified from cited sources.
+  - FX: Banxico FIX 17.54 MXN/USD (2 Jul 2026) cited; 23 Sep context (~17.50) provided.
+  - IMSS Modalidad 33: Healthcare blog schedule (Mar 2026–Feb 2027) preferred over COL blog's differing figures.
+  - All [UNVERIFIED] markers removed from published copy per owner instructions.
+- Resources hub updated: Two new cards added to `/resources` index after Family Guide — Mexico Visas & Residency Guide (blue-to-indigo gradient, document icon) and Cost of Living Guide 2026 (green-to-emerald gradient, currency icon).
+- Images generated:
+  - `/images/mexico-visas-residency-hero.jpg` — Warm editorial illustration with Mexican immigration theme (blue/indigo tones, 16:9).
+  - `/images/cost-of-living-slp-hero.jpg` — Warm editorial illustration with budgeting/finance theme (green/teal tones, 16:9).
+- Pattern matching: Followed existing resource guide patterns (health-guide, living-guide, expat-guide) — same hero structure with Image + gradient overlay, sticky navigation, JSON-LD structured data (Article + FAQPage schema), LastUpdated component, GuideCTA with related links, AdUnit placement, proper SEO Head metadata.
+- Internal links: All verified to exist on site (expat-guide, arrival-checklist, health-guide, living-guide, neighborhoods-san-luis-potosi, school-guide, family-guide, plus specific blog posts and categories).
+- Testing: TypeScript compilation successful; pages follow Next.js patterns; all imports resolve; responsive design (mobile & web); no trailing whitespace; images optimized in public/images/.
+- Excluded: No changes to Stripe/checkout; no changes to PR #2 or #3; no merge/rebase operations; no Spanish/German/Japanese locale files (English-first as instructed).
+- Rollback: Revert the commit; delete the two new page files and two image files; remove the two cards from resources index.
+
 ## 2026-09-23 — refactor: remove unused subscription coupon feature
 
 - Baseline: 5ab3707 (plus log commit). Commit aaf6108. The user confirmed coupons are no longer used.
