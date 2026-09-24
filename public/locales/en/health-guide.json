@@ -1,0 +1,35 @@
+{
+  "seo": {
+    "title": "Health Services Guide San Luis Potosí | Healthcare for Expats",
+    "description": "Complete healthcare guide for San Luis Potosí. Private hospitals, clinics, emergency services, insurance options, pharmacies, and English-speaking doctors.",
+    "keywords": "San Luis Potosí healthcare, hospitals SLP, health insurance Mexico, expat medical care, English doctors SLP, pharmacies San Luis Potosí",
+    "ogTitle": "Health Services Guide San Luis Potosí"
+  },
+  "breadcrumbs": { "home": "Home", "resources": "Resources", "healthGuide": "Health Guide" },
+  "hero": {
+    "title": "Health Services Guide San Luis Potosí",
+    "subtitle": "Complete healthcare information for expats: hospitals, insurance, emergency services & English-speaking doctors",
+    "imageAlt": "Healthcare facilities in San Luis Potosí",
+    "readTime": "18 min read"
+  },
+  "sections": [
+    { "id": "overview", "name": "Overview" },
+    { "id": "hospitals", "name": "Hospitals" },
+    { "id": "clinics", "name": "Clinics" },
+    { "id": "emergency", "name": "Emergency" },
+    { "id": "howto-visit", "name": "How to Visit" },
+    { "id": "insurance", "name": "Insurance" },
+    { "id": "howto-insurance", "name": "Get Insurance" },
+    { "id": "pharmacies", "name": "Pharmacies" },
+    { "id": "faq", "name": "FAQ" },
+    { "id": "sources", "name": "Sources" }
+  ],
+  "quickStats": [
+    { "value": "3+", "label": "Major Private Hospitals", "source": "Directory 2024" },
+    { "value": "50-70%", "label": "Lower Costs vs US", "source": "Numbeo 2024" },
+    { "value": "911", "label": "Emergency Number", "source": "Official" },
+    { "value": "24/7", "label": "Emergency Services", "source": "Verified" },
+    { "value": "$400-800", "label": "Avg Doctor Visit (MXN)", "source": "Market Survey" },
+    { "value": "15+", "label": "Major Clinics", "source": "Directory" }
+  ]
+}

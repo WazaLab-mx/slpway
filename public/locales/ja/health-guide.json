@@ -1,0 +1,35 @@
+{
+  "seo": {
+    "title": "サンルイスポトシ 医療ガイド｜駐在員のための医療サービス",
+    "description": "サンルイスポトシの完全医療ガイド。民間病院、クリニック、救急サービス、保険オプション、薬局、英語を話す医師。",
+    "keywords": "サンルイスポトシ 医療, 病院 SLP, 健康保険 メキシコ, 駐在員 医療, 英語 医師 SLP, 薬局 サンルイスポトシ",
+    "ogTitle": "医療サービスガイド サンルイスポトシ"
+  },
+  "breadcrumbs": { "home": "ホーム", "resources": "リソース", "healthGuide": "医療ガイド" },
+  "hero": {
+    "title": "サンルイスポトシ 医療サービスガイド",
+    "subtitle": "駐在員向け完全医療情報：病院、保険、救急サービス、英語を話す医師",
+    "imageAlt": "サンルイスポトシの医療施設",
+    "readTime": "18分で読める"
+  },
+  "sections": [
+    { "id": "overview", "name": "概要" },
+    { "id": "hospitals", "name": "病院" },
+    { "id": "clinics", "name": "クリニック" },
+    { "id": "emergency", "name": "救急" },
+    { "id": "howto-visit", "name": "受診方法" },
+    { "id": "insurance", "name": "保険" },
+    { "id": "howto-insurance", "name": "保険取得" },
+    { "id": "pharmacies", "name": "薬局" },
+    { "id": "faq", "name": "よくある質問" },
+    { "id": "sources", "name": "出典" }
+  ],
+  "quickStats": [
+    { "value": "3以上", "label": "主要民間病院", "source": "ディレクトリ 2024" },
+    { "value": "50-70%", "label": "米国比で低コスト", "source": "Numbeo 2024" },
+    { "value": "911", "label": "緊急電話番号", "source": "公式" },
+    { "value": "24/7", "label": "救急サービス", "source": "検証済み" },
+    { "value": "$400-800", "label": "平均診察料（MXN）", "source": "市場調査" },
+    { "value": "15以上", "label": "主要クリニック", "source": "ディレクトリ" }
+  ]
+}

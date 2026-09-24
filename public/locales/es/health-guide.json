@@ -1,0 +1,35 @@
+{
+  "seo": {
+    "title": "Guía de Servicios de Salud San Luis Potosí | Atención Médica",
+    "description": "Guía completa de atención médica para San Luis Potosí. Hospitales privados, clínicas, servicios de emergencia, opciones de seguro, farmacias y médicos que hablan inglés.",
+    "keywords": "San Luis Potosí atención médica, hospitales SLP, seguro médico México, atención médica expat, médicos inglés SLP, farmacias San Luis Potosí",
+    "ogTitle": "Guía de Servicios de Salud San Luis Potosí"
+  },
+  "breadcrumbs": { "home": "Inicio", "resources": "Recursos", "healthGuide": "Guía de Salud" },
+  "hero": {
+    "title": "Guía de Servicios de Salud San Luis Potosí",
+    "subtitle": "Información completa de atención médica para expats: hospitales, seguros, servicios de emergencia y médicos que hablan inglés",
+    "imageAlt": "Instalaciones de atención médica en San Luis Potosí",
+    "readTime": "18 min de lectura"
+  },
+  "sections": [
+    { "id": "overview", "name": "Resumen" },
+    { "id": "hospitals", "name": "Hospitales" },
+    { "id": "clinics", "name": "Clínicas" },
+    { "id": "emergency", "name": "Emergencias" },
+    { "id": "howto-visit", "name": "Cómo Visitar" },
+    { "id": "insurance", "name": "Seguros" },
+    { "id": "howto-insurance", "name": "Obtener Seguro" },
+    { "id": "pharmacies", "name": "Farmacias" },
+    { "id": "faq", "name": "Preguntas Frecuentes" },
+    { "id": "sources", "name": "Fuentes" }
+  ],
+  "quickStats": [
+    { "value": "3+", "label": "Hospitales Privados Principales", "source": "Directorio 2024" },
+    { "value": "50-70%", "label": "Costos Más Bajos vs EE.UU.", "source": "Numbeo 2024" },
+    { "value": "911", "label": "Número de Emergencia", "source": "Oficial" },
+    { "value": "24/7", "label": "Servicios de Emergencia", "source": "Verificado" },
+    { "value": "$400-800", "label": "Consulta Médica Promedio (MXN)", "source": "Encuesta Mercado" },
+    { "value": "15+", "label": "Clínicas Principales", "source": "Directorio" }
+  ]
+}

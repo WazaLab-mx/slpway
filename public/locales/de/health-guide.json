@@ -1,0 +1,35 @@
+{
+  "seo": {
+    "title": "Gesundheitsleitfaden San Luis Potosí | Medizinische Versorgung",
+    "description": "Vollständiger Gesundheitsleitfaden für San Luis Potosí. Privatkliniken, Kliniken, Notdienste, Versicherungsoptionen, Apotheken und englischsprachige Ärzte.",
+    "keywords": "San Luis Potosí Gesundheitsversorgung, Krankenhäuser SLP, Krankenversicherung Mexiko, Expat medizinische Versorgung, Englisch Ärzte SLP, Apotheken San Luis Potosí",
+    "ogTitle": "Gesundheitsleitfaden San Luis Potosí"
+  },
+  "breadcrumbs": { "home": "Startseite", "resources": "Ressourcen", "healthGuide": "Gesundheitsleitfaden" },
+  "hero": {
+    "title": "Gesundheitsleitfaden San Luis Potosí",
+    "subtitle": "Vollständige Gesundheitsinformationen für Expats: Krankenhäuser, Versicherung, Notdienste & englischsprachige Ärzte",
+    "imageAlt": "Gesundheitseinrichtungen in San Luis Potosí",
+    "readTime": "18 Min. Lesezeit"
+  },
+  "sections": [
+    { "id": "overview", "name": "Überblick" },
+    { "id": "hospitals", "name": "Krankenhäuser" },
+    { "id": "clinics", "name": "Kliniken" },
+    { "id": "emergency", "name": "Notfall" },
+    { "id": "howto-visit", "name": "Wie man besucht" },
+    { "id": "insurance", "name": "Versicherung" },
+    { "id": "howto-insurance", "name": "Versicherung erhalten" },
+    { "id": "pharmacies", "name": "Apotheken" },
+    { "id": "faq", "name": "FAQ" },
+    { "id": "sources", "name": "Quellen" }
+  ],
+  "quickStats": [
+    { "value": "3+", "label": "Große Privatkliniken", "source": "Verzeichnis 2024" },
+    { "value": "50-70%", "label": "Niedrigere Kosten vs USA", "source": "Numbeo 2024" },
+    { "value": "911", "label": "Notrufnummer", "source": "Offiziell" },
+    { "value": "24/7", "label": "Notdienste", "source": "Verifiziert" },
+    { "value": "$400-800", "label": "Durchschn. Arztbesuch (MXN)", "source": "Marktumfrage" },
+    { "value": "15+", "label": "Große Kliniken", "source": "Verzeichnis" }
+  ]
+}
