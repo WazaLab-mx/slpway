@@ -18,6 +18,8 @@ export interface SitemapEntry {
   lastmod: string;
   changefreq: ChangeFreq;
   priority: number;
+  /** Optional: restrict to specific locales (e.g., factchecks only exist in en+es) */
+  locales?: Locale[];
 }
 
 export interface HreflangLink {
@@ -41,12 +43,14 @@ export function buildLocaleUrl(path: string, locale: Locale): string {
 }
 
 /**
- * Build the hreflang block for a given path. Used inside each <url> entry
- * so Google can cluster the locale variants. Returns hreflang for every
- * supported locale plus x-default pointing at the default locale URL.
+ * Build the hreflang block for a given path + optional locale restriction.
+ * Used inside each <url> entry so Google can cluster the locale variants.
+ * Returns hreflang for every supported locale plus x-default pointing at
+ * the default locale URL.
  */
-export function buildHreflangLinks(path: string): HreflangLink[] {
-  const links: HreflangLink[] = LOCALES.map((locale) => ({
+export function buildHreflangLinks(path: string, allowedLocales?: Locale[]): HreflangLink[] {
+  const locales = allowedLocales || LOCALES;
+  const links: HreflangLink[] = locales.map((locale) => ({
     hreflang: locale,
     href: buildLocaleUrl(path, locale),
   }));
