@@ -1,0 +1,35 @@
+{
+  "seo": {
+    "title": "Guía Definitiva de Vida Familiar San Luis Potosí | Escuelas, Parques, Actividades",
+    "description": "Guía familiar completa para San Luis Potosí. Mejores colonias, escuelas internacionales, parques, atención pediátrica, guarderías, deportes infantiles, restaurantes familiares. Todo lo que familias expat necesitan.",
+    "keywords": "San Luis Potosí familias, familias expat SLP, actividades familiares, escuelas internacionales, parques SLP, atención pediátrica, guardería México",
+    "ogTitle": "Guía de Vida Familiar San Luis Potosí | Guía Completa para Familias Expat"
+  },
+  "breadcrumbs": { "home": "Inicio", "resources": "Recursos", "familyGuide": "Guía Familiar" },
+  "hero": {
+    "title": "Guía Definitiva de Vida Familiar San Luis Potosí",
+    "subtitle": "Escuelas, parques, atención pediátrica, actividades — todo lo que familias expat necesitan",
+    "imageAlt": "Actividades familiares en San Luis Potosí",
+    "readTime": "12 min de lectura"
+  },
+  "sections": [
+    { "id": "overview", "name": "Resumen" },
+    { "id": "schools", "name": "Escuelas" },
+    { "id": "parks", "name": "Parques y Actividades" },
+    { "id": "healthcare", "name": "Atención Pediátrica" },
+    { "id": "childcare", "name": "Guarderías" },
+    { "id": "sports", "name": "Deportes Infantiles" },
+    { "id": "neighborhoods", "name": "Colonias" },
+    { "id": "restaurants", "name": "Restaurantes Familiares" },
+    { "id": "faq", "name": "Preguntas Frecuentes" },
+    { "id": "sources", "name": "Fuentes" }
+  ],
+  "quickStats": [
+    { "value": "50+", "label": "Escuelas Privadas", "source": "SEP 2024" },
+    { "value": "420ha", "label": "Parque Tangamanga", "source": "Datos Ciudad" },
+    { "value": "25+", "label": "Academias Deportivas", "source": "Directorio" },
+    { "value": "3+", "label": "Hospitales Familiares", "source": "Verificado" },
+    { "value": "10+", "label": "Museos Infantiles", "source": "Turismo" },
+    { "value": "5", "label": "Zonas Familiares", "source": "Guía" }
+  ]
+}

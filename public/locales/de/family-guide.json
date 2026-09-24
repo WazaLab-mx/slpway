@@ -1,0 +1,35 @@
+{
+  "seo": {
+    "title": "Ultimativer Familienleitfaden San Luis Potosí | Schulen, Parks, Aktivitäten",
+    "description": "Vollständiger Familienleitfaden für San Luis Potosí. Beste Stadtteile, internationale Schulen, Parks, Kinderbetreuung, Kindergärten, Kindersport, Familienrestaurants. Alles, was Expat-Familien brauchen.",
+    "keywords": "San Luis Potosí Familien, Expat-Familien SLP, Familienaktivitäten, internationale Schulen, Parks SLP, Kinderbetreuung, Kita Mexiko",
+    "ogTitle": "Familienleitfaden San Luis Potosí | Vollständiger Leitfaden für Expat-Familien"
+  },
+  "breadcrumbs": { "home": "Startseite", "resources": "Ressourcen", "familyGuide": "Familienleitfaden" },
+  "hero": {
+    "title": "Ultimativer Familienleitfaden San Luis Potosí",
+    "subtitle": "Schulen, Parks, Kinderbetreuung, Aktivitäten — alles, was Expat-Familien brauchen",
+    "imageAlt": "Familienaktivitäten in San Luis Potosí",
+    "readTime": "12 Min. Lesezeit"
+  },
+  "sections": [
+    { "id": "overview", "name": "Überblick" },
+    { "id": "schools", "name": "Schulen" },
+    { "id": "parks", "name": "Parks & Aktivitäten" },
+    { "id": "healthcare", "name": "Kinderarztversorgung" },
+    { "id": "childcare", "name": "Kinderbetreuung" },
+    { "id": "sports", "name": "Kindersport" },
+    { "id": "neighborhoods", "name": "Stadtteile" },
+    { "id": "restaurants", "name": "Familienrestaurants" },
+    { "id": "faq", "name": "FAQ" },
+    { "id": "sources", "name": "Quellen" }
+  ],
+  "quickStats": [
+    { "value": "50+", "label": "Privatschulen", "source": "SEP 2024" },
+    { "value": "420ha", "label": "Tangamanga Park", "source": "Stadtdaten" },
+    { "value": "25+", "label": "Sportakademien", "source": "Verzeichnis" },
+    { "value": "3+", "label": "Familienkliniken", "source": "Verifiziert" },
+    { "value": "10+", "label": "Kindermuseen", "source": "Tourismus" },
+    { "value": "5", "label": "Familienzonen", "source": "Leitfaden" }
+  ]
+}
