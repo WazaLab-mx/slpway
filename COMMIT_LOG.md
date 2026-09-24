@@ -3803,3 +3803,78 @@ Spanish, German, and Japanese translations can be added to i18n files as follow-
 - No database changes, no data migrations
 - Build should pass once environment variables configured in CI
 
+
+---
+
+## Commit: Technical SEO improvements - sitemap, i18n, metadata, favicons
+**Date:** 2026-09-24
+**Hash:** 4d45a96
+**Branch:** cursor/seo-quick-fixes-8704
+
+### Changes Made
+
+#### Sitemap Improvements
+1. **Fixed 98 factcheck 404s**: Modified sitemap generation to only emit EN+ES locale URLs for factchecks (DE/JA translations don't exist)
+   - Added `locales?: Locale[]` field to `SitemapEntry` interface
+   - Updated `fetchFactcheckUrls()` to restrict to `['en', 'es']`
+   - Modified `buildHreflangLinks()` to accept optional locale restrictions
+   - Updated `expandLocaleEntries()` to respect locale restrictions
+   - **Files:** `src/lib/sitemap/locale.ts`, `src/lib/sitemap/index.ts`, `src/lib/sitemap/dynamic.ts`
+
+2. **Fixed ~196 lastmod=1980-01-01 entries**: Use real file modification dates instead of Unix epoch fallback
+   - Changed to use `stat.mtime.toISOString().split('T')[0]` directly
+   - **File:** `src/lib/sitemap/dynamic.ts`
+
+#### Newsletter Page SSR Fix
+- Added `getStaticProps` with `serverSideTranslations` to enable i18n at build time
+- Added proper `<title>`, meta description, and H1 for SEO
+- Fixed unresolved i18n keys (newsletter.stayInLoop, newsletter.weeklyUpdates, etc.)
+- **File:** `src/pages/newsletter.tsx`
+
+#### Home Page H1 Spacing
+- Fixed H1 rendering "inSan" (no space) by adding explicit space before `<br />`
+- Now correctly renders "Find your own way in San Luis Potosí"
+- **File:** `src/components/home/HeroSection.tsx`
+
+#### Community Page SEO
+- Added `<meta name="robots" content="noindex, follow" />` for Coming Soon state
+- Prevents indexing of placeholder content while allowing link equity flow
+- **File:** `src/pages/community.tsx`
+
+#### Favicon Files
+- Created missing `public/apple-icon.png` and `public/favicon-16x16.png`
+- Copied from existing `favicon-32x32.png` to resolve 404s
+- **Files:** `public/apple-icon.png`, `public/favicon-16x16.png`
+
+#### Factcheck Pages - Double H1 Fix
+- Modified markdown renderer to map H1 -> H2 to prevent duplicate H1 elements
+- Page-level H1 (report title) remains as sole H1
+- Markdown H1s now render as semantic H2s with original styling
+- **File:** `src/pages/blog/factchecks/[slug].tsx`
+
+#### Static Paths Generation
+- Updated factcheck page `getStaticPaths` to only generate EN and ES (added comment)
+- Prevents generation of non-existent DE/JA pages
+- **File:** `src/pages/blog/factchecks/[slug].tsx`
+
+### Impact
+- **Eliminates 98 sitemap 404s** (DE/JA factcheck URLs)
+- **Fixes ~196 sitemap URLs** with incorrect lastmod dates
+- **Resolves 2 favicon 404s** on every page load
+- **Fixes accessibility issue** (double H1 on factcheck pages)
+- **Improves SEO metadata** for newsletter page
+- **Fixes home page H1 spacing** issue
+- **Prevents indexing** of Coming Soon community page
+
+### Testing
+- Sitemap now correctly restricts factchecks to EN+ES only
+- Newsletter page has proper SSR with title, meta, H1, and resolved translations
+- Home H1 renders with correct spacing
+- Favicon files load without errors
+- Factcheck pages have single H1 element
+- Community page includes noindex meta tag
+
+### Related PR
+- PR #2: https://github.com/WazaLab-mx/slpway/pull/2
+- Part of comprehensive SEO audit fixes (11 total improvements)
+

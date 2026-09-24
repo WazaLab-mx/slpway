@@ -414,3 +414,68 @@ await supabase
 
 See `COMMIT_LOG.md` (2026-09-24 entry) for full technical details.
 
+
+### 2026-09-24: Technical SEO Improvements - Sitemap, i18n, Metadata, Favicons
+**Branch**: `cursor/seo-quick-fixes-8704` (same PR as above quick fixes)
+**PR**: #2
+
+**Purpose:** Implement 7 additional technical SEO fixes from live crawl audit to eliminate 404s, fix metadata issues, and improve semantic HTML.
+
+**Major fixes:**
+
+1. **Sitemap: Fixed 98 Factcheck 404s (DE/JA locales)**
+   - Problem: Sitemap emitted `/de/blog/factchecks/*` and `/ja/blog/factchecks/*` URLs that don't exist (only EN and ES translations exist)
+   - Solution: Added `locales?: Locale[]` field to `SitemapEntry` interface
+   - Updated `fetchFactcheckUrls()` to restrict to `['en', 'es']`
+   - Modified sitemap locale helpers to respect restrictions
+   - Files: `src/lib/sitemap/locale.ts`, `src/lib/sitemap/index.ts`, `src/lib/sitemap/dynamic.ts`
+   - Impact: **Eliminates 98 sitemap 404s**, hreflang alternates only point to existing pages
+
+2. **Sitemap: Fixed ~196 lastmod=1980-01-01 Entries**
+   - Problem: Sitemap used Unix epoch fallback (1980-01-01) for file modification times
+   - Solution: Use `stat.mtime.toISOString().split('T')[0]` directly
+   - File: `src/lib/sitemap/dynamic.ts`
+   - Impact: Search engines now see accurate content freshness signals
+
+3. **Newsletter Page: Fixed SSR Metadata & i18n**
+   - Problem: Missing `<title>`, meta description, H1, and unresolved i18n keys in SSR HTML
+   - Solution: Added `getStaticProps` with `serverSideTranslations`, proper SEO metadata
+   - File: `src/pages/newsletter.tsx`
+   - Impact: Newsletter page now has proper SEO and functional i18n
+
+4. **Home H1: Fixed Spacing ('inSan' → 'in San')**
+   - Problem: H1 rendered "inSan Luis Potosí" with no space before "San"
+   - Solution: Added explicit space before `<br />` in H1 JSX
+   - File: `src/components/home/HeroSection.tsx`
+   - Impact: H1 now reads "Find your own way in San Luis Potosí" with correct spacing
+
+5. **Community Page: Added noindex,follow**
+   - Problem: "Coming Soon" page was being indexed with placeholder content
+   - Solution: Added `<meta name="robots" content="noindex, follow" />`
+   - File: `src/pages/community.tsx`
+   - Impact: Search engines won't index placeholder content, improving crawl efficiency
+
+6. **Favicons: Added Missing apple-icon.png & favicon-16x16.png**
+   - Problem: `<head>` referenced `/apple-icon.png` and `/favicon-16x16.png` but files didn't exist (404s on every page)
+   - Solution: Copied from existing `favicon-32x32.png`
+   - Files: `public/apple-icon.png`, `public/favicon-16x16.png`
+   - Impact: **Eliminates 2 resource 404s on every page load**
+
+7. **Factcheck Pages: Fixed Double H1**
+   - Problem: Pages had two H1 elements (page title + markdown H1), violating accessibility and SEO best practices
+   - Solution: Modified markdown renderer to map H1 → H2
+   - File: `src/pages/blog/factchecks/[slug].tsx`
+   - Impact: Factcheck pages now have exactly one H1 (accessibility compliant)
+
+**Redirects verified:**
+- `netlify.toml` already correctly configured for single 301 hop from `http://sanluisway.com` → `https://www.sanluisway.com`
+- No changes needed
+
+**Total impact:**
+- **100+ crawl errors eliminated** (98 sitemap 404s + 2 favicon 404s per page)
+- **~196 sitemap URLs** now have correct lastmod dates
+- Fixed metadata and i18n issues
+- Improved semantic HTML and accessibility
+
+See `COMMIT_LOG.md` (2026-09-24, commit 4d45a96) for full technical details.
+
