@@ -38,10 +38,6 @@ const SubscriptionPage = () => {
   const [selectedPlan, setSelectedPlan] = useState<'monthly' | 'yearly'>('monthly');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-  const [couponCode, setCouponCode] = useState('');
-  const [validatingCoupon, setValidatingCoupon] = useState(false);
-  const [validatedCoupon, setValidatedCoupon] = useState<any>(null);
-  const [couponError, setCouponError] = useState('');
 
   // Public accounts are intentionally disabled for now: pricing stays
   // readable by anyone; only the subscribe action branches on auth.
@@ -54,49 +50,6 @@ const SubscriptionPage = () => {
   const handleSelectPlan = (plan: 'monthly' | 'yearly') => {
     setSelectedPlan(plan);
     SubscriptionEvents.selectPlan(plan);
-  };
-
-  const validateCoupon = async () => {
-    if (!couponCode.trim()) {
-      setCouponError('Please enter a coupon code');
-      return;
-    }
-
-    setValidatingCoupon(true);
-    setCouponError('');
-    setValidatedCoupon(null);
-
-    try {
-      const response = await fetch('/api/coupons/validate', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ coupon_code: couponCode.trim() }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setValidatedCoupon(data.coupon);
-        setCouponError('');
-      } else {
-        setCouponError(data.message || 'Invalid coupon code');
-        setValidatedCoupon(null);
-      }
-    } catch (error) {
-      console.error('Error validating coupon:', error);
-      setCouponError('Error validating coupon');
-      setValidatedCoupon(null);
-    } finally {
-      setValidatingCoupon(false);
-    }
-  };
-
-  const removeCoupon = () => {
-    setCouponCode('');
-    setValidatedCoupon(null);
-    setCouponError('');
   };
 
   const handleSubscribe = async () => {
@@ -174,7 +127,6 @@ const SubscriptionPage = () => {
           plan: selectedPlan,
           business_id: businessId,
           user_id: userId,
-          coupon_code: validatedCoupon ? couponCode.trim() : null,
         }),
       });
 
@@ -410,65 +362,6 @@ const SubscriptionPage = () => {
                       </ul>
                     </div>
                   </div>
-                </div>
-
-                {/* Coupon Section */}
-                <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-                  <h3 className="text-lg font-medium text-gray-900 mb-4">¿Tienes un código de descuento?</h3>
-
-                  {!validatedCoupon ? (
-                    <div className="flex gap-3">
-                      <div className="flex-1">
-                        <input
-                          type="text"
-                          value={couponCode}
-                          onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
-                          placeholder="Ingresa tu código"
-                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                          disabled={validatingCoupon}
-                        />
-                        {couponError && (
-                          <p className="text-red-600 text-sm mt-1">{couponError}</p>
-                        )}
-                      </div>
-                      <button
-                        onClick={validateCoupon}
-                        disabled={validatingCoupon || !couponCode.trim()}
-                        className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-dark disabled:opacity-50 disabled:cursor-not-allowed"
-                      >
-                        {validatingCoupon ? 'Validando...' : 'Aplicar'}
-                      </button>
-                    </div>
-                  ) : (
-                    <div className="bg-green-50 border border-green-200 rounded-md p-4">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <h4 className="font-medium text-green-800">{validatedCoupon.name}</h4>
-                          <p className="text-green-700 text-sm">
-                            {validatedCoupon.discount_type === 'percent'
-                              ? `${validatedCoupon.discount_value}% de descuento`
-                              : `$${validatedCoupon.discount_value} MXN de descuento`
-                            }
-                            {validatedCoupon.duration === 'repeating' && validatedCoupon.duration_in_months
-                              ? ` por ${validatedCoupon.duration_in_months} meses`
-                              : validatedCoupon.duration === 'forever'
-                                ? ' permanente'
-                                : ''
-                            }
-                          </p>
-                          {validatedCoupon.description && (
-                            <p className="text-green-600 text-sm mt-1">{validatedCoupon.description}</p>
-                          )}
-                        </div>
-                        <button
-                          onClick={removeCoupon}
-                          className="text-green-600 hover:text-green-800 text-sm font-medium"
-                        >
-                          Remover
-                        </button>
-                      </div>
-                    </div>
-                  )}
                 </div>
 
                 {errorMessage && (

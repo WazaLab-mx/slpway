@@ -74,5 +74,4 @@ export const SubscriptionEvents = {
     trackEvent('purchase', { plan, value, currency: 'MXN', transaction_id: `sub_${Date.now()}` });
     trackFbEvent('Subscribe', { value, currency: 'MXN' });
   },
-  applyCoupon: (code: string) => trackEvent('apply_coupon', { coupon_code: code }),
 };

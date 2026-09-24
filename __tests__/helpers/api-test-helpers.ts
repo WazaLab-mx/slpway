@@ -119,9 +119,6 @@ export function createMockStripe() {
       update: jest.fn().mockResolvedValue({ id: 'sub_test_123', cancel_at_period_end: true }),
       cancel: jest.fn().mockResolvedValue({ id: 'sub_test_123', status: 'canceled' }),
     },
-    coupons: {
-      retrieve: jest.fn().mockResolvedValue({ id: 'coupon_test', valid: true, times_redeemed: 0 }),
-    },
     webhooks: {
       constructEvent: jest.fn(),
     },

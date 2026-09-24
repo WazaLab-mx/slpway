@@ -3,7 +3,6 @@ import { createMockRequest, createMockResponse } from '../helpers/api-test-helpe
 // Use shared mutable refs that jest.mock factories can capture
 const mocks = {
   stripeSessionCreate: jest.fn(),
-  couponsRetrieve: jest.fn(),
   supabaseFrom: jest.fn(),
 };
 
@@ -12,7 +11,6 @@ jest.mock('stripe', () => {
     checkout: {
       sessions: { create: (...args: any[]) => mocks.stripeSessionCreate(...args) },
     },
-    coupons: { retrieve: (...args: any[]) => mocks.couponsRetrieve(...args) },
   }));
 });
 
@@ -138,110 +136,6 @@ describe('Subscription Flow Integration Tests', () => {
           metadata: expect.objectContaining({ interval: 'yearly' }),
         })
       );
-    });
-
-    it('validates and applies coupon code', async () => {
-      // Mock user lookup
-      mocks.supabaseFrom.mockReturnValueOnce({
-        select: jest.fn().mockReturnThis(),
-        eq: jest.fn().mockReturnThis(),
-        single: jest.fn().mockResolvedValue({
-          data: { id: 'user-789', email: 'coupon@example.com' },
-          error: null,
-        }),
-      });
-
-      // Mock coupon lookup
-      const couponChain = {
-        select: jest.fn().mockReturnThis(),
-        eq: jest.fn().mockReturnThis(),
-        single: jest.fn().mockResolvedValue({
-          data: {
-            id: 'coupon-db-1',
-            coupon_code: 'SAVE20',
-            stripe_coupon_id: 'stripe_coupon_123',
-            is_active: true,
-          },
-          error: null,
-        }),
-      };
-      mocks.supabaseFrom.mockReturnValueOnce(couponChain);
-
-      // Mock usage check (no existing usage)
-      const usageChain = {
-        select: jest.fn().mockReturnThis(),
-        eq: jest.fn().mockReturnThis(),
-        single: jest.fn().mockResolvedValue({ data: null, error: { code: 'PGRST116' } }),
-      };
-      mocks.supabaseFrom.mockReturnValueOnce(usageChain);
-
-      mocks.couponsRetrieve.mockResolvedValueOnce({
-        valid: true,
-        times_redeemed: 0,
-        max_redemptions: 100,
-      });
-
-      const req = createMockRequest({
-        method: 'POST',
-        body: {
-          plan: 'monthly',
-          user_id: 'user-789',
-          coupon_code: 'SAVE20',
-        },
-      });
-      const res = createMockResponse();
-
-      await subscriptionHandler(req, res);
-
-      expect(res.status).toHaveBeenCalledWith(200);
-      expect(mocks.stripeSessionCreate).toHaveBeenCalledWith(
-        expect.objectContaining({
-          discounts: [{ coupon: 'stripe_coupon_123' }],
-        })
-      );
-    });
-
-    it('rejects already-used coupon', async () => {
-      // Mock user lookup
-      mocks.supabaseFrom.mockReturnValueOnce({
-        select: jest.fn().mockReturnThis(),
-        eq: jest.fn().mockReturnThis(),
-        single: jest.fn().mockResolvedValue({
-          data: { id: 'user-789', email: 'coupon@example.com' },
-          error: null,
-        }),
-      });
-
-      // Mock coupon lookup
-      mocks.supabaseFrom.mockReturnValueOnce({
-        select: jest.fn().mockReturnThis(),
-        eq: jest.fn().mockReturnThis(),
-        single: jest.fn().mockResolvedValue({
-          data: { id: 'c1', coupon_code: 'USED', stripe_coupon_id: 'sc_1', is_active: true },
-          error: null,
-        }),
-      });
-
-      // Mock usage check - coupon already used
-      mocks.supabaseFrom.mockReturnValueOnce({
-        select: jest.fn().mockReturnThis(),
-        eq: jest.fn().mockReturnThis(),
-        single: jest.fn().mockResolvedValue({
-          data: { id: 'usage-1', user_id: 'user-789', coupon_code: 'USED' },
-          error: null,
-        }),
-      });
-
-      const req = createMockRequest({
-        method: 'POST',
-        body: { plan: 'monthly', user_id: 'user-789', coupon_code: 'USED' },
-      });
-      const res = createMockResponse();
-
-      await subscriptionHandler(req, res);
-
-      expect(res.status).toHaveBeenCalledWith(400);
-      expect(res._json.message).toContain('already used');
     });
 
     it('returns 500 when Stripe session creation fails', async () => {

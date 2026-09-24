@@ -55,7 +55,7 @@ export default async function handler(
     const supabase = createClient(supabaseUrl, supabaseKey);
 
         // Extract parameters from request body
-    const { plan, user_id, business_id, coupon_code } = req.body;
+    const { plan, user_id, business_id } = req.body;
 
     if (!plan || !user_id) {
       return res.status(400).json({ message: 'Missing required fields: plan and user_id' });
@@ -75,52 +75,6 @@ export default async function handler(
 
     if (!userData || !userData.email) {
       return res.status(404).json({ message: 'User not found or missing email' });
-    }
-
-    // Validate coupon if provided
-    let validatedCoupon = null;
-    if (coupon_code) {
-      // Check if coupon exists and is valid
-      const { data: dbCoupon, error: couponError } = await supabase
-        .from('admin_coupons')
-        .select("*")
-        .eq('coupon_code', coupon_code.toUpperCase())
-        .eq('is_active', true)
-        .single();
-
-      if (couponError || !dbCoupon) {
-        return res.status(400).json({ message: 'Invalid or inactive coupon code' });
-      }
-
-      // Check if user has already used this coupon
-      const { data: existingUsage } = await supabase
-        .from('coupon_usage')
-        .select("*")
-        .eq('user_id', user_id)
-        .eq('coupon_code', coupon_code.toUpperCase())
-        .single();
-
-      if (existingUsage) {
-        return res.status(400).json({ message: 'You have already used this coupon' });
-      }
-
-      // Validate with Stripe
-      try {
-        const stripeCoupon = await stripe.coupons.retrieve(dbCoupon.stripe_coupon_id);
-
-        if (!stripeCoupon.valid) {
-          return res.status(400).json({ message: 'Coupon is no longer valid' });
-        }
-
-        if (stripeCoupon.max_redemptions && stripeCoupon.times_redeemed >= stripeCoupon.max_redemptions) {
-          return res.status(400).json({ message: 'Coupon has reached its maximum usage limit' });
-        }
-
-        validatedCoupon = dbCoupon;
-      } catch (stripeError) {
-        logger.error('Error validating coupon with Stripe:', stripeError);
-        return res.status(400).json({ message: 'Invalid coupon code' });
-      }
     }
 
     // Get the right Stripe price ID based on plan
@@ -145,20 +99,8 @@ export default async function handler(
         userId: user_id,
         businessId: business_id || null,
         interval: plan,
-        couponCode: coupon_code || null,
       }
     };
-
-    // Add coupon discount if valid coupon provided, otherwise allow promotion codes
-    if (validatedCoupon) {
-      checkoutSessionData.discounts = [{
-        coupon: validatedCoupon.stripe_coupon_id
-      }];
-      logger.log('Applied coupon:', validatedCoupon.coupon_code);
-    } else {
-      // Only allow promotion codes if no coupon is already applied
-      checkoutSessionData.allow_promotion_codes = true;
-    }
 
     // Create checkout session
     const checkoutSession = await stripe.checkout.sessions.create(checkoutSessionData);

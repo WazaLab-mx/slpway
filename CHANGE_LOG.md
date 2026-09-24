@@ -1,5 +1,11 @@
 # Change Log
 
+## [2026-09-23] Removed the business subscription coupon feature (unused)
+
+- Removed the "¿Tienes un código de descuento?" field on `/business/subscription`, the `/api/coupons/validate` endpoint, coupon validation in `create-subscription` (admin_coupons/coupon_usage lookups and Stripe `discounts`), and `allow_promotion_codes` on Stripe Checkout, so no discount field remains anywhere. Also removed `handleCouponUsage` from the Stripe webhook and `SubscriptionEvents.applyCoupon`.
+- Tests: deleted `coupon-functionality.test.tsx` (the intermittent one) and the 2 coupon cases in `subscription-flow.test.ts`. jest-dom matcher types now come from `src/types/jest-dom.d.ts`; before, only the deleted test imported them.
+- Database untouched: `admin_coupons`, `coupon_usage` and the `business_profiles.coupon_*` columns still exist (migration 20241201000000_add_coupon_system.sql). Drop them separately if desired.
+
 ## [2026-09-23] Home services page reframed as an independent-business directory
 
 - `/san-luis-potosi-home-services` no longer presents San Luis Way as a provider. Removed the "Our Services" grid and the "Request Home Services" form, which sent requests to our email. New copy: "Find Home Service Pros…", "We connect you with independent local businesses… You hire and pay them directly." English is the base; es/de/ja translated.
