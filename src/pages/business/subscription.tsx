@@ -59,63 +59,64 @@ const SubscriptionPage = () => {
     setErrorMessage('');
 
     try {
-      console.log('Starting subscription process');
+      console.log('Starting Featured ad checkout process');
 
-      // No public signup yet — route interested businesses to direct contact
-      // with the chosen plan preselected as the subject.
-      if (!user) {
-        const planLabel = selectedPlan === 'yearly' ? 'Plan Anual $2,500 MXN' : 'Plan Mensual $250 MXN';
-        router.push(`/contact?subject=${encodeURIComponent(`Quiero listar mi negocio — ${planLabel}`)}`);
-        return;
-      }
+      // Allow guest checkout - Stripe will collect email
+      // If logged in, use their user_id; otherwise proceed as guest
 
-      const userId = (user as { id: string }).id;
-      const userEmail = (user as { email?: string }).email || '';
+      const userId = user ? (user as { id: string }).id : null;
+      const userEmail = user ? (user as { email?: string }).email || '' : '';
 
-      // Check if user has a business profile first
-      console.log('Checking for business profile');
-      const { data: businessProfile, error: profileError } = await supabase
-        .from('business_profiles')
-        .select("*")
-        .eq('user_id', userId)
-        .single();
+      let businessId = null;
 
-      console.log('Business profile check result:', { businessProfile, profileError });
-
-      if (profileError && profileError.code !== 'PGRST116') { // PGRST116 is "no rows returned"
-        console.error('Error checking business profile:', profileError);
-        throw new Error('Error retrieving your business profile. Please try again.');
-      }
-
-      // If no business profile exists, create one
-      let businessId = businessProfile?.id;
-
-      if (!businessProfile) {
-        console.log('No business profile found, creating one');
-        const { data: newProfile, error: insertError } = await supabase
+      // If user is logged in, check/create business profile
+      if (userId) {
+        console.log('Checking for business profile');
+        const { data: businessProfile, error: profileError } = await supabase
           .from('business_profiles')
-          .insert([
-            {
-              user_id: userId,
-              business_name: (userEmail ? userEmail.split('@')[0] + ' Business' : 'Business'),
-              subscription_status: 'inactive',
-              business_category: 'Other' // Add a default category
-            }
-          ])
           .select("*")
+          .eq('user_id', userId)
           .single();
 
-        console.log('Business profile creation result:', { newProfile, insertError });
+        console.log('Business profile check result:', { businessProfile, profileError });
 
-        if (insertError) {
-          console.error('Error creating business profile:', insertError);
-          throw new Error('Error creating your business profile. Please try again.');
+        if (profileError && profileError.code !== 'PGRST116') {
+          console.error('Error checking business profile:', profileError);
+          throw new Error('Error retrieving your business profile. Please try again.');
         }
 
-        businessId = (newProfile as { id: string } | null)?.id;
-      }
+        // If no business profile exists, create one
+        businessId = businessProfile?.id;
 
-      console.log('Proceeding with subscription, business ID:', businessId);
+        if (!businessProfile) {
+          console.log('No business profile found, creating one');
+          const { data: newProfile, error: insertError } = await supabase
+            .from('business_profiles')
+            .insert([
+              {
+                user_id: userId,
+                business_name: (userEmail ? userEmail.split('@')[0] + ' Business' : 'Business'),
+                subscription_status: 'inactive',
+                business_category: 'Other'
+              }
+            ])
+            .select("*")
+            .single();
+
+          console.log('Business profile creation result:', { newProfile, insertError });
+
+          if (insertError) {
+            console.error('Error creating business profile:', insertError);
+            throw new Error('Error creating your business profile. Please try again.');
+          }
+
+          businessId = (newProfile as { id: string } | null)?.id;
+        }
+
+        console.log('Proceeding with Featured ad checkout, business ID:', businessId);
+      } else {
+        console.log('Guest checkout - no business profile yet');
+      }
 
       const response = await fetch('/api/subscriptions/create-subscription', {
         method: 'POST',
@@ -127,6 +128,7 @@ const SubscriptionPage = () => {
           plan: selectedPlan,
           business_id: businessId,
           user_id: userId,
+          customer_email: userEmail || undefined,
         }),
       });
 
@@ -170,8 +172,8 @@ const SubscriptionPage = () => {
   return (
     <>
       <Head>
-        <title>Business Subscription — Get Discovered by Expats | San Luis Way</title>
-        <meta name="description" content="List your business on San Luis Way and reach 15,000+ expats and visitors in San Luis Potosí. From $250 MXN/month with custom profiles and analytics." />
+        <title>Featured Directory Ad — Get Discovered by Expats | San Luis Way</title>
+        <meta name="description" content="Get your business featured on San Luis Way and reach 15,000+ expats and visitors in San Luis Potosí. From $250 MXN/month with priority placement and analytics." />
       </Head>
 
       <div className="bg-gray-50 min-h-screen">
@@ -180,14 +182,14 @@ const SubscriptionPage = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <span className="inline-block bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-6">
-                For Local Businesses
+                Anuncio Destacado / Featured Ad
               </span>
               <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                Get Discovered by 15,000+ Expats & Visitors Monthly
+                Destaca y Llega a 15,000+ Expats y Visitantes Mensuales
               </h1>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
-                List your business on San Luis Way — the #1 guide for foreigners in San Luis Potosí.
-                Reach an engaged audience actively looking for your services.
+                Anuncio destacado en San Luis Way — la guía #1 para extranjeros en San Luis Potosí.
+                Alcanza una audiencia comprometida buscando activamente tus servicios.
               </p>
               <div className="grid grid-cols-3 gap-6 max-w-lg mx-auto">
                 <div className="text-center">
@@ -207,11 +209,11 @@ const SubscriptionPage = () => {
           </div>
         </section>
 
-        {/* Why Subscribe Section */}
+        {/* Why Featured Section */}
         <section className="py-12 bg-white border-b">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">Why businesses choose San Luis Way</h2>
+              <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">Por qué destacar tu negocio en San Luis Way</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center p-4">
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-100 rounded-xl mb-3">
@@ -219,8 +221,8 @@ const SubscriptionPage = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Multilingual reach</h3>
-                  <p className="text-gray-600 text-sm">Your listing appears in English, Spanish, German, and Japanese</p>
+                  <h3 className="font-semibold text-gray-900 mb-1">Alcance multilingüe</h3>
+                  <p className="text-gray-600 text-sm">Tu anuncio aparece en inglés, español, alemán y japonés</p>
                 </div>
                 <div className="text-center p-4">
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-xl mb-3">
@@ -228,8 +230,8 @@ const SubscriptionPage = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                     </svg>
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Analytics dashboard</h3>
-                  <p className="text-gray-600 text-sm">Track views, contacts, and engagement with your listing</p>
+                  <h3 className="font-semibold text-gray-900 mb-1">Dashboard de analíticas</h3>
+                  <p className="text-gray-600 text-sm">Rastrea vistas, contactos y engagement con tu anuncio</p>
                 </div>
                 <div className="text-center p-4">
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-100 rounded-xl mb-3">
@@ -237,8 +239,8 @@ const SubscriptionPage = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Targeted audience</h3>
-                  <p className="text-gray-600 text-sm">Visitors are expats and tourists actively looking for services</p>
+                  <h3 className="font-semibold text-gray-900 mb-1">Audiencia objetivo</h3>
+                  <p className="text-gray-600 text-sm">Visitantes son expats y turistas buscando activamente servicios</p>
                 </div>
               </div>
             </div>
@@ -266,7 +268,7 @@ const SubscriptionPage = () => {
                       Business Profile
                     </Link>
                     <Link href="/business/subscription" className="block w-full py-2 px-3 text-sm font-medium rounded-md bg-gray-100 text-gray-900">
-                      Subscription
+                      Anuncio Destacado
                     </Link>
                     <Link href="/account" className="block w-full py-2 px-3 text-sm font-medium rounded-md text-gray-700 hover:bg-gray-50">
                       Back to Account
@@ -301,15 +303,15 @@ const SubscriptionPage = () => {
                       <ul className="space-y-3 mb-6">
                         <li className="flex items-start">
                           <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                          <span>Perfil de negocio personalizado</span>
+                          <span>Posición destacada en el directorio</span>
                         </li>
                         <li className="flex items-start">
                           <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                          <span>Publica hasta 10 servicios o productos</span>
+                          <span>Perfil personalizado con fotos y detalles</span>
                         </li>
                         <li className="flex items-start">
                           <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                          <span>Aparece en resultados de búsqueda</span>
+                          <span>Aparece primero en búsquedas</span>
                         </li>
                         <li className="flex items-start">
                           <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
@@ -345,15 +347,15 @@ const SubscriptionPage = () => {
                       <ul className="space-y-3 mb-6">
                         <li className="flex items-start">
                           <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                          <span>Perfil de negocio personalizado</span>
+                          <span>Posición destacada en el directorio</span>
                         </li>
                         <li className="flex items-start">
                           <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                          <span>Publica hasta 10 servicios o productos</span>
+                          <span>Perfil personalizado con fotos y detalles</span>
                         </li>
                         <li className="flex items-start">
                           <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                          <span>Aparece en resultados de búsqueda</span>
+                          <span>Aparece primero en búsquedas</span>
                         </li>
                         <li className="flex items-start">
                           <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
@@ -381,7 +383,7 @@ const SubscriptionPage = () => {
                       min-w-[200px]
                     `}
                   >
-                    {isSubmitting ? 'Procesando...' : 'Suscribirse Ahora'}
+                    {isSubmitting ? 'Procesando...' : 'Destacar mi Negocio'}
                   </button>
                 </div>
 

@@ -44,10 +44,11 @@ export default function MediaKit() {
 
   const products = [
     {
-      name: t('Featured business listing', 'Listing destacado de negocio'),
+      name: t('Featured directory ad', 'Anuncio destacado en el directorio'),
       price: '$250 MXN/mes',
-      body: t('Your business highlighted in the directory with photos, WhatsApp button, hours and priority placement — plus a monthly report of the direct contacts we send you.', 'Tu negocio destacado en el directorio con fotos, botón de WhatsApp, horarios y posición prioritaria — más un reporte mensual de los contactos directos que te mandamos.'),
-      subject: 'Listing destacado $250/mes — Media Kit',
+      body: t('Your business featured at the top of the directory with photos, WhatsApp button, hours and priority placement. Monthly reports of direct contacts we send you.', 'Tu negocio destacado en la parte superior del directorio con fotos, botón de WhatsApp, horarios y posición prioritaria. Reportes mensuales de los contactos directos que te mandamos.'),
+      subject: 'Featured directory ad $250/mes — Media Kit',
+      cta_link: '/business/subscription',
     },
     {
       name: t('Newsletter sponsorship', 'Patrocinio del newsletter'),
@@ -176,11 +177,11 @@ export default function MediaKit() {
                   <p className="text-primary font-extrabold text-xl mb-3">{p.price}</p>
                   <p className="text-sm text-gray-700 leading-relaxed flex-1">{p.body}</p>
                   <Link
-                    href={contact(p.subject)}
+                    href={'cta_link' in p && p.cta_link ? p.cta_link : contact(p.subject)}
                     onClick={() => track(p.subject)}
                     className="mt-5 text-center bg-secondary text-white font-semibold px-4 py-2.5 rounded-lg hover:bg-secondary/90 transition-colors"
                   >
-                    {t('Request details', 'Pedir detalles')}
+                    {'cta_link' in p && p.cta_link ? t('Get started', 'Comenzar') : t('Request details', 'Pedir detalles')}
                   </Link>
                 </div>
               ))}

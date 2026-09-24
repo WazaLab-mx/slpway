@@ -50,33 +50,36 @@ describe('Subscription Flow Integration Tests', () => {
     it('returns 400 when missing required fields', async () => {
       const req = createMockRequest({
         method: 'POST',
-        body: { plan: 'monthly' },
+        body: {},
       });
       const res = createMockResponse();
 
       await subscriptionHandler(req, res);
 
       expect(res.status).toHaveBeenCalledWith(400);
-      expect(res._json.message).toContain('Missing required fields');
+      expect(res._json.message).toContain('Missing required field');
     });
 
-    it('returns 404 when user not found', async () => {
-      mocks.supabaseFrom.mockReturnValueOnce({
-        select: jest.fn().mockReturnThis(),
-        eq: jest.fn().mockReturnThis(),
-        single: jest.fn().mockResolvedValue({ data: null, error: null }),
-      });
-
+    it('creates checkout for guest user without user_id', async () => {
       const req = createMockRequest({
         method: 'POST',
-        body: { plan: 'monthly', user_id: 'nonexistent-user' },
+        body: { plan: 'monthly' },
       });
       const res = createMockResponse();
 
       await subscriptionHandler(req, res);
 
-      expect(res.status).toHaveBeenCalledWith(404);
-      expect(res._json.message).toContain('User not found');
+      expect(res.status).toHaveBeenCalledWith(200);
+      expect(res._json).toMatchObject({
+        message: 'Checkout session created successfully',
+        sessionId: 'cs_test_session_123',
+      });
+      expect(mocks.stripeSessionCreate).toHaveBeenCalledWith(
+        expect.objectContaining({
+          mode: 'subscription',
+          metadata: expect.objectContaining({ userId: null, interval: 'monthly' }),
+        })
+      );
     });
 
     it('creates monthly subscription checkout successfully', async () => {

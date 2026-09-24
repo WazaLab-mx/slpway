@@ -53,36 +53,36 @@ export default function JoinDirectory() {
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
                     <BuildingOfficeIcon className="w-6 h-6 text-primary" />
                   </div>
-                  <h2 className="text-2xl font-semibold">Business Listing</h2>
+                  <h2 className="text-2xl font-semibold">Featured Directory Ad</h2>
                 </div>
                 <p className="text-gray-600 mb-6">
-                  Share your business with newcomers and locals alike. Help them discover the authentic experiences and services that make San Luis Potosí special while growing your customer base.
+                  Get featured at the top of our directory. Reach 15,000+ monthly visitors actively looking for businesses like yours. Priority placement, custom profile, and analytics dashboard.
                 </p>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-center">
                     <svg className="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    Connect with newcomers and locals
+                    Priority placement at top of directory
                   </li>
                   <li className="flex items-center">
                     <svg className="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    Reach new customers
+                    Reach 15,000+ monthly visitors
                   </li>
                   <li className="flex items-center">
                     <svg className="w-5 h-5 text-primary mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    Build lasting community connections
+                    From $250 MXN/month
                   </li>
                 </ul>
                 <Link
-                  href="/submit-listing/business"
+                  href="/business/subscription"
                   className="block text-center bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-dark transition-colors"
                 >
-                  Share Your Business
+                  Get Featured
                 </Link>
               </div>
 
@@ -167,10 +167,10 @@ export default function JoinDirectory() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <Link
-                href="/submit-listing/business"
+                href="/business/subscription"
                 className="bg-white text-secondary px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors"
               >
-                Share Your Business
+                Get Featured Directory Ad
               </Link>
               <Link
                 href="/submit-listing/service"
