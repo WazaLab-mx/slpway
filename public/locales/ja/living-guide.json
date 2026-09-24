@@ -1,0 +1,425 @@
+{
+  "seo": {
+    "title": "サンルイスポトシでの生活 究極ガイド2026｜駐在員・ノマド・旅行者向け",
+    "description": "サンルイスポトシ完全ガイド2026年版：2026年3月検証済み価格、新UMAビザ規則、51以上のコワーキングスペース、地域、医療。駐在員、デジタルノマド、スロー旅行者向け。メキシコシティより35-50%安い。",
+    "keywords": "サンルイスポトシ 駐在員ガイド, SLPでの生活, メキシコ生活費, 駐在員ビザ メキシコ, SLP地域",
+    "ogTitle": "サンルイスポトシでの生活 究極ガイド｜駐在員ガイド",
+    "jsonLdHeadline": "サンルイスポトシでの生活 究極ガイド2026",
+    "jsonLdDescription": "ビザ（UMA規則）、生活費、地域、医療、コワーキングを網羅した2026年包括ガイド — 駐在員、デジタルノマド、旅行者向け。"
+  },
+  "breadcrumbs": {
+    "home": "ホーム",
+    "resources": "リソース",
+    "livingGuide": "生活ガイド"
+  },
+  "hero": {
+    "title": "サンルイスポトシでの生活 究極ガイド2026",
+    "subtitle": "駐在員、デジタルノマド、スロー旅行者向け — 2026年のSLPでの生活、仕事、訪問に必要なすべて",
+    "imageAlt": "サンルイスポトシでの生活"
+  },
+  "sections": [
+    { "id": "overview", "name": "概要" },
+    { "id": "visas", "name": "ビザ・入国管理" },
+    { "id": "cost", "name": "生活費" },
+    { "id": "neighborhoods", "name": "地域" },
+    { "id": "healthcare", "name": "医療" },
+    { "id": "banking", "name": "銀行" },
+    { "id": "transport", "name": "交通" },
+    { "id": "utilities", "name": "インターネット・電話" },
+    { "id": "safety", "name": "安全" },
+    { "id": "faq", "name": "よくある質問" }
+  ],
+  "quickStats": [
+    { "label": "月間予算（2026）", "value": "$1,200-$2,000 USD" },
+    { "label": "セントロ1BR家賃", "value": "$450-$750 USD/月" },
+    { "label": "外食", "value": "$13-$43 USD" },
+    { "label": "人口（都市圏）", "value": "131万人" },
+    { "label": "標高", "value": "1,864m（6,115フィート）" },
+    { "label": "MXN/USD（2026年3月）", "value": "~17.5" }
+  ],
+  "quickAnswer": {
+    "heading": "サンルイスポトシ 一目でわかる（2026）",
+    "intro": "サンルイスポトシはメキシコのサンルイスポトシ州の州都で、中央バヒオ地域の標高1,864メートルに位置し、都市圏人口約131万人のUNESCO関連の植民地都市です。2026年にメキシコに移住する外国人にとって、SLPは同等の生活の質でメキシコシティより約35〜50%低い生活費、ヒューストンとダラスへの直行便、350以上の国際企業（BMW、ゼネラルモーターズ、ヴァレオ、コンチネンタル）、51以上のコワーキングスペースを備えた急成長中のデジタルノマドインフラを提供します。この都市は3つのプロフィールに適しています：長期駐在員、一時居住のリモートワーカー、バヒオとワステカポトシナを探索するスロー旅行者。",
+    "keyFactsHeading": "主要事実（2026年3月17日検証済み）",
+    "keyFacts": [
+      "快適な個人予算：$1,200〜$2,000 USD/月（独身）、$1,800〜$2,500（カップル）、$2,400〜$3,500（4人家族）",
+      "セントロ・イストリコの1BR apartment：$450〜$750 USD/月（2026年市場）",
+      "一時居住ビザ収入基準（2026）：月収約$4,185 USDまたは貯蓄約$69,750 USD — 2025年11月に手数料倍増",
+      "光ファイバーインターネット100〜500 Mbps、セントロ、ロマス、タンガマンガで利用可能 — $32〜$50 USD/月",
+      "医療：Hospital Ángeles、Star Médica、Hospital Lomas — 民間診察$30〜$60 USD",
+      "米国国務省勧告：レベル2 — 注意を強化（フランスと同じ）",
+      "2026年3月のMXN/USD為替レート：約17.5"
+    ],
+    "verificationNote": "最終検証：San Luis Way編集チーム、2026年3月17日"
+  },
+  "overview": {
+    "heading": "なぜ駐在員はサンルイスポトシに移住すべきか？",
+    "keyAdvantagesHeading": "主な利点",
+    "keyAdvantages": [
+      "メキシコシティより約26%低い生活費（住宅は最大55%安い）",
+      "オーバーツーリズムのない成長中の駐在員コミュニティ",
+      "UNESCO世界遺産の歴史地区",
+      "近代的な医療施設",
+      "戦略的な中心立地"
+    ],
+    "strategicLocationHeading": "戦略的立地",
+    "strategicLocation": [
+      "メキシコシティ：420 km（4-5時間）",
+      "グアダラハラ：330 km（3.5-4時間）",
+      "アグアスカリエンテス：200 km（2.5時間）",
+      "サカテカス：193 km（2.5時間）",
+      "モンテレイ：521 km（5-6時間）"
+    ],
+    "economicStability": "経済的安定性：州のGDPは2023年に7.9%成長し、メキシコで3番目に成長の速い経済となりました（キンタナロー州とオアハカ州に次ぐ）。主要セクターには自動車（BMW、GM）、航空宇宙、物流、ビジネスサービスが含まれます。"
+  },
+  "visas": {
+    "heading": "SLPに住むにはどのメキシコビザが必要ですか？",
+    "typesHeading": "ビザタイプ比較",
+    "tableHeaders": {
+      "type": "タイプ",
+      "duration": "期間",
+      "work": "就労許可",
+      "bestFor": "最適な人"
+    },
+    "types": [
+      { "type": "観光（FMM）", "duration": "180日", "work": "不可", "bestFor": "短期訪問、SLPを試すノマド" },
+      { "type": "一時居住", "duration": "1-4年", "work": "許可付き", "bestFor": "リモートワーカー（月収$4,185）" },
+      { "type": "永住", "duration": "無期限", "work": "可", "bestFor": "退職者、長期" },
+      { "type": "就労ビザ", "duration": "1-4年", "work": "可（雇用主特定）", "bestFor": "BMW、GM、ヴァレオ転勤者" }
+    ],
+    "processHeading": "一時居住ビザプロセス",
+    "processSteps": [
+      { "title": "領事館予約をスケジュール", "desc": "SRE領事館ディレクトリから2-4週間前に予約" },
+      { "title": "書類を集める", "desc": "有効なパスポート（有効期限6ヶ月以上）、記入済み申請書、パスポート写真、財政的支払能力の証明、ビザ手数料（$50-$80 USD）" },
+      { "title": "財政的支払能力を証明", "desc": "銀行明細書：平均残高約$69,750 USD（12ヶ月）、または月収：6ヶ月間約$4,185 USD" },
+      { "title": "領事館面接に出席", "desc": "書類を提示し、計画を話し合う" },
+      { "title": "入国時にビザを交換", "desc": "30日以内にINMオフィスを訪問（Av. Venustiano Carranza 2395、電話：444 812-3556）" },
+      { "title": "居住カードを受け取る", "desc": "1年間有効、最大4年まで更新可能" }
+    ],
+    "warning": "警告：メキシコから収入を得ながら観光ビザでリモートワークすることは、技術的には入国管理法に違反しますが、執行は限定的です。就労活動には適切な居住資格を取得してください。"
+  },
+  "cost": {
+    "heading": "サンルイスポトシでの生活費は？",
+    "comparisonHeading": "コスト比較指数（NYC = 100）",
+    "comparisonCities": [
+      { "city": "サンルイスポトシ", "index": 26.8 },
+      { "city": "メキシコシティ", "index": 35.2 },
+      { "city": "グアダラハラ", "index": 32.1 },
+      { "city": "サンミゲルデアジェンデ", "index": 41.5 }
+    ],
+    "housingHeading": "住宅・家賃",
+    "housingTable": {
+      "headers": {
+        "type": "タイプ",
+        "cityCenter": "市中心部",
+        "outsideCenter": "中心部外"
+      },
+      "rows": [
+        { "type": "1BR アパート", "cityCenter": "$580 USD", "outsideCenter": "$300 USD" },
+        { "type": "3BR アパート", "cityCenter": "$900 USD", "outsideCenter": "$550 USD" },
+        { "type": "3BR 一戸建て", "cityCenter": "$1,200 USD", "outsideCenter": "$700 USD" }
+      ]
+    },
+    "foodGroceriesHeading": "食品・食料品",
+    "foodGroceries": [
+      { "item": "レストラン食事", "cost": "$5 USD" },
+      { "item": "中級レストラン（2人）", "cost": "$25 USD" },
+      { "item": "国産ビール", "cost": "$2.50 USD" },
+      { "item": "カプチーノ", "cost": "$3 USD" },
+      { "item": "月間食料品", "cost": "$150-200 USD" }
+    ],
+    "utilitiesHeading": "光熱費・サービス",
+    "utilities": [
+      { "item": "電気/水道/ガス", "cost": "$40 USD" },
+      { "item": "インターネット（60+ Mbps）", "cost": "$28 USD" },
+      { "item": "携帯電話（無制限）", "cost": "$20 USD" },
+      { "item": "ジム会員", "cost": "$30 USD" },
+      { "item": "映画チケット", "cost": "$4 USD" }
+    ],
+    "budgetsHeading": "月間予算サンプル",
+    "budgets": [
+      {
+        "name": "節約型",
+        "amount": "$800-$1,000 USD",
+        "items": ["中心部外の1BR", "主に自炊", "公共交通機関", "IMSS公的医療"],
+        "bestFor": "最適：デジタルノマド、学生"
+      },
+      {
+        "name": "快適型",
+        "amount": "$1,200-$1,800 USD",
+        "items": ["良い地域の1-2BR", "自炊と外食の混合", "Uber/時々レンタカー", "民間健康保険"],
+        "bestFor": "駐在員に最も一般的",
+        "featured": true
+      },
+      {
+        "name": "プレミアム",
+        "amount": "$2,500+ USD",
+        "items": ["高級アパート/一戸建て", "定期的に高級レストラン", "自家用車または運転手", "プレミアム医療プラン"],
+        "bestFor": "最適：幹部、家族"
+      }
+    ]
+  },
+  "neighborhoods": {
+    "heading": "駐在員はサンルイスポトシのどこに住むべきか？",
+    "tableCaption": "サンルイスポトシの地域別家賃と安全性の比較",
+    "tableHeaders": {
+      "neighborhood": "地域",
+      "rent": "月間家賃",
+      "safety": "安全性（/5）",
+      "bestFor": "最適な人"
+    },
+    "tableNote": "USD換算 · セントロとタンガマンガが最も歩きやすい",
+    "items": [
+      {
+        "name": "ロマス",
+        "rent": "$800-$1,500 USD（2026）",
+        "bestFor": "家族、専門職",
+        "safety": 5,
+        "description": "高級、家族向けで並木道、近代的なショッピング、優れた学校",
+        "pros": ["非常に安全", "ゲートコミュニティ", "プラサシウダディナ近く", "優れた学校"],
+        "cons": ["高価格", "車必須", "中心部から遠い", "本物感が少ない"]
+      },
+      {
+        "name": "セントロ・イストリコ",
+        "rent": "$450-$750 USD（2026）",
+        "bestFor": "文化愛好家、独身者",
+        "safety": 4,
+        "description": "UNESCO世界遺産の歴史地区、植民地建築、最高のレストラン",
+        "pros": ["徒歩圏", "豊かな文化", "美しい建築", "最高の食事"],
+        "cons": ["騒がしい", "駐車場限定", "古い建物", "近代的設備が少ない"]
+      },
+      {
+        "name": "タンガマンガ",
+        "rent": "$550-$950 USD（2026）",
+        "bestFor": "アクティブライフスタイル、自然愛好家",
+        "safety": 4,
+        "description": "パルケタンガマンガ隣接（メキシコ最大の都市公園の一つ）",
+        "pros": ["巨大な公園近く", "ジョギング/サイクリングに最適", "中価格帯", "良いレストラン"],
+        "cons": ["歩きにくい", "ナイトライフ少ない", "交通渋滞", "公共交通機関限定"]
+      },
+      {
+        "name": "ソナインダストリアル / モラレス",
+        "rent": "$400-$700 USD（2026）",
+        "bestFor": "予算重視、労働者",
+        "safety": 3,
+        "description": "工業団地近く、優れた価値、新築",
+        "pros": ["非常に手頃", "主要雇用者近く", "新築", "高速道路アクセス良好"],
+        "cons": ["中心部から遠い", "特徴が少ない", "工業地域", "レストラン少ない"]
+      }
+    ],
+    "prosLabel": "長所",
+    "consLabel": "短所",
+    "howToFindHeading": "住宅の見つけ方",
+    "howToFind": [
+      "地元プラットフォームを利用：Inmuebles24.com、Segundamano.mx、Vivanuncios.com、Facebookグループ",
+      "まず到着して直接探す（2-4週間Airbnb予約）",
+      "賃貸条件を理解：最低1年、敷金1-2ヶ月、保証人が必要な場合あり",
+      "特に長期賃貸や前払いの場合は価格交渉"
+    ]
+  },
+  "healthcare": {
+    "heading": "SLPの医療システムはどのように機能しますか？",
+    "publicHeading": "公的：IMSS（2024年年間費用）",
+    "publicCosts": [
+      { "ageRange": "0-19歳", "cost": "約$240 USD" },
+      { "ageRange": "20-39歳", "cost": "約$310 USD" },
+      { "ageRange": "40-59歳", "cost": "約$405 USD" },
+      { "ageRange": "60歳以上", "cost": "約$525 USD" }
+    ],
+    "publicCoversNote": "カバー範囲：診察、入院、手術、薬、検査、出産",
+    "privateHeading": "民間保険（月額）",
+    "privateCosts": [
+      { "level": "基本（高免責）", "cost": "$50-80 USD" },
+      { "level": "標準カバー", "cost": "$100-150 USD" },
+      { "level": "包括的", "cost": "$150-250 USD" },
+      { "level": "プレミアム（国際）", "cost": "$300+ USD" }
+    ],
+    "privateProvidersNote": "提供者：GNP、AXA、Seguros Monterrey、BUPA、Cigna",
+    "hospitalsHeading": "最高の病院・クリニック",
+    "hospitalsTableHeaders": {
+      "hospital": "病院",
+      "type": "タイプ",
+      "specialties": "専門分野",
+      "english": "英語"
+    },
+    "hospitals": [
+      { "name": "Hospital Ángeles", "type": "民間", "specialties": "フルサービス、救急、専門医", "english": "可" },
+      { "name": "Hospital Lomas", "type": "民間", "specialties": "一般、産科、小児科", "english": "一部" },
+      { "name": "Star Médica", "type": "民間", "specialties": "フルサービス、近代的", "english": "可" },
+      { "name": "Hospital Central (IMSS)", "type": "公的", "specialties": "救急、一般診療", "english": "限定" },
+      { "name": "Beneficencia Española", "type": "民間", "specialties": "一般、手頃", "english": "一部" }
+    ],
+    "dualCoverageNote": "二重カバー戦略：多くの駐在員はIMSSを日常ケアに、高免責民間保険を緊急時に使用（通常年間合計$600-800 USD）。",
+    "completeGuideLink": "完全な医療サービスガイドを見る →"
+  },
+  "banking": {
+    "heading": "サンルイスポトシで銀行口座を開設するには？",
+    "openingHeading": "銀行口座の開設",
+    "requiredDocsHeading": "必要書類",
+    "requiredDocs": [
+      "パスポート（原本とコピー）",
+      "ビザ/居住カード",
+      "住所証明（3ヶ月以内の公共料金請求書）",
+      "RFC（税ID） - 一部の銀行が取得を支援",
+      "初回預金：1,000-5,000 MXN"
+    ],
+    "transferOptionsHeading": "送金オプション",
+    "transferOptions": [
+      { "service": "Wise", "note": "最高の為替レート、低手数料" },
+      { "service": "Remitly", "note": "定期送金に適している" },
+      { "service": "XE", "note": "高額に競争力" },
+      { "service": "Charles Schwab", "note": "ATM手数料なし（米国市民）" }
+    ],
+    "banksHeading": "銀行推奨",
+    "banksTableHeaders": {
+      "bank": "銀行",
+      "expatFriendly": "駐在員向け",
+      "englishApp": "英語アプリ",
+      "notes": "備考"
+    },
+    "banks": [
+      { "name": "BBVA México", "rating": 5, "englishApp": "可", "notes": "駐在員に最も人気" },
+      { "name": "Santander", "rating": 4, "englishApp": "可", "notes": "国際送金" },
+      { "name": "Citibanamex", "rating": 4, "englishApp": "可", "notes": "広いATMネットワーク" },
+      { "name": "HSBC", "rating": 5, "englishApp": "可", "notes": "プレミア顧客に適している" },
+      { "name": "Banorte", "rating": 3, "englishApp": "限定", "notes": "メキシコ最大の銀行" }
+    ],
+    "rfcNote": "RFCとは？ Registro Federal de Contribuyentesはメキシコの税務識別番号です。銀行、賃貸、金融取引に不可欠。SATオフィスまたはsat.gob.mxでCURPとともにオンライン取得。"
+  },
+  "transport": {
+    "heading": "交通",
+    "publicTransitHeading": "公共交通機関（MetroRed）",
+    "publicTransit": [
+      { "item": "1回乗車", "cost": "15.50 MXN（約$0.75 USD）" },
+      { "item": "月間パス", "cost": "約500 MXN（$25 USD）" },
+      { "item": "営業時間", "cost": "午前5:00 - 午後11:00" }
+    ],
+    "rideSharingHeading": "ライドシェア（Uber/DiDi）",
+    "rideSharing": [
+      { "item": "基本運賃", "cost": "約25-30 MXN" },
+      { "item": "1kmあたり", "cost": "約8-10 MXN" },
+      { "item": "セントロからロマス", "cost": "約80-100 MXN" },
+      { "item": "待機時間", "cost": "通常3-8分" }
+    ],
+    "taxisHeading": "従来のタクシー",
+    "taxis": [
+      { "item": "初乗り運賃", "cost": "30 MXN（約$1.50 USD）" },
+      { "item": "1kmあたり", "cost": "約12 MXN" },
+      { "item": "空港からセントロ", "cost": "約250 MXN（$12 USD）" }
+    ],
+    "taxiNote": "メーターがない場合は料金を事前に合意",
+    "drivingHeading": "運転/レンタカー",
+    "driving": [
+      { "item": "日次レンタル", "cost": "約$30-50 USD" },
+      { "item": "ガソリン（1リットル）", "cost": "約22 MXN（$1.10 USD）" },
+      { "item": "保険（年間）", "cost": "約$300 USD" }
+    ],
+    "drivingNote": "外国免許証は6ヶ月有効"
+  },
+  "utilities": {
+    "heading": "インターネット・電話",
+    "internetHeading": "インターネットプロバイダー",
+    "internetTableHeaders": {
+      "provider": "プロバイダー",
+      "speed": "速度オプション",
+      "cost": "月額費用",
+      "notes": "備考"
+    },
+    "internetProviders": [
+      { "provider": "Telmex (Infinitum)", "speed": "20-200 Mbps", "cost": "$350-700 MXN", "notes": "最広カバレッジ" },
+      { "provider": "Totalplay", "speed": "100-500 Mbps", "cost": "$450-900 MXN", "notes": "光ファイバー" },
+      { "provider": "Izzi", "speed": "50-300 Mbps", "cost": "$400-800 MXN", "notes": "お得なバンドル" },
+      { "provider": "Megacable", "speed": "50-200 Mbps", "cost": "$400-700 MXN", "notes": "地域プロバイダー" }
+    ],
+    "mobileHeading": "携帯電話プラン",
+    "mobilePlans": [
+      { "provider": "Telcel", "note": "最高のカバレッジ", "cost": "約400-600 MXN/月" },
+      { "provider": "AT&T México", "note": "都市部で良好", "cost": "約350-500 MXN/月" },
+      { "provider": "Movistar", "note": "予算重視", "cost": "約250-400 MXN/月" }
+    ]
+  },
+  "safety": {
+    "heading": "安全・セキュリティ",
+    "indexHeading": "安全性指数比較（Numbeo 2024）",
+    "indexNote": "スコアが高いほど安全（スケール0-100）",
+    "indexCities": [
+      { "city": "サンルイスポトシ", "score": 52.4 },
+      { "city": "メキシコシティ", "score": 41.2 },
+      { "city": "グアダラハラ", "score": 44.8 },
+      { "city": "メリダ（最も安全）", "score": 72.1 }
+    ],
+    "tipsHeading": "安全のヒント",
+    "tips": [
+      "既知のエリアに滞在：セントロ・イストリコ、ロマス、タンガマンガ",
+      "夜間は路上タクシーではなくUberを利用",
+      "派手な表示や高価な宝石を避ける",
+      "日常の交流のために基本的なスペイン語を学ぶ",
+      "大使館に登録（米国：STEPプログラム）",
+      "書類のデジタルコピーをクラウドに保存"
+    ]
+  },
+  "faq": {
+    "heading": "よくある質問",
+    "items": [
+      {
+        "q": "スペイン語を話す必要がありますか？",
+        "a": "観光エリアでは英語が利用可能ですが、日常生活にはスペイン語が不可欠です。サンミゲルデアジェンデとは異なり、英語インフラが限られています。CELE（UASLP）のクラスまたはプライベート家庭教師（1時間約$10-15 USD）を検討してください。"
+      },
+      {
+        "q": "観光ビザでリモートワークできますか？",
+        "a": "観光ビザでのリモートワークは技術的にはグレーゾーンです。海外から稼ぐリモートワーカーに対する執行は最小限ですが、長期滞在には一時居住を取得する方が安全で、銀行と医療へのアクセスが提供されます。"
+      },
+      {
+        "q": "水道水は安全ですか？",
+        "a": "いいえ。ガラフォン（20L精製水ボトル）を自宅配達で利用してください（各約35-50 MXN）。ほとんどのレストランは精製氷を使用しています。"
+      },
+      {
+        "q": "駐在員コミュニティはどうですか？",
+        "a": "小規模ですが成長中で、専門職（BMW、GM、航空宇宙）、退職者、デジタルノマド、メキシコ国民の配偶者で構成されています。Facebookグループや非公式の集まりが存在します。"
+      },
+      {
+        "q": "ペットを連れてこられますか？",
+        "a": "はい。要件：健康証明書（10日以内）、最新の狂犬病予防接種（旅行の15日前から1年前）。多くのアパートがペットを許可しています。良好な獣医ケア：定期訪問$30-50 USD。"
+      },
+      {
+        "q": "インターナショナルスクールはありますか？",
+        "a": "はい：Instituto Potosino（バイリンガル）、Colegio Motolinia（カトリック、バイリンガル）、American School of San Luis Potosí。授業料：年間$3,000-$10,000 USD。"
+      },
+      {
+        "q": "外国の運転免許証を使用できますか？",
+        "a": "観光客として6ヶ月有効。居住者になったら、メキシコ免許を取得（居住証明、健康診断、筆記/実技試験）。費用：合計約$50-100 USD。"
+      },
+      {
+        "q": "サンルイスポトシは2026年のデジタルノマドに適していますか？",
+        "a": "はい、急速に成長しています。2026年3月時点で51以上のコワーキングスペース（2024年の約25から）、すべての主要地域で100-500 Mbpsの光ファイバーインターネット、ヒューストンとダラスへの直行便があります。月間ノマド予算平均$1,800 USD。セントロ・イストリコのEntidad Nómadaがデフォルトの最初の拠点コワーキングスペースです。"
+      },
+      {
+        "q": "2026年のメキシコ居住ビザは何が変わりましたか？",
+        "a": "2つのこと：（1）2025年7月、メキシコ領事館は最低賃金ではなくUMAベースの経済的支払能力計算に移行しました。2026年の基準は月収約$4,185 USDまたは貯蓄約$69,750 USDです。（2）居住ビザとカードの政府処理手数料は2025年11月7日発効でほぼ倍増しました。"
+      },
+      {
+        "q": "観光客はサンルイスポトシに何日計画すべきですか？",
+        "a": "都市に3日（セントロ・イストリコ、パルケタンガマンガ、レアルデカトルセへの日帰り旅行）。ワステカポトシナに3-4日追加（カスカダデタムル、シリトラ超現実主義庭園、タマソポ）。州全体の訪問は7-8日です。"
+      }
+    ]
+  },
+  "sources": {
+    "heading": "出典・検証",
+    "intro": "このガイドのすべての数字は2026年3月17日時点で一次情報源に対して検証済みです。",
+    "links": [
+      { "text": "Numbeo — サンルイスポトシ生活費（2026年1月更新）", "url": "https://www.numbeo.com/cost-of-living/in/San-Luis-Potosi" },
+      { "text": "Mexperience — 2026年メキシコ居住", "url": "https://www.mexperience.com/mexico-residency-in-2026-tighter-criteria-higher-fees/" },
+      { "text": "Mexico Relocation Guide — 2026年収入要件更新", "url": "https://mexicorelocationguide.com/mexican-residency-income-requirements-updates-in-2026/" },
+      { "text": "nomads.com — SLPコワーキングディレクトリ（51スペース追跡）", "url": "https://nomads.com/coworking/san-luis-potosi" },
+      { "text": "INEGI — 2020年国勢調査 + 2025年都市圏推定", "url": "" },
+      { "text": "Mexico Business News — 2025年SLP自動車FDI総額（$761.8M）", "url": "" },
+      { "text": "San Luis Way Editorial — 地域とコワーキングスペースの現地検証", "url": "" }
+    ]
+  },
+  "relatedLinks": {
+    "neighborhoodsGuide": "地域ガイド",
+    "safetyGuide": "SLPは安全？",
+    "healthGuide": "医療ガイド",
+    "expatGuide": "駐在員必須情報"
+  }
+}

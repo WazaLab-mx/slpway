@@ -1,0 +1,67 @@
+{
+  "seo": {
+    "title": "Ultimativer Schulleitfaden San Luis Potosí | Vollständiger Bildungsleitfaden für Expat-Familien",
+    "description": "Umfassender Leitfaden zur Bildung in San Luis Potosí. Internationale Schulen, private Bildung, öffentliche Optionen, Universitäten, Anmeldeverfahren, Kosten und FAQs für Expat-Familien, die nach SLP ziehen.",
+    "keywords": "San Luis Potosí Schulen, internationale Schulen SLP, Bildung Mexiko Expats, zweisprachige Schulen, Universitäten San Luis Potosí, Schulanmeldung Mexiko, Colegio Terranova, Colegio Motolinia, UASLP",
+    "ogTitle": "Ultimativer Schulleitfaden San Luis Potosí | Bildung für Expat-Familien"
+  },
+  "breadcrumbs": {
+    "home": "Startseite",
+    "resources": "Ressourcen",
+    "schoolGuide": "Schulleitfaden"
+  },
+  "hero": {
+    "title": "Ultimativer Schulleitfaden San Luis Potosí",
+    "subtitle": "Vollständiger Bildungsleitfaden für Expat-Familien: internationale Schulen, Anmeldeverfahren, Kosten & alles, was Sie wissen müssen",
+    "imageAlt": "Schulbücher, Stifte und Alphabetblöcke auf einem Schreibtisch",
+    "readTime": "15 Min. Lesezeit"
+  },
+  "sections": [
+    { "id": "overview", "name": "Überblick" },
+    { "id": "system", "name": "Bildungssystem" },
+    { "id": "international", "name": "Internationale Schulen" },
+    { "id": "private", "name": "Privatschulen" },
+    { "id": "public", "name": "Öffentliche Schulen" },
+    { "id": "universities", "name": "Universitäten" },
+    { "id": "enrollment", "name": "Wie man sich anmeldet" },
+    { "id": "costs", "name": "Kosten" },
+    { "id": "faq", "name": "FAQ" }
+  ],
+  "quickStats": [
+    { "label": "Schulen Gesamt", "value": "4.500+", "source": "SEGE 2024" },
+    { "label": "Int'l Schulen", "value": "6+", "source": "Verzeichnis" },
+    { "label": "Universitäten", "value": "35+", "source": "ANUIES" },
+    { "label": "Alphabetisierungsrate", "value": "95,8%", "source": "INEGI 2024" },
+    { "label": "Schülerzahl", "value": "890.000+", "source": "SEP 2024" },
+    { "label": "Schuljahr", "value": "Sep-Jul*", "source": "SEP 2025" }
+  ],
+  "executive": {
+    "heading": "Zusammenfassung",
+    "keyTakeaways": "Wichtigste Erkenntnisse",
+    "forExpatFamilies": "Für Expat-Familien",
+    "takeaways": [
+      "6+ internationale/zweisprachige Schulen verfügbar",
+      "Monatliche Kosten: $3.000-18.000 MXN je nach Schultyp",
+      "Schuljahr läuft von August bis Juli",
+      "Ausländische Dokumente benötigen Apostille + Übersetzung"
+    ],
+    "expatInfo": [
+      "Beste Optionen: Colegio Terranova (IB), Colegio Motolinía",
+      "IB- und Cambridge-Programme verfügbar",
+      "Spanisch-Immersionsunterstützung an den meisten zweisprachigen Schulen",
+      "Anmeldeverfahren 2-3 Monate vor Schuljahresbeginn starten"
+    ]
+  },
+  "overview": {
+    "heading": "Bildung in San Luis Potosí",
+    "intro": "San Luis Potosí bietet ein robustes Bildungsökosystem mit Optionen, die von traditionellen mexikanischen öffentlichen Schulen bis zu renommierten internationalen Institutionen reichen. Als wachsendes Wirtschaftszentrum mit bedeutenden Automobil- (BMW, GM) und Luftfahrtindustrien hat die Stadt qualitativ hochwertige Bildungsinfrastruktur entwickelt, um sowohl lokale als auch Expat-Familien zu bedienen.",
+    "whySLP": "Warum SLP für Bildung?",
+    "benefits": [
+      "Niedrigere Kosten als Mexiko-Stadt (30-50% Ersparnis)",
+      "Hochwertige IB World School Option",
+      "Wachsender zweisprachiger Schulsektor",
+      "Zugang zu bedeutenden Universitäten (UASLP, Tec de Monterrey)",
+      "Weniger überlaufen als touristisch geprägte Städte"
+    ]
+  }
+}

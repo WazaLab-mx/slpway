@@ -1,0 +1,35 @@
+{
+  "seo": {
+    "title": "サンルイスポトシ 家族生活 究極ガイド｜学校・公園・アクティビティ",
+    "description": "サンルイスポトシの完全家族ガイド。最良の地域、インターナショナルスクール、公園、小児医療、保育、子供スポーツ、ファミリーレストラン。駐在員家族に必要なすべて。",
+    "keywords": "サンルイスポトシ 家族, 駐在員家族 SLP, 家族活動, インターナショナルスクール, 公園 SLP, 小児医療, メキシコ 保育",
+    "ogTitle": "家族生活ガイド サンルイスポトシ｜駐在員家族のための完全ガイド"
+  },
+  "breadcrumbs": { "home": "ホーム", "resources": "リソース", "familyGuide": "家族ガイド" },
+  "hero": {
+    "title": "サンルイスポトシ 家族生活 究極ガイド",
+    "subtitle": "学校、公園、小児医療、アクティビティ — 駐在員家族に必要なすべて",
+    "imageAlt": "サンルイスポトシでの家族活動",
+    "readTime": "12分で読める"
+  },
+  "sections": [
+    { "id": "overview", "name": "概要" },
+    { "id": "schools", "name": "学校" },
+    { "id": "parks", "name": "公園とアクティビティ" },
+    { "id": "healthcare", "name": "小児医療" },
+    { "id": "childcare", "name": "保育" },
+    { "id": "sports", "name": "子供スポーツ" },
+    { "id": "neighborhoods", "name": "地域" },
+    { "id": "restaurants", "name": "ファミリーレストラン" },
+    { "id": "faq", "name": "よくある質問" },
+    { "id": "sources", "name": "出典" }
+  ],
+  "quickStats": [
+    { "value": "50以上", "label": "私立学校", "source": "SEP 2024" },
+    { "value": "420ha", "label": "タンガマンガ公園", "source": "市データ" },
+    { "value": "25以上", "label": "スポーツアカデミー", "source": "ディレクトリ" },
+    { "value": "3以上", "label": "ファミリー病院", "source": "検証済み" },
+    { "value": "10以上", "label": "子供向け博物館", "source": "観光" },
+    { "value": "5", "label": "ファミリーゾーン", "source": "ガイド" }
+  ]
+}

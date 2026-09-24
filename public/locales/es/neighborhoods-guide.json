@@ -1,0 +1,25 @@
+{
+  "seo": {
+    "title": "Guía Definitiva de Colonias San Luis Potosí | Dónde Vivir",
+    "description": "Guía completa de colonias en San Luis Potosí para expats. Precios de renta, calificaciones de seguridad, escuelas y perfiles detallados de Lomas, Pedregal, Centro y más.",
+    "keywords": "colonias San Luis Potosí, dónde vivir SLP, vivienda expat, Lomas SLP, Centro Histórico, mejores áreas San Luis Potosí",
+    "ogTitle": "Guía de Colonias San Luis Potosí | Dónde Deberían Vivir los Expats"
+  },
+  "breadcrumbs": { "home": "Inicio", "resources": "Recursos", "neighborhoodsGuide": "Guía de Colonias" },
+  "hero": {
+    "title": "Guía Definitiva de Colonias",
+    "subtitle": "Dónde Vivir en San Luis Potosí — Guía Completa para Expats",
+    "imageAlt": "Vista aérea de la ciudad de San Luis Potosí",
+    "readTime": "25 min de lectura"
+  },
+  "sections": [
+    { "id": "overview", "name": "Resumen" },
+    { "id": "comparison", "name": "Comparación" },
+    { "id": "lomas", "name": "Lomas" },
+    { "id": "centro", "name": "Centro Histórico" },
+    { "id": "tangamanga", "name": "Tangamanga" },
+    { "id": "pedregal", "name": "Pedregal" },
+    { "id": "industrial", "name": "Zona Industrial" },
+    { "id": "faq", "name": "Preguntas Frecuentes" }
+  ]
+}

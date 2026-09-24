@@ -4,11 +4,16 @@ import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 import LastUpdated from '@/components/common/LastUpdated';
 import GuideCTA from '@/components/common/GuideCTA';
 import AdUnit from '@/components/common/AdUnit';
 
 export default function HealthGuidePage() {
+  const { t } = useTranslation('health-guide');
+  const router = useRouter();
+  const { locale = 'en' } = router;
   const [activeSection, setActiveSection] = useState('overview');
 
   const scrollToSection = (sectionId: string) => {
@@ -507,7 +512,15 @@ export default function HealthGuidePage() {
         <title>Healthcare Guide SLP: Hospitals, Doctors & Insurance</title>
         <meta name="description" content="Complete guide to healthcare in San Luis Potosí. Hospitals, clinics, specialists, insurance options, pharmacies, and step-by-step guides for expats." />
         <meta name="keywords" content="San Luis Potosí healthcare, hospitals SLP, doctors Mexico, health insurance expats, pharmacies San Luis Potosí" />
-        {/* Canonical emitted globally (locale-aware) by HreflangAlternates in _app.tsx. */}
+        
+        <link rel="canonical" href={`https://www.sanluisway.com/${locale === 'en' ? '' : locale + '/'}resources/health-guide`} />
+        
+        <link rel="alternate" hrefLang="en" href="https://www.sanluisway.com/resources/health-guide" />
+        <link rel="alternate" hrefLang="es" href="https://www.sanluisway.com/es/resources/health-guide" />
+        <link rel="alternate" hrefLang="de" href="https://www.sanluisway.com/de/resources/health-guide" />
+        <link rel="alternate" hrefLang="ja" href="https://www.sanluisway.com/ja/resources/health-guide" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.sanluisway.com/resources/health-guide" />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -516,6 +529,7 @@ export default function HealthGuidePage() {
               '@type': 'Article',
               headline: 'Ultimate Healthcare Guide for Expats — San Luis Potosí',
               description: 'Complete guide to healthcare in San Luis Potosí: hospitals, doctors, insurance, pharmacies, and step-by-step guides for expats.',
+              inLanguage: locale,
               datePublished: '2025-01-01',
               dateModified: '2026-04-10',
               author: {
@@ -526,7 +540,7 @@ export default function HealthGuidePage() {
                 worksFor: { '@type': 'Organization', '@id': 'https://www.sanluisway.com/#organization' },
               },
               publisher: { '@type': 'Organization', '@id': 'https://www.sanluisway.com/#organization', name: 'San Luis Way' },
-              mainEntityOfPage: 'https://www.sanluisway.com/resources/health-guide',
+              mainEntityOfPage: `https://www.sanluisway.com/${locale === 'en' ? '' : locale + '/'}resources/health-guide`,
               about: { '@type': 'Place', name: 'San Luis Potosí', sameAs: 'https://www.wikidata.org/wiki/Q204271' },
             }),
           }}
@@ -1135,7 +1149,7 @@ export default function HealthGuidePage() {
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+      ...(await serverSideTranslations(locale ?? 'en', ['common', 'health-guide'])),
     },
   };
 };

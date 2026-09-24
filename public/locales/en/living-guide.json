@@ -1,0 +1,425 @@
+{
+  "seo": {
+    "title": "Ultimate Guide to Living in San Luis Potosí 2026 | Expat, Nomad & Traveler Guide",
+    "description": "Complete 2026 guide to San Luis Potosí: verified March 2026 prices, new UMA visa rules, 51+ coworking spaces, neighborhoods, healthcare. For expats, digital nomads, and slow travelers. 35-50% lower cost than Mexico City.",
+    "keywords": "San Luis Potosí expat guide, living in SLP, cost of living Mexico, expat visa Mexico, neighborhoods SLP",
+    "ogTitle": "Ultimate Guide to Living in San Luis Potosí | Expat Guide",
+    "jsonLdHeadline": "Ultimate Guide to Living in San Luis Potosí 2026",
+    "jsonLdDescription": "Comprehensive 2026 guide covering visas (UMA rules), cost of living, neighborhoods, healthcare, coworking — for expats, digital nomads, and slow travelers."
+  },
+  "breadcrumbs": {
+    "home": "Home",
+    "resources": "Resources",
+    "livingGuide": "Living Guide"
+  },
+  "hero": {
+    "title": "Ultimate Guide to Living in San Luis Potosí 2026",
+    "subtitle": "For expats, digital nomads, and slow travelers — everything you need to live, work, or visit SLP in 2026",
+    "imageAlt": "Living in San Luis Potosí"
+  },
+  "sections": [
+    { "id": "overview", "name": "Overview" },
+    { "id": "visas", "name": "Visas & Immigration" },
+    { "id": "cost", "name": "Cost of Living" },
+    { "id": "neighborhoods", "name": "Neighborhoods" },
+    { "id": "healthcare", "name": "Healthcare" },
+    { "id": "banking", "name": "Banking" },
+    { "id": "transport", "name": "Transportation" },
+    { "id": "utilities", "name": "Internet & Phone" },
+    { "id": "safety", "name": "Safety" },
+    { "id": "faq", "name": "FAQ" }
+  ],
+  "quickStats": [
+    { "label": "Monthly Budget (2026)", "value": "$1,200-$2,000 USD" },
+    { "label": "1BR Rent Centro", "value": "$450-$750 USD/mo" },
+    { "label": "Meal Out", "value": "$13-$43 USD" },
+    { "label": "Population (metro)", "value": "1.31 million" },
+    { "label": "Altitude", "value": "1,864m (6,115 ft)" },
+    { "label": "MXN/USD (Mar 2026)", "value": "~17.5" }
+  ],
+  "quickAnswer": {
+    "heading": "San Luis Potosí at a glance (2026)",
+    "intro": "San Luis Potosí is the capital of the state of San Luis Potosí, Mexico — a UNESCO-connected colonial city of approximately 1.31 million people in the metropolitan area, sitting at 1,864 meters elevation in the central Bajío region. For foreigners moving to Mexico in 2026, SLP offers roughly 35–50% lower living costs than Mexico City for a similar quality of life, direct flights to Houston and Dallas, over 350 international companies (BMW, General Motors, Valeo, Continental), and a rapidly growing digital-nomad infrastructure of 51+ coworking spaces. The city works for three profiles: long-term expats, remote workers on temporary residency, and slow travelers exploring the Bajío and the Huasteca Potosina.",
+    "keyFactsHeading": "Key facts (verified March 17, 2026)",
+    "keyFacts": [
+      "Comfortable solo budget: $1,200–$2,000 USD / month (single), $1,800–$2,500 (couple), $2,400–$3,500 (family of four)",
+      "1BR apartment in Centro Histórico: $450–$750 USD / month (2026 market)",
+      "Temporary Resident visa income threshold (2026): ~$4,185 USD/month or ~$69,750 USD in savings — fees doubled November 2025",
+      "Fiber internet 100–500 Mbps available in Centro, Lomas, Tangamanga — $32–$50 USD/month",
+      "Healthcare: Hospital Ángeles, Star Médica, Hospital Lomas — private consult $30–$60 USD",
+      "US State Department advisory: Level 2 — Exercise Increased Caution (same as France)",
+      "MXN/USD exchange rate in March 2026: approximately 17.5"
+    ],
+    "verificationNote": "Last verified by San Luis Way editorial team: March 17, 2026"
+  },
+  "overview": {
+    "heading": "Why should expats move to San Luis Potosí?",
+    "keyAdvantagesHeading": "Key Advantages",
+    "keyAdvantages": [
+      "~26% lower cost of living than Mexico City (housing up to 55% cheaper)",
+      "Growing expat community without over-tourism",
+      "UNESCO World Heritage historic center",
+      "Modern healthcare facilities",
+      "Strategic central location"
+    ],
+    "strategicLocationHeading": "Strategic Location",
+    "strategicLocation": [
+      "Mexico City: 420 km (4-5 hours)",
+      "Guadalajara: 330 km (3.5-4 hours)",
+      "Aguascalientes: 200 km (2.5 hours)",
+      "Zacatecas: 193 km (2.5 hours)",
+      "Monterrey: 521 km (5-6 hours)"
+    ],
+    "economicStability": "Economic Stability: The state's GDP grew 7.9% in 2023, making it Mexico's third-fastest growing economy (after Quintana Roo and Oaxaca). Key sectors include automotive (BMW, GM), aerospace, logistics, and business services."
+  },
+  "visas": {
+    "heading": "Which Mexican visa do I need to live in SLP?",
+    "typesHeading": "Visa Types Comparison",
+    "tableHeaders": {
+      "type": "Type",
+      "duration": "Duration",
+      "work": "Work Allowed",
+      "bestFor": "Best For"
+    },
+    "types": [
+      { "type": "Tourist (FMM)", "duration": "180 days", "work": "No", "bestFor": "Short visits, nomads testing SLP" },
+      { "type": "Temporary Resident", "duration": "1-4 years", "work": "With permit", "bestFor": "Remote workers ($4,185/mo income)" },
+      { "type": "Permanent Resident", "duration": "Indefinite", "work": "Yes", "bestFor": "Retirees, long-term" },
+      { "type": "Work Visa", "duration": "1-4 years", "work": "Yes (employer-specific)", "bestFor": "BMW, GM, Valeo transferees" }
+    ],
+    "processHeading": "Temporary Resident Visa Process",
+    "processSteps": [
+      { "title": "Schedule Consulate Appointment", "desc": "Book 2-4 weeks in advance through SRE Consulate Directory" },
+      { "title": "Gather Documents", "desc": "Valid passport (6+ months validity), completed application, passport photo, proof of financial solvency, visa fee ($50-$80 USD)" },
+      { "title": "Prove Financial Solvency", "desc": "Bank statements: ~$69,750 USD average balance (12 months), OR monthly income: ~$4,185 USD for 6 months" },
+      { "title": "Attend Consulate Interview", "desc": "Present documents and discuss plans" },
+      { "title": "Exchange Visa Upon Entry", "desc": "Visit INM office within 30 days (Av. Venustiano Carranza 2395, Tel: 444 812-3556)" },
+      { "title": "Receive Resident Card", "desc": "Valid for 1 year, renewable up to 4 years" }
+    ],
+    "warning": "Warning: Working remotely on a tourist visa while earning from Mexico technically violates immigration law, though enforcement is limited. Obtain proper residency status for work activities."
+  },
+  "cost": {
+    "heading": "How much does it cost to live in San Luis Potosí?",
+    "comparisonHeading": "Cost Comparison Index (NYC = 100)",
+    "comparisonCities": [
+      { "city": "San Luis Potosí", "index": 26.8 },
+      { "city": "Mexico City", "index": 35.2 },
+      { "city": "Guadalajara", "index": 32.1 },
+      { "city": "San Miguel de Allende", "index": 41.5 }
+    ],
+    "housingHeading": "Housing & Rent",
+    "housingTable": {
+      "headers": {
+        "type": "Type",
+        "cityCenter": "City Center",
+        "outsideCenter": "Outside Center"
+      },
+      "rows": [
+        { "type": "1BR Apartment", "cityCenter": "$580 USD", "outsideCenter": "$300 USD" },
+        { "type": "3BR Apartment", "cityCenter": "$900 USD", "outsideCenter": "$550 USD" },
+        { "type": "3BR House", "cityCenter": "$1,200 USD", "outsideCenter": "$700 USD" }
+      ]
+    },
+    "foodGroceriesHeading": "Food & Groceries",
+    "foodGroceries": [
+      { "item": "Restaurant meal", "cost": "$5 USD" },
+      { "item": "Mid-range (2 people)", "cost": "$25 USD" },
+      { "item": "Domestic beer", "cost": "$2.50 USD" },
+      { "item": "Cappuccino", "cost": "$3 USD" },
+      { "item": "Monthly groceries", "cost": "$150-200 USD" }
+    ],
+    "utilitiesHeading": "Utilities & Services",
+    "utilities": [
+      { "item": "Electricity/water/gas", "cost": "$40 USD" },
+      { "item": "Internet (60+ Mbps)", "cost": "$28 USD" },
+      { "item": "Mobile (unlimited)", "cost": "$20 USD" },
+      { "item": "Gym membership", "cost": "$30 USD" },
+      { "item": "Cinema ticket", "cost": "$4 USD" }
+    ],
+    "budgetsHeading": "Sample Monthly Budgets",
+    "budgets": [
+      {
+        "name": "Budget",
+        "amount": "$800-$1,000 USD",
+        "items": ["1BR outside center", "Cook at home mostly", "Public transportation", "IMSS public healthcare"],
+        "bestFor": "Best for: Digital nomads, students"
+      },
+      {
+        "name": "Comfortable",
+        "amount": "$1,200-$1,800 USD",
+        "items": ["Nice 1-2BR in good area", "Mix of cooking & dining", "Uber/occasional rental", "Private health insurance"],
+        "bestFor": "Most common for expats",
+        "featured": true
+      },
+      {
+        "name": "Premium",
+        "amount": "$2,500+ USD",
+        "items": ["Luxury apartment/house", "Fine dining regularly", "Own car or driver", "Premium healthcare plan"],
+        "bestFor": "Best for: Executives, families"
+      }
+    ]
+  },
+  "neighborhoods": {
+    "heading": "Where should expats live in San Luis Potosí?",
+    "tableCaption": "Rent and safety comparison by neighborhood in San Luis Potosí",
+    "tableHeaders": {
+      "neighborhood": "Neighborhood",
+      "rent": "Monthly rent",
+      "safety": "Safety (/5)",
+      "bestFor": "Best for"
+    },
+    "tableNote": "USD equivalents · Centro and Tangamanga are the most walkable",
+    "items": [
+      {
+        "name": "Lomas",
+        "rent": "$800-$1,500 USD (2026)",
+        "bestFor": "Families, professionals",
+        "safety": 5,
+        "description": "Upscale, family-friendly with tree-lined streets, modern shopping, excellent schools",
+        "pros": ["Very safe", "Gated communities", "Near Plaza Citadina", "Excellent schools"],
+        "cons": ["Higher prices", "Car-dependent", "Far from center", "Less authentic"]
+      },
+      {
+        "name": "Centro Histórico",
+        "rent": "$450-$750 USD (2026)",
+        "bestFor": "Culture lovers, singles",
+        "safety": 4,
+        "description": "UNESCO World Heritage historic center, colonial architecture, best restaurants",
+        "pros": ["Walkable", "Rich culture", "Beautiful architecture", "Best dining"],
+        "cons": ["Noisy", "Limited parking", "Older buildings", "Fewer modern amenities"]
+      },
+      {
+        "name": "Tangamanga",
+        "rent": "$550-$950 USD (2026)",
+        "bestFor": "Active lifestyle, nature lovers",
+        "safety": 4,
+        "description": "Adjacent to Parque Tangamanga (one of Mexico's largest urban parks)",
+        "pros": ["Near massive park", "Great for jogging/cycling", "Mid-range prices", "Good restaurants"],
+        "cons": ["Less walkable", "Fewer nightlife", "Traffic", "Limited transit"]
+      },
+      {
+        "name": "Zona Industrial / Morales",
+        "rent": "$400-$700 USD (2026)",
+        "bestFor": "Budget-conscious, workers",
+        "safety": 3,
+        "description": "Near industrial parks, excellent value, new construction",
+        "pros": ["Very affordable", "Near major employers", "New construction", "Good highway access"],
+        "cons": ["Far from center", "Less character", "Industrial area", "Fewer restaurants"]
+      }
+    ],
+    "prosLabel": "Pros",
+    "consLabel": "Cons",
+    "howToFindHeading": "How to Find Housing",
+    "howToFind": [
+      "Use local platforms: Inmuebles24.com, Segundamano.mx, Vivanuncios.com, Facebook groups",
+      "Arrive first and search in person (book Airbnb for 2-4 weeks)",
+      "Understand lease terms: 1-year minimum, 1-2 months deposit, may need guarantor",
+      "Negotiate prices, especially for longer leases or upfront payments"
+    ]
+  },
+  "healthcare": {
+    "heading": "How does the healthcare system work in SLP?",
+    "publicHeading": "Public: IMSS (Annual Costs 2024)",
+    "publicCosts": [
+      { "ageRange": "Age 0-19", "cost": "~$240 USD" },
+      { "ageRange": "Age 20-39", "cost": "~$310 USD" },
+      { "ageRange": "Age 40-59", "cost": "~$405 USD" },
+      { "ageRange": "Age 60+", "cost": "~$525 USD" }
+    ],
+    "publicCoversNote": "Covers: consultations, hospitalization, surgery, medications, lab work, maternity",
+    "privateHeading": "Private Insurance (Monthly)",
+    "privateCosts": [
+      { "level": "Basic (high deductible)", "cost": "$50-80 USD" },
+      { "level": "Standard coverage", "cost": "$100-150 USD" },
+      { "level": "Comprehensive", "cost": "$150-250 USD" },
+      { "level": "Premium (international)", "cost": "$300+ USD" }
+    ],
+    "privateProvidersNote": "Providers: GNP, AXA, Seguros Monterrey, BUPA, Cigna",
+    "hospitalsHeading": "Best Hospitals & Clinics",
+    "hospitalsTableHeaders": {
+      "hospital": "Hospital",
+      "type": "Type",
+      "specialties": "Specialties",
+      "english": "English"
+    },
+    "hospitals": [
+      { "name": "Hospital Ángeles", "type": "Private", "specialties": "Full-service, emergency, specialists", "english": "Yes" },
+      { "name": "Hospital Lomas", "type": "Private", "specialties": "General, maternity, pediatrics", "english": "Some" },
+      { "name": "Star Médica", "type": "Private", "specialties": "Full-service, modern", "english": "Yes" },
+      { "name": "Hospital Central (IMSS)", "type": "Public", "specialties": "Emergency, general care", "english": "Limited" },
+      { "name": "Beneficencia Española", "type": "Private", "specialties": "General, affordable", "english": "Some" }
+    ],
+    "dualCoverageNote": "Dual Coverage Strategy: Many expats use IMSS for routine care + high-deductible private policy for emergencies (typically $600-800 USD/year total).",
+    "completeGuideLink": "View Complete Health Services Guide →"
+  },
+  "banking": {
+    "heading": "How do I open a bank account in San Luis Potosí?",
+    "openingHeading": "Opening a Bank Account",
+    "requiredDocsHeading": "Required Documents",
+    "requiredDocs": [
+      "Passport (original and copy)",
+      "Visa/Resident Card",
+      "Proof of address (utility bill <3 months)",
+      "RFC (Tax ID) - some banks help obtain",
+      "Initial deposit: 1,000-5,000 MXN"
+    ],
+    "transferOptionsHeading": "Money Transfer Options",
+    "transferOptions": [
+      { "service": "Wise", "note": "Best exchange rates, low fees" },
+      { "service": "Remitly", "note": "Good for recurring transfers" },
+      { "service": "XE", "note": "Competitive for larger amounts" },
+      { "service": "Charles Schwab", "note": "No ATM fees (US citizens)" }
+    ],
+    "banksHeading": "Bank Recommendations",
+    "banksTableHeaders": {
+      "bank": "Bank",
+      "expatFriendly": "Expat Friendly",
+      "englishApp": "English App",
+      "notes": "Notes"
+    },
+    "banks": [
+      { "name": "BBVA México", "rating": 5, "englishApp": "Yes", "notes": "Most popular for expats" },
+      { "name": "Santander", "rating": 4, "englishApp": "Yes", "notes": "International transfers" },
+      { "name": "Citibanamex", "rating": 4, "englishApp": "Yes", "notes": "Wide ATM network" },
+      { "name": "HSBC", "rating": 5, "englishApp": "Yes", "notes": "Good for Premier customers" },
+      { "name": "Banorte", "rating": 3, "englishApp": "Limited", "notes": "Largest Mexican bank" }
+    ],
+    "rfcNote": "What is an RFC? The Registro Federal de Contribuyentes is Mexico's tax identification number. Essential for banking, leases, and financial transactions. Obtain from SAT offices or online at sat.gob.mx with CURP."
+  },
+  "transport": {
+    "heading": "Transportation",
+    "publicTransitHeading": "Public Transit (MetroRed)",
+    "publicTransit": [
+      { "item": "Single ride", "cost": "15.50 MXN (~$0.75 USD)" },
+      { "item": "Monthly pass", "cost": "~500 MXN ($25 USD)" },
+      { "item": "Hours", "cost": "5:00 AM - 11:00 PM" }
+    ],
+    "rideSharingHeading": "Ride-Sharing (Uber/DiDi)",
+    "rideSharing": [
+      { "item": "Base fare", "cost": "~25-30 MXN" },
+      { "item": "Per km", "cost": "~8-10 MXN" },
+      { "item": "Centro to Lomas", "cost": "~80-100 MXN" },
+      { "item": "Wait time", "cost": "3-8 minutes typical" }
+    ],
+    "taxisHeading": "Traditional Taxis",
+    "taxis": [
+      { "item": "Starting fare", "cost": "30 MXN (~$1.50 USD)" },
+      { "item": "Per km", "cost": "~12 MXN" },
+      { "item": "Airport to Centro", "cost": "~250 MXN ($12 USD)" }
+    ],
+    "taxiNote": "Agree on price if no meter",
+    "drivingHeading": "Driving/Car Rental",
+    "driving": [
+      { "item": "Daily rental", "cost": "~$30-50 USD" },
+      { "item": "Gas (per liter)", "cost": "~22 MXN ($1.10 USD)" },
+      { "item": "Insurance (annual)", "cost": "~$300 USD" }
+    ],
+    "drivingNote": "Foreign license valid 6 months"
+  },
+  "utilities": {
+    "heading": "Internet & Phone",
+    "internetHeading": "Internet Providers",
+    "internetTableHeaders": {
+      "provider": "Provider",
+      "speed": "Speed Options",
+      "cost": "Monthly Cost",
+      "notes": "Notes"
+    },
+    "internetProviders": [
+      { "provider": "Telmex (Infinitum)", "speed": "20-200 Mbps", "cost": "$350-700 MXN", "notes": "Widest coverage" },
+      { "provider": "Totalplay", "speed": "100-500 Mbps", "cost": "$450-900 MXN", "notes": "Fiber optic" },
+      { "provider": "Izzi", "speed": "50-300 Mbps", "cost": "$400-800 MXN", "notes": "Good value bundles" },
+      { "provider": "Megacable", "speed": "50-200 Mbps", "cost": "$400-700 MXN", "notes": "Regional provider" }
+    ],
+    "mobileHeading": "Mobile Phone Plans",
+    "mobilePlans": [
+      { "provider": "Telcel", "note": "Best coverage", "cost": "~400-600 MXN/month" },
+      { "provider": "AT&T México", "note": "Good in cities", "cost": "~350-500 MXN/month" },
+      { "provider": "Movistar", "note": "Budget-friendly", "cost": "~250-400 MXN/month" }
+    ]
+  },
+  "safety": {
+    "heading": "Safety & Security",
+    "indexHeading": "Safety Index Comparison (Numbeo 2024)",
+    "indexNote": "Higher score = safer (scale 0-100)",
+    "indexCities": [
+      { "city": "San Luis Potosí", "score": 52.4 },
+      { "city": "Mexico City", "score": 41.2 },
+      { "city": "Guadalajara", "score": 44.8 },
+      { "city": "Mérida (safest)", "score": 72.1 }
+    ],
+    "tipsHeading": "Safety Tips",
+    "tips": [
+      "Stick to known areas: Centro Histórico, Lomas, Tangamanga",
+      "Use Uber at night instead of hailing street taxis",
+      "Avoid flashy displays and expensive jewelry",
+      "Learn basic Spanish for daily interactions",
+      "Register with your embassy (US: STEP program)",
+      "Store digital copies of documents in cloud"
+    ]
+  },
+  "faq": {
+    "heading": "Frequently Asked Questions",
+    "items": [
+      {
+        "q": "Do I need to speak Spanish?",
+        "a": "While English is available in tourist areas, Spanish is essential for daily life. Unlike San Miguel de Allende, there's limited English infrastructure. Consider classes at CELE (UASLP) or private tutors (~$10-15 USD/hour)."
+      },
+      {
+        "q": "Can I work remotely on a tourist visa?",
+        "a": "Working remotely on a tourist visa is technically a gray area. While enforcement is minimal for remote workers earning from abroad, obtaining Temporary Residency is safer for long-term stays and provides access to banking and healthcare."
+      },
+      {
+        "q": "Is tap water safe?",
+        "a": "No. Use garrafones (20L jugs of purified water) delivered home (~35-50 MXN each). Most restaurants use purified ice."
+      },
+      {
+        "q": "What's the expat community like?",
+        "a": "Small but growing, consisting of: professionals (BMW, GM, aerospace), retirees, digital nomads, and spouses of Mexican nationals. Facebook groups and informal meetups exist."
+      },
+      {
+        "q": "Can I bring pets?",
+        "a": "Yes. Requirements: health certificate (within 10 days), current rabies vaccination (15 days to 1 year before travel). Many apartments allow pets. Good veterinary care: $30-50 USD for routine visits."
+      },
+      {
+        "q": "Are there international schools?",
+        "a": "Yes: Instituto Potosino (bilingual), Colegio Motolinia (Catholic, bilingual), American School of San Luis Potosí. Tuition: $3,000-$10,000 USD/year."
+      },
+      {
+        "q": "Can I use my foreign driver's license?",
+        "a": "Valid for 6 months as tourist. Once resident, obtain Mexican license (proof of residency, medical exam, written/practical tests). Cost: ~$50-100 USD total."
+      },
+      {
+        "q": "Is San Luis Potosí good for digital nomads in 2026?",
+        "a": "Yes and growing fast. The city has 51+ coworking spaces as of March 2026 (vs ~25 in 2024), fiber internet at 100-500 Mbps in all major neighborhoods, and direct flights to Houston and Dallas. Monthly nomad budget averages $1,800 USD. Entidad Nómada in Centro Histórico is the default first-stop coworking space."
+      },
+      {
+        "q": "What changed in Mexican residency visas for 2026?",
+        "a": "Two things: (1) In July 2025, Mexican consulates shifted to UMA-based economic solvency calculations instead of minimum wage. For 2026 the threshold is ~$4,185 USD monthly income or ~$69,750 USD in savings. (2) Government processing fees for residency visas and cards were roughly doubled effective November 7, 2025."
+      },
+      {
+        "q": "How many days should a tourist plan for San Luis Potosí?",
+        "a": "3 days for the city (Centro Histórico, Parque Tangamanga, a day trip to Real de Catorce). Add 3-4 more days for the Huasteca Potosina (Cascada de Tamul, Xilitla Surrealist Gardens, Tamasopo). A full state visit is 7-8 days."
+      }
+    ]
+  },
+  "sources": {
+    "heading": "Sources & Verification",
+    "intro": "All figures in this guide verified against primary sources as of March 17, 2026.",
+    "links": [
+      { "text": "Numbeo — San Luis Potosí Cost of Living (January 2026 update)", "url": "https://www.numbeo.com/cost-of-living/in/San-Luis-Potosi" },
+      { "text": "Mexperience — Mexico Residency in 2026", "url": "https://www.mexperience.com/mexico-residency-in-2026-tighter-criteria-higher-fees/" },
+      { "text": "Mexico Relocation Guide — 2026 Income Requirements Update", "url": "https://mexicorelocationguide.com/mexican-residency-income-requirements-updates-in-2026/" },
+      { "text": "nomads.com — SLP Coworking Directory (51 spaces tracked)", "url": "https://nomads.com/coworking/san-luis-potosi" },
+      { "text": "INEGI — 2020 Census + 2025 metropolitan estimates", "url": "" },
+      { "text": "Mexico Business News — 2025 SLP automotive FDI totals ($761.8M)", "url": "" },
+      { "text": "San Luis Way Editorial — on-ground verification of neighborhoods and coworking spaces", "url": "" }
+    ]
+  },
+  "relatedLinks": {
+    "neighborhoodsGuide": "Neighborhoods Guide",
+    "safetyGuide": "Is SLP Safe?",
+    "healthGuide": "Healthcare Guide",
+    "expatGuide": "Expat Essentials"
+  }
+}

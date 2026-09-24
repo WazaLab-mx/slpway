@@ -4,11 +4,16 @@ import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 import LastUpdated from '@/components/common/LastUpdated';
 import GuideCTA from '@/components/common/GuideCTA';
 import AdUnit from '@/components/common/AdUnit';
 
 export default function SchoolGuidePage() {
+  const { t } = useTranslation('school-guide');
+  const router = useRouter();
+  const { locale = 'en' } = router;
   const [activeSection, setActiveSection] = useState('overview');
 
   const scrollToSection = (sectionId: string) => {
@@ -411,22 +416,31 @@ export default function SchoolGuidePage() {
   return (
     <>
       <Head>
-        <title>Ultimate School Guide San Luis Potosí | Complete Education Guide for Expat Families</title>
-        <meta name="description" content="Comprehensive guide to education in San Luis Potosí. International schools, private education, public options, universities, enrollment process, costs, and FAQs for expat families moving to SLP." />
-        <meta name="keywords" content="San Luis Potosí schools, international schools SLP, education Mexico expats, bilingual schools, universities San Luis Potosí, school enrollment Mexico, Colegio Terranova, Colegio Motolinia, UASLP" />
-        <meta property="og:title" content="Ultimate School Guide San Luis Potosí | Education for Expat Families" />
-        <meta property="og:description" content="Complete guide to education options in San Luis Potosí. Find the perfect school for your children with detailed information on enrollment, costs, and curriculum." />
-        <meta property="og:url" content="https://www.sanluisway.com/resources/school-guide" />
+        <title>{t('seo.title')}</title>
+        <meta name="description" content={t('seo.description')} />
+        <meta name="keywords" content={t('seo.keywords')} />
+        <meta property="og:title" content={t('seo.ogTitle')} />
+        <meta property="og:description" content={t('seo.description')} />
+        <meta property="og:url" content={`https://www.sanluisway.com/${locale === 'en' ? '' : locale + '/'}resources/school-guide`} />
         <meta property="og:type" content="article" />
-        {/* Canonical emitted globally (locale-aware) by HreflangAlternates in _app.tsx. */}
+        
+        <link rel="canonical" href={`https://www.sanluisway.com/${locale === 'en' ? '' : locale + '/'}resources/school-guide`} />
+        
+        <link rel="alternate" hrefLang="en" href="https://www.sanluisway.com/resources/school-guide" />
+        <link rel="alternate" hrefLang="es" href="https://www.sanluisway.com/es/resources/school-guide" />
+        <link rel="alternate" hrefLang="de" href="https://www.sanluisway.com/de/resources/school-guide" />
+        <link rel="alternate" hrefLang="ja" href="https://www.sanluisway.com/ja/resources/school-guide" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.sanluisway.com/resources/school-guide" />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Article",
-              "headline": "Ultimate School Guide San Luis Potosí",
-              "description": "Comprehensive education guide for expat families in San Luis Potosí",
+              "headline": t('seo.title'),
+              "description": t('seo.description'),
+              "inLanguage": locale,
               "datePublished": "2025-01-01",
               "dateModified": "2026-04-07",
               "author": { "@type": "Organization", "name": "San Luis Way" }
@@ -438,25 +452,11 @@ export default function SchoolGuidePage() {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": faqs.slice(0, 5).map(faq => ({
-                "@type": "Question",
-                "name": faq.q,
-                "acceptedAnswer": { "@type": "Answer", "text": faq.a }
-              }))
-            })
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
               "@type": "BreadcrumbList",
               "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.sanluisway.com" },
-                { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://www.sanluisway.com/resources" },
-                { "@type": "ListItem", "position": 3, "name": "School Guide", "item": "https://www.sanluisway.com/resources/school-guide" }
+                { "@type": "ListItem", "position": 1, "name": t('breadcrumbs.home'), "item": "https://www.sanluisway.com" },
+                { "@type": "ListItem", "position": 2, "name": t('breadcrumbs.resources'), "item": "https://www.sanluisway.com/resources" },
+                { "@type": "ListItem", "position": 3, "name": t('breadcrumbs.schoolGuide'), "item": `https://www.sanluisway.com/${locale === 'en' ? '' : locale + '/'}resources/school-guide` }
               ]
             })
           }}
@@ -468,11 +468,11 @@ export default function SchoolGuidePage() {
         <div className="bg-white border-b">
           <div className="container mx-auto px-4 py-3">
             <nav className="flex items-center gap-2 text-sm">
-              <Link href="/" className="text-gray-500 hover:text-primary">Home</Link>
+              <Link href="/" className="text-gray-500 hover:text-primary">{t('breadcrumbs.home')}</Link>
               <span className="text-gray-400">/</span>
-              <Link href="/resources" className="text-gray-500 hover:text-primary">Resources</Link>
+              <Link href="/resources" className="text-gray-500 hover:text-primary">{t('breadcrumbs.resources')}</Link>
               <span className="text-gray-400">/</span>
-              <span className="text-gray-900">School Guide</span>
+              <span className="text-gray-900">{t('breadcrumbs.schoolGuide')}</span>
             </nav>
           </div>
         </div>
@@ -481,7 +481,7 @@ export default function SchoolGuidePage() {
         <section className="relative overflow-hidden py-12 md:py-16">
           <Image
             src="/images/heroes/school-supplies.jpg"
-            alt="School books, pencils and alphabet blocks on a desk"
+            alt={t('hero.imageAlt')}
             fill
             priority
             className="object-cover"
@@ -491,14 +491,14 @@ export default function SchoolGuidePage() {
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur rounded-full text-white/90 text-sm mb-6">
                 <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
-                15 min read
+                {t('hero.readTime')}
               </div>
               <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
-                Ultimate School Guide<br />San Luis Potosí
+                {t('hero.title')}
               </h1>
               <LastUpdated date="2026-04-07" className="text-gray-100 mb-4" />
               <p className="text-xl text-white/90 mb-8">
-                Complete education guide for expat families: international schools, enrollment process, costs & everything you need to know
+                {t('hero.subtitle')}
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
                 {quickStats.map((stat, i) => (
@@ -1108,7 +1108,7 @@ export default function SchoolGuidePage() {
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+      ...(await serverSideTranslations(locale ?? 'en', ['common', 'school-guide'])),
     },
   };
 };

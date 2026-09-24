@@ -1,0 +1,25 @@
+{
+  "seo": {
+    "title": "Ultimativer Stadtteileleitfaden San Luis Potosí | Wo man leben sollte",
+    "description": "Vollständiger Leitfaden zu Stadtteilen in San Luis Potosí für Expats. Mietpreise, Sicherheitsbewertungen, Schulen und detaillierte Profile für Lomas, Pedregal, Centro und mehr.",
+    "keywords": "San Luis Potosí Stadtteile, wo leben SLP, Expat Wohnungen, Lomas SLP, Centro Histórico, beste Gegenden San Luis Potosí",
+    "ogTitle": "Stadtteileleitfaden San Luis Potosí | Wo Expats leben sollten"
+  },
+  "breadcrumbs": { "home": "Startseite", "resources": "Ressourcen", "neighborhoodsGuide": "Stadtteileleitfaden" },
+  "hero": {
+    "title": "Ultimativer Stadtteileleitfaden",
+    "subtitle": "Wo man in San Luis Potosí leben sollte — Ein vollständiger Leitfaden für Expats",
+    "imageAlt": "Luftaufnahme der Stadt San Luis Potosí",
+    "readTime": "25 Min. Lesezeit"
+  },
+  "sections": [
+    { "id": "overview", "name": "Überblick" },
+    { "id": "comparison", "name": "Vergleich" },
+    { "id": "lomas", "name": "Lomas" },
+    { "id": "centro", "name": "Centro Histórico" },
+    { "id": "tangamanga", "name": "Tangamanga" },
+    { "id": "pedregal", "name": "Pedregal" },
+    { "id": "industrial", "name": "Zona Industrial" },
+    { "id": "faq", "name": "FAQ" }
+  ]
+}
