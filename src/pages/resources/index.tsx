@@ -24,6 +24,19 @@ export default function ResourcesHubPage() {
 
   const guides: GuideCard[] = [
     {
+      id: 'digital-nomad-guide',
+      title: 'Digital Nomad Guide',
+      description: 'Complete guide for remote workers and digital nomads. Coworking spaces, internet speeds, cost of living, visas, and everything you need to work remotely from SLP.',
+      image: '/images/hero-bg.jpg',
+      href: '/digital-nomad-guide',
+      color: 'from-cyan-600 to-blue-500',
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      ),
+    },
+    {
       id: 'living-guide',
       title: 'Ultimate Living Guide',
       description: 'Your comprehensive guide to daily life in San Luis Potosí. Culture, food, shopping, entertainment, and everything you need to thrive.',
