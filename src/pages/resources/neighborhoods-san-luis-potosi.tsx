@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 import LastUpdated from '@/components/common/LastUpdated';
 import GuideCTA from '@/components/common/GuideCTA';
 import AdUnit from '@/components/common/AdUnit';
