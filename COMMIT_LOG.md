@@ -1,5 +1,13 @@
 # Commit Log
 
+## 2026-09-23 — feat: reframe home services as an independent-business directory
+
+- Baseline: 1be47b3 (plus log commit). Commit 4ae1f11. User asked: make clear that the services are independent and unrelated to SLW, English as default, don't show "our services", and link the finder from the header, footer and guides.
+- Removed from the page: the Our Services grid (9 cards) and the reCAPTCHA contact form "Request Home Services" (it posted to /api/contact with subject "Home Service Request"). /api/contact itself is untouched.
+- Added: `homeServiceFinder.disclaimer`, `featured`, `featuredHint`, `cta.*`, and `nav.homeServices` in 4 locales. `featuredProviders()` in home-services-providers.ts. `HomeServicesCta` component.
+- Verified locally at 1366px and 390px (EN): disclaimer visible, 6 featured cards, hero readable, no horizontal scroll on the guide page. Tests 74 suites / 497 pass (coupon-functionality is intermittent under full-suite load; it passes in isolation and in reruns). tsc and eslint clean.
+- Rollback: revert the commit (restores grid, form and old copy).
+
 ## 2026-09-23 — fix: replace inaccurate enchiladas potosinas image
 
 - Baseline: 7bb7a8c. Commit ebbb2c3. New asset `public/images/food/enchiladas-potosinas-hero.jpg` (gpt-image-1, approved by user); 4 pages repointed.
