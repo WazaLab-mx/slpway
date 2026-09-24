@@ -2,8 +2,16 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '@/components/Layout';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => ({
+  props: { ...(await serverSideTranslations(locale ?? 'en', ['common'])) },
+});
 
 export default function NewsletterStyleGuidePage() {
+  const { t } = useTranslation('common');
   const [adminKey, setAdminKey] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -54,19 +62,20 @@ export default function NewsletterStyleGuidePage() {
     return (
       <>
         <Head>
-          <title>Newsletter Style Guide | San Luis Way</title>
+          <title>Newsletter | San Luis Way</title>
+          <meta name="description" content="Subscribe to San Luis Way newsletter for weekly updates on San Luis Potosí events, places, and expat tips." />
           <meta name="robots" content="noindex, nofollow" />
         </Head>
         <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
           <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
-            <h1 className="text-2xl font-bold mb-2">Newsletter Style Guide</h1>
-            <p className="text-gray-600 mb-6 text-sm">This page is protected. Enter admin key to access.</p>
+            <h1 className="text-2xl font-bold mb-2">Newsletter</h1>
+            <p className="text-gray-600 mb-6 text-sm">Subscribe to our newsletter or access the admin style guide.</p>
             <form onSubmit={handleAuth}>
               <input
                 type="password"
                 value={adminKey}
                 onChange={(e) => setAdminKey(e.target.value)}
-                placeholder="Enter admin key"
+                placeholder="Enter admin key (optional)"
                 className="w-full px-4 py-3 border rounded-lg mb-4 focus:ring-2 focus:ring-terracotta focus:border-transparent"
               />
               <button

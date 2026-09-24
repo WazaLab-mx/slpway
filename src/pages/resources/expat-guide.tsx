@@ -52,8 +52,9 @@ export default function ExpatGuidePage() {
 
   const immigrationInfo = {
     office: 'Instituto Nacional de Migración (INM)',
-    address: 'Av. Mariano Otero 455, Tequisquiapan',
-    phone: '444 813 6748',
+    address: 'Calle Muñoz 362, Fracc. Muñoz 1ª Sección, C.P. 78165',
+    phone: '444 833 1959',
+    hours: 'Monday–Friday 09:00–15:00',
     website: 'https://www.gob.mx/inm',
     requirements: ['Valid passport', 'Visa application form', 'Proof of economic solvency', 'Proof of residence', 'Employment contract (if applicable)'],
   };

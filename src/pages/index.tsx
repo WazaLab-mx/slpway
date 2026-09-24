@@ -1,6 +1,7 @@
 import React, { useState, Suspense, lazy } from 'react';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 import { Place, Event as DirectoryEvent } from '@/types';
 import SEO from '@/components/common/SEO';
 import ExploreSection from '@/components/home/ExploreSection';
@@ -287,6 +288,29 @@ export default function Home({ events = [], featuredAdvertisers = [], featuredBr
 
         {/* FAMILY & PRACTICAL GUIDES */}
         <PracticalGuidesSection guides={practicalGuides} />
+
+        {/* RESOURCES HUB CTA */}
+        <section className="bg-gradient-to-br from-emerald-50 to-teal-50 py-12">
+          <div className="container mx-auto px-6 md:px-12 lg:px-20">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                {t('homepage.resourcesHub.title', 'Complete Resources for Living in SLP')}
+              </h2>
+              <p className="text-lg text-gray-600 mb-6">
+                {t('homepage.resourcesHub.description', 'Access comprehensive guides covering healthcare, schools, neighborhoods, safety, family life, and everything you need to thrive in San Luis Potosí.')}
+              </p>
+              <Link
+                href="/resources"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark transition-all duration-200 shadow-md hover:shadow-lg"
+              >
+                {t('homepage.resourcesHub.cta', 'Explore All Resources')}
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </section>
 
         <div className="container mx-auto px-6 md:px-12 lg:px-20 py-6">
           <AdUnit placement="matched" />

@@ -13,7 +13,7 @@ export default function HeroSection() {
         <div className="home-hero-copy">
           <p className="home-eyebrow">{t('homepage.hero.badge')}</p>
           <h1 id="home-title" className="font-serif">
-            {t('homepage.hero.editorialTitle')}<br />
+            {t('homepage.hero.editorialTitle')} <br />
             <em>{t('homepage.hero.title2')}</em>
           </h1>
           <p className="home-hero-description">{t('homepage.hero.editorialDescription')}</p>

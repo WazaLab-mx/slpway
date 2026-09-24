@@ -416,7 +416,7 @@ export default function LivingGuidePage() {
                       { step: 2, title: 'Gather Documents', desc: 'Valid passport (6+ months validity), completed application, passport photo, proof of financial solvency, visa fee ($50-$80 USD)' },
                       { step: 3, title: 'Prove Financial Solvency', desc: 'Bank statements: ~$69,750 USD average balance (12 months), OR monthly income: ~$4,185 USD for 6 months' },
                       { step: 4, title: 'Attend Consulate Interview', desc: 'Present documents and discuss plans' },
-                      { step: 5, title: 'Exchange Visa Upon Entry', desc: 'Visit INM office within 30 days (Av. Venustiano Carranza 2395, Tel: 444 812-3556)' },
+                      { step: 5, title: 'Exchange Visa Upon Entry', desc: 'Visit INM office within 30 days (Calle Muñoz 362, Tel: 444 833 1959, Hours: Mon–Fri 09:00–15:00)' },
                       { step: 6, title: 'Receive Resident Card', desc: 'Valid for 1 year, renewable up to 4 years' },
                     ].map((item) => (
                       <div key={item.step} className="flex gap-4">

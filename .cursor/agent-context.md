@@ -361,3 +361,156 @@ await supabase
 3. Review code files you'll be modifying
 4. Follow the rules in `AGENTS.md`
 5. Update this file if you learn something new about the project
+
+## Recent Major Changes (continued)
+
+### 2026-09-24: SEO Quick Fixes - Internal Linking & User Experience
+**Branch**: `cursor/seo-quick-fixes-8704`
+**PR**: #2
+
+**Purpose:** Implement four SEO improvements from SEO review to enhance crawlability, internal linking, and user experience.
+
+**Changes made:**
+
+1. **Homepage → Resources Hub Internal Linking**
+   - Added prominent Resources Hub CTA section on homepage (`src/pages/index.tsx`)
+   - Clear, crawlable `<a href="/resources">` link after Practical Guides section
+   - Gradient background, descriptive copy, fully responsive
+   - Impact: Search engines can easily discover Resources hub from homepage
+
+2. **Health Guide Page Optimization** (`src/pages/resources/health-guide.tsx`)
+   - Title shortened: "Ultimate Health Services Guide..." (78 chars) → "Healthcare Guide SLP: Hospitals, Doctors & Insurance" (59 chars)
+   - H1 updated to match title intent: "Healthcare Guide: Hospitals, Doctors & Insurance"
+   - Added 3 contextual CTA cards after overview:
+     * English-Speaking Doctors Directory → `/category/english-speaking-healthcare`
+     * Health Insurance Section → smooth scroll to `#insurance`
+     * Pharmacies Section → smooth scroll to `#pharmacies`
+   - Impact: Better SERP snippet, clearer page focus, improved internal navigation
+
+3. **Community CTA → Newsletter Signup Promotion**
+   - Files: `src/components/header/HeaderNavigation.tsx`, `src/components/Header.tsx`
+   - Moved Newsletter/Subscribe (`/subscribe`) before Community in navigation
+   - Newsletter gets "Join" badge (emerald gradient), Community keeps "Soon" badge
+   - Applied to both desktop dropdown and mobile menu
+   - Community page itself unchanged (as requested)
+   - Impact: Reduces dead-end navigation, increases newsletter signups
+
+4. **Digital Nomad Guide in Resources Hub**
+   - Added Digital Nomad Guide as first card in Resources hub index (`src/pages/resources/index.tsx`)
+   - Links to existing `/digital-nomad-guide` URL (no redirect needed)
+   - Cyan-to-blue gradient, laptop icon, clear description
+   - Impact: Guide now discoverable from Resources hub while preserving existing URL
+
+**Translation keys added:**
+- `homepage.resourcesHub.title`, `homepage.resourcesHub.description`, `homepage.resourcesHub.cta`
+- `nav.newsletter`
+- English fallbacks provided; Spanish/German/Japanese can be added as follow-up
+
+**What was NOT changed:**
+- No Stripe/checkout code modifications
+- Community page (`src/pages/community.tsx`) preserved
+- No new visa or cost-of-living pages created
+- All existing URLs working (no redirects needed)
+
+See `COMMIT_LOG.md` (2026-09-24 entry) for full technical details.
+
+
+### 2026-09-24: Technical SEO Improvements - Sitemap, i18n, Metadata, Favicons
+**Branch**: `cursor/seo-quick-fixes-8704` (same PR as above quick fixes)
+**PR**: #2
+
+**Purpose:** Implement 7 additional technical SEO fixes from live crawl audit to eliminate 404s, fix metadata issues, and improve semantic HTML.
+
+**Major fixes:**
+
+1. **Sitemap: Fixed 98 Factcheck 404s (DE/JA locales)**
+   - Problem: Sitemap emitted `/de/blog/factchecks/*` and `/ja/blog/factchecks/*` URLs that don't exist (only EN and ES translations exist)
+   - Solution: Added `locales?: Locale[]` field to `SitemapEntry` interface
+   - Updated `fetchFactcheckUrls()` to restrict to `['en', 'es']`
+   - Modified sitemap locale helpers to respect restrictions
+   - Files: `src/lib/sitemap/locale.ts`, `src/lib/sitemap/index.ts`, `src/lib/sitemap/dynamic.ts`
+   - Impact: **Eliminates 98 sitemap 404s**, hreflang alternates only point to existing pages
+
+2. **Sitemap: Fixed ~196 lastmod=1980-01-01 Entries**
+   - Problem: Sitemap used Unix epoch fallback (1980-01-01) for file modification times
+   - Solution: Use `stat.mtime.toISOString().split('T')[0]` directly
+   - File: `src/lib/sitemap/dynamic.ts`
+   - Impact: Search engines now see accurate content freshness signals
+
+3. **Newsletter Page: Fixed SSR Metadata & i18n**
+   - Problem: Missing `<title>`, meta description, H1, and unresolved i18n keys in SSR HTML
+   - Solution: Added `getStaticProps` with `serverSideTranslations`, proper SEO metadata
+   - File: `src/pages/newsletter.tsx`
+   - Impact: Newsletter page now has proper SEO and functional i18n
+
+4. **Home H1: Fixed Spacing ('inSan' → 'in San')**
+   - Problem: H1 rendered "inSan Luis Potosí" with no space before "San"
+   - Solution: Added explicit space before `<br />` in H1 JSX
+   - File: `src/components/home/HeroSection.tsx`
+   - Impact: H1 now reads "Find your own way in San Luis Potosí" with correct spacing
+
+5. **Community Page: Added noindex,follow**
+   - Problem: "Coming Soon" page was being indexed with placeholder content
+   - Solution: Added `<meta name="robots" content="noindex, follow" />`
+   - File: `src/pages/community.tsx`
+   - Impact: Search engines won't index placeholder content, improving crawl efficiency
+
+6. **Favicons: Added Missing apple-icon.png & favicon-16x16.png**
+   - Problem: `<head>` referenced `/apple-icon.png` and `/favicon-16x16.png` but files didn't exist (404s on every page)
+   - Solution: Copied from existing `favicon-32x32.png`
+   - Files: `public/apple-icon.png`, `public/favicon-16x16.png`
+   - Impact: **Eliminates 2 resource 404s on every page load**
+
+7. **Factcheck Pages: Fixed Double H1**
+   - Problem: Pages had two H1 elements (page title + markdown H1), violating accessibility and SEO best practices
+   - Solution: Modified markdown renderer to map H1 → H2
+   - File: `src/pages/blog/factchecks/[slug].tsx`
+   - Impact: Factcheck pages now have exactly one H1 (accessibility compliant)
+
+**Redirects verified:**
+- `netlify.toml` already correctly configured for single 301 hop from `http://sanluisway.com` → `https://www.sanluisway.com`
+- No changes needed
+
+**Total impact:**
+- **100+ crawl errors eliminated** (98 sitemap 404s + 2 favicon 404s per page)
+- **~196 sitemap URLs** now have correct lastmod dates
+- Fixed metadata and i18n issues
+- Improved semantic HTML and accessibility
+
+See `COMMIT_LOG.md` (2026-09-24, commit 4d45a96) for full technical details.
+
+
+### 2026-09-24: INM Office Address Correction (Critical Content Accuracy)
+**Branch**: `cursor/seo-quick-fixes-8704` (same PR)
+**PR**: #2
+
+**Purpose:** Fix conflicting INM (Instituto Nacional de Migración) office addresses across site content.
+
+**Problem Found:**
+Three different incorrect addresses were published:
+- Blog post: "Av. Venustiano Carranza 1805"
+- Expat guides: "Av. Mariano Otero 455"
+- Living guide: "Av. Venustiano Carranza 2395"
+
+**Official Verified Information:**
+- **Address:** Calle Muñoz 362, Fracc. Muñoz 1ª Sección, C.P. 78165
+- **Hours:** Monday–Friday 09:00–15:00
+- **Phone:** 444 833 1959
+
+**Sources:**
+- Primary: INM official office page (inm.gob.mx)
+- Corroborating: IOM Mexico service directory (June 2026)
+- Cross-reference: Factcheck already documented correct address
+
+**Files Corrected:**
+1. `blog-posts/navigating-mexican-immigration-system-slp.html`
+2. `src/pages/expat-guide.tsx` (including FAQ structured data)
+3. `src/pages/resources/expat-guide.tsx`
+4. `src/pages/resources/living-guide.tsx`
+
+**Impact:** Critical user-facing fix. Prevents sending visa/residency applicants to wrong locations across the city.
+
+**Note:** The factcheck file (`public/factchecks/navigating-mexican-immigration-system-slp.md`) already had the correct information and explained why the other addresses were wrong. This fix brought the rest of the site into alignment.
+
+See `COMMIT_LOG.md` (2026-09-24, commit abee563) for full technical details.
+

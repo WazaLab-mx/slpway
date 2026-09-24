@@ -35,6 +35,7 @@ const moreLinks = [
   { href: '/resources', labelKey: 'nav.resources' },
   { href: '/san-luis-potosi-home-services', labelKey: 'nav.homeServices', badge: 'New', badgeClass: 'from-blue-500 to-cyan-500' },
   { href: '/spouse-hub', labelKey: 'nav.spouseHub', badge: 'New', badgeClass: 'from-rose-500 to-purple-500' },
+  { href: '/subscribe', labelKey: 'nav.newsletter', fallback: 'Newsletter', badge: 'Join', badgeClass: 'from-emerald-500 to-green-500' },
   { href: '/community', labelKey: 'nav.community', fallback: 'Community', badge: 'Soon', badgeClass: 'from-purple-500 to-pink-500' },
   { href: '/contact', labelKey: 'nav.contact' },
   { href: 'https://sanluiswayhub.com', labelKey: 'b2b.nav', badge: 'B2B', badgeClass: 'from-secondary to-primary', external: true },

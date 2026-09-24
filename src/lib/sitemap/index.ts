@@ -28,12 +28,13 @@ function escapeXml(value: string): string {
 
 /**
  * Render a single <url> entry. Each entry includes the full hreflang
- * cluster (en/es/de/ja + x-default) so Google can group locale variants.
+ * cluster (en/es/de/ja + x-default) so Google can group locale variants,
+ * or a restricted cluster if entry.locales is specified.
  * The xhtml namespace must be declared on the root <urlset>.
  */
 function renderUrlEntry(entry: SitemapEntry, locale: Locale): string {
   const loc = buildLocaleUrl(entry.path, locale);
-  const hreflang = buildHreflangLinks(entry.path)
+  const hreflang = buildHreflangLinks(entry.path, entry.locales)
     .map(
       (link) =>
         `    <xhtml:link rel="alternate" hreflang="${link.hreflang}" href="${escapeXml(link.href)}"/>`,
@@ -49,14 +50,16 @@ ${hreflang}
 }
 
 /**
- * Expand each base entry into one <url> per locale. The hreflang cluster
- * is identical across all 4 emitted entries — Google needs to see the
- * cluster on each variant to confirm bidirectional alternates.
+ * Expand each base entry into one <url> per locale. If entry.locales is
+ * specified, only emit those locales. The hreflang cluster is identical
+ * across all emitted entries — Google needs to see the cluster on each
+ * variant to confirm bidirectional alternates.
  */
 export function expandLocaleEntries(entries: SitemapEntry[]): string[] {
   const xml: string[] = [];
   for (const entry of entries) {
-    for (const locale of LOCALES) {
+    const locales = entry.locales || LOCALES;
+    for (const locale of locales) {
       xml.push(renderUrlEntry(entry, locale));
     }
   }

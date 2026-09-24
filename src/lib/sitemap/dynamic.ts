@@ -110,6 +110,7 @@ export async function fetchBrandUrls(): Promise<SitemapEntry[]> {
 export function fetchFactcheckUrls(): SitemapEntry[] {
   // Factcheck reports are markdown files in public/factchecks/. Include them
   // so crawlers (including AI agents) see the ClaimReview-rich pages.
+  // Only emit English + Spanish (the only translated locales that exist).
   try {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     const fs = require('fs');
@@ -121,11 +122,14 @@ export function fetchFactcheckUrls(): SitemapEntry[] {
     return files.map((file: string) => {
       const slug = file.replace('.md', '');
       const stat = fs.statSync(path.join(dir, file));
+      // Use file modification time instead of Unix epoch fallback
+      const lastmod = stat.mtime.toISOString().split('T')[0];
       return {
         path: `/blog/factchecks/${slug}`,
-        lastmod: isoDay(stat.mtime.toISOString()),
+        lastmod,
         changefreq: 'monthly' as const,
         priority: 0.8,
+        locales: ['en', 'es'], // Only EN and ES exist; don't emit 404ing DE/JA
       };
     });
   } catch {

@@ -70,8 +70,9 @@ export default function ExpatGuidePage() {
 
   const immigrationInfo = {
     office: 'Instituto Nacional de Migración (INM)',
-    address: 'Av. Mariano Otero 455, Tequisquiapan',
-    phone: '444 813 6748',
+    address: 'Calle Muñoz 362, Fracc. Muñoz 1ª Sección, C.P. 78165',
+    phone: '444 833 1959',
+    hours: 'Monday–Friday 09:00–15:00',
     website: 'https://www.gob.mx/inm',
     requirements: [
       'Valid passport',
@@ -186,7 +187,7 @@ export default function ExpatGuidePage() {
                   "name": "Where is the immigration office in San Luis Potosí?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The Instituto Nacional de Migración (INM) office in San Luis Potosí is located at Av. Mariano Otero 455, Tequisquiapan. Phone: 444 813 6748. They handle visa applications, residency permits, and other immigration matters."
+                    "text": "The Instituto Nacional de Migración (INM) office in San Luis Potosí is located at Calle Muñoz 362, Fracc. Muñoz 1ª Sección, C.P. 78165. Phone: 444 833 1959. Hours: Monday–Friday 09:00–15:00. They handle visa applications, residency permits, and other immigration matters."
                   }
                 },
                 {
