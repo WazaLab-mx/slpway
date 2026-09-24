@@ -86,6 +86,87 @@ export default function VisasResidencyGuidePage() {
               publisher: { '@type': 'Organization', '@id': 'https://www.sanluisway.com/#organization', name: 'San Luis Way' },
               mainEntityOfPage: 'https://www.sanluisway.com/resources/mexico-visas-residency-san-luis-potosi',
               about: { '@type': 'Place', name: 'San Luis Potosí', sameAs: 'https://www.wikidata.org/wiki/Q204271' },
+              speakable: {
+                '@type': 'SpeakableSpecification',
+                cssSelector: ['#executive', '#faq']
+              },
+              citation: [
+                { '@type': 'CreativeWork', name: 'INM — Official San Luis Potosí Office', url: 'https://www.inm.gob.mx/gobmx/word/index.php/san-luis-potosi/' },
+                { '@type': 'CreativeWork', name: 'DOF — Lineamientos para trámites migratorios (25 Jul 2025)' },
+                { '@type': 'CreativeWork', name: 'INEGI — Valor de la UMA 2026' },
+                { '@type': 'CreativeWork', name: 'Mexperience — Mexico Residency 2026', url: 'https://www.mexperience.com/mexico-residency-in-2026-tighter-criteria-higher-fees/' }
+              ]
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.sanluisway.com' },
+                { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.sanluisway.com/resources' },
+                { '@type': 'ListItem', position: 3, name: 'Mexico Visas & Residency Guide', item: 'https://www.sanluisway.com/resources/mexico-visas-residency-san-luis-potosi' }
+              ]
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'HowTo',
+              name: 'How to Obtain Mexican Residency: Consulate to INM Canje Process',
+              description: 'Step-by-step guide to obtaining Mexican temporary or permanent residency through the two-stage process: consular visa application followed by INM card exchange.',
+              step: [
+                {
+                  '@type': 'HowToStep',
+                  name: 'Book MiConsulado Appointment',
+                  text: 'Book at citas.sre.gob.mx for the Visas department at the Mexican consulate that serves your residence.',
+                  url: 'https://citas.sre.gob.mx'
+                },
+                {
+                  '@type': 'HowToStep',
+                  name: 'Attend Consular Interview',
+                  text: 'Attend interview with required documents (passport, bank statements, photos, etc.). If approved, you receive a visa foil in your passport—often single-entry with limited validity.',
+                  itemListElement: [
+                    { '@type': 'HowToDirection', text: 'Prepare document pack: passport, photos, bank statements, apostilles/translations' },
+                    { '@type': 'HowToDirection', text: 'Pay consular fee (commonly $56 USD at US posts—non-refundable)' },
+                    { '@type': 'HowToDirection', text: 'Attend interview and biometrics' }
+                  ]
+                },
+                {
+                  '@type': 'HowToStep',
+                  name: 'Enter Mexico',
+                  text: 'Enter Mexico with your visa foil and keep your entry record/FMM as instructed.',
+                  url: 'https://www.sanluisway.com/blog/san-luis-potosi-airport-guide'
+                },
+                {
+                  '@type': 'HowToStep',
+                  name: 'File for Canje Within 30 Days',
+                  text: 'Within 30 calendar days of entering Mexico, file for expedición de documento migratorio por canje at the INM office that corresponds to your address (for SLP residents: Calle Muñoz No. 362).',
+                  url: 'https://www.inm.gob.mx/gobmx/word/index.php/san-luis-potosi/'
+                },
+                {
+                  '@type': 'HowToStep',
+                  name: 'Pay Derechos and Receive Card',
+                  text: 'Pay the applicable derechos (card fees) by bank card or at bank window, provide biometrics/photo as required, and receive your residence card. The visa foil is NOT the residence card—missing the 30-day window is one of the most expensive beginner mistakes.',
+                  itemListElement: [
+                    { '@type': 'HowToDirection', text: 'Pay INM derechos: MXN $11,141 for 1-year temporary resident, $13,579 for permanent' },
+                    { '@type': 'HowToDirection', text: 'Provide biometrics and photo' },
+                    { '@type': 'HowToDirection', text: 'Collect residence card' }
+                  ]
+                }
+              ],
+              totalTime: 'P30D',
+              estimatedCost: {
+                '@type': 'MonetaryAmount',
+                currency: 'USD',
+                value: '56'
+              }
             }),
           }}
         />

@@ -296,6 +296,10 @@ export default function NeighborhoodsGuidePage() {
               publisher: { '@type': 'Organization', '@id': 'https://www.sanluisway.com/#organization', name: 'San Luis Way' },
               mainEntityOfPage: `https://www.sanluisway.com/${locale === 'en' ? '' : locale + '/'}resources/neighborhoods-san-luis-potosi`,
               about: { '@type': 'Place', name: 'San Luis Potosí', sameAs: 'https://www.wikidata.org/wiki/Q204271' },
+              speakable: {
+                '@type': 'SpeakableSpecification',
+                cssSelector: ['#overview', '#neighborhoods', '#faq']
+              }
             }),
           }}
         />

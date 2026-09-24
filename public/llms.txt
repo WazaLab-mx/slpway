@@ -29,6 +29,8 @@ CLI: npx @sanluisway/cli events --limit 5 --json
 - https://www.sanluisway.com/parque-tangamanga — 411-ha urban park guide
 - https://www.sanluisway.com/parque-tangamanga-ii — Sports park guide (archery, auto racing, running)
 - https://www.sanluisway.com/resources/living-guide — Living guide with visa (UMA) rules, cost of living, neighborhoods
+- https://www.sanluisway.com/resources/mexico-visas-residency-san-luis-potosi — Mexico visas & residency 2026: FMM, temporary/permanent resident, INM canje, UMA solvency
+- https://www.sanluisway.com/resources/cost-of-living-san-luis-potosi — Cost of living 2026: monthly budgets, neighborhood rents, utilities, healthcare, schools
 - https://www.sanluisway.com/blog/is-san-luis-potosi-safe-2026 — Safety analysis with ENSU/INEGI + US State Dept advisory data (2026)
 - https://www.sanluisway.com/blog/cost-of-living-san-luis-potosi-2026 — Cost of living 2026: rent, utilities, groceries with sourced ranges
 - https://www.sanluisway.com/blog/healthcare-san-luis-potosi-expats-2026 — Healthcare guide: hospitals, IMSS enrollment, insurance costs
