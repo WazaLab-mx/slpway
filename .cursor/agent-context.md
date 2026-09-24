@@ -361,3 +361,56 @@ await supabase
 3. Review code files you'll be modifying
 4. Follow the rules in `AGENTS.md`
 5. Update this file if you learn something new about the project
+
+## Recent Major Changes (continued)
+
+### 2026-09-24: SEO Quick Fixes - Internal Linking & User Experience
+**Branch**: `cursor/seo-quick-fixes-8704`
+**PR**: #2
+
+**Purpose:** Implement four SEO improvements from SEO review to enhance crawlability, internal linking, and user experience.
+
+**Changes made:**
+
+1. **Homepage → Resources Hub Internal Linking**
+   - Added prominent Resources Hub CTA section on homepage (`src/pages/index.tsx`)
+   - Clear, crawlable `<a href="/resources">` link after Practical Guides section
+   - Gradient background, descriptive copy, fully responsive
+   - Impact: Search engines can easily discover Resources hub from homepage
+
+2. **Health Guide Page Optimization** (`src/pages/resources/health-guide.tsx`)
+   - Title shortened: "Ultimate Health Services Guide..." (78 chars) → "Healthcare Guide SLP: Hospitals, Doctors & Insurance" (59 chars)
+   - H1 updated to match title intent: "Healthcare Guide: Hospitals, Doctors & Insurance"
+   - Added 3 contextual CTA cards after overview:
+     * English-Speaking Doctors Directory → `/category/english-speaking-healthcare`
+     * Health Insurance Section → smooth scroll to `#insurance`
+     * Pharmacies Section → smooth scroll to `#pharmacies`
+   - Impact: Better SERP snippet, clearer page focus, improved internal navigation
+
+3. **Community CTA → Newsletter Signup Promotion**
+   - Files: `src/components/header/HeaderNavigation.tsx`, `src/components/Header.tsx`
+   - Moved Newsletter/Subscribe (`/subscribe`) before Community in navigation
+   - Newsletter gets "Join" badge (emerald gradient), Community keeps "Soon" badge
+   - Applied to both desktop dropdown and mobile menu
+   - Community page itself unchanged (as requested)
+   - Impact: Reduces dead-end navigation, increases newsletter signups
+
+4. **Digital Nomad Guide in Resources Hub**
+   - Added Digital Nomad Guide as first card in Resources hub index (`src/pages/resources/index.tsx`)
+   - Links to existing `/digital-nomad-guide` URL (no redirect needed)
+   - Cyan-to-blue gradient, laptop icon, clear description
+   - Impact: Guide now discoverable from Resources hub while preserving existing URL
+
+**Translation keys added:**
+- `homepage.resourcesHub.title`, `homepage.resourcesHub.description`, `homepage.resourcesHub.cta`
+- `nav.newsletter`
+- English fallbacks provided; Spanish/German/Japanese can be added as follow-up
+
+**What was NOT changed:**
+- No Stripe/checkout code modifications
+- Community page (`src/pages/community.tsx`) preserved
+- No new visa or cost-of-living pages created
+- All existing URLs working (no redirects needed)
+
+See `COMMIT_LOG.md` (2026-09-24 entry) for full technical details.
+

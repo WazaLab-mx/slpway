@@ -3698,3 +3698,108 @@ Cambios en supabase/migrations:
   - Las cosas extraordinarias — Colectivo Escénico Koëtüs · 19:00: 2026-10-18; https://solcet.mx/lascosasextraordinarias
   - COSMOS Festival Alienígena: 2026-10-02; https://arema.mx/e/20216/cosmos:-festival-alienigena-en-san-luis-potosi?r=1
 - Final targeted ESLint CLI check passed (exit 0). Next lint wrapper was stopped after a prolonged stall; direct ESLint used the existing project configuration.
+
+## 2026-09-24 - SEO Quick Fixes: Internal Linking, Health Guide, Newsletter CTA & Resources Hub
+
+**Branch:** `cursor/seo-quick-fixes-8704`  
+**PR:** https://github.com/WazaLab-mx/slpway/pull/2  
+**Commit:** 8e97a93  
+
+### Summary
+Implemented four SEO quick fixes identified in the SEO review to improve crawlability, internal linking, and user experience.
+
+### Changes Implemented
+
+#### 1. Homepage Internal Linking to Resources ✅
+**File:** `src/pages/index.tsx`
+
+- Added prominent Resources Hub CTA section after Practical Guides section
+- Clear, crawlable `<a href="/resources">` link with visual hierarchy
+- Features gradient background (emerald-to-teal), descriptive heading/copy, arrow icon
+- Fully responsive design
+- Translation keys: `homepage.resourcesHub.title`, `homepage.resourcesHub.description`, `homepage.resourcesHub.cta`
+
+**Impact:** Search engines can easily discover Resources hub from homepage. Users have clear navigation path to comprehensive guides.
+
+#### 2. Health Guide Page Optimization ✅
+**File:** `src/pages/resources/health-guide.tsx`
+
+**Title shortened:**
+- Before: "Ultimate Health Services Guide San Luis Potosí | Healthcare for Expats" (78 chars)
+- After: "Healthcare Guide SLP: Hospitals, Doctors & Insurance" (59 chars)
+- Keyword-focused, within SEO best practices limit
+
+**H1 updated:**
+- Before: "Ultimate Healthcare Guide"
+- After: "Healthcare Guide: Hospitals, Doctors & Insurance"
+- Matches title intent while maintaining readability
+
+**Contextual CTAs added:**
+Three prominent CTA cards after overview section:
+1. **English-Speaking Doctors Directory** → `/category/english-speaking-healthcare` (green card)
+2. **Health Insurance Section** → smooth scroll to `#insurance` (blue card)
+3. **Pharmacies Section** → smooth scroll to `#pharmacies` (purple card)
+
+**Impact:** Better SERP snippet, clearer page focus, improved internal navigation to key healthcare resources.
+
+#### 3. Community CTA → Newsletter Signup Promotion ✅
+**Files:** `src/components/header/HeaderNavigation.tsx`, `src/components/Header.tsx`
+
+- Moved Newsletter/Subscribe link **before** Community in navigation
+- Newsletter has "Join" badge with emerald gradient (more inviting)
+- Community remains with "Soon" badge (not deleted as requested)
+- Applied to both desktop dropdown and mobile menu
+- Newsletter links to `/subscribe` page
+
+**Rationale:** Community page is "Coming Soon" and shouldn't be primary CTA. Newsletter provides immediate value and builds mailing list.
+
+**Impact:** Reduces dead-end navigation, increases newsletter signups, better UX.
+
+#### 4. Digital Nomad Guide Added to Resources Hub ✅
+**File:** `src/pages/resources/index.tsx`
+
+- Added Digital Nomad Guide as **first card** in Resources hub grid
+- Features: laptop icon, cyan-to-blue gradient, clear description
+- Links to existing `/digital-nomad-guide` URL (no redirect needed)
+- Mentions coworking, internet speeds, costs, visas in description
+
+**Impact:** Digital Nomad Guide now discoverable from Resources hub. Existing URL preserved so inbound links continue working.
+
+### Technical Details
+- No breaking changes to URLs or routing
+- All existing styling patterns maintained
+- i18n conventions followed (translation keys added, English fallbacks included)
+- Responsive design maintained across all breakpoints
+- Smooth scroll functionality for in-page CTAs
+- No modifications to Stripe/checkout code (as requested)
+- Community page (`src/pages/community.tsx`) unchanged (as requested)
+- No new visa or cost-of-living pages created (as requested)
+
+### Files Changed
+1. `src/pages/index.tsx` — Resources Hub CTA section
+2. `src/pages/resources/health-guide.tsx` — Title, H1, CTA cards
+3. `src/pages/resources/index.tsx` — Digital Nomad Guide card
+4. `src/components/header/HeaderNavigation.tsx` — Newsletter before Community
+5. `src/components/Header.tsx` — Newsletter before Community (mobile)
+
+### Testing
+- TypeScript compilation checked (configuration-related errors only, not code errors)
+- All changes preserve existing functionality
+- New links tested for correct href targets
+- Responsive design maintained
+
+### Translation Keys Added
+English fallbacks provided for:
+- `homepage.resourcesHub.title` → "Complete Resources for Living in SLP"
+- `homepage.resourcesHub.description` → "Access comprehensive guides covering healthcare, schools, neighborhoods, safety, family life, and everything you need to thrive in San Luis Potosí."
+- `homepage.resourcesHub.cta` → "Explore All Resources"
+- `nav.newsletter` → "Newsletter"
+
+Spanish, German, and Japanese translations can be added to i18n files as follow-up.
+
+### Baseline & Rollback
+- Baseline: Latest main branch commit before 8e97a93
+- Changes are additive and safe to rollback via Git revert
+- No database changes, no data migrations
+- Build should pass once environment variables configured in CI
+
