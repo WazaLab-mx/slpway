@@ -1,6 +1,7 @@
 import React, { useState, Suspense, lazy } from 'react';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import Link from 'next/link';
 import { Place, Event as DirectoryEvent } from '@/types';
 import SEO from '@/components/common/SEO';
 import ExploreSection from '@/components/home/ExploreSection';

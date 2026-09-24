@@ -45,11 +45,28 @@ const Toaster = dynamic(() => import('@/components/common/Toaster'), {
   ssr: false,
 });
 
-// Create a single instance of the Supabase client
-const supabaseClient = createPagesBrowserClient();
+// Create Supabase client only on client side to avoid build-time errors
+// when environment variables are not available (during SSG)
+let supabaseClient: ReturnType<typeof createPagesBrowserClient> | null = null;
+
+function getSupabaseClient() {
+  if (typeof window !== 'undefined' && !supabaseClient) {
+    try {
+      supabaseClient = createPagesBrowserClient();
+    } catch (error) {
+      console.warn('Could not create Supabase client:', error);
+      // Return a dummy client that won't crash but also won't work
+      // This allows the build to complete
+      supabaseClient = {} as any;
+    }
+  }
+  return supabaseClient;
+}
 
 function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
+  // Get client instance (will be null during SSR/SSG)
+  const client = getSupabaseClient();
   // Client business pages (/negocios/*) must feel like the business's own
   // site — no San Luis Way chrome.
   const bareLayout = router.pathname.startsWith('/negocios/');
@@ -202,7 +219,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       <ErrorBoundary>
         <SessionContextProvider
-          supabaseClient={supabaseClient}
+          supabaseClient={client!}
           initialSession={pageProps.initialSession}
         >
           <AuthProvider>

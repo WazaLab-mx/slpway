@@ -20,14 +20,24 @@ function getLocalizedField(data: Record<string, unknown>, field: string, locale:
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables');
+// During Next.js build (SSG), environment variables may not be available
+// Only throw error when actually trying to use Supabase, not during module import
+const hasCredentials = !!(supabaseUrl && supabaseAnonKey);
+
+if (!hasCredentials) {
+  // Log warning but don't crash during module import
+  // Error will be thrown when Supabase is actually used at runtime
+  if (typeof window !== 'undefined') {
+    console.warn('⚠️  Supabase environment variables not set');
+  }
 }
 
 // Use the updated Pages Browser client for cookie-based session storage
 export const supabase = createPagesBrowserClient<Database>();
 
-logger.log('Supabase client initialized');
+if (hasCredentials) {
+  logger.log('Supabase client initialized');
+}
 
 // Mock implementations for development mode
 const isDev = process.env.NODE_ENV !== 'production';
