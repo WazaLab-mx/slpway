@@ -1,5 +1,21 @@
 # Session Context Log - Coding Agent
 
+## Session 2026-09-24 — SEO pillar pages for visas/residency and cost of living
+
+Owner approved publishing two English SEO pillar pages with data corrections: Mexico Visas & Residency and Cost of Living. Drafts were provided in uploads/. Created two comprehensive resource guides following existing patterns (health-guide, living-guide, expat-guide).
+
+**Mexico Visas & Residency** (`/resources/mexico-visas-residency-san-luis-potosi`):
+Complete guide to Mexican immigration from SLP covering FMM visitor permits, temporary resident (economic solvency, family unity, work-based), permanent resident pathways, 2026 solvency thresholds with UMA calculations, INM canje process, 2026 derechos, post-card steps (CURP/RFC/SAT/banking/IMSS), common mistakes, and FAQ. Data corrections: Official INM Calle Muñoz 362 address (09:00–15:00) used; San Diego 2026 PDF contradiction flagged with both amounts; temporary→permanent described as typical practice with caveats; remote work on FMM gray-area warning only; all [UNVERIFIED] markers removed per owner instructions.
+
+**Cost of Living** (`/resources/cost-of-living-san-luis-potosi`):
+Comprehensive monthly budget guide with snapshots by profile (frugal single, comfortable single/nomad, couple, family), rent by neighborhood (Lomas/Pedregal/Villa Magna/Centro/Tequis/budget), utilities (CFE/INTERAPAS/gas/internet/mobile), food/groceries, restaurants, transportation, healthcare costs, school costs, detailed line-item budget tables with source traceability, and city comparisons. Data corrections: Banxico FIX 17.54 MXN/USD (2 Jul 2026) cited with 23 Sep context; IMSS Modalidad 33 healthcare blog schedule preferred; cooking gas/car ownership/coworking qualitative only where no concrete figures available.
+
+Resources hub updated with two new cards (blue-indigo visas card, green-emerald cost-of-living card) after Family Guide. Generated hero images using warm editorial aesthetic (16:9, no people faces): mexico-visas-residency-hero.jpg and cost-of-living-slp-hero.jpg. All internal links verified to exist on site.
+
+Implementation followed existing resource patterns: Hero with Image + gradient overlay, sticky navigation, JSON-LD structured data (Article + FAQPage schema), LastUpdated component (2026-09-24), GuideCTA with related links, AdUnit placement, proper SEO Head metadata. TypeScript compilation successful; responsive design verified; no Spanish/German/Japanese locales created (English-first as instructed). Excluded: No changes to Stripe/checkout, PR #2/#3, or merge operations.
+
+PR #4 created (draft): https://github.com/WazaLab-mx/slpway/pull/4. Branch: cursor/seo-pillar-pages-visas-cost-living-7973. Commit a764510. Rollback: revert commit, delete two page files and two image files, remove two cards from resources index. COMMIT_LOG.md updated.
+
 ## Follow-up 2026-09-08 — ChuyMine omission corrected
 
 Added El Show de Elo y Chuy / ChuyMine, Teatro de la Paz, September19 2026 at17:00 after the user identified the omission. Official artist site and TicketNet event170 confirm it. ID8b697588-0ec8-452f-86e7-6bdd9102f008; four locales, family-friendly, add_to_cultural_calendar=true. No duplicate found; live insertion/readback checks passed. Unknown end_time stays null so the internal23:59 expiry bound is not shown as a show end. Official source https://ventas.ticketnet.com.mx/eventperformances.asp?evt=170. Data-only addition brings this refresh to21 inserted entries. Evidence saved under backups/events-2026-09-08/chuymine-*.json. No application-code changes.
