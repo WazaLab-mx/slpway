@@ -479,3 +479,38 @@ See `COMMIT_LOG.md` (2026-09-24 entry) for full technical details.
 
 See `COMMIT_LOG.md` (2026-09-24, commit 4d45a96) for full technical details.
 
+
+### 2026-09-24: INM Office Address Correction (Critical Content Accuracy)
+**Branch**: `cursor/seo-quick-fixes-8704` (same PR)
+**PR**: #2
+
+**Purpose:** Fix conflicting INM (Instituto Nacional de Migración) office addresses across site content.
+
+**Problem Found:**
+Three different incorrect addresses were published:
+- Blog post: "Av. Venustiano Carranza 1805"
+- Expat guides: "Av. Mariano Otero 455"
+- Living guide: "Av. Venustiano Carranza 2395"
+
+**Official Verified Information:**
+- **Address:** Calle Muñoz 362, Fracc. Muñoz 1ª Sección, C.P. 78165
+- **Hours:** Monday–Friday 09:00–15:00
+- **Phone:** 444 833 1959
+
+**Sources:**
+- Primary: INM official office page (inm.gob.mx)
+- Corroborating: IOM Mexico service directory (June 2026)
+- Cross-reference: Factcheck already documented correct address
+
+**Files Corrected:**
+1. `blog-posts/navigating-mexican-immigration-system-slp.html`
+2. `src/pages/expat-guide.tsx` (including FAQ structured data)
+3. `src/pages/resources/expat-guide.tsx`
+4. `src/pages/resources/living-guide.tsx`
+
+**Impact:** Critical user-facing fix. Prevents sending visa/residency applicants to wrong locations across the city.
+
+**Note:** The factcheck file (`public/factchecks/navigating-mexican-immigration-system-slp.md`) already had the correct information and explained why the other addresses were wrong. This fix brought the rest of the site into alignment.
+
+See `COMMIT_LOG.md` (2026-09-24, commit abee563) for full technical details.
+

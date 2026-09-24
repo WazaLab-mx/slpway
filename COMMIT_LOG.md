@@ -3878,3 +3878,80 @@ Spanish, German, and Japanese translations can be added to i18n files as follow-
 - PR #2: https://github.com/WazaLab-mx/slpway/pull/2
 - Part of comprehensive SEO audit fixes (11 total improvements)
 
+
+---
+
+## Commit: Correct INM office address across all content
+**Date:** 2026-09-24
+**Hash:** abee563
+**Branch:** cursor/seo-quick-fixes-8704
+
+### Critical Content Accuracy Fix
+
+#### Problem
+Site content showed **conflicting addresses** for the INM (Instituto Nacional de Migración) office in San Luis Potosí:
+- Blog post (`navigating-mexican-immigration-system-slp.html`): "Av. Venustiano Carranza 1805"
+- Expat guide pages: "Av. Mariano Otero 455"
+- Living guide: "Av. Venustiano Carranza 2395"
+
+This would send users to **wrong locations** across the city when seeking visa/residency services.
+
+#### Official Verified Information
+**Address:** Calle Muñoz 362, Fracc. Muñoz 1ª Sección, C.P. 78165
+**Hours:** Monday–Friday 09:00–15:00
+**Phone:** 444 833 1959
+
+#### Source Verification
+✅ **Primary Source:** INM Official Office Page (inm.gob.mx/gobmx/word/index.php/san-luis-potosi/)
+   - Lists Calle Muñoz No. 362 as official Representación address
+
+✅ **Corroborating Source:** IOM Mexico Service Directory (June 2026 PDF)
+   - Confirms INM trámites at Muñoz 362
+
+✅ **Cross-Reference:** `public/factchecks/navigating-mexican-immigration-system-slp.md`
+   - Fact-check investigation already documented Carranza 1805 as FALSE
+   - Provided detailed evidence why Carranza addresses are incorrect
+   - Confirmed Muñoz 362 as correct location
+
+#### Changes Made
+
+1. **blog-posts/navigating-mexican-immigration-system-slp.html**
+   - Changed: "Av. Venustiano Carranza 1805, Col. Tequisquiapan, C.P. 78250"
+   - To: "Calle Muñoz 362, Fracc. Muñoz 1ª Sección, C.P. 78165"
+
+2. **src/pages/expat-guide.tsx**
+   - Changed: "Av. Mariano Otero 455, Tequisquiapan"
+   - To: "Calle Muñoz 362, Fracc. Muñoz 1ª Sección, C.P. 78165"
+   - Updated phone: 444 813 6748 → 444 833 1959
+   - Added hours: "Monday–Friday 09:00–15:00"
+   - Updated FAQ structured data with correct address and hours
+
+3. **src/pages/resources/expat-guide.tsx**
+   - Changed: "Av. Mariano Otero 455, Tequisquiapan"
+   - To: "Calle Muñoz 362, Fracc. Muñoz 1ª Sección, C.P. 78165"
+   - Updated phone: 444 813 6748 → 444 833 1959
+   - Added hours: "Monday–Friday 09:00–15:00"
+
+4. **src/pages/resources/living-guide.tsx**
+   - Changed: "Av. Venustiano Carranza 2395, Tel: 444 812-3556"
+   - To: "Calle Muñoz 362, Tel: 444 833 1959, Hours: Mon–Fri 09:00–15:00"
+
+### Impact
+- **Critical accuracy fix** - Users will now find the correct INM office location
+- Eliminates potential confusion and wasted trips for visa/residency applicants
+- Aligns all site content with verified official government sources
+- Prevents users from going to wrong addresses (Carranza corridor, Mariano Otero area)
+
+### Testing
+- All incorrect addresses (3 different variants) replaced with single verified address
+- Phone numbers updated to official INM published number
+- Hours added where missing to provide complete information
+- Structured data (FAQ schema) updated with correct information
+
+### Related Files
+- `public/factchecks/navigating-mexican-immigration-system-slp.md` already had correct address and documented why others were wrong
+
+### Related PR
+- PR #2: https://github.com/WazaLab-mx/slpway/pull/2
+- Part of comprehensive SEO and content accuracy improvements (12 total fixes)
+
