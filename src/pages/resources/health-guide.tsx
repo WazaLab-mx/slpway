@@ -504,7 +504,7 @@ export default function HealthGuidePage() {
   return (
     <>
       <Head>
-        <title>Ultimate Health Services Guide San Luis Potosí | Healthcare for Expats</title>
+        <title>Healthcare Guide SLP: Hospitals, Doctors & Insurance</title>
         <meta name="description" content="Complete guide to healthcare in San Luis Potosí. Hospitals, clinics, specialists, insurance options, pharmacies, and step-by-step guides for expats." />
         <meta name="keywords" content="San Luis Potosí healthcare, hospitals SLP, doctors Mexico, health insurance expats, pharmacies San Luis Potosí" />
         {/* Canonical emitted globally (locale-aware) by HreflangAlternates in _app.tsx. */}
@@ -569,7 +569,7 @@ export default function HealthGuidePage() {
                 </span>
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-                Ultimate Healthcare Guide
+                Healthcare Guide: Hospitals, Doctors & Insurance
               </h1>
               <LastUpdated date="2026-04-07" className="text-emerald-100 mb-4" />
               <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
@@ -632,6 +632,72 @@ export default function HealthGuidePage() {
                   <li>• <strong>Insurance:</strong> Private insurance $2,500-15,000 MXN/month; IMSS through employment</li>
                   <li>• <strong>Minor Issues:</strong> Pharmacy consultations only $35-60 MXN</li>
                 </ul>
+              </div>
+
+              {/* Quick Navigation CTAs */}
+              <div className="mt-8 grid md:grid-cols-3 gap-4">
+                <Link
+                  href="/category/english-speaking-healthcare"
+                  className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-200 border-2 border-emerald-100 hover:border-emerald-300 group"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-2xl group-hover:bg-emerald-200 transition-colors">
+                      🩺
+                    </div>
+                    <h3 className="font-bold text-gray-900 text-lg">English-Speaking Doctors</h3>
+                  </div>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Browse our directory of English-speaking healthcare providers and specialists
+                  </p>
+                  <span className="text-emerald-600 font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                    View Directory
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </span>
+                </Link>
+
+                <button
+                  onClick={() => scrollToSection('insurance')}
+                  className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-200 border-2 border-blue-100 hover:border-blue-300 group text-left"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-2xl group-hover:bg-blue-200 transition-colors">
+                      🛡️
+                    </div>
+                    <h3 className="font-bold text-gray-900 text-lg">Health Insurance</h3>
+                  </div>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Compare public and private insurance options for expats in SLP
+                  </p>
+                  <span className="text-blue-600 font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                    See Insurance Options
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
+                </button>
+
+                <button
+                  onClick={() => scrollToSection('pharmacies')}
+                  className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-200 border-2 border-purple-100 hover:border-purple-300 group text-left"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-2xl group-hover:bg-purple-200 transition-colors">
+                      💊
+                    </div>
+                    <h3 className="font-bold text-gray-900 text-lg">Pharmacies</h3>
+                  </div>
+                  <p className="text-sm text-gray-600 mb-3">
+                    24/7 pharmacies with affordable consultations and medications
+                  </p>
+                  <span className="text-purple-600 font-medium text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Find Pharmacies
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
           </section>

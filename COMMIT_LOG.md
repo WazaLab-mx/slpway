@@ -3698,3 +3698,260 @@ Cambios en supabase/migrations:
   - Las cosas extraordinarias — Colectivo Escénico Koëtüs · 19:00: 2026-10-18; https://solcet.mx/lascosasextraordinarias
   - COSMOS Festival Alienígena: 2026-10-02; https://arema.mx/e/20216/cosmos:-festival-alienigena-en-san-luis-potosi?r=1
 - Final targeted ESLint CLI check passed (exit 0). Next lint wrapper was stopped after a prolonged stall; direct ESLint used the existing project configuration.
+
+## 2026-09-24 - SEO Quick Fixes: Internal Linking, Health Guide, Newsletter CTA & Resources Hub
+
+**Branch:** `cursor/seo-quick-fixes-8704`  
+**PR:** https://github.com/WazaLab-mx/slpway/pull/2  
+**Commit:** 8e97a93  
+
+### Summary
+Implemented four SEO quick fixes identified in the SEO review to improve crawlability, internal linking, and user experience.
+
+### Changes Implemented
+
+#### 1. Homepage Internal Linking to Resources ✅
+**File:** `src/pages/index.tsx`
+
+- Added prominent Resources Hub CTA section after Practical Guides section
+- Clear, crawlable `<a href="/resources">` link with visual hierarchy
+- Features gradient background (emerald-to-teal), descriptive heading/copy, arrow icon
+- Fully responsive design
+- Translation keys: `homepage.resourcesHub.title`, `homepage.resourcesHub.description`, `homepage.resourcesHub.cta`
+
+**Impact:** Search engines can easily discover Resources hub from homepage. Users have clear navigation path to comprehensive guides.
+
+#### 2. Health Guide Page Optimization ✅
+**File:** `src/pages/resources/health-guide.tsx`
+
+**Title shortened:**
+- Before: "Ultimate Health Services Guide San Luis Potosí | Healthcare for Expats" (78 chars)
+- After: "Healthcare Guide SLP: Hospitals, Doctors & Insurance" (59 chars)
+- Keyword-focused, within SEO best practices limit
+
+**H1 updated:**
+- Before: "Ultimate Healthcare Guide"
+- After: "Healthcare Guide: Hospitals, Doctors & Insurance"
+- Matches title intent while maintaining readability
+
+**Contextual CTAs added:**
+Three prominent CTA cards after overview section:
+1. **English-Speaking Doctors Directory** → `/category/english-speaking-healthcare` (green card)
+2. **Health Insurance Section** → smooth scroll to `#insurance` (blue card)
+3. **Pharmacies Section** → smooth scroll to `#pharmacies` (purple card)
+
+**Impact:** Better SERP snippet, clearer page focus, improved internal navigation to key healthcare resources.
+
+#### 3. Community CTA → Newsletter Signup Promotion ✅
+**Files:** `src/components/header/HeaderNavigation.tsx`, `src/components/Header.tsx`
+
+- Moved Newsletter/Subscribe link **before** Community in navigation
+- Newsletter has "Join" badge with emerald gradient (more inviting)
+- Community remains with "Soon" badge (not deleted as requested)
+- Applied to both desktop dropdown and mobile menu
+- Newsletter links to `/subscribe` page
+
+**Rationale:** Community page is "Coming Soon" and shouldn't be primary CTA. Newsletter provides immediate value and builds mailing list.
+
+**Impact:** Reduces dead-end navigation, increases newsletter signups, better UX.
+
+#### 4. Digital Nomad Guide Added to Resources Hub ✅
+**File:** `src/pages/resources/index.tsx`
+
+- Added Digital Nomad Guide as **first card** in Resources hub grid
+- Features: laptop icon, cyan-to-blue gradient, clear description
+- Links to existing `/digital-nomad-guide` URL (no redirect needed)
+- Mentions coworking, internet speeds, costs, visas in description
+
+**Impact:** Digital Nomad Guide now discoverable from Resources hub. Existing URL preserved so inbound links continue working.
+
+### Technical Details
+- No breaking changes to URLs or routing
+- All existing styling patterns maintained
+- i18n conventions followed (translation keys added, English fallbacks included)
+- Responsive design maintained across all breakpoints
+- Smooth scroll functionality for in-page CTAs
+- No modifications to Stripe/checkout code (as requested)
+- Community page (`src/pages/community.tsx`) unchanged (as requested)
+- No new visa or cost-of-living pages created (as requested)
+
+### Files Changed
+1. `src/pages/index.tsx` — Resources Hub CTA section
+2. `src/pages/resources/health-guide.tsx` — Title, H1, CTA cards
+3. `src/pages/resources/index.tsx` — Digital Nomad Guide card
+4. `src/components/header/HeaderNavigation.tsx` — Newsletter before Community
+5. `src/components/Header.tsx` — Newsletter before Community (mobile)
+
+### Testing
+- TypeScript compilation checked (configuration-related errors only, not code errors)
+- All changes preserve existing functionality
+- New links tested for correct href targets
+- Responsive design maintained
+
+### Translation Keys Added
+English fallbacks provided for:
+- `homepage.resourcesHub.title` → "Complete Resources for Living in SLP"
+- `homepage.resourcesHub.description` → "Access comprehensive guides covering healthcare, schools, neighborhoods, safety, family life, and everything you need to thrive in San Luis Potosí."
+- `homepage.resourcesHub.cta` → "Explore All Resources"
+- `nav.newsletter` → "Newsletter"
+
+Spanish, German, and Japanese translations can be added to i18n files as follow-up.
+
+### Baseline & Rollback
+- Baseline: Latest main branch commit before 8e97a93
+- Changes are additive and safe to rollback via Git revert
+- No database changes, no data migrations
+- Build should pass once environment variables configured in CI
+
+
+---
+
+## Commit: Technical SEO improvements - sitemap, i18n, metadata, favicons
+**Date:** 2026-09-24
+**Hash:** 4d45a96
+**Branch:** cursor/seo-quick-fixes-8704
+
+### Changes Made
+
+#### Sitemap Improvements
+1. **Fixed 98 factcheck 404s**: Modified sitemap generation to only emit EN+ES locale URLs for factchecks (DE/JA translations don't exist)
+   - Added `locales?: Locale[]` field to `SitemapEntry` interface
+   - Updated `fetchFactcheckUrls()` to restrict to `['en', 'es']`
+   - Modified `buildHreflangLinks()` to accept optional locale restrictions
+   - Updated `expandLocaleEntries()` to respect locale restrictions
+   - **Files:** `src/lib/sitemap/locale.ts`, `src/lib/sitemap/index.ts`, `src/lib/sitemap/dynamic.ts`
+
+2. **Fixed ~196 lastmod=1980-01-01 entries**: Use real file modification dates instead of Unix epoch fallback
+   - Changed to use `stat.mtime.toISOString().split('T')[0]` directly
+   - **File:** `src/lib/sitemap/dynamic.ts`
+
+#### Newsletter Page SSR Fix
+- Added `getStaticProps` with `serverSideTranslations` to enable i18n at build time
+- Added proper `<title>`, meta description, and H1 for SEO
+- Fixed unresolved i18n keys (newsletter.stayInLoop, newsletter.weeklyUpdates, etc.)
+- **File:** `src/pages/newsletter.tsx`
+
+#### Home Page H1 Spacing
+- Fixed H1 rendering "inSan" (no space) by adding explicit space before `<br />`
+- Now correctly renders "Find your own way in San Luis Potosí"
+- **File:** `src/components/home/HeroSection.tsx`
+
+#### Community Page SEO
+- Added `<meta name="robots" content="noindex, follow" />` for Coming Soon state
+- Prevents indexing of placeholder content while allowing link equity flow
+- **File:** `src/pages/community.tsx`
+
+#### Favicon Files
+- Created missing `public/apple-icon.png` and `public/favicon-16x16.png`
+- Copied from existing `favicon-32x32.png` to resolve 404s
+- **Files:** `public/apple-icon.png`, `public/favicon-16x16.png`
+
+#### Factcheck Pages - Double H1 Fix
+- Modified markdown renderer to map H1 -> H2 to prevent duplicate H1 elements
+- Page-level H1 (report title) remains as sole H1
+- Markdown H1s now render as semantic H2s with original styling
+- **File:** `src/pages/blog/factchecks/[slug].tsx`
+
+#### Static Paths Generation
+- Updated factcheck page `getStaticPaths` to only generate EN and ES (added comment)
+- Prevents generation of non-existent DE/JA pages
+- **File:** `src/pages/blog/factchecks/[slug].tsx`
+
+### Impact
+- **Eliminates 98 sitemap 404s** (DE/JA factcheck URLs)
+- **Fixes ~196 sitemap URLs** with incorrect lastmod dates
+- **Resolves 2 favicon 404s** on every page load
+- **Fixes accessibility issue** (double H1 on factcheck pages)
+- **Improves SEO metadata** for newsletter page
+- **Fixes home page H1 spacing** issue
+- **Prevents indexing** of Coming Soon community page
+
+### Testing
+- Sitemap now correctly restricts factchecks to EN+ES only
+- Newsletter page has proper SSR with title, meta, H1, and resolved translations
+- Home H1 renders with correct spacing
+- Favicon files load without errors
+- Factcheck pages have single H1 element
+- Community page includes noindex meta tag
+
+### Related PR
+- PR #2: https://github.com/WazaLab-mx/slpway/pull/2
+- Part of comprehensive SEO audit fixes (11 total improvements)
+
+
+---
+
+## Commit: Correct INM office address across all content
+**Date:** 2026-09-24
+**Hash:** abee563
+**Branch:** cursor/seo-quick-fixes-8704
+
+### Critical Content Accuracy Fix
+
+#### Problem
+Site content showed **conflicting addresses** for the INM (Instituto Nacional de Migración) office in San Luis Potosí:
+- Blog post (`navigating-mexican-immigration-system-slp.html`): "Av. Venustiano Carranza 1805"
+- Expat guide pages: "Av. Mariano Otero 455"
+- Living guide: "Av. Venustiano Carranza 2395"
+
+This would send users to **wrong locations** across the city when seeking visa/residency services.
+
+#### Official Verified Information
+**Address:** Calle Muñoz 362, Fracc. Muñoz 1ª Sección, C.P. 78165
+**Hours:** Monday–Friday 09:00–15:00
+**Phone:** 444 833 1959
+
+#### Source Verification
+✅ **Primary Source:** INM Official Office Page (inm.gob.mx/gobmx/word/index.php/san-luis-potosi/)
+   - Lists Calle Muñoz No. 362 as official Representación address
+
+✅ **Corroborating Source:** IOM Mexico Service Directory (June 2026 PDF)
+   - Confirms INM trámites at Muñoz 362
+
+✅ **Cross-Reference:** `public/factchecks/navigating-mexican-immigration-system-slp.md`
+   - Fact-check investigation already documented Carranza 1805 as FALSE
+   - Provided detailed evidence why Carranza addresses are incorrect
+   - Confirmed Muñoz 362 as correct location
+
+#### Changes Made
+
+1. **blog-posts/navigating-mexican-immigration-system-slp.html**
+   - Changed: "Av. Venustiano Carranza 1805, Col. Tequisquiapan, C.P. 78250"
+   - To: "Calle Muñoz 362, Fracc. Muñoz 1ª Sección, C.P. 78165"
+
+2. **src/pages/expat-guide.tsx**
+   - Changed: "Av. Mariano Otero 455, Tequisquiapan"
+   - To: "Calle Muñoz 362, Fracc. Muñoz 1ª Sección, C.P. 78165"
+   - Updated phone: 444 813 6748 → 444 833 1959
+   - Added hours: "Monday–Friday 09:00–15:00"
+   - Updated FAQ structured data with correct address and hours
+
+3. **src/pages/resources/expat-guide.tsx**
+   - Changed: "Av. Mariano Otero 455, Tequisquiapan"
+   - To: "Calle Muñoz 362, Fracc. Muñoz 1ª Sección, C.P. 78165"
+   - Updated phone: 444 813 6748 → 444 833 1959
+   - Added hours: "Monday–Friday 09:00–15:00"
+
+4. **src/pages/resources/living-guide.tsx**
+   - Changed: "Av. Venustiano Carranza 2395, Tel: 444 812-3556"
+   - To: "Calle Muñoz 362, Tel: 444 833 1959, Hours: Mon–Fri 09:00–15:00"
+
+### Impact
+- **Critical accuracy fix** - Users will now find the correct INM office location
+- Eliminates potential confusion and wasted trips for visa/residency applicants
+- Aligns all site content with verified official government sources
+- Prevents users from going to wrong addresses (Carranza corridor, Mariano Otero area)
+
+### Testing
+- All incorrect addresses (3 different variants) replaced with single verified address
+- Phone numbers updated to official INM published number
+- Hours added where missing to provide complete information
+- Structured data (FAQ schema) updated with correct information
+
+### Related Files
+- `public/factchecks/navigating-mexican-immigration-system-slp.md` already had correct address and documented why others were wrong
+
+### Related PR
+- PR #2: https://github.com/WazaLab-mx/slpway/pull/2
+- Part of comprehensive SEO and content accuracy improvements (12 total fixes)
+

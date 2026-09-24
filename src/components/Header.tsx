@@ -128,6 +128,18 @@ export default function Header() {
               </span>
             </Link>
             <Link
+              href="/subscribe"
+              onClick={closeMenu}
+              className="block py-2.5 px-3 text-emerald-600 hover:bg-emerald-50 hover:text-emerald-700 rounded-lg transition-all duration-150 active:scale-98 font-medium"
+            >
+              <span className="flex items-center gap-2">
+                {t('nav.newsletter', 'Newsletter')}
+                <span className="px-1.5 py-0.5 text-[10px] font-bold bg-gradient-to-r from-emerald-500 to-green-500 text-white rounded-full uppercase">
+                  Join
+                </span>
+              </span>
+            </Link>
+            <Link
               href="/community"
               onClick={closeMenu}
               className="block py-2.5 px-3 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-all duration-150 active:scale-98 font-medium"

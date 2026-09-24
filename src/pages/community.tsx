@@ -93,6 +93,9 @@ export default function CommunityPage() {
         keywords="expat community San Luis Potosí, wine tastings, book clubs, language exchange, cultural activities, international community Mexico, expatriate social events"
         ogImage="/images/cultural/cultural-default.jpg"
       />
+      <Head>
+        <meta name="robots" content="noindex, follow" />
+      </Head>
 
       <div className="min-h-screen bg-white">
         {/* Hero Section */}

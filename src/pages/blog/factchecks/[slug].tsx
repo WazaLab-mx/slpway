@@ -26,6 +26,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   if (fs.existsSync(factchecksDir)) {
     const files = fs.readdirSync(factchecksDir).filter((f) => f.endsWith('.md'));
+    // Only generate EN and ES pages (DE and JA translations don't exist)
     paths = files.flatMap((file) => {
       const slug = file.replace('.md', '');
       return [
@@ -51,13 +52,15 @@ export const getStaticProps: GetStaticProps<FactCheckPageProps> = async ({ param
   renderer.heading = ({ tokens, depth }) => {
     const text = tokens.map((t) => ('text' in t ? t.text : '')).join('');
     const id = text.toLowerCase().replace(/[^\w]+/g, '-');
+    // Map H1 -> H2 since page already has H1 title; prevents double H1
+    const actualDepth = depth === 1 ? 2 : depth;
     const sizes: Record<number, string> = {
       1: 'text-3xl font-bold mt-8 mb-4',
       2: 'text-2xl font-bold mt-8 mb-3',
       3: 'text-xl font-semibold mt-6 mb-2',
       4: 'text-lg font-semibold mt-4 mb-2',
     };
-    return `<h${depth} id="${id}" class="${sizes[depth] || 'font-semibold'}">${text}</h${depth}>`;
+    return `<h${actualDepth} id="${id}" class="${sizes[actualDepth] || 'font-semibold'}">${text}</h${actualDepth}>`;
   };
 
   renderer.table = ({ header, rows }) => {
