@@ -1,5 +1,28 @@
 # Session Context Log - Coding Agent
 
+## Session 2026-09-24 — GEO optimization for pillar pages and ultimate guides
+
+Owner requested GEO (Generative Engine Optimization) improvements to bring two new SEO pillar pages up to site's best-practice bar for AI answer engines (ChatGPT, Perplexity, Google AI Overviews, Claude, etc.). Goal: optimize for AI discovery, not just classic SEO.
+
+**Pages Enhanced:**
+- `/resources/mexico-visas-residency-san-luis-potosi` — Added SpeakableSpecification (#executive, #faq), HowTo schema for 5-step consulate→INM canje process, BreadcrumbList, citation array (INM/DOF/INEGI/Mexperience)
+- `/resources/cost-of-living-san-luis-potosi` — Added SpeakableSpecification (#executive, #faq), BreadcrumbList, citation array (Banxico/Numbeo/INEGI/INM/CONASAMI)
+
+**Ultimate Guides Parity Fixes:**
+Audited family-guide, health-guide, school-guide, neighborhoods-san-luis-potosi against living-guide's GEO patterns. Added missing structured data for consistency:
+- family-guide: Added SpeakableSpecification (.family-intro, #overview, #activities)
+- health-guide: Added SpeakableSpecification (#overview, #hospitals, #faq) + BreadcrumbList
+- school-guide: Added SpeakableSpecification (#overview, #school-types, #top-schools)
+- neighborhoods-san-luis-potosi: Added SpeakableSpecification (#overview, #neighborhoods, #faq)
+
+**Agent Discovery:** Updated `public/llms.txt` with both pillar URLs in Priority Human-Readable Resources section. No changes to llms-full.txt (references llms.txt).
+
+**Audit Document:** Created GEO_OPTIMIZATION_AUDIT.md with detailed gap analysis, best-practice checklist (SpeakableSpecification, BreadcrumbList, FAQPage, HowTo, Citations), and success criteria.
+
+**Implementation:** Followed existing patterns from living-guide.tsx and factcheck pages. All JSON-LD additions syntactically validated. No content changes—only structured data markup added. All existing verified data preserved. No data fabrication.
+
+PR #5 created: https://github.com/WazaLab-mx/slpway/pull/5. Branch: cursor/geo-pillar-pages-optimization-b258. Commit bae4f70. Baseline: 1d262a1 (main with ultimate guide i18n). Rollback: revert commit; restore original pages; remove audit file. COMMIT_LOG.md updated.
+
 ## Session 2026-09-24 — SEO pillar pages for visas/residency and cost of living
 
 Owner approved publishing two English SEO pillar pages with data corrections: Mexico Visas & Residency and Cost of Living. Drafts were provided in uploads/. Created two comprehensive resource guides following existing patterns (health-guide, living-guide, expat-guide).
