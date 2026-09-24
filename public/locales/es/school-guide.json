@@ -1,0 +1,67 @@
+{
+  "seo": {
+    "title": "Guía Definitiva de Escuelas San Luis Potosí | Guía Completa de Educación para Familias Expat",
+    "description": "Guía completa de educación en San Luis Potosí. Escuelas internacionales, educación privada, opciones públicas, universidades, proceso de inscripción, costos y preguntas frecuentes para familias expat que se mudan a SLP.",
+    "keywords": "escuelas San Luis Potosí, escuelas internacionales SLP, educación México expats, escuelas bilingües, universidades San Luis Potosí, inscripción escolar México, Colegio Terranova, Colegio Motolinia, UASLP",
+    "ogTitle": "Guía Definitiva de Escuelas San Luis Potosí | Educación para Familias Expat"
+  },
+  "breadcrumbs": {
+    "home": "Inicio",
+    "resources": "Recursos",
+    "schoolGuide": "Guía de Escuelas"
+  },
+  "hero": {
+    "title": "Guía Definitiva de Escuelas San Luis Potosí",
+    "subtitle": "Guía completa de educación para familias expat: escuelas internacionales, proceso de inscripción, costos y todo lo que necesitas saber",
+    "imageAlt": "Libros escolares, lápices y bloques de alfabeto en un escritorio",
+    "readTime": "15 min de lectura"
+  },
+  "sections": [
+    { "id": "overview", "name": "Resumen" },
+    { "id": "system", "name": "Sistema Educativo" },
+    { "id": "international", "name": "Escuelas Internacionales" },
+    { "id": "private", "name": "Escuelas Privadas" },
+    { "id": "public", "name": "Escuelas Públicas" },
+    { "id": "universities", "name": "Universidades" },
+    { "id": "enrollment", "name": "Cómo Inscribirse" },
+    { "id": "costs", "name": "Costos" },
+    { "id": "faq", "name": "Preguntas Frecuentes" }
+  ],
+  "quickStats": [
+    { "label": "Escuelas Totales", "value": "4,500+", "source": "SEGE 2024" },
+    { "label": "Escuelas Int'l", "value": "6+", "source": "Directorio" },
+    { "label": "Universidades", "value": "35+", "source": "ANUIES" },
+    { "label": "Tasa Alfabetización", "value": "95.8%", "source": "INEGI 2024" },
+    { "label": "Pobl. Estudiantil", "value": "890,000+", "source": "SEP 2024" },
+    { "label": "Año Escolar", "value": "Sep-Jul*", "source": "SEP 2025" }
+  ],
+  "executive": {
+    "heading": "Resumen Ejecutivo",
+    "keyTakeaways": "Puntos Clave",
+    "forExpatFamilies": "Para Familias Expat",
+    "takeaways": [
+      "6+ escuelas internacionales/bilingües disponibles",
+      "Costos mensuales: $3,000-18,000 MXN según tipo de escuela",
+      "Año escolar va de agosto a julio",
+      "Documentos extranjeros necesitan apostilla + traducción"
+    ],
+    "expatInfo": [
+      "Mejores opciones: Colegio Terranova (IB), Colegio Motolinía",
+      "Programas IB y Cambridge disponibles",
+      "Apoyo de inmersión en español en la mayoría de escuelas bilingües",
+      "Iniciar proceso de inscripción 2-3 meses antes del año escolar"
+    ]
+  },
+  "overview": {
+    "heading": "Educación en San Luis Potosí",
+    "intro": "San Luis Potosí ofrece un ecosistema educativo robusto con opciones que van desde escuelas públicas mexicanas tradicionales hasta prestigiosas instituciones internacionales. Como centro económico en crecimiento con importantes industrias automotriz (BMW, GM) y aeroespacial, la ciudad ha desarrollado infraestructura educativa de calidad para servir tanto a familias locales como expatriadas.",
+    "whySLP": "¿Por qué SLP para Educación?",
+    "benefits": [
+      "Menor costo que Ciudad de México (ahorro 30-50%)",
+      "Opción de Escuela del Mundo IB de calidad",
+      "Sector de escuelas bilingües en crecimiento",
+      "Acceso a universidades importantes (UASLP, Tec de Monterrey)",
+      "Menos saturado que ciudades turísticas"
+    ]
+  }
+}
