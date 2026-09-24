@@ -213,6 +213,9 @@ const sources = [
 ];
 
 export default function NeighborhoodsGuidePage() {
+  const { t } = useTranslation('neighborhoods-guide');
+  const router = useRouter();
+  const { locale = 'en' } = router;
   const [activeSection, setActiveSection] = useState('overview');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -259,18 +262,28 @@ export default function NeighborhoodsGuidePage() {
   return (
     <>
       <Head>
-        <title>Ultimate Neighborhoods Guide San Luis Potosí | Where to Live</title>
-        <meta name="description" content="Complete guide to neighborhoods in San Luis Potosí for expats. Rental prices, safety ratings, schools, and detailed profiles for Lomas, Pedregal, Centro, and more." />
+        <title>{t('seo.title')}</title>
+        <meta name="description" content={t('seo.description')} />
+        
+        <link rel="canonical" href={`https://www.sanluisway.com/${locale === 'en' ? '' : locale + '/'}resources/neighborhoods-san-luis-potosi`} />
+        
+        <link rel="alternate" hrefLang="en" href="https://www.sanluisway.com/resources/neighborhoods-san-luis-potosi" />
+        <link rel="alternate" hrefLang="es" href="https://www.sanluisway.com/es/resources/neighborhoods-san-luis-potosi" />
+        <link rel="alternate" hrefLang="de" href="https://www.sanluisway.com/de/resources/neighborhoods-san-luis-potosi" />
+        <link rel="alternate" hrefLang="ja" href="https://www.sanluisway.com/ja/resources/neighborhoods-san-luis-potosi" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.sanluisway.com/resources/neighborhoods-san-luis-potosi" />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Article',
-              headline: 'Best Neighborhoods to Live in San Luis Potosí for Expats',
-              description: 'Complete guide to neighborhoods in San Luis Potosí: rent prices, safety ratings, walkability, and which areas are best for expats and families.',
+              headline: t('seo.title'),
+              description: t('seo.description'),
+              inLanguage: locale,
               datePublished: '2025-01-01',
-              dateModified: '2026-04-10',
+              dateModified: '2026-04-07',
               author: {
                 '@type': 'Person',
                 '@id': 'https://www.sanluisway.com/about#editorial-team',
@@ -279,8 +292,22 @@ export default function NeighborhoodsGuidePage() {
                 worksFor: { '@type': 'Organization', '@id': 'https://www.sanluisway.com/#organization' },
               },
               publisher: { '@type': 'Organization', '@id': 'https://www.sanluisway.com/#organization', name: 'San Luis Way' },
-              mainEntityOfPage: 'https://www.sanluisway.com/resources/neighborhoods-san-luis-potosi',
+              mainEntityOfPage: `https://www.sanluisway.com/${locale === 'en' ? '' : locale + '/'}resources/neighborhoods-san-luis-potosi`,
               about: { '@type': 'Place', name: 'San Luis Potosí', sameAs: 'https://www.wikidata.org/wiki/Q204271' },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: t('breadcrumbs.home'), item: 'https://www.sanluisway.com' },
+                { '@type': 'ListItem', position: 2, name: t('breadcrumbs.resources'), item: 'https://www.sanluisway.com/resources' },
+                { '@type': 'ListItem', position: 3, name: t('breadcrumbs.neighborhoodsGuide'), item: `https://www.sanluisway.com/${locale === 'en' ? '' : locale + '/'}resources/neighborhoods-san-luis-potosi` }
+              ],
             }),
           }}
         />
@@ -859,7 +886,7 @@ export default function NeighborhoodsGuidePage() {
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+      ...(await serverSideTranslations(locale ?? 'en', ['common', 'neighborhoods-guide'])),
     },
   };
 };
