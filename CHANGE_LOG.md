@@ -1,5 +1,13 @@
 # Change Log
 
+## [2026-09-23] Home services page reframed as an independent-business directory
+
+- `/san-luis-potosi-home-services` no longer presents San Luis Way as a provider. Removed the "Our Services" grid and the "Request Home Services" form, which sent requests to our email. New copy: "Find Home Service Pros…", "We connect you with independent local businesses… You hire and pay them directly." English is the base; es/de/ja translated.
+- A visible disclaimer in the widget states that the businesses are independent, not affiliated, employed or endorsed, and that we don't take part in or guarantee their work. The badge now reads "Contact confirmed by San Luis Way" instead of "Verified by San Luis Way". The ranking note says businesses don't pay for placement.
+- The widget shows the best provider of the top 6 categories by default (`featuredProviders`), inside a highlighted card, so it's visible without typing.
+- Discoverability: "Home services" added to the header More menu (desktop and mobile) and the footer Resources list. New `HomeServicesCta` banner on arrival-checklist and neighborhoods guides (tracked as `cta_click`).
+- Fixed hero contrast (the subtitle was unreadable on the photo). Unused `homeServices.*` locale keys removed.
+
 ## [2026-09-23] Accurate enchiladas potosinas image
 
 - The old `/images/food/enchiladas-potosinas.jpg` did not look like enchiladas potosinas. The replacement is `/images/food/enchiladas-potosinas-hero.jpg`, generated with gpt-image-1 (1536×1024: red chile masa, half-moon folds, potatoes and carrots, lettuce, onion, crema, queso fresco). A user-supplied photo was rejected because it carried a third-party watermark (LoveVeg.mx) and was 399px wide.

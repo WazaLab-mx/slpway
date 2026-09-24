@@ -41,32 +41,46 @@ describe('ServiceFinder', () => {
   it('shows the top 3 providers of the matched category, emergency first when urgent', async () => {
     render(<ServiceFinder providers={providers} />);
     await describeProblem('se reventó un tubo', { category: 'plumbing', alternatives: [], urgent: true });
-    const names = (await screen.findAllByRole('heading', { level: 3 })).map(h => h.textContent);
+    expect(await screen.findByText('homeServiceFinder.urgentNotice')).toBeInTheDocument();
+    const names = screen.getAllByRole('heading', { level: 3 }).map(h => h.textContent);
     expect(names).toEqual(['Plomería Urgente', 'Plomería Uno', 'Plomería Tres']);
-    expect(screen.getByText('homeServiceFinder.urgentNotice')).toBeInTheDocument();
     fireEvent.click(screen.getByText('homeServiceFinder.showMore'));
     expect(screen.getAllByRole('heading', { level: 3 })).toHaveLength(4);
+  });
+
+  it('shows the best provider of each category before any search', () => {
+    render(<ServiceFinder providers={[...providers, provider('e2', 'Electricista Top', 'electrical', { rankScore: 0.95 })]} />);
+    expect(screen.getByText('homeServiceFinder.featured')).toBeInTheDocument();
+    const names = screen.getAllByRole('heading', { level: 3 }).map(h => h.textContent);
+    expect(names).toEqual(['homeServiceFinder.featured', 'Electricista Top', 'Plomería Uno']);
+    fireEvent.click(screen.getByRole('button', { name: 'homeServiceFinder.categories.plumbing' }));
+    expect(screen.queryByText('homeServiceFinder.featured')).not.toBeInTheDocument();
   });
 
   it('offers only the alternatives when Jev is unsure', async () => {
     render(<ServiceFinder providers={providers} />);
     await describeProblem('algo raro en la pared', { category: null, alternatives: ['electrical', 'masonry'], urgent: false });
     expect(await screen.findByText('homeServiceFinder.unsure')).toBeInTheDocument();
-    fireEvent.click(screen.getByText('homeServiceFinder.categories.electrical'));
+    fireEvent.click(screen.getByRole('button', { name: 'homeServiceFinder.categories.electrical' }));
     expect(screen.getByText('Electricista Uno')).toBeInTheDocument();
     expect(screen.queryByText('homeServiceFinder.categories.plumbing')).not.toBeInTheDocument();
   });
 
   it('lets visitors browse by category and tracks contact clicks', () => {
     render(<ServiceFinder providers={providers} />);
-    fireEvent.click(screen.getByText('homeServiceFinder.categories.electrical'));
+    fireEvent.click(screen.getByRole('button', { name: 'homeServiceFinder.categories.electrical' }));
     fireEvent.click(screen.getByText('WhatsApp'));
     expect(gtag).toHaveBeenCalledWith('event', 'business_contact_click', expect.objectContaining({ contact_type: 'whatsapp', place_id: 'e1' }));
   });
 
+  it('always states that listed businesses are independent', () => {
+    render(<ServiceFinder providers={providers} />);
+    expect(screen.getByText('homeServiceFinder.disclaimer')).toBeInTheDocument();
+  });
+
   it('says so when a category has no providers yet', () => {
     render(<ServiceFinder providers={providers} />);
-    fireEvent.click(screen.getByText('homeServiceFinder.categories.glass'));
+    fireEvent.click(screen.getByRole('button', { name: 'homeServiceFinder.categories.glass' }));
     expect(screen.getByText('homeServiceFinder.noProviders')).toBeInTheDocument();
   });
 });

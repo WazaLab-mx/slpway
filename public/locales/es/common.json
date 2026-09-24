@@ -72,7 +72,8 @@
     "developersAgents": "Desarrolladores & Agentes",
     "agentConnect": "Agent Connect",
     "mcp": "Servidor MCP",
-    "cli": "CLI"
+    "cli": "CLI",
+    "homeServices": "Servicios del hogar"
   },
   "categories": {
     "food": "Comida",
@@ -200,30 +201,10 @@
     "insuranceDesc": "Encuentra las mejores opciones de seguro para tu mascota"
   },
   "homeServices": {
-    "pageTitle": "Servicios del Hogar | San Luis Way - Soporte Confiable",
-    "metaDescription": "Servicios completos del hogar en San Luis Potosí, incluyendo reparaciones, limpieza, instalación de servicios y búsqueda de contratistas.",
-    "heroTitle": "Servicios del Hogar",
-    "heroDescription": "Servicios profesionales y confiables para el hogar que facilitan tu vida. Desde mantenimiento hasta limpieza, te tenemos cubierto.",
-    "contactTitle": "Solicitar Servicios del Hogar",
-    "messagePlaceholder": "Por favor describe los servicios que necesitas...",
-    "repairs": "Reparaciones y Mantenimiento General",
-    "repairsDesc": "Plomería, electricidad, carpintería y reparación de electrodomésticos.",
-    "cleaning": "Limpieza Profesional",
-    "cleaningDesc": "Limpieza profunda programada, limpieza de mudanza y limpieza regular.",
-    "utilities": "Instalación y Gestión de Servicios",
-    "utilitiesDesc": "Asistencia con electricidad, agua, gas y pago de facturas.",
-    "internet": "Internet y Comunicaciones",
-    "internetDesc": "Instalación de internet, televisión y líneas telefónicas.",
-    "painting": "Pintura y Decoración",
-    "paintingDesc": "Pintura interior/exterior, empapelado y consultoría de diseño.",
-    "contractors": "Búsqueda de Contratistas Verificados",
-    "contractorsDesc": "Encontrar profesionales de confianza para remodelaciones e instalaciones.",
-    "security": "Seguridad del Hogar",
-    "securityDesc": "Instalación de sistemas de alarma, configuración de cámaras y evaluaciones de seguridad.",
-    "pest": "Control de Plagas",
-    "pestDesc": "Soluciones seguras y efectivas para todas las plagas domésticas comunes.",
-    "moving": "Mudanzas y Almacenamiento",
-    "movingDesc": "Asistencia de mudanza local y soluciones de almacenamiento seguro."
+    "pageTitle": "Directorio de servicios del hogar en San Luis Potosí | San Luis Way",
+    "metaDescription": "Encuentra plomeros, electricistas, cerrajeros y otros negocios independientes de servicios del hogar en San Luis Potosí, ordenados por reseñas reales de Google. San Luis Way es un directorio y no presta estos servicios.",
+    "heroTitle": "Encuentra profesionales para tu hogar en San Luis Potosí",
+    "heroDescription": "Te conectamos con negocios locales independientes, ordenados por reseñas reales y verificación. Tú los contratas y les pagas directamente."
   },
   "familySupport": {
     "pageTitle": "Servicios de Apoyo Familiar | San Luis Way",
@@ -2813,7 +2794,7 @@
   },
   "homeServiceFinder": {
     "title": "Encuentra al profesional indicado",
-    "subtitle": "Cuéntanos qué pasa en tu casa y te mostramos los profesionales mejor evaluados de San Luis Potosí para resolverlo.",
+    "subtitle": "Cuéntanos qué pasa en tu casa y te mostramos a los profesionales independientes mejor evaluados de San Luis Potosí.",
     "placeholder": "Ej. se tapó el baño y sale agua por el piso",
     "submit": "Buscar profesional",
     "searching": "Buscando…",
@@ -2830,9 +2811,9 @@
     "call": "Llamar",
     "website": "Sitio web",
     "maps": "Mapa",
-    "rankingNote": "Orden basado en calificación y número de reseñas de Google, análisis de reseñas con IA (puntualidad, calidad, quejas) y verificación. Los negocios no pagan por aparecer en este orden. Contacta y acuerda directamente con el profesional.",
+    "rankingNote": "El orden se basa en la calificación y el número de reseñas de Google, un análisis de reseñas con IA (puntualidad, calidad, quejas) y verificaciones. Los negocios no pagan por aparecer ni por su posición. Confirma siempre los detalles directamente con el proveedor.",
     "badges": {
-      "slwVerified": "Verificado por San Luis Way",
+      "slwVerified": "Contacto confirmado por San Luis Way",
       "autoVerified": "Datos verificados",
       "emergency": "Atiende urgencias",
       "reliable": "Puntual y cumplido",
@@ -2853,6 +2834,14 @@
       "cleaning": "Limpieza",
       "pest_control": "Fumigación",
       "glass": "Vidrios y aluminio"
-    }
+    },
+    "featured": "Los mejor evaluados en San Luis Potosí",
+    "featuredHint": "Describe tu problema o elige una categoría para ver más.",
+    "cta": {
+      "title": "¿Necesitas plomero, electricista o cerrajero?",
+      "text": "Encuentra profesionales locales independientes ordenados por reseñas reales, verificación y atención de urgencias. Te conectamos; tú los contratas directamente.",
+      "button": "Buscar profesional"
+    },
+    "disclaimer": "San Luis Way no ofrece servicios del hogar. Los negocios listados son independientes: no están afiliados, empleados ni respaldados por San Luis Way, y no participamos ni garantizamos su trabajo. Acuerda precio, alcance y pago directamente con ellos."
   }
 }

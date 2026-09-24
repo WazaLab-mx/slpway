@@ -109,6 +109,13 @@ export default function Header() {
               {t('nav.resources')}
             </Link>
             <Link
+              href="/san-luis-potosi-home-services"
+              onClick={closeMenu}
+              className="block py-2.5 px-3 text-gray-700 hover:bg-gray-50 hover:text-primary rounded-lg transition-all duration-150 active:scale-98 font-medium"
+            >
+              {t('nav.homeServices')}
+            </Link>
+            <Link
               href="/spouse-hub"
               onClick={closeMenu}
               className="block py-2.5 px-3 text-rose-600 hover:bg-rose-50 hover:text-rose-700 rounded-lg transition-all duration-150 active:scale-98 font-medium"

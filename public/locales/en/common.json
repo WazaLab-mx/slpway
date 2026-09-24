@@ -72,7 +72,8 @@
     "developersAgents": "Developers & Agents",
     "agentConnect": "Agent Connect",
     "mcp": "MCP Server",
-    "cli": "CLI"
+    "cli": "CLI",
+    "homeServices": "Home services"
   },
   "categories": {
     "food": "Food",
@@ -200,30 +201,10 @@
     "insuranceDesc": "Find the best insurance options for your pet"
   },
   "homeServices": {
-    "pageTitle": "Home Services | San Luis Way - Reliable Home Support",
-    "metaDescription": "Comprehensive home services in San Luis Potosí, including repairs, cleaning, utility setup, and contractor sourcing.",
-    "heroTitle": "Home Services",
-    "heroDescription": "Reliable and professional home services to make your life easier. From maintenance to cleaning, we've got you covered.",
-    "contactTitle": "Request Home Services",
-    "messagePlaceholder": "Please describe the services you need...",
-    "repairs": "General Repairs & Maintenance",
-    "repairsDesc": "Plumbing, electrical, carpentry, and appliance repairs.",
-    "cleaning": "Professional Cleaning",
-    "cleaningDesc": "Scheduled deep cleaning, move-in/out cleaning, and regular housekeeping.",
-    "utilities": "Utility Setup & Management",
-    "utilitiesDesc": "Assistance with electricity, water, gas, and bill payments.",
-    "internet": "Internet & Communications",
-    "internetDesc": "Installation of internet, television, and phone lines.",
-    "painting": "Painting & Decorating",
-    "paintingDesc": "Interior/exterior painting, wallpapering, and design consultation.",
-    "contractors": "Verified Contractor Sourcing",
-    "contractorsDesc": "Finding trusted professionals for remodeling and installations.",
-    "security": "Home Security",
-    "securityDesc": "Alarm system installation, camera setup, and security assessments.",
-    "pest": "Pest Control",
-    "pestDesc": "Safe and effective solutions for all common household pests.",
-    "moving": "Moving & Storage",
-    "movingDesc": "Local moving assistance and secure storage solutions."
+    "pageTitle": "Home Services Directory in San Luis Potosí | San Luis Way",
+    "metaDescription": "Find independent plumbers, electricians, locksmiths and other home service businesses in San Luis Potosí, ranked by real Google reviews. San Luis Way is a directory and does not provide these services.",
+    "heroTitle": "Find Home Service Pros in San Luis Potosí",
+    "heroDescription": "We connect you with independent local businesses, ranked by real reviews and verification. You hire and pay them directly."
   },
   "familySupport": {
     "pageTitle": "Family Support Services | San Luis Way",
@@ -2813,7 +2794,7 @@
   },
   "homeServiceFinder": {
     "title": "Find the right professional",
-    "subtitle": "Tell us what's going on at home and we'll show you the best-rated professionals in San Luis Potosí to fix it.",
+    "subtitle": "Describe what’s going on at home and we’ll point you to the best-rated independent professionals in San Luis Potosí.",
     "placeholder": "e.g. the toilet is clogged and water is leaking on the floor",
     "submit": "Find a professional",
     "searching": "Searching…",
@@ -2830,9 +2811,9 @@
     "call": "Call",
     "website": "Website",
     "maps": "Map",
-    "rankingNote": "Ranked by Google rating and review count, AI analysis of reviews (punctuality, quality, complaints) and verification. Businesses do not pay to appear in this order. Contact and agree terms directly with the professional.",
+    "rankingNote": "Order is based on Google rating and review count, AI analysis of reviews (punctuality, quality, complaints) and verification checks. Businesses do not pay to appear or to be ranked. Always confirm details directly with the provider.",
     "badges": {
-      "slwVerified": "Verified by San Luis Way",
+      "slwVerified": "Contact confirmed by San Luis Way",
       "autoVerified": "Verified details",
       "emergency": "Handles emergencies",
       "reliable": "Punctual and reliable",
@@ -2853,6 +2834,14 @@
       "cleaning": "Cleaning",
       "pest_control": "Pest control",
       "glass": "Glass & aluminum"
-    }
+    },
+    "featured": "Top-rated in San Luis Potosí",
+    "featuredHint": "Describe your problem or pick a category to see more.",
+    "cta": {
+      "title": "Need a plumber, electrician or locksmith?",
+      "text": "Find independent local professionals ranked by real reviews, verification and emergency availability. We connect you, you hire them directly.",
+      "button": "Find a professional"
+    },
+    "disclaimer": "San Luis Way does not offer home services. The businesses listed here are independent: they are not affiliated with, employed by, or endorsed by San Luis Way, and we don’t take part in or guarantee their work. Agree on price, scope and payment directly with them."
   }
 }

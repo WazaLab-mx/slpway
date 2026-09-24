@@ -30,3 +30,14 @@ export function selectProviders(providers: HomeServiceProvider[], category: stri
   return [...inCategory.filter(p => p.offersEmergency), ...inCategory.filter(p => !p.offersEmergency)];
 }
 
+
+// Default view before a visitor picks a category: the best provider of each
+// category, highest-ranked first, so the widget shows variety at a glance.
+export function featuredProviders(providers: HomeServiceProvider[], limit = 6) {
+  const best = new Map<string, HomeServiceProvider>();
+  for (const p of providers) {
+    const current = best.get(p.category);
+    if (!current || p.rankScore > current.rankScore) best.set(p.category, p);
+  }
+  return Array.from(best.values()).sort((a, b) => b.rankScore - a.rankScore).slice(0, limit);
+}

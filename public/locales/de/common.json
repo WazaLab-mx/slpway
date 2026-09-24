@@ -72,7 +72,8 @@
     "developersAgents": "Entwickler & Agenten",
     "agentConnect": "Agent Connect",
     "mcp": "MCP Server",
-    "cli": "CLI"
+    "cli": "CLI",
+    "homeServices": "Hausdienstleistungen"
   },
   "categories": {
     "food": "Essen",
@@ -200,30 +201,10 @@
     "insuranceDesc": "Die besten Versicherungsoptionen für Ihr Haustier finden"
   },
   "homeServices": {
-    "pageTitle": "Hausdienstleistungen | San Luis Way - Zuverlässige Hausunterstützung",
-    "metaDescription": "Umfassende Hausdienstleistungen in San Luis Potosí, einschließlich Reparaturen, Reinigung, Versorgungseinrichtung und Handwerkersuche.",
-    "heroTitle": "Hausdienstleistungen",
-    "heroDescription": "Zuverlässige und professionelle Hausdienstleistungen für ein einfacheres Leben. Von Wartung bis Reinigung - wir kümmern uns darum.",
-    "contactTitle": "Hausdienstleistungen anfragen",
-    "messagePlaceholder": "Bitte beschreiben Sie die benötigten Dienstleistungen...",
-    "repairs": "Allgemeine Reparaturen & Wartung",
-    "repairsDesc": "Sanitär, Elektrik, Tischlerei und Gerätereparaturen.",
-    "cleaning": "Professionelle Reinigung",
-    "cleaningDesc": "Geplante Grundreinigung, Ein-/Auszugsreinigung und regelmäßige Haushaltsführung.",
-    "utilities": "Versorgungseinrichtung & -verwaltung",
-    "utilitiesDesc": "Unterstützung bei Strom, Wasser, Gas und Rechnungszahlungen.",
-    "internet": "Internet & Kommunikation",
-    "internetDesc": "Installation von Internet, Fernsehen und Telefonleitungen.",
-    "painting": "Malen & Dekorieren",
-    "paintingDesc": "Innen-/Außenmalerei, Tapezieren und Designberatung.",
-    "contractors": "Geprüfte Handwerkersuche",
-    "contractorsDesc": "Vertrauenswürdige Fachleute für Renovierungen und Installationen finden.",
-    "security": "Haussicherheit",
-    "securityDesc": "Alarmanlageinstallation, Kameraeinrichtung und Sicherheitsbewertungen.",
-    "pest": "Schädlingsbekämpfung",
-    "pestDesc": "Sichere und wirksame Lösungen für alle häufigen Haushaltsschädlinge.",
-    "moving": "Umzug & Lagerung",
-    "movingDesc": "Lokale Umzugshilfe und sichere Lagerlösungen."
+    "pageTitle": "Verzeichnis für Hausdienstleistungen in San Luis Potosí | San Luis Way",
+    "metaDescription": "Finde unabhängige Klempner, Elektriker, Schlüsseldienste und andere Handwerksbetriebe in San Luis Potosí, sortiert nach echten Google-Bewertungen. San Luis Way ist ein Verzeichnis und erbringt diese Leistungen nicht.",
+    "heroTitle": "Handwerker für dein Zuhause in San Luis Potosí finden",
+    "heroDescription": "Wir verbinden dich mit unabhängigen lokalen Betrieben, sortiert nach echten Bewertungen und Verifizierung. Beauftragung und Bezahlung erfolgen direkt."
   },
   "familySupport": {
     "pageTitle": "Familienunterstützung | San Luis Way",
@@ -2780,7 +2761,7 @@
   },
   "homeServiceFinder": {
     "title": "Finde den richtigen Fachbetrieb",
-    "subtitle": "Beschreibe, was bei dir zu Hause los ist, und wir zeigen dir die bestbewerteten Fachleute in San Luis Potosí.",
+    "subtitle": "Beschreibe, was bei dir zu Hause los ist, und wir zeigen dir die bestbewerteten unabhängigen Fachleute in San Luis Potosí.",
     "placeholder": "z. B. die Toilette ist verstopft und Wasser läuft auf den Boden",
     "submit": "Fachbetrieb finden",
     "searching": "Suche…",
@@ -2797,9 +2778,9 @@
     "call": "Anrufen",
     "website": "Website",
     "maps": "Karte",
-    "rankingNote": "Sortiert nach Google-Bewertung und Anzahl der Rezensionen, KI-Analyse der Rezensionen (Pünktlichkeit, Qualität, Beschwerden) und Verifizierung. Betriebe zahlen nicht für ihre Position. Kontakt und Vereinbarung direkt mit dem Fachbetrieb.",
+    "rankingNote": "Die Reihenfolge basiert auf Google-Bewertung und Anzahl der Rezensionen, KI-Analyse der Rezensionen (Pünktlichkeit, Qualität, Beschwerden) und Verifizierung. Betriebe zahlen nicht für ihre Aufnahme oder Position. Kläre Details immer direkt mit dem Anbieter.",
     "badges": {
-      "slwVerified": "Von San Luis Way verifiziert",
+      "slwVerified": "Kontakt von San Luis Way bestätigt",
       "autoVerified": "Daten verifiziert",
       "emergency": "Notdienst",
       "reliable": "Pünktlich und zuverlässig",
@@ -2820,6 +2801,14 @@
       "cleaning": "Reinigung",
       "pest_control": "Schädlingsbekämpfung",
       "glass": "Glas & Aluminium"
-    }
+    },
+    "featured": "Bestbewertet in San Luis Potosí",
+    "featuredHint": "Beschreibe dein Problem oder wähle eine Kategorie, um mehr zu sehen.",
+    "cta": {
+      "title": "Brauchst du einen Klempner, Elektriker oder Schlüsseldienst?",
+      "text": "Finde unabhängige lokale Fachleute, sortiert nach echten Bewertungen, Verifizierung und Notdienst. Wir stellen den Kontakt her, du beauftragst direkt.",
+      "button": "Fachbetrieb finden"
+    },
+    "disclaimer": "San Luis Way bietet keine Hausdienstleistungen an. Die aufgeführten Betriebe sind unabhängig: Sie sind weder mit San Luis Way verbunden noch von uns angestellt oder empfohlen, und wir sind an ihrer Arbeit nicht beteiligt und übernehmen keine Garantie. Preis, Umfang und Zahlung vereinbarst du direkt mit ihnen."
   }
 }

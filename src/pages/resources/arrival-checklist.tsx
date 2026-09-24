@@ -9,6 +9,7 @@ import LastUpdated from '@/components/common/LastUpdated';
 import GuideCTA from '@/components/common/GuideCTA';
 import AffiliateCard from '@/components/affiliate/AffiliateCard';
 import AdUnit from '@/components/common/AdUnit';
+import HomeServicesCta from '@/components/home-services/HomeServicesCta';
 
 interface ChecklistItem {
   id: string;
@@ -293,6 +294,10 @@ export default function ArrivalChecklistPage() {
             <AdUnit placement="mid-content" />
           </div>
         </section>
+
+        <div className="container mx-auto px-4 max-w-4xl">
+          <HomeServicesCta source="arrival-checklist" />
+        </div>
 
         {/* Recommended Essentials */}
         <section className="py-12">

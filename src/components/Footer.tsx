@@ -168,6 +168,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/san-luis-potosi-home-services" className="text-base text-gray-300 hover:text-secondary transition-all duration-200 hover:translate-x-1 inline-flex items-center group">
+                  <span className="w-1 h-1 bg-secondary/60 rounded-full mr-3 transition-all duration-200 group-hover:bg-secondary group-hover:scale-125"></span>
+                  {t('nav.homeServices')}
+                </Link>
+              </li>
+              <li>
                 <Link href="/newsletter" className="text-base text-gray-300 hover:text-secondary transition-all duration-200 hover:translate-x-1 inline-flex items-center group">
                   <span className="w-1 h-1 bg-secondary/60 rounded-full mr-3 transition-all duration-200 group-hover:bg-secondary group-hover:scale-125"></span>
                   {t('footer.newsletter')}

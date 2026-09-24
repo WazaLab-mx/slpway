@@ -7,6 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import LastUpdated from '@/components/common/LastUpdated';
 import GuideCTA from '@/components/common/GuideCTA';
 import AdUnit from '@/components/common/AdUnit';
+import HomeServicesCta from '@/components/home-services/HomeServicesCta';
 
 const neighborhoods = [
   {
@@ -836,6 +837,8 @@ export default function NeighborhoodsGuidePage() {
               ))}
             </div>
           </section>
+
+          <HomeServicesCta source="neighborhoods-guide" />
 
           <section className="my-8">
             <AdUnit placement="mid-content" />

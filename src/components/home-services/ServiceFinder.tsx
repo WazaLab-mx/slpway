@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
+import { InformationCircleIcon } from '@heroicons/react/24/outline';
 import { CATEGORY_KEYS, MAX_PROBLEM_LENGTH } from '@/lib/home-services-categories';
-import { selectProviders, type HomeServiceProvider } from '@/lib/home-services-providers';
+import { selectProviders, featuredProviders, type HomeServiceProvider } from '@/lib/home-services-providers';
 import type { MatchResult } from '@/lib/home-services-match';
 import ProviderCard from './ProviderCard';
 
@@ -48,9 +49,13 @@ export default function ServiceFinder({ providers }: { providers: HomeServicePro
       : 'border-gray-300 bg-white text-gray-700 hover:border-blue-400'}`;
 
   return (
-    <section id="service-finder" className="mx-auto max-w-5xl">
+    <section id="service-finder" className="mx-auto max-w-5xl scroll-mt-24 rounded-2xl border border-gray-200 bg-white p-5 shadow-lg sm:p-8 lg:p-10">
       <h2 className="text-center text-3xl font-bold text-gray-900">{t('homeServiceFinder.title')}</h2>
       <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600">{t('homeServiceFinder.subtitle')}</p>
+      <p className="mx-auto mt-4 flex max-w-3xl gap-2 rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">
+        <InformationCircleIcon className="mt-0.5 h-5 w-5 flex-shrink-0" aria-hidden />
+        <span>{t('homeServiceFinder.disclaimer')}</span>
+      </p>
 
       <form onSubmit={handleSubmit} className="mx-auto mt-8 flex max-w-2xl flex-col gap-3 sm:flex-row">
         <label htmlFor="home-problem" className="sr-only">{t('homeServiceFinder.placeholder')}</label>
@@ -87,6 +92,16 @@ export default function ServiceFinder({ providers }: { providers: HomeServicePro
           </button>
         ))}
       </div>
+
+      {!category && !(match && !match.category) && (
+        <div className="mt-8">
+          <h3 className="text-center text-lg font-semibold text-gray-900">{t('homeServiceFinder.featured')}</h3>
+          <p className="mt-1 text-center text-sm text-gray-500">{t('homeServiceFinder.featuredHint')}</p>
+          <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {featuredProviders(providers).map(p => <ProviderCard key={p.id} provider={p} showCategory />)}
+          </div>
+        </div>
+      )}
 
       {category && (
         <div className="mt-8">

@@ -17,7 +17,7 @@ function Badge({ icon, label, tone }: { icon: React.ReactNode; label: string; to
   );
 }
 
-export default function ProviderCard({ provider }: { provider: HomeServiceProvider }) {
+export default function ProviderCard({ provider, showCategory = false }: { provider: HomeServiceProvider; showCategory?: boolean }) {
   const { t } = useTranslation('common');
   const track = (type: string) => ConversionEvents.businessContactClick(type, provider.id, provider.name);
   const whatsapp = provider.phone ? buildWhatsAppUrl(provider.phone, provider.name) : null;
@@ -26,6 +26,9 @@ export default function ProviderCard({ provider }: { provider: HomeServiceProvid
 
   return (
     <article className="flex h-full flex-col rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+      {showCategory && (
+        <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-blue-600">{t(`homeServiceFinder.categories.${provider.category}`)}</p>
+      )}
       <h3 className="text-lg font-semibold text-gray-900">{provider.name}</h3>
       {provider.address && <p className="mt-1 text-sm text-gray-500">{provider.address}</p>}
 
