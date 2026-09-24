@@ -182,7 +182,7 @@ export default function BreakfastSpotsSLP() {
       <main className="min-h-screen bg-gray-50">
         <section className="relative py-16 text-white overflow-hidden">
           <Image
-            src="/images/food/enchiladas-potosinas.jpg"
+            src="/images/food/enchiladas-potosinas-hero.jpg"
             alt="Cheesy enchiladas potosinas served in a baking dish for breakfast"
             fill
             priority

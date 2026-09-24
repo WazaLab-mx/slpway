@@ -270,7 +270,7 @@ export default function VisitSanLuisPotosiPage() {
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('visitGuide.food.title')}</h2>
                 <div className="grid grid-cols-3 gap-3 mb-4">
                   {[
-                    { src: '/images/food/enchiladas-potosinas.jpg', alt: 'Enchiladas Potosinas' },
+                    { src: '/images/food/enchiladas-potosinas-hero.jpg', alt: 'Enchiladas Potosinas' },
                     { src: '/images/food/asado-de-boda.jpg', alt: 'Asado de Boda' },
                     { src: '/images/food/street-food-main.jpg', alt: 'Street food in SLP' },
                   ].map((img) => (

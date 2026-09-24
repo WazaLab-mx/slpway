@@ -218,7 +218,7 @@ const FoodieGuidePage: NextPage = () => {
                   <>
                     <div className="relative h-48 rounded-lg overflow-hidden shadow-md">
                       <Image
-                        src="/images/food/enchiladas-potosinas.jpg"
+                        src="/images/food/enchiladas-potosinas-hero.jpg"
                         alt="Traditional enchiladas potosinas"
                         layout="fill"
                         objectFit="cover"

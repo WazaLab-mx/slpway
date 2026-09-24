@@ -1,5 +1,11 @@
 # Change Log
 
+## [2026-09-23] Accurate enchiladas potosinas image
+
+- The old `/images/food/enchiladas-potosinas.jpg` did not look like enchiladas potosinas. The replacement is `/images/food/enchiladas-potosinas-hero.jpg`, generated with gpt-image-1 (1536×1024: red chile masa, half-moon folds, potatoes and carrots, lettuce, onion, crema, queso fresco). A user-supplied photo was rejected because it carried a third-party watermark (LoveVeg.mx) and was 399px wide.
+- Pages updated: breakfast-spots, feria-de-la-enchilada-2026 (hero and og), foodie-guide, visit-san-luis-potosi. DB: the post `enchiladas-potosinas-historia-donde-comer` image_url, plus the body references in 3 posts, are switched after deploy.
+- The old file is kept until no DB content references it.
+
 ## [2026-09-23] Tavily backup key for the social-trends cron
 
 - `social-tavily.js` tries `[TAVILY_API_KEY, TAVILY_API_KEY_BACKUP]` in order. On 401/429/432 (plan limit)/433 it moves to the next key, for both search and extract. The primary is currently out of quota (432); the backup was verified live with 30 results.

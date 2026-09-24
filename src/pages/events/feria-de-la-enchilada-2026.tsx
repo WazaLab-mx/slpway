@@ -170,7 +170,7 @@ export default function FeriaDeLaEnchilada2026() {
           'The Feria Nacional de la Enchilada 2026 ran April 4–12 in Soledad de Graciano Sánchez with 600,000+ visitors. What it is, verified history, what to expect, and when the 2027 edition may be.'
         )}
         keywords="feria de la enchilada 2026, FENAE 2026, feria nacional de la enchilada, Soledad de Graciano Sánchez, enchiladas potosinas, feria enchilada 2027"
-        ogImage="/images/food/enchiladas-potosinas.jpg"
+        ogImage="/images/food/enchiladas-potosinas-hero.jpg"
         structuredData={structuredData as Record<string, unknown>}
       />
 
@@ -248,7 +248,7 @@ export default function FeriaDeLaEnchilada2026() {
             </div>
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden ring-1 ring-orange-400/20 shadow-2xl">
               <Image
-                src="/images/food/enchiladas-potosinas.jpg"
+                src="/images/food/enchiladas-potosinas-hero.jpg"
                 alt={L('Enchiladas potosinas, platillo emblema de la FENAE', 'Enchiladas potosinas, the signature dish of FENAE')}
                 fill
                 priority
