@@ -1,5 +1,29 @@
 # Commit Log
 
+## 2026-09-24 — feat: add GEO optimization to pillar pages and ultimate guides
+
+- Baseline: Previous commit 1d262a1 (main pulled with ultimate guide i18n). Commit bae4f70. PR #5 created.
+- Owner task: Bring two new SEO pillar pages (Mexico Visas & Residency, Cost of Living) up to site's GEO best-practice bar for AI answer engines (ChatGPT, Perplexity, Google AI Overviews, Claude).
+- GEO additions to both pillar pages:
+  - **SpeakableSpecification** schema pointing to executive summary and FAQ sections for AI voice/answer extraction
+  - **BreadcrumbList** schema for navigation context
+  - **Citation arrays** with links to primary sources (INM, INEGI, Banxico, Numbeo, DOF, CONASAMI, Mexperience)
+  - **HowTo schema** on visa page for 5-step consulate→INM canje process with itemized directions
+- Ultimate Guides parity fixes (family, health, school, neighborhoods):
+  - Added **SpeakableSpecification** to all four guides (living-guide already had it)
+  - Added **BreadcrumbList** to health-guide (others already had it)
+  - All guides now have same GEO baseline as living-guide
+- Agent discovery files updated:
+  - Added both pillar URLs to `public/llms.txt` Priority Human-Readable Resources section
+  - No changes to `llms-full.txt` (it references llms.txt)
+- Audit document: Created `GEO_OPTIMIZATION_AUDIT.md` with gap analysis, best-practice checklist, and implementation plan
+- Pattern matching: Followed existing schema from living-guide.tsx (SpeakableSpecification, BreadcrumbList, citation format)
+- No content changes: Only structured data markup added; all existing verified data preserved
+- Testing: JSON-LD additions syntactically validated; all files use existing patterns from living-guide/health-guide
+- Excluded: No data fabrication, no content rewrites, no TypeScript compilation issues (tsconfig has pre-existing deprecated options unrelated to these changes)
+- Branch: cursor/geo-pillar-pages-optimization-b258. PR: https://github.com/WazaLab-mx/slpway/pull/5
+- Rollback: Revert the commit; restore original pillar pages and guides; remove GEO audit file
+
 ## 2026-09-24 — feat: add SEO pillar pages for visas/residency and cost of living
 
 - Baseline: Previous commit. Commit a764510. PR #4 created (draft).

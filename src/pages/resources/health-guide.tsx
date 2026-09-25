@@ -542,6 +542,24 @@ export default function HealthGuidePage() {
               publisher: { '@type': 'Organization', '@id': 'https://www.sanluisway.com/#organization', name: 'San Luis Way' },
               mainEntityOfPage: `https://www.sanluisway.com/${locale === 'en' ? '' : locale + '/'}resources/health-guide`,
               about: { '@type': 'Place', name: 'San Luis Potosí', sameAs: 'https://www.wikidata.org/wiki/Q204271' },
+              speakable: {
+                '@type': 'SpeakableSpecification',
+                cssSelector: ['#overview', '#hospitals', '#faq']
+              }
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.sanluisway.com' },
+                { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.sanluisway.com/resources' },
+                { '@type': 'ListItem', position: 3, name: 'Health Guide', item: `https://www.sanluisway.com/${locale === 'en' ? '' : locale + '/'}resources/health-guide` }
+              ]
             }),
           }}
         />

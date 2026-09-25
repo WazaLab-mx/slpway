@@ -443,7 +443,11 @@ export default function SchoolGuidePage() {
               "inLanguage": locale,
               "datePublished": "2025-01-01",
               "dateModified": "2026-04-07",
-              "author": { "@type": "Organization", "name": "San Luis Way" }
+              "author": { "@type": "Organization", "name": "San Luis Way" },
+              "speakable": {
+                "@type": "SpeakableSpecification",
+                "cssSelector": ["#overview", "#school-types", "#top-schools"]
+              }
             })
           }}
         />

@@ -86,6 +86,31 @@ export default function CostOfLivingGuidePage() {
               publisher: { '@type': 'Organization', '@id': 'https://www.sanluisway.com/#organization', name: 'San Luis Way' },
               mainEntityOfPage: 'https://www.sanluisway.com/resources/cost-of-living-san-luis-potosi',
               about: { '@type': 'Place', name: 'San Luis Potosí', sameAs: 'https://www.wikidata.org/wiki/Q204271' },
+              speakable: {
+                '@type': 'SpeakableSpecification',
+                cssSelector: ['#executive', '#faq']
+              },
+              citation: [
+                { '@type': 'CreativeWork', name: 'Banxico — Foreign Exchange Rates', url: 'https://www.banxico.org.mx/tipcamb/' },
+                { '@type': 'CreativeWork', name: 'Numbeo — San Luis Potosí Cost of Living', url: 'https://www.numbeo.com/cost-of-living/in/San-Luis-Potosi' },
+                { '@type': 'CreativeWork', name: 'INEGI — 2026 UMA Value' },
+                { '@type': 'CreativeWork', name: 'INM — 2026 Migratory Fees' },
+                { '@type': 'CreativeWork', name: 'CONASAMI — 2026 Minimum Wage' }
+              ]
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.sanluisway.com' },
+                { '@type': 'ListItem', position: 2, name: 'Resources', item: 'https://www.sanluisway.com/resources' },
+                { '@type': 'ListItem', position: 3, name: 'Cost of Living Guide', item: 'https://www.sanluisway.com/resources/cost-of-living-san-luis-potosi' }
+              ]
             }),
           }}
         />
