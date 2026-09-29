@@ -174,6 +174,7 @@ import {
   addUtmTracking,
   injectHeroImage,
   injectFeaturedBlogImage,
+  DEFAULT_HERO_PHOTO,
 } from './newsletter-html';
 
 
@@ -256,6 +257,10 @@ export async function generateWeeklyNewsletter(customContent?: string) {
       heroPhoto = { image_url: bp.image_url as string, title: bp.title_en || bp.title || 'San Luis Potosí' };
       console.log('   ↩️ Hero fallback: using a recent blog image');
     }
+  }
+  if (!heroPhoto) {
+    heroPhoto = DEFAULT_HERO_PHOTO;
+    console.log('   ↩️ Hero fallback: using the default city photo');
   }
 
   console.log('1.6. Fetching previously used content to avoid repetition...');

@@ -8,6 +8,8 @@ import {
   injectHeroImage,
   injectFeaturedBlogImage,
 } from './newsletter-generator';
+import { DEFAULT_HERO_PHOTO } from './newsletter-html';
+import { renderNewsletterDesign } from './newsletter-design';
 import { format, addDays } from 'date-fns';
 
 describe('newsletter template structure', () => {
@@ -151,10 +153,14 @@ describe('injectHeroImage', () => {
     expect(out).toMatch(/<p>\s*<img [^>]*\/>\s*<\/p>/);
   });
 
-  it('is a no-op when there is no hero photo or no card anchor', () => {
+  it('is a no-op when there is no hero photo', () => {
     const html = `<!-- CARD 1: X -->`;
     expect(injectHeroImage(html, null)).toBe(html);
-    expect(injectHeroImage('<div>no card</div>', photo)).toBe('<div>no card</div>');
+  });
+
+  it('puts the hero at the top when there is no card or heading anchor', () => {
+    const out = injectHeroImage('<p>no card</p>', photo);
+    expect(out.indexOf('slp.jpg')).toBeLessThan(out.indexOf('no card'));
   });
 });
 
@@ -204,6 +210,17 @@ describe('newsletter images in the Smart Brevity layout (no CARD comments)', () 
   it('makes site-relative image paths absolute so they load in email clients', () => {
     const out = injectHeroImage(edition, { image_url: '/images/heroes/slp-airport-guide.jpg', title: 'SLP' });
     expect(out).toContain('src="https://www.sanluisway.com/images/heroes/slp-airport-guide.jpg"');
+  });
+
+  it('keeps both photos through the final email design render', () => {
+    let out = injectHeroImage(edition, DEFAULT_HERO_PHOTO);
+    out = injectFeaturedBlogImage(out, [{ slug: 'xantolo-guide', image_url: '/images/events/xantolo-image-3.jpg' }]);
+    const rendered = renderNewsletterDesign(out);
+    const srcs = Array.from(rendered.matchAll(/<img[^>]*src="([^"]+)"/g), (m) => m[1]);
+    expect(srcs).toEqual([
+      'https://www.sanluisway.com/images/hero-bg.jpg',
+      'https://www.sanluisway.com/images/events/xantolo-image-3.jpg',
+    ]);
   });
 
   it('injects the featured post image when the label is an <em>', () => {

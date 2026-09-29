@@ -1,5 +1,11 @@
 # Change Log
 
+## [2026-09-29] Newsletter always ships a real hero photo
+
+- `injectHeroImage` never drops the hero: anchor order is `<!-- CARD 1` → first `<h2>` → top of the edition.
+- New `DEFAULT_HERO_PHOTO` (`/images/hero-bg.jpg`, real Centro skyline at dusk) is used when `featured_photos` is empty AND no recent post has an image. So a photo always exists.
+- Test covers the full chain: injection → `renderNewsletterDesign` keeps both `<img>` (hero + featured post) with absolute URLs. 53/53 newsletter tests, tsc clean.
+
 ## [2026-09-29] Newsletter: no scheduled posts, images back
 
 - Bug: the generator picked the 10 latest `status=published` posts without a date filter, so scheduled posts came first. The 2026-09-29 edition featured `xantolo-dia-de-muertos-huasteca-potosina` (scheduled for 2026-10-05, 404 today); the link validator swapped it for `/events` and the blog image was lost. Fix: `.lte('published_at', now)` in `newsletter-generator.ts`, same as `blog.ts` and the sitemap.

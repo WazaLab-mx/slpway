@@ -221,17 +221,21 @@ export function buildHeroImageHtml(photo: { image_url: string; title?: string | 
 <p><img src="${toAbsoluteImageUrl(photo.image_url)}" alt="${alt}" /></p>`;
 }
 
+// Real photo used when neither featured_photos nor recent posts provide one,
+// so every edition ships a hero.
+export const DEFAULT_HERO_PHOTO = { image_url: '/images/hero-bg.jpg', title: 'San Luis Potosí at dusk' };
+
 // Injects the hero image above the first content card. The model doesn't always
 // keep the <!-- CARD 1 --> comment, so the first section heading is the fallback
-// anchor. No-op if neither is found so a missing card never drops content.
+// anchor, and the top of the edition is the last resort.
 export function injectHeroImage(
   html: string,
   photo: { image_url: string; title?: string | null } | null
 ): string {
   if (!photo?.image_url) return html;
+  const hero = buildHeroImageHtml(photo).trim();
   const anchor = html.includes('<!-- CARD 1') ? '<!-- CARD 1' : html.match(/<h2[\s>]/)?.[0];
-  if (!anchor) return html;
-  return html.replace(anchor, `${buildHeroImageHtml(photo).trim()}\n\n${anchor}`);
+  return anchor ? html.replace(anchor, `${hero}\n\n${anchor}`) : `${hero}\n\n${html}`;
 }
 
 // Injects the featured blog post's real image into the "From the Blog" card by
