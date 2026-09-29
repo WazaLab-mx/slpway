@@ -1,4 +1,5 @@
 import { useTranslation } from 'next-i18next';
+import { placeCategoryLabel } from '@/lib/placeCategoryLabel';
 
 export type SortOption = 'newest' | 'rating' | 'name';
 
@@ -51,7 +52,7 @@ export default function PlaceFilters({
             <option key={cat} value={cat}>
               {cat === 'all'
                 ? t('filters.allCategories', 'All Categories')
-                : cat.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+                : placeCategoryLabel(cat, t)}
             </option>
           ))}
         </select>

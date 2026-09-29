@@ -6,6 +6,8 @@ import { useRouter } from 'next/router';
 import { supabase } from '@/lib/supabase';
 import SEO from '@/components/common/SEO';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+import { placeCategoryLabel } from '@/lib/placeCategoryLabel';
 import { MapPinIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline';
 import PlaceFilters, { FilterState, SortOption } from '@/components/PlaceFilters';
 import Pagination from '@/components/Pagination';
@@ -66,6 +68,7 @@ const ITEMS_PER_PAGE = 12;
 
 const PlacesPage: React.FC<PlacesPageProps> = ({ places, services }) => {
   const router = useRouter();
+  const { t } = useTranslation('common');
   const [activeTab, setActiveTab] = useState<'places' | 'services'>(
     (router.query.tab as string) === 'services' ? 'services' : 'places'
   );
@@ -354,7 +357,7 @@ const PlacesPage: React.FC<PlacesPageProps> = ({ places, services }) => {
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="font-semibold text-xl text-gray-900">{item.name}</h3>
                       <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium capitalize">
-                        {item.category}
+                        {placeCategoryLabel(item.category, t)}
                       </span>
                     </div>
                     {item.description && (
@@ -492,7 +495,7 @@ const PlacesPage: React.FC<PlacesPageProps> = ({ places, services }) => {
                         <h3 className="font-semibold text-lg text-gray-900 flex-1">{item.name}</h3>
                       )}
                       <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs ml-2 capitalize">
-                        {item.category}
+                        {placeCategoryLabel(item.category, t)}
                       </span>
                     </div>
                     {item.description && (

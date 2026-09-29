@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
+import { placeCategoryLabel } from '@/lib/placeCategoryLabel';
 
 interface PlaceCardProps {
   place: Place;
@@ -86,10 +87,7 @@ export default function PlaceCard({ place, featured, onClick, isSelected }: Plac
           {/* Enhanced Category Badge */}
           <div className={`absolute top-4 left-4 z-10 transition-all duration-300 ${isHovered ? 'scale-110 -translate-y-1' : 'scale-100 translate-y-0'}`}>
             <span className={`text-xs font-semibold px-4 py-2 rounded-xl border backdrop-blur-sm shadow-md ${categoryColors[place.category] || categoryColors.other} transition-all duration-300`}>
-              {place.category
-                  .split('-')
-                  .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                  .join(' ')}
+              {placeCategoryLabel(place.category, t)}
             </span>
           </div>
 

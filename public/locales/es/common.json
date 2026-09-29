@@ -2850,14 +2850,7 @@
       "button": "Encontrar un profesional"
     }
   },
-  "seafoodCategory": {
-    "seoTitle": "Marisquerías en San Luis Potosí | San Luis Way",
-    "seoDescription": "Dónde comer mariscos en San Luis Potosí: marisquerías con aguachiles, pulpo asado, charolas de mariscos y micheladas, con horarios y ubicación.",
-    "heroAlt": "Charolas de mariscos con camarones y mejillones en un restaurante de San Luis Potosí",
-    "eyebrow": "Restaurantes",
-    "title": "Mariscos",
-    "intro": "San Luis Potosí está lejos del mar, y aun así la ciudad tiene muy buenas marisquerías. Aquí encuentras aguachiles, pulpo asado, charolas de mariscos y micheladas bien frías.",
-    "allTitle": "Marisquerías",
-    "empty": "Todavía no tenemos marisquerías en el directorio."
+  "placeCategories": {
+    "seafood": "Marisquerías"
   }
 }

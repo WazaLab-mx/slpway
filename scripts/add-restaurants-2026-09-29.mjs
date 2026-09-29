@@ -99,8 +99,8 @@ for (const { photo, ...r } of restaurants) {
     image_url: imageUrl,
     featured: false,
     speaks_english: false,
-    additional_categories: r.category === 'seafood' ? ['local-food'] : [],
-    categories: r.category === 'seafood' ? ['seafood', 'local-food'] : [r.category],
+    additional_categories: [],
+    categories: [r.category],
     name_es: r.name,
     name_de: r.name,
   }).select('id').single();

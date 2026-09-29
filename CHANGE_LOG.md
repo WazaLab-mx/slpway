@@ -1,5 +1,12 @@
 # Change Log
 
+## [2026-09-29] Seafood is a directory category, not a page
+
+- Per owner feedback: removed `/category/seafood` (page, `seafoodCategory.*` copy including the "far from the sea" intro, hero image, test, sitemap entry) and `localizePlace.ts`, which only that page used. Marisquerías are a regular category inside `/places`.
+- DB: Jijos del Mar and Piraña Cubana are now only `seafood` (`categories = ['seafood']`, no `local-food`). Seafood places are not local/typical Potosino food. The add script is updated to match.
+- New `src/lib/placeCategoryLabel.ts`: category label from `placeCategories.<slug>` with the humanized slug as fallback. Used in the `PlaceFilters` dropdown, `PlaceCard` badge and `/places` list badges. `placeCategories.seafood` = "Marisquerías" (es), "Seafood Restaurants" (en), "Fischrestaurants" (de), "シーフードレストラン" (ja).
+- Tests: `placeCategoryLabel.test.ts` (6, using real locale files through i18next).
+
 ## [2026-09-29] New "Seafood / Mariscos" category
 
 - New page `/category/seafood` (`src/pages/category/seafood.tsx`): hero, grid of places, empty state and modal, with ISR `revalidate: 3600`. It lists places whose `category = 'seafood'` or whose `categories` contain `seafood`. Copy lives in `seafoodCategory.*` in all 4 locales (es: "Mariscos", de: "Meeresfrüchte", ja: "シーフード"). Hero is `/images/restaurants-and-bars/seafood.jpg` (Google Places photo of Piraña Cubana, 1600px).

@@ -2817,14 +2817,7 @@
       "button": "Fachkraft finden"
     }
   },
-  "seafoodCategory": {
-    "seoTitle": "Fisch- und Meeresfrüchterestaurants in San Luis Potosí | San Luis Way",
-    "seoDescription": "Wo man in San Luis Potosí Meeresfrüchte isst: Marisquerías mit Aguachiles, gegrilltem Oktopus, Meeresfrüchteplatten und Micheladas, mit Öffnungszeiten und Lage.",
-    "heroAlt": "Meeresfrüchteplatten mit Garnelen und Muscheln in einem Restaurant in San Luis Potosí",
-    "eyebrow": "Restaurants",
-    "title": "Meeresfrüchte",
-    "intro": "San Luis Potosí liegt weit vom Meer entfernt, und trotzdem hat die Stadt eine starke Meeresfrüchte-Szene. Diese Marisquerías servieren Aguachiles, gegrillten Oktopus, Meeresfrüchteplatten und kalte Micheladas.",
-    "allTitle": "Meeresfrüchterestaurants",
-    "empty": "Wir haben noch keine Meeresfrüchterestaurants gelistet."
+  "placeCategories": {
+    "seafood": "Fischrestaurants"
   }
 }
