@@ -2849,5 +2849,15 @@
       "text": "Describe the problem and we’ll point you to top-rated independent plumbers, electricians, locksmiths and more in San Luis Potosí, ranked by real reviews and verification.",
       "button": "Find a professional"
     }
+  },
+  "seafoodCategory": {
+    "seoTitle": "Seafood Restaurants in San Luis Potosí | San Luis Way",
+    "seoDescription": "Where to eat seafood in San Luis Potosí: marisquerías with aguachiles, grilled octopus, seafood platters and micheladas, with hours and locations.",
+    "heroAlt": "Seafood platters with shrimp and mussels at a restaurant in San Luis Potosí",
+    "eyebrow": "Restaurants",
+    "title": "Seafood",
+    "intro": "San Luis Potosí is far from the sea, and the city still has a strong seafood scene. These marisquerías serve aguachiles, grilled octopus, seafood platters and cold micheladas.",
+    "allTitle": "Seafood restaurants",
+    "empty": "We don’t have seafood restaurants listed yet."
   }
 }

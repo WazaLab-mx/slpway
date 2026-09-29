@@ -140,7 +140,7 @@ export default function PlacePage({ place, error }: { place: Place | null; error
     : 'Place';
 
   // Food places get "Menu" in the title; everything else gets "Prices".
-  const isFoodPlace = ['restaurant', 'cafe', 'bar', 'local-food', 'food', 'bakery'].includes(place.category || '');
+  const isFoodPlace = ['restaurant', 'cafe', 'bar', 'local-food', 'seafood', 'food', 'bakery'].includes(place.category || '');
   const isEs = router.locale === 'es';
   const seoTitle = isEs
     ? `${place.name} — ${categoryLabel} en San Luis Potosí: horarios y ubicación`

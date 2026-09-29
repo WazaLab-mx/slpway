@@ -32,7 +32,7 @@ const restaurants = [
   {
     photo: 'jijos-0-web.jpg',
     name: 'Jijos del Mar',
-    category: 'local-food',
+    category: 'seafood',
     address: 'Prol. Av. Nereo Rodríguez Barragán 1028, Tequisquiapan, 78250',
     phone: '444 125 6659',
     website: null,
@@ -48,7 +48,7 @@ const restaurants = [
   {
     photo: 'pirana-2-web.jpg',
     name: 'Piraña Cubana',
-    category: 'local-food',
+    category: 'seafood',
     address: 'Av. Nereo Rodríguez Barragán 1380, Local B15, Plaza del Valle, Col. del Valle, 78200',
     phone: null,
     website: 'https://www.facebook.com/profile.php?id=100083575545649',
@@ -99,8 +99,8 @@ for (const { photo, ...r } of restaurants) {
     image_url: imageUrl,
     featured: false,
     speaks_english: false,
-    additional_categories: [],
-    categories: [r.category],
+    additional_categories: r.category === 'seafood' ? ['local-food'] : [],
+    categories: r.category === 'seafood' ? ['seafood', 'local-food'] : [r.category],
     name_es: r.name,
     name_de: r.name,
   }).select('id').single();

@@ -1,5 +1,14 @@
 # Change Log
 
+## [2026-09-29] New "Seafood / Mariscos" category
+
+- New page `/category/seafood` (`src/pages/category/seafood.tsx`): hero, grid of places, empty state and modal, with ISR `revalidate: 3600`. It lists places whose `category = 'seafood'` or whose `categories` contain `seafood`. Copy lives in `seafoodCategory.*` in all 4 locales (es: "Mariscos", de: "Meeresfrüchte", ja: "シーフード"). Hero is `/images/restaurants-and-bars/seafood.jpg` (Google Places photo of Piraña Cubana, 1600px).
+- New `src/lib/localizePlace.ts`: picks `name_*`/`description_*` for es/de and falls back to the English base. The new page uses it.
+- DB: Jijos del Mar and Piraña Cubana moved to `category = 'seafood'`, `categories = ['seafood','local-food']`. `scripts/add-restaurants-2026-09-29.mjs` updated to match.
+- Also: `/category/seafood` added to the sitemap, `seafood` added to `isFoodPlace` in `places/[id].tsx`, and a cyan badge color in `PlaceCard`.
+- Gran Central and La Cabaña de Pecos serve seafood but aren't marisquerías, so they stay in their categories.
+- Tests: `localizePlace.test.ts` (4) and `__tests__/seafood-category.test.tsx` (2). Verified on local dev: h1 renders per locale and both places appear.
+
 ## [2026-09-29] 4 restaurants added to the directory
 
 - Added to `places` via `scripts/add-restaurants-2026-09-29.mjs` (idempotent, skips existing names). Checked first that none existed (name search, including "La Douceur").

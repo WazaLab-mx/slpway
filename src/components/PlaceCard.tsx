@@ -19,6 +19,7 @@ export default function PlaceCard({ place, featured, onClick, isSelected }: Plac
   // Category colors map for accent colors
   const categoryColors: Record<string, string> = {
     food: 'border-amber-600 text-amber-600 bg-amber-50',
+    seafood: 'border-cyan-600 text-cyan-600 bg-cyan-50',
     beverages: 'border-emerald-600 text-emerald-600 bg-emerald-50',
     'outdoor-activities': 'border-green-600 text-green-600 bg-green-50',
     service: 'border-indigo-600 text-indigo-600 bg-indigo-50',

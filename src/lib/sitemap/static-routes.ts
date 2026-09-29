@@ -68,6 +68,7 @@ export const STATIC_ROUTES: StaticRoute[] = [
   // Curated category landing pages (16 total) — added 2026-04-30 to fix
   // GSC "Discovered – currently not indexed" for these orphan URLs.
   { path: '/category/cantinas',                       changefreq: 'monthly', priority: 0.6 },
+  { path: '/category/seafood',                        changefreq: 'weekly',  priority: 0.6 },
   { path: '/category/cocktail-bars',                  changefreq: 'monthly', priority: 0.6 },
   { path: '/category/easy-parking-spots',             changefreq: 'monthly', priority: 0.5 },
   { path: '/category/english-speaking-healthcare',    changefreq: 'monthly', priority: 0.7 },
