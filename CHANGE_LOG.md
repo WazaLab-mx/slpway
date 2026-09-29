@@ -1,5 +1,12 @@
 # Change Log
 
+## [2026-09-29] 4 restaurants added to the directory
+
+- Added to `places` via `scripts/add-restaurants-2026-09-29.mjs` (idempotent, skips existing names). Checked first that none existed (name search, including "La Douceur").
+- Piaf By La Douceur (`international-food`, Bellas Lomas), Jijos del Mar (`local-food` + seafood tag, Tequisquiapan), Piraña Cubana (`local-food` + seafood tag, Plaza del Valle), Mars Burgers Lomas (`comfort-food`, Lomas 4a).
+- Address, phone, website, hours and coordinates come from the Google Places API (New). Descriptions are in en/es/de, based on Places attributes and reviews. One Google Places photo each, resized to 1600px and uploaded to Storage `images/places/<uuid>.jpg`.
+- IDs: 67340ec3-7c8c-4eb5-a110-82da5539e431, 12163c75-b5f7-48f5-b3b3-69a973bcb651, d34bfdaf-35d0-4e20-b43a-3c523aa61a9c, 337298e9-9265-459d-a80c-5d8db02d1654. `/places/<id>` returns 200 in production.
+
 ## [2026-09-29] Newsletter always ships a real hero photo
 
 - `injectHeroImage` never drops the hero: anchor order is `<!-- CARD 1` → first `<h2>` → top of the edition.
