@@ -2809,6 +2809,12 @@
       "text": "Finde unabhängige lokale Fachleute, sortiert nach echten Bewertungen, Verifizierung und Notdienst. Wir stellen den Kontakt her, du beauftragst direkt.",
       "button": "Fachbetrieb finden"
     },
-    "disclaimer": "San Luis Way bietet keine Hausdienstleistungen an. Die aufgeführten Betriebe sind unabhängig: Sie sind weder mit San Luis Way verbunden noch von uns angestellt oder empfohlen, und wir sind an ihrer Arbeit nicht beteiligt und übernehmen keine Garantie. Preis, Umfang und Zahlung vereinbarst du direkt mit ihnen."
+    "disclaimer": "San Luis Way bietet keine Hausdienstleistungen an. Die aufgeführten Betriebe sind unabhängig: Sie sind weder mit San Luis Way verbunden noch von uns angestellt oder empfohlen, und wir sind an ihrer Arbeit nicht beteiligt und übernehmen keine Garantie. Preis, Umfang und Zahlung vereinbarst du direkt mit ihnen.",
+    "homeBanner": {
+      "badge": "Haushaltsdienste",
+      "title": "Etwas zu Hause kaputt?",
+      "text": "Beschreiben Sie das Problem und wir zeigen Ihnen die bestbewerteten unabhängigen Klempner, Elektriker, Schlüsseldienste und mehr in San Luis Potosí – sortiert nach echten Bewertungen und Verifizierung.",
+      "button": "Fachkraft finden"
+    }
   }
 }

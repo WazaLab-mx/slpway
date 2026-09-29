@@ -1,5 +1,12 @@
 # Change Log
 
+## [2026-09-29] Home services banner on the home page
+
+- New `src/components/home/HomeServicesBanner.tsx`: full-width dark banner (hero photo at 30% under a gradient) with badge, title, copy, 6 category pills (plumbing, electrical, locksmith, A/C, appliance repair, cleaning) and a yellow CTA to `/san-luis-potosi-home-services#service-finder`. Click tracked as `cta_click` with id `home-services-home-banner`, page `home`.
+- Placed in `src/pages/index.tsx` right after Featured Places, before the Family Activities banner.
+- Copy lives under `homeServiceFinder.homeBanner.*` in en/es/de/ja `common.json`; pills reuse `homeServiceFinder.categories.*`.
+- Tests: `HomeServicesBanner.test.tsx` (link target, pills, tracking, copy present in all 4 locales).
+
 ## [2026-09-23] Removed the business subscription coupon feature (unused)
 
 - Removed the "¿Tienes un código de descuento?" field on `/business/subscription`, the `/api/coupons/validate` endpoint, coupon validation in `create-subscription` (admin_coupons/coupon_usage lookups and Stripe `discounts`), and `allow_promotion_codes` on Stripe Checkout, so no discount field remains anywhere. Also removed `handleCouponUsage` from the Stripe webhook and `SubscriptionEvents.applyCoupon`.

@@ -2842,6 +2842,12 @@
       "text": "Encuentra profesionales locales independientes ordenados por reseñas reales, verificación y atención de urgencias. Te conectamos; tú los contratas directamente.",
       "button": "Buscar profesional"
     },
-    "disclaimer": "San Luis Way no ofrece servicios del hogar. Los negocios listados son independientes: no están afiliados, empleados ni respaldados por San Luis Way, y no participamos ni garantizamos su trabajo. Acuerda precio, alcance y pago directamente con ellos."
+    "disclaimer": "San Luis Way no ofrece servicios del hogar. Los negocios listados son independientes: no están afiliados, empleados ni respaldados por San Luis Way, y no participamos ni garantizamos su trabajo. Acuerda precio, alcance y pago directamente con ellos.",
+    "homeBanner": {
+      "badge": "Servicios del hogar",
+      "title": "¿Se descompuso algo en casa?",
+      "text": "Describe el problema y te mostramos a los plomeros, electricistas, cerrajeros y más profesionales independientes mejor calificados de San Luis Potosí, ordenados por reseñas reales y verificación.",
+      "button": "Encontrar un profesional"
+    }
   }
 }

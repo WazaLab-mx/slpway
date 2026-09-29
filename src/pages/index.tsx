@@ -34,6 +34,7 @@ import AgentConnectBanner from '@/components/AgentConnectBanner';
 import TodayInSLP from '@/components/TodayInSLP';
 import EventCarouselBanner from '@/components/EventCarouselBanner';
 import FamilyActivitiesBanner from '@/components/FamilyActivitiesBanner';
+import HomeServicesBanner from '@/components/home/HomeServicesBanner';
 import BlogCarousel from '@/components/BlogCarousel';
 import AdUnit from '@/components/common/AdUnit';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -248,6 +249,9 @@ export default function Home({ events = [], featuredAdvertisers = [], featuredBr
 
         {/* FEATURED PLACES */}
         <FeaturedPlaces places={featuredAdvertisers} />
+
+        {/* HOME SERVICES BANNER */}
+        <HomeServicesBanner />
 
         {/* FAMILY FRIENDLY ACTIVITIES BANNER */}
         <FamilyActivitiesBanner />

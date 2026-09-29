@@ -2842,6 +2842,12 @@
       "text": "Find independent local professionals ranked by real reviews, verification and emergency availability. We connect you, you hire them directly.",
       "button": "Find a professional"
     },
-    "disclaimer": "San Luis Way does not offer home services. The businesses listed here are independent: they are not affiliated with, employed by, or endorsed by San Luis Way, and we don’t take part in or guarantee their work. Agree on price, scope and payment directly with them."
+    "disclaimer": "San Luis Way does not offer home services. The businesses listed here are independent: they are not affiliated with, employed by, or endorsed by San Luis Way, and we don’t take part in or guarantee their work. Agree on price, scope and payment directly with them.",
+    "homeBanner": {
+      "badge": "Home services",
+      "title": "Something broke at home?",
+      "text": "Describe the problem and we’ll point you to top-rated independent plumbers, electricians, locksmiths and more in San Luis Potosí, ranked by real reviews and verification.",
+      "button": "Find a professional"
+    }
   }
 }
