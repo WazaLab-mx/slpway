@@ -1,5 +1,15 @@
 # Change Log
 
+## [2026-09-29] La Bocana and La Bocanita branches added (Marisquerías)
+
+- `scripts/add-bocana-branches-2026-09-29.mjs` adds all 5 restaurant branches found in Google Places (API New, several queries including branch/area variants) as `category = 'seafood'`:
+  - La Bocana Cuauhtémoc (beae3798), La Bocana Himno Nacional (ea05fd61), La Bocana Villa de Pozos (d5ab5d11)
+  - La Bocanita Cuauhtémoc (ebb179ea), La Bocanita Sierra Leona (779ee076)
+- Left out: Pescadería La Bocana (Nogales 241). Google lists it as a market/fish shop, not a restaurant.
+- Names carry the branch area so they are unique in the directory. Each has a photo from its own Google listing, uploaded to Storage. en/es/de descriptions are shared per brand.
+- Insert logic moved to `scripts/lib/add-places.mjs` (idempotent by name), now used by both add scripts. Re-running the earlier script skipped all 4 existing rows.
+- Production: all 7 `seafood` places return 200 with image 200. The `/places` listing picks them up on its hourly ISR revalidate.
+
 ## [2026-09-29] Seafood is a directory category, not a page
 
 - Per owner feedback: removed `/category/seafood` (page, `seafoodCategory.*` copy including the "far from the sea" intro, hero image, test, sitemap entry) and `localizePlace.ts`, which only that page used. Marisquerías are a regular category inside `/places`.

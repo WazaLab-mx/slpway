@@ -1,16 +1,6 @@
 // Adds 4 restaurants to `places` with data from Google Places (2026-09-29).
 // Usage: node scripts/add-restaurants-2026-09-29.mjs <photos-dir>
-// Idempotent: skips any restaurant whose name already exists.
-import 'dotenv/config';
-import fs from 'fs';
-import path from 'path';
-import { randomUUID } from 'crypto';
-import { createClient } from '@supabase/supabase-js';
-
-const photosDir = process.argv[2];
-if (!photosDir) throw new Error('Pass the photos directory as the first argument');
-
-const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+import { addPlaces } from './lib/add-places.mjs';
 
 const restaurants = [
   {
@@ -79,31 +69,4 @@ const restaurants = [
   },
 ];
 
-for (const { photo, ...r } of restaurants) {
-  const { data: existing } = await sb.from('places').select('id').ilike('name', r.name);
-  if (existing?.length) {
-    console.log(`skip ${r.name}: already exists (${existing[0].id})`);
-    continue;
-  }
-
-  const objectPath = `places/${randomUUID()}.jpg`;
-  const { error: uploadError } = await sb.storage
-    .from('images')
-    .upload(objectPath, fs.readFileSync(path.join(photosDir, photo)), { contentType: 'image/jpeg' });
-  if (uploadError) throw new Error(`${r.name} photo upload: ${uploadError.message}`);
-  const imageUrl = sb.storage.from('images').getPublicUrl(objectPath).data.publicUrl;
-
-  const { data, error } = await sb.from('places').insert({
-    ...r,
-    city: 'San Luis Potosí',
-    image_url: imageUrl,
-    featured: false,
-    speaks_english: false,
-    additional_categories: [],
-    categories: [r.category],
-    name_es: r.name,
-    name_de: r.name,
-  }).select('id').single();
-  if (error) throw new Error(`${r.name} insert: ${error.message}`);
-  console.log(`added ${r.name} -> ${data.id}`);
-}
+await addPlaces(restaurants, process.argv[2]);
