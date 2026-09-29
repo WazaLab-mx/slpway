@@ -183,6 +183,36 @@ describe('injectFeaturedBlogImage', () => {
   });
 });
 
+describe('newsletter images in the Smart Brevity layout (no CARD comments)', () => {
+  // Shape of the 2026-09-29 edition: the model dropped the <!-- CARD 1 --> comment
+  // and wrapped the FEATURED label in <em>.
+  const edition = `<p><em>📬 September 29–October 6, 2026</em></p>
+<p>¡Hola, potosinos!</p>
+<h2>☕ 1 big thing</h2>
+<h3>📖 From the Blog</h3>
+<p><em>FEATURED</em></p>
+<h4>The masked Day of the Dead</h4>
+<p><a href="https://www.sanluisway.com/blog/xantolo-guide?utm_content=go-deeper">Read the Full Story →</a></p>`;
+
+  it('places the hero above the first section heading when the card comment is gone', () => {
+    const out = injectHeroImage(edition, { image_url: 'https://cdn.example.com/slp.jpg', title: 'SLP' });
+    expect(out).toContain('src="https://cdn.example.com/slp.jpg"');
+    expect(out.indexOf('slp.jpg')).toBeLessThan(out.indexOf('<h2>'));
+    expect(out.indexOf('slp.jpg')).toBeGreaterThan(out.indexOf('¡Hola'));
+  });
+
+  it('makes site-relative image paths absolute so they load in email clients', () => {
+    const out = injectHeroImage(edition, { image_url: '/images/heroes/slp-airport-guide.jpg', title: 'SLP' });
+    expect(out).toContain('src="https://www.sanluisway.com/images/heroes/slp-airport-guide.jpg"');
+  });
+
+  it('injects the featured post image when the label is an <em>', () => {
+    const out = injectFeaturedBlogImage(edition, [{ slug: 'xantolo-guide', image_url: '/images/events/xantolo-image-3.jpg', title_en: 'Xantolo' }]);
+    expect(out).toContain('src="https://www.sanluisway.com/images/events/xantolo-image-3.jpg"');
+    expect(out.indexOf('xantolo-image-3.jpg')).toBeLessThan(out.indexOf('FEATURED'));
+  });
+});
+
 describe('getCurrentNewsletterDates helper', () => {
   it('returns a date range based on today', () => {
     const referenceDate = new Date(Date.UTC(2025, 11, 2)); // December 2, 2025 UTC

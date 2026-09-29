@@ -211,6 +211,7 @@ export async function generateWeeklyNewsletter(customContent?: string) {
     .from('blog_posts')
     .select('slug, title, title_en, discover_title, excerpt, excerpt_en, category, image_url')
     .eq('status', 'published')
+    .lte('published_at', new Date().toISOString()) // scheduled posts 404 until their date
     .order('published_at', { ascending: false })
     .limit(10);
 

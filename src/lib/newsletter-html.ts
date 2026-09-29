@@ -204,6 +204,13 @@ export function injectFooterIntoNewsletter(html: string): string {
   return html + CLOSING_AND_FOOTER_HTML;
 }
 
+const SITE_URL = 'https://www.sanluisway.com';
+
+// Email clients have no base URL, so site-relative paths (/images/...) never load.
+export function toAbsoluteImageUrl(url: string): string {
+  return url.startsWith('/') ? `${SITE_URL}${url}` : url;
+}
+
 // Builds the hero image block from a DB-hosted photo. Semantic markup only:
 // the newsletter is pasted into Beehiiv's editor, which keeps <p>/<img> and
 // discards table layout and inline CSS.
@@ -211,17 +218,20 @@ export function buildHeroImageHtml(photo: { image_url: string; title?: string | 
   const alt = (photo.title || 'San Luis Potosí').replace(/"/g, '&quot;');
   return `
 <!-- HERO IMAGE -->
-<p><img src="${photo.image_url}" alt="${alt}" /></p>`;
+<p><img src="${toAbsoluteImageUrl(photo.image_url)}" alt="${alt}" /></p>`;
 }
 
-// Injects the hero image directly above the first content card. No-op if the
-// anchor isn't found so a missing card never drops content.
+// Injects the hero image above the first content card. The model doesn't always
+// keep the <!-- CARD 1 --> comment, so the first section heading is the fallback
+// anchor. No-op if neither is found so a missing card never drops content.
 export function injectHeroImage(
   html: string,
   photo: { image_url: string; title?: string | null } | null
 ): string {
-  if (!photo?.image_url || !html.includes('<!-- CARD 1')) return html;
-  return html.replace('<!-- CARD 1', `${buildHeroImageHtml(photo).trim()}\n\n          <!-- CARD 1`);
+  if (!photo?.image_url) return html;
+  const anchor = html.includes('<!-- CARD 1') ? '<!-- CARD 1' : html.match(/<h2[\s>]/)?.[0];
+  if (!anchor) return html;
+  return html.replace(anchor, `${buildHeroImageHtml(photo).trim()}\n\n${anchor}`);
 }
 
 // Injects the featured blog post's real image into the "From the Blog" card by
@@ -236,6 +246,6 @@ export function injectFeaturedBlogImage(
   const post = blogPosts.find((p) => p.slug === anchorMatch[1]);
   if (!post?.image_url) return html;
   const alt = (post.title_en || post.title || 'San Luis Way').replace(/"/g, '&quot;');
-  const img = `<img src="${post.image_url}" alt="${alt}" width="520" style="width: 100%; max-width: 520px; height: auto; display: block; border-radius: 8px; margin: 0 0 12px 0;" />`;
-  return html.replace(/(<span[^>]*>FEATURED<\/span>)/i, `${img}$1`);
+  const img = `<img src="${toAbsoluteImageUrl(post.image_url)}" alt="${alt}" width="520" style="width: 100%; max-width: 520px; height: auto; display: block; border-radius: 8px; margin: 0 0 12px 0;" />`;
+  return html.replace(/(<(?:p|span|em|strong)[^>]*>\s*(?:<(?:em|strong|span)[^>]*>\s*)?FEATURED\b)/i, `${img}$1`);
 }

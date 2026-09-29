@@ -1,5 +1,13 @@
 # Change Log
 
+## [2026-09-29] Newsletter: no scheduled posts, images back
+
+- Bug: the generator picked the 10 latest `status=published` posts without a date filter, so scheduled posts came first. The 2026-09-29 edition featured `xantolo-dia-de-muertos-huasteca-potosina` (scheduled for 2026-10-05, 404 today); the link validator swapped it for `/events` and the blog image was lost. Fix: `.lte('published_at', now)` in `newsletter-generator.ts`, same as `blog.ts` and the sitemap.
+- Bug: 0 images in today's editions. `injectHeroImage` only anchored on `<!-- CARD 1`, which the model no longer always keeps. It now falls back to the first `<h2>`. `injectFeaturedBlogImage` only matched `<span>FEATURED</span>`; it now also matches `<em>`/`<strong>`/`<p>`.
+- Bug: the hero came from blog `image_url` values like `/images/heroes/...` (relative). Those never load in email clients. `toAbsoluteImageUrl` prefixes `https://www.sanluisway.com`.
+- `featured_photos` still has 0 active rows, so the hero keeps rotating through recent blog images. No AI image generation exists in the newsletter pipeline (never did).
+- Tests: +3 in `newsletter-generator.test.ts` using the 2026-09-29 edition structure (21/21).
+
 ## [2026-09-29] Home services banner on the home page
 
 - New `src/components/home/HomeServicesBanner.tsx`: full-width dark banner (hero photo at 30% under a gradient) with badge, title, copy, 6 category pills (plumbing, electrical, locksmith, A/C, appliance repair, cleaning) and a yellow CTA to `/san-luis-potosi-home-services#service-finder`. Click tracked as `cta_click` with id `home-services-home-banner`, page `home`.
