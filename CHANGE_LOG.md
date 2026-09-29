@@ -72,6 +72,10 @@
 - Wired into `curateFromFeeds` (4th arg) and `scheduled-social-trends-background.js`. `.env.example` gets a `TYPESAFE_API_KEY` placeholder; the real key goes in `.env` and Netlify env vars.
 - Thresholds are initial values; check them against real Netlify logs ("Dropped by Jev") once the key is live.
 
+## [2026-09-21] Generic newsletter agent brief
+
+- Added `templates/newsletter-agent-brief.md`: a client-agnostic machote distilled from the current Smart Brevity generator (prompt, template, subject rules, and email shell). Place, sources, currency, and URLs are fill-in fields so another project can reuse the system.
+
 ## [2026-09-21] Contact address is sanluisway@wazalab.mx
 
 - Replaced public contact addresses (`sanluisway@waza.baby`, `info@sanluisway.com`, `contacto@sanluisway.com`, `community@sanluis.way`, and the contact-form dev recipient) with `sanluisway@wazalab.mx` on footer, forms, legal pages, FAQ, community, media kit, advertise, and the send-email default From.
