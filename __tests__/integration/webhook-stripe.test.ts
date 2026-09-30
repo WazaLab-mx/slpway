@@ -121,8 +121,13 @@ describe('Stripe Webhook Integration Tests', () => {
 
     await webhookHandler(req, res);
 
+    expect(res.status).toHaveBeenCalledWith(200);
     expect(res.json).toHaveBeenCalledWith(
-      expect.objectContaining({ success: true })
+      expect.objectContaining({ 
+        received: true,
+        event: 'checkout.session.completed',
+        result: expect.objectContaining({ success: true })
+      })
     );
   });
 
@@ -170,8 +175,13 @@ describe('Stripe Webhook Integration Tests', () => {
 
     await webhookHandler(req, res);
 
+    expect(res.status).toHaveBeenCalledWith(200);
     expect(res.json).toHaveBeenCalledWith(
-      expect.objectContaining({ success: true })
+      expect.objectContaining({ 
+        received: true,
+        event: 'checkout.session.completed',
+        result: expect.objectContaining({ success: true })
+      })
     );
   });
 
@@ -189,7 +199,11 @@ describe('Stripe Webhook Integration Tests', () => {
 
     await webhookHandler(req, res);
 
-    expect(res.json).toHaveBeenCalledWith({ received: true });
+    expect(res.status).toHaveBeenCalledWith(200);
+    expect(res.json).toHaveBeenCalledWith({ 
+      received: true,
+      event: 'payment_intent.succeeded'
+    });
   });
 
   it('handles subscription created event with existing stripe_customer_id', async () => {
@@ -534,8 +548,14 @@ describe('Stripe Webhook Integration Tests', () => {
 
     await webhookHandler(req, res);
 
-    // Should return 500 error due to missing period end
-    expect(res.status).toHaveBeenCalledWith(500);
+    // Should return 200 with error to prevent Stripe retries (malformed subscription data)
+    expect(res.status).toHaveBeenCalledWith(200);
+    expect(res.json).toHaveBeenCalledWith(
+      expect.objectContaining({
+        received: true,
+        error: expect.any(String)
+      })
+    );
   });
 
   it('handles checkout.session.completed using service role client for orders', async () => {
@@ -583,8 +603,128 @@ describe('Stripe Webhook Integration Tests', () => {
 
     // Verify that supabaseAdminFrom was called (service role client)
     expect(mocks.supabaseAdminFrom).toHaveBeenCalledWith('orders');
+    expect(res.status).toHaveBeenCalledWith(200);
     expect(res.json).toHaveBeenCalledWith(
-      expect.objectContaining({ success: true })
+      expect.objectContaining({ 
+        received: true,
+        result: expect.objectContaining({ success: true })
+      })
+    );
+  });
+
+  it('returns 200 even when orders table insert fails (non-fatal error)', async () => {
+    mocks.constructEvent.mockReturnValueOnce({
+      type: 'checkout.session.completed',
+      data: {
+        object: {
+          id: 'cs_test_order_fail',
+          payment_status: 'paid',
+          amount_total: 5000,
+          metadata: { user_id: 'user-789' },
+          customer_details: { email: 'orderfail@example.com' },
+          payment_intent: 'pi_test_789',
+          mode: 'payment',
+        },
+      },
+    });
+
+    // Mock existing order check - not found
+    const existingOrderChain = {
+      select: jest.fn().mockReturnThis(),
+      eq: jest.fn().mockReturnThis(),
+      single: jest.fn().mockResolvedValue({ data: null, error: { code: 'PGRST116' } }),
+    };
+    mocks.supabaseAdminFrom.mockReturnValueOnce(existingOrderChain);
+
+    // Mock order insert - fails with RLS error
+    const insertChain = {
+      insert: jest.fn().mockReturnThis(),
+      select: jest.fn().mockReturnThis(),
+      single: jest.fn().mockResolvedValue({
+        data: null,
+        error: { message: 'new row violates row-level security policy', code: '42501' },
+      }),
+    };
+    mocks.supabaseAdminFrom.mockReturnValueOnce(insertChain);
+
+    const req = createMockRequest({
+      method: 'POST',
+      headers: { 'stripe-signature': 'sig_valid' },
+    });
+    const res = createMockResponse();
+
+    await webhookHandler(req, res);
+
+    // Should return 200 with error details, not 500
+    expect(res.status).toHaveBeenCalledWith(200);
+    expect(res.json).toHaveBeenCalledWith(
+      expect.objectContaining({ 
+        received: true,
+        result: expect.objectContaining({ success: false })
+      })
+    );
+  });
+
+  it('subscription events always return 200 to prevent Stripe retries', async () => {
+    mocks.constructEvent.mockReturnValueOnce({
+      type: 'customer.subscription.created',
+      data: {
+        object: {
+          id: 'sub_test_always_200',
+          customer: 'cus_test_always_200',
+          status: 'active',
+          current_period_end: Math.floor(Date.now() / 1000) + 86400 * 30,
+          metadata: {},
+        },
+      },
+    });
+
+    // Mock user lookup - succeeds
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      select: jest.fn().mockReturnThis(),
+      eq: jest.fn().mockReturnThis(),
+      single: jest.fn().mockResolvedValue({
+        data: { id: 'user-always-200' },
+        error: null,
+      }),
+    });
+
+    // Mock business profile lookup - succeeds
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      select: jest.fn().mockReturnThis(),
+      eq: jest.fn().mockReturnThis(),
+      single: jest.fn().mockResolvedValue({
+        data: { id: 'bp-always-200', user_id: 'user-always-200' },
+        error: null,
+      }),
+    });
+
+    // Mock business profile update - succeeds
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      update: jest.fn().mockReturnThis(),
+      eq: jest.fn().mockResolvedValue({ error: null }),
+    });
+
+    // Mock subscriptions table upsert - succeeds
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      upsert: jest.fn().mockResolvedValue({ error: null }),
+    });
+
+    const req = createMockRequest({
+      method: 'POST',
+      headers: { 'stripe-signature': 'sig_valid' },
+    });
+    const res = createMockResponse();
+
+    await webhookHandler(req, res);
+
+    // Should always return 200 with received: true
+    expect(res.status).toHaveBeenCalledWith(200);
+    expect(res.json).toHaveBeenCalledWith(
+      expect.objectContaining({ 
+        received: true,
+        event: 'customer.subscription.created'
+      })
     );
   });
 });

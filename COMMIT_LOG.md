@@ -1,5 +1,23 @@
 # Commit Log
 
+## 2026-09-30 — feat: add is_featured column migration and fix webhook HTTP responses
+
+- Baseline: main branch after PR #7 merge (ecd0ec7). Commit c3133f7. PR #8 created (ready for review).
+- Problem: Live verification after PR #7 revealed: (1) `is_featured` column missing in production Supabase (PGRST204), (2) subscription webhook handlers returning no HTTP response → 504 timeouts, (3) checkout.session.completed returning 500 on orders table errors.
+- Root causes:
+  1. **Missing column**: Migration `20240530000000_add_subscriptions.sql` defines `is_featured` but was never applied to production.
+  2. **504 timeouts**: Handlers for `customer.subscription.created|updated|deleted` and `account.updated` use `break` without `return res.status(200)`, leaving serverless function hanging.
+  3. **500 on orders fail**: checkout handler throws on orders table errors, returning 500 to Stripe → retries forever, Featured never updates.
+- Changes:
+  - `supabase/migrations/20260930000000_add_is_featured_to_business_profiles.sql`: Idempotent migration that adds `is_featured boolean not null default false`, plus `subscription_status`, `subscription_id`, `subscription_end_date` columns. Creates index on `is_featured` for efficient queries. Safe to run multiple times.
+  - `src/pages/api/webhook/stripe.ts`: All event handlers now return HTTP 200 responses. `handleCheckoutSession` returns success/error object instead of throwing. Orders table failures return 200 with error (non-fatal). Subscription handlers wrapped in try-catch, always return 200 to prevent Stripe retries.
+  - `__tests__/integration/webhook-stripe.test.ts`: Updated all tests to expect 200 responses. Added test for orders failure returning 200. Added test for subscription events always returning 200. 13/13 webhook tests pass, 538/538 total.
+- Testing: All webhook tests pass. New coverage: orders table failures don't cause 500, subscription handlers always return 200.
+- Impact: Critical fix for production Featured subscriptions. Prevents webhook timeouts and ensures Featured updates succeed even if orders table fails.
+- Migration instructions: SQL provided in PR body for manual application in Supabase SQL Editor (idempotent, safe to run).
+- Branch: cursor/add-is-featured-column-and-fix-webhook-responses-915e. PR: https://github.com/WazaLab-mx/slpway/pull/8
+- Rollback: Revert the commit. If migration was applied: columns remain but are unused (safe).
+
 ## 2026-09-30 — fix: Stripe webhook handling for Basil API subscriptions
 
 - Baseline: main branch at HEAD. Commit a54cc36. PR #7 created (ready for review).
