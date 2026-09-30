@@ -26,9 +26,9 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
 
 async function handleCheckoutSession(session: Stripe.Checkout.Session) {
-  try {
-    logger.log('Processing checkout session:', session.id, 'Payment status:', session.payment_status);
+  logger.log('Processing checkout session:', session.id, 'Payment status:', session.payment_status);
 
+  try {
     // First check if an order already exists (use service role client for RLS)
     const { data: existingOrder } = await supabaseClient
       .from('orders')
@@ -65,7 +65,7 @@ async function handleCheckoutSession(session: Stripe.Checkout.Session) {
       }
 
       logger.log('Order updated successfully:', order?.id);
-      return order;
+      return { success: true, order: order?.id };
     } else {
       logger.log('Creating new order for session:', session.id);
       // Generate order number
@@ -112,11 +112,11 @@ async function handleCheckoutSession(session: Stripe.Checkout.Session) {
       }
 
       logger.log('New order created successfully:', order?.id, 'with status:', orderStatus);
-      return order;
+      return { success: true, order: order?.id };
     }
   } catch (error) {
     logger.error('Error in handleCheckoutSession:', error);
-    throw error;
+    return { success: false, error: 'Failed to process order', details: (error as Error).message };
   }
 }
 
@@ -143,56 +143,86 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Handle the event
     switch (event.type) {
-      case 'checkout.session.completed':
+      case 'checkout.session.completed': {
         const session = event.data.object as Stripe.Checkout.Session;
         logger.log('Processing completed session:', session.id);
 
-        try {
-          const order = await handleCheckoutSession(session);
-
-          logger.log('Successfully processed order:', order?.id);
-          return res.json({ success: true, order: order?.id });
-        } catch (error) {
-          logger.error('Error processing checkout session:', error);
-          return res.status(500).json({ error: 'Error processing checkout session' });
+        const result = await handleCheckoutSession(session);
+        
+        if (result.success) {
+          logger.log('Successfully processed order:', result.order);
+        } else {
+          logger.error('Failed to process checkout session order (non-fatal):', result.error);
         }
+        
+        return res.status(200).json({ received: true, event: event.type, result });
+      }
 
-      case 'checkout.session.expired':
+      case 'checkout.session.expired': {
         const expiredSession = event.data.object as Stripe.Checkout.Session;
         logger.log('Processing expired session:', expiredSession.id);
 
-        try {
-          const order = await handleCheckoutSession(expiredSession);
-          logger.log('Successfully processed expired session:', order?.id);
-        } catch (error) {
-          logger.error('Error processing expired session:', error);
-          return res.status(500).json({ error: 'Error processing expired session' });
+        const result = await handleCheckoutSession(expiredSession);
+        
+        if (result.success) {
+          logger.log('Successfully processed expired session order:', result.order);
+        } else {
+          logger.error('Failed to process expired session order (non-fatal):', result.error);
         }
-        break;
+        
+        return res.status(200).json({ received: true, event: event.type, result });
+      }
 
       case 'customer.subscription.created':
       case 'customer.subscription.updated': {
         const subscription = event.data.object as Stripe.Subscription;
-        await handleSubscriptionChange(subscription);
-        break;
+        logger.log('Processing subscription event:', event.type, subscription.id);
+
+        try {
+          await handleSubscriptionChange(subscription);
+          logger.log('Successfully processed subscription:', subscription.id);
+          return res.status(200).json({ received: true, event: event.type, subscription_id: subscription.id });
+        } catch (error) {
+          logger.error('Error processing subscription (returning 200 to prevent retries):', error);
+          return res.status(200).json({ received: true, event: event.type, error: (error as Error).message });
+        }
       }
+
       case 'customer.subscription.deleted': {
         const subscription = event.data.object as Stripe.Subscription;
-        await handleSubscriptionDeleted(subscription);
-        break;
+        logger.log('Processing subscription deletion:', subscription.id);
+
+        try {
+          await handleSubscriptionDeleted(subscription);
+          logger.log('Successfully processed subscription deletion:', subscription.id);
+          return res.status(200).json({ received: true, event: event.type, subscription_id: subscription.id });
+        } catch (error) {
+          logger.error('Error processing subscription deletion (returning 200 to prevent retries):', error);
+          return res.status(200).json({ received: true, event: event.type, error: (error as Error).message });
+        }
       }
+
       case 'account.updated': {
         const account = event.data.object as Stripe.Account;
-        await handleAccountUpdated(account);
-        break;
+        logger.log('Processing account update:', account.id);
+
+        try {
+          await handleAccountUpdated(account);
+          logger.log('Successfully processed account update:', account.id);
+          return res.status(200).json({ received: true, event: event.type, account_id: account.id });
+        } catch (error) {
+          logger.error('Error processing account update (returning 200 to prevent retries):', error);
+          return res.status(200).json({ received: true, event: event.type, error: (error as Error).message });
+        }
       }
+
       default:
         logger.log(`Unhandled event type: ${event.type}`);
-        return res.json({ received: true });
+        return res.status(200).json({ received: true, event: event.type });
     }
   } catch (err) {
-    logger.error('Error processing webhook:', err);
-    return res.status(500).json({ error: 'Webhook handler failed' });
+    logger.error('Critical error processing webhook:', err);
+    return res.status(500).json({ error: 'Webhook handler failed', message: (err as Error).message });
   }
 }
 
