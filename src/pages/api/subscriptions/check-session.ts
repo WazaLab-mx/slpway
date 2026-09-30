@@ -40,8 +40,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (!session) {
       logger.log('No active user session, but checking subscription status from Stripe session');
 
-      // Get user ID from Stripe session metadata
-      const userId = checkoutSession.metadata?.userId;
+      // Get user ID from Stripe session metadata (try both userId and user_id for compatibility)
+      const userId = checkoutSession.metadata?.userId || checkoutSession.metadata?.user_id;
 
       if (!userId) {
         return res.status(401).json({
@@ -87,8 +87,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       });
     }
 
-    // Check if the session belongs to the authenticated user
-    if (checkoutSession.metadata?.userId !== session.user.id) {
+    // Check if the session belongs to the authenticated user (try both userId and user_id for compatibility)
+    const sessionUserId = checkoutSession.metadata?.userId || checkoutSession.metadata?.user_id;
+    if (sessionUserId !== session.user.id) {
       return res.status(403).json({ error: 'Unauthorized to access this session' });
     }
 

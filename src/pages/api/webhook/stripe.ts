@@ -29,8 +29,8 @@ async function handleCheckoutSession(session: Stripe.Checkout.Session) {
   try {
     logger.log('Processing checkout session:', session.id, 'Payment status:', session.payment_status);
 
-    // First check if an order already exists
-    const { data: existingOrder } = await supabase
+    // First check if an order already exists (use service role client for RLS)
+    const { data: existingOrder } = await supabaseClient
       .from('orders')
       .select("*")
       .eq('stripe_session_id', session.id)
@@ -47,8 +47,8 @@ async function handleCheckoutSession(session: Stripe.Checkout.Session) {
 
     if (existingOrder) {
       logger.log('Updating existing order:', existingOrder.id);
-      // Update existing order
-      const { data: order, error: orderError } = await supabase
+      // Update existing order (use service role client for RLS)
+      const { data: order, error: orderError } = await supabaseClient
         .from('orders')
         .update({
           status: orderStatus,
@@ -85,8 +85,8 @@ async function handleCheckoutSession(session: Stripe.Checkout.Session) {
       const customer = session.customer_details;
       const shippingAddress = (session as any).shipping_details || customer?.address;
 
-      // Create new order with completed status if payment is successful
-      const { data: order, error: orderError } = await supabase
+      // Create new order with completed status if payment is successful (use service role client for RLS)
+      const { data: order, error: orderError } = await supabaseClient
         .from('orders')
         .insert([
           {
@@ -290,7 +290,25 @@ async function handleSubscriptionChange(subscription: Stripe.Subscription) {
 
   // Extract subscription details
   const status = subscription.status;
-  const currentPeriodEnd = new Date((subscription as Stripe.Subscription & { current_period_end: number }).current_period_end * 1000).toISOString();
+
+  // Extract current_period_end - handle Basil-era API where it may be on items instead of top-level
+  let currentPeriodEndTimestamp: number | null = null;
+
+  // Try top-level first (older API versions)
+  if (subscription.current_period_end) {
+    currentPeriodEndTimestamp = subscription.current_period_end;
+  }
+  // Fall back to subscription items (Basil-era API)
+  else if (subscription.items?.data?.[0]?.current_period_end) {
+    currentPeriodEndTimestamp = subscription.items.data[0].current_period_end;
+  }
+
+  if (!currentPeriodEndTimestamp) {
+    logger.error('Could not extract current_period_end from subscription:', subscription.id);
+    throw new Error('Missing current_period_end in subscription data');
+  }
+
+  const currentPeriodEnd = new Date(currentPeriodEndTimestamp * 1000).toISOString();
 
   // Determine if the subscription makes the business featured
   const isFeatured = ['active', 'trialing'].includes(status);
