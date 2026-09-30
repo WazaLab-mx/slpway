@@ -202,20 +202,76 @@ async function handleSubscriptionChange(subscription: Stripe.Subscription) {
   const customerId = subscription.customer as string;
 
   // Find user with this Stripe customer ID
-  const { data: userData, error: userError } = await supabaseClient
+  let { data: userData, error: userError } = await supabaseClient
     .from('users')
     .select("*")
     .eq('stripe_customer_id', customerId)
     .single();
 
-  if (userError) {
-    logger.error('Error finding user for subscription:', userError);
-    return;
-  }
+  if (userError || !userData) {
+    logger.log('No user found by stripe_customer_id:', customerId, 'Error:', userError?.message);
 
-  if (!userData) {
-    logger.error('No user found for customer ID:', customerId);
-    return;
+    // Fallback: try to get user_id from subscription metadata or related checkout session
+    let userId: string | null = null;
+
+    // First, try metadata on the subscription itself
+    if (subscription.metadata?.user_id) {
+      userId = subscription.metadata.user_id;
+      logger.log('Found user_id in subscription metadata:', userId);
+    }
+
+    // If not in subscription metadata, try to fetch the original checkout session
+    if (!userId) {
+      try {
+        const sessions = await stripe.checkout.sessions.list({
+          customer: customerId,
+          limit: 100,
+        });
+
+        // Find session with matching subscription
+        const matchingSession = sessions.data.find(
+          (s) => s.subscription === subscription.id
+        );
+
+        if (matchingSession?.metadata?.user_id) {
+          userId = matchingSession.metadata.user_id;
+          logger.log('Found user_id in checkout session metadata:', userId);
+        }
+      } catch (error) {
+        logger.error('Error fetching checkout sessions for fallback:', error);
+      }
+    }
+
+    if (!userId) {
+      logger.error('Could not resolve user_id from metadata for customer:', customerId);
+      return;
+    }
+
+    // Fetch user by resolved user_id
+    const { data: fallbackUserData, error: fallbackError } = await supabaseClient
+      .from('users')
+      .select("*")
+      .eq('id', userId)
+      .single();
+
+    if (fallbackError || !fallbackUserData) {
+      logger.error('Error fetching user by fallback user_id:', userId, fallbackError);
+      return;
+    }
+
+    userData = fallbackUserData;
+
+    // Update user with stripe_customer_id for future lookups
+    const { error: updateError } = await supabaseClient
+      .from('users')
+      .update({ stripe_customer_id: customerId })
+      .eq('id', userId);
+
+    if (updateError) {
+      logger.error('Error updating user with stripe_customer_id:', updateError);
+    } else {
+      logger.log('Updated user with stripe_customer_id:', userId, customerId);
+    }
   }
 
   const userId = userData.id;
