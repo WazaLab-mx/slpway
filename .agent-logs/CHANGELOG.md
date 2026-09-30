@@ -6,7 +6,7 @@ This log tracks all changes made to the project, including detailed descriptions
 
 ## 2026-09-30 - Fix Featured Directory Subscription Payment Issue
 
-### Commit: `1868837`
+### Commits: `1868837`, `9c64ed9`, `ea4eccf`
 **Branch:** `cursor/fix-featured-subscription-33c9`
 **PR:** [#6](https://github.com/WazaLab-mx/slpway/pull/6)
 
@@ -78,6 +78,13 @@ After successful Stripe Checkout payment for Featured Directory (250 MXN/mo), th
 6. Verify `stripe_customer_id` is saved in users table
 7. Test subscription cancellation sets `is_featured = false`
 
+### Hardening (commit `ea4eccf`)
+- **Added `subscription_data.metadata`** to checkout session creation
+- Stripe does not automatically copy Checkout Session metadata to Subscription object
+- Without this, webhook's metadata fallback would read empty `subscription.metadata.user_id`
+- Now metadata is explicitly copied: `user_id`, `business_id`, `interval`
+- Ensures fallback path works even when `stripe_customer_id` lookup fails
+
 ### Technical Details
 - **Stripe API version**: `2025-04-30.basil`
 - **Price IDs**:
@@ -87,5 +94,8 @@ After successful Stripe Checkout payment for Featured Directory (250 MXN/mo), th
   - `customer.subscription.created`
   - `customer.subscription.updated`
   - `customer.subscription.deleted`
+- **Metadata paths**:
+  - Session-level: For order tracking (kept for backward compatibility)
+  - Subscription-level: For webhook fallback user resolution
 
 ---
