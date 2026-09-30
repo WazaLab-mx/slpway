@@ -99,3 +99,117 @@ After successful Stripe Checkout payment for Featured Directory (250 MXN/mo), th
   - Subscription-level: For webhook fallback user resolution
 
 ---
+
+## 2026-09-30 - Fix Stripe Webhook RangeError and RLS Issues on Live Payment
+
+### Commit: `a54cc36`
+**Branch:** `cursor/fix-stripe-subscription-webhook-915e`
+**PR:** [#7](https://github.com/WazaLab-mx/slpway/pull/7)
+
+### Problem Description
+After a live Featured subscription payment (logged-in smoke test), Stripe fired `customer.subscription.created` and `checkout.session.completed`, but `business_profiles.is_featured` never became true.
+
+Production Netlify function logs (2026-09-30 ~15:47 UTC) showed:
+1. `Error processing webhook: RangeError: Invalid time value` at `Date.toISOString` inside `pages/api/webhook/stripe`
+2. For checkout.session.completed: `Error creating order: ... new row violates row-level security policy for table "orders"`
+
+### Root Cause Analysis
+1. **RangeError on current_period_end**:
+   - Code tried to access `subscription.current_period_end` directly
+   - In Basil-era Stripe API (2025-04-30.basil), this field is `null` on top-level
+   - Actual period timestamp lives at `subscription.items.data[0].current_period_end`
+   - Handler crashed with "Invalid time value" → 500 → Stripe retries → Featured never set
+
+2. **RLS Policy Violation**:
+   - `handleCheckoutSession` used anon Supabase client (`supabase`) for orders table operations
+   - RLS policies require service role permissions for webhook writes
+   - Result: "new row violates row-level security policy" → 500
+
+3. **Metadata Key Mismatch** (secondary):
+   - `create-subscription.ts` writes `user_id` in metadata
+   - `check-session.ts` reads `userId`
+   - May cause UI to show "could not confirm" even after successful payment
+
+### Solution Implemented
+
+#### 1. Fix Basil API current_period_end Extraction (webhook/stripe.ts)
+```typescript
+// Extract current_period_end - handle Basil-era API where it may be on items
+let currentPeriodEndTimestamp: number | null = null;
+
+// Try top-level first (older API versions)
+if (subscription.current_period_end) {
+  currentPeriodEndTimestamp = subscription.current_period_end;
+}
+// Fall back to subscription items (Basil-era API)
+else if (subscription.items?.data?.[0]?.current_period_end) {
+  currentPeriodEndTimestamp = subscription.items.data[0].current_period_end;
+}
+
+if (!currentPeriodEndTimestamp) {
+  throw new Error('Missing current_period_end in subscription data');
+}
+
+const currentPeriodEnd = new Date(currentPeriodEndTimestamp * 1000).toISOString();
+```
+
+#### 2. Fix RLS Policy Violations (webhook/stripe.ts)
+Changed all orders table operations in `handleCheckoutSession` to use `supabaseClient` (service role) instead of `supabase` (anon client):
+- `existingOrder` query now uses service role client
+- Order `insert` operations now use service role client
+- Order `update` operations now use service role client
+
+#### 3. Fix Metadata Key Compatibility (check-session.ts)
+Updated to support both `userId` and `user_id` metadata keys:
+```typescript
+const userId = checkoutSession.metadata?.userId || checkoutSession.metadata?.user_id;
+```
+
+### Files Changed
+1. `src/pages/api/webhook/stripe.ts` - 23 lines modified
+   - Fixed `current_period_end` extraction (lines 291-307)
+   - Changed orders operations to use `supabaseClient` (lines 33, 52, 90)
+2. `src/pages/api/subscriptions/check-session.ts` - 4 lines modified
+   - Added fallback for both metadata key formats (lines 44, 91)
+3. `__tests__/integration/webhook-stripe.test.ts` - 200 lines added
+   - Added test for Basil-era subscription structure
+   - Added test for missing current_period_end graceful error
+   - Added test for service role client usage
+   - Updated existing tests to use admin client mock
+
+### Testing
+- **Total tests**: 11/11 passing ✅
+- **New test coverage**:
+  - Basil-era subscription with `current_period_end` in `items.data[0]`
+  - Graceful error handling when `current_period_end` completely missing
+  - Verification that orders table operations use service role client
+  - All existing subscription and checkout flow tests still pass
+
+### Impact
+- **Risk**: Low (backward compatible, no breaking changes)
+- **Value**: Critical (fixes production payment flow)
+- **Backward compatibility**: Handler now supports both old and new Stripe API versions
+
+### Technical Details
+- **Stripe API version**: `2025-04-30.basil`
+- **API structure change**: `current_period_end` moved from top-level to `items.data[0]`
+- **Supabase clients**:
+  - `supabase` (anon client): Read-only operations
+  - `supabaseClient` (service role): Webhook write operations
+- **Webhook events affected**:
+  - `customer.subscription.created` ✅ Fixed
+  - `customer.subscription.updated` ✅ Fixed
+  - `checkout.session.completed` ✅ Fixed
+
+### Verification
+Handler now:
+1. ✅ No longer throws `RangeError` on Basil-shaped subscriptions
+2. ✅ Successfully sets `business_profiles.is_featured = true` on active/trialing subscriptions
+3. ✅ No longer returns 500 on orders RLS policy violations
+4. ✅ Maintains backward compatibility with existing clients
+
+### Rollback
+- Revert commit `a54cc36`
+- No database changes required (all fixes are code-only)
+
+---

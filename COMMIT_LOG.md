@@ -1,5 +1,22 @@
 # Commit Log
 
+## 2026-09-30 — fix: Stripe webhook handling for Basil API subscriptions
+
+- Baseline: main branch at HEAD. Commit a54cc36. PR #7 created (ready for review).
+- Problem: Live Featured subscription payment succeeded but `business_profiles.is_featured` never became true. Production logs showed `RangeError: Invalid time value` in webhook handler and RLS policy violations on orders table.
+- Root causes:
+  1. **RangeError**: Code accessed `subscription.current_period_end` directly, but Basil-era Stripe API (2025-04-30.basil) has this field null on top-level; actual timestamp is at `subscription.items.data[0].current_period_end`.
+  2. **RLS violation**: `handleCheckoutSession` used anon Supabase client (`supabase`) instead of service role client (`supabaseClient`) for orders table writes.
+  3. **Metadata mismatch**: `create-subscription.ts` writes `user_id` but `check-session.ts` reads `userId`, potentially causing UI "could not confirm" errors.
+- Changes:
+  - `src/pages/api/webhook/stripe.ts`: Fixed `current_period_end` extraction to try top-level first, fall back to `items.data[0]`, and error if both missing (lines 291-307). Changed all orders operations to use `supabaseClient` service role (lines 33, 52, 90).
+  - `src/pages/api/subscriptions/check-session.ts`: Added fallback to support both `userId` and `user_id` metadata keys (lines 44, 91).
+  - `__tests__/integration/webhook-stripe.test.ts`: Added 3 new tests (Basil API structure, missing period graceful error, service role client verification). Updated 2 existing tests to use admin client mock. 11/11 tests pass.
+- Testing: All webhook integration tests pass. New coverage: Basil-era subscriptions, graceful error on missing period, service role client usage verification.
+- Impact: Critical fix for production Featured subscription payments. No breaking changes, backward compatible with both old and new Stripe API versions.
+- Branch: cursor/fix-stripe-subscription-webhook-915e. PR: https://github.com/WazaLab-mx/slpway/pull/7
+- Rollback: Revert the commit (no database changes required, code-only fix).
+
 ## 2026-09-24 — feat: add GEO optimization to pillar pages and ultimate guides
 
 - Baseline: Previous commit 1d262a1 (main pulled with ultimate guide i18n). Commit bae4f70. PR #5 created.
