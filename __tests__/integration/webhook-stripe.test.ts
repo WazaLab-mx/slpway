@@ -94,15 +94,15 @@ describe('Stripe Webhook Integration Tests', () => {
       },
     });
 
-    // Mock existing order check - not found
+    // Mock existing order check - not found (use admin client for service role)
     const existingOrderChain = {
       select: jest.fn().mockReturnThis(),
       eq: jest.fn().mockReturnThis(),
       single: jest.fn().mockResolvedValue({ data: null, error: { code: 'PGRST116' } }),
     };
-    mocks.supabaseBrowserFrom.mockReturnValueOnce(existingOrderChain);
+    mocks.supabaseAdminFrom.mockReturnValueOnce(existingOrderChain);
 
-    // Mock order insert
+    // Mock order insert (use admin client for service role)
     const insertChain = {
       insert: jest.fn().mockReturnThis(),
       select: jest.fn().mockReturnThis(),
@@ -111,7 +111,7 @@ describe('Stripe Webhook Integration Tests', () => {
         error: null,
       }),
     };
-    mocks.supabaseBrowserFrom.mockReturnValueOnce(insertChain);
+    mocks.supabaseAdminFrom.mockReturnValueOnce(insertChain);
 
     const req = createMockRequest({
       method: 'POST',
@@ -139,7 +139,7 @@ describe('Stripe Webhook Integration Tests', () => {
       },
     });
 
-    // Mock existing order check - found
+    // Mock existing order check - found (use admin client for service role)
     const existingOrderChain = {
       select: jest.fn().mockReturnThis(),
       eq: jest.fn().mockReturnThis(),
@@ -148,9 +148,9 @@ describe('Stripe Webhook Integration Tests', () => {
         error: null,
       }),
     };
-    mocks.supabaseBrowserFrom.mockReturnValueOnce(existingOrderChain);
+    mocks.supabaseAdminFrom.mockReturnValueOnce(existingOrderChain);
 
-    // Mock order update
+    // Mock order update (use admin client for service role)
     const updateChain = {
       update: jest.fn().mockReturnThis(),
       eq: jest.fn().mockReturnThis(),
@@ -160,7 +160,7 @@ describe('Stripe Webhook Integration Tests', () => {
         error: null,
       }),
     };
-    mocks.supabaseBrowserFrom.mockReturnValueOnce(updateChain);
+    mocks.supabaseAdminFrom.mockReturnValueOnce(updateChain);
 
     const req = createMockRequest({
       method: 'POST',
@@ -384,6 +384,207 @@ describe('Stripe Webhook Integration Tests', () => {
       expect.objectContaining({
         is_featured: true,
       })
+    );
+  });
+
+  it('handles Basil-era subscription with current_period_end in items.data[0]', async () => {
+    const periodEnd = Math.floor(Date.now() / 1000) + 86400 * 30;
+
+    mocks.constructEvent.mockReturnValueOnce({
+      type: 'customer.subscription.created',
+      data: {
+        object: {
+          id: 'sub_test_basil',
+          customer: 'cus_test_basil',
+          status: 'active',
+          current_period_end: null,
+          items: {
+            data: [
+              {
+                id: 'si_test',
+                current_period_end: periodEnd,
+              },
+            ],
+          },
+          metadata: {
+            user_id: 'user-basil-1',
+          },
+        },
+      },
+    });
+
+    // Mock user lookup by stripe_customer_id - returns null
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      select: jest.fn().mockReturnThis(),
+      eq: jest.fn().mockReturnThis(),
+      single: jest.fn().mockResolvedValue({
+        data: null,
+        error: { code: 'PGRST116' },
+      }),
+    });
+
+    // Mock user lookup by user_id from metadata
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      select: jest.fn().mockReturnThis(),
+      eq: jest.fn().mockReturnThis(),
+      single: jest.fn().mockResolvedValue({
+        data: { id: 'user-basil-1', email: 'basil@example.com' },
+        error: null,
+      }),
+    });
+
+    // Mock updating user with stripe_customer_id
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      update: jest.fn().mockReturnThis(),
+      eq: jest.fn().mockResolvedValue({ error: null }),
+    });
+
+    // Mock business profile lookup
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      select: jest.fn().mockReturnThis(),
+      eq: jest.fn().mockReturnThis(),
+      single: jest.fn().mockResolvedValue({
+        data: { id: 'bp-basil-1', user_id: 'user-basil-1', is_featured: false },
+        error: null,
+      }),
+    });
+
+    // Mock business profile update
+    const updateMock = jest.fn().mockReturnThis();
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      update: updateMock,
+      eq: jest.fn().mockResolvedValue({ error: null }),
+    });
+
+    // Mock subscriptions table upsert
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      upsert: jest.fn().mockResolvedValue({ error: null }),
+    });
+
+    const req = createMockRequest({
+      method: 'POST',
+      headers: { 'stripe-signature': 'sig_valid' },
+    });
+    const res = createMockResponse();
+
+    await webhookHandler(req, res);
+
+    // Should not return 500 error
+    expect(res.status).not.toHaveBeenCalledWith(500);
+
+    // Verify is_featured was set to true
+    expect(updateMock).toHaveBeenCalledWith(
+      expect.objectContaining({
+        is_featured: true,
+        subscription_end_date: new Date(periodEnd * 1000).toISOString(),
+      })
+    );
+  });
+
+  it('handles subscription without current_period_end gracefully', async () => {
+    mocks.constructEvent.mockReturnValueOnce({
+      type: 'customer.subscription.created',
+      data: {
+        object: {
+          id: 'sub_test_no_period',
+          customer: 'cus_test_no_period',
+          status: 'active',
+          current_period_end: null,
+          items: {
+            data: [],
+          },
+          metadata: {
+            user_id: 'user-no-period-1',
+          },
+        },
+      },
+    });
+
+    // Mock user lookup by stripe_customer_id - returns null
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      select: jest.fn().mockReturnThis(),
+      eq: jest.fn().mockReturnThis(),
+      single: jest.fn().mockResolvedValue({
+        data: null,
+        error: { code: 'PGRST116' },
+      }),
+    });
+
+    // Mock user lookup by user_id from metadata
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      select: jest.fn().mockReturnThis(),
+      eq: jest.fn().mockReturnThis(),
+      single: jest.fn().mockResolvedValue({
+        data: { id: 'user-no-period-1', email: 'noperiod@example.com' },
+        error: null,
+      }),
+    });
+
+    // Mock updating user with stripe_customer_id
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      update: jest.fn().mockReturnThis(),
+      eq: jest.fn().mockResolvedValue({ error: null }),
+    });
+
+    const req = createMockRequest({
+      method: 'POST',
+      headers: { 'stripe-signature': 'sig_valid' },
+    });
+    const res = createMockResponse();
+
+    await webhookHandler(req, res);
+
+    // Should return 500 error due to missing period end
+    expect(res.status).toHaveBeenCalledWith(500);
+  });
+
+  it('handles checkout.session.completed using service role client for orders', async () => {
+    mocks.constructEvent.mockReturnValueOnce({
+      type: 'checkout.session.completed',
+      data: {
+        object: {
+          id: 'cs_test_service_role',
+          payment_status: 'paid',
+          amount_total: 10000,
+          metadata: { user_id: 'user-456' },
+          customer_details: { email: 'servicerole@example.com' },
+          payment_intent: 'pi_test_456',
+          mode: 'payment',
+        },
+      },
+    });
+
+    // Mock existing order check - not found (should use supabaseAdminFrom for service role)
+    const existingOrderChain = {
+      select: jest.fn().mockReturnThis(),
+      eq: jest.fn().mockReturnThis(),
+      single: jest.fn().mockResolvedValue({ data: null, error: { code: 'PGRST116' } }),
+    };
+    mocks.supabaseAdminFrom.mockReturnValueOnce(existingOrderChain);
+
+    // Mock order insert (should use supabaseAdminFrom for service role)
+    const insertChain = {
+      insert: jest.fn().mockReturnThis(),
+      select: jest.fn().mockReturnThis(),
+      single: jest.fn().mockResolvedValue({
+        data: { id: 'order-service-role', order_number: 'SLP-789012', status: 'completed' },
+        error: null,
+      }),
+    };
+    mocks.supabaseAdminFrom.mockReturnValueOnce(insertChain);
+
+    const req = createMockRequest({
+      method: 'POST',
+      headers: { 'stripe-signature': 'sig_valid' },
+    });
+    const res = createMockResponse();
+
+    await webhookHandler(req, res);
+
+    // Verify that supabaseAdminFrom was called (service role client)
+    expect(mocks.supabaseAdminFrom).toHaveBeenCalledWith('orders');
+    expect(res.json).toHaveBeenCalledWith(
+      expect.objectContaining({ success: true })
     );
   });
 });
