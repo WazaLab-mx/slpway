@@ -135,7 +135,14 @@ export default async function handler(
         user_id: user_id || null,
         business_id: business_id || null,
         interval: plan,
-      }
+      },
+      subscription_data: {
+        metadata: {
+          user_id: user_id || '',
+          business_id: business_id || '',
+          interval: plan,
+        },
+      },
     };
 
     // Use existing customer for logged-in users, or set customer_email for guest checkout

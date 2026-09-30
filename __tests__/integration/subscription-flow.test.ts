@@ -86,6 +86,9 @@ describe('Subscription Flow Integration Tests', () => {
         expect.objectContaining({
           mode: 'subscription',
           metadata: expect.objectContaining({ user_id: null, interval: 'monthly' }),
+          subscription_data: expect.objectContaining({
+            metadata: expect.objectContaining({ user_id: '', business_id: '', interval: 'monthly' }),
+          }),
         })
       );
     });
@@ -119,6 +122,9 @@ describe('Subscription Flow Integration Tests', () => {
           mode: 'subscription',
           customer: 'cus_existing',
           metadata: expect.objectContaining({ user_id: 'user-123', interval: 'monthly' }),
+          subscription_data: expect.objectContaining({
+            metadata: expect.objectContaining({ user_id: 'user-123', interval: 'monthly' }),
+          }),
         })
       );
     });
@@ -161,6 +167,9 @@ describe('Subscription Flow Integration Tests', () => {
           mode: 'subscription',
           customer: 'cus_test_new',
           metadata: expect.objectContaining({ user_id: 'user-123', interval: 'monthly' }),
+          subscription_data: expect.objectContaining({
+            metadata: expect.objectContaining({ user_id: 'user-123', business_id: 'biz-456', interval: 'monthly' }),
+          }),
         })
       );
     });
@@ -193,6 +202,9 @@ describe('Subscription Flow Integration Tests', () => {
       expect(mocks.stripeSessionCreate).toHaveBeenCalledWith(
         expect.objectContaining({
           metadata: expect.objectContaining({ interval: 'yearly' }),
+          subscription_data: expect.objectContaining({
+            metadata: expect.objectContaining({ interval: 'yearly' }),
+          }),
         })
       );
     });
