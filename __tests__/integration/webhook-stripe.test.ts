@@ -15,7 +15,12 @@ jest.mock('micro', () => ({
 jest.mock('stripe', () => {
   return jest.fn().mockImplementation(() => ({
     webhooks: { constructEvent: (...args: any[]) => mocks.constructEvent(...args) },
-    checkout: { sessions: { listLineItems: (...args: any[]) => mocks.listLineItems(...args) } },
+    checkout: { 
+      sessions: { 
+        listLineItems: (...args: any[]) => mocks.listLineItems(...args),
+        list: jest.fn().mockResolvedValue({ data: [] }),
+      } 
+    },
   }));
 });
 
@@ -187,7 +192,7 @@ describe('Stripe Webhook Integration Tests', () => {
     expect(res.json).toHaveBeenCalledWith({ received: true });
   });
 
-  it('handles subscription created event', async () => {
+  it('handles subscription created event with existing stripe_customer_id', async () => {
     mocks.constructEvent.mockReturnValueOnce({
       type: 'customer.subscription.created',
       data: {
@@ -196,6 +201,7 @@ describe('Stripe Webhook Integration Tests', () => {
           customer: 'cus_test_123',
           status: 'active',
           current_period_end: Math.floor(Date.now() / 1000) + 86400 * 30,
+          metadata: {},
         },
       },
     });
@@ -242,5 +248,142 @@ describe('Stripe Webhook Integration Tests', () => {
     // Subscription events don't explicitly return json on success, they break
     // The handler should not have returned a 500
     expect(res.status).not.toHaveBeenCalledWith(500);
+  });
+
+  it('handles subscription created event with metadata fallback when stripe_customer_id missing', async () => {
+    mocks.constructEvent.mockReturnValueOnce({
+      type: 'customer.subscription.created',
+      data: {
+        object: {
+          id: 'sub_test_fallback',
+          customer: 'cus_test_456',
+          status: 'active',
+          current_period_end: Math.floor(Date.now() / 1000) + 86400 * 30,
+          metadata: {
+            user_id: 'user-fallback-1',
+            business_id: 'biz-fallback-1',
+          },
+        },
+      },
+    });
+
+    // Mock user lookup by stripe_customer_id - returns null (not found)
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      select: jest.fn().mockReturnThis(),
+      eq: jest.fn().mockReturnThis(),
+      single: jest.fn().mockResolvedValue({
+        data: null,
+        error: { code: 'PGRST116' },
+      }),
+    });
+
+    // Mock user lookup by user_id from metadata
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      select: jest.fn().mockReturnThis(),
+      eq: jest.fn().mockReturnThis(),
+      single: jest.fn().mockResolvedValue({
+        data: { id: 'user-fallback-1', email: 'fallback@example.com' },
+        error: null,
+      }),
+    });
+
+    // Mock updating user with stripe_customer_id
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      update: jest.fn().mockReturnThis(),
+      eq: jest.fn().mockResolvedValue({ error: null }),
+    });
+
+    // Mock business profile lookup
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      select: jest.fn().mockReturnThis(),
+      eq: jest.fn().mockReturnThis(),
+      single: jest.fn().mockResolvedValue({
+        data: { id: 'bp-fallback-1', user_id: 'user-fallback-1', is_featured: false },
+        error: null,
+      }),
+    });
+
+    // Mock business profile update
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      update: jest.fn().mockReturnThis(),
+      eq: jest.fn().mockResolvedValue({ error: null }),
+    });
+
+    // Mock subscriptions table upsert
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      upsert: jest.fn().mockResolvedValue({ error: null }),
+    });
+
+    const req = createMockRequest({
+      method: 'POST',
+      headers: { 'stripe-signature': 'sig_valid' },
+    });
+    const res = createMockResponse();
+
+    await webhookHandler(req, res);
+
+    expect(res.status).not.toHaveBeenCalledWith(500);
+  });
+
+  it('sets is_featured to true for active subscription', async () => {
+    mocks.constructEvent.mockReturnValueOnce({
+      type: 'customer.subscription.updated',
+      data: {
+        object: {
+          id: 'sub_test_featured',
+          customer: 'cus_test_789',
+          status: 'active',
+          current_period_end: Math.floor(Date.now() / 1000) + 86400 * 30,
+          metadata: {},
+        },
+      },
+    });
+
+    // Mock user lookup
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      select: jest.fn().mockReturnThis(),
+      eq: jest.fn().mockReturnThis(),
+      single: jest.fn().mockResolvedValue({
+        data: { id: 'user-featured-1' },
+        error: null,
+      }),
+    });
+
+    // Mock business profile lookup
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      select: jest.fn().mockReturnThis(),
+      eq: jest.fn().mockReturnThis(),
+      single: jest.fn().mockResolvedValue({
+        data: { id: 'bp-featured-1', user_id: 'user-featured-1', is_featured: false },
+        error: null,
+      }),
+    });
+
+    // Mock business profile update - capture the call
+    const updateMock = jest.fn().mockReturnThis();
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      update: updateMock,
+      eq: jest.fn().mockResolvedValue({ error: null }),
+    });
+
+    // Mock subscriptions table upsert
+    mocks.supabaseAdminFrom.mockReturnValueOnce({
+      upsert: jest.fn().mockResolvedValue({ error: null }),
+    });
+
+    const req = createMockRequest({
+      method: 'POST',
+      headers: { 'stripe-signature': 'sig_valid' },
+    });
+    const res = createMockResponse();
+
+    await webhookHandler(req, res);
+
+    // Verify is_featured was set to true
+    expect(updateMock).toHaveBeenCalledWith(
+      expect.objectContaining({
+        is_featured: true,
+      })
+    );
   });
 });

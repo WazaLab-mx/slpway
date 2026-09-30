@@ -62,12 +62,13 @@ export default async function handler(
     }
 
     let customerEmail = customer_email;
+    let stripeCustomerId: string | undefined;
 
-    // If user_id is provided, get user details
+    // If user_id is provided, get user details and handle Stripe Customer
     if (user_id) {
       const { data: userData, error: userError } = await supabase
         .from('users')
-        .select("*")
+        .select("email, stripe_customer_id")
         .eq('id', user_id)
         .single();
 
@@ -81,10 +82,37 @@ export default async function handler(
       }
 
       customerEmail = userData.email;
+      stripeCustomerId = userData.stripe_customer_id;
+
+      // Create Stripe customer if user doesn't have one
+      if (!stripeCustomerId) {
+        const customer = await stripe.customers.create({
+          email: customerEmail,
+          metadata: {
+            user_id: user_id,
+            business_id: business_id || '',
+          },
+        });
+        stripeCustomerId = customer.id;
+        logger.log('Created new Stripe customer:', stripeCustomerId);
+
+        // Save stripe_customer_id to users table
+        const { error: updateError } = await supabase
+          .from('users')
+          .update({ stripe_customer_id: stripeCustomerId })
+          .eq('id', user_id);
+
+        if (updateError) {
+          logger.error('Error saving stripe_customer_id to user:', updateError);
+        } else {
+          logger.log('Saved stripe_customer_id to user:', user_id);
+        }
+      } else {
+        logger.log('Found existing Stripe customer:', stripeCustomerId);
+      }
     }
 
-    // For guest checkout, customer_email should be collected by Stripe Checkout
-    logger.log('Creating checkout for:', { user_id, customerEmail: customerEmail ? 'provided' : 'will_collect' });
+    logger.log('Creating checkout for:', { user_id, customerEmail: customerEmail ? 'provided' : 'will_collect', stripeCustomerId });
 
     // Get the right Stripe price ID based on plan
     const stripePriceId = plan === 'yearly' ? YEARLY_PRICE_ID : MONTHLY_PRICE_ID;
@@ -104,14 +132,16 @@ export default async function handler(
       success_url: `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/business/subscription-success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/business/subscription`,
       metadata: {
-        userId: user_id || null,
-        businessId: business_id || null,
+        user_id: user_id || null,
+        business_id: business_id || null,
         interval: plan,
       }
     };
 
-    // Only set customer_email if we have it; otherwise Stripe will collect it
-    if (customerEmail) {
+    // Use existing customer for logged-in users, or set customer_email for guest checkout
+    if (stripeCustomerId) {
+      checkoutSessionData.customer = stripeCustomerId;
+    } else if (customerEmail) {
       checkoutSessionData.customer_email = customerEmail;
     }
 

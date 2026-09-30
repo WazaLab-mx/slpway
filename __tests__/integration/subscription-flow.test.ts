@@ -3,6 +3,7 @@ import { createMockRequest, createMockResponse } from '../helpers/api-test-helpe
 // Use shared mutable refs that jest.mock factories can capture
 const mocks = {
   stripeSessionCreate: jest.fn(),
+  stripeCustomerCreate: jest.fn(),
   supabaseFrom: jest.fn(),
 };
 
@@ -10,6 +11,9 @@ jest.mock('stripe', () => {
   return jest.fn().mockImplementation(() => ({
     checkout: {
       sessions: { create: (...args: any[]) => mocks.stripeSessionCreate(...args) },
+    },
+    customers: {
+      create: (...args: any[]) => mocks.stripeCustomerCreate(...args),
     },
   }));
 });
@@ -33,6 +37,10 @@ describe('Subscription Flow Integration Tests', () => {
     mocks.stripeSessionCreate.mockResolvedValue({
       id: 'cs_test_session_123',
       url: 'https://checkout.stripe.com/pay/cs_test_session_123',
+    });
+
+    mocks.stripeCustomerCreate.mockResolvedValue({
+      id: 'cus_test_new',
     });
   });
 
@@ -77,18 +85,18 @@ describe('Subscription Flow Integration Tests', () => {
       expect(mocks.stripeSessionCreate).toHaveBeenCalledWith(
         expect.objectContaining({
           mode: 'subscription',
-          metadata: expect.objectContaining({ userId: null, interval: 'monthly' }),
+          metadata: expect.objectContaining({ user_id: null, interval: 'monthly' }),
         })
       );
     });
 
-    it('creates monthly subscription checkout successfully', async () => {
-      // Mock user lookup
+    it('creates monthly subscription checkout successfully with existing customer', async () => {
+      // Mock user lookup with existing stripe_customer_id
       mocks.supabaseFrom.mockReturnValueOnce({
         select: jest.fn().mockReturnThis(),
         eq: jest.fn().mockReturnThis(),
         single: jest.fn().mockResolvedValue({
-          data: { id: 'user-123', email: 'user@example.com' },
+          data: { id: 'user-123', email: 'user@example.com', stripe_customer_id: 'cus_existing' },
           error: null,
         }),
       });
@@ -109,8 +117,50 @@ describe('Subscription Flow Integration Tests', () => {
       expect(mocks.stripeSessionCreate).toHaveBeenCalledWith(
         expect.objectContaining({
           mode: 'subscription',
-          customer_email: 'user@example.com',
-          metadata: expect.objectContaining({ userId: 'user-123', interval: 'monthly' }),
+          customer: 'cus_existing',
+          metadata: expect.objectContaining({ user_id: 'user-123', interval: 'monthly' }),
+        })
+      );
+    });
+
+    it('creates monthly subscription checkout and new Stripe customer', async () => {
+      // Mock user lookup without stripe_customer_id
+      mocks.supabaseFrom.mockReturnValueOnce({
+        select: jest.fn().mockReturnThis(),
+        eq: jest.fn().mockReturnThis(),
+        single: jest.fn().mockResolvedValue({
+          data: { id: 'user-123', email: 'user@example.com', stripe_customer_id: null },
+          error: null,
+        }),
+      });
+
+      // Mock stripe_customer_id update
+      mocks.supabaseFrom.mockReturnValueOnce({
+        update: jest.fn().mockReturnThis(),
+        eq: jest.fn().mockResolvedValue({ error: null }),
+      });
+
+      const req = createMockRequest({
+        method: 'POST',
+        body: { plan: 'monthly', user_id: 'user-123', business_id: 'biz-456' },
+      });
+      const res = createMockResponse();
+
+      await subscriptionHandler(req, res);
+
+      expect(res.status).toHaveBeenCalledWith(200);
+      expect(mocks.stripeCustomerCreate).toHaveBeenCalledWith({
+        email: 'user@example.com',
+        metadata: {
+          user_id: 'user-123',
+          business_id: 'biz-456',
+        },
+      });
+      expect(mocks.stripeSessionCreate).toHaveBeenCalledWith(
+        expect.objectContaining({
+          mode: 'subscription',
+          customer: 'cus_test_new',
+          metadata: expect.objectContaining({ user_id: 'user-123', interval: 'monthly' }),
         })
       );
     });
@@ -120,9 +170,15 @@ describe('Subscription Flow Integration Tests', () => {
         select: jest.fn().mockReturnThis(),
         eq: jest.fn().mockReturnThis(),
         single: jest.fn().mockResolvedValue({
-          data: { id: 'user-456', email: 'yearly@example.com' },
+          data: { id: 'user-456', email: 'yearly@example.com', stripe_customer_id: null },
           error: null,
         }),
+      });
+
+      // Mock stripe_customer_id update
+      mocks.supabaseFrom.mockReturnValueOnce({
+        update: jest.fn().mockReturnThis(),
+        eq: jest.fn().mockResolvedValue({ error: null }),
       });
 
       const req = createMockRequest({
@@ -146,7 +202,7 @@ describe('Subscription Flow Integration Tests', () => {
         select: jest.fn().mockReturnThis(),
         eq: jest.fn().mockReturnThis(),
         single: jest.fn().mockResolvedValue({
-          data: { id: 'user-123', email: 'user@example.com' },
+          data: { id: 'user-123', email: 'user@example.com', stripe_customer_id: 'cus_existing' },
           error: null,
         }),
       });
