@@ -1,12 +1,16 @@
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import AuthForm from '@/components/auth/AuthForm';
 import { useAuth } from '@/lib/supabase-auth';
 import { logger } from '@/lib/logger';
+import { safeRedirectPath } from '@/lib/safe-redirect';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const SignInPage = () => {
   const { user, session, isLoading } = useAuth();
+  const router = useRouter();
+  const redirectPath = safeRedirectPath(router.query.redirect);
   const [hasInitialized, setHasInitialized] = useState(false);
   const [debugMode, setDebugMode] = useState(false);
 
@@ -32,7 +36,7 @@ const SignInPage = () => {
       // Check both user and session
       if (session?.access_token) {
         logger.log('Valid session detected, redirecting to account');
-        window.location.href = '/account';
+        window.location.href = redirectPath || '/account';
       }
 
       setHasInitialized(true);
@@ -88,7 +92,7 @@ const SignInPage = () => {
           </div>
         )}
         <div className="container max-w-lg mx-auto px-4">
-          <AuthForm mode="signin" />
+          <AuthForm mode="signin" redirectPath={redirectPath} />
         </div>
       </div>
     </>

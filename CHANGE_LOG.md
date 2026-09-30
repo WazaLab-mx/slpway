@@ -1,5 +1,14 @@
 # Change Log
 
+## [2026-09-29] Sign-in and sign-up fixed ("not valid JSON")
+
+- Bug: `AuthForm` POSTed to `/api/signin` and `/api/robust-signup`. Neither endpoint exists in this repo (not even in git history), so Netlify returned the HTML 404 page and `response.json()` threw "not valid JSON". Nobody could sign in or sign up through the form.
+- Fix: `AuthForm` now calls `useAuth().signIn` / `signUp` (Supabase `signInWithPassword` / `signUp` in the browser; auth-helpers set the session cookie). Removed the dead retry machinery (`enableRetry` was never passed) and the fetch path.
+- After sign-in the form sent users to `/dashboard`, which 404s. Now it goes to `?redirect=` when that is a same-site path (`src/lib/safe-redirect.ts` rejects `//host` and absolute URLs), else `/account`. `/business/dashboard` already sends `?redirect=/business/dashboard`.
+- Tests: `AuthForm.test.tsx` (3: Supabase path with no fetch, default redirect, error shown), `safe-redirect.test.ts` (7).
+- Verified on local dev in Chrome with the test account `test-final-1750916536@waza.baby` (temporary password set via admin API, never committed). Sign-in → "Signed in successfully!" → `/business/dashboard` loaded with the account.
+- Owner account `drunkenberger@gmail.com`: password reset via admin API at the owner's request (value shared only in chat).
+
 ## [2026-09-29] Password reset flow for business accounts
 
 - Bug: the sign-in form's "Forgot password?" linked to `/forgot-password`, and the recovery email pointed to `/reset-password`. Neither page existed (404), so no one could reset a password.

@@ -4,9 +4,7 @@ import { useForm } from 'react-hook-form';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
 import { logger } from '@/lib/logger';
-
-const MAX_RETRIES = 3;
-const RETRY_DELAY = 2000;
+import { useAuth } from '@/lib/supabase-auth';
 
 type AuthMode = 'signup' | 'signin';
 type AuthVariant = 'default' | 'minimal' | 'simple';
@@ -15,7 +13,6 @@ interface AuthFormProps {
   mode: AuthMode;
   variant?: AuthVariant;
   showAccountType?: boolean;
-  enableRetry?: boolean;
   title?: string;
   redirectPath?: string;
 }
@@ -29,13 +26,10 @@ type SignUpFormValues = {
   businessCategory?: string;
 };
 
-const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
-
 export default function AuthForm({
   mode,
   variant = 'default',
   showAccountType = false,
-  enableRetry = false,
   title,
   redirectPath
 }: AuthFormProps) {
@@ -57,118 +51,33 @@ export default function AuthForm({
   const password = watch("password");
   const accountType = watch("accountType");
 
-  const attemptAuth = async (
-    email: string,
-    password: string,
-    retryNumber = 0
-  ): Promise<any> => {
-    try {
-      logger.log(`Attempt ${retryNumber + 1}: Calling ${mode} API for ${email}`);
+  const { signIn, signUp } = useAuth();
 
-      const endpoint = isSignUp ? '/api/robust-signup' : '/api/signin';
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-      });
-
-      logger.log(`API Response status: ${response.status}`);
-
-      const result = await response.json();
-      logger.log('API result:', result);
-
-      if (!response.ok) {
-        if (enableRetry &&
-            (result.error?.includes('timeout') ||
-             result.error?.includes('network') ||
-             response.status >= 500) &&
-            retryNumber < MAX_RETRIES) {
-          logger.log(`Attempt ${retryNumber + 1} failed, retrying...`);
-          await sleep(RETRY_DELAY);
-          return attemptAuth(email, password, retryNumber + 1);
-        }
-
-        throw new Error(result.error || `HTTP ${response.status}`);
-      }
-
-      if (result.error) {
-        if (enableRetry &&
-            (result.error.includes('timeout') ||
-             result.error.includes('network')) &&
-            retryNumber < MAX_RETRIES) {
-          logger.log(`Attempt ${retryNumber + 1} failed, retrying...`);
-          await sleep(RETRY_DELAY);
-          return attemptAuth(email, password, retryNumber + 1);
-        }
-
-        throw new Error(result.error);
-      }
-
-      if (!result.success || (isSignUp && !result.user)) {
-        throw new Error(`Failed to ${mode === 'signup' ? 'create account' : 'sign in'}`);
-      }
-
-      return {
-        data: {
-          user: result.user || result
-        },
-        error: null
-      };
-
-    } catch (error: any) {
-      if (enableRetry &&
-          retryNumber < MAX_RETRIES &&
-          (error.message?.includes('timeout') ||
-           error.message?.includes('network') ||
-           error.name === 'AuthRetryableFetchError')) {
-        logger.log(`Attempt ${retryNumber + 1} failed, retrying...`);
-        await sleep(RETRY_DELAY);
-        return attemptAuth(email, password, retryNumber + 1);
-      }
-
-      throw error;
-    }
-  };
-
+  // Talks to Supabase directly; the session cookie is set by the auth helpers.
   const onSubmit = async (data: SignUpFormValues) => {
     setIsLoading(true);
     setError(null);
 
-    try {
-      const result = await attemptAuth(data.email, data.password);
+    const { error: authError } = isSignUp
+      ? await signUp(data.email, data.password)
+      : await signIn(data.email, data.password);
+    setIsLoading(false);
 
-      if (result.error) {
-        setError(result.error.message || 'Authentication failed');
-        toast.error(result.error.message);
-        return;
-      }
-
-      setSuccess(true);
-
-      if (isSignUp) {
-        toast.success('Account created! Please check your email to verify.');
-        setTimeout(() => {
-          router.push(redirectPath || '/signin?message=verify-email');
-        }, 2000);
-      } else {
-        toast.success('Signed in successfully!');
-        setTimeout(() => {
-          router.push(redirectPath || '/dashboard');
-        }, 1000);
-      }
-
-    } catch (error: any) {
-      logger.error(`${mode} error:`, error);
-      const errorMessage = error.message || 'An error occurred. Please try again.';
+    if (authError) {
+      logger.error(`${mode} error:`, authError);
+      const errorMessage = authError.message || 'An error occurred. Please try again.';
       setError(errorMessage);
       toast.error(errorMessage);
-    } finally {
-      setIsLoading(false);
+      return;
+    }
+
+    setSuccess(true);
+    if (isSignUp) {
+      toast.success('Account created! Please check your email to verify.');
+      setTimeout(() => router.push(redirectPath || '/signin?message=verify-email'), 2000);
+    } else {
+      toast.success('Signed in successfully!');
+      setTimeout(() => router.push(redirectPath || '/account'), 1000);
     }
   };
 
