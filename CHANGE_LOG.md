@@ -1,5 +1,15 @@
 # Change Log
 
+## [2026-09-29] Password reset flow for business accounts
+
+- Bug: the sign-in form's "Forgot password?" linked to `/forgot-password`, and the recovery email pointed to `/reset-password`. Neither page existed (404), so no one could reset a password.
+- New `src/pages/forgot-password.tsx`: email form that calls `forgotPassword(email, locale)`. It shows the same message whether or not the account exists (no email probing) and an error only on real failures such as 429.
+- New `src/pages/reset-password.tsx`: waits for Supabase to exchange the link's PKCE code for a session. Shows a new password + confirmation form (same 8-char rule as sign-up), then links to `/business/dashboard`. Expired, reused or other-browser links get a clear message and a "request a new link" button. Both pages are `noindex`.
+- `src/lib/password-reset.ts`: `validateNewPassword`, `buildResetRedirectUrl` (keeps the locale: `/es/reset-password`), `readRecoveryLinkError`. `supabase-auth.tsx` `forgotPassword` takes the locale.
+- Copy lives in `passwordReset.*` in en/es/de/ja.
+- Tests: `password-reset.test.ts` (8), `__tests__/password-reset-pages.test.tsx` (6).
+- BLOCKER, Supabase dashboard (not code): Auth Site URL is `http://localhost:3000` and sanluisway.com is not in Redirect URLs. `generateLink(recovery)` with `redirectTo=https://www.sanluisway.com/reset-password` redirected to `http://localhost:3000`. Every auth email (recovery, signup confirmation) lands on localhost until Site URL = `https://www.sanluisway.com` and Redirect URLs include `https://www.sanluisway.com/**`.
+
 ## [2026-09-29] La Bocana and La Bocanita branches added (Marisquerías)
 
 - `scripts/add-bocana-branches-2026-09-29.mjs` adds all 5 restaurant branches found in Google Places (API New, several queries including branch/area variants) as `category = 'seafood'`:

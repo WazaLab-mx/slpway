@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { useSessionContext, Session } from '@supabase/auth-helpers-react';
 import { User, AuthError } from '@supabase/supabase-js';
+import { buildResetRedirectUrl } from './password-reset';
 
 // Add debug logging to verify supabaseClient is available
 // (We will log inside the component instead)
@@ -12,7 +13,7 @@ type AuthContextType = {
   signUp: (email: string, password: string) => Promise<{ data: any | null; error: AuthError | null }>;
   signIn: (email: string, password: string) => Promise<{ data: any | null; error: AuthError | null }>;
   signOut: () => Promise<void>;
-  forgotPassword: (email: string) => Promise<{ data: any | null; error: AuthError | null }>;
+  forgotPassword: (email: string, locale?: string) => Promise<{ data: any | null; error: AuthError | null }>;
   resetPassword: (password: string) => Promise<{ data: any | null; error: AuthError | null }>;
   supabase: any | null; // Now will be supabaseClient
 };
@@ -320,14 +321,14 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     }
   };
 
-  const forgotPassword = async (email: string) => {
+  const forgotPassword = async (email: string, locale?: string) => {
     if (!supabaseClient) {
       return { data: null, error: new Error('Supabase client is not available') as AuthError };
     }
 
     try {
       const { data, error } = await supabaseClient.auth.resetPasswordForEmail(email, {
-        redirectTo: `${window.location.origin}/reset-password`,
+        redirectTo: buildResetRedirectUrl(window.location.origin, locale),
       });
 
       return { data, error };

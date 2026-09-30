@@ -2852,5 +2852,30 @@
   },
   "placeCategories": {
     "seafood": "Marisquerías"
+  },
+  "passwordReset": {
+    "forgotTitle": "Restablece tu contraseña",
+    "forgotIntro": "Escribe el correo con el que inicias sesión. Te enviaremos un enlace para elegir una contraseña nueva.",
+    "emailLabel": "Correo electrónico",
+    "sendLink": "Enviar enlace",
+    "sending": "Enviando…",
+    "sent": "Si existe una cuenta con ese correo, te acabamos de enviar un enlace para restablecer tu contraseña. Revisa tu bandeja de entrada y la carpeta de spam, y abre el enlace en este mismo navegador.",
+    "sendError": "No pudimos enviar el correo en este momento. Inténtalo de nuevo en unos minutos.",
+    "backToSignIn": "Volver a iniciar sesión",
+    "resetTitle": "Elige una contraseña nueva",
+    "checkingLink": "Revisando tu enlace…",
+    "invalidLink": "Este enlace no es válido o ya expiró. Los enlaces sirven una sola vez, durante una hora, y solo en el navegador donde los pediste.",
+    "requestNewLink": "Pedir un enlace nuevo",
+    "newPassword": "Contraseña nueva",
+    "confirmPassword": "Confirma la contraseña nueva",
+    "save": "Guardar contraseña",
+    "saving": "Guardando…",
+    "done": "Tu contraseña se actualizó. Ya iniciaste sesión.",
+    "goToDashboard": "Ir al panel de tu negocio",
+    "errors": {
+      "tooShort": "La contraseña debe tener al menos 8 caracteres.",
+      "mismatch": "Las contraseñas no coinciden.",
+      "saveFailed": "No pudimos guardar tu contraseña. Pide un enlace nuevo e inténtalo otra vez."
+    }
   }
 }

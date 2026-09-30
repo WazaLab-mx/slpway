@@ -2852,5 +2852,30 @@
   },
   "placeCategories": {
     "seafood": "Seafood Restaurants"
+  },
+  "passwordReset": {
+    "forgotTitle": "Reset your password",
+    "forgotIntro": "Enter the email you use to sign in. We’ll send you a link to choose a new password.",
+    "emailLabel": "Email",
+    "sendLink": "Send reset link",
+    "sending": "Sending…",
+    "sent": "If an account exists for that email, we just sent a link to reset your password. Check your inbox and spam folder, and open the link in this same browser.",
+    "sendError": "We couldn’t send the email right now. Please try again in a few minutes.",
+    "backToSignIn": "Back to sign in",
+    "resetTitle": "Choose a new password",
+    "checkingLink": "Checking your link…",
+    "invalidLink": "This link is invalid or has expired. Links work once, for one hour, and only in the browser where you requested them.",
+    "requestNewLink": "Request a new link",
+    "newPassword": "New password",
+    "confirmPassword": "Confirm new password",
+    "save": "Save password",
+    "saving": "Saving…",
+    "done": "Your password was updated. You’re signed in.",
+    "goToDashboard": "Go to your business dashboard",
+    "errors": {
+      "tooShort": "Password must be at least 8 characters.",
+      "mismatch": "Passwords don’t match.",
+      "saveFailed": "We couldn’t save your password. Request a new link and try again."
+    }
   }
 }

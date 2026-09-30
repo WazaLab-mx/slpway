@@ -2819,5 +2819,30 @@
   },
   "placeCategories": {
     "seafood": "Fischrestaurants"
+  },
+  "passwordReset": {
+    "forgotTitle": "Passwort zurücksetzen",
+    "forgotIntro": "Gib die E-Mail-Adresse ein, mit der du dich anmeldest. Wir senden dir einen Link, um ein neues Passwort zu wählen.",
+    "emailLabel": "E-Mail",
+    "sendLink": "Link senden",
+    "sending": "Wird gesendet…",
+    "sent": "Falls ein Konto mit dieser E-Mail existiert, haben wir dir gerade einen Link zum Zurücksetzen gesendet. Prüfe Posteingang und Spam-Ordner und öffne den Link in diesem Browser.",
+    "sendError": "Die E-Mail konnte gerade nicht gesendet werden. Bitte versuche es in ein paar Minuten erneut.",
+    "backToSignIn": "Zurück zur Anmeldung",
+    "resetTitle": "Neues Passwort wählen",
+    "checkingLink": "Link wird geprüft…",
+    "invalidLink": "Dieser Link ist ungültig oder abgelaufen. Links funktionieren einmal, eine Stunde lang und nur in dem Browser, in dem du sie angefordert hast.",
+    "requestNewLink": "Neuen Link anfordern",
+    "newPassword": "Neues Passwort",
+    "confirmPassword": "Neues Passwort bestätigen",
+    "save": "Passwort speichern",
+    "saving": "Wird gespeichert…",
+    "done": "Dein Passwort wurde aktualisiert. Du bist angemeldet.",
+    "goToDashboard": "Zum Dashboard deines Unternehmens",
+    "errors": {
+      "tooShort": "Das Passwort muss mindestens 8 Zeichen haben.",
+      "mismatch": "Die Passwörter stimmen nicht überein.",
+      "saveFailed": "Dein Passwort konnte nicht gespeichert werden. Fordere einen neuen Link an und versuche es erneut."
+    }
   }
 }
