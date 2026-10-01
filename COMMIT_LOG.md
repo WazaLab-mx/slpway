@@ -1,5 +1,35 @@
 # Commit Log
 
+## 2026-10-01 — feat: Add dedicated newsletter signup landing page at /join
+
+- Baseline: main branch at HEAD. Commit af130fc. Branch cursor/newsletter-join-landing-page-38fe. PR #9 created (draft).
+- Objective: Create a conversion-optimized landing page at `/join` specifically for Meta/Google ads traffic, replacing the thin/broken `/newsletter` as the primary newsletter signup destination.
+- New route: `/join` — Clean, fast landing page for expat/digital nomad newsletter signups
+- Content included (as specified):
+  - H1: "Get the San Luis Potosí Expat Insider"
+  - Subtitle: Weekly tips for living and thriving in SLP
+  - Free Weekly Newsletter badge above title
+  - Four benefit bullets above the fold: Neighborhood & rent updates, Visa/INM changes, English-speaking doctors & clinics, Events & cost-of-living tips (with emoji icons)
+  - Lead magnet callout: "Plus: Free Arrival Checklist" — Get our complete "First 30 days in SLP" checklist when you subscribe
+  - Newsletter signup form ABOVE THE FOLD with email input and subscribe button
+  - Trust line: "Free · Cancel anytime · For expats & nomads in SLP"
+  - Two secondary CTAs: "Download Arrival Checklist" → `/resources/arrival-checklist`, "Start with the Living Guide" → `/resources/living-guide`
+- Translations: Added `newsletter.joinPage` section to `public/locales/en/common.json` with all page content (title, subtitle, freeBadge, 4 bullets, leadMagnetTitle, leadMagnetDesc, trustLine, secondaryCta, downloadChecklist)
+- Design: Mobile-first responsive layout using existing Tailwind design system (secondary #00007A blue, primary #FFCB05 yellow), gradient background from-gray-50 to-white, white card with shadow-xl for form area
+- Integration: Reuses existing `/api/newsletter/subscribe` endpoint with Beehiiv service, source tracked as 'join_landing_page', includes ConversionEvents.newsletterSignup analytics tracking
+- SEO metadata:
+  - Title: "Join the San Luis Potosí Expat Newsletter | San Luis Way"
+  - Meta description: expat-focused with keywords (neighborhood guides, visa updates, English-speaking doctors, events, cost-of-living, arrival checklist)
+  - `noindex,nofollow` robots tag (ads landing page, not organic)
+  - Open Graph tags (og:type, og:title, og:description, og:url)
+  - Twitter Card tags (twitter:card, twitter:title, twitter:description)
+- Technical: Supports UTM parameters without breaking (standard URL query handling), form state management (idle/loading/success/error), success/error messages with auto-hide after 8 seconds
+- Pattern matching: Followed existing NewsletterSignup component patterns (same form flow, same API endpoint, same analytics events), used existing Layout patterns (no Layout wrapper to keep chrome minimal as requested), same i18n patterns (serverSideTranslations, useTranslation)
+- Not implemented (recommendation in PR): `/newsletter` → `/join` redirect (kept minimal to avoid breaking existing `/newsletter` admin flow; redirect recommendation provided in PR body with next.config.js snippet)
+- Excluded: No Beehiiv pub ID changes (reuses existing env var BEEHIIV_PUBLICATION_ID), no mock data, no Featured business ads, no Pro subscriptions, no login requirement
+- Testing checklist provided in PR: page load, form submission, success/error messages, links to resources pages, mobile responsive, meta tags, UTM parameters
+- Rollback: Revert the commit; delete src/pages/join.tsx; restore public/locales/en/common.json newsletter section to previous state
+
 ## 2026-09-30 — feat: add is_featured column migration and fix webhook HTTP responses
 
 - Baseline: main branch after PR #7 merge (ecd0ec7). Commit c3133f7. PR #8 created (ready for review).
