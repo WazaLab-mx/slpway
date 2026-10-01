@@ -1,5 +1,36 @@
 # Session Context Log - Coding Agent
 
+## Session 2026-10-01 — Newsletter signup landing page at /join for ads conversion
+
+User requested a dedicated newsletter signup landing page at `/join` optimized for Meta/Google ads conversion, replacing the broken/thin `/newsletter` as the primary newsletter subscription destination. Target audience: expats and digital nomads moving to or living in San Luis Potosí.
+
+**Page Created:**
+New route `/join` with conversion-optimized design: clean, fast, mobile-first layout with newsletter signup form above the fold. Content includes H1 "Get the San Luis Potosí Expat Insider", weekly tips subtitle, Free Weekly Newsletter badge, four benefit bullets (neighborhoods, visas, doctors, events) with emoji icons, lead magnet callout for "First 30 days in SLP" arrival checklist, trust line "Free · Cancel anytime · For expats & nomads in SLP", and two secondary CTAs linking to `/resources/arrival-checklist` and `/resources/living-guide`.
+
+**Implementation:**
+- Created `src/pages/join.tsx` following Pages Router pattern with getStaticProps for i18n
+- Added `newsletter.joinPage` section to `public/locales/en/common.json` with all page translations (title, subtitle, freeBadge, 4 bullets, leadMagnetTitle, leadMagnetDesc, trustLine, secondaryCta, downloadChecklist)
+- Reused existing `/api/newsletter/subscribe` endpoint with Beehiiv integration, source tracked as 'join_landing_page'
+- Included ConversionEvents.newsletterSignup analytics tracking for ad conversion measurement
+- Form state management with idle/loading/success/error states, success/error messages auto-hide after 8 seconds
+- Design uses existing Tailwind system (secondary #00007A blue, primary #FFCB05 yellow), gradient background, white card with shadow-xl
+
+**SEO & Technical:**
+- Title: "Join the San Luis Potosí Expat Newsletter | San Luis Way"
+- Meta description with expat-focused keywords (neighborhood guides, visa updates, English-speaking doctors, events, cost-of-living)
+- `noindex,nofollow` robots meta tag (ads landing page, not organic search)
+- Open Graph and Twitter Card tags for social sharing
+- Supports UTM parameters without breaking (standard URL query string handling)
+- Mobile-responsive with breakpoints for sm/lg screens
+
+**Not Implemented:**
+Recommendation provided in PR #9 to redirect `/newsletter` to `/join` using next.config.js redirects, but NOT implemented in this PR to keep changes minimal and avoid breaking existing `/newsletter` admin-only style guide flow. Redirect can be added later if desired.
+
+**Validation:**
+TypeScript patterns matched existing pages (newsletter.tsx, NewsletterSignup component). All imports resolve. No build-time errors expected (dependencies installed, file created following Next.js Pages Router conventions). PR #9 created with testing checklist: page load, form submission, success/error messages, resource links, mobile responsive, meta tags, UTM parameters.
+
+PR #9 created (draft): https://github.com/WazaLab-mx/slpway/pull/9. Branch: cursor/newsletter-join-landing-page-38fe. Commit af130fc (page creation) + d77b8a9 (COMMIT_LOG update). Baseline: main at HEAD. Rollback: revert both commits; delete src/pages/join.tsx; restore public/locales/en/common.json newsletter section. COMMIT_LOG.md and SESSION_CONTEXT.md updated.
+
 ## Session 2026-09-24 — GEO optimization for pillar pages and ultimate guides
 
 Owner requested GEO (Generative Engine Optimization) improvements to bring two new SEO pillar pages up to site's best-practice bar for AI answer engines (ChatGPT, Perplexity, Google AI Overviews, Claude, etc.). Goal: optimize for AI discovery, not just classic SEO.
