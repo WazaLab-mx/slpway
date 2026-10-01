@@ -1006,7 +1006,21 @@
     "welcomeBack": "Welcome back! You've been resubscribed.",
     "thankYou": "Thanks for subscribing! Check your inbox for a welcome email.",
     "errorGeneric": "Oops! Something went wrong. Please try again.",
-    "privacyNote": "We respect your privacy. Unsubscribe at any time."
+    "privacyNote": "We respect your privacy. Unsubscribe at any time.",
+    "joinPage": {
+      "title": "Get the San Luis Potosí Expat Insider",
+      "subtitle": "Weekly tips for living and thriving in SLP — delivered every Monday",
+      "freeBadge": "Free Weekly Newsletter",
+      "bullet1": "Neighborhood & rent updates",
+      "bullet2": "Visa/INM changes",
+      "bullet3": "English-speaking doctors & clinics",
+      "bullet4": "Events & cost-of-living tips",
+      "leadMagnetTitle": "Plus: Free Arrival Checklist",
+      "leadMagnetDesc": "Get our complete \"First 30 days in SLP\" checklist when you subscribe",
+      "trustLine": "Free · Cancel anytime · For expats & nomads in SLP",
+      "secondaryCta": "Start with the Living Guide",
+      "downloadChecklist": "Download Arrival Checklist"
+    }
   },
   "blogCarousel": {
     "badge": "EXPAT INSIGHTS",
