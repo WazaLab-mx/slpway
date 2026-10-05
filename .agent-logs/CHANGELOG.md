@@ -388,3 +388,158 @@ Handler now:
 - To remove columns (optional): `ALTER TABLE business_profiles DROP COLUMN is_featured, DROP COLUMN subscription_status, DROP COLUMN subscription_id, DROP COLUMN subscription_end_date;`
 
 ---
+
+## 2026-10-05 - Add Meta Pixel Lead Tracking for /join Newsletter Subscribe
+
+### Commit: `f83ac00`
+**Branch:** `cursor/meta-pixel-lead-tracking-join-fc32`
+**PR:** [#10](https://github.com/WazaLab-mx/slpway/pull/10)
+
+### Problem Description
+Production site https://www.sanluisway.com/join loads GTM (GTM-T4LHTQ9C) which initializes Meta Pixel ID 1916912242550142 ("SLW 2") and fires PageView on load. However, there was NO Lead (or CompleteRegistration) call on successful newsletter subscription from the `/join` page. Meta Events Manager showed only 1 stale Lead event from ~25 days ago, preventing Meta Ads from optimizing for newsletter signups on this key landing page.
+
+### Context
+- Join page already tracks analytics event `join_landing_page` via `ConversionEvents.newsletterSignup()`
+- Newsletter subscription goes through `/api/newsletter/subscribe` API endpoint
+- Existing `ConversionEvents.newsletterSignup()` function in `src/lib/analytics.ts` already fires:
+  1. GA4 `newsletter_signup` event
+  2. Meta Pixel `Lead` event (but with generic parameters)
+  3. Google Ads conversion event
+- The issue: Meta Lead event was firing with generic `content_name: 'newsletter'` instead of page-specific tracking
+
+### Goal
+On successful subscribe from `/join` page specifically, fire Meta Pixel Lead event via `fbq('track', 'Lead')` with:
+- `content_name: 'expat_insider_join'` (identifies join page specifically)
+- `content_category: 'newsletter'` (categorizes conversion type)
+- `source: 'join_landing_page'` (existing GA tracking parameter)
+
+Must be safe no-op if `window.fbq` is undefined (Pixel loads async via GTM).
+
+### Solution Implemented
+
+#### 1. Enhanced ConversionEvents.newsletterSignup (src/lib/analytics.ts)
+Added optional parameters to `newsletterSignup` function to support custom Meta Pixel event parameters:
+
+**Before:**
+```typescript
+newsletterSignup: (source: string) => {
+  trackEvent('newsletter_signup', { source, method: 'email' });
+  trackFbEvent('Lead', { content_name: 'newsletter', source });
+  trackGoogleAdsConversion(GOOGLE_ADS_NEWSLETTER_CONVERSION, 1.0, 'MXN');
+},
+```
+
+**After:**
+```typescript
+newsletterSignup: (
+  source: string,
+  options?: { content_name?: string; content_category?: string }
+) => {
+  trackEvent('newsletter_signup', { source, method: 'email' });
+  trackFbEvent('Lead', {
+    content_name: options?.content_name || 'newsletter',
+    content_category: options?.content_category || 'newsletter',
+    source,
+  });
+  trackGoogleAdsConversion(GOOGLE_ADS_NEWSLETTER_CONVERSION, 1.0, 'MXN');
+},
+```
+
+**Key features:**
+- Backward compatible: Defaults to existing behavior (`content_name: 'newsletter'`) when options not provided
+- Safe: Uses existing `trackFbEvent()` helper which checks `typeof window.fbq === 'function'`
+- Flexible: Any newsletter signup form can now pass custom tracking parameters
+
+#### 2. Updated /join Page to Pass Custom Parameters (src/pages/join.tsx)
+
+**Before (line 46):**
+```typescript
+ConversionEvents.newsletterSignup('join_landing_page');
+```
+
+**After (lines 46-49):**
+```typescript
+ConversionEvents.newsletterSignup('join_landing_page', {
+  content_name: 'expat_insider_join',
+  content_category: 'newsletter',
+});
+```
+
+**Behavior:**
+- Fires only on successful subscribe (not on validation errors)
+- Fires only for new subscribers (not if `data.alreadySubscribed === true`)
+- Maintains all existing analytics tracking (GA4, Google Ads conversion)
+
+#### 3. No Changes to Other Newsletter Forms
+- `src/components/NewsletterSignup.tsx` continues to work with default parameters
+- Footer and inline newsletter signups continue using `content_name: 'newsletter'`
+- Only `/join` page fires the specific `expat_insider_join` event
+
+### Files Changed
+1. `src/lib/analytics.ts` - 11 lines modified (added optional parameters)
+2. `src/pages/join.tsx` - 5 lines modified (pass custom parameters on success)
+
+### Technical Details
+- **TypeScript safety**: `window.fbq` typing already declared in `analytics.ts` line 4
+- **Execution flow**:
+  1. User submits email on /join
+  2. `handleSubmit` calls `/api/newsletter/subscribe` API
+  3. On 200 response with `!data.alreadySubscribed`
+  4. Calls `ConversionEvents.newsletterSignup('join_landing_page', { ... })`
+  5. `trackFbEvent()` checks `typeof window.fbq === 'function'`
+  6. If GTM loaded Pixel: fires `window.fbq('track', 'Lead', { ... })`
+  7. If fbq not available: silent no-op (no errors thrown)
+- **Meta Pixel**: Already loaded via GTM-T4LHTQ9C on production
+- **Fallback safety**: No second Pixel init added (GTM already manages init)
+
+### Testing
+- **TypeScript compilation**: ✅ Passes (verified with npm install and lint)
+- **Linting**: ✅ No new errors introduced (pre-existing warnings in other files)
+- **Manual test plan** (after deploy):
+  1. Open https://www.sanluisway.com/join in browser
+  2. Open browser DevTools → Network tab → filter "fbq"
+  3. Enter test email and submit
+  4. Verify fbq call with Lead event and correct parameters
+  5. Check Meta Events Manager → Test Events for real-time verification
+
+### Impact
+- **Risk**: Very low (minimal changes, backward compatible, safe fallback if fbq missing)
+- **Value**: High (enables Meta Ads optimization for newsletter signups, provides page-specific tracking)
+- **Breaking changes**: None (all existing newsletter forms continue to work unchanged)
+- **Backward compatibility**: Full (optional parameters default to existing behavior)
+
+### Verification in Meta Events Manager (After Deploy)
+
+**Test Events (Real-time Testing):**
+1. Go to Meta Events Manager (https://business.facebook.com/events_manager2)
+2. Select Pixel 1916912242550142 ("SLW 2")
+3. Click "Test Events" tab
+4. Open https://www.sanluisway.com/join in new browser
+5. Enter test email and subscribe
+6. Verify Test Events shows:
+   - Event: `Lead`
+   - Parameters:
+     - `content_name: expat_insider_join`
+     - `content_category: newsletter`
+     - `source: join_landing_page`
+
+**Production Events (After Live Traffic):**
+1. Events Manager → Pixel 1916912242550142 → Events tab
+2. Filter for event type `Lead`
+3. Verify Lead events increase with newsletter signups
+4. Check event parameters match expected values
+
+### Expected Behavior After Deploy
+- ✅ Lead fires after successful newsletter subscribe on /join
+- ✅ Lead does NOT fire on validation errors
+- ✅ Lead does NOT fire if user already subscribed
+- ✅ PageView continues to fire on page load (unchanged)
+- ✅ Other newsletter forms (footer, inline) continue to work with default tracking
+- ✅ GA4 and Google Ads conversion events continue to fire (unchanged)
+
+### Rollback
+- Revert commit `f83ac00`
+- No database changes required (all changes are code-only)
+- No breaking changes (revert is safe)
+
+---

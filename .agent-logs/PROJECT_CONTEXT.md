@@ -19,9 +19,27 @@ This document provides context for coding agents to understand the project when 
 
 ---
 
-## Recent Work (2026-09-30)
+## Recent Work
 
-### Featured Directory Subscription Fix
+### 2026-10-05: Meta Pixel Lead Tracking for Newsletter Signups
+**Problem Solved:** Meta Pixel was not tracking Lead events on successful newsletter subscriptions from `/join` page, preventing Meta Ads optimization.
+
+**Key Changes:**
+1. Enhanced `ConversionEvents.newsletterSignup()` to accept optional custom parameters
+2. Added page-specific Meta Pixel Lead tracking with `content_name: 'expat_insider_join'`
+3. Maintained backward compatibility for other newsletter forms
+
+**Files to Know:**
+- `src/lib/analytics.ts` - Analytics tracking utilities and Meta Pixel integration
+- `src/pages/join.tsx` - Main newsletter landing page
+- `src/components/NewsletterSignup.tsx` - Reusable newsletter signup component
+
+**Technical Notes:**
+- Meta Pixel (1916912242550142) loaded via GTM (GTM-T4LHTQ9C)
+- Lead event fires only on successful subscribe (not validation errors or already-subscribed)
+- Safe no-op if `window.fbq` undefined (async Pixel loading)
+
+### 2026-09-30: Featured Directory Subscription Fix
 **Problem Solved:** Featured Directory subscription payments were not updating `business_profiles.is_featured` status.
 
 **Key Changes:**
@@ -51,6 +69,7 @@ This document provides context for coding agents to understand the project when 
 - **Auth:** Supabase Auth
 - **Payments:** Stripe
 - **Email:** Nodemailer
+- **Analytics:** Google Analytics (GA4), Meta Pixel, Google Ads (via GTM)
 
 ### Key Database Tables
 - `users` - User accounts (includes `stripe_customer_id`)
@@ -223,5 +242,34 @@ npm run lint             # Run ESLint
 
 ---
 
-**Last Updated:** 2026-09-30
-**Last Updated By:** Cursor Agent (cursor/fix-featured-subscription-33c9)
+## Analytics & Tracking
+
+### Google Tag Manager (GTM)
+- **GTM ID:** GTM-T4LHTQ9C
+- Loads on all pages via `_app.tsx`
+- Manages Meta Pixel, Google Analytics, and Google Ads tags
+
+### Meta Pixel
+- **Pixel ID:** 1916912242550142 ("SLW 2")
+- Initialized via GTM on page load
+- Key events tracked:
+  - `PageView` - Automatic on all pages
+  - `Lead` - Newsletter signups (configurable by source)
+  - `InitiateCheckout` - Subscription checkout started
+  - `Subscribe` - Subscription completed
+
+### Conversion Tracking
+Centralized in `src/lib/analytics.ts`:
+- `ConversionEvents.newsletterSignup()` - Newsletter subscriptions (GA4 + Meta Lead + Google Ads)
+- `SubscriptionEvents.startCheckout()` - Featured checkout (GA4 + Meta InitiateCheckout)
+- `SubscriptionEvents.completeSubscription()` - Featured purchase (GA4 + Meta Subscribe)
+
+### Meta Pixel Lead Parameters
+- `/join` page: `content_name: 'expat_insider_join'`, `content_category: 'newsletter'`
+- Other forms: `content_name: 'newsletter'`, `content_category: 'newsletter'`
+- Safe fallback if `window.fbq` undefined (async loading via GTM)
+
+---
+
+**Last Updated:** 2026-10-05
+**Last Updated By:** Cursor Agent (cursor/meta-pixel-lead-tracking-join-fc32)

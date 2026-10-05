@@ -31,9 +31,16 @@ export const ConversionEvents = {
   //   1. GA4 `newsletter_signup` (lifetime metric + still importable into Ads)
   //   2. Meta `Lead` standard event (Meta Ads lead-gen optimization)
   //   3. Google Ads `conversion` to AW-18144279003 (Search campaign optimization)
-  newsletterSignup: (source: string) => {
+  newsletterSignup: (
+    source: string,
+    options?: { content_name?: string; content_category?: string }
+  ) => {
     trackEvent('newsletter_signup', { source, method: 'email' });
-    trackFbEvent('Lead', { content_name: 'newsletter', source });
+    trackFbEvent('Lead', {
+      content_name: options?.content_name || 'newsletter',
+      content_category: options?.content_category || 'newsletter',
+      source,
+    });
     trackGoogleAdsConversion(GOOGLE_ADS_NEWSLETTER_CONVERSION, 1.0, 'MXN');
   },
 
