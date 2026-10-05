@@ -43,7 +43,10 @@ export default function JoinNewsletterPage() {
 
       setStatus('success');
       if (!data.alreadySubscribed) {
-        ConversionEvents.newsletterSignup('join_landing_page');
+        ConversionEvents.newsletterSignup('join_landing_page', {
+          content_name: 'expat_insider_join',
+          content_category: 'newsletter',
+        });
       }
       setMessage(data.alreadySubscribed
         ? t('newsletter.alreadySubscribed')
