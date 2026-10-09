@@ -1,0 +1,739 @@
+{
+ "meta": {
+  "title": "Las 12 mejores caminatas en San Luis Potosí: senderos urbanos y cumbres de la Sierra (2026)",
+  "discover_title": "Una ventana de roca a 2,800 m, a 70 minutos del centro",
+  "excerpt": "Desde circuitos fáciles en Tangamanga hasta el arco de roca de La Ventana y la cumbre del Cerro del Potosí: las 12 mejores caminatas en San Luis Potosí y sus alrededores, con distancias, desnivel, costos y consejos de seguridad honestos.",
+  "meta_title": "Los mejores senderos de San Luis Potosí: 12 rutas (2026)",
+  "meta_description": "Las 12 mejores caminatas en San Luis Potosí y sus alrededores: La Ventana, Cerro del Potosí, Sendero del Capitán, Valle de los Fantasmas y más, con distancia, desnivel, costos y consejos de seguridad."
+ },
+ "ui": {
+  "quickAnswerLabel": "Respuesta rápida",
+  "tocTitle": "En este análisis a fondo",
+  "readingTime": "Tiempo estimado de lectura: 20 minutos · Actualizado en octubre de 2026",
+  "photo": "Foto",
+  "coverPhoto": "Foto de portada",
+  "factLabels": {
+   "trailhead": "Inicio del sendero",
+   "drive": "Trayecto desde SLP",
+   "stats": "Distancia y elevación",
+   "difficulty": "Dificultad",
+   "fee": "Costo",
+   "bestFor": "Ideal para",
+   "google": "Calificaciones",
+   "track": "Ruta"
+  },
+  "tableHeaders": [
+   "Sendero",
+   "Distancia",
+   "Desnivel",
+   "Dificultad",
+   "Trayecto"
+  ],
+  "leftOutHeaders": [
+   "Sendero",
+   "Por qué no está en la lista"
+  ],
+  "groupLabels": {
+   "easy": "Fácil",
+   "moderate": "Moderado",
+   "hard": "Difícil"
+  },
+  "takeawaysTitle": "Puntos clave",
+  "proTipsTitle": "Consejos expertos para hacer senderismo cerca de SLP",
+  "faqTitle": "Preguntas frecuentes",
+  "relatedTitle": "Lecturas relacionadas",
+  "sourcesTitle": "Fuentes"
+ },
+ "quickAnswer": "La mejor caminata cerca de San Luis Potosí es <strong>La Ventana</strong>, un arco natural de roca a unos 2,800 m en la Sierra de San Miguelito (12 km ida y vuelta, difícil, MXN 50 por persona). Para subir a una gran cumbre desde la ciudad, sube el <strong>Cerro del Potosí</strong> (17.5 km). Las familias deberían empezar con <strong>Cañada del Lobo</strong> o <strong>Parque Tangamanga I</strong>, ambos gratis y a 15 minutos o menos del centro.",
+ "toc": [
+  [
+   "how-we-chose",
+   "Cómo elegimos estos senderos"
+  ],
+  [
+   "at-a-glance",
+   "Las 12 caminatas de un vistazo"
+  ],
+  [
+   "easy",
+   "Caminatas fáciles en la ciudad y cerca de ella"
+  ],
+  [
+   "moderate",
+   "Caminatas de medio día"
+  ],
+  [
+   "hard",
+   "Días intensos para senderistas en buena condición"
+  ],
+  [
+   "worth-the-trip",
+   "Vale la pena el viaje: Real de Catorce"
+  ],
+  [
+   "left-out",
+   "Senderos que quedaron fuera de la lista"
+  ],
+  [
+   "seasons",
+   "Altitud, temporadas y agua"
+  ],
+  [
+   "safety",
+   "Seguridad: lo que realmente puede salir mal"
+  ],
+  [
+   "rules",
+   "Reglas en las áreas protegidas"
+  ],
+  [
+   "guides",
+   "Clubes de senderismo y guías"
+  ],
+  [
+   "tips",
+   "Consejos de expertos"
+  ],
+  [
+   "faq",
+   "Preguntas frecuentes"
+  ]
+ ],
+ "hook": "<strong>En San Luis Potosí, las montañas comienzan donde termina la ciudad.</strong> Recorre Avenida Chapultepec hasta el final, en San Luis Potosí, y el pavimento simplemente se acaba al pie de la Sierra de San Miguelito, una sierra protegida de más de 111,000 hectáreas donde los senderos suben hacia arcos de roca, cruces en las cumbres y vistas de toda la ciudad.",
+ "intro": [
+  "Si miras más allá, las opciones se multiplican: el bosque de pino-encino de la Sierra de Álvarez, a 50 minutos al este; antiguos caminos de mulas entre pueblos mineros coloniales; un cráter volcánico seco en el Altiplano; y las cumbres sagradas de Real de Catorce. El detalle es que la mayoría de estos senderos son informales. La señalización va desde flechas pintadas hasta montones de piedras, y la información en línea está dispersa entre rutas de Wikiloc, grupos de Facebook y publicaciones de blog desactualizadas.",
+  "Esta guía clasifica las 12 mejores caminatas para 2026 y las agrupa por dificultad, con los datos que necesitas para planear: distancia, desnivel positivo, cuotas, tiempo de manejo y qué precauciones tomar."
+ ],
+ "howWeChose": {
+  "title": "Cómo se eligieron estos senderos",
+  "subtitle": "Más de 30 senderos comparados mediante rutas GPS, fuentes oficiales y reseñas recientes",
+  "paragraphs": [
+   "Se compararon más de 30 senderos en la ciudad y a unas dos horas en auto. Las distancias y el desnivel provienen de las rutas GPS públicas más utilizadas en Wikiloc y AllTrails (por ejemplo, la ruta principal de La Ventana se ha registrado más de 550 veces, y la ruta de Cerro del Potosí más de 840). Las reglas y los detalles de las áreas protegidas provienen de CONANP, el registro federal oficial (DOF) y la agencia estatal de parques; las cuotas y condiciones actuales, de reseñas recientes de senderistas y medios locales.",
+   "Los dispositivos GPS no siempre coinciden, así que cuando las fuentes difieren se indica el rango. Las cuotas en los accesos a senderos administrados por las comunidades cambian sin previo aviso; solo se pudo confirmar la cuota de La Ventana en 2026, y las demás están etiquetadas con el año de la fuente."
+  ],
+  "callout": "Ojo con el nombre: <strong>Cerro del Potosí</strong> en esta guía es la cumbre de aproximadamente 2,650 m justo al sur de la ciudad de SLP. No es el Cerro Potosí de 3,700 m en Nuevo León."
+ },
+ "atAGlance": {
+  "title": "Las 12 caminatas de un vistazo",
+  "subtitle": "Ordenadas de la más fácil a la más difícil; tiempos de manejo desde el Centro Histórico sin tráfico",
+  "rows": [
+   [
+    "Parque Tangamanga I",
+    "Hasta 12.7 km (circuito pavimentado)",
+    "~114 m",
+    "Fácil",
+    "5 min"
+   ],
+   [
+    "Cañada del Lobo",
+    "Circuitos de 3.5–7.1 km",
+    "40–134 m",
+    "Fácil",
+    "12 min"
+   ],
+   [
+    "La Piedrota",
+    "6–8.2 km",
+    "~226 m",
+    "Fácil–moderada",
+    "15 min"
+   ],
+   [
+    "Cerro El Original",
+    "2.3 km",
+    "~240 m",
+    "Fácil–moderada",
+    "46 min"
+   ],
+   [
+    "Cueva de los Caballos",
+    "Circuito de ~8 km",
+    "240–330 m",
+    "Fácil–moderada",
+    "50 min"
+   ],
+   [
+    "Cráter Joya Honda",
+    "Circuito de 5.1–5.8 km",
+    "~240 m",
+    "Moderada",
+    "65 min"
+   ],
+   [
+    "Sendero del Capitán",
+    "~19 km solo de ida (opciones más cortas)",
+    "~320 m de ascenso",
+    "Moderada–difícil",
+    "28 min"
+   ],
+   [
+    "Cerro Grande, Suspiro Picacho",
+    "11.3–11.9 km",
+    "540–600 m",
+    "Moderada–difícil",
+    "22 min"
+   ],
+   [
+    "La Ventana",
+    "12.2–12.6 km",
+    "~500 m",
+    "Difícil",
+    "~70 min"
+   ],
+   [
+    "Cerro del Potosí",
+    "17.5–17.9 km",
+    "765–970 m",
+    "Difícil",
+    "10 min"
+   ],
+   [
+    "Picacho del Fraile",
+    "~15.6 km",
+    "~960 m",
+    "Difícil",
+    "23 min"
+   ],
+   [
+    "Cerro del Quemado, Real de Catorce",
+    "10.3–10.9 km",
+    "365–410 m",
+    "Moderada (altitud)",
+    "~3 h 30 min"
+   ]
+  ]
+ },
+ "groups": {
+  "easy": {
+   "title": "Caminatas fáciles en la ciudad y sus alrededores",
+   "subtitle": "Gratis o casi gratis, cerca de casa y buenas para ir con niños"
+  },
+  "moderate": {
+   "title": "Caminatas de medio día",
+   "subtitle": "Una mañana en terreno de montaña de verdad, con formaciones rocosas, bosque e historia"
+  },
+  "hard": {
+   "title": "Días intensos para senderistas en buena condición",
+   "subtitle": "Ascensos largos, poca sombra y las mejores vistas de la región"
+  },
+  "trip": {
+   "title": "Vale la pena el viaje: Real de Catorce",
+   "subtitle": "Un viaje de una noche, no una caminata de un día, pero una de las caminatas más memorables de México"
+  }
+ },
+ "trails": {
+  "tangamanga": {
+   "title": "Parque Tangamanga I",
+   "paragraphs": [
+    "Tangamanga I es un parque estatal de 420 hectáreas a pocos minutos del centro, con un circuito pavimentado de unos 12.7 km alrededor de lagos y zonas arboladas, además de senderos de terracería que puedes combinar. No es naturaleza silvestre, pero es el mejor lugar para acostumbrarte a la altitud antes de enfrentarte a la sierra, correr con carriola o caminar con los abuelos. La entrada es gratuita; solo se cobran las instalaciones deportivas y los eventos.",
+    "Los horarios los establece la agencia estatal de parques, Cecurt: lunes de 5:00 a 11:00 (día de mantenimiento), de martes a sábado de 5:00 a 22:30 y domingo de 5:00 a 18:00. Para conocer más sobre el parque, consulta nuestra <a href=\"/parque-tangamanga\">guía del Parque Tangamanga</a>."
+   ],
+   "fact": [
+    [
+     "trailhead",
+     "Av. Salvador Nava Martínez 3055"
+    ],
+    [
+     "drive",
+     "Aproximadamente 4 km / 5 min"
+    ],
+    [
+     "stats",
+     "Circuito pavimentado de 12.7 km, ~114 m de desnivel positivo; es fácil improvisar circuitos más cortos"
+    ],
+    [
+     "difficulty",
+     "Fácil · apto para carriolas y sillas de ruedas"
+    ],
+    [
+     "fee",
+     "Gratis"
+    ],
+    [
+     "google",
+     "Google 4.8★ (8,881) · AllTrails 4.8★ (385)"
+    ]
+   ]
+  },
+  "canada": {
+   "title": "Cañada del Lobo",
+   "paragraphs": [
+    "La mejor caminata familiar en la naturaleza cerca de la ciudad. Un pequeño embalse se encuentra en un cañón entre dos cerros, con garzas y cormoranes sobre el agua, encinos y pinos piñoneros en las laderas y la pequeña capilla de la Virgen del Chorrito. El circuito fácil alrededor de la presa mide unos 3.5 km y tiene apenas 40 m de ascenso, y quienes reseñan en AllTrails lo consideran apto para niños; un circuito más largo de 7.1 km añade algunas subidas.",
+    "El acceso es gratis y el estacionamiento es amplio. Dos precauciones: los senderos se comparten con bicicletas de montaña, cuatrimotos y jeeps, y una reseña de julio de 2026 reportó el robo de un estéreo de auto en el estacionamiento de abajo, así que estaciona cerca de la presa y no dejes nada a la vista."
+   ],
+   "fact": [
+    [
+     "drive",
+     "A unos 9 km / 12 min"
+    ],
+    [
+     "stats",
+     "Circuito de la presa de 3.5 km (+40 m); circuito más largo de 7.1 km (+134 m)"
+    ],
+    [
+     "difficulty",
+     "Fácil · perros con correa"
+    ],
+    [
+     "fee",
+     "Gratis"
+    ],
+    [
+     "google",
+     "Google 4.6★ (273) · AllTrails 4.9★ (10)"
+    ]
+   ]
+  },
+  "piedrota": {
+   "title": "La Piedrota",
+   "paragraphs": [
+    "La caminata “de verdad” más fácil de la Sierra de San Miguelito: un recorrido entre matorrales de nopal, biznaga y maguey hasta una enorme roca, con vistas de regreso hacia la ciudad. Es una de las favoritas para el atardecer, así que lleva una lámpara frontal para bajar. El acceso informal comienza al final de Avenida Chapultepec, cerca de Privada El Pedregal; puede parecer bloqueado, pero se usa mucho y unas flechas pintadas te guían durante la mayor parte del camino.",
+    "No hay nada de sombra, así que evita el mediodía. <strong>Atención, quienes llevan perros:</strong> en julio y agosto de 2025, cebos envenenados mataron al menos a un perro en este sendero, y ese año se reportaron otros envenenamientos en la sierra. No se encontraron casos en 2026, pero lleva a los perros con correa y no dejes que coman nada."
+   ],
+   "fact": [
+    [
+     "drive",
+     "A unos 11 km / 15 min"
+    ],
+    [
+     "stats",
+     "6–8.2 km ida y vuelta, ~226 m de desnivel positivo"
+    ],
+    [
+     "difficulty",
+     "Fácil–moderada"
+    ],
+    [
+     "fee",
+     "Gratis"
+    ],
+    [
+     "google",
+     "Google 4.8★ (75) · AllTrails 4.8★ (105)"
+    ]
+   ]
+  },
+  "original": {
+   "title": "Cerro El Original (Santa María del Río)",
+   "paragraphs": [
+    "Una subida corta pero empinada sobre Santa María del Río, el pueblo famoso por sus rebozos de seda. El cerro fue zona de caza guachichil y escondite durante la Revolución, y desde la cima se aprecia una vista completa del pueblo y el valle. Con 2.3 km de ida y vuelta, toma alrededor de una hora, así que es el complemento perfecto para una excursión de un día de compras y comida. El autor de la ruta principal la considera apta para familias, pero recomienda no ir a solas."
+   ],
+   "fact": [
+    [
+     "drive",
+     "A unos 50 km / 46 min por la Carretera 57 hacia el sur"
+    ],
+    [
+     "stats",
+     "2.3 km de ida y vuelta, ~240 m de desnivel, cima a ~2,000 m"
+    ],
+    [
+     "difficulty",
+     "Fácil–moderada"
+    ],
+    [
+     "fee",
+     "No se encontró cuota"
+    ],
+    [
+     "google",
+     "Google 4.7★ (130)"
+    ]
+   ]
+  },
+  "caballos": {
+   "title": "Cerro y Cueva de los Caballos (Sierra de Álvarez)",
+   "paragraphs": [
+    "La forma más fácil de adentrarte en el fresco bosque de pino-encino de la Sierra de Álvarez, un área federal protegida al este de la ciudad. A 2,500–2,650 m hace notablemente más frío que en SLP, con niebla en las mañanas de invierno. La ruta sigue un camino amplio que sube junto a las antenas de microondas hasta una cueva, cerca de las extrañas formaciones rocosas del Valle de los Fantasmas: la Roca del Elefante y la Piedra Flotante.",
+    "La fauna incluye venado cola blanca, cacomixtles y carpinteros belloteros, y la CONANP ha registrado un puma en cámaras trampa. En diciembre de 2024, la cuota comunitaria era de MXN 10 por persona. Gran parte del terreno alrededor de las formaciones rocosas está cercado y las apps de mapas se confunden, así que pregunta a los habitantes de San Francisco o contrata a un guía local. Aquí viven víboras de cascabel; fíjate por dónde pisas durante los meses cálidos."
+   ],
+   "fact": [
+    [
+     "drive",
+     "A unos 45 km / 50 min por la Carretera 70 rumbo a Rioverde"
+    ],
+    [
+     "stats",
+     "Circuito de ~8 km, desnivel de 240–330 m, altitud máxima de ~2,650 m"
+    ],
+    [
+     "difficulty",
+     "Fácil–moderada · ideal para principiantes y perros"
+    ],
+    [
+     "fee",
+     "Unos MXN 10 por persona (diciembre de 2024)"
+    ],
+    [
+     "google",
+     "Google 4.8★ (190)"
+    ]
+   ]
+  },
+  "joya": {
+   "title": "Cráter Joya Honda",
+   "paragraphs": [
+    "Un cráter volcánico seco de aproximadamente 1.4 km de diámetro y unos 300 m de profundidad, protegido como monumento natural estatal. La caminata recorre el borde durante unos 5–6 km, con grandes vistas hacia el cráter, y unas escaleras de madera bajan al interior. Parte del circuito no tiene un sendero definido, con matorrales, roca suelta y muros de piedra, y el borde es muy ventoso.",
+    "Se llega por la Carretera 57 hacia el norte hasta Estación Ventura (km 33), y luego por unos 5 km de terracería. En 2024, la entrada costaba MXN 25 (MXN 300 para acampar dentro), con baños secos y gorditas los fines de semana; una reseña de 2025 describe las instalaciones como un poco descuidadas."
+   ],
+   "fact": [
+    [
+     "drive",
+     "Aproximadamente 42 km / 65 min, los últimos 5 km por terracería"
+    ],
+    [
+     "stats",
+     "Circuito por el borde de 5.1–5.8 km, ~240 m de desnivel positivo"
+    ],
+    [
+     "difficulty",
+     "Moderada"
+    ],
+    [
+     "fee",
+     "Entrada MXN 25 (2024)"
+    ],
+    [
+     "google",
+     "Google 4.7★ (149)"
+    ]
+   ]
+  },
+  "capitan": {
+   "title": "Sendero del Capitán (Cerro de San Pedro a Armadillo)",
+   "paragraphs": [
+    "Una ruta histórica señalizada de unos 19 km por antiguos caminos mineros y de mulas, que conecta tres pueblos vinculados al capitán Miguel Caldera: Cerro de San Pedro, Monte Caldera y Armadillo de los Infante. Comienza a unos 2,040 m, sube a 2,200 m y baja a Armadillo, a unos 1,630 m, entre yucas y encinos, con casi nada de señal telefónica. La ruta completa es de punto a punto, así que necesitas un traslado en auto o que alguien te recoja.",
+    "Las familias no tienen que recorrerla completa. Desde Cerro de San Pedro, un sendero de 3.3 km sube hasta la capilla de piedra de la Virgen del Encino, y un circuito fácil de 7.3 km conecta el mirador y la iglesia. Combina cualquiera de las dos opciones con comida en el pueblo minero semideshabitado y su vista hacia la mina a cielo abierto. Civitatis ofrece una versión guiada de día completo con guía en inglés o español."
+   ],
+   "fact": [
+    [
+     "trailhead",
+     "Estacionamiento en Cerro de San Pedro"
+    ],
+    [
+     "drive",
+     "Unos 23 km / 28 min hasta el inicio; Armadillo está a unos 52 min de SLP"
+    ],
+    [
+     "stats",
+     "~19–20 km de ida, ~320 m de subida y ~700 m de bajada"
+    ],
+    [
+     "difficulty",
+     "Moderada–difícil (por la distancia); tramos cortos fáciles"
+    ],
+    [
+     "fee",
+     "No se encontró cuota para el sendero; el mirador de Cerro de San Pedro cobraba MXN 20 (2024)"
+    ],
+    [
+     "google",
+     "Google 4.8★ (100) · AllTrails 4.8★ (21)"
+    ]
+   ]
+  },
+  "cerroGrande": {
+   "title": "Cerro Grande (Suspiro Picacho, Mexquitic)",
+   "paragraphs": [
+    "El punto más alto de Mexquitic de Carmona, en el extremo noroeste de la Sierra de San Miguelito: una subida empinada y pedregosa hasta una cima arbolada con vistas del valle. La ruta está marcada con cal y alcanza aproximadamente 2,565–2,600 m según GPS (la comunidad indica 2,200 m). Los bastones de senderismo ayudan en el descenso sobre terreno suelto.",
+    "Este es un cerro protegido por la comunidad y una importante zona de recarga hídrica. <strong>Pide permiso a la autoridad comunitaria de Suspiro Picacho antes de ir</strong>; reseñas de 2024 y 2026 indican que el acceso se ha vuelto más estricto, y una sugiere registrarte en una tienda del pueblo. No construyas montículos de piedras y llévate toda tu basura."
+   ],
+   "fact": [
+    [
+     "trailhead",
+     "Pueblo de Suspiro Picacho"
+    ],
+    [
+     "drive",
+     "Aproximadamente 19 km / 22 min"
+    ],
+    [
+     "stats",
+     "11.3–11.9 km de ida y vuelta, 540–600 m de desnivel positivo"
+    ],
+    [
+     "difficulty",
+     "Moderada–difícil"
+    ],
+    [
+     "fee",
+     "No se reporta costo; se requiere permiso"
+    ]
+   ]
+  },
+  "ventana": {
+   "title": "La Ventana (Sierra de San Miguelito)",
+   "paragraphs": [
+    "La caminata emblemática de San Luis Potosí. La Ventana («la ventana») es un arco natural de roca cerca de uno de los puntos más altos de la Sierra de San Miguelito, al que se llega atravesando un bosque de encinos y pinos desde la comunidad de La Amapola. La ruta está señalizada con listones y pintura azul y blanca, y termina con una trepada empinada sobre rocas hasta el arco, por lo que no es apta para niños pequeños. Un desvío de 1 km lleva al Cerro de la Cruz, con un altar a la Virgen de Guadalupe.",
+    "Llegar es parte de la aventura: desde la carretera 80 hacia Guadalajara, toma la desviación hacia El Mezquital y recorre unos 10 km por un camino de terracería accidentado; se recomienda un vehículo con buena altura libre al suelo. El ejido cobra <strong>MXN 50 por persona</strong> (confirmado en 2026) y vigila tu coche. Paga únicamente en el estacionamiento del ejido. Empieza temprano, lleva al menos 3 litros de agua y descarga el track: en febrero de 2025, un senderista desapareció cerca de esta ruta después de tomar un camino alternativo."
+   ],
+   "fact": [
+    [
+     "trailhead",
+     "La Amapola (estacionamiento del ejido)"
+    ],
+    [
+     "drive",
+     "Aproximadamente 43 km / 70 min, los últimos ~10 km por terracería accidentada"
+    ],
+    [
+     "stats",
+     "12.2–12.6 km ida y vuelta, ~500 m de desnivel positivo, máximo ~2,820 m"
+    ],
+    [
+     "difficulty",
+     "Difícil (trepada final)"
+    ],
+    [
+     "fee",
+     "MXN 50 por persona (2026)"
+    ],
+    [
+     "google",
+     "Google 4.9★ (101) · AllTrails 4.6★ (42)"
+    ]
+   ]
+  },
+  "potosi": {
+   "title": "Cerro del Potosí (Sierra de San Miguelito)",
+   "paragraphs": [
+    "La clásica gran salida de un día de la ciudad. Desde el final de Avenida Chapultepec, una subida larga y constante lleva a una cruz en la cima, a unos 2,650 m, donde hay un cuaderno de registro guardado en la base y toda la ciudad se extiende abajo. Su ruta más usada en Wikiloc se ha registrado más de 840 veces. Después de una roca pintada con “PB”, sigue las marcas azules y naranjas; espera piedra suelta, pendiente constante y, según el autor de una ruta, un tramo estrecho y expuesto con caídas a ambos lados.",
+    "Casi no hay sombra, así que empieza al amanecer y lleva 4–6 litros de agua, como recomiendan autores locales de rutas. Hay señal de celular en la mayor parte del recorrido. Ojo con el nombre: este no es el Cerro Potosí de 3,700 m de Nuevo León."
+   ],
+   "fact": [
+    [
+     "trailhead",
+     "Final de Av. Chapultepec (o Soriana Chapultepec, agregando ~4 km)"
+    ],
+    [
+     "drive",
+     "Aproximadamente 7 km / 10 min"
+    ],
+    [
+     "stats",
+     "17.5–17.9 km de ida y vuelta, 765–970 m de desnivel positivo, cima a ~2,650 m"
+    ],
+    [
+     "difficulty",
+     "Difícil"
+    ],
+    [
+     "fee",
+     "No se ha reportado costo"
+    ],
+    [
+     "google",
+     "Google 4.8★ (33) · AllTrails 4.8★ (79)"
+    ]
+   ]
+  },
+  "fraile": {
+   "title": "Picacho del Fraile",
+   "paragraphs": [
+    "La subida más exigente de esta lista: una ruta accidentada guiada por montículos de piedras (algunos muy separados) y pintura azul y blanca, que termina con una trepada que requiere usar las manos sobre roca suelta hasta una cumbre de unos 2,800 m. Una extensión opcional visita los restos de una pequeña aeronave. Empieza desde la plaza de El Terrero Sur o desde Presa San Carlos, y ten cuidado con los perros territoriales del pueblo. Solo para senderistas con experiencia; no hay sombra y no se permiten fogatas."
+   ],
+   "fact": [
+    [
+     "trailhead",
+     "Plaza de El Terrero Sur o Presa San Carlos"
+    ],
+    [
+     "drive",
+     "Unos 18 km / 23 min"
+    ],
+    [
+     "stats",
+     "~15.6 km ida y vuelta, ~960 m de desnivel positivo, máx. ~2,800 m"
+    ],
+    [
+     "difficulty",
+     "Difícil (trepada)"
+    ],
+    [
+     "fee",
+     "No se ha reportado costo"
+    ],
+    [
+     "google",
+     "Google 4.8★ (14) · AllTrails 4.9★ (17)"
+    ]
+   ]
+  },
+  "quemado": {
+   "title": "Cerro del Quemado (Real de Catorce)",
+   "paragraphs": [
+    "Muy arriba de Real de Catorce, el Cerro del Quemado es un sitio ceremonial sagrado para el pueblo wixárika (huichol) en Wirikuta, con altares de piedra, ofrendas y enormes vistas sobre el desierto. La ruta señalizada (puntos naranjas) es de unos 10.5 km ida y vuelta, con 365–410 m de ascenso, pero la altitud, de aproximadamente 2,940 m según GPS, hace que se sienta más difícil. Algunos sitios web afirman que mide 3,800 m; los datos de GPS indican lo contrario.",
+    "El respeto no es opcional: no toques las ofrendas y guarda silencio si hay una ceremonia en curso. En 2026 se reportó acceso gratuito, aunque un senderista pagó MXN 20 en 2024. Real de Catorce está a unas 3 h 30 min de la ciudad, así que quédate a pasar la noche; nuestra <a href=\"/blog/real-de-catorce-guide-2026\">guía de Real de Catorce</a> cubre el resto del viaje."
+   ],
+   "fact": [
+    [
+     "drive",
+     "Unos 213 km / 3 h 30 min, más el túnel de Ogarrio"
+    ],
+    [
+     "stats",
+     "10.3–10.9 km ida y vuelta, 365–410 m de desnivel positivo, máximo ~2,940 m"
+    ],
+    [
+     "difficulty",
+     "Moderada (gran altitud)"
+    ],
+    [
+     "fee",
+     "Gratis en 2026 según AllTrails; MXN 20 reportados en 2024"
+    ],
+    [
+     "google",
+     "Google 4.8★ (78) · AllTrails 4.9★ (39)"
+    ]
+   ]
+  }
+ },
+ "leftOut": {
+  "title": "Senderos que quedaron fuera de la lista (y por qué)",
+  "subtitle": "Algunos son buenos, pero no son la mejor opción en 2026",
+  "rows": [
+   [
+    "Presa de San José",
+    "Las reseñas de 2026 describen la zona de la presa como vandalizada y sucia; el sendero se comparte con motocross y el cauce del arroyo puede sufrir inundaciones repentinas."
+   ],
+   [
+    "Cañón del Chivo (Sierra de Álvarez)",
+    "Cañón sin señalización donde hay que brincar entre rocas, con riesgo de inundaciones repentinas y reportes de robos en autos; ve solo con guía."
+   ],
+   [
+    "Cerro San Miguelito y La Campana",
+    "Buenas rutas, pero se traslapan con La Piedrota y Cerro del Potosí."
+   ],
+   [
+    "Parque Nacional El Gogorrón",
+    "No se pudieron confirmar datos confiables sobre los senderos ni las tarifas."
+   ]
+  ]
+ },
+ "seasons": {
+  "title": "Altitud, temporadas y agua",
+  "subtitle": "Por qué todo senderista local empieza al amanecer",
+  "paragraphs": [
+   "La ciudad de SLP se encuentra a unos 1,860 m. Los puntos de inicio de senderos en la Sierra de San Miguelito están a 2,000–2,400 m y las cumbres alcanzan 2,600–2,880 m; la Sierra de Álvarez se ubica alrededor de 2,500–2,650 m, y Real de Catorce a 2,600–3,200 m. Si acabas de llegar, tómate con calma los primeros días, toma más agua de la que crees necesitar y recuerda que te quemas con el sol más rápido en la altitud.",
+   "Los mejores meses son de <strong>octubre a marzo</strong>: secos, frescos y despejados, con septiembre y octubre más verdes justo después de las lluvias. Diciembre y enero traen amaneceres cercanos al punto de congelación en los puntos de inicio de senderos más altos y, ocasionalmente, nieve. Abril y mayo son calurosos (mayo promedia una máxima de 28 °C) y representan el pico de la temporada de incendios forestales. De junio a septiembre, las tormentas vespertinas traen rayos en las cumbres expuestas, roca resbalosa e inundaciones repentinas en los cañones.",
+   "No hay agua en estos senderos y hay muy poca sombra. Calcula medio litro por hora, al menos 3 litros los días de cumbre, además de electrolitos, sombrero, manga larga y protector solar."
+  ]
+ },
+ "safety": {
+  "title": "Seguridad: lo que realmente puede salir mal",
+  "subtitle": "Perderse es el riesgo real, no el crimen en el sendero",
+  "paragraphs": [
+   "Las búsquedas en noticias locales y nacionales no encontraron reportes de 2025–2026 sobre asaltos armados a senderistas en los caminos de esta guía. Lo que sí apareció: <strong>senderistas que se pierden</strong>. Para principios de marzo de 2026, seis senderistas ya habían necesitado rescate en el estado, en Armadillo de los Infante, Real de Catorce y las Sierras de San Miguelito y Álvarez, y el titular de Protección Civil Estatal dijo que la mayoría no conocía la ruta o se había separado de su grupo.",
+   "Los otros problemas son menores, pero reales: robos en autos en algunos puntos de inicio de senderos, los envenenamientos de perros de 2025 alrededor de La Piedrota y un reporte de 2022 sobre un hombre que cobraba una “cuota” falsa cerca de La Amapola. El Departamento de Estado de EE. UU. clasifica al estado de San Luis Potosí en Nivel 2, “extreme precauciones adicionales” (mayo de 2026).",
+   "Las soluciones son sencillas: camina con otras personas, descarga el track antes de quedarte sin señal, dile a alguien tu ruta, mantén al grupo unido, estaciona donde lo hacen otros senderistas, no dejes nada visible en el auto, paga cuotas solo en el estacionamiento comunitario oficial y sal de los senderos remotos antes del anochecer. En caso de emergencia, llama al <strong>911</strong>."
+  ]
+ },
+ "rules": {
+  "title": "Reglas en las áreas protegidas",
+  "subtitle": "La mayoría de estos senderos cruzan reservas federales o terrenos comunitarios",
+  "paragraphs": [
+   "La Sierra de San Miguelito se convirtió en un Área de Protección de Flora y Fauna federal en diciembre de 2021, con una extensión de 111,160 hectáreas en SLP, Mexquitic, Villa de Reyes y Villa de Arriaga. Sus reglas de manejo, publicadas en el DOF en junio de 2024, piden a quienes hacen senderismo mantenerse en los senderos establecidos, llevarse toda la basura, llevar a los perros con correa y recoger sus desechos, y encender fogatas únicamente donde esté permitido. La Sierra de Álvarez tiene reglas similares de CONANP.",
+   "Gran parte del terreno es ejidal o propiedad comunal (La Amapola, Suspiro Picacho, el Valle de los Fantasmas). Las cuotas pequeñas y las solicitudes de permiso son normales y legítimas cuando provienen de la autoridad comunitaria o del estacionamiento oficial. Respeta las cercas y los portones."
+  ]
+ },
+ "guides": {
+  "title": "Clubes y guías de senderismo",
+  "subtitle": "La forma más fácil de conocer los senderos con seguridad",
+  "paragraphs": [
+   "Si eres nuevo en la zona, la manera más sencilla de empezar es con una caminata en grupo. <strong>Spot San Luis</strong> organiza caminatas comunitarias los sábados y domingos por la mañana con guías certificados (NOM-09-TUR-2002), grupos de máximo 30 personas y algunas rutas gratuitas. <strong>Club de Senderismo Expeditions</strong> organiza salidas regulares, y <strong>Corazón de Xoconostle</strong> ofrece guías certificados, seguro y transporte para caminatas en la Sierra de Álvarez, San Miguelito y más allá. Para el Sendero del Capitán, Civitatis vende un tour guiado de día completo con recogida en el hotel."
+  ]
+ },
+ "proTips": [
+  [
+   "Empieza al amanecer",
+   "Las reseñas de todos los senderos principales dicen lo mismo: las tardes son calurosas y terminar cuando ya está oscuro es como la gente se pierde."
+  ],
+  [
+   "Descarga la ruta",
+   "La señalización es informal (pintura, cal, listones, mojones). Guarda la ruta de Wikiloc o AllTrails sin conexión antes de quedarte sin señal."
+  ],
+  [
+   "Lleva más agua de la que crees",
+   "Medio litro por hora; 3 litros como mínimo para las cumbres y 4–6 litros para Cerro del Potosí."
+  ],
+  [
+   "Protege a tu perro",
+   "Llévalo con correa en las áreas protegidas, no dejes que coma nada en el sendero y estate atento a las víboras de cascabel durante los meses cálidos."
+  ],
+  [
+   "Respeta los terrenos comunitarios",
+   "Paga cuotas pequeñas solo en estacionamientos oficiales, pide permiso donde se espera y cierra las rejas detrás de ti."
+  ],
+  [
+   "Aclimátate primero",
+   "Haz Tangamanga o Cañada del Lobo antes de una cumbre de 2,800 m si acabas de llegar desde el nivel del mar."
+  ]
+ ],
+ "takeaways": [
+  "La Ventana es la caminata emblemática: un arco de roca a unos 2,800 m, 12 km ida y vuelta, MXN 50 por persona.",
+  "Cerro del Potosí es la gran cumbre a la que puedes comenzar a subir desde el final de Avenida Chapultepec.",
+  "Las familias deberían empezar por Cañada del Lobo, Tangamanga I o los senderos cortos de Cerro de San Pedro.",
+  "Ve de octubre a marzo, comienza al amanecer y lleva al menos 3 litros de agua los días de cumbre.",
+  "Perderse es el principal riesgo: camina con otras personas, descarga la ruta y manténganse juntos."
+ ],
+ "faq": [
+  [
+   "¿Cuál es la mejor caminata en San Luis Potosí?",
+   "La Ventana, un arco natural de roca a unos 2,800 m en la Sierra de San Miguelito. La ruta desde La Amapola es de 12.2–12.6 km ida y vuelta, con unos 500 m de ascenso y una trepada final. El ejido cobra MXN 50 por persona (2026)."
+  ],
+  [
+   "¿Hay caminatas fáciles para niños en San Luis Potosí?",
+   "Sí. Cañada del Lobo tiene un circuito de 3.5 km alrededor de una pequeña presa, con solo 40 m de ascenso, y Parque Tangamanga I cuenta con circuitos pavimentados gratuitos de hasta 12.7 km. Los senderos cortos desde Cerro de San Pedro y Cerro El Original en Santa María del Río también son adecuados para familias."
+  ],
+  [
+   "¿Es seguro hacer senderismo alrededor de San Luis Potosí?",
+   "No se encontraron reportes de asaltos armados a senderistas en estos senderos durante 2025–2026. El principal riesgo es perderse: seis senderistas necesitaron rescate en el estado para marzo de 2026. Camina en grupo, descarga el track y evita el atardecer en senderos remotos."
+  ],
+  [
+   "¿Cuál es la mejor época del año para hacer senderismo en San Luis Potosí?",
+   "De octubre a marzo, cuando el clima es seco, fresco y despejado. Abril y mayo son calurosos, y de junio a septiembre hay tormentas vespertinas y rayos en las cumbres expuestas."
+  ],
+  [
+   "¿Cerro del Potosí es lo mismo que Cerro Potosí en Nuevo León?",
+   "No. El Cerro del Potosí cerca de la ciudad de San Luis Potosí tiene unos 2,650 m de altura y está en la Sierra de San Miguelito. Cerro Potosí en Nuevo León es otra montaña de unos 3,700 m."
+  ],
+  [
+   "¿Necesito pagar para hacer senderismo en San Luis Potosí?",
+   "La mayoría de los senderos urbanos son gratuitos, incluidos Tangamanga I, Cañada del Lobo, La Piedrota y Cerro del Potosí. Los accesos administrados por comunidades cobran cuotas pequeñas, como MXN 50 por persona en La Ventana. Paga solo en el estacionamiento oficial."
+  ]
+ ],
+ "related": [
+  [
+   "/blog/family-camping-near-san-luis-potosi",
+   "Los mejores campamentos familiares cerca de San Luis Potosí",
+   "Dónde dormir bajo las estrellas en las mismas sierras"
+  ],
+  [
+   "/blog/real-de-catorce-guide-2026",
+   "Guía de Real de Catorce",
+   "Todo lo que necesitas para el viaje a Cerro del Quemado"
+  ],
+  [
+   "/blog/day-trips-from-san-luis-potosi-2026",
+   "Excursiones de un día desde San Luis Potosí",
+   "Combina una caminata con un pueblo: Cerro de San Pedro, Santa María del Río y más"
+  ],
+  [
+   "/parque-tangamanga",
+   "Parque Tangamanga",
+   "El gran parque de la ciudad, para caminatas y carreras de calentamiento"
+  ]
+ ],
+ "captions": {
+  "tangamangaLake": "El lago principal del Parque Tangamanga I, el lugar más fácil para caminar o correr en la ciudad.",
+  "tangamangaTrees": "Finales de la tarde en Tangamanga I. El parque cierra a las 22:30 de martes a sábado.",
+  "santaMaria": "Las colinas sobre Santa María del Río, donde Cerro El Original ofrece una subida corta.",
+  "alvarez": "Bosque de pino-encino en la Sierra de Álvarez, cerca del Valle de los Fantasmas.",
+  "sanPedroStreet": "Cerro de San Pedro, el antiguo pueblo minero donde comienza el Sendero del Capitán.",
+  "sanPedroMine": "Cerro de San Pedro y la mina a cielo abierto detrás de él.",
+  "arch": "Los arcos naturales de roca son la recompensa en las rutas más difíciles de la sierra.",
+  "snow": "Nieve en Cerro de San Pedro. Los amaneceres invernales pueden bajar de cero en los inicios de sendero.",
+  "quemado": "Artesanías wixárikas en la cima del Cerro del Quemado, un sitio sagrado sobre Real de Catorce."
+ }
+}

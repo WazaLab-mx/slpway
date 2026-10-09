@@ -1,5 +1,22 @@
 # Change Log
 
+## [2026-10-09] Drafts: family camping and best hikes deep dives (not yet public)
+
+- Two Deep Dive posts (BLOG_DEEP_DIVE_STYLE_GUIDE.md) saved as `status = 'draft'` in all 4 locales:
+  - `family-camping-near-san-luis-potosi` (628b6521): 9 places, Media Luna #1
+  - `best-hikes-san-luis-potosi` (d99b894f): 12 trails grouped easy → hard
+  - Each is ~4,200–4,400 words in English, with a Quick Answer, TOC, comparison table, fact cards, pro tips, takeaways, 6-question FAQ (FAQPage schema), related links and sources.
+- Research: two research agents compared 40+ campsites and 30+ trails against CONANP/DOF/Cecurt, park websites, local media (Plano Informativo, El Universal SLP, El Sol de San Luis), Wikiloc/AllTrails tracks and Google Places reviews (2026-10-09). Unverifiable or stale figures are labelled with their year. No outcome is stated for the hiker missing near La Ventana (Feb 2025).
+- New pipeline in `scripts/blog-posts/`:
+  - per post: `content.en.mjs` (copy), `render.mjs` (template), `photos.mjs` (credits), `post.mjs` (slug/category/tags)
+  - `translate.mjs`: gpt-5.6-terra, chunked; rejects any translation whose keys, array lengths, ids or HTML tags differ from the English
+  - `publish.mjs <post> [--publish]`: upserts all locales; draft by default
+  - `scripts/lib/deep-dive-html.mjs`: style-guide components. Only uses classes that exist in production CSS, because DB content is outside Tailwind's scan. Replaced `m-0`, `my-16`, `pb-3`, `border-gray-400`, `not-italic`, `group-open:rotate-45`, which aren't in the build.
+- Images in `public/images/blog/family-camping-slp/` and `best-hikes-slp/`: 13 Wikimedia Commons photos (CC BY / BY-SA / CC0 / PD), resized (heroes 1600px, inline 1200px), credited in captions plus a "Cover photo" line. Also 6 existing `/images/outdoors/` photos. The rock-arch photo is not labelled as La Ventana because its location is unverified.
+- Manual fixes after machine translation: ES/DE SEO titles shortened to ≤60 chars; DE "Badezimmer" → "Toiletten".
+- Private review page (Artifact): https://claude.ai/artifact/HDydp9fFUfzcXQJJHoHpJN
+- To publish after approval: push (images go live), then `node scripts/blog-posts/publish.mjs family-camping --publish` and the same for `best-hikes`.
+
 ## [2026-09-29] Sign-in and sign-up fixed ("not valid JSON")
 
 - Bug: `AuthForm` POSTed to `/api/signin` and `/api/robust-signup`. Neither endpoint exists in this repo (not even in git history), so Netlify returned the HTML 404 page and `response.json()` threw "not valid JSON". Nobody could sign in or sign up through the form.
