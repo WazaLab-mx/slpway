@@ -78,7 +78,7 @@ export default {
       subtitle: 'The best all-round family camping in range, thanks to warm spring water and real facilities',
       paragraphs: [
         'If you only make one camping trip from San Luis Potosí, make it this one. The Media Luna is a crescent-shaped lagoon fed by thermal springs in the municipality of Rioverde, with crystal-clear water that recent visitors measure at around 28 °C. That temperature is the whole point: kids can swim, float and snorkel in the morning before the sun is high, and again in the evening, any month of the year.',
-        'Rioverde sits much lower and warmer than SLP city, so this is also the easiest place to camp in winter without freezing gear. Shallow edges, shade trees and green lawns make it manageable with small children, and life jackets are mandatory in most swimming zones (rental is MXN 50). There is a food court and a small museum with mammoth remains, which buys you an hour if anyone gets bored.',
+        'Rioverde sits much lower and warmer than SLP city, so this is also the easiest place to camp in winter without freezing gear. Shallow edges, shade trees and green lawns make it manageable with small children, and life jackets are mandatory in most swimming zones (rental is MXN 50). There is a food court on site, and the spring itself is famous for the mammoth fossils divers have found on its bed; some finds are shown at the museum in Rioverde town, about 15 km away.',
         'The camping area is a designated zone within the state park. The ejido that manages the site banned camping right next to the water back in 2020, and camping now runs in its own area, so don’t expect to pitch a tent on the shore.',
       ],
       fact: [
@@ -86,11 +86,11 @@ export default {
         ['cost', 'Tent MXN 150 plus entry (adults MXN 100, children and seniors MXN 50). Cabins MXN 1,300–2,600 per night with entry included. Cash only.'],
         ['facilities', 'Bathrooms open 24 h, showers until 19:00, food court, kayak and raft rental. No cell signal and weak Wi-Fi.'],
         ['bestFor', 'Families with kids of any age who want to swim.'],
-        ['season', 'October–May. Summer rains can cloud the water and have closed the park before (August 2024). Closed Tuesdays; day hours 8:00–17:00.'],
+        ['season', 'October–May. Summer rains can cloud the water and have closed the park before (for about 10 days in late July–early August 2024). Closed Tuesdays; day hours 8:00–17:00.'],
         ['google', '4.6★ from 12,486 reviews'],
         ['contact', 'Cabin reservations by WhatsApp 487 101 5874'],
       ],
-      grillCallout: 'Sources disagree on whether grills are allowed: <em>El Universal</em> (2025) lists them as banned along with pets, outside alcohol and speakers, while <em>Milenio</em> (2025) lists grills among the facilities. Plan on cold food and the food court, and ask by WhatsApp before you pack the charcoal. Soap and shampoo are never allowed in the springs.',
+      grillCallout: 'Older coverage disagreed on grills (<em>El Universal</em> 2025 listed them as banned; <em>Milenio</em> 2025 listed them as a facility), but in September 2026 the park listed uncooked food as prohibited and allowed only ready-made food. Plan on cold food and the food court, and ask by WhatsApp before you pack any charcoal. Soap and shampoo are never allowed in the springs.',
     },
     shamballa: {
       title: '2. Shamballa Estancia Campestre (Sierra de Álvarez)',
@@ -118,7 +118,7 @@ export default {
       ],
       fact: [
         ['drive', 'About 53 km / 1 h, paved to Armadillo.'],
-        ['cost', 'Entry MXN 100 adult / 50 child. Camping MXN 300 adult / 200 child, bring your own tent. Zip line MXN 350; “complete experience” package MXN 1,350 adult / 1,200 child (park website, 2026). Activity prices have changed over the years, so confirm.'],
+        ['cost', 'Entry MXN 100 adult / 50 child. Camping MXN 300 adult / 200 child, bring your own tent. Zip line MXN 350; “Experiencia Total” package (entry, archery, breakfast, zip line, horse ride and camping) MXN 1,350 adult / 1,200 child (park website, 2026). Activity prices have changed over the years, so confirm.'],
         ['facilities', 'Bathrooms, breakfast in packages, pet friendly. Showers and fire rules at the campsite not confirmed.'],
         ['bestFor', 'Kids who need a full programme of activities.'],
         ['season', 'Year-round on weekends and holidays (10:00–18:00); groups midweek by arrangement. Hot sun at midday, cold nights in winter.'],
@@ -147,7 +147,7 @@ export default {
       title: '5. Valle de los Fantasmas (Sierra de Álvarez protected area)',
       subtitle: 'Strange rock formations, dark skies and primitive camping run with the local ejido',
       paragraphs: [
-        'The Valle de los Fantasmas (“Valley of the Ghosts”) owes its name to the pale rock formations that rise out of the forest: the Elephant Rock, the Piedra Flotante that seems to balance on nothing. It lies inside the Sierra de Álvarez Flora and Fauna Protection Area, a federal reserve of about 16,900 hectares where CONANP lists camping as a permitted activity. Wildlife here includes white-tailed deer, and CONANP has even recorded a puma on camera traps.',
+        'The Valle de los Fantasmas (“Valley of the Ghosts”) owes its name to the pale rock formations that rise out of the forest: the Elephant Rock, the Piedra Flotante that seems to balance on nothing. It lies inside the Sierra de Álvarez Flora and Fauna Protection Area, a federal reserve of about 16,900 hectares where CONANP lists camping as a permitted activity. Wildlife here includes white-tailed deer, and CONANP has even recorded a puma on camera traps (2017).',
         'Camping zones are signposted and managed with the community of Ejido San Francisco, where local women also offer guided walks and traditional meals. Access is a small “symbolic” fee whose current amount couldn’t be confirmed. CONANP notes there is no lodging or food inside the protected area, so assume no bathrooms or water and bring everything.',
         'This is a place for adventurous families comfortable with primitive camping, or for pairing with Shamballa or Colibrí: sleep there, spend the day here. Much of the land around the rock formations is fenced private or ejido property, and map apps get confused, so ask locals in San Francisco or hire a local guide.',
       ],
@@ -199,7 +199,7 @@ export default {
       title: '8. Guided camping with Corazón de Xoconostle',
       subtitle: 'For families with no gear and no experience',
       paragraphs: [
-        'Corazón de Xoconostle is not a campground but an outdoor operator based in the Barrio de San Miguelito in the city. It runs guided camping in the desert near Armadillo de los Infante, plus treks in the Sierra de Álvarez, the Sierra de San Miguelito and Guadalcázar, with certified guides and equipment supplied. That makes it the easiest way to try camping without buying a tent first.',
+        'Corazón de Xoconostle is not a campground but an outdoor operator based in the Barrio de San Miguelito in the city. It runs guided overnight camping at its trekking destinations, including Armadillo de los Infante, the Sierra de Álvarez, the Sierra de San Miguelito and Guadalcázar, with NOM-certified guides. Ask whether tents and sleeping bags are included: if they are, it is the easiest way to try camping without buying gear first.',
         'Package prices are set per trip, so ask for a quote. For more about the company, see our <a href="/blog/corazon-de-xoconostle">profile of Corazón de Xoconostle</a>.',
       ],
       contact: 'Phone/WhatsApp 444 657 1872 · corazondexoconostle.com',
@@ -208,7 +208,7 @@ export default {
       title: '9. Long-weekend upgrade: Puente de Dios (Tamasopo)',
       subtitle: 'Turquoise pools in the Huasteca, but too far for a regular weekend',
       paragraphs: [
-        'Puente de Dios in Tamasopo is one of the most beautiful swimming spots in the state: turquoise pools under a natural rock bridge at the gateway to the Huasteca Potosina. At about 3 h 30 min from the city it is beyond the range of this guide, so treat it as a long-weekend trip. Entry is MXN 150 (2026), with life jackets at MXN 50 and parking at MXN 30.',
+        'Puente de Dios in Tamasopo is one of the most beautiful swimming spots in the state: turquoise pools under a natural rock bridge at the gateway to the Huasteca Potosina. At about 3 h 30 min from the city it is beyond the range of this guide, so treat it as a long-weekend trip. Entry is MXN 150 (2026), with life jackets at about MXN 25 and parking at MXN 30.',
         'Two cautions for families: there are a few hundred steep steps down to the water, and the current can be strong, so it suits children of eight and up who swim well. The Huasteca stretch of Highway 70 calls for daylight driving. Our <a href="/blog/huasteca-potosina-itinerary-2026">Huasteca Potosina itinerary</a> covers the region in depth.',
       ],
     },
@@ -254,7 +254,7 @@ export default {
     ['Pack for 0 °C, even in spring', 'Sleeping bags rated to 0 °C or lower, wool layers, hats and insulated sleeping pads. Desert and sierra nights drop fast after sunset.'],
     ['Lock the cooler', 'Free-roaming ranch dogs raid food at several sites. Keep food in the car overnight.'],
     ['Carry cash and a full tank', 'Most campsites don’t take cards, and some (like La Misión) have no gas station nearby.'],
-    ['Respect the springs', 'Life jackets are mandatory at Media Luna and Tamasopo (rentable for MXN 50). Bring water shoes and leave the soap at home.'],
+    ['Respect the springs', 'Life jackets are mandatory at Media Luna (MXN 50 rental; you can’t bring your own) and at Puente de Dios (around MXN 25). Bring water shoes and leave the soap at home.'],
     ['Shake out your boots', 'Scorpions and snakes live in the desert sites. Bring a headlamp and insect repellent for the rainy season.'],
     ['Confirm by WhatsApp', 'Prices and rules at small campsites change often. A two-minute message saves a wasted drive.'],
   ],
@@ -262,16 +262,16 @@ export default {
     'Media Luna is the best all-round family pick: warm water, 24 h bathrooms, MXN 150 per tent plus entry.',
     'For a first trip close to the city, Shamballa in the Sierra de Álvarez is 45 minutes away with hot water and a shared kitchen.',
     'Cráter Encantado has the most for kids to do; Valle de los Fantasmas and La Misión are for families who want quiet and stars.',
-    'Plan for freezing nights from November to February, and avoid the June–September rains.',
+    'Plan for near-freezing nights from November to February, and avoid the June–September rains.',
     'Drive in daylight, carry cash, and confirm prices by WhatsApp before you go.',
   ],
   faq: [
     ['Where can I camp near San Luis Potosí with kids?', 'The best family options are Laguna de la Media Luna in Rioverde (warm springs, 24 h bathrooms), Shamballa and Colibrí in the Sierra de Álvarez (about 45 minutes), and Cráter Encantado in Armadillo de los Infante (activities for kids, camping inside a volcanic crater).'],
     ['How much does it cost to camp at the Media Luna?', 'As of February 2026, camping costs MXN 150 per tent plus entry (MXN 100 adults; MXN 50 children and seniors). Cabins cost MXN 1,300–2,600 per night with entry included. The park is closed on Tuesdays.'],
     ['Is it cold to camp near San Luis Potosí?', 'Yes, from November to February. The city sits at about 1,860 m and the sierras are higher, so near-freezing nights are normal. Media Luna in Rioverde is lower and much warmer.'],
-    ['Can I make a campfire?', 'Only in designated fire rings. Wildfire season runs from 16 January to 30 June, and protected areas such as the Sierra de Álvarez only allow fires in designated spots. Media Luna reportedly bans grills; ask before you go.'],
-    ['Is it safe to camp near San Luis Potosí?', 'The campsites in this guide had no 2025–2026 incident reports. The main risk is on certain highways, especially Highway 57 near Matehuala. Drive in daylight, use toll roads and arrive before dark.'],
-    ['Do I need a reservation?', 'For cabins at Media Luna and for private campsites such as Colibrí, Cráter Encantado and Shamballa, yes: message them by WhatsApp. In the protected areas you pay a small community fee on arrival.'],
+    ['Can I make a campfire?', 'Only in designated fire rings. Wildfire season runs from 16 January to 30 June, and protected areas such as the Sierra de Álvarez only allow fires in designated spots. Media Luna allows only ready-made food (no cooking on site as of September 2026); ask before you go.'],
+    ['Is it safe to camp near San Luis Potosí?', 'Our news search found no 2025–2026 incident reports specific to the campsites in this guide. The main risk is on certain highways, especially Highway 57 near Matehuala. Drive in daylight, use toll roads and arrive before dark.'],
+    ['Do I need a reservation?', 'For cabins at Media Luna and for private campsites such as Colibrí, Cráter Encantado and Shamballa, yes: message them by WhatsApp. At Valle de los Fantasmas you pay a small community fee on arrival.'],
   ],
   related: [
     ['/blog/best-hikes-san-luis-potosi', 'The Best Hikes in San Luis Potosí', 'Trails in the same sierras, from easy family loops to summit days'],

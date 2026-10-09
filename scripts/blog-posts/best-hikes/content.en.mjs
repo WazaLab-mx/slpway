@@ -62,7 +62,7 @@ export default {
       ['Cañada del Lobo', '3.5–7.1 km loops', '40–134 m', 'Easy', '12 min'],
       ['La Piedrota', '6–8.2 km', '~226 m', 'Easy–moderate', '15 min'],
       ['Cerro El Original', '2.3 km', '~240 m', 'Easy–moderate', '46 min'],
-      ['Cueva de los Caballos', '~8 km loop', '240–330 m', 'Easy–moderate', '50 min'],
+      ['Cueva de los Caballos', '~8 km loop or out-and-back', '240–330 m', 'Easy–moderate', '50 min'],
       ['Cráter Joya Honda', '5.1–5.8 km loop', '~240 m', 'Moderate', '65 min'],
       ['Sendero del Capitán', '~19 km one way (short options)', '~320 m up', 'Moderate–hard', '28 min'],
       ['Cerro Grande, Suspiro Picacho', '11.3–11.9 km', '540–600 m', 'Moderate–hard', '22 min'],
@@ -83,7 +83,7 @@ export default {
       title: 'Parque Tangamanga I',
       paragraphs: [
         'Tangamanga I is a 420-hectare state park a few minutes from the centre, with a paved circuit of about 12.7 km around lakes and woodland, plus dirt paths you can mix in. It isn’t wilderness, but it is the best place to get used to the altitude before tackling the sierra, to run with a stroller, or to walk with grandparents. Entry is free; only sports facilities and events are charged.',
-        'Hours are set by the state parks agency, Cecurt: Monday 5:00–11:00 (maintenance day), Tuesday to Saturday 5:00–22:30 and Sunday 5:00–18:00. For more about the park, see our <a href="/parque-tangamanga">Parque Tangamanga guide</a>.',
+        'Hours are set by Cecurt, the state body that runs the park: Monday 5:00–11:00 (maintenance day), Tuesday to Saturday 5:00–22:30 and Sunday 5:00–18:00. For more about the park, see our <a href="/parque-tangamanga">Parque Tangamanga guide</a>.',
       ],
       fact: [
         ['trailhead', 'Av. Salvador Nava Martínez 3055'],
@@ -97,12 +97,12 @@ export default {
     canada: {
       title: 'Cañada del Lobo',
       paragraphs: [
-        'The best family nature walk near the city. A small reservoir sits in a canyon between two hills, with herons and cormorants on the water, oaks and pinyon pines on the slopes and the little chapel of the Virgen del Chorrito. The easy loop around the dam is about 3.5 km with barely 40 m of climbing, and AllTrails reviewers call it suitable for children; a longer loop of 7.1 km adds some hills.',
+        'The best family nature walk near the city. A small reservoir sits in a canyon between two hills, with herons and cormorants on the water, oaks and pinyon pines on the slopes and the little chapel of the Virgen del Chorrito. The easy walk around the dam is about 3.5 km with barely 40 m of climbing, and AllTrails reviewers call it suitable for children; a longer loop of 7.1 km adds some hills.',
         'Access is free and the parking lot is large. Two cautions: the trails are shared with mountain bikes, ATVs and jeeps, and a July 2026 review reported a car stereo stolen from the lower parking area, so park up near the dam and leave nothing visible.',
       ],
       fact: [
         ['drive', 'About 9 km / 12 min'],
-        ['stats', '3.5 km (+40 m) dam loop; 7.1 km (+134 m) longer loop'],
+        ['stats', '3.5 km (+40 m) dam walk; 7.1 km (+134 m) longer loop'],
         ['difficulty', 'Easy · dogs on leash'],
         ['fee', 'Free'],
         ['google', 'Google 4.6★ (273) · AllTrails 4.9★ (10)'],
@@ -139,11 +139,11 @@ export default {
       title: 'Cerro y Cueva de los Caballos (Sierra de Álvarez)',
       paragraphs: [
         'The easiest way into the cool pine-oak forest of the Sierra de Álvarez, a federal protected area east of the city. At 2,500–2,650 m it is noticeably colder than SLP, with fog on winter mornings. The route follows a wide path up past the microwave antennas to a cave, close to the strange rock formations of the Valle de los Fantasmas: the Elephant Rock and the Piedra Flotante.',
-        'Wildlife includes white-tailed deer, ringtails and acorn woodpeckers, and CONANP has recorded a puma on camera traps. A small community fee was MXN 10 per person in December 2024. Much of the land around the rock formations is fenced, and map apps get confused, so ask locals in San Francisco or hire a local guide. Rattlesnakes live here; watch your step in warm months.',
+        'Wildlife includes white-tailed deer, ringtails and acorn woodpeckers, and CONANP has recorded a puma on camera traps. A small entry fee was MXN 10 per person in December 2024 (dogs free). Much of the land around the rock formations is fenced, and map apps get confused, so ask locals in San Francisco or hire a local guide. Rattlesnakes live here; watch your step in warm months.',
       ],
       fact: [
         ['drive', 'About 45 km / 50 min via Highway 70 toward Rioverde'],
-        ['stats', '~8 km loop, 240–330 m gain, max ~2,650 m'],
+        ['stats', '~8 km loop or out-and-back, 240–330 m gain, max ~2,650 m'],
         ['difficulty', 'Easy–moderate · good for beginners and dogs'],
         ['fee', 'About MXN 10 per person (December 2024)'],
         ['google', 'Google 4.8★ (190)'],
@@ -174,15 +174,15 @@ export default {
         ['drive', 'About 23 km / 28 min to the start; Armadillo is about 52 min from SLP'],
         ['stats', '~19–20 km one way, ~320 m up and ~700 m down'],
         ['difficulty', 'Moderate–hard (length); short sections easy'],
-        ['fee', 'No trail fee found; the Cerro de San Pedro lookout charged MXN 20 (2024)'],
+        ['fee', 'No trail fee found; the Cerro de San Pedro lookout charged MXN 20 (2025)'],
         ['google', 'Google 4.8★ (100) · AllTrails 4.8★ (21)'],
       ],
     },
     cerroGrande: {
       title: 'Cerro Grande (Suspiro Picacho, Mexquitic)',
       paragraphs: [
-        'The highest point of Mexquitic de Carmona, at the north-western end of the Sierra de San Miguelito: a steep, stony climb to a wooded summit with views across the valley. The route is marked with lime and reaches about 2,565–2,600 m by GPS (the community cites 2,200 m). Trekking poles help on the loose descent.',
-        'This is a community-protected hill and an important water-recharge area. <strong>Ask permission from the community authority in Suspiro Picacho before you go</strong>; reviews from 2024 and 2026 say access has become stricter, and one suggests checking in at a village shop. Don’t build cairns, and carry out your rubbish.',
+        'Described by local hikers as the highest point of Mexquitic de Carmona, at the north-western end of the Sierra de San Miguelito: a steep, stony climb to a wooded summit with views across the valley. The route is marked with lime and reaches about 2,565–2,600 m by GPS (the community cites 2,200 m). Trekking poles help on the loose descent.',
+        'This is a community-protected hill and an important water-recharge area. <strong>Ask permission from the community authority in Suspiro Picacho before you go</strong>; a 2024 review says you need a permit, a May 2026 review says access became stricter after a suspected arson fire, and a July 2026 review suggests checking in at a village shop so the community judge is informed. Don’t build cairns, and carry out your rubbish.',
       ],
       fact: [
         ['trailhead', 'Suspiro Picacho village'],
@@ -195,7 +195,7 @@ export default {
     ventana: {
       title: 'La Ventana (Sierra de San Miguelito)',
       paragraphs: [
-        'The signature hike of San Luis Potosí. La Ventana (“the window”) is a natural rock arch near one of the highest points of the Sierra de San Miguelito, reached through oak and pine woodland from the community of La Amapola. The route is marked with ribbons and blue and white paint, and finishes with a steep rock scramble up to the arch, so it isn’t for small children. A 1 km detour leads to Cerro de la Cruz, with an altar to the Virgin of Guadalupe.',
+        'The signature hike of San Luis Potosí. La Ventana (“the window”) is a natural rock arch near one of the highest points of the Sierra de San Miguelito, reached through oak and pine woodland from the community of La Amapola. The route is marked with ribbons and blue and white paint, and finishes with a steep rock scramble up to the arch, so it isn’t for small children. A detour of about 1 km each way leads to Cerro de la Cruz, with an altar to the Virgin of Guadalupe.',
         'Getting there is part of the adventure: from Highway 80 toward Guadalajara, turn off toward El Mezquital and drive about 10 km of rough dirt road; a high-clearance car is recommended. The ejido charges <strong>MXN 50 per person</strong> (confirmed in 2026) and watches your car. Pay only at the ejido parking area. Start early, carry at least 3 litres of water and download the track: in February 2025 a hiker went missing near this route after taking an alternate path.',
       ],
       fact: [
@@ -211,7 +211,7 @@ export default {
       title: 'Cerro del Potosí (Sierra de San Miguelito)',
       paragraphs: [
         'The city’s classic big day out. From the end of Avenida Chapultepec, a long, steady climb leads to a summit cross at about 2,650 m, where a visitors’ logbook is tucked into the base and the whole city spreads out below. Its most-used Wikiloc track has been recorded more than 840 times. After a rock painted “PB”, follow blue and orange marks; expect loose rock, steady grade and, according to one track author, a narrow exposed section with drops on both sides.',
-        'There is almost no shade, so start at dawn and carry 4–6 litres of water, as local track authors recommend. Phone signal works on most of the route. Note the name again: this is not Nuevo León’s 3,700 m Cerro Potosí.',
+        'There is almost no shade, so start at dawn and carry 4–6 litres of water, as one local track author recommends. Phone signal works on most of the route. Note the name again: this is not Nuevo León’s 3,700 m Cerro Potosí.',
       ],
       fact: [
         ['trailhead', 'End of Av. Chapultepec (or Soriana Chapultepec, adding ~4 km)'],
@@ -240,13 +240,13 @@ export default {
       title: 'Cerro del Quemado (Real de Catorce)',
       paragraphs: [
         'High above Real de Catorce, the Cerro del Quemado is a sacred ceremonial site for the Wixárika (Huichol) people in Wirikuta, with stone altars, offerings and enormous views over the desert. The marked route (orange dots) is about 10.5 km round trip with 365–410 m of climbing, but the altitude, at about 2,940 m by GPS, makes it feel harder. Some websites claim 3,800 m; GPS data says otherwise.',
-        'Respect is not optional: don’t touch offerings and stay quiet if a ceremony is under way. Access was reported as free in 2026, though a 2024 hiker paid MXN 20. Real de Catorce is about 3 h 30 min from the city, so stay the night; our <a href="/blog/real-de-catorce-guide-2026">Real de Catorce guide</a> covers the rest of the trip.',
+        'Respect is not optional: don’t touch offerings and stay quiet if a ceremony is under way. AllTrails lists access as free, but hikers, including one in 2024, report paying a MXN 20 maintenance contribution at the summit, so carry small change. Real de Catorce is about 3 h 30 min from the city, so stay the night; our <a href="/blog/real-de-catorce-guide-2026">Real de Catorce guide</a> covers the rest of the trip.',
       ],
       fact: [
         ['drive', 'About 213 km / 3 h 30 min, plus the Ogarrio tunnel'],
         ['stats', '10.3–10.9 km out and back, 365–410 m gain, max ~2,940 m'],
         ['difficulty', 'Moderate (high altitude)'],
-        ['fee', 'Free in 2026 per AllTrails; MXN 20 reported in 2024'],
+        ['fee', 'Free per AllTrails; some hikers report a MXN 20 contribution'],
         ['google', 'Google 4.8★ (78) · AllTrails 4.9★ (39)'],
       ],
     },
@@ -265,7 +265,7 @@ export default {
     title: 'Altitude, seasons and water',
     subtitle: 'Why every local hiker starts at first light',
     paragraphs: [
-      'SLP city sits at about 1,860 m. Trailheads in the Sierra de San Miguelito are at 2,000–2,400 m and summits reach 2,600–2,880 m; the Sierra de Álvarez sits around 2,500–2,650 m, and Real de Catorce at 2,600–3,200 m. If you’ve just arrived, take the first few days easy, drink more than you think and remember that sunburn comes faster at altitude.',
+      'SLP city sits at about 1,860 m. Trailheads in the Sierra de San Miguelito are at about 1,900–2,400 m and summits reach 2,600–2,880 m; the Sierra de Álvarez sits around 2,500–2,650 m, and Real de Catorce at 2,600–3,200 m. If you’ve just arrived, take the first few days easy, drink more than you think and remember that sunburn comes faster at altitude.',
       'The best months are <strong>October to March</strong>: dry, cool and clear, with September and October greenest right after the rains. December and January bring near-freezing dawns at the higher trailheads and, occasionally, snow. April and May are hot (May averages a 28 °C high) and are the peak of wildfire season. From June to September, afternoon storms bring lightning on exposed summits, slippery rock and flash floods in canyons.',
       'There is no water on these trails and very little shade. Plan on half a litre per hour, at least 3 litres on summit days, plus electrolytes, a hat, long sleeves and sunscreen.',
     ],

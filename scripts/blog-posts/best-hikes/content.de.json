@@ -119,14 +119,14 @@
   "rows": [
    [
     "Parque Tangamanga I",
-    "Bis zu 12.7 km (asphaltierte Runde)",
+    "Bis zu 12.7 km (asphaltierter Rundweg)",
     "~114 m",
     "Leicht",
     "5 Min."
    ],
    [
     "Cañada del Lobo",
-    "3.5–7.1 km lange Runden",
+    "3.5–7.1 km Rundwege",
     "40–134 m",
     "Leicht",
     "12 Min."
@@ -147,22 +147,22 @@
    ],
    [
     "Cueva de los Caballos",
-    "~8 km lange Runde",
+    "~8 km Rundweg oder Hin- und Rückweg",
     "240–330 m",
     "Leicht–moderat",
     "50 Min."
    ],
    [
     "Cráter Joya Honda",
-    "5.1–5.8 km lange Runde",
+    "5.1–5.8 km Rundweg",
     "~240 m",
     "Moderat",
     "65 Min."
    ],
    [
     "Sendero del Capitán",
-    "~19 km einfache Strecke (kurze Optionen)",
-    "~320 m bergauf",
+    "~19 km einfache Strecke (kürzere Optionen)",
+    "~320 m Aufstieg",
     "Moderat–schwer",
     "28 Min."
    ],
@@ -225,8 +225,8 @@
   "tangamanga": {
    "title": "Parque Tangamanga I",
    "paragraphs": [
-    "Tangamanga I ist ein 420 Hektar großer staatlicher Park, nur wenige Minuten vom Zentrum entfernt. Er bietet einen asphaltierten Rundkurs von etwa 12.7 km um Seen und Waldflächen sowie unbefestigte Wege, die du einbauen kannst. Es ist keine Wildnis, aber der beste Ort, um dich an die Höhenlage zu gewöhnen, bevor du die Sierra angehst, mit einem Kinderwagen zu laufen oder mit den Großeltern spazieren zu gehen. Der Eintritt ist kostenlos; nur Sportanlagen und Veranstaltungen kosten etwas.",
-    "Die Öffnungszeiten werden von der staatlichen Parkbehörde Cecurt festgelegt: Montag 5:00–11:00 (Wartungstag), Dienstag bis Samstag 5:00–22:30 und Sonntag 5:00–18:00. Mehr über den Park findest du in unserem <a href=\"/parque-tangamanga\">Parque-Tangamanga-Guide</a>."
+    "Tangamanga I ist ein 420 Hektar großer State Park wenige Minuten vom Zentrum entfernt, mit einer asphaltierten Runde von etwa 12.7 km um Seen und Waldflächen sowie unbefestigten Wegen, die du einbauen kannst. Es ist keine Wildnis, aber der beste Ort, um dich an die Höhe zu gewöhnen, bevor du die Sierra in Angriff nimmst, mit einem Kinderwagen zu laufen oder mit Großeltern spazieren zu gehen. Der Eintritt ist frei; nur Sportanlagen und Veranstaltungen sind kostenpflichtig.",
+    "Die Öffnungszeiten werden von Cecurt festgelegt, der staatlichen Stelle, die den Park betreibt: Montag 5:00–11:00 (Wartungstag), Dienstag bis Samstag 5:00–22:30 und Sonntag 5:00–18:00. Mehr über den Park findest du in unserem <a href=\"/parque-tangamanga\">Parque-Tangamanga-Guide</a>."
    ],
    "fact": [
     [
@@ -239,11 +239,11 @@
     ],
     [
      "stats",
-     "Asphaltierter Rundkurs von 12.7 km, ~114 m Höhengewinn; kürzere Runden lassen sich leicht zusammenstellen"
+     "Asphaltierte Runde von 12.7 km, ~114 m Anstieg; kürzere Runden lassen sich leicht zusammenstellen"
     ],
     [
      "difficulty",
-     "Leicht · kinderwagen- und rollstuhlfreundlich"
+     "Leicht · kinderwagen- und rollstuhlgerecht"
     ],
     [
      "fee",
@@ -258,8 +258,8 @@
   "canada": {
    "title": "Cañada del Lobo",
    "paragraphs": [
-    "Der beste Naturspaziergang für Familien in der Nähe der Stadt. Ein kleiner Stausee liegt in einer Schlucht zwischen zwei Hügeln, mit Reihern und Kormoranen auf dem Wasser, Eichen und Pinien an den Hängen sowie der kleinen Kapelle der Virgen del Chorrito. Der leichte Rundweg um den Staudamm ist etwa 3.5 km lang und hat kaum 40 m Steigung; AllTrails-Rezensenten bezeichnen ihn als kinderfreundlich. Ein längerer Rundweg von 7.1 km führt zusätzlich über einige Hügel.",
-    "Der Zugang ist kostenlos und der Parkplatz ist groß. Zwei Hinweise: Die Wege werden mit Mountainbikes, ATVs und Jeeps geteilt, und in einer Bewertung vom Juli 2026 wurde berichtet, dass eine Autoanlage vom unteren Parkplatz gestohlen wurde. Parke daher oben in der Nähe des Staudamms und lasse nichts sichtbar im Auto."
+    "Der beste familienfreundliche Spaziergang in der Natur nahe der Stadt. Ein kleiner Stausee liegt in einer Schlucht zwischen zwei Hügeln, mit Reihern und Kormoranen auf dem Wasser, Eichen und Pinyon-Kiefern an den Hängen sowie der kleinen Kapelle der Virgen del Chorrito. Der leichte Rundweg um den Damm ist etwa 3.5 km lang und hat kaum 40 m Höhenunterschied; AllTrails-Rezensenten nennen ihn kinderfreundlich. Eine längere Runde von 7.1 km führt über einige Hügel.",
+    "Der Zugang ist kostenlos und der Parkplatz ist groß. Zwei Hinweise: Die Wege werden mit Mountainbikes, ATVs und Jeeps geteilt, und eine Bewertung vom Juli 2026 berichtete von einem gestohlenen Autoradio auf dem unteren Parkplatz. Parke daher oben nahe dem Damm und lass nichts sichtbar im Auto."
    ],
    "fact": [
     [
@@ -268,7 +268,7 @@
     ],
     [
      "stats",
-     "3.5 km (+40 m) Rundweg am Staudamm; 7.1 km (+134 m) längerer Rundweg"
+     "3.5 km (+40 m) Rundweg am Damm; 7.1 km (+134 m) längere Runde"
     ],
     [
      "difficulty",
@@ -344,8 +344,8 @@
   "caballos": {
    "title": "Cerro y Cueva de los Caballos (Sierra de Álvarez)",
    "paragraphs": [
-    "Der einfachste Zugang zum kühlen Kiefern-Eichen-Wald der Sierra de Álvarez, einem bundesweit geschützten Gebiet östlich der Stadt. Auf 2,500–2,650 m ist es deutlich kälter als in SLP, mit Nebel an Wintermorgen. Die Route folgt einem breiten Weg vorbei an den Mikrowellenantennen hinauf zu einer Höhle, nahe den seltsamen Felsformationen des Valle de los Fantasmas: Elephant Rock und Piedra Flotante.",
-    "Zur Tierwelt gehören Weißwedelhirsche, Katzenfrettchen und Eichelspechte, und CONANP hat mit Kamerafallen einen Puma aufgezeichnet. Im Dezember 2024 betrug eine kleine Gemeindegebühr MXN 10 pro Person. Ein Großteil des Landes um die Felsformationen ist eingezäunt, und Karten-Apps kommen durcheinander – frag daher Einheimische in San Francisco oder engagiere einen lokalen Guide. Hier leben Klapperschlangen; achte in den warmen Monaten auf deinen Schritt."
+    "Der einfachste Weg in den kühlen Kiefern-Eichen-Wald der Sierra de Álvarez, eines östlich der Stadt gelegenen, bundesweit geschützten Gebiets. Auf 2,500–2,650 m ist es deutlich kälter als in SLP, an Wintermorgen liegt oft Nebel. Die Route führt auf einem breiten Weg an den Mikrowellenantennen vorbei hinauf zu einer Höhle, nahe den seltsamen Felsformationen des Valle de los Fantasmas: dem Elephant Rock und der Piedra Flotante.",
+    "Zur Tierwelt gehören Weißwedelhirsche, Katzenfrett und Eichelspechte; CONANP hat außerdem einen Puma mit Kamerafallen dokumentiert. Im Dezember 2024 betrug der kleine Eintrittspreis MXN 10 pro Person (Hunde kostenlos). Ein Großteil des Geländes rund um die Felsformationen ist eingezäunt, und Karten-Apps sind verwirrend, deshalb frage Einheimische in San Francisco oder engagiere einen lokalen Guide. Hier leben Klapperschlangen; achte in den warmen Monaten auf deine Schritte."
    ],
    "fact": [
     [
@@ -354,7 +354,7 @@
     ],
     [
      "stats",
-     "~8 km Rundweg, 240–330 m Höhengewinn, max. ~2,650 m"
+     "~8 km Rundweg oder Hin- und Rückweg, 240–330 m Höhengewinn, max. ~2,650 m"
     ],
     [
      "difficulty",
@@ -402,8 +402,8 @@
   "capitan": {
    "title": "Sendero del Capitán (Cerro de San Pedro nach Armadillo)",
    "paragraphs": [
-    "Eine ausgeschilderte historische Route von etwa 19 km entlang alter Bergbau- und Maultierpfade, die drei mit Kapitän Miguel Caldera verbundene Orte miteinander verknüpft: Cerro de San Pedro, Monte Caldera und Armadillo de los Infante. Sie beginnt auf etwa 2,040 m, steigt auf 2,200 m an und führt hinunter nach Armadillo auf etwa 1,630 m, durch eine Landschaft mit Yuccas und Eichen und fast ohne Handyempfang. Die gesamte Route ist eine Streckenwanderung, daher brauchst du einen Autotransfer oder eine Abholung.",
-    "Familien müssen nicht die ganze Strecke machen. Von Cerro de San Pedro führt ein 3.3 km langer Weg hinauf zur Steinkapelle der Virgen del Encino, und ein leichter 7.3 km langer Rundweg verbindet den Aussichtspunkt und die Kirche. Kombiniere beides mit einem Mittagessen in der halb verlassenen Bergbaustadt und ihrem Blick über den Tagebau. Civitatis bietet eine ganztägige geführte Variante mit einem englisch- oder spanischsprachigen Guide an."
+    "Eine ausgeschilderte historische Route von etwa 19 km auf alten Bergbau- und Maultierpfaden, die drei mit Hauptmann Miguel Caldera verbundene Orte miteinander verknüpft: Cerro de San Pedro, Monte Caldera und Armadillo de los Infante. Sie beginnt auf etwa 2,040 m, steigt auf 2,200 m an und führt hinab nach Armadillo auf etwa 1,630 m, durch eine Landschaft mit Yuccas und Eichen und fast ohne Handyempfang. Die gesamte Route führt von A nach B, daher brauchst du einen Fahrdienst mit Auto oder eine Abholung.",
+    "Familien müssen nicht die ganze Strecke machen. Von Cerro de San Pedro führt ein 3.3 km langer Weg hinauf zur Steinkapelle der Virgen del Encino, und eine leichte 7.3 km lange Rundstrecke verbindet den Aussichtspunkt mit der Kirche. Kombiniere eine der beiden Optionen mit einem Mittagessen in der halb verlassenen Bergbaustadt und ihrem Blick auf den Tagebau. Civitatis bietet eine ganztägige geführte Variante mit einem englisch- oder spanischsprachigen Guide an."
    ],
    "fact": [
     [
@@ -416,7 +416,7 @@
     ],
     [
      "stats",
-     "~19–20 km einfache Strecke, ~320 m Aufstieg und ~700 m Abstieg"
+     "~19–20 km einfache Strecke, ~320 m Anstieg und ~700 m Abstieg"
     ],
     [
      "difficulty",
@@ -424,7 +424,7 @@
     ],
     [
      "fee",
-     "Keine Weggebühr gefunden; der Aussichtspunkt von Cerro de San Pedro kostete MXN 20 (2024)"
+     "Keine Weggebühr gefunden; der Aussichtspunkt von Cerro de San Pedro kostete MXN 20 (2025)"
     ],
     [
      "google",
@@ -435,8 +435,8 @@
   "cerroGrande": {
    "title": "Cerro Grande (Suspiro Picacho, Mexquitic)",
    "paragraphs": [
-    "Der höchste Punkt von Mexquitic de Carmona am nordwestlichen Ende der Sierra de San Miguelito: ein steiler, steiniger Aufstieg zu einem bewaldeten Gipfel mit Blick über das Tal. Die Route ist mit Kalk markiert und erreicht laut GPS etwa 2,565–2,600 m (die Gemeinde nennt 2,200 m). Trekkingstöcke helfen beim Abstieg auf losem Untergrund.",
-    "Dies ist ein von der Gemeinde geschützter Hügel und ein wichtiges Grundwasserneubildungsgebiet. <strong>Hol vor deinem Besuch die Erlaubnis der Gemeindeverwaltung in Suspiro Picacho ein</strong>; Bewertungen aus 2024 und 2026 berichten, dass der Zugang strenger geworden ist, und eine empfiehlt, dich in einem Dorfladen anzumelden. Baue keine Steinmännchen und nimm deinen Müll wieder mit."
+    "Von lokalen Wanderern als höchster Punkt von Mexquitic de Carmona am nordwestlichen Ende der Sierra de San Miguelito beschrieben: ein steiler, steiniger Aufstieg zu einem bewaldeten Gipfel mit Blick über das Tal. Die Route ist mit Kalk markiert und erreicht laut GPS etwa 2,565–2,600 m (die Gemeinde nennt 2,200 m). Trekkingstöcke helfen beim rutschigen Abstieg.",
+    "Dies ist ein von der Gemeinde geschützter Hügel und ein wichtiges Gebiet zur Grundwasserneubildung. <strong>Bitte vor dem Aufbruch die Erlaubnis der Gemeindeverwaltung in Suspiro Picacho einholen</strong>; laut einer Bewertung aus 2024 brauchst du eine Genehmigung, eine Bewertung vom Mai 2026 besagt, dass der Zugang nach einem mutmaßlichen Brandanschlag strenger wurde, und eine Bewertung vom Juli 2026 empfiehlt, dich in einem Dorfladen anzumelden, damit der Gemeinderichter informiert ist. Baue keine Steinmännchen und nimm deinen Müll wieder mit."
    ],
    "fact": [
     [
@@ -464,13 +464,13 @@
   "ventana": {
    "title": "La Ventana (Sierra de San Miguelito)",
    "paragraphs": [
-    "Die bekannteste Wanderung von San Luis Potosí. La Ventana („das Fenster“) ist ein natürlicher Felsbogen nahe einem der höchsten Punkte der Sierra de San Miguelito, der von der Gemeinde La Amapola durch Eichen- und Kiefernwald erreichbar ist. Die Route ist mit Bändern sowie blauer und weißer Farbe markiert und endet mit einer steilen Kletterpassage über Felsen zum Bogen, daher ist sie nicht für kleine Kinder geeignet. Ein 1 km langer Abstecher führt zum Cerro de la Cruz mit einem Altar für die Jungfrau von Guadalupe.",
-    "Schon die Anreise ist Teil des Abenteuers: Vom Highway 80 in Richtung Guadalajara biegst du nach El Mezquital ab und fährst etwa 10 km über eine holprige Schotterstraße; ein Fahrzeug mit hoher Bodenfreiheit wird empfohlen. Das Ejido verlangt <strong>MXN 50 pro Person</strong> (bestätigt 2026) und behält dein Auto im Auge. Bezahle nur am Parkplatz des Ejido. Starte früh, nimm mindestens 3 Liter Wasser mit und lade den Track herunter: Im Februar 2025 verschwand ein Wanderer in der Nähe dieser Route, nachdem er einen alternativen Weg genommen hatte."
+    "Die bekannteste Wanderung von San Luis Potosí. La Ventana („das Fenster“) ist ein natürlicher Felsbogen nahe einem der höchsten Punkte der Sierra de San Miguelito, der von der Gemeinde La Amapola aus durch Eichen- und Kiefernwald erreicht wird. Die Route ist mit Bändern sowie blauer und weißer Farbe markiert und endet mit einer steilen Kletterpassage über Felsen bis zum Bogen – daher ist sie nicht für kleine Kinder geeignet. Ein Abstecher von etwa 1 km pro Strecke führt zum Cerro de la Cruz mit einem Altar für die Jungfrau von Guadalupe.",
+    "Schon die Anreise ist Teil des Abenteuers: Fahre auf der Highway 80 Richtung Guadalajara, biege nach El Mezquital ab und fahre etwa 10 km über eine holprige Schotterstraße; ein Fahrzeug mit hoher Bodenfreiheit wird empfohlen. Das Ejido verlangt <strong>MXN 50 pro Person</strong> (bestätigt 2026) und passt auf dein Auto auf. Bezahle nur am Parkplatz des Ejidos. Starte früh, nimm mindestens 3 Liter Wasser mit und lade den Track herunter: Im Februar 2025 verschwand ein Wanderer nahe dieser Route, nachdem er einen alternativen Weg genommen hatte."
    ],
    "fact": [
     [
      "trailhead",
-     "La Amapola (Ejido-Parkplatz)"
+     "La Amapola (Parkplatz des Ejidos)"
     ],
     [
      "drive",
@@ -482,7 +482,7 @@
     ],
     [
      "difficulty",
-     "Schwer (abschließende Kletterpassage)"
+     "Schwer (Kletterpassage am Ende)"
     ],
     [
      "fee",
@@ -497,8 +497,8 @@
   "potosi": {
    "title": "Cerro del Potosí (Sierra de San Miguelito)",
    "paragraphs": [
-    "Der klassische große Tagesausflug der Stadt. Vom Ende der Avenida Chapultepec führt ein langer, gleichmäßiger Anstieg zu einem Gipfelkreuz auf etwa 2,650 m, in dessen Sockel ein Besucherbuch liegt und von wo aus sich die ganze Stadt unter dir ausbreitet. Der meistgenutzte Wikiloc-Track wurde mehr als 840-mal aufgezeichnet. Nach einem mit „PB“ bemalten Felsen folgst du blauen und orangefarbenen Markierungen; rechne mit lockerem Gestein, stetiger Steigung und laut einem Track-Autor mit einem schmalen ausgesetzten Abschnitt mit Abbrüchen auf beiden Seiten.",
-    "Es gibt fast keinen Schatten, also starte bei Sonnenaufgang und nimm 4–6 Liter Wasser mit, wie lokale Track-Autoren empfehlen. Auf dem größten Teil der Route gibt es Handyempfang. Beachte den Namen noch einmal: Dies ist nicht Nuevo Leóns 3,700 m hoher Cerro Potosí."
+    "Der klassische große Tagesausflug der Stadt. Vom Ende der Avenida Chapultepec führt ein langer, gleichmäßiger Aufstieg zu einem Gipfelkreuz auf etwa 2,650 m, in dessen Sockel ein Besucherbuch liegt, während sich die ganze Stadt darunter ausbreitet. Der meistgenutzte Wikiloc-Track wurde mehr als 840-mal aufgezeichnet. Nach einem mit „PB“ bemalten Felsen folgst du blauen und orangefarbenen Markierungen; rechne mit losem Gestein, stetiger Steigung und laut einem Track-Autor mit einem schmalen ausgesetzten Abschnitt mit Abbrüchen auf beiden Seiten.",
+    "Es gibt fast keinen Schatten, also starte bei Sonnenaufgang und nimm 4–6 litres Wasser mit, wie ein lokaler Track-Autor empfiehlt. Auf dem größten Teil der Strecke gibt es Handyempfang. Beachte noch einmal den Namen: Dies ist nicht der 3,700 m hohe Cerro Potosí in Nuevo León."
    ],
    "fact": [
     [
@@ -519,7 +519,7 @@
     ],
     [
      "fee",
-     "Keine angegeben"
+     "Keine gemeldet"
     ],
     [
      "google",
@@ -562,8 +562,8 @@
   "quemado": {
    "title": "Cerro del Quemado (Real de Catorce)",
    "paragraphs": [
-    "Hoch über Real de Catorce liegt der Cerro del Quemado, eine heilige Zeremonienstätte der Wixárika (Huichol) in Wirikuta, mit Steinaltären, Opfergaben und gewaltigen Ausblicken über die Wüste. Die markierte Route (orange Punkte) ist hin und zurück etwa 10,5 km lang und umfasst 365–410 m Höhenmeter, doch die Höhe von laut GPS etwa 2.940 m lässt sie anstrengender wirken. Einige Websites behaupten 3.800 m; GPS-Daten sagen etwas anderes.",
-    "Respekt ist nicht optional: Berühre keine Opfergaben und sei leise, wenn gerade eine Zeremonie stattfindet. Der Zugang wurde 2026 als kostenlos angegeben, obwohl ein Wanderer 2024 MXN 20 zahlte. Real de Catorce liegt etwa 3 h 30 min von der Stadt entfernt, also bleib über Nacht; unser <a href=\"/blog/real-de-catorce-guide-2026\">Guide zu Real de Catorce</a> behandelt den Rest der Reise."
+    "Hoch über Real de Catorce liegt der Cerro del Quemado, ein heiliger Zeremonialort der Wixárika (Huichol) in Wirikuta, mit Steinaltären, Opfergaben und riesigen Ausblicken über die Wüste. Die markierte Route (orange Punkte) ist etwa 10.5 km hin und zurück und umfasst 365–410 m Höhenanstieg, doch die Höhe von laut GPS etwa 2,940 m lässt sie anstrengender wirken. Einige Websites behaupten 3,800 m; GPS-Daten sagen etwas anderes.",
+    "Respekt ist nicht optional: Berühre keine Opfergaben und sei leise, wenn gerade eine Zeremonie stattfindet. AllTrails führt den Zugang als kostenlos auf, doch Wanderer, darunter einer im Jahr 2024, berichten von einem MXN 20 Beitrag für die Instandhaltung am Gipfel – nimm also Kleingeld mit. Real de Catorce ist etwa 3 h 30 min von der Stadt entfernt, bleib daher über Nacht; unser <a href=\"/blog/real-de-catorce-guide-2026\">Real-de-Catorce-Guide</a> behandelt den Rest der Reise."
    ],
    "fact": [
     [
@@ -572,7 +572,7 @@
     ],
     [
      "stats",
-     "10,3–10,9 km hin und zurück, 365–410 m Höhengewinn, max. ~2.940 m"
+     "10.3–10.9 km hin und zurück, 365–410 m Anstieg, max. ~2,940 m"
     ],
     [
      "difficulty",
@@ -580,7 +580,7 @@
     ],
     [
      "fee",
-     "2026 laut AllTrails kostenlos; 2024 wurden MXN 20 angegeben"
+     "Laut AllTrails kostenlos; einige Wanderer berichten von einem MXN 20 Beitrag"
     ],
     [
      "google",
@@ -613,11 +613,11 @@
  },
  "seasons": {
   "title": "Höhenlage, Jahreszeiten und Wasser",
-  "subtitle": "Warum jeder Wanderer vor Ort bei Tagesanbruch losgeht",
+  "subtitle": "Warum jeder lokale Wanderer bei Tagesanbruch losgeht",
   "paragraphs": [
-   "Die Stadt SLP liegt auf etwa 1,860 m. Die Ausgangspunkte der Wanderwege in der Sierra de San Miguelito liegen auf 2,000–2,400 m und die Gipfel erreichen 2,600–2,880 m; die Sierra de Álvarez liegt bei etwa 2,500–2,650 m und Real de Catorce auf 2,600–3,200 m. Wenn du gerade angekommen bist, lass es die ersten Tage ruhig angehen, trink mehr, als du denkst, und denk daran, dass man sich in der Höhe schneller einen Sonnenbrand holt.",
-   "Die besten Monate sind <strong>Oktober bis März</strong>: trocken, kühl und klar, wobei September und Oktober direkt nach den Regenfällen am grünsten sind. Dezember und Januar bringen an den höher gelegenen Ausgangspunkten der Wanderwege Dämmerungstemperaturen nahe dem Gefrierpunkt und gelegentlich Schnee. April und Mai sind heiß (im Mai liegt die durchschnittliche Höchsttemperatur bei 28 °C) und bilden den Höhepunkt der Waldbrandsaison. Von Juni bis September bringen Gewitter am Nachmittag Blitze auf exponierten Gipfeln, rutschige Felsen und Sturzfluten in Schluchten.",
-   "Auf diesen Wegen gibt es kein Wasser und nur sehr wenig Schatten. Plane mit einem halben Liter pro Stunde, an Gipfeltagen mindestens 3 Litern, sowie Elektrolyten, einem Hut, langen Ärmeln und Sonnencreme."
+   "Die Stadt SLP liegt auf etwa 1,860 m. Die Ausgangspunkte der Wanderwege in der Sierra de San Miguelito liegen auf etwa 1,900–2,400 m, die Gipfel erreichen 2,600–2,880 m; die Sierra de Álvarez liegt auf etwa 2,500–2,650 m und Real de Catorce auf 2,600–3,200 m. Wenn du gerade angekommen bist, lass es in den ersten Tagen ruhig angehen, trink mehr, als du denkst, und denk daran, dass man sich in der Höhe schneller einen Sonnenbrand holt.",
+   "Die besten Monate sind <strong>Oktober bis März</strong>: trocken, kühl und klar; im September und Oktober ist es direkt nach den Regenfällen am grünsten. Dezember und Januar bringen an den höher gelegenen Ausgangspunkten der Wanderwege Morgendämmerungen nahe dem Gefrierpunkt und gelegentlich Schnee. April und Mai sind heiß (im Mai liegt die durchschnittliche Höchsttemperatur bei 28 °C) und die Hochsaison für Waldbrände. Von Juni bis September bringen nachmittägliche Gewitter Blitze auf exponierten Gipfeln, rutschige Felsen und Sturzfluten in Schluchten.",
+   "Auf diesen Wegen gibt es kein Wasser und sehr wenig Schatten. Plane mit einem halben Liter pro Stunde, an Gipfeltagen mindestens 3 Litern, plus Elektrolyten, einem Hut, langen Ärmeln und Sonnencreme."
   ]
  },
  "safety": {

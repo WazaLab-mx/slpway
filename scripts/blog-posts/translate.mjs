@@ -3,7 +3,8 @@
 // content.<locale>.json next to it. Each chunk must come back with the same shape
 // and the same HTML tags/links as the English, or it is retried once.
 //
-// Usage: node scripts/blog-posts/translate.mjs <post-folder> [locale...]
+// Usage: node scripts/blog-posts/translate.mjs <post-folder> [locale...] [--only=key,key.sub]
+//   --only re-translates just those chunks and keeps the rest of the existing file.
 import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
@@ -16,7 +17,9 @@ const LANGUAGES = {
   ja: 'Japanese. Natural travel-guide style (です/ます not required; plain style is fine). Write foreign place names in katakana and keep the original Spanish name in parentheses the first time it appears in each string when helpful.',
 };
 
-const [folder, ...requested] = process.argv.slice(2);
+const args = process.argv.slice(2);
+const only = args.find((a) => a.startsWith('--only='))?.slice(7).split(',');
+const [folder, ...requested] = args.filter((a) => !a.startsWith('--'));
 if (!folder) throw new Error('Usage: translate.mjs <post-folder> [locale...]');
 const dir = path.resolve('scripts/blog-posts', folder);
 const { default: en } = await import(pathToFileURL(path.join(dir, 'content.en.mjs')));
@@ -85,8 +88,10 @@ function chunks(content) {
 }
 
 for (const locale of locales) {
-  const result = {};
+  const file = path.join(dir, `content.${locale}.json`);
+  const result = only ? JSON.parse(fs.readFileSync(file, 'utf8')) : {};
   for (const [keys, chunk] of chunks(en)) {
+    if (only && !only.includes(keys.join('.'))) continue;
     let translated;
     for (let attempt = 1; ; attempt++) {
       try {
@@ -105,6 +110,6 @@ for (const locale of locales) {
     console.log(`  ${locale} ${keys.join('.')} ✓`);
   }
   assertSameShape(en, result, locale);
-  fs.writeFileSync(path.join(dir, `content.${locale}.json`), JSON.stringify(result, null, 1) + '\n');
+  fs.writeFileSync(file, JSON.stringify(result, null, 1) + '\n');
   console.log(`✓ ${folder} → content.${locale}.json`);
 }

@@ -1,5 +1,24 @@
 # Change Log
 
+## [2026-10-09] Fact-check and publication: family camping + best hikes
+
+- Ran /factcheck with two independent agents (one per post). They re-verified ~140+ claims against primary sources (DOF, CONANP, SEGAM, Cecurt, park sites, cited articles), AllTrails/Wikiloc track pages, Google Places (re-queried) and OSRM, plus counter-evidence searches. No false claims in either post. Reports: scratchpad `factcheck-camping.md`, `factcheck-hiking.md`.
+- Camping fixes:
+  - Media Luna: the "museum on site" was unverified (fossils lie in the spring bed; the museum is in Rioverde town). The 2024 closure was ~10 days in late July–early August.
+  - Grills: a September 2026 park notice allows only ready-made food, which supersedes the 2025 sources that disagreed. FAQ updated to match.
+  - Life jackets: Puente de Dios is ~MXN 25, not 50; at Media Luna you can't bring your own.
+  - Cráter Encantado: package is named "Experiencia Total".
+  - Corazón de Xoconostle: camping at all its destinations, and gear inclusion unconfirmed.
+  - FAQ: safety and community-fee answers hedged. Takeaway: "near-freezing", not "freezing". Puma record dated 2017.
+  - Sources: +8 (Plano Sept 2026 and Aug 2024, Quadratín 2020, El Universal mammoths, El Sol 2023, Astrolabio fires, huastecapotosina.org, Infobae Hwy 70 April 2026, CONANP puma). The Corazón link now points to its camping page.
+- Hiking fixes:
+  - Fees: Cerro del Quemado wording (AllTrails says free; hikers report a MXN 20 contribution). Cerro de San Pedro lookout fee now cites 2025.
+  - Cerro Grande: permit/strictness timeline clarified; "highest point" attributed to local hikers.
+  - Distances: La Ventana detour is ~1 km each way. Cañada del Lobo 3.5 km is an out-and-back walk, not a loop. Caballos is a loop or out-and-back.
+  - Wording: the 4–6 L water figure is from one track author; trailheads are 1,900–2,400 m; Cecurt described correctly.
+  - Sources: +2 (El Sol Tangamanga free entry, El Hormiguero Joya Honda).
+- Only the changed sections were re-translated (`translate.mjs --only=`), so the manual ES/DE fixes are preserved.
+
 ## [2026-10-09] Drafts: family camping and best hikes deep dives (not yet public)
 
 - Two Deep Dive posts (BLOG_DEEP_DIVE_STYLE_GUIDE.md) saved as `status = 'draft'` in all 4 locales:

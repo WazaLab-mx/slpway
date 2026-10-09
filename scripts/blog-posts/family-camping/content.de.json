@@ -195,20 +195,20 @@
  "places": {
   "mediaLuna": {
    "title": "1. Laguna de la Media Luna (Rioverde)",
-   "subtitle": "Der beste Allround-Campingplatz für Familien in der Umgebung – dank warmem Quellwasser und echter Infrastruktur",
+   "subtitle": "Der beste Allround-Campingplatz für Familien in Reichweite – dank warmem Quellwasser und echter Infrastruktur",
    "paragraphs": [
-    "Wenn du von San Luis Potosí nur einen Campingausflug machst, dann diesen. Die Media Luna ist eine halbmondförmige Lagune, die von Thermalquellen gespeist wird und in der Gemeinde Rioverde liegt. Das kristallklare Wasser wurde von jüngsten Besuchern mit etwa 28 °C gemessen. Genau das ist der große Vorteil: Kinder können morgens schwimmen, treiben und schnorcheln, bevor die Sonne hoch steht, und abends noch einmal – in jedem Monat des Jahres.",
-    "Rioverde liegt deutlich tiefer und ist wärmer als die Stadt SLP. Deshalb ist dies auch im Winter der einfachste Ort zum Campen, ohne dass du Ausrüstung für eisige Temperaturen brauchst. Flache Uferbereiche, schattenspendende Bäume und grüne Rasenflächen machen den Ort mit kleinen Kindern gut machbar, und in den meisten Badezonen sind Schwimmwesten Pflicht (Miete MXN 50). Es gibt einen Food Court und ein kleines Museum mit Mammutresten – das verschafft dir etwa eine Stunde, falls jemandem langweilig wird.",
-    "Der Campingbereich ist eine ausgewiesene Zone innerhalb des Staatsparks. Das Ejido, das die Anlage verwaltet, verbot bereits 2020 das Campen direkt am Wasser. Heute befindet sich der Campingplatz in einem eigenen Bereich – erwarte also nicht, dein Zelt am Ufer aufschlagen zu können."
+    "Wenn du nur einen Campingausflug von San Luis Potosí aus machst, dann diesen. Die Media Luna ist eine halbmondförmige Lagune, die von Thermalquellen gespeist wird, in der Gemeinde Rioverde. Ihr kristallklares Wasser wurde von jüngsten Besuchern mit etwa 28 °C gemessen. Genau diese Temperatur macht den Reiz aus: Kinder können morgens schwimmen, treiben und schnorcheln, bevor die Sonne hoch steht, und abends noch einmal – in jedem Monat des Jahres.",
+    "Rioverde liegt deutlich tiefer und wärmer als die Stadt SLP. Daher ist dies auch der einfachste Ort zum Campen im Winter, ohne Ausrüstung für Minusgrade. Flache Uferbereiche, schattenspendende Bäume und grüne Rasenflächen machen den Ort auch mit kleinen Kindern gut machbar. In den meisten Schwimmbereichen sind Schwimmwesten Pflicht (Miete MXN 50). Vor Ort gibt es einen Food Court, und die Quelle selbst ist berühmt für Mammutfossilien, die Taucher auf ihrem Grund gefunden haben; einige Funde sind im Museum in Rioverde, etwa 15 km entfernt, ausgestellt.",
+    "Der Campingbereich ist eine ausgewiesene Zone innerhalb des State Parks. Das Ejido, das das Gelände verwaltet, verbot bereits 2020 das Campen direkt am Wasser. Seither findet Camping in einem eigenen Bereich statt – erwarte also nicht, dein Zelt am Ufer aufschlagen zu können."
    ],
    "fact": [
     [
      "drive",
-     "Etwa 136 km / 2 h 15 min über den Highway 70 oder die mautpflichtige Straße nach Rioverde. Bis zum Eingang asphaltiert; großer Parkplatz."
+     "Etwa 136 km / 2 h 15 min über Highway 70 oder die mautpflichtige Straße nach Rioverde. Asphalt bis zum Eingang; großer Parkplatz."
     ],
     [
      "cost",
-     "Zelt MXN 150 plus Eintritt (Erwachsene MXN 100, Kinder und Senioren MXN 50). Hütten MXN 1,300–2,600 pro Nacht inklusive Eintritt. Nur Barzahlung."
+     "Zelt MXN 150 zuzüglich Eintritt (Erwachsene MXN 100, Kinder und Senioren MXN 50). Hütten MXN 1,300–2,600 pro Nacht inklusive Eintritt. Nur Barzahlung."
     ],
     [
      "facilities",
@@ -220,7 +220,7 @@
     ],
     [
      "season",
-     "Oktober–Mai. Sommerregen kann das Wasser trüben und hat den Park bereits schließen lassen (August 2024). Dienstags geschlossen; Tagesöffnungszeiten 8:00–17:00."
+     "Oktober–Mai. Sommerregen kann das Wasser trüben und hat den Park bereits geschlossen (für etwa 10 Tage Ende Juli–Anfang August 2024). Dienstags geschlossen; Öffnungszeiten tagsüber 8:00–17:00."
     ],
     [
      "google",
@@ -231,7 +231,7 @@
      "Hüttenreservierungen per WhatsApp 487 101 5874"
     ]
    ],
-   "grillCallout": "Quellen widersprechen sich darin, ob Grills erlaubt sind: <em>El Universal</em> (2025) führt sie zusammen mit Haustieren, mitgebrachtem Alkohol und Lautsprechern als verboten auf, während <em>Milenio</em> (2025) Grills zu den Einrichtungen zählt. Plane lieber mit kaltem Essen und dem Food Court und frage per WhatsApp nach, bevor du die Holzkohle einpackst. Seife und Shampoo sind in den Quellen niemals erlaubt."
+   "grillCallout": "Ältere Berichte widersprechen sich bei Grills (<em>El Universal</em> 2025 führte sie als verboten auf; <em>Milenio</em> 2025 als Einrichtung), doch im September 2026 listete der Park ungekochte Lebensmittel als verboten und erlaubte nur verzehrfertige Speisen. Plane mit kaltem Essen und dem Food Court und frage per WhatsApp nach, bevor du Holzkohle einpackst. Seife und Shampoo sind in den Quellen niemals erlaubt."
   },
   "shamballa": {
    "title": "2. Shamballa Estancia Campestre (Sierra de Álvarez)",
@@ -273,23 +273,23 @@
   },
   "crater": {
    "title": "3. Cráter Encantado Ecoparque (Armadillo de los Infante)",
-   "subtitle": "Zelte in einem Vulkankrater – mit den besten Aktivitäten für Kinder in der Nähe von SLP",
+   "subtitle": "Campen in einem Vulkankrater – mit den besten Aktivitäten für Kinder nahe SLP",
    "paragraphs": [
-    "Cráter Encantado ist ein Ökopark etwa 10 Minuten hinter der alten Bergbaustadt Armadillo de los Infante, rund eine Stunde von der Stadt entfernt. Das Highlight: Du schlägst dein Zelt in einem Vulkankrater auf. Der Grund, warum Familien immer wiederkommen, ist alles andere: eine Seilrutsche, Bogenschießen, Ausritte, Mountainbikes, ein Kinderparcours mit Hängebrücken und Kletterwänden, eine Ausgrabung nach „Dinosaurierknochen“ und ein kleiner Bauernhof mit Pferden, Hirschen und Vögeln.",
-    "Damit ist es die beste Wahl für Kinder, die ein volles Aktivitätenprogramm brauchen, um glücklich zu bleiben. Die Nachteile ergeben sich aus aktuellen Bewertungen: Einige Geräte und Toiletten sind schlecht instand gehalten, Stufen können steil und rutschig sein, und mittags gibt es kaum Schatten. Nimm Sonnenschutz mit und überprüfe die Ausrüstung für Kinder selbst, bevor sie sie benutzen."
+    "Cráter Encantado ist ein Ökopark etwa 10 Minuten hinter der alten Bergbaustadt Armadillo de los Infante, rund eine Stunde von der Stadt entfernt. Das Highlight: Du schlägst dein Zelt in einem Vulkankrater auf. Warum Familien immer wiederkommen, ist alles andere: eine Seilrutsche, Bogenschießen, Ausritte, Mountainbikes, ein Kinderparcours mit Hängebrücken und Kletterwänden, eine „Dinosaurierknochen“-Ausgrabung und ein kleiner Bauernhof mit Pferden, Hirschen und Vögeln.",
+    "Damit ist es die beste Wahl für Kinder, die ein volles Aktivitätenprogramm brauchen, um glücklich zu bleiben. Die Nachteile ergeben sich aus aktuellen Bewertungen: Einige Geräte und Bäder sind schlecht gepflegt, Stufen können steil und rutschig sein, und mittags gibt es wenig Schatten. Nimm Sonnenschutz mit und überprüfe die Ausrüstung für Kinder selbst, bevor sie sie benutzen."
    ],
    "fact": [
     [
      "drive",
-     "Etwa 53 km / 1 h, asphaltierte Straße bis Armadillo."
+     "Etwa 53 km / 1 h, bis Armadillo asphaltiert."
     ],
     [
      "cost",
-     "Eintritt MXN 100 Erwachsene / 50 Kinder. Camping MXN 300 Erwachsene / 200 Kinder, eigenes Zelt mitbringen. Seilrutsche MXN 350; Paket „Kompletterlebnis“ MXN 1,350 Erwachsene / 1,200 Kinder (Parkwebsite, 2026). Die Aktivitätspreise haben sich im Laufe der Jahre geändert, daher vorher bestätigen."
+     "Eintritt MXN 100 Erwachsene / 50 Kinder. Camping MXN 300 Erwachsene / 200 Kinder, eigenes Zelt mitbringen. Seilrutsche MXN 350; Paket „Experiencia Total“ (Eintritt, Bogenschießen, Frühstück, Seilrutsche, Ausritt und Camping) MXN 1,350 Erwachsene / 1,200 Kinder (Park-Website, 2026). Die Preise für Aktivitäten haben sich im Laufe der Jahre geändert, daher vorher bestätigen."
     ],
     [
      "facilities",
-     "Toiletten, Frühstück in Paketen, haustierfreundlich. Duschen und Feuerregeln auf dem Campingplatz nicht bestätigt."
+     "Bäder, Frühstück in den Paketen, haustierfreundlich. Duschen und Feuerregeln auf dem Campingplatz nicht bestätigt."
     ],
     [
      "bestFor",
@@ -349,24 +349,24 @@
   },
   "valle": {
    "title": "5. Valle de los Fantasmas (Schutzgebiet Sierra de Álvarez)",
-   "subtitle": "Seltsame Felsformationen, dunkler Himmel und einfaches Camping, betrieben vom örtlichen Ejido",
+   "subtitle": "Seltsame Felsformationen, dunkler Himmel und einfaches Camping, betrieben vom lokalen Ejido",
    "paragraphs": [
-    "Das Valle de los Fantasmas („Tal der Geister“) verdankt seinen Namen den hellen Felsformationen, die aus dem Wald ragen: dem Elephant Rock und der Piedra Flotante, die scheinbar auf dem Nichts balanciert. Es liegt innerhalb des Flora- und Fauna-Schutzgebiets Sierra de Álvarez, eines bundesweiten Reservats von rund 16.900 Hektar, in dem CONANP Camping als erlaubte Aktivität aufführt. Zur Tierwelt gehören hier Weißwedelhirsche, und CONANP hat sogar einen Puma mit Fotofallen dokumentiert.",
-    "Die Campingzonen sind ausgeschildert und werden gemeinsam mit der Gemeinde Ejido San Francisco verwaltet, deren Frauen auch geführte Wanderungen und traditionelle Mahlzeiten anbieten. Für den Zugang wird eine geringe „symbolische“ Gebühr erhoben, deren aktueller Betrag nicht bestätigt werden konnte. CONANP weist darauf hin, dass es im Schutzgebiet weder Unterkünfte noch Essen gibt; rechne also mit keinen Toiletten und keinem Wasser und bring alles selbst mit.",
-    "Dies ist ein Ort für abenteuerlustige Familien, die mit einfachem Camping zurechtkommen, oder als Kombination mit Shamballa oder Colibrí: Schlaf dort und verbringe den Tag hier. Ein großer Teil des Landes rund um die Felsformationen ist eingezäuntes Privat- oder Ejido-Land, und Karten-Apps sind oft verwirrt – frag daher Einheimische in San Francisco oder engagiere einen lokalen Guide."
+    "Das Valle de los Fantasmas („Tal der Geister“) verdankt seinen Namen den hellen Felsformationen, die aus dem Wald ragen: dem Elephant Rock, der Piedra Flotante, die scheinbar auf dem Nichts balanciert. Es liegt innerhalb des Flora- und Fauna-Schutzgebiets Sierra de Álvarez, einem bundesweiten Reservat von etwa 16.900 Hektar, in dem CONANP Camping als erlaubte Aktivität aufführt. Zur Tierwelt gehören Weißwedelhirsche, und CONANP hat sogar einen Puma mit Fotofallen aufgezeichnet (2017).",
+    "Die Campingzonen sind ausgeschildert und werden gemeinsam mit der Gemeinschaft von Ejido San Francisco verwaltet, wo örtliche Frauen auch geführte Spaziergänge und traditionelle Mahlzeiten anbieten. Der Zugang kostet eine kleine „symbolische“ Gebühr, deren aktueller Betrag nicht bestätigt werden konnte. CONANP weist darauf hin, dass es im Schutzgebiet keine Unterkünfte oder Verpflegung gibt; rechne also mit keinen Toiletten und keinem Wasser und bring alles selbst mit.",
+    "Dies ist ein Ort für abenteuerlustige Familien, die mit einfachem Camping vertraut sind, oder als Kombination mit Shamballa oder Colibrí: dort übernachten, hier den Tag verbringen. Ein großer Teil des Landes rund um die Felsformationen ist eingezäuntes Privat- oder Ejido-Land, und Karten-Apps sind oft verwirrt – frag daher Einheimische in San Francisco oder engagiere einen lokalen Guide."
    ],
    "fact": [
     [
      "drive",
-     "Etwa 44 km / 45 Min. über den Highway 70 Richtung Rioverde."
+     "Etwa 44 km / 45 Min. über Highway 70 Richtung Rioverde."
     ],
     [
      "cost",
-     "Geringe Gemeinschaftsgebühr für den Zugang (Betrag für 2026 unbestätigt)."
+     "Kleine gemeinschaftliche Zugangsgebühr (Betrag für 2026 unbestätigt)."
     ],
     [
      "facilities",
-     "Ausgeschilderte Campingzonen und Lehrpfade. Rechne mit keinen Toiletten, keinem Wasser und keinem Strom. Am Wochenende Gorditas bei den Kiefern am Straßenrand."
+     "Ausgeschilderte Campingzonen und Lehrpfade. Rechne mit keinen Toiletten, keinem Wasser und keinem Strom. Gorditas am Wochenende bei den Straßenkiefern."
     ],
     [
      "bestFor",
@@ -382,7 +382,7 @@
     ],
     [
      "contact",
-     "Frag bei deiner Ankunft im Ejido San Francisco."
+     "Bei der Ankunft in Ejido San Francisco fragen"
     ]
    ]
   },
@@ -463,8 +463,8 @@
    "title": "8. Geführtes Camping mit Corazón de Xoconostle",
    "subtitle": "Für Familien ohne Ausrüstung und Erfahrung",
    "paragraphs": [
-    "Corazón de Xoconostle ist kein Campingplatz, sondern ein Outdoor-Anbieter mit Sitz im Barrio de San Miguelito in der Stadt. Das Unternehmen bietet geführte Campingtouren in der Wüste nahe Armadillo de los Infante sowie Wanderungen in der Sierra de Álvarez, der Sierra de San Miguelito und Guadalcázar an – mit zertifizierten Guides und bereitgestellter Ausrüstung. Damit ist es die einfachste Möglichkeit, Camping auszuprobieren, ohne vorher ein Zelt kaufen zu müssen.",
-    "Die Paketpreise werden pro Tour festgelegt, frag also nach einem Angebot. Mehr über das Unternehmen erfährst du in unserem <a href=\"/blog/corazon-de-xoconostle\">Porträt von Corazón de Xoconostle</a>."
+    "Corazón de Xoconostle ist kein Campingplatz, sondern ein Outdoor-Anbieter mit Sitz im Barrio de San Miguelito in der Stadt. Das Unternehmen organisiert geführte Übernachtungscamps an seinen Trekkingzielen, darunter Armadillo de los Infante, die Sierra de Álvarez, die Sierra de San Miguelito und Guadalcázar, mit NOM-zertifizierten Guides. Frage, ob Zelte und Schlafsäcke inbegriffen sind: Falls ja, ist dies die einfachste Möglichkeit, Camping auszuprobieren, ohne vorher Ausrüstung kaufen zu müssen.",
+    "Die Paketpreise werden pro Ausflug festgelegt, frag also nach einem Angebot. Mehr über das Unternehmen findest du in unserem <a href=\"/blog/corazon-de-xoconostle\">Porträt von Corazón de Xoconostle</a>."
    ],
    "contact": "Telefon/WhatsApp 444 657 1872 · corazondexoconostle.com"
   },
@@ -472,8 +472,8 @@
    "title": "9. Upgrade fürs lange Wochenende: Puente de Dios (Tamasopo)",
    "subtitle": "Türkisfarbene Becken in der Huasteca, aber zu weit für ein normales Wochenende",
    "paragraphs": [
-    "Puente de Dios in Tamasopo ist einer der schönsten Badeplätze im Bundesstaat: türkisfarbene Becken unter einer natürlichen Felsbrücke am Eingang zur Huasteca Potosina. Mit etwa 3 h 30 min ab der Stadt liegt es außerhalb des Rahmens dieses Guides, daher eignet es sich eher für einen Ausflug über ein langes Wochenende. Der Eintritt kostet MXN 150 (2026), Schwimmwesten MXN 50 und Parken MXN 30.",
-    "Zwei Hinweise für Familien: Zum Wasser führen einige hundert steile Stufen hinab, und die Strömung kann stark sein. Daher eignet sich der Ort für Kinder ab acht Jahren, die gut schwimmen können. Der Huasteca-Abschnitt des Highway 70 sollte bei Tageslicht befahren werden. Unsere <a href=\"/blog/huasteca-potosina-itinerary-2026\">Route für die Huasteca Potosina</a> behandelt die Region ausführlich."
+    "Puente de Dios in Tamasopo ist einer der schönsten Badeplätze des Bundesstaates: türkisfarbene Becken unter einer natürlichen Felsbrücke am Eingang zur Huasteca Potosina. Mit etwa 3 h 30 min von der Stadt entfernt liegt es außerhalb des Rahmens dieses Guides – plane es daher als Ausflug fürs lange Wochenende. Der Eintritt kostet MXN 150 (2026), Schwimmwesten etwa MXN 25 und Parken MXN 30.",
+    "Zwei Hinweise für Familien: Zum Wasser führen einige hundert steile Stufen hinunter, und die Strömung kann stark sein. Daher eignet sich der Ort für Kinder ab acht Jahren, die gut schwimmen können. Die Huasteca-Strecke des Highway 70 sollte bei Tageslicht befahren werden. Unser <a href=\"/blog/huasteca-potosina-itinerary-2026\">Reiseplan für die Huasteca Potosina</a> behandelt die Region ausführlich."
    ]
   }
  },
@@ -531,12 +531,12 @@
  },
  "proTips": [
   [
-   "Packe für 0 °C",
-   "Schlafsäcke mit einer Komforttemperatur von 0 °C oder darunter, Wollschichten, Mützen und isolierte Schlafmatten. Die Nächte in der Wüste und der Sierra werden nach Sonnenuntergang schnell kalt."
+   "Packe für 0 °C, auch im Frühling",
+   "Schlafsäcke mit Komforttemperatur von 0 °C oder darunter, Wollschichten, Mützen und isolierte Isomatten. In der Wüste und der Sierra fallen die Temperaturen nachts nach Sonnenuntergang schnell."
   ],
   [
-   "Schließe die Kühlbox ab",
-   "Frei laufende Ranchhunde plündern an mehreren Orten Lebensmittel. Bewahre Essen über Nacht im Auto auf."
+   "Schließ die Kühlbox ab",
+   "Frei laufende Ranchhunde plündern an mehreren Orten Lebensmittel. Lass Essen über Nacht im Auto."
   ],
   [
    "Nimm Bargeld und tanke voll",
@@ -544,48 +544,48 @@
   ],
   [
    "Respektiere die Quellen",
-   "Schwimmwesten sind in Media Luna und Tamasopo Pflicht (für MXN 50 mietbar). Bring Wasserschuhe mit und lass die Seife zu Hause."
+   "Schwimmwesten sind in Media Luna obligatorisch (MXN 50 Miete; du darfst keine eigene mitbringen) und in Puente de Dios (etwa MXN 25). Nimm Wasserschuhe mit und lass die Seife zu Hause."
   ],
   [
-   "Schüttle deine Stiefel aus",
-   "Skorpione und Schlangen leben an den Wüstenplätzen. Bring für die Regenzeit eine Stirnlampe und Insektenschutzmittel mit."
+   "Klopf deine Stiefel aus",
+   "Skorpione und Schlangen leben auf den Wüstenplätzen. Nimm für die Regenzeit eine Stirnlampe und Insektenschutzmittel mit."
   ],
   [
    "Bestätige per WhatsApp",
-   "Preise und Regeln auf kleinen Campingplätzen ändern sich häufig. Eine zweiminütige Nachricht erspart dir eine vergebliche Fahrt."
+   "Preise und Regeln auf kleinen Campingplätzen ändern sich oft. Eine zweiminütige Nachricht erspart dir eine vergebliche Fahrt."
   ]
  ],
  "takeaways": [
   "Media Luna ist die beste Allround-Wahl für Familien: warmes Wasser, 24-Stunden-Toiletten, MXN 150 pro Zelt plus Eintritt.",
-  "Für einen ersten Ausflug in Stadtnähe liegt Shamballa in der Sierra de Álvarez 45 Minuten entfernt und bietet heißes Wasser sowie eine Gemeinschaftsküche.",
-  "Cráter Encantado bietet Kindern am meisten; Valle de los Fantasmas und La Misión sind für Familien, die Ruhe und Sterne suchen.",
-  "Plane von November bis Februar mit eisigen Nächten und meide die Regenzeit von Juni bis September.",
+  "Für einen ersten Ausflug nahe der Stadt liegt Shamballa in der Sierra de Álvarez 45 Minuten entfernt und bietet warmes Wasser sowie eine Gemeinschaftsküche.",
+  "Cráter Encantado bietet Kindern am meisten Beschäftigung; Valle de los Fantasmas und La Misión sind für Familien, die Ruhe und Sterne möchten.",
+  "Plane von November bis Februar mit Nächten nahe dem Gefrierpunkt und meide die Regenzeit von Juni bis September.",
   "Fahre bei Tageslicht, nimm Bargeld mit und bestätige die Preise vor der Abreise per WhatsApp."
  ],
  "faq": [
   [
    "Wo kann ich in der Nähe von San Luis Potosí mit Kindern campen?",
-   "Die besten Optionen für Familien sind Laguna de la Media Luna in Rioverde (warme Quellen, 24-h-Toiletten), Shamballa und Colibrí in der Sierra de Álvarez (etwa 45 Minuten entfernt) sowie Cráter Encantado in Armadillo de los Infante (Aktivitäten für Kinder, Camping in einem Vulkankrater)."
+   "Die besten Optionen für Familien sind Laguna de la Media Luna in Rioverde (warme Quellen, Toiletten rund um die Uhr), Shamballa und Colibrí in der Sierra de Álvarez (etwa 45 Minuten entfernt) sowie Cráter Encantado in Armadillo de los Infante (Aktivitäten für Kinder, Camping in einem Vulkankrater)."
   ],
   [
    "Wie viel kostet Camping an der Media Luna?",
    "Stand Februar 2026 kostet Camping MXN 150 pro Zelt zuzüglich Eintritt (MXN 100 Erwachsene; MXN 50 Kinder und Senioren). Hütten kosten MXN 1,300–2,600 pro Nacht inklusive Eintritt. Der Park ist dienstags geschlossen."
   ],
   [
-   "Ist es kalt, in der Nähe von San Luis Potosí zu campen?",
+   "Ist es kalt, wenn man in der Nähe von San Luis Potosí campt?",
    "Ja, von November bis Februar. Die Stadt liegt auf etwa 1,860 m und die Sierras liegen höher, daher sind Nächte um den Gefrierpunkt normal. Media Luna in Rioverde liegt tiefer und ist deutlich wärmer."
   ],
   [
    "Darf ich ein Lagerfeuer machen?",
-   "Nur in ausgewiesenen Feuerstellen. Die Waldbrandsaison dauert vom 16. Januar bis 30. Juni, und in Schutzgebieten wie der Sierra de Álvarez sind Feuer nur an ausgewiesenen Stellen erlaubt. Media Luna verbietet Berichten zufolge Grills; frag nach, bevor du hinfährst."
+   "Nur an ausgewiesenen Feuerstellen. Die Waldbrandsaison dauert vom 16. Januar bis zum 30. Juni, und Schutzgebiete wie die Sierra de Álvarez erlauben Feuer nur an ausgewiesenen Stellen. Media Luna erlaubt nur fertig zubereitete Speisen (Stand September 2026 kein Kochen vor Ort); frag vor deiner Fahrt nach."
   ],
   [
    "Ist Camping in der Nähe von San Luis Potosí sicher?",
-   "Für die Campingplätze in diesem Guide wurden für 2025–2026 keine Vorfälle gemeldet. Das größte Risiko besteht auf bestimmten Autobahnen, insbesondere auf dem Highway 57 bei Matehuala. Fahre bei Tageslicht, nutze Mautstraßen und komm vor Einbruch der Dunkelheit an."
+   "Unsere Nachrichtensuche ergab keine Vorfallberichte aus 2025–2026, die sich speziell auf die Campingplätze in diesem Guide beziehen. Das größte Risiko besteht auf bestimmten Autobahnen, insbesondere auf der Highway 57 nahe Matehuala. Fahr bei Tageslicht, nutze Mautstraßen und komm vor Einbruch der Dunkelheit an."
   ],
   [
    "Brauche ich eine Reservierung?",
-   "Für Hütten an der Media Luna und private Campingplätze wie Colibrí, Cráter Encantado und Shamballa ja: Schreib ihnen über WhatsApp. In den Schutzgebieten zahlst du bei der Ankunft eine geringe Gemeindegebühr."
+   "Für Hütten an der Media Luna und für private Campingplätze wie Colibrí, Cráter Encantado und Shamballa: ja, schreib ihnen per WhatsApp. Im Valle de los Fantasmas zahlst du bei der Ankunft eine kleine Gemeinschaftsgebühr."
   ]
  ],
  "related": [

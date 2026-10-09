@@ -16,6 +16,8 @@ const SOURCES = [
   ['Travesías — Sendero del Capitán', 'https://www.travesiasdigital.com/destinos/mexico/sendero-del-capital-san-luis-potosi/'],
   ['El Sol de San Luis — six lost hikers by March 2026', 'https://oem.com.mx/elsoldesanluis/local/al-menos-6-senderistas-se-han-extraviado-en-parajes-potosinos-en-lo-que-va-del-ano-28797524'],
   ['El Sol de San Luis — dog poisonings in the Sierra de San Miguelito (2025)', 'https://oem.com.mx/elsoldesanluis/local/no-vayan-sigue-el-envenenamiento-de-perros-en-la-sierra-de-san-miguelito-25094734'],
+  ['El Sol de San Luis — Tangamanga entry is free (April 2026)', 'https://oem.com.mx/elsoldesanluis/local/la-entrada-es-gratis-pero-no-todo-asi-se-cobra-en-los-parques-tangamanga-i-y-ii-29455965'],
+  ['El Hormiguero — Joya Honda access and fees (2024)', 'https://elhormiguero.com.mx/2024/02/04/joya-honda-en-soledad-como-llegar-y-que-hacer-en-el-crater-natural-de-slp/'],
   ['El Universal San Luis — Joya Honda crater', 'https://sanluis.eluniversal.com.mx/mas-de-san-luis/que-ver-y-hacer-en-la-joya-honda-el-crater-volcanico-de-san-luis-potosi/'],
   ['CONANP — puma recorded in the Sierra de Álvarez', 'https://www.gob.mx/conanp/prensa/registra-conanp-presencia-de-puma-en-sierra-de-alvarez'],
   ['US Department of State — Mexico travel advisory', 'https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mexico-travel-advisory.html'],
