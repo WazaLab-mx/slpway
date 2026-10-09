@@ -1,5 +1,11 @@
 # Change Log
 
+## [2026-10-09] Ads: also release slots AdSense never answers
+
+- Checked in production after the previous fix: on the new posts AdSense processes the slots (`data-adsbygoogle-status="done"`) but never sets `data-ad-status` or inserts an iframe, likely because the pages are new to AdSense. The 280px gap stayed.
+- `AdUnit.tsx`: a slot that is processed but still has no ad iframe after `AD_WAIT_MS` (5 s) releases its space. If an ad arrives later (iframe or `data-ad-status="filled"`), the space re-opens. The observer now also watches `data-adsbygoogle-status` and child changes.
+- Tests: +2 in `AdUnit.test.tsx` (release after the wait; re-open on a late ad). 5/5.
+
 ## [2026-10-09] Ads: no blank gap when AdSense has no ad
 
 - Owner report: blank space at the top of the new blog posts "where an image should go". The hero image was fine (it was only slow on its first optimization). The gap was the `top-banner` AdUnit: it reserves 280px (CLS fix), and when AdSense marks the slot `data-ad-status="unfilled"` the `<ins>` collapses to 0 but the wrapper keeps `min-height: 280px`. This affected every page with an unfilled ad (also seen on real-de-catorce-guide-2026).

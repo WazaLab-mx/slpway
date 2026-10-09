@@ -12,6 +12,9 @@ interface AdUnitProps {
 
 const AD_CLIENT = 'ca-pub-7339948154887436';
 
+// How long a processed slot may stay without an ad before its space is released.
+export const AD_WAIT_MS = 5000;
+
 const SLOTS: Record<AdPlacement, { slot: string; format: string }> = {
   'top-banner':  { slot: '2757184561', format: 'auto' },
   'mid-content': { slot: '4012211476', format: 'auto' },
@@ -73,16 +76,30 @@ const AdUnit: React.FC<AdUnitProps> = ({
     };
   }, [finalAdSlot, finalAdFormat]);
 
-  // AdSense marks a slot data-ad-status="unfilled" when it has no ad to show;
-  // without this the reserved space stays as a blank gap in the page.
+  // Without this an empty slot stays as a blank gap in the page. A slot is
+  // empty when AdSense marks it data-ad-status="unfilled", or when it was
+  // processed but no ad iframe showed up within AD_WAIT_MS (new pages AdSense
+  // hasn't reviewed yet get no answer at all). A late ad re-opens the space.
   useEffect(() => {
     const el = adRef.current;
     if (!el) return;
-    const check = () => setUnfilled(el.getAttribute('data-ad-status') === 'unfilled');
+    let waited = false;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const check = () => {
+      const status = el.getAttribute('data-ad-status');
+      const hasAd = status === 'filled' || !!el.querySelector('iframe');
+      if (el.getAttribute('data-adsbygoogle-status') === 'done' && !timer) {
+        timer = setTimeout(() => { waited = true; check(); }, AD_WAIT_MS);
+      }
+      setUnfilled(status === 'unfilled' || (!hasAd && waited));
+    };
     check();
     const observer = new MutationObserver(check);
-    observer.observe(el, { attributes: true, attributeFilter: ['data-ad-status'] });
-    return () => observer.disconnect();
+    observer.observe(el, { attributes: true, attributeFilter: ['data-ad-status', 'data-adsbygoogle-status'], childList: true, subtree: true });
+    return () => {
+      observer.disconnect();
+      clearTimeout(timer);
+    };
   }, []);
 
   // Reserving vertical space is what keeps ads from shifting the page as
