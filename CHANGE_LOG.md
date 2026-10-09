@@ -1,5 +1,12 @@
 # Change Log
 
+## [2026-10-09] Ads: no blank gap when AdSense has no ad
+
+- Owner report: blank space at the top of the new blog posts "where an image should go". The hero image was fine (it was only slow on its first optimization). The gap was the `top-banner` AdUnit: it reserves 280px (CLS fix), and when AdSense marks the slot `data-ad-status="unfilled"` the `<ins>` collapses to 0 but the wrapper keeps `min-height: 280px`. This affected every page with an unfilled ad (also seen on real-de-catorce-guide-2026).
+- `AdUnit.tsx` now watches `data-ad-status` with a MutationObserver. When unfilled, the wrapper drops to `min-height: 0` and the `<ins>` is hidden. Filled ads keep the reservation, so the CLS protection stays.
+- Tests: `AdUnit.test.tsx` (3: reserve while loading, collapse when unfilled, keep when filled).
+- Note: `tsc` reports 2 pre-existing errors in `src/pages/api/webhook/stripe.ts` (`current_period_end`), from upstream Stripe commits, unrelated to this change.
+
 ## [2026-10-09] Fact-check and publication: family camping + best hikes
 
 - Ran /factcheck with two independent agents (one per post). They re-verified ~140+ claims against primary sources (DOF, CONANP, SEGAM, Cecurt, park sites, cited articles), AllTrails/Wikiloc track pages, Google Places (re-queried) and OSRM, plus counter-evidence searches. No false claims in either post. Reports: scratchpad `factcheck-camping.md`, `factcheck-hiking.md`.

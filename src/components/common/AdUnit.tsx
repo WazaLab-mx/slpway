@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 type AdPlacement = 'top-banner' | 'mid-content' | 'in-article' | 'sidebar' | 'matched' | 'default';
 
@@ -30,6 +30,7 @@ const AdUnit: React.FC<AdUnitProps> = ({
 }) => {
   const adRef = useRef<HTMLModElement>(null);
   const pushedRef = useRef(false);
+  const [unfilled, setUnfilled] = useState(false);
 
   const config = SLOTS[placement];
   const finalAdSlot = adSlot || config.slot;
@@ -72,6 +73,18 @@ const AdUnit: React.FC<AdUnitProps> = ({
     };
   }, [finalAdSlot, finalAdFormat]);
 
+  // AdSense marks a slot data-ad-status="unfilled" when it has no ad to show;
+  // without this the reserved space stays as a blank gap in the page.
+  useEffect(() => {
+    const el = adRef.current;
+    if (!el) return;
+    const check = () => setUnfilled(el.getAttribute('data-ad-status') === 'unfilled');
+    check();
+    const observer = new MutationObserver(check);
+    observer.observe(el, { attributes: true, attributeFilter: ['data-ad-status'] });
+    return () => observer.disconnect();
+  }, []);
+
   // Reserving vertical space is what keeps ads from shifting the page as
   // they load (CrUX had CLS at 0.25 with 25% of users in "poor"). 280px
   // matches the most common responsive-ad render height.
@@ -84,11 +97,11 @@ const AdUnit: React.FC<AdUnitProps> = ({
   // Render the <ins> tag on both server and client so Google's crawler can
   // see the ad placement and so hydration doesn't flash missing ads.
   return (
-    <div style={placement === 'sidebar' ? undefined : { minHeight: 280 }}>
+    <div style={placement === 'sidebar' ? undefined : { minHeight: unfilled ? 0 : 280 }}>
       <ins
         ref={adRef}
         className={`adsbygoogle${className ? ` ${className}` : ''}`}
-        style={style || defaultStyle}
+        style={unfilled ? { display: 'none' } : style || defaultStyle}
         data-ad-client={AD_CLIENT}
         data-ad-slot={finalAdSlot}
         data-ad-format={finalAdFormat}
