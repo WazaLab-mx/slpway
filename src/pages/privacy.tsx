@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
         <div className="bg-secondary py-12">
           <div className="container-responsive">
             <h1 className="text-3xl md:text-4xl font-bold text-white">Privacy Policy</h1>
-            <p className="text-white/80 mt-2">Last updated: December 2024</p>
+            <p className="text-white/80 mt-2">Last updated: October 12, 2026</p>
           </div>
         </div>
 
@@ -39,6 +39,8 @@ export default function PrivacyPolicy() {
                   <li>Name and email address (when you subscribe to our newsletter)</li>
                   <li>Contact information (when you fill out our contact form)</li>
                   <li>Account information (if you create an account)</li>
+                  <li>Name, email address and optional answers you provide in our website forms (e.g. the /join newsletter signup)</li>
+                  <li>Name, email address and optional answers you submit through Meta (Facebook/Instagram) Lead Ads Instant Forms</li>
                 </ul>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2 mt-4">Automatically Collected Data</h3>
                 <ul className="list-disc pl-6 text-gray-600 space-y-2">
@@ -53,7 +55,8 @@ export default function PrivacyPolicy() {
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">3. How We Use Your Information</h2>
                 <p className="text-gray-600 mb-4">We use the information we collect to:</p>
                 <ul className="list-disc pl-6 text-gray-600 space-y-2">
-                  <li>Send you our weekly newsletter with events and updates</li>
+                  <li>Send you our weekly newsletter, SLP Weekly, with events and updates</li>
+                  <li>Send you the welcome email and our free "First 30 Days in SLP" checklist after you subscribe</li>
                   <li>Respond to your inquiries and provide customer support</li>
                   <li>Improve our website and user experience</li>
                   <li>Analyze website traffic and usage patterns</li>
@@ -64,7 +67,7 @@ export default function PrivacyPolicy() {
               <section className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Cookies and Tracking</h2>
                 <p className="text-gray-600">
-                  We use cookies and similar tracking technologies to enhance your browsing experience. You can control cookies through your browser settings. For more information, please see our <Link href="/cookies" className="text-primary hover:text-primary-dark">Cookie Policy</Link>.
+                  We use cookies and similar tracking technologies (including Google Analytics and the Meta Pixel) to enhance your browsing experience. You can control cookies through your browser settings. For more information, please see our <Link href="/cookies" className="text-primary hover:text-primary-dark">Cookie Policy</Link>.
                 </p>
               </section>
 
@@ -76,7 +79,13 @@ export default function PrivacyPolicy() {
                   <li><strong>Google AdSense:</strong> For displaying relevant advertisements</li>
                   <li><strong>Supabase:</strong> For user authentication and data storage</li>
                   <li><strong>Stripe:</strong> For processing payments (if applicable)</li>
+                  <li><strong>Beehiiv:</strong> To host and send our SLP Weekly newsletter and manage subscriptions</li>
+                  <li><strong>Meta Platforms (Facebook/Instagram):</strong> Lead Ads Instant Forms, advertising and the Meta Pixel, which measures ad performance and conversions</li>
+                  <li><strong>Zapier:</strong> To automatically transfer Instant Form leads from Meta to Beehiiv</li>
                 </ul>
+                <p className="text-gray-600 mt-4">
+                  These providers process data on our behalf and only for the purposes described here. We do not sell your personal information.
+                </p>
               </section>
 
               <section className="mb-8">
@@ -96,6 +105,22 @@ export default function PrivacyPolicy() {
                   <li>Unsubscribe from our newsletter at any time</li>
                   <li>Opt out of marketing communications</li>
                 </ul>
+                <p className="text-gray-600 mt-4">
+                  You can unsubscribe from SLP Weekly at any time using the "unsubscribe" link at the bottom of every email. We keep your subscription data while you remain subscribed and delete or anonymize it within a reasonable period after you unsubscribe or request deletion, unless we must retain it to comply with legal obligations.
+                </p>
+              </section>
+
+              <section className="mb-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">7a. Rights under Mexican Law (LFPDPPP) / Derechos ARCO</h2>
+                <p className="text-gray-600 mb-4">
+                  San Luis Way, operated by WazaLab in San Luis Potosí, Mexico, is responsible for your personal data. Under Mexico's Federal Law on the Protection of Personal Data Held by Private Parties (LFPDPPP), you have the rights of Access, Rectification, Cancellation and Opposition (ARCO rights), and you may revoke your consent or limit the use and disclosure of your data.
+                </p>
+                <p className="text-gray-600 mb-4">
+                  To exercise them, email <strong>sanluisway@wazalab.mx</strong> with your name, the email address you subscribed with, the right you wish to exercise and a description of your request. We will respond within 20 business days, as provided by law.
+                </p>
+                <p className="text-gray-600">
+                  <em>Conforme a la LFPDPPP, puedes ejercer tus derechos de Acceso, Rectificación, Cancelación y Oposición (ARCO), así como revocar tu consentimiento, escribiendo a sanluisway@wazalab.mx. Responderemos en un plazo máximo de 20 días hábiles.</em>
+                </p>
               </section>
 
               <section className="mb-8">
