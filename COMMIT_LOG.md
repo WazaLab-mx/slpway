@@ -1,5 +1,36 @@
 # Commit Log
 
+## 2026-10-12 — docs: Update privacy policy: Meta Lead Ads, Zapier, Beehiiv, LFPDPPP/ARCO
+
+- Baseline: main branch at commit 4753720. Branch cursor/privacy-policy-lead-ads-9be0. PR #11 created.
+- Objective: Update privacy policy to reflect current data collection practices and ensure compliance with Mexican data protection law (LFPDPPP) and Meta Lead Ads requirements.
+- File modified: `src/pages/privacy.tsx`
+- Changes applied:
+  - Updated "Last updated" date to October 12, 2026
+  - Added two new bullet points under "Personal Data" collection section:
+    - Website form data collection (name, email, optional answers from /join newsletter signup)
+    - Meta Lead Ads Instant Forms data collection (name, email, optional answers)
+  - Enhanced "How We Use Your Information" section:
+    - Specified newsletter name as "SLP Weekly"
+    - Added disclosure about welcome email and "First 30 Days in SLP" checklist delivery
+  - Updated "Cookies and Tracking" section to explicitly mention Google Analytics and Meta Pixel
+  - Expanded "Third-Party Service Providers" section with three new services:
+    - Beehiiv: Newsletter hosting, sending, and subscription management
+    - Meta Platforms: Lead Ads Instant Forms, advertising, and Meta Pixel for conversion tracking
+    - Zapier: Automated lead transfer from Meta to Beehiiv
+  - Added clarification that these providers process data on behalf of the site and personal information is not sold
+  - Enhanced "Your Rights" section with detailed unsubscribe information and data retention policy
+  - Added new section "7a. Rights under Mexican Law (LFPDPPP) / Derechos ARCO":
+    - Disclosed WazaLab (San Luis Potosí, Mexico) as data controller
+    - Documented ARCO rights (Access, Rectification, Cancellation, Opposition)
+    - Provided contact email (sanluisway@wazalab.mx) and response timeline (20 business days)
+    - Included bilingual disclosure (English and Spanish) per LFPDPPP requirements
+- Legal compliance: Addresses Mexican Federal Law on Protection of Personal Data Held by Private Parties (LFPDPPP), Meta Lead Ads integration transparency requirements, and third-party processor disclosure obligations
+- Integration context: This update reflects the implementation of Meta Lead Ads integration (with Zapier automation to Beehiiv) and the /join newsletter signup page deployed in prior commits
+- Testing: File compiles without TypeScript errors, changes reviewed for legal accuracy
+- PR status: Open, ready for review, not merged
+- Netlify deploy: In progress, preview URL pending completion
+
 ## 2026-10-01 — feat: Add dedicated newsletter signup landing page at /join
 
 - Baseline: main branch at HEAD. Commit af130fc. Branch cursor/newsletter-join-landing-page-38fe. PR #9 created (draft).

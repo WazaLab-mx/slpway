@@ -1,5 +1,53 @@
 # Session Context Log - Coding Agent
 
+## Session 2026-10-12 — Privacy policy update for Meta Lead Ads, Beehiiv, and LFPDPPP compliance
+
+User requested application of a patch to update the privacy policy page. The patch was provided as a git formatted patch file and needed to be applied to `src/pages/privacy.tsx`, with verification of build/typecheck, followed by push and PR creation to main branch.
+
+**Objective:**
+Update privacy policy to reflect current data collection and processing practices, particularly the Meta Lead Ads integration with Beehiiv newsletter service via Zapier automation, and ensure compliance with Mexican Federal Law on Protection of Personal Data (LFPDPPP).
+
+**Changes Applied:**
+Modified `src/pages/privacy.tsx` with the following updates:
+1. **Date update**: Changed "Last updated" from December 2024 to October 12, 2026
+2. **Personal Data collection**: Added two new items explaining collection from website forms (/join page) and Meta Lead Ads Instant Forms
+3. **Information usage**: Specified newsletter name (SLP Weekly) and added disclosure about welcome email and arrival checklist delivery
+4. **Cookies and tracking**: Explicitly mentioned Google Analytics and Meta Pixel as tracking technologies used
+5. **Third-party services**: Added Beehiiv (newsletter hosting), Meta Platforms (Lead Ads, advertising, Meta Pixel), and Zapier (automation) to the list of service providers with explanation that data is not sold
+6. **User rights**: Enhanced with detailed unsubscribe instructions and data retention policy
+7. **New ARCO rights section**: Added Section 7a for Mexican law compliance (bilingual English/Spanish), disclosing WazaLab as data controller, ARCO rights (Access, Rectification, Cancellation, Opposition), contact information (sanluisway@wazalab.mx), and 20-business-day response timeline
+
+**Technical Process:**
+- Created branch `cursor/privacy-policy-lead-ads-9be0` from origin/main (commit 4753720)
+- Applied patch using git am command from `/home/ubuntu/.cursor/projects/workspace/uploads/0001-Update-privacy-policy-Meta-Lead-Ads-Zapier-Beehiiv-L_676d.patch`
+- Initial git am created commit 3a4268f but on main branch, then branch checkout moved HEAD back
+- Cherry-picked commit 3a4268f onto feature branch (resulting in commit 50a7699)
+- Installed npm dependencies (949 packages) as they were missing from environment
+- Verified privacy.tsx changes applied correctly
+- Build verification: npm run build failed due to missing Supabase environment variables (expected for production build), but TypeScript compilation of project-wide code showed only pre-existing errors in unrelated files (src/pages/api/webhook/stripe.ts), confirming our changes did not introduce new errors
+- Pushed branch to origin
+- Created PR #11 with title "Update privacy policy: Meta Lead Ads, Zapier, Beehiiv, LFPDPPP/ARCO" and detailed description covering all changes and legal compliance points
+
+**Legal Compliance Addressed:**
+- Mexican Federal Law on Protection of Personal Data Held by Private Parties (LFPDPPP) with ARCO rights disclosure
+- Meta Lead Ads integration transparency requirements
+- Third-party processor disclosure requirements
+- Newsletter subscription and data retention transparency
+
+**Integration Context:**
+This privacy policy update is directly related to the Meta Lead Ads integration implemented in the project, which uses Zapier to automatically transfer leads from Facebook/Instagram Instant Forms to Beehiiv newsletter service. The update also reflects the /join newsletter signup landing page created in a prior session.
+
+**PR and Deployment Status:**
+- PR URL: https://github.com/WazaLab-mx/slpway/pull/11
+- PR state: OPEN (not merged per user request)
+- Netlify deploy: In progress at time of session completion
+- Netlify deploy log: https://app.netlify.com/projects/sanluisway/deploys/6acd17dd7c3a9638fa902cdc
+- Expected preview URL: https://deploy-preview-11--sanluisway.netlify.app (pending deployment completion)
+
+**Local Logs Updated:**
+- COMMIT_LOG.md: Added detailed entry for this commit with full change documentation
+- SESSION_CONTEXT.md: This entry
+
 ## Session 2026-10-01 — Newsletter signup landing page at /join for ads conversion
 
 User requested a dedicated newsletter signup landing page at `/join` optimized for Meta/Google ads conversion, replacing the broken/thin `/newsletter` as the primary newsletter subscription destination. Target audience: expats and digital nomads moving to or living in San Luis Potosí.
