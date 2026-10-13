@@ -58,6 +58,7 @@ describe('STATIC_ROUTES', () => {
     const paths = STATIC_ROUTES.map((route) => route.path);
     expect(paths).toContain('/events/xantolo-2026');
     expect(paths).toContain('/events/medio-maraton-capital-del-deporte-2026');
+    expect(paths).toContain('/events/carrera-real-del-potosi-2026');
     expect(paths).not.toContain('/events/fenapo-2026');
   });
   it('includes the homepage with priority 1.0', () => {

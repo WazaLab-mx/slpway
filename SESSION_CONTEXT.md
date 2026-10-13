@@ -1,5 +1,9 @@
 # Session Context Log - Coding Agent
 
+## Session 2026-10-12 (cont.) — Carrera Real del Potosí 2026 guide + slim banner
+
+Second race guide: `/events/carrera-real-del-potosi-2026` (night race on Oct 17 at Tangamanga I, $375). Namespace `real-potosi-run`, components `src/components/real-potosi-run/`, slim home banner `RealPotosiRunBanner` after EventsPreview. The half marathon home banner now has bottom margin so it doesn't touch the Xantolo banner. Remove the Real del Potosí banner after Oct 17 and the half marathon banner after Nov 8.
+
 ## Session 2026-10-12 — Medio Maratón La Capital del Deporte 2026 guide + home banner
 
 Owner noted that race pages (marathons/half marathons) bring good organic traffic and asked for a deep-dive page and a home banner for the next race. The next race is the free municipal half marathon on Sunday, November 8, 2026 (21K/10K/5K, start 7:05 at Plaza de Armas). Page: `/events/medio-maraton-capital-del-deporte-2026`, i18n namespace `half-marathon-capital` (en/es/de/ja), data and JSON-LD in `src/data/half-marathon-capital-2026.ts`, sections in `src/components/half-marathon/`, home banner `src/components/home/HalfMarathonBanner.tsx`. The event was also inserted in Supabase `events`. Source of truth is the official convocatoria (Google Doc). The route map isn't published yet; update the page when it is. Remove the banner after the race.

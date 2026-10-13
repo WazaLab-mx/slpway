@@ -1,5 +1,14 @@
 # Change Log
 
+## [2026-10-12] Event guide + slim home banner: Carrera Real del Potosí 2026
+
+- Research: 5th edition night race on Sat Oct 17, 2026, 7:00 p.m., Parque Tangamanga I (start/finish Av. Artesanos, in front of the planetarium). 3/6/10 km, $375 MXN, online registration only on Tu Tiempo a Tiempo (event 169). Kit: shirt, medal, bib, chip, light-up wristband, surprise gift. Personal, non-transferable, no refunds. Verified against the official registration page and the race poster. Not published: route map, categories, awards, kit pickup (the page says so).
+- New page `/events/carrera-real-del-potosi-2026`, namespace `real-potosi-run` (en/es/de/ja). Data and JSON-LD in `src/data/real-potosi-run-2026.ts`; components in `src/components/real-potosi-run/` (Hero, Details). Hero image: night shot of the Tangamanga entrance (`parque-tangamanga/historical.jpg`, 1280px).
+- Home: `RealPotosiRunBanner` is a deliberately discreet white card (thumbnail, one line, outline button) placed right after EventsPreview. GA4 ctaClick `real-potosi-home-banner`. Owner asked for it to be more low-key than the half marathon banner.
+- Sitemap route + test. Supabase `events` row 7aabc688: es/de/ja descriptions had the date in English ("Saturday, October 17, 2026 ... PM"), now localized; website points to the official event page; image added.
+- Tests: `src/components/RealPotosiRun.test.tsx` (13). Verified locally in 4 locales (200) and visually.
+- Follow-up: remove the banner after Oct 17.
+
 ## [2026-10-12] Event guide + home banner: Medio Maratón La Capital del Deporte 2026
 
 - Research: upcoming race in SLP is the free municipal half marathon on Sun Nov 8, 2026 (the UASLP race already ran Sept 27). Facts come from the official convocatoria (Dirección de Deporte Municipal, Google Doc linked by the press), cross-checked with El Momento and San Luis Informa. Not published yet: route map and total cap (the page says so in a status note).

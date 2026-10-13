@@ -1,0 +1,76 @@
+{
+  "banner": {
+    "badge": "Carrera nocturna · sábado 17 oct",
+    "title": "Carrera Real del Potosí 2026",
+    "text": "3K, 6K y 10K de noche en el Parque Tangamanga I, salida 7:00 p. m.",
+    "cta": "Ver guía"
+  },
+  "seo": {
+    "title": "Carrera Real del Potosí 2026: fecha, distancias, costo y kit",
+    "description": "Guía de la Carrera Real del Potosí 2026 (quinta edición): carrera nocturna el sábado 17 de octubre a las 7:00 p. m. en el Parque Tangamanga I. 3K, 6K y 10K, inscripción $375 MXN en línea, kit con pulsera de luz y medalla.",
+    "keywords": "carrera real del potosi 2026, carrera real del potosi, carrera nocturna tangamanga, carrera 17 octubre san luis potosi, carrera nocturna san luis potosi 2026"
+  },
+  "hero": {
+    "eyebrow": "Quinta edición · carrera nocturna",
+    "subtitle": "3K, 6K y 10K bajo las luces del Parque Tangamanga I",
+    "description": "La quinta edición de la Carrera Real del Potosí se corre de noche. Salida y meta en Av. Artesanos, frente al planetario, con kit que incluye pulsera de luz y medalla.",
+    "date": "Sábado 17 de octubre de 2026",
+    "time": "Salida 7:00 p. m.",
+    "location": "Parque Tangamanga I · Av. Artesanos, frente al planetario",
+    "ctaRegister": "Inscríbete en línea",
+    "ctaGuide": "Ver detalles",
+    "alt": "Entrada del Parque Tangamanga iluminada de noche"
+  },
+  "status": {
+    "title": "Lo que todavía no se ha publicado",
+    "description": "La página oficial de inscripción no detalla mapa de ruta, categorías, premiación ni fecha y lugar de entrega de kits. Revisa la página de inscripción antes del sábado."
+  },
+  "facts": {
+    "title": "Lo esencial",
+    "items": [
+      { "label": "Distancias", "value": "3 km · 6 km · 10 km" },
+      { "label": "Costo", "value": "$375 MXN (mismo precio para las tres distancias)" },
+      { "label": "Salida y meta", "value": "Av. Artesanos, frente al planetario, Parque Tangamanga I" },
+      { "label": "Horario", "value": "Sábado 17 de octubre, 7:00 p. m." }
+    ]
+  },
+  "kit": {
+    "title": "Qué incluye el kit",
+    "items": ["Playera", "Medalla", "Número", "Chip", "Pulsera de luz", "Regalo sorpresa"],
+    "sizes": "Tallas de playera de XS a 3XL–6XL; se elige al inscribirte."
+  },
+  "registration": {
+    "title": "Inscripción",
+    "description": "Solo en línea, en la plataforma de cronometraje Tu Tiempo a Tiempo. Eliges distancia y talla, y pagas $375 MXN.",
+    "policy": "La inscripción es personal e intransferible y no hay reembolsos. Si la autoridad o una causa de fuerza mayor cancela el evento, la organización informará las alternativas."
+  },
+  "tips": {
+    "title": "Consejos para correr de noche",
+    "items": [
+      { "title": "Hazte visible", "description": "Usa la pulsera de luz del kit y ropa clara o reflejante." },
+      { "title": "Llega antes del atardecer", "description": "Ubicar el planetario y la salida es más fácil con luz de día." },
+      { "title": "Abrígate para después", "description": "En octubre la temperatura baja al anochecer; lleva una sudadera para la meta." },
+      { "title": "Altitud", "description": "San Luis Potosí está a unos 1,860 m. Si vienes del nivel del mar, sal con calma." }
+    ]
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "items": [
+      { "q": "¿Cuándo es la Carrera Real del Potosí 2026?", "a": "El sábado 17 de octubre de 2026 a las 7:00 p. m. Es la quinta edición y se corre de noche." },
+      { "q": "¿Dónde es la salida?", "a": "En el Parque Tangamanga I, sobre Av. Artesanos, frente al planetario. Ahí mismo está la meta." },
+      { "q": "¿Cuánto cuesta y qué distancias hay?", "a": "$375 MXN para cualquiera de las tres distancias: 3 km, 6 km o 10 km." },
+      { "q": "¿Cómo me inscribo?", "a": "En línea en tutiempoatiempo.com: eliges distancia y talla de playera y pagas. La inscripción es personal, intransferible y sin reembolso." },
+      { "q": "¿Qué trae el kit?", "a": "Playera, medalla, número, chip, pulsera de luz y un regalo sorpresa." }
+    ]
+  },
+  "sources": {
+    "title": "Fuentes",
+    "description": "Datos verificados el 12 de octubre de 2026 en la página oficial de inscripción y el cartel de la quinta edición.",
+    "official": "Página oficial de inscripción (Tu Tiempo a Tiempo)"
+  },
+  "actions": {
+    "official": "Inscribirme",
+    "halfMarathon": "Medio Maratón 8 de noviembre",
+    "tangamanga": "Guía del Parque Tangamanga"
+  }
+}
