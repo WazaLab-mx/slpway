@@ -444,6 +444,12 @@ export default function MedioMaratonUaslp2026() {
               <TrophyIcon className="w-5 h-5" />
             </a>
             <Link
+              href="/events/medio-maraton-capital-del-deporte-2026"
+              className="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-8 py-4 rounded-full transition-colors"
+            >
+              {L('Medio Maratón La Capital del Deporte (8 nov)', 'La Capital del Deporte Half Marathon (Nov 8)')}
+            </Link>
+            <Link
               href="/events/maraton-tangamanga-2026"
               className="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-8 py-4 rounded-full transition-colors"
             >

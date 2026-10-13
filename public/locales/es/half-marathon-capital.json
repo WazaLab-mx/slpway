@@ -1,0 +1,126 @@
+{
+  "banner": {
+    "badge": "Inscripciones gratis · cierran el 4 de noviembre",
+    "title": "Medio Maratón La Capital del Deporte 2026",
+    "description": "21K, 10K y 5K por el Centro Histórico el domingo 8 de noviembre. La inscripción es gratuita, pero chip y número solo alcanzan para los primeros 5,000 corredores.",
+    "date": "Domingo 8 de noviembre · 7:05 h",
+    "location": "Plaza de Armas, Centro Histórico",
+    "cta": "Todo lo que necesitas saber"
+  },
+  "seo": {
+    "title": "Medio Maratón La Capital del Deporte 2026: fecha, inscripción gratis y kits",
+    "description": "Guía completa del Medio Maratón #LaCapitalDelDeporte 2026 en San Luis Potosí: domingo 8 de noviembre, salida 7:05 en Plaza de Armas. 21K, 10K y 5K gratis, categorías, inscripción hasta el 4 de noviembre y entrega de kits.",
+    "keywords": "medio maraton la capital del deporte 2026, medio maraton capital del deporte san luis potosi, medio maraton san luis potosi noviembre 2026, carrera 8 de noviembre san luis potosi, medio maraton gratis slp, inscripciones medio maraton capital del deporte"
+  },
+  "hero": {
+    "eyebrow": "Inscripciones abiertas · gratis",
+    "subtitle": "21K, 10K y 5K por el Centro Histórico de San Luis Potosí",
+    "description": "La Dirección de Deporte Municipal organiza este medio maratón gratuito en el marco del 434 aniversario de la ciudad. Salida y meta frente al Palacio Municipal, en Plaza de Armas.",
+    "date": "Domingo 8 de noviembre de 2026",
+    "time": "Salida general 7:05 h",
+    "location": "Plaza de Armas (Jardín Hidalgo), Centro Histórico",
+    "ctaRegister": "Ver convocatoria oficial",
+    "ctaGuide": "Cómo inscribirte",
+    "alt": "Corredores durante una carrera de ruta en San Luis Potosí"
+  },
+  "stats": {
+    "date": { "value": "8 nov", "label": "Domingo" },
+    "cost": { "value": "$0", "label": "Inscripción" },
+    "distances": { "value": "3", "label": "Distancias" },
+    "kits": { "value": "5,000", "label": "Chips y números" }
+  },
+  "status": {
+    "title": "Lo que todavía no se ha publicado",
+    "description": "La convocatoria oficial no incluye el mapa de la ruta ni un cupo total de inscritos; solo indica que chip y número son para los primeros 5,000 participantes. Actualizaremos esta guía cuando el municipio publique el recorrido."
+  },
+  "schedule": {
+    "title": "Horarios del día de la carrera",
+    "items": [
+      { "time": "7:00", "title": "5K personas con discapacidad", "description": "Sale primero la categoría para personas con discapacidad motriz, intelectual, visual y auditiva." },
+      { "time": "7:05", "title": "21K, 10K y 5K convivencia", "description": "Salida general de las tres distancias frente al Palacio Municipal, Plaza de Armas." },
+      { "time": "9:00", "title": "Premiación", "description": "Trofeos a los tres primeros lugares de cada rama y categoría." }
+    ]
+  },
+  "distances": {
+    "title": "Distancias",
+    "intro": "Las tres distancias comparten salida y meta en el Centro Histórico.",
+    "items": [
+      { "name": "21K", "label": "Medio maratón", "description": "La distancia estelar. Categorías por edad de hasta 29 años a 70 y más, en ramas femenil y varonil." },
+      { "name": "10K", "label": "Carrera", "description": "Incluye categoría para menores de 18 años y grupos por edad hasta 70 y más." },
+      { "name": "5K", "label": "Convivencia", "description": "Pensada para debutantes y familias, con categoría propia para personas con discapacidad." }
+    ]
+  },
+  "categories": {
+    "title": "Categorías y premiación",
+    "intro": "Todas las categorías tienen rama femenil y varonil, con trofeo al 1.º, 2.º y 3.º lugar.",
+    "groups": [
+      { "name": "21K", "list": "Hasta 29 · 30–39 · 40–49 · 50–59 · 60–69 · 70 y más" },
+      { "name": "10K", "list": "Menores de 18 · 19–29 · 30–39 · 40–49 · 50–59 · 60–69 · 70 y más" },
+      { "name": "5K", "list": "Convivencia · Personas con discapacidad (motriz, intelectual, visual y auditiva)" }
+    ],
+    "medal": "Medalla de finisher para todos los inscritos que crucen la meta con su número."
+  },
+  "registration": {
+    "title": "Cómo inscribirte",
+    "intro": "Del 7 de octubre al 4 de noviembre de 2026, o hasta agotar inscripciones.",
+    "items": [
+      { "title": "En persona", "description": "Palacio Municipal, Jardín Hidalgo S/N, Plaza de Armas. Lunes a viernes de 9:00 a 18:00 h y sábados de 9:00 a 13:00 h." },
+      { "title": "Requisitos", "description": "Puedes inscribirte a ti y a una persona más, con copia de identificación oficial de ambos. Menores: copia del CURP e identificación oficial del padre o la madre." },
+      { "title": "Si vienes de fuera", "description": "Envía tu identificación escaneada con distancia, categoría y talla de playera a slp.deportesocial2427@gmail.com. Recibirás confirmación si aún hay folios disponibles." },
+      { "title": "Quién no puede inscribirse", "description": "Quienes se registraron en ediciones pasadas de esta carrera, recogieron o no su kit, y no corrieron." }
+    ],
+    "kitIncludes": "Incluye playera conmemorativa (sujeta a tallas), y chip y número para los primeros 5,000 participantes."
+  },
+  "kits": {
+    "title": "Entrega de kits",
+    "when": "Viernes 6 de noviembre de 8:00 a 18:00 h y sábado 7 de noviembre de 8:00 a 15:00 h.",
+    "where": "Auditorio Socorro Blanc, Unidad Administrativa Municipal. Blvd. Salvador Nava Martínez 1580, Col. Santuario.",
+    "bring": "Lleva tu ficha de inscripción e identificación oficial (física o en foto). El kit se entrega solo a la persona inscrita.",
+    "warning": "No habrá inscripciones ni entrega de kits el día de la carrera. Si no recoges tu kit en esas fechas, pierdes tu lugar."
+  },
+  "rules": {
+    "title": "Reglas que conviene conocer",
+    "items": [
+      "La premiación se define por tiempo oficial de disparo (gun time), según el reglamento de World Athletics.",
+      "Si corres una distancia distinta a la inscrita o llegas sin tu número, quedas descalificado para premiación.",
+      "Los resultados preliminares se publican en línea; hay 30 minutos desde la publicación de ganadores para hacer aclaraciones.",
+      "Al inscribirte autorizas el uso de tu imagen en redes oficiales de la carrera (excepto menores de edad)."
+    ]
+  },
+  "tips": {
+    "title": "Consejos para el día",
+    "items": [
+      { "title": "Altitud", "description": "San Luis Potosí está a unos 1,860 m sobre el nivel del mar. Si vienes de la costa, sal más conservador en los primeros kilómetros." },
+      { "title": "Mañana fresca", "description": "La salida es temprano en noviembre: lleva una capa ligera para la espera y quítatela antes del disparo." },
+      { "title": "Llega con tiempo", "description": "El Centro Histórico se llena antes de la salida. Planea llegar caminando o estaciona lejos de Plaza de Armas." },
+      { "title": "Después de la meta", "description": "Estás en pleno Centro: buen momento para desayunar enchiladas potosinas o recorrer las plazas." }
+    ]
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "items": [
+      { "q": "¿Cuándo es el Medio Maratón La Capital del Deporte 2026?", "a": "El domingo 8 de noviembre de 2026. La salida general de 21K, 10K y 5K es a las 7:05 h; la categoría de personas con discapacidad sale a las 7:00 h." },
+      { "q": "¿Cuánto cuesta la inscripción?", "a": "Es gratuita. Incluye playera conmemorativa sujeta a tallas, y chip y número para los primeros 5,000 participantes." },
+      { "q": "¿Dónde y hasta cuándo me puedo inscribir?", "a": "En el Palacio Municipal (Jardín Hidalgo S/N, Plaza de Armas), de lunes a viernes de 9:00 a 18:00 h y sábados de 9:00 a 13:00 h, del 7 de octubre al 4 de noviembre de 2026 o hasta agotar inscripciones." },
+      { "q": "¿Me puedo inscribir si no vivo en San Luis Potosí?", "a": "Sí. Envía tu identificación escaneada, distancia, categoría y talla de playera a slp.deportesocial2427@gmail.com. Te confirmarán por correo si todavía hay folios." },
+      { "q": "¿Dónde es la salida y la meta?", "a": "Frente al Palacio Municipal, en Plaza de Armas (Jardín Hidalgo), Centro Histórico de San Luis Potosí. La convocatoria no publica el mapa del recorrido." },
+      { "q": "¿Cuándo y dónde recojo mi kit?", "a": "Viernes 6 de noviembre de 8:00 a 18:00 h y sábado 7 de noviembre de 8:00 a 15:00 h en el Auditorio Socorro Blanc de la Unidad Administrativa Municipal (Blvd. Salvador Nava Martínez 1580). No hay entrega el día de la carrera." },
+      { "q": "¿Hay medalla?", "a": "Sí, medalla de finisher para todos los inscritos que crucen la meta con su número, y trofeos del 1.º al 3.º lugar en cada rama y categoría." },
+      { "q": "¿En qué se diferencia del Medio Maratón UASLP?", "a": "Son carreras distintas. El de la UASLP se corrió el 27 de septiembre y tuvo costo; La Capital del Deporte es el 8 de noviembre, lo organiza el municipio y es gratuito." }
+    ]
+  },
+  "sources": {
+    "title": "Fuentes",
+    "description": "Datos verificados el 12 de octubre de 2026 contra la convocatoria oficial de la Dirección de Deporte Municipal y la cobertura de medios locales.",
+    "convocatoria": "Convocatoria oficial",
+    "momento": "Periódico El Momento",
+    "sanluisinforma": "San Luis Informa"
+  },
+  "actions": {
+    "title": "¿Vas a correr?",
+    "description": "Inscríbete antes de que se agoten los chips y revisa qué más hay en la ciudad ese fin de semana.",
+    "official": "Leer la convocatoria",
+    "uaslp": "Medio Maratón UASLP",
+    "events": "Eventos de esta semana"
+  }
+}

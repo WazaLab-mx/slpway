@@ -1,5 +1,9 @@
 # Session Context Log - Coding Agent
 
+## Session 2026-10-12 — Medio Maratón La Capital del Deporte 2026 guide + home banner
+
+Owner noted that race pages (marathons/half marathons) bring good organic traffic and asked for a deep-dive page and a home banner for the next race. The next race is the free municipal half marathon on Sunday, November 8, 2026 (21K/10K/5K, start 7:05 at Plaza de Armas). Page: `/events/medio-maraton-capital-del-deporte-2026`, i18n namespace `half-marathon-capital` (en/es/de/ja), data and JSON-LD in `src/data/half-marathon-capital-2026.ts`, sections in `src/components/half-marathon/`, home banner `src/components/home/HalfMarathonBanner.tsx`. The event was also inserted in Supabase `events`. Source of truth is the official convocatoria (Google Doc). The route map isn't published yet; update the page when it is. Remove the banner after the race.
+
 ## Session 2026-10-12 — Privacy policy update for Meta Lead Ads, Beehiiv, and LFPDPPP compliance
 
 User requested application of a patch to update the privacy policy page. The patch was provided as a git formatted patch file and needed to be applied to `src/pages/privacy.tsx`, with verification of build/typecheck, followed by push and PR creation to main branch.

@@ -5,3 +5,8 @@ it('promotes the current seasonal guide from music events', () => {
   expect(links.some(({ href }) => href === '/events/xantolo-2026')).toBe(true);
   expect(links.some(({ href }) => href === '/events/fenapo-2026')).toBe(false);
 });
+
+it('promotes the upcoming half marathon guide from sports events', () => {
+  const links = relatedLinksForEvent('sports');
+  expect(links.some(({ href }) => href === '/events/medio-maraton-capital-del-deporte-2026')).toBe(true);
+});

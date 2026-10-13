@@ -1,0 +1,126 @@
+{
+  "banner": {
+    "badge": "Kostenlose Anmeldung · bis 4. November",
+    "title": "Halbmarathon La Capital del Deporte 2026",
+    "description": "21 km, 10 km und 5 km durch das historische Zentrum am Sonntag, 8. November. Die Teilnahme ist kostenlos, Chip und Startnummer gibt es aber nur für die ersten 5.000 Läufer.",
+    "date": "Sonntag, 8. November · 7:05 Uhr",
+    "location": "Plaza de Armas, Centro Histórico",
+    "cta": "Alles, was du wissen musst"
+  },
+  "seo": {
+    "title": "Halbmarathon La Capital del Deporte 2026: Datum, kostenlose Anmeldung & Startunterlagen",
+    "description": "Kompletter Guide zum Halbmarathon #LaCapitalDelDeporte 2026 in San Luis Potosí: Sonntag, 8. November, Start 7:05 Uhr an der Plaza de Armas. Kostenlose 21 km, 10 km und 5 km, Kategorien, Anmeldung bis 4. November und Ausgabe der Startunterlagen.",
+    "keywords": "medio maraton la capital del deporte 2026, halbmarathon san luis potosi 2026, halbmarathon mexiko november 2026, kostenloser halbmarathon san luis potosi"
+  },
+  "hero": {
+    "eyebrow": "Anmeldung offen · kostenlos",
+    "subtitle": "21 km, 10 km und 5 km durch das historische Zentrum von San Luis Potosí",
+    "description": "Die städtische Sportdirektion veranstaltet diesen kostenlosen Halbmarathon im Rahmen des 434. Stadtjubiläums. Start und Ziel liegen vor dem Rathaus an der Plaza de Armas.",
+    "date": "Sonntag, 8. November 2026",
+    "time": "Hauptstart 7:05 Uhr",
+    "location": "Plaza de Armas (Jardín Hidalgo), Centro Histórico",
+    "ctaRegister": "Offizielle Ausschreibung lesen",
+    "ctaGuide": "So meldest du dich an",
+    "alt": "Läufer bei einem Straßenlauf in San Luis Potosí"
+  },
+  "stats": {
+    "date": { "value": "8. Nov", "label": "Sonntag" },
+    "cost": { "value": "0 $", "label": "Startgebühr" },
+    "distances": { "value": "3", "label": "Distanzen" },
+    "kits": { "value": "5.000", "label": "Chips & Startnummern" }
+  },
+  "status": {
+    "title": "Was noch nicht veröffentlicht ist",
+    "description": "Die offizielle Ausschreibung enthält weder eine Streckenkarte noch eine Gesamtzahl an Startplätzen; sie nennt nur, dass Chip und Startnummer an die ersten 5.000 Teilnehmenden gehen. Wir aktualisieren diesen Guide, sobald die Stadt die Strecke veröffentlicht."
+  },
+  "schedule": {
+    "title": "Zeitplan am Renntag",
+    "items": [
+      { "time": "7:00", "title": "5 km für Menschen mit Behinderung", "description": "Zuerst startet die Kategorie für Läufer mit motorischer, geistiger, Seh- oder Hörbehinderung." },
+      { "time": "7:05", "title": "21 km, 10 km und 5 km Volkslauf", "description": "Hauptstart aller drei Distanzen vor dem Rathaus an der Plaza de Armas." },
+      { "time": "9:00", "title": "Siegerehrung", "description": "Pokale für die drei Besten jeder Wertung und Kategorie." }
+    ]
+  },
+  "distances": {
+    "title": "Distanzen",
+    "intro": "Alle drei Distanzen haben Start und Ziel im historischen Zentrum.",
+    "items": [
+      { "name": "21K", "label": "Halbmarathon", "description": "Der Hauptlauf. Altersklassen von bis 29 bis 70+, getrennt nach Frauen und Männern." },
+      { "name": "10K", "label": "Lauf", "description": "Mit einer Kategorie für unter 18-Jährige und Altersklassen bis 70+." },
+      { "name": "5K", "label": "Volkslauf", "description": "Ideal für Einsteiger und Familien, mit eigener Kategorie für Menschen mit Behinderung." }
+    ]
+  },
+  "categories": {
+    "title": "Kategorien & Preise",
+    "intro": "Jede Kategorie wird für Frauen und Männer gewertet, mit Pokalen für die Plätze 1 bis 3.",
+    "groups": [
+      { "name": "21K", "list": "Bis 29 · 30–39 · 40–49 · 50–59 · 60–69 · 70+" },
+      { "name": "10K", "list": "Unter 18 · 19–29 · 30–39 · 40–49 · 50–59 · 60–69 · 70+" },
+      { "name": "5K", "list": "Volkslauf · Menschen mit Behinderung (motorisch, geistig, Seh- und Hörbehinderung)" }
+    ],
+    "medal": "Finisher-Medaille für alle Angemeldeten, die mit Startnummer ins Ziel kommen."
+  },
+  "registration": {
+    "title": "So meldest du dich an",
+    "intro": "Vom 7. Oktober bis 4. November 2026 oder solange Plätze verfügbar sind.",
+    "items": [
+      { "title": "Vor Ort", "description": "Rathaus (Palacio Municipal), Jardín Hidalgo S/N, Plaza de Armas. Montag bis Freitag 9–18 Uhr, Samstag 9–13 Uhr." },
+      { "title": "Voraussetzungen", "description": "Du kannst dich und eine weitere Person anmelden, mit Kopie eines amtlichen Ausweises beider. Minderjährige: Kopie der CURP und Ausweis eines Elternteils." },
+      { "title": "Anreise von außerhalb", "description": "Schicke einen Scan deines Ausweises mit Distanz, Kategorie und Shirtgröße an slp.deportesocial2427@gmail.com. Du erhältst eine Bestätigung, falls noch Startnummern frei sind." },
+      { "title": "Wer sich nicht anmelden kann", "description": "Wer sich bei früheren Ausgaben dieses Laufs angemeldet hat, die Startunterlagen abgeholt hat oder nicht, und nicht gelaufen ist." }
+    ],
+    "kitIncludes": "Enthalten sind ein Erinnerungs-Shirt (je nach verfügbaren Größen) sowie Chip und Startnummer für die ersten 5.000 Teilnehmenden."
+  },
+  "kits": {
+    "title": "Ausgabe der Startunterlagen",
+    "when": "Freitag, 6. November, 8–18 Uhr, und Samstag, 7. November, 8–15 Uhr.",
+    "where": "Auditorio Socorro Blanc, Unidad Administrativa Municipal. Blvd. Salvador Nava Martínez 1580, Col. Santuario.",
+    "bring": "Bring deinen Anmeldebeleg und einen amtlichen Ausweis (physisch oder als Foto) mit. Die Unterlagen werden nur an die angemeldete Person ausgegeben.",
+    "warning": "Am Renntag gibt es weder Anmeldung noch Ausgabe. Wer die Unterlagen nicht zu diesen Terminen abholt, verliert den Startplatz."
+  },
+  "rules": {
+    "title": "Wichtige Regeln",
+    "items": [
+      "Die Wertung erfolgt nach offizieller Bruttozeit (Gun Time) gemäß World-Athletics-Regeln.",
+      "Wer eine andere als die gemeldete Distanz läuft oder ohne Startnummer ins Ziel kommt, wird von der Wertung ausgeschlossen.",
+      "Vorläufige Ergebnisse werden online veröffentlicht; nach Bekanntgabe der Sieger bleiben 30 Minuten für Einsprüche.",
+      "Mit der Anmeldung erlaubst du die Nutzung deines Bildes in den offiziellen sozialen Medien des Laufs (außer bei Minderjährigen)."
+    ]
+  },
+  "tips": {
+    "title": "Tipps für den Renntag",
+    "items": [
+      { "title": "Höhenlage", "description": "San Luis Potosí liegt etwa 1.860 m über dem Meer. Wer aus Küstennähe anreist, sollte die ersten Kilometer zurückhaltend angehen." },
+      { "title": "Kühler Morgen", "description": "Der Start ist früh im November: Nimm eine leichte Schicht für die Wartezeit mit und leg sie vor dem Startschuss ab." },
+      { "title": "Früh da sein", "description": "Das historische Zentrum füllt sich vor dem Start. Komm zu Fuß oder parke weit weg von der Plaza de Armas." },
+      { "title": "Nach dem Ziel", "description": "Du bist mitten im Zentrum: ideal für ein Frühstück mit Enchiladas potosinas oder einen Spaziergang über die Plätze." }
+    ]
+  },
+  "faq": {
+    "title": "Häufige Fragen",
+    "items": [
+      { "q": "Wann findet der Halbmarathon La Capital del Deporte 2026 statt?", "a": "Am Sonntag, 8. November 2026. Der Hauptstart für 21 km, 10 km und 5 km ist um 7:05 Uhr; die Kategorie für Menschen mit Behinderung startet um 7:00 Uhr." },
+      { "q": "Was kostet die Teilnahme?", "a": "Sie ist kostenlos. Enthalten sind ein Erinnerungs-Shirt je nach Größe sowie Chip und Startnummer für die ersten 5.000 Teilnehmenden." },
+      { "q": "Wo und bis wann kann ich mich anmelden?", "a": "Im Rathaus (Jardín Hidalgo S/N, Plaza de Armas), Montag bis Freitag 9–18 Uhr und Samstag 9–13 Uhr, vom 7. Oktober bis 4. November 2026 oder solange Plätze frei sind." },
+      { "q": "Kann ich mich anmelden, wenn ich nicht in San Luis Potosí wohne?", "a": "Ja. Schicke einen Scan deines Ausweises mit Distanz, Kategorie und Shirtgröße an slp.deportesocial2427@gmail.com. Du bekommst eine Bestätigung per E-Mail, wenn noch Startnummern frei sind." },
+      { "q": "Wo sind Start und Ziel?", "a": "Vor dem Rathaus an der Plaza de Armas (Jardín Hidalgo) im historischen Zentrum von San Luis Potosí. Die Ausschreibung enthält keine Streckenkarte." },
+      { "q": "Wann und wo hole ich meine Startunterlagen ab?", "a": "Freitag, 6. November, 8–18 Uhr, und Samstag, 7. November, 8–15 Uhr, im Auditorio Socorro Blanc der Unidad Administrativa Municipal (Blvd. Salvador Nava Martínez 1580). Am Renntag gibt es keine Ausgabe." },
+      { "q": "Gibt es eine Medaille?", "a": "Ja: eine Finisher-Medaille für alle Angemeldeten, die mit Startnummer ins Ziel kommen, sowie Pokale für die Plätze 1 bis 3 in jeder Wertung und Kategorie." },
+      { "q": "Was ist der Unterschied zum Halbmarathon der UASLP?", "a": "Es sind zwei verschiedene Läufe. Der UASLP-Lauf fand am 27. September statt und war kostenpflichtig; La Capital del Deporte ist am 8. November, wird von der Stadt organisiert und ist kostenlos." }
+    ]
+  },
+  "sources": {
+    "title": "Quellen",
+    "description": "Fakten am 12. Oktober 2026 anhand der offiziellen Ausschreibung der städtischen Sportdirektion und lokaler Medienberichte geprüft.",
+    "convocatoria": "Offizielle Ausschreibung",
+    "momento": "Periódico El Momento",
+    "sanluisinforma": "San Luis Informa"
+  },
+  "actions": {
+    "title": "Läufst du mit?",
+    "description": "Melde dich an, bevor die Chips vergeben sind, und schau, was an dem Wochenende sonst in der Stadt los ist.",
+    "official": "Ausschreibung lesen",
+    "uaslp": "UASLP-Halbmarathon",
+    "events": "Events dieser Woche"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "banner": {
+    "badge": "Free registration · closes November 4",
+    "title": "La Capital del Deporte Half Marathon 2026",
+    "description": "21K, 10K and 5K through the Centro Histórico on Sunday, November 8. Entry is free, but timing chips and bibs only go to the first 5,000 runners.",
+    "date": "Sunday, November 8 · 7:05 a.m.",
+    "location": "Plaza de Armas, Centro Histórico",
+    "cta": "Everything you need to know"
+  },
+  "seo": {
+    "title": "La Capital del Deporte Half Marathon 2026: Date, Free Entry & Kits",
+    "description": "Complete guide to the #LaCapitalDelDeporte Half Marathon 2026 in San Luis Potosí: Sunday, November 8, 7:05 a.m. start at Plaza de Armas. Free 21K, 10K and 5K, categories, registration until November 4 and kit pickup.",
+    "keywords": "medio maraton la capital del deporte 2026, san luis potosi half marathon 2026, half marathon november 2026 mexico, free half marathon san luis potosi, la capital del deporte race registration"
+  },
+  "hero": {
+    "eyebrow": "Registration open · free",
+    "subtitle": "21K, 10K and 5K through the Centro Histórico of San Luis Potosí",
+    "description": "The city's Municipal Sports Department runs this free half marathon as part of the city's 434th anniversary. Start and finish are in front of City Hall, on Plaza de Armas.",
+    "date": "Sunday, November 8, 2026",
+    "time": "Main start 7:05 a.m.",
+    "location": "Plaza de Armas (Jardín Hidalgo), Centro Histórico",
+    "ctaRegister": "Read the official rules",
+    "ctaGuide": "How to register",
+    "alt": "Runners during a road race in San Luis Potosí"
+  },
+  "stats": {
+    "date": { "value": "Nov 8", "label": "Sunday" },
+    "cost": { "value": "$0", "label": "Entry fee" },
+    "distances": { "value": "3", "label": "Distances" },
+    "kits": { "value": "5,000", "label": "Chips & bibs" }
+  },
+  "status": {
+    "title": "What hasn't been published yet",
+    "description": "The official rules don't include a course map or a total registration cap; they only say chips and bibs go to the first 5,000 participants. We'll update this guide when the city publishes the route."
+  },
+  "schedule": {
+    "title": "Race-day schedule",
+    "items": [
+      { "time": "7:00", "title": "5K for people with disabilities", "description": "The category for runners with motor, intellectual, visual and hearing disabilities starts first." },
+      { "time": "7:05", "title": "21K, 10K and 5K fun run", "description": "Main start for all three distances in front of City Hall, Plaza de Armas." },
+      { "time": "9:00", "title": "Awards", "description": "Trophies for the top three in each division and category." }
+    ]
+  },
+  "distances": {
+    "title": "Distances",
+    "intro": "All three distances share the start and finish in the Centro Histórico.",
+    "items": [
+      { "name": "21K", "label": "Half marathon", "description": "The headline race. Age groups from 29 and under to 70+, in women's and men's divisions." },
+      { "name": "10K", "label": "Race", "description": "Includes an under-18 category and age groups up to 70+." },
+      { "name": "5K", "label": "Fun run", "description": "Made for first-timers and families, with its own category for people with disabilities." }
+    ]
+  },
+  "categories": {
+    "title": "Categories & awards",
+    "intro": "Every category has women's and men's divisions, with trophies for 1st, 2nd and 3rd place.",
+    "groups": [
+      { "name": "21K", "list": "Up to 29 · 30–39 · 40–49 · 50–59 · 60–69 · 70+" },
+      { "name": "10K", "list": "Under 18 · 19–29 · 30–39 · 40–49 · 50–59 · 60–69 · 70+" },
+      { "name": "5K", "list": "Fun run · People with disabilities (motor, intellectual, visual and hearing)" }
+    ],
+    "medal": "Finisher medal for every registered runner who crosses the line wearing their bib."
+  },
+  "registration": {
+    "title": "How to register",
+    "intro": "From October 7 to November 4, 2026, or until spots run out.",
+    "items": [
+      { "title": "In person", "description": "City Hall (Palacio Municipal), Jardín Hidalgo S/N, Plaza de Armas. Monday–Friday 9:00 a.m.–6:00 p.m., Saturday 9:00 a.m.–1:00 p.m." },
+      { "title": "Requirements", "description": "You can register yourself and one other person, with a copy of official ID for both. Minors: a copy of their CURP plus a parent's official ID." },
+      { "title": "Coming from out of town", "description": "Email a scan of your ID with your distance, category and shirt size to slp.deportesocial2427@gmail.com. You'll get a confirmation if bib numbers are still available." },
+      { "title": "Who can't register", "description": "Anyone who registered for a past edition of this race, picked up their kit or not, and didn't run." }
+    ],
+    "kitIncludes": "Includes a commemorative shirt (subject to sizes), plus a chip and bib for the first 5,000 participants."
+  },
+  "kits": {
+    "title": "Kit pickup",
+    "when": "Friday, November 6, 8:00 a.m.–6:00 p.m., and Saturday, November 7, 8:00 a.m.–3:00 p.m.",
+    "where": "Auditorio Socorro Blanc, Unidad Administrativa Municipal. Blvd. Salvador Nava Martínez 1580, Col. Santuario.",
+    "bring": "Bring your registration form and official ID (physical or a photo). Kits are handed only to the registered runner.",
+    "warning": "There is no registration or kit pickup on race day. If you don't collect your kit on those dates, you lose your spot."
+  },
+  "rules": {
+    "title": "Rules worth knowing",
+    "items": [
+      "Awards are decided by official gun time, per World Athletics rules.",
+      "Running a different distance from the one you registered for, or finishing without your bib, disqualifies you from awards.",
+      "Preliminary results are posted online; there's a 30-minute window after winners are published to file a query.",
+      "By registering you allow your image to be used on the race's official social media (except minors)."
+    ]
+  },
+  "tips": {
+    "title": "Race-day tips",
+    "items": [
+      { "title": "Altitude", "description": "San Luis Potosí sits about 1,860 m above sea level. If you're coming from the coast, start conservatively for the first few kilometers." },
+      { "title": "Cool morning", "description": "It's an early November start: bring a light layer for the wait and drop it before the gun." },
+      { "title": "Arrive early", "description": "The Centro Histórico fills up before the start. Plan to walk in or park well away from Plaza de Armas." },
+      { "title": "After the finish", "description": "You're right in the Centro: a good time for enchiladas potosinas for breakfast or a walk around the plazas." }
+    ]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      { "q": "When is the La Capital del Deporte Half Marathon 2026?", "a": "Sunday, November 8, 2026. The main start for the 21K, 10K and 5K is at 7:05 a.m.; the category for people with disabilities starts at 7:00 a.m." },
+      { "q": "How much does it cost?", "a": "It's free. Entry includes a commemorative shirt subject to sizes, and a chip and bib for the first 5,000 participants." },
+      { "q": "Where and until when can I register?", "a": "At City Hall (Jardín Hidalgo S/N, Plaza de Armas), Monday–Friday 9:00 a.m.–6:00 p.m. and Saturday 9:00 a.m.–1:00 p.m., from October 7 to November 4, 2026, or until spots run out." },
+      { "q": "Can I register if I don't live in San Luis Potosí?", "a": "Yes. Email a scan of your ID with your distance, category and shirt size to slp.deportesocial2427@gmail.com. They'll confirm by email if bib numbers are still available." },
+      { "q": "Where are the start and finish?", "a": "In front of City Hall on Plaza de Armas (Jardín Hidalgo), in the Centro Histórico of San Luis Potosí. The official rules don't include a course map." },
+      { "q": "When and where do I pick up my kit?", "a": "Friday, November 6, 8:00 a.m.–6:00 p.m., and Saturday, November 7, 8:00 a.m.–3:00 p.m., at the Auditorio Socorro Blanc in the Unidad Administrativa Municipal (Blvd. Salvador Nava Martínez 1580). There's no pickup on race day." },
+      { "q": "Is there a medal?", "a": "Yes: a finisher medal for every registered runner who crosses the line with their bib, plus trophies for 1st to 3rd place in every division and category." },
+      { "q": "How is it different from the UASLP Half Marathon?", "a": "They're separate races. The UASLP race was run on September 27 and had an entry fee; La Capital del Deporte is on November 8, is organized by the city and is free." }
+    ]
+  },
+  "sources": {
+    "title": "Sources",
+    "description": "Facts verified on October 12, 2026 against the official rules from the Municipal Sports Department and local press coverage.",
+    "convocatoria": "Official rules (convocatoria)",
+    "momento": "Periódico El Momento",
+    "sanluisinforma": "San Luis Informa"
+  },
+  "actions": {
+    "title": "Running it?",
+    "description": "Register before the chips run out, and see what else is on in the city that weekend.",
+    "official": "Read the official rules",
+    "uaslp": "UASLP Half Marathon",
+    "events": "Events this week"
+  }
+}

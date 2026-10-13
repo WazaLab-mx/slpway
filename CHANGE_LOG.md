@@ -1,5 +1,16 @@
 # Change Log
 
+## [2026-10-12] Event guide + home banner: Medio Maratón La Capital del Deporte 2026
+
+- Research: upcoming race in SLP is the free municipal half marathon on Sun Nov 8, 2026 (the UASLP race already ran Sept 27). Facts come from the official convocatoria (Dirección de Deporte Municipal, Google Doc linked by the press), cross-checked with El Momento and San Luis Informa. Not published yet: route map and total cap (the page says so in a status note).
+- New page `/events/medio-maraton-capital-del-deporte-2026` with real content in all 4 locales (new namespace `half-marathon-capital.json` for en/es/de/ja). Sections: hero + stats, schedule (7:00 disability 5K, 7:05 main start, 9:00 awards), distances, categories/awards, registration (in person at Palacio Municipal Oct 7–Nov 4; out-of-town by email; who is excluded), kit pickup (Nov 6–7, Auditorio Socorro Blanc), rules, race-day tips, FAQ (8), sources, CTAs.
+- Structure: `src/data/half-marathon-capital-2026.ts` (constants + SportsEvent/FAQPage/Breadcrumb JSON-LD, free offers, isAccessibleForFree); components in `src/components/half-marathon/` (Hero, Race, Logistics, Faq).
+- Home: `src/components/home/HalfMarathonBanner.tsx` placed right before the Xantolo banner, with GA4 ctaClick `half-marathon-home-banner`. Home loads the new namespace.
+- Internal links: sitemap static route (priority 0.9); related-links `sports` now points to the new guide (was the past Tangamanga marathon); CTA link from the UASLP half marathon page.
+- Calendar: inserted the race into Supabase `events` (featured, sports, family) via `scripts/import-events.mjs`, then `translate-events.mjs` filled de/ja.
+- Tests: `src/components/HalfMarathon.test.tsx` (13: banner link + tracking and full page render in 4 locales, core facts per locale, JSON-LD), plus sitemap and related-links assertions. 52 suites / 333 tests pass. Verified locally: page 200 in en/es/ja, home banner renders, headings white on dark sections.
+- Follow-up: remove the home banner after Nov 8 and add results once published.
+
 ## [2026-10-09] Ads: also release slots AdSense never answers
 
 - Checked in production after the previous fix: on the new posts AdSense processes the slots (`data-adsbygoogle-status="done"`) but never sets `data-ad-status` or inserts an iframe, likely because the pages are new to AdSense. The 280px gap stayed.

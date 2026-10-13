@@ -35,6 +35,7 @@ import TodayInSLP from '@/components/TodayInSLP';
 import EventCarouselBanner from '@/components/EventCarouselBanner';
 import FamilyActivitiesBanner from '@/components/FamilyActivitiesBanner';
 import HomeServicesBanner from '@/components/home/HomeServicesBanner';
+import HalfMarathonBanner from '@/components/home/HalfMarathonBanner';
 import BlogCarousel from '@/components/BlogCarousel';
 import AdUnit from '@/components/common/AdUnit';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -88,7 +89,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
     return {
       props: {
-        ...(await serverSideTranslations(locale ?? 'es', ['common', 'xantolo'])),
+        ...(await serverSideTranslations(locale ?? 'es', ['common', 'xantolo', 'half-marathon-capital'])),
         events: events || [],
         featuredAdvertisers,
         featuredBrands: featuredBrandsData || [],
@@ -100,7 +101,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     logger.error('Error fetching data:', error);
     return {
       props: {
-        ...(await serverSideTranslations(locale ?? 'es', ['common', 'xantolo'])),
+        ...(await serverSideTranslations(locale ?? 'es', ['common', 'xantolo', 'half-marathon-capital'])),
         events: [],
         featuredAdvertisers: [],
         featuredBrands: [],
@@ -237,6 +238,9 @@ export default function Home({ events = [], featuredAdvertisers = [], featuredBr
         <div className="container mx-auto px-6 md:px-12 lg:px-20 py-6">
           <AdUnit placement="top-banner" />
         </div>
+
+        {/* HALF MARATHON BANNER */}
+        <HalfMarathonBanner />
 
         {/* EVENT CAROUSEL BANNER */}
         <EventCarouselBanner />

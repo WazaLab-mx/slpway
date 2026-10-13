@@ -56,7 +56,7 @@ export function relatedLinksForPlace(category: string): RelatedLink[] {
 }
 
 const EVENT_CATEGORY_GUIDE: Record<string, RelatedLink> = {
-  sports: { href: '/events/maraton-tangamanga-2026', title: 'Maratón Tangamanga 2026', description: 'La carrera más grande del año en SLP.' },
+  sports: { href: '/events/medio-maraton-capital-del-deporte-2026', title: 'Medio Maratón La Capital del Deporte 2026', description: '21K, 10K y 5K gratis por el Centro Histórico el 8 de noviembre.' },
   music: { href: '/events/xantolo-2026', title: 'Xantolo y Día de Muertos', description: 'Tradiciones de la Huasteca y celebraciones de temporada en SLP.' },
   'arts-culture': { href: '/cultural', title: 'Cultura potosina', description: 'Festivales, tradiciones e historia de SLP.' },
   culinary: { href: '/guides/foodie-guide', title: 'Guía foodie de SLP', description: 'La ruta gastronómica local completa.' },
