@@ -36,7 +36,7 @@ export default function HalfMarathonLogistics() {
             <p key={key} className="rounded-2xl border border-emerald-900/10 bg-white p-6 text-sm leading-relaxed text-slate-700">{t(`kits.${key}`)}</p>
           ))}
         </div>
-        <p role="note" className="mt-5 border-l-4 border-orange-500 bg-orange-50 p-4 text-sm font-semibold text-orange-900">{t('kits.warning')}</p>
+        <p role="note" className="mt-5 rounded-xl border border-orange-200 bg-orange-50 p-4 text-sm font-semibold text-orange-900">{t('kits.warning')}</p>
       </section>
 
       <section className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-2 md:px-8 md:py-16">

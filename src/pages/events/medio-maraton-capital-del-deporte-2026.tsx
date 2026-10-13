@@ -29,7 +29,7 @@ export default function MedioMaratonCapitalDelDeporte2026() {
       <HalfMarathonHero />
       <div className="bg-[#f5f7f2] text-slate-800">
         <div className="mx-auto max-w-6xl px-4 pt-10 md:px-8">
-          <aside className="border-l-4 border-orange-500 bg-white p-5 sm:p-6">
+          <aside className="rounded-xl border border-orange-200 bg-orange-50 p-5 sm:p-6">
             <h2 className="font-bold text-slate-900">{t('status.title')}</h2>
             <p className="mt-2 max-w-4xl text-sm leading-relaxed text-slate-600">{t('status.description')}</p>
           </aside>
