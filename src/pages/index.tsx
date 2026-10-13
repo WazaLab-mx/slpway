@@ -240,7 +240,9 @@ export default function Home({ events = [], featuredAdvertisers = [], featuredBr
         </div>
 
         {/* HALF MARATHON BANNER */}
-        <HalfMarathonBanner />
+        <div className="mb-10 md:mb-16">
+          <HalfMarathonBanner />
+        </div>
 
         {/* EVENT CAROUSEL BANNER */}
         <EventCarouselBanner />

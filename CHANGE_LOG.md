@@ -10,6 +10,7 @@
 - Calendar: inserted the race into Supabase `events` (featured, sports, family) via `scripts/import-events.mjs`, then `translate-events.mjs` filled de/ja.
 - Tests: `src/components/HalfMarathon.test.tsx` (13: banner link + tracking and full page render in 4 locales, core facts per locale, JSON-LD), plus sitemap and related-links assertions. 52 suites / 333 tests pass. Verified locally: page 200 in en/es/ja, home banner renders, headings white on dark sections.
 - Follow-up: remove the home banner after Nov 8 and add results once published.
+- Follow-up tweaks: notes use a full thin border instead of a side stripe; home banner gets bottom margin (mb-10 / md:mb-16) so it no longer sits flush on the Xantolo banner (owner request).
 
 ## [2026-10-09] Ads: also release slots AdSense never answers
 
