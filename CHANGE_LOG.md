@@ -1,5 +1,12 @@
 # Change Log
 
+## [2026-10-13] Fix: Netlify builds failing since the race guides (namespaces not registered)
+
+- Netlify production deploys for a08703c and 98b7e8c failed ("Build script returned non-zero exit code: 2"). Production kept serving 58aea1b, so the race pages were never live.
+- Root cause: `next-i18next.config.js` has an explicit `ns` list. During `next build` only listed namespaces are preloaded, so `half-marathon-capital` / `real-potosi-run` resolved to raw keys and `t('faq.items', {returnObjects:true}).map` threw at prerender. The dev server hid this (`reloadOnPrerender` in development).
+- Fix: add both namespaces to `ns`. Regression test `src/lib/i18n-namespaces.test.ts` fails if any `public/locales/en/*.json` is missing from `ns`.
+- Verified: local `npm run build` exit 0, 972 pages, both race pages prerendered.
+
 ## [2026-10-12] Event guide + slim home banner: Carrera Real del Potosí 2026
 
 - Research: 5th edition night race on Sat Oct 17, 2026, 7:00 p.m., Parque Tangamanga I (start/finish Av. Artesanos, in front of the planetarium). 3/6/10 km, $375 MXN, online registration only on Tu Tiempo a Tiempo (event 169). Kit: shirt, medal, bib, chip, light-up wristband, surprise gift. Personal, non-transferable, no refunds. Verified against the official registration page and the race poster. Not published: route map, categories, awards, kit pickup (the page says so).
