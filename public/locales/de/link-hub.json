@@ -1,0 +1,17 @@
+{
+  "seo": { "title": "San Luis Way auf Instagram: Guides und Tipps für SLP", "description": "Die San-Luis-Way-Guides, die wir auf Instagram teilen: Events, Läufe, kostenlose Tipps, Lebenshaltungskosten, Stadtviertel und mehr." },
+  "title": "San Luis Way",
+  "subtitle": "Die Guides aus unseren Instagram-Posts, mit einem Tipp.",
+  "items": {
+    "realPotosi": { "label": "Carrera Real del Potosí", "detail": "Sa 17. Okt · Nachtlauf 3K, 6K und 10K" },
+    "halfMarathon": { "label": "Halbmarathon La Capital", "detail": "So 8. Nov · kostenlos · Anmeldung bis 4. Nov" },
+    "xantolo": { "label": "Xantolo 2026", "detail": "Tag der Toten in der Hauptstadt und der Huasteca" },
+    "thisWeek": { "label": "Was diese Woche los ist", "detail": "Events der nächsten 7 Tage" },
+    "freeEvents": { "label": "8 kostenlose Pläne in SLP", "detail": "Unternehmungen, die nichts kosten" },
+    "homeServices": { "label": "Handwerker für dein Zuhause", "detail": "Klempner, Elektriker, Schlüsseldienste und mehr" },
+    "costOfLiving": { "label": "Lebenshaltungskosten 2026", "detail": "Budgets und Mieten nach Gegend" },
+    "neighborhoods": { "label": "Wo wohnen in SLP?", "detail": "Stadtviertel und Mietpreise" },
+    "factchecks": { "label": "Faktencheck-Berichte", "detail": "Wie wir prüfen, was wir veröffentlichen" },
+    "newsletter": { "label": "Montags-Newsletter", "detail": "Das Beste der Woche, kostenlos per E-Mail" }
+  }
+}

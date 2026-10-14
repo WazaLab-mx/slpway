@@ -1,0 +1,17 @@
+{
+  "seo": { "title": "San Luis Way en Instagram: guías y planes en SLP", "description": "Las guías de San Luis Way que compartimos en Instagram: eventos, carreras, planes gratis, costo de vida, colonias y más." },
+  "title": "San Luis Way",
+  "subtitle": "Las guías que compartimos en Instagram, a un toque.",
+  "items": {
+    "realPotosi": { "label": "Carrera Real del Potosí", "detail": "Sáb 17 oct · carrera nocturna 3K, 6K y 10K" },
+    "halfMarathon": { "label": "Medio Maratón La Capital", "detail": "Dom 8 nov · gratis · inscripción hasta el 4 nov" },
+    "xantolo": { "label": "Xantolo 2026", "detail": "Día de Muertos en la capital y la Huasteca" },
+    "thisWeek": { "label": "Qué hacer esta semana", "detail": "La agenda de los próximos 7 días" },
+    "freeEvents": { "label": "8 planes gratis en SLP", "detail": "Que no cuestan un peso" },
+    "homeServices": { "label": "Profesionales del hogar", "detail": "Plomeros, electricistas, cerrajeros y más" },
+    "costOfLiving": { "label": "Costo de vida 2026", "detail": "Presupuestos y rentas por zona (en inglés)" },
+    "neighborhoods": { "label": "¿En qué colonia vivir?", "detail": "Zonas de SLP y cuánto cuesta rentar (en inglés)" },
+    "factchecks": { "label": "Informes de verificación", "detail": "Cómo verificamos lo que publicamos" },
+    "newsletter": { "label": "Newsletter de los lunes", "detail": "Lo mejor de la semana, gratis en tu correo" }
+  }
+}

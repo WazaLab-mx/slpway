@@ -1,5 +1,13 @@
 # Change Log
 
+## [2026-10-14] /ig link-in-bio page for Instagram
+
+- New page `src/pages/ig.tsx` (noindex): San Luis Way logo + one button per promoted guide. Data in `src/data/ig-link-hub.ts` (order = display order, first item highlighted in gold). New namespace `link-hub` (en/es/de/ja), registered in `next-i18next.config.js`.
+- Each tap fires GA4 `cta_click` with id `ig-hub-<item>` and page `ig`. Internal links carry no UTMs (would reset session attribution); IG traffic shows as l.instagram.com referral.
+- Items: Carrera Real del Potosí, half marathon, Xantolo, this week, free events, home services, cost of living, neighborhoods, fact-checks, newsletter.
+- Tests: `src/components/InstagramLinkHub.test.tsx` (labels + hrefs + tracking in 4 locales, every href maps to an existing page). Local `npm run build` exit 0.
+- Context: 8 carousels (2026-10-15 → 11-05, one every 3 days) scheduled in Meta Business Suite pointing to these guides. Follow-up: drop Real del Potosí from the list after Oct 17 and the half marathon after Nov 8.
+
 ## [2026-10-13] Short link sanluisway.com/carrera for the Instagram bio
 
 - `netlify.toml`: 302 redirect `/carrera` → `/es/events/carrera-real-del-potosi-2026?utm_source=instagram&utm_medium=social&utm_campaign=real-potosi-2026&utm_content=bio`. A 302 on purpose, so it can be repointed to the next race guide (half marathon after Oct 17) without editing the bio.

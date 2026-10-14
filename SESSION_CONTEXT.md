@@ -1,5 +1,10 @@
 # Session Context Log - Coding Agent
 
+## Session 2026-10-14 — /ig link hub + scheduled social carousels
+
+`/ig` is the Instagram bio page (list in `src/data/ig-link-hub.ts`, namespace `link-hub`). 8 IG/FB carousels scheduled every 3 days from Oct 15 to Nov 5 (this week, free plans, cost of living, Xantolo, home services, half marathon, neighborhoods, fact-checks). Source images/captions live outside the repo (owner's Desktop `posts-programados`). Keep the `/ig` list in sync with what's being posted.
+
+
 ## Session 2026-10-13 — Social push + /carrera short link
 
 Real del Potosí carousel and story published on FB/IG (Meta Business Suite, Chrome extension on the Windows PC). Short link `sanluisway.com/carrera` (302 in netlify.toml) goes to the race guide with Instagram UTMs and is meant for the IG bio. After Oct 17, repoint `/carrera` to the half marathon guide (utm_campaign=half-marathon-2026).
