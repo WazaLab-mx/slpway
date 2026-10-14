@@ -50,6 +50,14 @@
   status = 301
   force = true
 
+# Short link for the Instagram bio, tagged so GA4 attributes the traffic.
+# 302 on purpose: repoint it to the next race guide without changing the bio.
+[[redirects]]
+  from = "/carrera"
+  to = "/es/events/carrera-real-del-potosi-2026?utm_source=instagram&utm_medium=social&utm_campaign=real-potosi-2026&utm_content=bio"
+  status = 302
+  force = true
+
 # Headers for security
 [[headers]]
   for = "/*"

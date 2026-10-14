@@ -1,5 +1,11 @@
 # Change Log
 
+## [2026-10-13] Short link sanluisway.com/carrera for the Instagram bio
+
+- `netlify.toml`: 302 redirect `/carrera` → `/es/events/carrera-real-del-potosi-2026?utm_source=instagram&utm_medium=social&utm_campaign=real-potosi-2026&utm_content=bio`. A 302 on purpose, so it can be repointed to the next race guide (half marathon after Oct 17) without editing the bio.
+- Test `src/lib/netlify-short-links.test.ts` parses netlify.toml: 302, UTM params present, target page exists.
+- Context: carousel (4 slides, 1080x1350) + story published the same day on FB/IG via Meta Business Suite. FB caption and the FB story carry the guide link with utm_source=facebook.
+
 ## [2026-10-13] Fix: Netlify builds failing since the race guides (namespaces not registered)
 
 - Netlify production deploys for a08703c and 98b7e8c failed ("Build script returned non-zero exit code: 2"). Production kept serving 58aea1b, so the race pages were never live.
