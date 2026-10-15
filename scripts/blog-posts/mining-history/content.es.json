@@ -1,0 +1,280 @@
+{
+ "meta": {
+  "title": "San Luis Potosí: historia minera, arquitectura barroca y el legado cultural que define a la ciudad",
+  "discover_title": "El oro y la plata que construyeron la ciudad barroca de San Luis Potosí",
+  "excerpt": "Por qué una ciudad del centro de México lleva el nombre de una montaña en Bolivia: el hallazgo de oro y plata de 1592 en Cerro de San Pedro, las iglesias barrocas que financió y las tradiciones que aún definen a San Luis Potosí.",
+  "meta_title": "Historia minera y arquitectura barroca de San Luis Potosí",
+  "meta_description": "Cómo el hallazgo de oro y plata de 1592 en Cerro de San Pedro dio origen a San Luis Potosí, por qué se llama Potosí y las iglesias barrocas que construyó su riqueza minera."
+ },
+ "ui": {
+  "quickAnswerLabel": "Respuesta rápida",
+  "tocTitle": "En este análisis a fondo",
+  "readingTime": "Tiempo estimado de lectura: 9 minutos · Actualizado en octubre de 2026",
+  "timelineHeaders": [
+   "Año",
+   "Qué ocurrió"
+  ],
+  "templeHeaders": [
+   "Edificio",
+   "Estilo",
+   "Construido"
+  ],
+  "takeawaysTitle": "Puntos clave",
+  "faqTitle": "Preguntas frecuentes",
+  "sourcesTitle": "Fuentes",
+  "correctionNote": "Corrección, octubre de 2026: una versión anterior de este artículo decía que Cerro de San Pedro estaba a 20 km de la ciudad (está a unos 18 km), describía de manera imprecisa la leyenda del descubrimiento e incluía estadísticas que no pudimos verificar (una participación del 15% en la plata de Nueva España, un conteo de edificios atribuido al INAH y una cifra de población de Real de Catorce). Se corrigieron o eliminaron."
+ },
+ "quickAnswer": "San Luis Potosí fue fundado en 1592 tras el hallazgo de <strong>oro y plata</strong> en Cerro de San Pedro, a unos 18 km al este de la ciudad actual. Los mineros bautizaron el descubrimiento en honor a la famosa montaña de plata de Potosí, en la actual Bolivia, y como el cerro no tenía agua, la ciudad se construyó en el valle. Su centro histórico forma parte del Camino Real de Tierra Adentro, declarado Patrimonio Mundial por la UNESCO desde 2010.",
+ "toc": [
+  [
+   "origin",
+   "La huelga de 1592 y de dónde viene el nombre"
+  ],
+  [
+   "cerro-san-pedro",
+   "Cerro de San Pedro y el problema del agua"
+  ],
+  [
+   "baroque",
+   "Las iglesias barrocas que pagó la minería"
+  ],
+  [
+   "mining-towns",
+   "Pueblos mineros que puedes visitar"
+  ],
+  [
+   "legacy",
+   "El legado cultural"
+  ],
+  [
+   "visit",
+   "Cómo visitarlo"
+  ],
+  [
+   "faq",
+   "Preguntas frecuentes"
+  ]
+ ],
+ "hook": "<strong>En el corazón del altiplano mexicano se alza una ciudad cuya historia está escrita en oro, plata y cantera rosa.</strong> San Luis Potosí fue fundada hace más de cuatro siglos a raíz de un hallazgo mineral, y su centro histórico sigue siendo uno de los ejemplos más claros de cómo la riqueza minera colonial se convirtió en arquitectura.",
+ "intro": [
+  "Su centro histórico fue declarado Zona Federal de Monumentos Históricos en 1990, y en 2010 la UNESCO lo inscribió como uno de los sitios del Camino Real de Tierra Adentro, la ruta real que unía la Ciudad de México con la frontera minera del norte.",
+  "Esta guía explica cómo obtuvo su nombre la ciudad, por qué se encuentra en un valle en lugar de junto a sus minas, las iglesias barrocas que financió la minería y las tradiciones que aún la definen."
+ ],
+ "origin": {
+  "title": "El hallazgo de 1592 y el origen del nombre",
+  "subtitle": "Oro y plata en Cerro de San Pedro, y un nombre tomado de Bolivia",
+  "legend": "Una leyenda popular dice que los yacimientos fueron revelados por un hombre guachichil que llevaba <strong>polvo de oro como pintura facial</strong>. Es una buena historia, pero es una leyenda. Los guachichiles eran el pueblo seminómada de esta parte del altiplano, y frailes franciscanos como Fray Diego de la Magdalena ya vivían y trabajaban entre ellos desde la década de 1580.",
+  "documented": "La versión documentada es más sencilla: a principios de marzo de 1592, informantes guachichiles guiaron a los españoles hasta el mineral en Cerro de San Pedro. El capitán Miguel Caldera, encargado de la frontera, envió a Gregorio de León, Juan de la Torre y Pedro de Anda a explorar el cerro, y el hallazgo está fechado el 4 de marzo de 1592.",
+  "name": {
+   "title": "¿Por qué “Potosí”?",
+   "text": "Pedro de Anda nombró el sitio “San Pedro del Potosí”, en honor al Cerro Rico de Potosí, en el Alto Perú (la actual Bolivia), descubierto en 1545 y entonces la mina de plata más rica del mundo. Su riqueza dio al español el dicho “vale un Potosí” (“vale un Potosí”). El origen del nombre boliviano es motivo de debate; a menudo se relaciona con palabras quechuas o aimaras, pero no existe una etimología aceptada.",
+   "source": "UNAM, Lecturas históricas de México"
+  },
+  "firstMine": "La primera mina registrada en el cerro era conocida como <strong>La Descubridora</strong> (“la descubridora”)."
+ },
+ "cerro": {
+  "title": "Cerro de San Pedro y el problema del agua",
+  "subtitle": "Por qué la ciudad se construyó en el valle y no junto a sus minas",
+  "distance": {
+   "title": "Qué tan lejos:",
+   "text": "Cerro de San Pedro está a unos 18 km al este del centro de San Luis Potosí. Hoy es un pequeño pueblo minero parcialmente abandonado que puedes visitar en medio día."
+  },
+  "water": {
+   "title": "No hay agua en el cerro",
+   "paragraphs": [
+    "Había mucho mineral en el cerro, pero no suficiente agua para procesarlo. El agua confiable más cercana estaba en el valle, al oeste.",
+    "Por eso las haciendas de beneficio, las oficinas y las viviendas de los mineros se establecieron en el valle. El 3 de noviembre de 1592, se fundó formalmente ahí el pueblo de San Luis Minas del Potosí. La capital nació como centro de beneficio y administración de las minas, no como un campamento minero."
+   ]
+  },
+  "timelineTitle": "Cronología",
+  "timeline": [
+   [
+    "1545",
+    "Se descubre plata en el Cerro Rico de Potosí, en la actual Bolivia."
+   ],
+   [
+    "4 de marzo de 1592",
+    "Se encuentra mineral de oro y plata en Cerro de San Pedro."
+   ],
+   [
+    "3 de noviembre de 1592",
+    "El pueblo se funda formalmente en el valle, donde había agua."
+   ],
+   [
+    "1656",
+    "El virrey le otorga el título de ciudad; el rey Felipe IV lo confirma en 1658."
+   ],
+   [
+    "1990",
+    "El centro histórico es declarado Zona de Monumentos Históricos federal."
+   ],
+   [
+    "2010",
+    "La UNESCO lo inscribe como parte del Camino Real de Tierra Adentro."
+   ]
+  ]
+ },
+ "baroque": {
+  "title": "Las iglesias barrocas que pagó la minería",
+  "subtitle": "Cantera rosa, fachadas talladas y retablos dorados",
+  "intro": "El dinero de la minería, primero de Cerro de San Pedro y después de otras minas de la región, pagó las iglesias, conventos y casonas del centro histórico, la mayoría construidos con la <em>cantera</em> rosa local.",
+  "cathedral": {
+   "title": "Catedral Metropolitana",
+   "paragraphs": [
+    "La catedral comenzó como la iglesia parroquial del pueblo. La construcción del edificio actual inició en 1670 bajo la dirección del maestro de obras Nicolás Sánchez, y fue bendecida en 1730. Su fachada barroca funciona como un biombo tallado; el interior fue redecorado posteriormente en estilo neoclásico y la torre norte se añadió en el siglo XX."
+   ]
+  },
+  "carmen": {
+   "title": "Templo del Carmen",
+   "paragraphs": [
+    "Construido entre 1749 y 1764 para la orden carmelita, el Templo del Carmen es el mejor edificio churrigueresco de la ciudad. Fíjate en la fachada de piedra tallada y, en el interior, en el dorado Camarín de la Virgen, a la izquierda del altar mayor."
+   ]
+  },
+  "temples": [
+   [
+    "Catedral Metropolitana",
+    "Fachada barroca, interior neoclásico",
+    "1670–1730"
+   ],
+   [
+    "Templo del Carmen",
+    "Barroco churrigueresco",
+    "1749–1764"
+   ],
+   [
+    "Capilla de Aranzazú",
+    "Barroco potosino",
+    "1749–1760"
+   ],
+   [
+    "Templo de San Francisco",
+    "Barroco",
+    "siglos XVII–XVIII"
+   ]
+  ],
+  "tip": {
+   "title": "No te lo pierdas:",
+   "text": "La Capilla de Aranzazú está dentro del Museo Regional Potosino, en el antiguo convento franciscano junto al Templo de San Francisco. El INAH la considera uno de los mejores ejemplos del barroco potosino."
+  }
+ },
+ "mining": {
+  "title": "Pueblos mineros que puedes visitar",
+  "subtitle": "De dónde salió el oro y la plata",
+  "intro": "La ciudad en sí nunca tuvo minas. Para ver de dónde provino la riqueza, visita los pueblos mineros de los alrededores.",
+  "sanPedro": {
+   "title": "Cerro de San Pedro",
+   "facts": [
+    [
+     "Distancia desde SLP",
+     "A unos 18 km al este"
+    ],
+    [
+     "Auge",
+     "Finales del siglo XVI y principios del XVII"
+    ],
+    [
+     "Hoy",
+     "Pueblo pequeño, parcialmente abandonado; se puede visitar"
+    ]
+   ],
+   "text": "El lugar donde todo comenzó. Su primera bonanza fue breve y, a principios del siglo XVII, la producción había caído drásticamente. La minería regresó en siglos posteriores, más recientemente con una gran mina a cielo abierto que cambió la forma del cerro."
+  },
+  "catorce": {
+   "title": "Real de Catorce",
+   "facts": [
+    [
+     "Distancia desde SLP",
+     "A unas 3.5 horas al norte por carretera"
+    ],
+    [
+     "Auge",
+     "Finales del siglo XVIII"
+    ],
+    [
+     "Hoy",
+     "Pueblo Mágico"
+    ]
+   ],
+   "text": "Uno de los pueblos plateros más ricos del México colonial tardío, que quedó vacío cuando sus minas decayeron. Hoy es un Pueblo Mágico al que se llega por el túnel de Ogarrio, un túnel de un solo carril de unos 2 km de largo que abrió en 1901."
+  },
+  "shaped": "El dinero de la minería y la ubicación de la ciudad en el Camino Real hicieron de San Luis Potosí una de las ciudades más importantes del norte de la Nueva España y el centro político y económico de una amplia región."
+ },
+ "legacy": {
+  "title": "El legado cultural",
+  "subtitle": "Tradiciones que aún definen a la ciudad",
+  "items": [
+   {
+    "title": "Procesión del Silencio",
+    "paragraphs": [
+     "Cada Viernes Santo, penitentes encapuchados y cofradías recorren en silencio el centro histórico. Es una de las procesiones de Semana Santa más conocidas de México."
+    ]
+   },
+   {
+    "title": "Museos",
+    "paragraphs": [
+     "La ciudad cuenta con el Museo Nacional de la Máscara (máscaras), el Museo Federico Silva (escultura contemporánea), el Museo Regional Potosino y el Museo Leonora Carrington, entre otros."
+    ]
+   },
+   {
+    "title": "Música huapango",
+    "paragraphs": [
+     "La región Huasteca del estado es cuna del son huasteco (huapango), interpretado con violín, jarana y guitarra huapanguera, y cantado en falsete."
+    ]
+   },
+   {
+    "title": "Comida",
+    "paragraphs": [
+     "Las especialidades locales incluyen enchiladas potosinas, queso de tuna (un dulce hecho de fruta de nopal), asado de boda y colonche, una bebida fermentada de fruta de nopal."
+    ]
+   }
+  ]
+ },
+ "visit": {
+  "title": "Cómo visitar",
+  "subtitle": "Conoce el legado minero en uno o dos días",
+  "tips": [
+   [
+    "Recorre el centro histórico:",
+    "Todas las principales iglesias y plazas barrocas se pueden recorrer a pie en un día. Empieza en la Plaza de Armas y la catedral, continúa hacia el Templo del Carmen y termina en el Jardín de San Francisco y la Capilla de Aranzazú."
+   ],
+   [
+    "Agrega Cerro de San Pedro:",
+    "Está a unos 18 km al este del centro, una salida fácil de medio día en coche."
+   ],
+   [
+    "Mejores épocas:",
+    "Semana Santa por la Procesión del Silencio y agosto por la Feria Nacional Potosina (FENAPO)."
+   ]
+  ]
+ },
+ "takeaways": [
+  "San Luis Potosí fue fundada en 1592 después de que se encontrara oro y plata en Cerro de San Pedro, a unos 18 km al este de la ciudad.",
+  "El nombre proviene de la montaña de plata de Potosí, en Bolivia; Pedro de Anda llamó al sitio “San Pedro del Potosí”.",
+  "El cerro no tenía agua, por lo que la ciudad se construyó en el valle.",
+  "El centro histórico forma parte del Camino Real de Tierra Adentro, Patrimonio Mundial de la UNESCO desde 2010."
+ ],
+ "faq": [
+  [
+   "¿Por qué San Luis Potosí se llama Potosí?",
+   "Porque los mineros bautizaron el hallazgo de 1592 en Cerro de San Pedro en honor al Cerro Rico de Potosí, en la actual Bolivia, entonces la mina de plata más rica del mundo, con la esperanza de encontrar la misma riqueza. «San Luis» honra al rey Luis IX de Francia."
+  ],
+  [
+   "¿Fue oro o plata?",
+   "Ambos. El hallazgo de 1592 en Cerro de San Pedro produjo mineral de oro y plata."
+  ],
+  [
+   "¿Qué tan lejos está Cerro de San Pedro de la ciudad?",
+   "A unos 18 km al este del centro de San Luis Potosí."
+  ],
+  [
+   "¿El centro histórico es Patrimonio Mundial de la UNESCO?",
+   "Sí. Desde 2010, es uno de los sitios del Camino Real de Tierra Adentro."
+  ]
+ ],
+ "captions": {
+  "teatro": "Teatro de la Paz y Plaza del Carmen, en el centro histórico de San Luis Potosí",
+  "street": "Calles coloniales de cantera rosa en San Luis Potosí",
+  "cathedral": "La fachada barroca de la Catedral Metropolitana",
+  "carmen": "Templo del Carmen, San Luis Potosí"
+ }
+}

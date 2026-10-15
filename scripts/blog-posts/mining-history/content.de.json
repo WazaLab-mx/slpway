@@ -1,0 +1,280 @@
+{
+ "meta": {
+  "title": "San Luis Potosí: Bergbaugeschichte, Barockarchitektur und das kulturelle Erbe, das die Stadt prägt",
+  "discover_title": "Das Gold und Silber, das die Barockstadt San Luis Potosí entstehen ließ",
+  "excerpt": "Warum eine Stadt in Zentralmexiko nach einem Berg in Bolivien benannt ist: der Gold- und Silberfund von 1592 am Cerro de San Pedro, die davon finanzierten Barockkirchen und die Traditionen, die San Luis Potosí bis heute prägen.",
+  "meta_title": "Bergbaugeschichte und Barockarchitektur von San Luis Potosí",
+  "meta_description": "Wie der Gold- und Silberfund von 1592 am Cerro de San Pedro San Luis Potosí entstehen ließ, warum die Stadt Potosí heißt und welche Barockkirchen ihr Bergbaureichtum finanzierte."
+ },
+ "ui": {
+  "quickAnswerLabel": "Kurzantwort",
+  "tocTitle": "In diesem ausführlichen Guide",
+  "readingTime": "Geschätzte Lesezeit: 9 Minuten · Aktualisiert im Oktober 2026",
+  "timelineHeaders": [
+   "Jahr",
+   "Was geschah"
+  ],
+  "templeHeaders": [
+   "Gebäude",
+   "Stil",
+   "Erbaut"
+  ],
+  "takeawaysTitle": "Das Wichtigste im Überblick",
+  "faqTitle": "Häufig gestellte Fragen",
+  "sourcesTitle": "Quellen",
+  "correctionNote": "Korrektur, Oktober 2026: Eine frühere Version dieses Artikels gab an, dass Cerro de San Pedro 20 km von der Stadt entfernt sei (es sind etwa 18 km), beschrieb die Entdeckungslegende ungenau und enthielt Statistiken, die wir nicht verifizieren konnten (einen Anteil von 15 % am Silber Neuspaniens, eine INAH zugeschriebene Anzahl von Gebäuden und eine Bevölkerungszahl für Real de Catorce). Diese Angaben wurden korrigiert oder entfernt."
+ },
+ "quickAnswer": "San Luis Potosí wurde 1592 gegründet, nachdem am Cerro de San Pedro, etwa 18 km östlich der heutigen Stadt, <strong>Gold und Silber</strong> gefunden worden waren. Die Bergleute benannten den Fund nach dem berühmten Silberberg Potosí im heutigen Bolivien, und weil der Hügel kein Wasser hatte, wurde die Stadt stattdessen im Tal errichtet. Ihr historisches Zentrum ist Teil des Camino Real de Tierra Adentro, der seit 2010 zum UNESCO-Welterbe gehört.",
+ "toc": [
+  [
+   "origin",
+   "Der Fund von 1592 und woher der Name kommt"
+  ],
+  [
+   "cerro-san-pedro",
+   "Cerro de San Pedro und das Wasserproblem"
+  ],
+  [
+   "baroque",
+   "Die Barockkirchen, die der Bergbau finanzierte"
+  ],
+  [
+   "mining-towns",
+   "Bergbaustädte, die du besuchen kannst"
+  ],
+  [
+   "legacy",
+   "Das kulturelle Erbe"
+  ],
+  [
+   "visit",
+   "So besuchst du sie"
+  ],
+  [
+   "faq",
+   "FAQ"
+  ]
+ ],
+ "hook": "<strong>Im Herzen des mexikanischen Altiplano liegt eine Stadt, deren Geschichte in Gold, Silber und rosa Bruchstein geschrieben steht.</strong> San Luis Potosí wurde vor mehr als vier Jahrhunderten aufgrund eines Mineralfunds gegründet, und sein historisches Zentrum ist noch immer eines der deutlichsten Beispiele dafür, wie kolonialer Bergbaureichtum zu Architektur wurde.",
+ "intro": [
+  "Das historische Zentrum wurde 1990 zur föderalen Zone historischer Denkmäler erklärt, und 2010 nahm die UNESCO es als eine der Stätten des Camino Real de Tierra Adentro in die Liste auf, der königlichen Straße, die Mexiko-Stadt mit der Bergbaugrenze im Norden verband.",
+  "Dieser Guide erklärt, wie die Stadt zu ihrem Namen kam, warum sie in einem Tal statt neben ihren Minen liegt, welche Barockkirchen durch den Bergbau finanziert wurden und welche Traditionen sie bis heute prägen."
+ ],
+ "origin": {
+  "title": "Der Fund von 1592 und die Herkunft des Namens",
+  "subtitle": "Gold und Silber am Cerro de San Pedro – und ein aus Bolivien übernommener Name",
+  "legend": "Eine beliebte Legende besagt, dass die Lagerstätten von einem Guachichil-Mann verraten wurden, der <strong>Goldstaub als Gesichtsbemalung</strong> trug. Es ist eine gute Geschichte, aber eben eine Legende. Die Guachichiles waren die halbnomadischen Menschen dieses Teils des Altiplano, und Franziskanerbrüder wie Fray Diego de la Magdalena lebten und arbeiteten seit den 1580er Jahren unter ihnen.",
+  "documented": "Die dokumentierte Version ist einfacher: Anfang März 1592 führten Informanten der Guachichiles die Spanier zu Erz am Cerro de San Pedro. Hauptmann Miguel Caldera, der für die Grenzregion zuständig war, schickte Gregorio de León, Juan de la Torre und Pedro de Anda los, um den Hügel zu erkunden; der Fund wird auf den 4. März 1592 datiert.",
+  "name": {
+   "title": "Warum „Potosí“?",
+   "text": "Pedro de Anda nannte den Ort „San Pedro del Potosí“, nach dem Cerro Rico von Potosí in Alto Perú (dem heutigen Bolivien), der 1545 entdeckt wurde und damals die reichste Silbermine der Welt war. Sein Reichtum bescherte dem Spanischen die Redewendung „vale un Potosí“ („es ist ein Potosí wert“). Der Ursprung des bolivianischen Namens selbst ist umstritten; er wird häufig mit Wörtern aus dem Quechua oder Aymara in Verbindung gebracht, doch es gibt keine anerkannte Etymologie.",
+   "source": "UNAM, Lecturas históricas de México"
+  },
+  "firstMine": "Die erste am Hügel beanspruchte Mine war als <strong>La Descubridora</strong> („die Entdeckerin“) bekannt."
+ },
+ "cerro": {
+  "title": "Cerro de San Pedro und das Wasserproblem",
+  "subtitle": "Warum die Stadt im Tal gebaut wurde und nicht neben ihren Minen",
+  "distance": {
+   "title": "Entfernung:",
+   "text": "Cerro de San Pedro liegt etwa 18 km östlich der Innenstadt von San Luis Potosí. Heute ist es ein kleiner, teilweise verlassener Bergbauort, den du an einem halben Tag besuchen kannst."
+  },
+  "water": {
+   "title": "Kein Wasser auf dem Hügel",
+   "paragraphs": [
+    "Auf dem Hügel gab es reichlich Erz, aber nicht genug Wasser, um es zu verarbeiten. Das nächstgelegene zuverlässige Wasser befand sich im Tal im Westen.",
+    "Deshalb entstanden die Verarbeitungshaciendas, Büros und Wohnhäuser der Bergleute im Tal. Am 3. November 1592 wurde dort die Stadt San Luis Minas del Potosí offiziell gegründet. Die Hauptstadt entstand als Verarbeitungs- und Verwaltungszentrum für die Minen, nicht als Bergbaulager."
+   ]
+  },
+  "timelineTitle": "Zeitleiste",
+  "timeline": [
+   [
+    "1545",
+    "Am Cerro Rico von Potosí im heutigen Bolivien wird Silber entdeckt."
+   ],
+   [
+    "4. März 1592",
+    "In Cerro de San Pedro wird Gold- und Silbererz gefunden."
+   ],
+   [
+    "3. November 1592",
+    "Die Stadt wird offiziell im Tal gegründet, wo es Wasser gab."
+   ],
+   [
+    "1656",
+    "Der Vizekönig verleiht ihr den Stadttitel; König Philipp IV. bestätigt ihn 1658."
+   ],
+   [
+    "1990",
+    "Das historische Zentrum wird zur föderalen Zone historischer Denkmäler erklärt."
+   ],
+   [
+    "2010",
+    "Die UNESCO trägt es als Teil des Camino Real de Tierra Adentro ein."
+   ]
+  ]
+ },
+ "baroque": {
+  "title": "Die Barockkirchen, die der Bergbau finanzierte",
+  "subtitle": "Rosa Bruchstein, geschnitzte Fassaden und vergoldete Altarbilder",
+  "intro": "Geld aus dem Bergbau, zunächst aus Cerro de San Pedro und später aus anderen Minen der Region, finanzierte die Kirchen, Klöster und Herrenhäuser der historischen Altstadt, die größtenteils aus dem örtlichen rosafarbenen <em>cantera</em>-Stein errichtet wurden.",
+  "cathedral": {
+   "title": "Metropolitankathedrale",
+   "paragraphs": [
+    "Die Kathedrale begann als Pfarrkirche der Stadt. Der Bau des heutigen Gebäudes begann 1670 unter dem Baumeister Nicolás Sánchez, und 1730 wurde es geweiht. Ihre Barockfassade wirkt wie ein geschnitzter Sichtschirm; der Innenraum wurde später im neoklassizistischen Stil umgestaltet, und der Nordturm kam im 20. Jahrhundert hinzu."
+   ]
+  },
+  "carmen": {
+   "title": "Templo del Carmen",
+   "paragraphs": [
+    "Das zwischen 1749 und 1764 für den Karmeliterorden errichtete Templo del Carmen ist das schönste churriguereske Bauwerk der Stadt. Achte auf die geschnitzte Steinfassade und im Inneren auf den vergoldeten Camarín de la Virgen links vom Hauptaltar."
+   ]
+  },
+  "temples": [
+   [
+    "Metropolitankathedrale",
+    "Barockfassade, neoklassizistischer Innenraum",
+    "1670–1730"
+   ],
+   [
+    "Templo del Carmen",
+    "Churrigueresker Barock",
+    "1749–1764"
+   ],
+   [
+    "Capilla de Aranzazú",
+    "Potosino-Barock",
+    "1749–1760"
+   ],
+   [
+    "Templo de San Francisco",
+    "Barock",
+    "17.–18. Jahrhundert"
+   ]
+  ],
+  "tip": {
+   "title": "Nicht verpassen:",
+   "text": "Die Capilla de Aranzazú befindet sich im Museo Regional Potosino, im ehemaligen Franziskanerkloster neben dem Templo de San Francisco. INAH zählt sie zu den schönsten Beispielen des Potosino-Barocks."
+  }
+ },
+ "mining": {
+  "title": "Bergbaustädte, die du besuchen kannst",
+  "subtitle": "Woher Gold und Silber kamen",
+  "intro": "Die Stadt selbst hatte nie Minen. Um zu sehen, woher der Reichtum kam, besuche die Bergbaustädte in ihrer Umgebung.",
+  "sanPedro": {
+   "title": "Cerro de San Pedro",
+   "facts": [
+    [
+     "Entfernung von SLP",
+     "Etwa 18 km östlich"
+    ],
+    [
+     "Blütezeit",
+     "Ende des 16. und Anfang des 17. Jahrhunderts"
+    ],
+    [
+     "Heute",
+     "Kleine, teilweise verlassene Stadt; besuchbar"
+    ]
+   ],
+   "text": "Der Ort, an dem alles begann. Sein erster Boom war kurz, und Anfang des 17. Jahrhunderts war die Produktion stark zurückgegangen. In späteren Jahrhunderten kehrte der Bergbau zurück, zuletzt mit einer großen Tagebaumine, die die Form des Hügels veränderte."
+  },
+  "catorce": {
+   "title": "Real de Catorce",
+   "facts": [
+    [
+     "Entfernung von SLP",
+     "Etwa 3.5 Stunden nördlich auf der Straße"
+    ],
+    [
+     "Blütezeit",
+     "Ende des 18. Jahrhunderts"
+    ],
+    [
+     "Heute",
+     "Pueblo Mágico"
+    ]
+   ],
+   "text": "Eine der reichsten Silberstädte des spätkolonialen Mexikos, die sich leerte, als ihre Minen zurückgingen. Heute ist sie ein Pueblo Mágico, erreichbar durch den Ogarrio-Tunnel, einen etwa 2 km langen einspurigen Tunnel, der 1901 eröffnet wurde."
+  },
+  "shaped": "Bergbaugelder und die Lage der Stadt am Camino Real machten San Luis Potosí zu einer der wichtigsten Städte im Norden Neuspaniens sowie zum politischen und wirtschaftlichen Zentrum einer großen Region."
+ },
+ "legacy": {
+  "title": "Das kulturelle Erbe",
+  "subtitle": "Traditionen, die die Stadt bis heute prägen",
+  "items": [
+   {
+    "title": "Procesión del Silencio",
+    "paragraphs": [
+     "Jeden Karfreitag ziehen vermummte Büßer und Bruderschaften schweigend durch das historische Zentrum. Sie ist eine der bekanntesten Karwochenprozessionen Mexikos."
+    ]
+   },
+   {
+    "title": "Museen",
+    "paragraphs": [
+     "Die Stadt beherbergt unter anderem das Museo Nacional de la Máscara (Masken), das Museo Federico Silva (zeitgenössische Skulptur), das Museo Regional Potosino und das Leonora Carrington Museum."
+    ]
+   },
+   {
+    "title": "Huapango-Musik",
+    "paragraphs": [
+     "Die Huasteca-Region des Bundesstaats ist die Heimat des son huasteco (huapango), der mit Violine, Jarana und Huapanguera-Gitarre gespielt und im Falsett gesungen wird."
+    ]
+   },
+   {
+    "title": "Essen",
+    "paragraphs": [
+     "Zu den lokalen Spezialitäten gehören enchiladas potosinas, queso de tuna (eine Süßigkeit aus Kaktusfrüchten), asado de boda und colonche, ein fermentiertes Getränk aus Kaktusfrüchten."
+    ]
+   }
+  ]
+ },
+ "visit": {
+  "title": "So besuchst du San Luis Potosí",
+  "subtitle": "Das Erbe des Bergbaus an einem oder zwei Tagen entdecken",
+  "tips": [
+   [
+    "Erkunde das historische Zentrum zu Fuß:",
+    "Alle wichtigen barocken Kirchen und Plätze lassen sich an einem Tag zu Fuß erreichen. Beginne an der Plaza de Armas und der Kathedrale, gehe weiter zum Templo del Carmen und beende deinen Rundgang am Jardín de San Francisco und der Capilla de Aranzazú."
+   ],
+   [
+    "Nimm Cerro de San Pedro dazu:",
+    "Es liegt etwa 18 km östlich der Innenstadt und ist ein unkomplizierter Halbtagesausflug mit dem Auto."
+   ],
+   [
+    "Beste Reisezeiten:",
+    "Die Karwoche für die Procesión del Silencio und August für die Feria Nacional Potosina (FENAPO)."
+   ]
+  ]
+ },
+ "takeaways": [
+  "San Luis Potosí wurde 1592 gegründet, nachdem am Cerro de San Pedro, etwa 18 km östlich der Stadt, Gold und Silber gefunden worden waren.",
+  "Der Name stammt vom Silberberg Potosí in Bolivien; Pedro de Anda nannte den Ort „San Pedro del Potosí“.",
+  "Der Hügel hatte kein Wasser, daher wurde die Stadt im Tal erbaut.",
+  "Das historische Zentrum ist Teil des Camino Real de Tierra Adentro, der seit 2010 UNESCO-Welterbe ist."
+ ],
+ "faq": [
+  [
+   "Warum heißt San Luis Potosí Potosí?",
+   "Weil die Bergleute den Fund von 1592 am Cerro de San Pedro nach dem Cerro Rico von Potosí im heutigen Bolivien benannten, damals die reichste Silbermine der Welt, in der Hoffnung auf denselben Reichtum. „San Luis“ ehrt König Ludwig IX. von Frankreich."
+  ],
+  [
+   "War es Gold oder Silber?",
+   "Beides. Der Fund von 1592 am Cerro de San Pedro brachte Gold- und Silbererz hervor."
+  ],
+  [
+   "Wie weit ist Cerro de San Pedro von der Stadt entfernt?",
+   "Etwa 18 km östlich der Innenstadt von San Luis Potosí."
+  ],
+  [
+   "Ist das historische Zentrum UNESCO-Welterbe?",
+   "Ja. Seit 2010 gehört es zu den Stätten des Camino Real de Tierra Adentro."
+  ]
+ ],
+ "captions": {
+  "teatro": "Teatro de la Paz und Plaza del Carmen im historischen Zentrum von San Luis Potosí",
+  "street": "Koloniale Straßen aus rosafarbenem Cantera-Stein in San Luis Potosí",
+  "cathedral": "Die barocke Fassade der Metropolitan Cathedral",
+  "carmen": "Templo del Carmen, San Luis Potosí"
+ }
+}

@@ -1,5 +1,17 @@
 # Change Log
 
+## [2026-10-15] Rewrite: mining-history blog post re-verified and corrected in 4 locales
+
+- Post `san-luis-potosi-mining-history-baroque-architecture-cultural-legacy` (Supabase `blog_posts` 4a8f0c57) is the link target of the "Why Potosí?" Reel and the /ig `potosiHistory` item. Re-verified every claim against independent sources.
+- Corrected: Cerro de San Pedro ~18 km east (was 20); the discovery is now told as a legend (Guachichil man with gold-dust face paint) plus the documented account (Guachichil informants, Caldera sends León, de la Torre and de Anda; March 4, 1592); "silver" → "gold and silver" (body, discover_title in 4 locales).
+- Removed as unverifiable: 15% of New Spain's silver c.1700, "3rd city of the viceroyalty by 1621", 213 buildings / 1.93 km² "per INAH", Real de Catorce ~40,000 peak population, Quechua "poc-to-si" etymology (now "debated"), a non-existent "Santo Domingo" row and a duplicated San Francisco row in the temple table, the trolley price.
+- Added: timeline (1545, 1592, Nov 3 1592 founding, 1656 city title, 1990 Zona de Monumentos, 2010 UNESCO), FAQ, sources list, visible correction note.
+- Rebuilt with the deep-dive pipeline: `scripts/blog-posts/mining-history/` (post, render, content.en.mjs, content.{es,de,ja}.json via translate.mjs). Before, `content_es` was actually English and `content_de` was an older, different version; all 4 locales now match. Legacy `content_en/title_en/excerpt_en` synced.
+- `publish.mjs` gains `--update`: rewrites an existing post keeping its status and published_at. Ran `node scripts/blog-posts/publish.mjs mining-history --update`; live in 4 locales (verified via curl after ISR revalidate). Backup of the previous row saved outside the repo (session scratchpad).
+- Also: /ig hub detail now "Gold, silver, a legend…" (4 locales); /cultural/history 1592 milestone says gold and silver; public fact-check report gets an update note.
+- Tests: `node --test scripts/blog-posts/mining-history/content.test.mjs` (8 pass: no 20 km/15%/213/40,000/poc-to-si outside the correction note, 18 km and UNESCO source present, every toc anchor exists); InstagramLinkHub tests pass.
+- Sources: UNESCO 1351, UNAM LHMT5_036, INAH lugares 4813 + Boletín 126, Redalyc 10214692007, Herrera Canales, Wikipedia (Cerro de San Pedro, coat of arms, cathedral), INAH Aranzazú, Lonely Planet Carmen, México Desconocido.
+
 ## [2026-10-14] /ig link-in-bio page for Instagram
 
 - New page `src/pages/ig.tsx` (noindex): San Luis Way logo + one button per promoted guide. Data in `src/data/ig-link-hub.ts` (order = display order, first item highlighted in gold). New namespace `link-hub` (en/es/de/ja), registered in `next-i18next.config.js`.

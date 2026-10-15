@@ -1,5 +1,7 @@
 # Fact-Check Investigation Report: San Luis Potosí Mining History, Baroque Architecture & Cultural Legacy
 
+> **Update, October 15, 2026:** the article was re-verified and rewritten. Corrected: Cerro de San Pedro is about 18 km from the city (not 20); the "indigenous man covered in golden dust" is now presented as a legend (a Guachichil man wearing gold dust as face paint), with the documented account alongside it. Removed as unverifiable: the 15% share of New Spain's silver around 1700, "third city of the viceroyalty by 1621", the 213 buildings / 1.93 km² attributed to INAH, Real de Catorce's ~40,000 peak population and the Quechua "poc-to-si" etymology. The findings below describe the December 2025 version.
+
 **Source Analyzed:** https://www.sanluisway.com/blog/san-luis-potosi-mining-history-baroque-architecture-cultural-legacy
 **Verification Date:** December 12, 2025
 

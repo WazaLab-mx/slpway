@@ -63,7 +63,7 @@ export default function History() {
     {
       year: '1593',
       title: 'First Silver Discovery',
-      description: 'Rich silver deposits are discovered in Cerro de San Pedro, marking the beginning of the city\'s mining era.',
+      description: 'Gold and silver deposits are discovered at Cerro de San Pedro, marking the beginning of the city\'s mining era.',
       image: '/images/history/timeline/silver.jpg'
     },
     {

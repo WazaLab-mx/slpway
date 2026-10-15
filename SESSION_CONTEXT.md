@@ -4,6 +4,7 @@
 
 - Installed the lemo-opuscar Claude Code plugin (library at ~/lemo-opuscar). Animated vertical Reels are made in code; voice/music/SFX with ElevenLabs (`ELEVENLABS_API_KEY` in .env; eleven_v4 voice "Juliet", music_v1, sound-generation).
 - Ep1 Xantolo (paper-cut lightbox) published to FB+IG 2026-10-14 21:09. Ep2 "Why Potosí?" (copperplate engraving) rendered and waiting for owner approval; /ig gets a `potosiHistory` item pointing to the mining-history blog post.
+- 2026-10-15: Potosí video corrected (gold AND silver, 18 km, Guachichil gold-dust face-paint legend), still waiting for approval. The linked mining-history blog post was rewritten and re-verified in 4 locales via `scripts/blog-posts/mining-history/` + `publish.mjs --update`.
 - Rules from the owner: everything in English (VO, subtitles, captions, links to English pages); never publish without explicit approval of the final piece.
 - FB Page website → https://www.sanluisway.com/ig. IG bio link still has to be set from the IG app (to sanluisway.com/ig).
 
