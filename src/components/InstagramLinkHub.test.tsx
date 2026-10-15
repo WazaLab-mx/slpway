@@ -34,7 +34,9 @@ describe('Instagram link hub (/ig)', () => {
   it('only links to pages that exist', () => {
     for (const { href } of LINK_HUB_ITEMS) {
       const base = path.join(__dirname, '../pages', href);
-      expect(existsSync(`${base}.tsx`) || existsSync(path.join(base, 'index.tsx'))).toBe(true);
+      const blogPost = path.join(__dirname, '../pages/blog/[slug].tsx');
+      const isPostSlug = /^\/blog\/[a-z0-9-]+$/.test(href) && existsSync(blogPost);
+      expect(existsSync(`${base}.tsx`) || existsSync(path.join(base, 'index.tsx')) || isPostSlug).toBe(true);
     }
   });
 });

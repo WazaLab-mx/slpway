@@ -1,5 +1,12 @@
 # Session Context Log - Coding Agent
 
+## Session 2026-10-14 (late) — Stories of San Luis Reels
+
+- Installed the lemo-opuscar Claude Code plugin (library at ~/lemo-opuscar). Animated vertical Reels are made in code; voice/music/SFX with ElevenLabs (`ELEVENLABS_API_KEY` in .env; eleven_v4 voice "Juliet", music_v1, sound-generation).
+- Ep1 Xantolo (paper-cut lightbox) published to FB+IG 2026-10-14 21:09. Ep2 "Why Potosí?" (copperplate engraving) rendered and waiting for owner approval; /ig gets a `potosiHistory` item pointing to the mining-history blog post.
+- Rules from the owner: everything in English (VO, subtitles, captions, links to English pages); never publish without explicit approval of the final piece.
+- FB Page website → https://www.sanluisway.com/ig. IG bio link still has to be set from the IG app (to sanluisway.com/ig).
+
 ## Session 2026-10-14 — /ig link hub + scheduled social carousels
 
 `/ig` is the Instagram bio page (list in `src/data/ig-link-hub.ts`, namespace `link-hub`). 8 IG/FB carousels scheduled every 3 days from Oct 15 to Nov 5 (this week, free plans, cost of living, Xantolo, home services, half marathon, neighborhoods, fact-checks). Source images/captions live outside the repo (owner's Desktop `posts-programados`). Keep the `/ig` list in sync with what's being posted.
