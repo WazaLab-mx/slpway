@@ -1,5 +1,13 @@
 # Change Log
 
+## [2026-10-19] Fix: CSP was blocking GA4 hits to analytics.google.com and the Meta Pixel form fallback
+
+- Found while testing the production build: the browser blocked `POST https://analytics.google.com/g/collect` (GA4 page_view, property G-5R48THR70E) because `connect-src` only had `https://*.analytics.google.com`, and a CSP wildcard does not match the bare parent host. Production header on www.sanluisway.com had the same value, so part of GA4 traffic was being dropped site-wide.
+- Also blocked: the Meta Pixel form fallback to `https://www.facebook.com/tr/` (`form-action 'self'`).
+- `next.config.js`: added `https://analytics.google.com` to connect-src and `https://www.facebook.com` to form-action (still otherwise `'self'`).
+- Test `src/lib/csp-tracking.test.ts` parses the real CSP from next.config and checks the endpoints with spec wildcard semantics (failed 2/6 before the fix, 6/6 after). Verified with `npm run build` + `next start`: the GA4 collect request returns 204 and the console has 0 errors.
+- Follow-up: compare GA4 sessions/users before vs after 2026-10-19; the jump shows how much was being lost.
+
 ## [2026-10-19] Nacional Charro 2026 guide + home banner
 
 - Page `/events/nacional-charro-2026` (en/es/de/ja, namespace `nacional-charro` registered in next-i18next.config.js): LXXXII Congreso y Campeonato Nacional Charro "Andrés Nito Aceves", Arena Potosí, Oct 9 – Nov 1, 2026. 171 teams, 160 escaramuzas, 15 charros completos; 20 qualifier days + 4 finals days.
