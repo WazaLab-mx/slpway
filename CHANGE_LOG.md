@@ -1,5 +1,15 @@
 # Change Log
 
+## [2026-10-19] Newsletter hero image generated from each edition's content
+
+- Problem: `featured_photos` is empty, so the hero fell back to a week-index rotation over the 10 latest blog images and kept landing on the Fiestas Patrias fireworks photo (editions Oct 5, Oct 5, Oct 19), unrelated to the content.
+- New `src/lib/newsletter-hero.ts` → `resolveNewsletterHero(html, supabase, blogPosts, dateKey)`, called at step 7.6 of `generateWeeklyNewsletter` (after the HTML exists):
+  1. `extractContentDigest` (opening hook + top news + top events) → `NEWSLETTER_FAST_MODEL` writes one concrete photo scene + alt text → `gpt-image-1` 1536x1024, quality medium, JPEG (~$0.04-0.06 per edition) → uploaded to `blog-images/newsletters/<weekStart>-<ts>.jpg`.
+  2. Fallback on any failure: the blog image whose title/slug/category best matches the digest, excluding every image used in the last 6 newsletters.
+  3. Last resort: `DEFAULT_HERO_PHOTO`.
+- Removed the featured_photos / week-rotation block from `newsletter-generator.ts`.
+- Tests: `src/lib/newsletter-hero.test.ts` (dedupe of recent images, content match, prompt forbids text). All 7 newsletter suites pass (58 tests). Live check against the Oct 19 edition generated a school water-tanker scene matching its lead news story (test image deleted afterwards).
+
 ## [2026-10-15] Rewrite: mining-history blog post re-verified and corrected in 4 locales
 
 - Post `san-luis-potosi-mining-history-baroque-architecture-cultural-legacy` (Supabase `blog_posts` 4a8f0c57) is the link target of the "Why Potosí?" Reel and the /ig `potosiHistory` item. Re-verified every claim against independent sources.

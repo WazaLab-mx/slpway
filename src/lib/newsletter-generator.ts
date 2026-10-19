@@ -174,8 +174,8 @@ import {
   addUtmTracking,
   injectHeroImage,
   injectFeaturedBlogImage,
-  DEFAULT_HERO_PHOTO,
 } from './newsletter-html';
+import { resolveNewsletterHero } from './newsletter-hero';
 
 
 export async function generateWeeklyNewsletter(customContent?: string) {
@@ -223,45 +223,6 @@ export async function generateWeeklyNewsletter(customContent?: string) {
     const excerpt = post.excerpt_en || post.excerpt;
     return `- "${title}" (${post.category || 'general'}) - URL: https://www.sanluisway.com/blog/${post.slug}\n  Excerpt: ${excerpt}`;
   }).join('\n\n') || 'No blog posts available.';
-
-  // Fetch a curated hero photo — a real, DB-hosted image (same source as the
-  // homepage). Rotates weekly so consecutive editions don't reuse the same shot.
-  console.log('1.7. 🖼️ Fetching hero photo from featured_photos...');
-  let heroPhoto: { image_url: string; title: string | null } | null = null;
-  try {
-    const { data: photos, error: photosError } = await supabase
-      .from('featured_photos')
-      .select('image_url, title')
-      .eq('active', true)
-      .order('created_at', { ascending: false });
-    if (!photosError && photos && photos.length > 0) {
-      const weekIndex = Math.floor(dates.weekStartDate.getTime() / (7 * 24 * 3600 * 1000));
-      heroPhoto = photos[weekIndex % photos.length] as { image_url: string; title: string | null };
-      console.log(`   ✅ Hero photo: "${heroPhoto.title || 'untitled'}"`);
-    } else {
-      console.log('   ⚠️ No active featured_photos — will fall back to a recent blog image');
-    }
-  } catch (e) {
-    console.log('   ⚠️ Could not fetch featured_photos:', e);
-  }
-
-  // Fallback hero: if featured_photos is empty, rotate through recent blog post
-  // images (real, DB-hosted). Keeps a hero on every edition even before the
-  // featured_photos table is curated.
-  if (!heroPhoto && blogPosts && blogPosts.length > 0) {
-    const withImage = (blogPosts as Array<{ image_url?: string | null; title?: string | null; title_en?: string | null }>)
-      .filter((p) => p.image_url);
-    if (withImage.length > 0) {
-      const weekIndex = Math.floor(dates.weekStartDate.getTime() / (7 * 24 * 3600 * 1000));
-      const bp = withImage[weekIndex % withImage.length];
-      heroPhoto = { image_url: bp.image_url as string, title: bp.title_en || bp.title || 'San Luis Potosí' };
-      console.log('   ↩️ Hero fallback: using a recent blog image');
-    }
-  }
-  if (!heroPhoto) {
-    heroPhoto = DEFAULT_HERO_PHOTO;
-    console.log('   ↩️ Hero fallback: using the default city photo');
-  }
 
   console.log('1.6. Fetching previously used content to avoid repetition...');
 
@@ -600,12 +561,17 @@ Overall Summary: ${weatherForecast.summary}
   console.log('7.5. 🏷️ Adding per-section utm_content to internal links...');
   htmlContent = addUtmTracking(htmlContent);
 
-  // Inject verified, DB-sourced images: a rotating hero (featured_photos) above
-  // the first card, and the featured blog post's real thumbnail in its card.
-  // Runs AFTER removeAllImages (step 4) so only these known-good images ship —
-  // the AI never supplies image URLs (they'd 404), preserving the
-  // no-hallucinated-images guarantee.
-  console.log('7.6. 🖼️ Injecting hero + featured blog images...');
+  // Hero is resolved from THIS edition's content (AI image from the lead story,
+  // else a content-matched blog image not used recently). The AI never writes
+  // image URLs into the HTML — removeAllImages (step 4) already ran, so only
+  // these known-good images ship.
+  console.log('7.6. 🖼️ Resolving content-based hero + featured blog image...');
+  const heroPhoto = await resolveNewsletterHero(
+    htmlContent,
+    supabase,
+    (blogPosts || []) as Array<{ slug: string; image_url?: string | null; title?: string | null; title_en?: string | null; category?: string | null }>,
+    format(dates.weekStartDate, 'yyyy-MM-dd')
+  );
   htmlContent = injectHeroImage(htmlContent, heroPhoto);
   htmlContent = injectFeaturedBlogImage(
     htmlContent,

@@ -1,5 +1,15 @@
 # Commit Log
 
+## 2026-10-19 — feat: Newsletter hero image generated from each edition's content
+
+- Problem: `featured_photos` is empty, so the hero fell back to a week-index rotation over the 10 latest blog images and kept landing on the Fiestas Patrias fireworks photo (editions Oct 5, Oct 5, Oct 19), unrelated to the content.
+- New `src/lib/newsletter-hero.ts` → `resolveNewsletterHero(html, supabase, blogPosts, dateKey)`, called at step 7.6 of `generateWeeklyNewsletter` (after the HTML exists):
+  1. `extractContentDigest` (opening hook + top news + top events) → `NEWSLETTER_FAST_MODEL` writes one concrete photo scene + alt text → `gpt-image-1` 1536x1024, quality medium, JPEG (~$0.04-0.06 per edition) → uploaded to `blog-images/newsletters/<weekStart>-<ts>.jpg`.
+  2. Fallback on any failure: the blog image whose title/slug/category best matches the digest, excluding every image used in the last 6 newsletters.
+  3. Last resort: `DEFAULT_HERO_PHOTO`.
+- Removed the featured_photos / week-rotation block from `newsletter-generator.ts`.
+- Tests: `src/lib/newsletter-hero.test.ts` (dedupe of recent images, content match, prompt forbids text). All 7 newsletter suites pass (58 tests). Live check against the Oct 19 edition generated a school water-tanker scene matching its lead news story (test image deleted afterwards).
+
 ## 2026-10-12 — docs: Update privacy policy: Meta Lead Ads, Zapier, Beehiiv, LFPDPPP/ARCO
 
 - Baseline: main branch at commit 4753720. Branch cursor/privacy-policy-lead-ads-9be0. PR #11 created.
