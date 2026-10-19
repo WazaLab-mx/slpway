@@ -1,5 +1,23 @@
 # Change Log
 
+## [2026-10-19] Nacional Charro 2026 guide + home banner
+
+- Page `/events/nacional-charro-2026` (en/es/de/ja, namespace `nacional-charro` registered in next-i18next.config.js): LXXXII Congreso y Campeonato Nacional Charro "Andrés Nito Aceves", Arena Potosí, Oct 9 – Nov 1, 2026. 171 teams, 160 escaramuzas, 15 charros completos; 20 qualifier days + 4 finals days.
+- Official ticket prices (FMCH graphic): qualifiers Mon–Thu $115/$290, Fri–Sun $175/$345; finals packages $2,300 / $5,265 / $5,850. Kids < 1.20 m free. Más Boletos, call center (442) 829 0004.
+- Data + SportsEvent/FAQ/Breadcrumb JSON-LD in `src/data/nacional-charro-2026.ts`; sections in `src/components/nacional-charro/`; poster at `public/images/events/nacional-charro-2026-poster.jpg`.
+- Home: `NacionalCharroBanner` replaces `RealPotosiRunBanner` (race was Oct 17; its guide stays live). REMOVE the charro banner after Nov 1.
+- DB: event row start_date fixed Oct 8 → Oct 9 (official program), "25 days" → 24, Spanish description months translated.
+- Not published yet: per-session schedule for finals days, Arena street address (page links Google Maps).
+- Tests: `src/components/NacionalCharro.test.tsx` (banner link + GA4, render in 4 locales, prices/counts, JSON-LD), sitemap test. `npm run build` exit 0.
+
+## [2026-10-19] Cultural calendar: official event posters + category fallback image
+
+- Problem: 37 of 40 events with `add_to_cultural_calendar` had `image_url = null` (not broken links), so home calendar cards rendered empty.
+- Data: official posters found for 11 of the 16 upcoming events (FMCH, solcet.mx, arema.mx, Carrera Panamericana route map, IMSS Cultura) and uploaded to `blog-images/events/<slug>-2026.jpg`; `image_url` set on all 17 matching rows. Not found (no official 2026 artwork yet): Xantolo Huasteca, XIV FICSLP, Copa SLP Junior Golf, Procesión del Silencio 2027, San Luis en Primavera 2027.
+- Code: new `src/lib/event-image.ts` → `getEventImage(event)` returns the poster or a per-category image (music, traditional, cultural/arts-culture, sports, culinary, community-social), else `/images/hero-bg.jpg`. Used in home `EventsPreview`, `EventCard`, `EventHeroCarousel`, `ParkEventCard` and the event detail page (hero + related). JSON-LD keeps only real posters.
+- Tests: `src/lib/event-image.test.ts` (poster kept, category fallback, every fallback file exists in /public).
+- Flagged: Lenin Ramírez & El Komander poster says Arena Potosí, DB row says Palenque FENAPO.
+
 ## [2026-10-19] Newsletter hero image generated from each edition's content
 
 - Problem: `featured_photos` is empty, so the hero fell back to a week-index rotation over the 10 latest blog images and kept landing on the Fiestas Patrias fireworks photo (editions Oct 5, Oct 5, Oct 19), unrelated to the content.

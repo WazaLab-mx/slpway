@@ -54,6 +54,7 @@ export const STATIC_ROUTES: StaticRoute[] = [
   { path: '/events/medio-maraton-uaslp-2026',         changefreq: 'weekly',  priority: 0.8 },
   { path: '/events/medio-maraton-capital-del-deporte-2026', changefreq: 'weekly', priority: 0.9 },
   { path: '/events/carrera-real-del-potosi-2026',      changefreq: 'weekly',  priority: 0.8 },
+  { path: '/events/nacional-charro-2026',              changefreq: 'weekly',  priority: 0.9 },
   { path: '/resources/expat-guide',                   changefreq: 'monthly', priority: 0.8 },
   { path: '/resources/living-guide',                  changefreq: 'monthly', priority: 0.8 },
   { path: '/resources/safety-guide',                  changefreq: 'monthly', priority: 0.8 },

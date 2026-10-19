@@ -18,6 +18,10 @@
 Real del Potosí carousel and story published on FB/IG (Meta Business Suite, Chrome extension on the Windows PC). Short link `sanluisway.com/carrera` (302 in netlify.toml) goes to the race guide with Instagram UTMs and is meant for the IG bio. After Oct 17, repoint `/carrera` to the half marathon guide (utm_campaign=half-marathon-2026).
 
 
+## Session 2026-10-19 — Newsletter AI hero, cultural calendar posters, Nacional Charro guide
+
+Newsletter hero is now generated per edition from its lead story (`src/lib/newsletter-hero.ts`, gpt-image-1). Event cards fall back to a category image via `getEventImage` (`src/lib/event-image.ts`) when an event has no poster; prefer adding the official poster to `blog-images/events/` when importing events. New guide `/events/nacional-charro-2026` with home banner `NacionalCharroBanner` (replaced the finished Real del Potosí banner). Remove the charro banner after Nov 1 and the half marathon banner after Nov 8.
+
 ## Session 2026-10-12 (cont.) — Carrera Real del Potosí 2026 guide + slim banner
 
 Second race guide: `/events/carrera-real-del-potosi-2026` (night race on Oct 17 at Tangamanga I, $375). Namespace `real-potosi-run`, components `src/components/real-potosi-run/`, slim home banner `RealPotosiRunBanner` after EventsPreview. The half marathon home banner now has bottom margin so it doesn't touch the Xantolo banner. Remove the Real del Potosí banner after Oct 17 and the half marathon banner after Nov 8.

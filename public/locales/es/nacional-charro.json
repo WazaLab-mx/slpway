@@ -1,0 +1,99 @@
+{
+  "banner": {
+    "badge": "En curso · hasta el 1 de nov",
+    "title": "Nacional Charro 2026",
+    "text": "El campeonato nacional de charrería está en la Arena Potosí: 171 equipos, 160 escaramuzas y boletos desde $115 MXN.",
+    "cta": "Ver la guía"
+  },
+  "seo": {
+    "title": "Nacional Charro 2026 en la Arena Potosí: fechas, boletos y guía",
+    "description": "Guía del LXXXII Congreso y Campeonato Nacional Charro en San Luis Potosí: del 9 de octubre al 1 de noviembre de 2026 en la Arena Potosí. 171 equipos, 160 escaramuzas, boletos desde $115 MXN, paquetes de finales y consejos.",
+    "keywords": "nacional charro 2026, congreso nacional charro san luis potosi, charreria arena potosi, boletos campeonato nacional charro, escaramuzas san luis potosi"
+  },
+  "hero": {
+    "eyebrow": "LXXXII edición · charrería",
+    "subtitle": "El campeonato nacional de charrería, en vivo en la Arena Potosí",
+    "description": "El evento más importante del año de la Federación Mexicana de Charrería llega a San Luis Potosí por tercera vez en cuatro años. Esta edición rinde homenaje al legendario charro Andrés \"Nito\" Aceves.",
+    "date": "Del 9 de octubre al 1 de noviembre de 2026",
+    "time": "Las jornadas eliminatorias tienen tres sesiones: 12:00, 15:30 y 19:00 h",
+    "location": "Arena Potosí, San Luis Potosí",
+    "ctaTickets": "Comprar boletos",
+    "ctaGuide": "Ver detalles",
+    "alt": "Póster oficial del LXXXII Congreso y Campeonato Nacional Charro San Luis Potosí 2026"
+  },
+  "facts": {
+    "title": "Lo esencial",
+    "items": [
+      { "label": "Fechas", "value": "Del 9 de octubre al 1 de noviembre de 2026 (24 días: 20 de eliminatorias y 4 de finales)" },
+      { "label": "Participantes", "value": "171 equipos charros, 160 escaramuzas y 15 charros completos" },
+      { "label": "Sede", "value": "Arena Potosí: 10 mil asientos, 41 palcos, accesible y más de mil cajones de estacionamiento" },
+      { "label": "Organiza", "value": "Federación Mexicana de Charrería (FMCH)" },
+      { "label": "Boletos", "value": "Desde $115 MXN en Más Boletos (masboletos.mx)" },
+      { "label": "¿No puedes ir?", "value": "Transmisión en vivo en Facebook y YouTube de la FMCH" }
+    ]
+  },
+  "tickets": {
+    "title": "Precios de boletos",
+    "description": "Precios oficiales publicados por la FMCH. El boleto incluye todas las charreadas del día que elijas.",
+    "qualifiersTitle": "Jornadas eliminatorias",
+    "zone": "Zona",
+    "weekday": "Lun–Jue",
+    "weekend": "Vie–Dom",
+    "qualifiers": [
+      { "zone": "Primer nivel", "weekday": "$115 MXN", "weekend": "$175 MXN" },
+      { "zone": "VIP general", "weekday": "$290 MXN", "weekend": "$345 MXN" }
+    ],
+    "finalsTitle": "Paquetes de finales (viernes a domingo)",
+    "finals": [
+      { "zone": "Primer nivel general", "price": "$2,300 MXN" },
+      { "zone": "VIP mirandilla numerado", "price": "$5,265 MXN" },
+      { "zone": "VIP central numerado", "price": "$5,850 MXN" }
+    ],
+    "notes": [
+      "Niños menores de 1.20 m no pagan; en lugares numerados van en tus piernas.",
+      "Los precios no incluyen cargos por servicio de la boletera.",
+      "El boleto no incluye eventos especiales.",
+      "Call center de Más Boletos: (442) 829 0004."
+    ]
+  },
+  "watch": {
+    "title": "Qué vas a ver",
+    "items": [
+      { "title": "Charreadas por equipos", "description": "Los equipos compiten en las suertes clásicas, de la cala de caballo al paso de la muerte, calificadas por jueces." },
+      { "title": "Escaramuzas", "description": "Equipos femeninos que montan a la mujeriega en rutinas sincronizadas a gran velocidad, con vestido tradicional." },
+      { "title": "Charro completo", "description": "Quince jinetes compiten de forma individual en todas las suertes por el título absoluto." },
+      { "title": "Yeguas brutas", "description": "El jineteadero tiene su propia competencia, con la final el 31 de octubre." }
+    ]
+  },
+  "tips": {
+    "title": "Consejos para tu visita",
+    "items": [
+      { "title": "Elige tu sesión", "description": "Las jornadas eliminatorias tienen tres sesiones (12:00, 15:30 y 19:00 h) y el boleto las cubre todas." },
+      { "title": "Entre semana es más barato", "description": "Los boletos de lunes a jueves cuestan menos que los de viernes a domingo." },
+      { "title": "Lleva abrigo", "description": "Las noches de fines de octubre en San Luis Potosí refrescan rápido." },
+      { "title": "Llega temprano", "description": "La arena tiene más de mil cajones de estacionamiento, pero los fines de semana se llena más." }
+    ]
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "items": [
+      { "q": "¿Cuándo es el Nacional Charro 2026?", "a": "Del 9 de octubre al 1 de noviembre de 2026 en la Arena Potosí, en San Luis Potosí: 20 días de eliminatorias y después 4 días de finales." },
+      { "q": "¿Cuánto cuestan los boletos?", "a": "En eliminatorias, $115 MXN (primer nivel) o $290 MXN (VIP general) de lunes a jueves, y $175 o $345 MXN de viernes a domingo. Los paquetes de finales (viernes a domingo) cuestan $2,300, $5,265 o $5,850 MXN." },
+      { "q": "¿Dónde compro boletos?", "a": "En línea en masboletos.mx o en el call center de Más Boletos al (442) 829 0004." },
+      { "q": "¿Los niños pagan?", "a": "Los menores de 1.20 m de estatura no pagan. En lugares numerados no tienen asiento asignado y van en las piernas de un adulto." },
+      { "q": "¿A quién está dedicada esta edición?", "a": "A Andrés \"Nito\" Aceves, una de las máximas leyendas de la charrería, homenajeado en vida." },
+      { "q": "¿Se puede ver en línea?", "a": "Sí. La FMCH transmite el campeonato en vivo por Facebook y YouTube." }
+    ]
+  },
+  "sources": {
+    "title": "Fuentes",
+    "description": "Datos verificados el 19 de octubre de 2026 en el sitio de la Federación Mexicana de Charrería, su Programa General y la gráfica oficial de precios, y el comunicado de la FMCH del 5 de octubre. El horario por sesión de los días de finales aún no se publica.",
+    "official": "Página oficial del evento (FMCH)",
+    "maps": "Arena Potosí en Google Maps"
+  },
+  "actions": {
+    "tickets": "Comprar en Más Boletos",
+    "events": "Todos los eventos en San Luis Potosí",
+    "culture": "Guía de cultura y tradiciones"
+  }
+}

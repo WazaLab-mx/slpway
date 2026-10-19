@@ -7,7 +7,7 @@ module.exports = {
     locales: ['en', 'es', 'de', 'ja'],
     localeDetection: false,
   },
-  ns: ['common', 'xantolo', 'park-events', 'living-guide', 'school-guide', 'health-guide', 'family-guide', 'neighborhoods-guide', 'half-marathon-capital', 'real-potosi-run', 'link-hub'],
+  ns: ['common', 'xantolo', 'park-events', 'living-guide', 'school-guide', 'health-guide', 'family-guide', 'neighborhoods-guide', 'half-marathon-capital', 'real-potosi-run', 'link-hub', 'nacional-charro'],
   defaultNS: 'common',
   fallbackLng: 'en',
   localePath: path.resolve('./public/locales'),

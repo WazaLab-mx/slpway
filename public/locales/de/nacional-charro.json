@@ -1,0 +1,99 @@
+{
+  "banner": {
+    "badge": "Läuft gerade · bis 1. Nov.",
+    "title": "Nationale Charro-Meisterschaft 2026",
+    "text": "Mexikos nationale Charrería-Meisterschaft in der Arena Potosí: 171 Teams, 160 Escaramuzas, Tickets ab 115 MXN.",
+    "cta": "Zum Guide"
+  },
+  "seo": {
+    "title": "Nationale Charro-Meisterschaft 2026 in der Arena Potosí: Termine, Tickets & Guide",
+    "description": "Guide zum 82. Congreso y Campeonato Nacional Charro in San Luis Potosí: 9. Oktober – 1. November 2026 in der Arena Potosí. 171 Teams, 160 Escaramuzas, Tickets ab 115 MXN, Finalpakete und Tipps.",
+    "keywords": "nacional charro 2026, charreria san luis potosi, arena potosi charro, charro meisterschaft tickets, escaramuzas"
+  },
+  "hero": {
+    "eyebrow": "82. Ausgabe · Charrería",
+    "subtitle": "Mexikos nationale Charrería-Meisterschaft, live in der Arena Potosí",
+    "description": "Das wichtigste Event des Jahres der Federación Mexicana de Charrería findet zum dritten Mal in vier Jahren in San Luis Potosí statt. Diese Ausgabe ehrt den legendären Charro Andrés \"Nito\" Aceves.",
+    "date": "9. Oktober – 1. November 2026",
+    "time": "Qualifikationstage mit drei Sessions: 12:00, 15:30 und 19:00 Uhr",
+    "location": "Arena Potosí, San Luis Potosí",
+    "ctaTickets": "Tickets kaufen",
+    "ctaGuide": "Details ansehen",
+    "alt": "Offizielles Plakat der 82. Nationalen Charro-Meisterschaft San Luis Potosí 2026"
+  },
+  "facts": {
+    "title": "Das Wichtigste",
+    "items": [
+      { "label": "Termine", "value": "9. Oktober – 1. November 2026 (24 Tage: 20 Qualifikations- und 4 Finaltage)" },
+      { "label": "Teilnehmer", "value": "171 Charro-Teams, 160 Escaramuzas und 15 Charros completos" },
+      { "label": "Austragungsort", "value": "Arena Potosí: 10.000 Sitzplätze, 41 Logen, barrierefrei, über 1.000 Parkplätze" },
+      { "label": "Veranstalter", "value": "Federación Mexicana de Charrería (FMCH)" },
+      { "label": "Tickets", "value": "Ab 115 MXN bei Más Boletos (masboletos.mx)" },
+      { "label": "Nicht vor Ort?", "value": "Livestream auf Facebook und YouTube der FMCH" }
+    ]
+  },
+  "tickets": {
+    "title": "Ticketpreise",
+    "description": "Offizielle Preise der FMCH. Ein Ticket gilt für alle Charreadas des gewählten Tages.",
+    "qualifiersTitle": "Qualifikationstage",
+    "zone": "Bereich",
+    "weekday": "Mo–Do",
+    "weekend": "Fr–So",
+    "qualifiers": [
+      { "zone": "Erster Rang", "weekday": "115 MXN", "weekend": "175 MXN" },
+      { "zone": "VIP allgemein", "weekday": "290 MXN", "weekend": "345 MXN" }
+    ],
+    "finalsTitle": "Finalpakete (Freitag bis Sonntag)",
+    "finals": [
+      { "zone": "Erster Rang, freie Platzwahl", "price": "2.300 MXN" },
+      { "zone": "VIP Mirandilla, nummeriert", "price": "5.265 MXN" },
+      { "zone": "VIP Zentral, nummeriert", "price": "5.850 MXN" }
+    ],
+    "notes": [
+      "Kinder unter 1,20 m haben freien Eintritt; auf nummerierten Plätzen sitzen sie auf dem Schoß.",
+      "Servicegebühren des Ticketanbieters sind nicht enthalten.",
+      "Sonderveranstaltungen sind nicht im Ticket enthalten.",
+      "Callcenter von Más Boletos: (442) 829 0004."
+    ]
+  },
+  "watch": {
+    "title": "Was du siehst",
+    "items": [
+      { "title": "Charreadas der Teams", "description": "Teams treten in den klassischen Suertes an, von der Cala de Caballo bis zum Paso de la Muerte, bewertet von Kampfrichtern." },
+      { "title": "Escaramuzas", "description": "Frauenteams reiten im Damensattel synchronisierte Choreografien in hohem Tempo, in traditionellen Kleidern." },
+      { "title": "Charro completo", "description": "Fünfzehn Reiter treten einzeln in allen Suertes um den Gesamttitel an." },
+      { "title": "Yeguas brutas", "description": "Das Wildpferdreiten hat einen eigenen Wettbewerb, das Finale ist am 31. Oktober." }
+    ]
+  },
+  "tips": {
+    "title": "Tipps für den Besuch",
+    "items": [
+      { "title": "Session wählen", "description": "Qualifikationstage haben drei Sessions (12:00, 15:30 und 19:00 Uhr); das Ticket gilt für alle." },
+      { "title": "Unter der Woche günstiger", "description": "Tickets von Montag bis Donnerstag kosten weniger als von Freitag bis Sonntag." },
+      { "title": "Warme Kleidung", "description": "Ende Oktober kühlen die Abende in San Luis Potosí schnell ab." },
+      { "title": "Früh kommen", "description": "Die Arena hat über 1.000 Parkplätze, am Wochenende ist der Andrang aber am größten." }
+    ]
+  },
+  "faq": {
+    "title": "Häufige Fragen",
+    "items": [
+      { "q": "Wann ist die Nationale Charro-Meisterschaft 2026?", "a": "Vom 9. Oktober bis 1. November 2026 in der Arena Potosí in San Luis Potosí: 20 Qualifikationstage, danach 4 Finaltage." },
+      { "q": "Was kosten die Tickets?", "a": "An Qualifikationstagen 115 MXN (erster Rang) oder 290 MXN (VIP allgemein) von Montag bis Donnerstag, 175 oder 345 MXN von Freitag bis Sonntag. Finalpakete (Freitag bis Sonntag) kosten 2.300, 5.265 oder 5.850 MXN." },
+      { "q": "Wo kaufe ich Tickets?", "a": "Online auf masboletos.mx oder über das Más-Boletos-Callcenter unter (442) 829 0004." },
+      { "q": "Zahlen Kinder?", "a": "Kinder unter 1,20 m haben freien Eintritt. Auf nummerierten Plätzen bekommen sie keinen eigenen Sitz und sitzen auf dem Schoß eines Erwachsenen." },
+      { "q": "Wem ist die Ausgabe gewidmet?", "a": "Andrés \"Nito\" Aceves, einer der größten Legenden der Charrería, zu Lebzeiten geehrt." },
+      { "q": "Kann man online zuschauen?", "a": "Ja. Die FMCH überträgt die Meisterschaft live auf Facebook und YouTube." }
+    ]
+  },
+  "sources": {
+    "title": "Quellen",
+    "description": "Fakten am 19. Oktober 2026 geprüft anhand der Website der Federación Mexicana de Charrería, ihres Programa General und der offiziellen Preisgrafik sowie der FMCH-Mitteilung vom 5. Oktober. Der Zeitplan pro Session für die Finaltage ist noch nicht veröffentlicht.",
+    "official": "Offizielle Eventseite der FMCH",
+    "maps": "Arena Potosí auf Google Maps"
+  },
+  "actions": {
+    "tickets": "Bei Más Boletos kaufen",
+    "events": "Alle Events in San Luis Potosí",
+    "culture": "Guide zu Kultur & Traditionen"
+  }
+}

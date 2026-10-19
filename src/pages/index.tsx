@@ -36,7 +36,7 @@ import EventCarouselBanner from '@/components/EventCarouselBanner';
 import FamilyActivitiesBanner from '@/components/FamilyActivitiesBanner';
 import HomeServicesBanner from '@/components/home/HomeServicesBanner';
 import HalfMarathonBanner from '@/components/home/HalfMarathonBanner';
-import RealPotosiRunBanner from '@/components/home/RealPotosiRunBanner';
+import NacionalCharroBanner from '@/components/home/NacionalCharroBanner';
 import BlogCarousel from '@/components/BlogCarousel';
 import AdUnit from '@/components/common/AdUnit';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -90,7 +90,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
     return {
       props: {
-        ...(await serverSideTranslations(locale ?? 'es', ['common', 'xantolo', 'half-marathon-capital', 'real-potosi-run'])),
+        ...(await serverSideTranslations(locale ?? 'es', ['common', 'xantolo', 'half-marathon-capital', 'nacional-charro'])),
         events: events || [],
         featuredAdvertisers,
         featuredBrands: featuredBrandsData || [],
@@ -102,7 +102,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     logger.error('Error fetching data:', error);
     return {
       props: {
-        ...(await serverSideTranslations(locale ?? 'es', ['common', 'xantolo', 'half-marathon-capital', 'real-potosi-run'])),
+        ...(await serverSideTranslations(locale ?? 'es', ['common', 'xantolo', 'half-marathon-capital', 'nacional-charro'])),
         events: [],
         featuredAdvertisers: [],
         featuredBrands: [],
@@ -251,8 +251,8 @@ export default function Home({ events = [], featuredAdvertisers = [], featuredBr
         {/* EVENTS PREVIEW */}
         <EventsPreview events={events} />
 
-        {/* REAL DEL POTOSI NIGHT RACE - slim */}
-        <RealPotosiRunBanner />
+        {/* NATIONAL CHARRO CHAMPIONSHIP - remove after Nov 1, 2026 */}
+        <NacionalCharroBanner />
 
         {/* ROBOTMIND BANNER - Primary (after events, high visibility) */}
         <GlamLocalBanner variant="primary" />

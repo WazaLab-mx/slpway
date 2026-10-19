@@ -1,0 +1,99 @@
+{
+  "banner": {
+    "badge": "Happening now · until Nov 1",
+    "title": "National Charro Championship 2026",
+    "text": "Mexico's national charrería championship is at Arena Potosí: 171 teams, 160 escaramuzas, tickets from $115 MXN.",
+    "cta": "See the guide"
+  },
+  "seo": {
+    "title": "National Charro Championship 2026 at Arena Potosí: Dates, Tickets & Guide",
+    "description": "Guide to the 82nd Congreso y Campeonato Nacional Charro in San Luis Potosí: October 9 – November 1, 2026 at Arena Potosí. 171 teams, 160 escaramuzas, ticket prices from $115 MXN, finals packages and tips.",
+    "keywords": "nacional charro 2026, congreso nacional charro san luis potosi, charreria arena potosi, campeonato nacional charro boletos, escaramuzas san luis potosi"
+  },
+  "hero": {
+    "eyebrow": "82nd edition · charrería",
+    "subtitle": "Mexico's national charrería championship, live at Arena Potosí",
+    "description": "The Federación Mexicana de Charrería's top event of the year is in San Luis Potosí for the third time in four years. This edition honors the legendary charro Andrés \"Nito\" Aceves.",
+    "date": "October 9 – November 1, 2026",
+    "time": "Qualifier days run three sessions: 12:00, 3:30 and 7:00 p.m.",
+    "location": "Arena Potosí, San Luis Potosí",
+    "ctaTickets": "Buy tickets",
+    "ctaGuide": "See details",
+    "alt": "Official poster of the 82nd National Charro Championship San Luis Potosí 2026"
+  },
+  "facts": {
+    "title": "The essentials",
+    "items": [
+      { "label": "Dates", "value": "October 9 – November 1, 2026 (24 days: 20 of qualifiers, 4 of finals)" },
+      { "label": "Competitors", "value": "171 charro teams, 160 escaramuzas and 15 charros completos" },
+      { "label": "Venue", "value": "Arena Potosí: 10,000 seats, 41 boxes, accessible, 1,000+ parking spaces" },
+      { "label": "Organizer", "value": "Federación Mexicana de Charrería (FMCH)" },
+      { "label": "Tickets", "value": "From $115 MXN on Más Boletos (masboletos.mx)" },
+      { "label": "Can't go?", "value": "Live stream on the FMCH Facebook and YouTube channels" }
+    ]
+  },
+  "tickets": {
+    "title": "Ticket prices",
+    "description": "Official prices published by the FMCH. One ticket covers every charreada on the day you choose.",
+    "qualifiersTitle": "Qualifier days",
+    "zone": "Zone",
+    "weekday": "Mon–Thu",
+    "weekend": "Fri–Sun",
+    "qualifiers": [
+      { "zone": "First level", "weekday": "$115 MXN", "weekend": "$175 MXN" },
+      { "zone": "VIP general", "weekday": "$290 MXN", "weekend": "$345 MXN" }
+    ],
+    "finalsTitle": "Finals packages (Friday to Sunday)",
+    "finals": [
+      { "zone": "First level, general", "price": "$2,300 MXN" },
+      { "zone": "VIP mirandilla, numbered", "price": "$5,265 MXN" },
+      { "zone": "VIP central, numbered", "price": "$5,850 MXN" }
+    ],
+    "notes": [
+      "Children under 1.20 m get in free; in numbered seats they sit on your lap.",
+      "Prices don't include the ticketing service fees.",
+      "Tickets don't include special events.",
+      "Más Boletos call center: (442) 829 0004."
+    ]
+  },
+  "watch": {
+    "title": "What you'll see",
+    "items": [
+      { "title": "Charreadas by teams", "description": "Teams compete in the classic suertes, from the cala de caballo to the paso de la muerte, and are scored by judges." },
+      { "title": "Escaramuzas", "description": "Women's teams riding sidesaddle in synchronized, high-speed routines, wearing traditional dresses." },
+      { "title": "Charro completo", "description": "Fifteen riders compete individually across all the suertes for the all-around title." },
+      { "title": "Yeguas brutas", "description": "The bronc-riding jineteadero has its own contest, with the final on October 31." }
+    ]
+  },
+  "tips": {
+    "title": "Tips for your visit",
+    "items": [
+      { "title": "Pick your session", "description": "Qualifier days have three sessions (12:00, 3:30 and 7:00 p.m.) and the ticket covers all of them." },
+      { "title": "Weekdays are cheaper", "description": "Monday to Thursday tickets cost less than Friday to Sunday ones." },
+      { "title": "Bring layers", "description": "Late-October evenings in San Luis Potosí cool down quickly." },
+      { "title": "Arrive early", "description": "The arena has over 1,000 parking spaces, but weekends draw the biggest crowds." }
+    ]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      { "q": "When is the National Charro Championship 2026?", "a": "From October 9 to November 1, 2026 at Arena Potosí in San Luis Potosí: 20 days of qualifiers followed by 4 days of finals." },
+      { "q": "How much are tickets?", "a": "Qualifier days cost $115 MXN (first level) or $290 MXN (VIP general) Monday to Thursday, and $175 or $345 MXN Friday to Sunday. Finals packages (Friday to Sunday) cost $2,300, $5,265 or $5,850 MXN." },
+      { "q": "Where do I buy tickets?", "a": "Online at masboletos.mx or through the Más Boletos call center at (442) 829 0004." },
+      { "q": "Do kids pay?", "a": "Children under 1.20 m tall get in free. In numbered seats they don't get their own seat and must sit on an adult's lap." },
+      { "q": "Who is the edition dedicated to?", "a": "Andrés \"Nito\" Aceves, one of the great legends of charrería, honored during his lifetime." },
+      { "q": "Can I watch it online?", "a": "Yes. The FMCH streams the championship live on Facebook and YouTube." }
+    ]
+  },
+  "sources": {
+    "title": "Sources",
+    "description": "Facts verified on October 19, 2026 against the Federación Mexicana de Charrería website, its Programa General and official ticket-price graphic, and the FMCH release of October 5. The per-session schedule for the final days hasn't been published yet.",
+    "official": "Official FMCH event page",
+    "maps": "Arena Potosí on Google Maps"
+  },
+  "actions": {
+    "tickets": "Buy on Más Boletos",
+    "events": "All events in San Luis Potosí",
+    "culture": "Culture & traditions guide"
+  }
+}
