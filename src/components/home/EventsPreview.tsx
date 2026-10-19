@@ -1,3 +1,4 @@
+
 import { useUpcomingEvents } from '@/hooks/useUpcomingEvents';
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
@@ -11,6 +12,7 @@ import {
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { buildEventPath } from '@/lib/event-slug';
+import { getEventImage } from '@/lib/event-image';
 
 interface EventsPreviewProps {
   events: Event[];
@@ -143,16 +145,14 @@ export default function EventsPreview({ events: initialEvents }: EventsPreviewPr
                   className="group snap-start shrink-0 w-[85%] sm:w-[46%] lg:w-[31.5%] bg-white rounded-2xl border border-gray-100 overflow-hidden hover:border-primary/20 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
                   <div className="relative h-52 overflow-hidden bg-gradient-to-br from-primary/20 to-primary/5">
-                    {event.image_url && (
-                      // Plain img avoids next/image remote-domain config for arbitrary event URLs.
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={event.image_url}
-                        alt={event.title}
-                        loading="lazy"
-                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    )}
+                    {/* Plain img avoids next/image remote-domain config for arbitrary event URLs. */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={getEventImage(event)}
+                      alt={event.title}
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/5 to-transparent" />
 
                     <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm rounded-xl px-3 py-1.5 text-center shadow-sm">

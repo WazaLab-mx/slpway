@@ -3,12 +3,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { buildEventPath } from '@/lib/event-slug';
+import { getEventImage } from '@/lib/event-image';
 import {
   formatDate,
   getDayNumber,
   getMonthShort,
   getCategoryInfo,
-  getCategoryGradient,
 } from '@/utils/eventHelpers';
 
 interface EventCardProps {
@@ -18,7 +18,6 @@ interface EventCardProps {
 
 export default function EventCard({ event, variant = 'grid' }: EventCardProps) {
   const catInfo = getCategoryInfo(event.category);
-  const hasImage = !!event.image_url;
 
   if (variant === 'compact') {
     return <CompactCard event={event} catInfo={catInfo} />;
@@ -31,24 +30,13 @@ export default function EventCard({ event, variant = 'grid' }: EventCardProps) {
     >
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
-        {hasImage ? (
-          <Image
-            src={event.image_url!}
-            alt={event.title}
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 384px"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        ) : (
-          <div className={`absolute inset-0 bg-gradient-to-br ${getCategoryGradient(event.category)}`}>
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-              <CalendarIcon className="w-12 h-12 text-white/40" />
-              <span className="text-white/50 text-xs font-semibold uppercase tracking-wider">
-                {getCategoryInfo(event.category).label}
-              </span>
-            </div>
-          </div>
-        )}
+        <Image
+          src={getEventImage(event)}
+          alt={event.title}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 384px"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
+        />
         {/* Date badge */}
         <div className="absolute top-3 left-3 bg-white rounded-lg px-2.5 py-1.5 shadow-lg text-center min-w-[52px]">
           <span className="block text-xs font-bold text-secondary uppercase leading-none">

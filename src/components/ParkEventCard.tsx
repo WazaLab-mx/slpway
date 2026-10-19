@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { CalendarDaysIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { buildEventPath } from '@/lib/event-slug';
+import { getEventImage } from '@/lib/event-image';
 import { Event } from '@/types';
 
 function formatParkDate(value: string, locale: string) {
@@ -20,7 +21,7 @@ export default function ParkEventCard({ event }: { event: Event }) {
   return (
     <Link href={buildEventPath(event)} className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-md transition duration-200 hover:-translate-y-1 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary motion-reduce:transform-none motion-reduce:transition-none">
       <div className="relative flex h-44 items-center justify-center overflow-hidden bg-gradient-to-br from-slate-700 to-primary">
-        {event.image_url ? <Image src={event.image_url} alt={event.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw" className="object-cover" /> : <CalendarDaysIcon className="h-16 w-16 text-secondary" aria-hidden="true" />}
+        <Image src={getEventImage(event)} alt={event.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw" className="object-cover" />
         <span className="absolute left-4 top-4 rounded-full bg-white px-3 py-1 text-xs font-semibold text-primary">{t(`categories.${event.category}`)}</span>
       </div>
       <div className="flex flex-1 flex-col gap-3 p-5">

@@ -18,6 +18,7 @@ import { filterUpcomingEvents } from '@/lib/event-dates';
 import { useUpcomingEvents } from '@/hooks/useUpcomingEvents';
 import EventOfficialLink from '@/components/EventOfficialLink';
 import { buildEventPath, buildEventSlug, extractIdPrefix, isFullUuid } from '@/lib/event-slug';
+import { getEventImage } from '@/lib/event-image';
 import { localizeEvent, localizeEvents } from '@/lib/localizeEvent';
 import SEO from '@/components/common/SEO';
 import AdUnit from '@/components/common/AdUnit';
@@ -252,15 +253,13 @@ export default function EventDetail({ event, relatedEvents: initialRelatedEvents
       {/* Hero Section */}
       <section className="relative">
         <div className="absolute inset-0 bg-gray-900">
-          {event.image_url && (
-            <Image
-              src={event.image_url}
-              alt={event.title}
-              fill
-              className="object-cover opacity-30"
-              priority
-            />
-          )}
+          <Image
+            src={getEventImage(event)}
+            alt={event.title}
+            fill
+            className="object-cover opacity-30"
+            priority
+          />
           {/* Dark gradient overlay for text legibility */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50" />
         </div>
@@ -466,17 +465,15 @@ export default function EventDetail({ event, relatedEvents: initialRelatedEvents
                   className="group"
                 >
                   <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                    {relatedEvent.image_url && (
-                      <div className="relative h-48">
-                        <Image
-                          src={relatedEvent.image_url}
-                          alt={relatedEvent.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                          className="object-cover"
-                        />
-                      </div>
-                    )}
+                    <div className="relative h-48">
+                      <Image
+                        src={getEventImage(relatedEvent)}
+                        alt={relatedEvent.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover"
+                      />
+                    </div>
                     <div className="p-6">
                       <h3 className="text-lg font-bold mb-3 group-hover:text-primary transition-colors">
                         {relatedEvent.title}

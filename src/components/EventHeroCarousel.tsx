@@ -9,7 +9,8 @@ import {
   ChevronRightIcon,
   StarIcon,
 } from '@heroicons/react/24/solid';
-import { formatDate, getCategoryGradient, getCategoryInfo } from '@/utils/eventHelpers';
+import { formatDate, getCategoryInfo } from '@/utils/eventHelpers';
+import { getEventImage } from '@/lib/event-image';
 import { buildEventPath } from '@/lib/event-slug';
 
 interface EventHeroCarouselProps {
@@ -39,7 +40,6 @@ export default function EventHeroCarousel({ events }: EventHeroCarouselProps) {
 
   const event = slides[activeIndex];
   const catInfo = getCategoryInfo(event.category);
-  const hasImage = !!event.image_url;
 
   return (
     <section
@@ -56,19 +56,15 @@ export default function EventHeroCarousel({ events }: EventHeroCarouselProps) {
             idx === activeIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
           }`}
         >
-          {slide.image_url ? (
-            <Image
-              src={slide.image_url}
-              alt={slide.title}
-              fill
-              className="object-cover"
-              priority={idx === 0}
-              fetchPriority={idx === 0 ? 'high' : 'auto'}
-              sizes="100vw"
-            />
-          ) : (
-            <div className={`absolute inset-0 bg-gradient-to-br ${getCategoryGradient(slide.category)}`} />
-          )}
+          <Image
+            src={getEventImage(slide)}
+            alt={slide.title}
+            fill
+            className="object-cover"
+            priority={idx === 0}
+            fetchPriority={idx === 0 ? 'high' : 'auto'}
+            sizes="100vw"
+          />
           {/* Gradient overlay for readability */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
