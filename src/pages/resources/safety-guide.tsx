@@ -8,6 +8,7 @@ import { useTranslation } from 'next-i18next';
 import LastUpdated from '@/components/common/LastUpdated';
 import GuideCTA from '@/components/common/GuideCTA';
 import AdUnit from '@/components/common/AdUnit';
+import CompactNewsletterSignup from '@/components/CompactNewsletterSignup';
 
 export default function SafetyGuidePage() {
   const { t } = useTranslation('common');
@@ -793,6 +794,13 @@ export default function SafetyGuidePage() {
               <section className="my-8">
                 <AdUnit placement="mid-content" />
               </section>
+
+              <CompactNewsletterSignup 
+                source="inline_guide"
+                title="Get Weekly Safety Updates"
+                description="Stay informed about San Luis Potosí with our weekly newsletter for expats."
+                className="my-12"
+              />
 
               <GuideCTA relatedLinks={[
                 { href: '/resources/neighborhoods-san-luis-potosi', label: 'Neighborhoods Guide: Where to Live', labelEs: 'Guía de Colonias: Dónde Vivir' },

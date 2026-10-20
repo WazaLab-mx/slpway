@@ -9,6 +9,7 @@ import { useRouter } from 'next/router';
 import LastUpdated from '@/components/common/LastUpdated';
 import GuideCTA from '@/components/common/GuideCTA';
 import AdUnit from '@/components/common/AdUnit';
+import CompactNewsletterSignup from '@/components/CompactNewsletterSignup';
 import HomeServicesCta from '@/components/home-services/HomeServicesCta';
 
 const neighborhoods = [
@@ -876,6 +877,13 @@ export default function NeighborhoodsGuidePage() {
           <section className="my-8">
             <AdUnit placement="mid-content" />
           </section>
+
+          <CompactNewsletterSignup 
+            source="inline_guide"
+            title="Find Your Perfect Neighborhood"
+            description="Get weekly updates on housing, neighborhoods, and expat life in SLP."
+            className="my-12"
+          />
 
           <GuideCTA relatedLinks={[
             { href: '/resources/living-guide', label: 'Living Guide', labelEs: 'Guía de Vida' },

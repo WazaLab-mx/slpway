@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
 import AdUnit from '../../components/common/AdUnit';
-import NewsletterBanner from '@/components/NewsletterBanner';
+import CompactNewsletterSignup from '@/components/CompactNewsletterSignup';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import LastUpdated from '@/components/common/LastUpdated';
 import GuideCTA from '@/components/common/GuideCTA';
@@ -395,7 +395,12 @@ export default function ExpatGuidePage() {
             </section>
 
             <section className="my-12">
-              <NewsletterBanner variant="mid-content" />
+              <CompactNewsletterSignup 
+                source="inline_guide"
+                title="Essential Expat Info"
+                description="Get weekly expat tips, visa updates, and local insights delivered to your inbox."
+                className="my-12"
+              />
             </section>
 
             <section className="my-8">

@@ -8,7 +8,7 @@ import Breadcrumbs from '@/components/common/Breadcrumbs';
 import Byline from '@/components/common/Byline';
 import { getAuthorForPost, localizedAuthorField } from '@/lib/authors';
 import { buildFaqSchema } from '@/lib/faq-schema';
-import NewsletterBanner from '@/components/NewsletterBanner';
+import CompactNewsletterSignup from '@/components/CompactNewsletterSignup';
 import GuideCTA from '@/components/common/GuideCTA';
 import ShareButton from '@/components/sharing/ShareButton';
 import AdUnit from '@/components/common/AdUnit';
@@ -321,7 +321,12 @@ export default function BlogPostPage({ post, relatedPosts, hasFactcheck }: BlogP
           )}
 
           {/* Newsletter CTA - End of Article */}
-          <NewsletterBanner variant="blog-end" />
+          <CompactNewsletterSignup 
+            source="inline_article"
+            title="Enjoyed this article?"
+            description="Get more local insights and expat tips delivered to your inbox every Sunday."
+            className="my-12"
+          />
 
           <GuideCTA relatedLinks={[
             { href: '/resources/safety-guide', label: 'Is SLP Safe?', labelEs: '¿Es Seguro SLP?' },

@@ -4,6 +4,7 @@ import Footer from './Footer';
 import ScrollToTop from './ScrollToTop';
 import LoadingIndicator from './LoadingIndicator';
 import BetaBanner from './BetaBanner';
+import NewsletterPopup from './NewsletterPopup';
 
 interface TranslationsObject {
   [key: string]: string | TranslationsObject;
@@ -80,6 +81,7 @@ export default function Layout({ children }: LayoutProps) {
       
       <ScrollToTop />
       <Footer />
+      <NewsletterPopup />
     </div>
   );
 } 
