@@ -922,7 +922,7 @@ export default function LivingGuidePage() {
             <CompactNewsletterSignup 
               source="inline_guide"
               title="Get Weekly Living Tips"
-              description="Join 2,000+ expats getting weekly insights about life in San Luis Potosí."
+              description="Get weekly insights about life in San Luis Potosí delivered to your inbox."
               className="my-12"
             />
 
