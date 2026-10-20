@@ -4138,3 +4138,53 @@ This would send users to **wrong locations** across the city when seeking visa/r
 - PR #2: https://github.com/WazaLab-mx/slpway/pull/2
 - Part of comprehensive SEO and content accuracy improvements (12 total fixes)
 
+
+---
+
+## 2026-10-20 - Newsletter Subscription Enhancement
+
+### Commit: ee089d7
+**Branch:** cursor/newsletter-inline-popup-3db4
+**PR:** [#12](https://github.com/WazaLab-mx/slpway/pull/12)
+
+### Changes Made
+1. Created `CompactNewsletterSignup.tsx` component
+   - Single email field + button (no extra fields)
+   - Inline success/error states
+   - Source tagging for analytics tracking
+   - Fires Meta Pixel Lead event on success
+
+2. Created `NewsletterPopup.tsx` component
+   - Smart triggers: 50% scroll OR 30 seconds
+   - localStorage persistence (14-day dismiss, permanent after subscription)
+   - Excluded from /join, /checkout, /account pages
+   - Mobile-friendly slide-up animation
+
+3. Updated existing components:
+   - Footer: Now uses CompactNewsletterSignup with proper source
+   - Blog posts: Replaced NewsletterBanner with compact component
+   - Guide pages: Added inline signup to 4 major guides
+   - Layout: Added global popup component
+
+### Impact
+- Increases newsletter conversion opportunities
+- Better user experience (less friction)
+- Improved analytics tracking per source
+- No performance impact (lazy-loaded, no layout shift)
+
+### Build Status
+- ✅ Lint passed
+- ✅ Build compiled successfully
+- ⏳ Awaiting manual testing with proper environment
+
+### Related Files
+- `src/components/CompactNewsletterSignup.tsx` (new)
+- `src/components/NewsletterPopup.tsx` (new)
+- `src/components/Footer.tsx` (modified)
+- `src/components/Layout.tsx` (modified)
+- `src/pages/blog/[slug].tsx` (modified)
+- `src/pages/resources/expat-guide.tsx` (modified)
+- `src/pages/resources/living-guide.tsx` (modified)
+- `src/pages/resources/neighborhoods-san-luis-potosi.tsx` (modified)
+- `src/pages/resources/safety-guide.tsx` (modified)
+
