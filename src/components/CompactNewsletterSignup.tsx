@@ -126,7 +126,7 @@ const CompactNewsletterSignup: React.FC<CompactNewsletterSignupProps> = ({
         </form>
 
         <p className="text-xs text-gray-500 text-center mt-3">
-          Free, no spam, unsubscribe anytime. Read by 2,000+ expats in SLP.
+          Free, no spam, unsubscribe anytime.
         </p>
       </div>
     </div>
