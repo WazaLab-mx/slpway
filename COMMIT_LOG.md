@@ -1,5 +1,13 @@
 # Commit Log
 
+## 2026-10-20 — feat: reel-viral skill for 7-second IG Reels that reach non-followers
+
+- New project skill `.claude/skills/reel-viral/` (`SKILL.md` + `examples.md`). It produces a 7 s lo-fi vertical Reel concept: frame-1 hook, timed shot list, caption with a save-worthy mini list, comment CTA and pinned comment, backup variant, and a 12-point score covering retention, shares, saves and comments.
+- Brand rules built in: all copy in English, facts only, current-edition event info only, Potosí Yellow `#FFCB05` / Way Navy `#011A42` text boxes, IG safe zones, no publishing without the owner's approval.
+- Worked example: "El Gaaas", the gas-truck jingle at month 1, 6 and 12 in San Luis Potosí, with a street-sound decoder in the caption.
+- No site code changed, so there are no tests.
+
+
 ## 2026-10-19 — fix: CSP was blocking GA4 hits to analytics.google.com and the Meta Pixel form fallback
 
 - Found while testing the production build: the browser blocked `POST https://analytics.google.com/g/collect` (GA4 page_view, property G-5R48THR70E) because `connect-src` only had `https://*.analytics.google.com`, and a CSP wildcard does not match the bare parent host. Production header on www.sanluisway.com had the same value, so part of GA4 traffic was being dropped site-wide.

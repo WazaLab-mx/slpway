@@ -1,5 +1,10 @@
 # Session Context Log - Coding Agent
 
+## Session 2026-10-20 — reel-viral skill
+
+- Created `.claude/skills/reel-viral/` to generate 7 s lo-fi IG Reel concepts aimed at non-follower reach (hook, shot list, caption, comment CTA, score). First concept, "El Gaaas" (street sounds of SLP), is in `examples.md` and is waiting for the owner to shoot it. English-only copy and approval before publishing still apply.
+
+
 ## Session 2026-10-14 (late) — Stories of San Luis Reels
 
 - Installed the lemo-opuscar Claude Code plugin (library at ~/lemo-opuscar). Animated vertical Reels are made in code; voice/music/SFX with ElevenLabs (`ELEVENLABS_API_KEY` in .env; eleven_v4 voice "Juliet", music_v1, sound-generation).
