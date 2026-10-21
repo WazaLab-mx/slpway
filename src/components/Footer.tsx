@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import NewsletterSignup from './NewsletterSignup';
+import CompactNewsletterSignup from './CompactNewsletterSignup';
 import { useTranslation } from 'next-i18next';
 
 export default function Footer() {
@@ -27,7 +27,11 @@ export default function Footer() {
       <div className="container-responsive section-padding relative z-10">
         {/* Newsletter Section */}
         <div className="mb-16">
-          <NewsletterSignup variant="footer" />
+          <CompactNewsletterSignup 
+            source="footer"
+            title={t('newsletter.stayInLoop')}
+            description={t('newsletter.weeklyUpdates')}
+          />
         </div>
 
         {/* B2B CTA Section */}
