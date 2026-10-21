@@ -1,5 +1,14 @@
 # Session Context Log - Coding Agent
 
+## 2026-10-21 — reel-viral batch 3 (docs only, assets outside repo)
+- Five new reels in Desktop\reels-cortos-FINALES\ (not tracked). Projects are in Desktop\san-luis-way-reels\<slug>\.
+- 12 house-blueprint: 18 s, lemo blueprint (tinaco, garrafón, gas, calentador, azotea).
+- 13 first-tianguis: 16.7 s, lemo urban-sketch POV with tips and MexiTony vendor lines.
+- 14 window-sounds: 16.5 s, HyperFrames pop-art comic with megaphone TTS calls.
+- 15 mexican-manners: 22 s, lemo rubber-hose dialogue (Provecho / Con permiso / ¿Gusta? / ¿Mande?) with glosses.
+- 16 slp-by-numbers: 19.8 s, Remotion Art Deco (1592, 2010 UNESCO route, 400+ ha Tangamanga I, 1,800+ m).
+- Skill rotation table updated. All reels are waiting for owner approval. Not published.
+
 ## 2026-10-20 — reel-viral: length rule 7–25 s
 - SKILL.md now allows 7–25 s, chosen by reading time, with each text beat held at least 2.5 s and up to ~8 words per beat. The old hard 7 s limit is gone.
 

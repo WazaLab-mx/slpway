@@ -152,6 +152,11 @@ Don't repeat the last style used. Finished reels live in `C:\Users\sango\Desktop
 | 09 enchiladas-potosinas (12 s) | lemo-opuscar | papercut-red / papel picado |
 | 10 weekend-escapes (12 s) | HyperFrames | 1950s travel-poster map |
 | 11 calzada-day-to-night (12 s) | Remotion | ukiyo-e woodblock |
+| 12 house-blueprint (18 s) | lemo-opuscar | blueprint cutaway |
+| 13 first-tianguis (16.7 s) | lemo-opuscar | urban-sketch ink & wash |
+| 14 window-sounds (16.5 s) | HyperFrames | pop-art comic halftone |
+| 15 mexican-manners (22 s dialogue) | lemo-opuscar | rubber-hose 1930s cartoon |
+| 16 slp-by-numbers (19.8 s) | Remotion | Art Deco poster |
 
 Owner feedback (2026-10-20):
 - No "guess the place / guess in 3 s" quiz hooks. Use statements, POVs, promises, numbers, processes or stories.
