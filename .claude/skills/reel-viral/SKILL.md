@@ -115,4 +115,24 @@ Same theme, different hook formula, 3-line summary.
 
 Posting notes to include every time: post 6–9 PM CDMX Tue–Thu or Sat morning; reply to every comment in the first hour (replies count as comments); share to Stories with a poll sticker 1–2 h after posting; add the Reel to a "Life in SLP" highlight only after 48 h.
 
+## Producing the video (when the owner says "hazlo")
+
+If live footage is not available, build an animated lo-fi version in code. Reference project: `C:\Users\sango\Desktop\san-luis-way-reels\el-gaaas\`. Copy it to `san-luis-way-reels/<slug>/` and adapt it.
+
+1. **HyperFrames** (`/hyperframes` → `/hyperframes-core`): a single standalone `index.html`, 1080×1920, `data-duration="7"`, one paused GSAP timeline.
+   - Doodle look: navy ink strokes on a Paper background, plus a `feTurbulence` + `feDisplacementMap` "line boil" whose seed is stepped at 12 fps with `tl.set`. Add a handheld camera drift (seeded PRNG) and a paper-grain overlay.
+   - Beat labels are HTML clips. Beat resets use `tl.set` at each beat start.
+   - Put the timeline script inline, because lint requires the `__timelines` registration in the HTML.
+   - Never make a full-length opaque overlay clip (the layout check flags text as occluded). Make flashes short clips instead.
+   - Repeated `fromTo` calls on one target need a `tl.set` baseline at 0 plus `immediateRender: false`.
+2. **Audio (ElevenLabs)**: `tools/sfx.mjs` (sound-generation, at most 4 concurrent requests) and `tools/call.mjs` (eleven_v4 TTS for spoken or sung lines).
+   - Mexican Spanish male voice: MexiTony `lRf3yb6jZby4fn3q3Q7M`.
+   - Sound-generation does NOT produce intelligible words, so generate the words with TTS and the bed with sound-generation.
+   - `tools/mix.sh` uses ffmpeg: a megaphone chain (highpass 420 / lowpass 3400 / limiter / echo), a bed at about 0.16, and loudnorm to −14 LUFS.
+3. **Verify**:
+   - `LANG_CODE=es node tools/asr.mjs <file>` checks that the words are intelligible. Without the language code, Scribe misdetects the language.
+   - `npx hyperframes check .`, then `snapshot --at …`, and inspect the contact sheet.
+4. **Render**: `npx hyperframes render . -q high -o renders/<slug>.mp4` takes about 30 s. Save `CAPTION.txt` next to the render.
+5. Send the owner the MP4 path and the caption, then STOP. Do not publish without approval. For the Meta upload, if the file is over 10 MB, encode a copy under 10 MB.
+
 See `examples.md` for a complete worked concept.
