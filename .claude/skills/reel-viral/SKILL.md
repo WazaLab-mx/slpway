@@ -1,11 +1,11 @@
 ---
 name: reel-viral
-description: Generate a 7-second, lo-fi Instagram Reel concept for San Luis Way built to reach NON-followers (150k+ view target) by optimizing retention, shares, saves and comments. Use when the owner asks for a viral reel, a short reel idea, "reel-viral", a hook + caption + CTA for IG, or content to grow reach without relying on the current follower base.
+description: Generate a 7–25 second, lo-fi Instagram Reel concept for San Luis Way built to reach NON-followers (150k+ view target) by optimizing retention, shares, saves and comments. Use when the owner asks for a viral reel, a short reel idea, "reel-viral", a hook + caption + CTA for IG, or content to grow reach without relying on the current follower base.
 ---
 
 # reel-viral
 
-Produces ONE ready-to-shoot 7-second Reel concept (plus one backup variant) for @sanluisway. The goal is distribution to non-followers: Instagram pushes a Reel outside the follower base when it gets high completion/rewatch rate, sends (DM shares), saves and comments in the first hours. Every decision below serves one of those four signals.
+Produces ONE ready-to-shoot Reel concept (7–25 s) (plus one backup variant) for @sanluisway. The goal is distribution to non-followers: Instagram pushes a Reel outside the follower base when it gets high completion/rewatch rate, sends (DM shares), saves and comments in the first hours. Every decision below serves one of those four signals.
 
 ## Non-negotiable brand rules
 
@@ -17,10 +17,10 @@ Produces ONE ready-to-shoot 7-second Reel concept (plus one backup variant) for 
 
 ## Format constraints
 
-- **7 seconds**, vertical 1080×1920, shot on a phone. Lo-fi = handheld, natural light, real places, no polished motion graphics. Lo-fi signals "a person, not an ad" and keeps the swipe finger still.
+- **Length: 7–25 seconds.** Pick the shortest length that lets every text beat be read: ~7 s for a single sound/visual gag, 12–16 s for 3–5 facts or steps, up to 25 s for a dialogue or story. Vertical 1080×1920, shot on a phone (or animated in code). Lo-fi = handheld, natural light, real places, no polished motion graphics. Lo-fi signals "a person, not an ad" and keeps the swipe finger still.
 - **Loopable**: the last frame should flow into the first so the replay looks continuous (rewatches count as watch time >100%).
 - **Hook lands in the first 0.5–1 s**: on-screen text visible from frame 1 + a visual or sound that creates a question.
-- **Max ~12 words of on-screen text in total**, max 3 text beats. Readable in one glance.
+- **On-screen text**: max ~8 words per beat, each beat held ≥2.5 s. Roughly 12 words total for 7 s, ~30 for 12–16 s, more only for dialogue with glosses.
 - **Safe zones**: keep text out of the top 14% and bottom 22% (IG UI). Center column only.
 - **Sound**: prefer original, recorded-on-location audio (native sound becomes reusable "original audio" = extra discovery). If using a trending track, keep it under the native sound.
 
@@ -35,7 +35,7 @@ Produces ONE ready-to-shoot 7-second Reel concept (plus one backup variant) for 
 
 1. **Pick the theme** from the bank below (or the owner's brief). Test: can a stranger get it with the sound off in 1 second AND does it make them think "that's so me" or "I need to send this to ___"?
 2. **Choose a hook formula** (below). Write 3 hooks, keep the shortest one that still creates a question.
-3. **Script the 7 s** as a timed shot list (0.0–x.x s), with on-screen text, action and audio per beat.
+3. **Script the 7–25 s** as a timed shot list (0.0–x.x s), with on-screen text, action and audio per beat.
 4. **Engineer the four signals**:
    - Retention: hook in frame 1, payoff in the last second, loop seam.
    - Shares: a clear "send to" target (the friend who moved to Mexico, the partner who doubts the move).
@@ -95,7 +95,7 @@ Hook (on-screen, frame 1): ...
 Concept (1 sentence): ...
 Why it travels to non-followers: <one line per signal>
 
-### Shot list (7 s)
+### Shot list (7–25 s)
 | Time | Shot / action | On-screen text | Audio |
 
 ### Shooting notes
@@ -155,7 +155,7 @@ Don't repeat the last style used. Finished reels live in `C:\Users\sango\Desktop
 
 Owner feedback (2026-10-20):
 - No "guess the place / guess in 3 s" quiz hooks. Use statements, POVs, promises, numbers, processes or stories.
-- Longer cuts (12–25 s) are fine when text needs reading time. Hold each beat at least 2.5 s.
+- Reel length is 7–25 s (owner rule). Go longer only when text needs reading time; hold each beat ≥2.5 s.
 - Auto-fit text to its container, because labels overflowing cards were flagged.
 - A dialogue between characters (e.g. taquero ↔ customer) with English glosses under the Spanish lines works well.
 - Superseded versions go to `reels-cortos-FINALES/_versiones-anteriores/`. Never delete them.

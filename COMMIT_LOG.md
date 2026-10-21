@@ -1,5 +1,8 @@
 # Commit Log
 
+## 2026-10-20 — reel-viral: length rule 7–25 s
+- SKILL.md now allows 7–25 s, chosen by reading time, with each text beat held at least 2.5 s and up to ~8 words per beat. The old hard 7 s limit is gone.
+
 ## 2026-10-20 — reel-viral batch 2 (docs only, assets outside repo)
 - Reels live in C:\Users\sango\Desktop\reels-cortos-FINALES\ (not tracked). Projects are in Desktop\san-luis-way-reels\<slug>\.
 - 03 is now taco-salsa: a 24.5 s lemo pixel-rpg dialogue with salsa, "pica poquito", a crit, and an enchilado run-off.
