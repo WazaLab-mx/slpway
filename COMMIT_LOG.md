@@ -1,5 +1,11 @@
 # Commit Log
 
+## 2026-10-20 — docs: reel-viral skill gains the video production pipeline
+
+- `.claude/skills/reel-viral/SKILL.md` gets a new section, "Producing the video": a HyperFrames doodle composition (line boil, handheld drift, paper grain), ElevenLabs SFX plus TTS for spoken words, an ffmpeg megaphone mix at −14 LUFS, ASR and snapshot verification, a render, and approval before anything is published.
+- First render: "El Gaaas", 1080×1920, 7 s, 5.6 MB, at `C:\Users\sango\Desktop\san-luis-way-reels\el-gaaas\renders\el-gaaas.mp4` (project outside the repo). ASR of the render: "¡El gas, el gas, el gas!". `hyperframes check` passes. Waiting for the owner's approval.
+
+
 ## 2026-10-20 — feat: reel-viral skill for 7-second IG Reels that reach non-followers
 
 - New project skill `.claude/skills/reel-viral/` (`SKILL.md` + `examples.md`). It produces a 7 s lo-fi vertical Reel concept: frame-1 hook, timed shot list, caption with a save-worthy mini list, comment CTA and pinned comment, backup variant, and a 12-point score covering retention, shares, saves and comments.
