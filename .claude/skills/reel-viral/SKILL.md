@@ -135,4 +135,22 @@ If live footage is not available, build an animated lo-fi version in code. Refer
 4. **Render**: `npx hyperframes render . -q high -o renders/<slug>.mp4` takes about 30 s. Save `CAPTION.txt` next to the render.
 5. Send the owner the MP4 path and the caption, then STOP. Do not publish without approval. For the Meta upload, if the file is over 10 MB, encode a copy under 10 MB.
 
+### Rotate styles and tools
+
+Don't repeat the last style used. Finished reels live in `C:\Users\sango\Desktop\reels-cortos-FINALES\` as `NN-slug.mp4` plus `NN-slug-CAPTION.txt`. Each project is in `Desktop/san-luis-way-reels/<slug>/`.
+
+| Reel | Tool | Style |
+|---|---|---|
+| 01 el-gaaas | HyperFrames | doodle line-boil |
+| 02 ahorita | lemo-opuscar | game-show |
+| 03 spanish-level-up | lemo-opuscar | pixel-rpg |
+| 04 guess-tamul | lemo-opuscar | watercolor |
+| 05 catorce-tunnel | lemo-opuscar | silent-film |
+| 06 tell-me-slp | Remotion 4.0.537 | risograph sticker collage |
+
+Lemo-opuscar on Windows:
+- `setup.sh deps` fails at uv's interpreter check, but the existing venv works.
+- Parallel agents running `setup.sh demo` overwrite the library's sparse-checkout list. Re-add it with `MSYS_NO_PATHCONV=1 git sparse-checkout add`, or read the files with `git show HEAD:...`.
+- Render at 30 fps rather than lemo's default 24.
+
 See `examples.md` for a complete worked concept.

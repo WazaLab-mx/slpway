@@ -1,5 +1,10 @@
 # Session Context Log - Coding Agent
 
+## Session 2026-10-20 (cont.) — 6 short Reels in reels-cortos-FINALES
+
+- `Desktop/reels-cortos-FINALES/` holds 01 to 06. Each is a 7 s Reel with a caption file, and each uses a different tool or style (HyperFrames, four lemo-opuscar styles, Remotion). The owner said not to publish yet; all six are waiting for approval.
+
+
 ## Session 2026-10-20 (cont.) — "El Gaaas" Reel rendered
 
 - Animated doodle version of the reel-viral concept built in HyperFrames at `Desktop/san-luis-way-reels/el-gaaas/`. The truck's "¡El gas!" is ElevenLabs TTS (MexiTony) run through an ffmpeg megaphone filter, over a sound-generation jingle bed. The MP4 and CAPTION.txt are ready; NOT published, waiting for approval.

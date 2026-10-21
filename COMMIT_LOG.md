@@ -1,5 +1,17 @@
 # Commit Log
 
+## 2026-10-20 — docs: reel-viral style rotation + 5 more Reels rendered
+
+- `.claude/skills/reel-viral/SKILL.md`: added the style and tool rotation table and the lemo-opuscar notes for Windows.
+- Rendered five more 7 s Reels, each 1080×1920 with audio at about −14 LUFS and under 10 MB. The projects live outside the repo and nothing was published:
+  - 02 ahorita: lemo game-show quiz.
+  - 03 spanish-level-up: lemo pixel-rpg.
+  - 04 guess-tamul: lemo watercolor (105 m drop, verified).
+  - 05 catorce-tunnel: lemo silent-film (Ogarrio tunnel opened 1901, verified).
+  - 06 tell-me-slp: Remotion risograph collage (5 SLP identity items, verified).
+- Files are in `C:\Users\sango\Desktop\reels-cortos-FINALES\` as NN-slug.mp4 plus NN-slug-CAPTION.txt.
+
+
 ## 2026-10-20 — docs: reel-viral skill gains the video production pipeline
 
 - `.claude/skills/reel-viral/SKILL.md` gets a new section, "Producing the video": a HyperFrames doodle composition (line boil, handheld drift, paper grain), ElevenLabs SFX plus TTS for spoken words, an ffmpeg megaphone mix at −14 LUFS, ASR and snapshot verification, a render, and approval before anything is published.
