@@ -1,5 +1,19 @@
 # Session Context Log - Coding Agent
 
+## 2026-10-20 — reel-viral batch 2 (docs only, assets outside repo)
+- Reels live in C:\Users\sango\Desktop\reels-cortos-FINALES\ (not tracked). Projects are in Desktop\san-luis-way-reels\<slug>\.
+- 03 is now taco-salsa: a 24.5 s lemo pixel-rpg dialogue with salsa, "pica poquito", a crit, and an enchilado run-off.
+- 04 is now tamul-data: 16 s watercolor, facts sourced twice.
+- 06 tell-me-slp: sticker labels are auto-fit.
+- New 12 s reels:
+  - 07 sunday-in-slp (lemo tilt-shift)
+  - 08 nobody-tells-you (HyperFrames Swiss type)
+  - 09 enchiladas-potosinas (lemo papercut-red)
+  - 10 weekend-escapes (HyperFrames travel-poster map)
+  - 11 calzada-day-to-night (Remotion ukiyo-e)
+- Superseded files are in _versiones-anteriores/. All reels are waiting for owner approval; nothing is published.
+- SKILL.md: rotation table rows 07–11 plus the owner feedback rules (no quiz hooks, 12–25 s OK, auto-fit text).
+
 ## Session 2026-10-20 (cont.) — 6 short Reels in reels-cortos-FINALES
 
 - `Desktop/reels-cortos-FINALES/` holds 01 to 06. Each is a 7 s Reel with a caption file, and each uses a different tool or style (HyperFrames, four lemo-opuscar styles, Remotion). The owner said not to publish yet; all six are waiting for approval.

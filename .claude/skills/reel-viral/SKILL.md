@@ -143,10 +143,22 @@ Don't repeat the last style used. Finished reels live in `C:\Users\sango\Desktop
 |---|---|---|
 | 01 el-gaaas | HyperFrames | doodle line-boil |
 | 02 ahorita | lemo-opuscar | game-show |
-| 03 spanish-level-up | lemo-opuscar | pixel-rpg |
-| 04 guess-tamul | lemo-opuscar | watercolor |
+| 03 taco-salsa (v2 of spanish-level-up, 24.5 s dialogue) | lemo-opuscar | pixel-rpg |
+| 04 tamul-data (v2, 16 s, facts not quiz) | lemo-opuscar | watercolor |
 | 05 catorce-tunnel | lemo-opuscar | silent-film |
 | 06 tell-me-slp | Remotion 4.0.537 | risograph sticker collage |
+| 07 sunday-in-slp (12 s) | lemo-opuscar | tilt-shift 3D miniature |
+| 08 nobody-tells-you (12 s) | HyperFrames | Swiss kinetic typography |
+| 09 enchiladas-potosinas (12 s) | lemo-opuscar | papercut-red / papel picado |
+| 10 weekend-escapes (12 s) | HyperFrames | 1950s travel-poster map |
+| 11 calzada-day-to-night (12 s) | Remotion | ukiyo-e woodblock |
+
+Owner feedback (2026-10-20):
+- No "guess the place / guess in 3 s" quiz hooks. Use statements, POVs, promises, numbers, processes or stories.
+- Longer cuts (12–25 s) are fine when text needs reading time. Hold each beat at least 2.5 s.
+- Auto-fit text to its container, because labels overflowing cards were flagged.
+- A dialogue between characters (e.g. taquero ↔ customer) with English glosses under the Spanish lines works well.
+- Superseded versions go to `reels-cortos-FINALES/_versiones-anteriores/`. Never delete them.
 
 Lemo-opuscar on Windows:
 - `setup.sh deps` fails at uv's interpreter check, but the existing venv works.
