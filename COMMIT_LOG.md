@@ -1,5 +1,12 @@
 # Commit Log
 
+## 2026-10-27 — reel-viral: owner revisions to 02, 03, 04 + FINALES folder (docs only, assets outside repo)
+- New folder `Desktop\FINALES\` (reels\, ads\) holds only upload-ready files. Every new final gets copied there.
+- 02 ahorita: option D is now "Sometime in the future" (correct), with the payoff "5 minutes… or 5 hours." 9 s. Caption decoder updated.
+- 03 taco-salsa: the customer is drawn 1.75× (bigHero layer scaled from the feet) so he reads as an adult next to the taquero.
+- 04 tamul-data: the watercolor elements now sit over a real photo, "Cascada de Tamul, Slp" by Eneas De Troya (Wikimedia Commons, CC BY 2.0). The credit is in the caption.
+- Previous versions are in reels-cortos-FINALES\_versiones-anteriores. Nothing published.
+
 ## 2026-10-21 — reel-viral batch 3 (docs only, assets outside repo)
 - Five new reels in Desktop\reels-cortos-FINALES\ (not tracked). Projects are in Desktop\san-luis-way-reels\<slug>\.
 - 12 house-blueprint: 18 s, lemo blueprint (tinaco, garrafón, gas, calentador, azotea).
