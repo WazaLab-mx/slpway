@@ -163,6 +163,9 @@ Owner feedback (2026-10-20):
 - Reel length is 7–25 s (owner rule). Go longer only when text needs reading time; hold each beat ≥2.5 s.
 - Auto-fit text to its container, because labels overflowing cards were flagged.
 - A dialogue between characters (e.g. taquero ↔ customer) with English glosses under the Spanish lines works well.
+- A real-photo background with an illustrated overlay works (04 tamul). Only use photos with a commercial-use license (site-owned or Wikimedia CC) and credit them in the caption. Keep the photo visible: overlay elements, not an opaque card.
+- Keep character scale believable: an adult customer must not look like a child next to the vendor.
+- Copy every upload-ready final to `C:\Users\sango\Desktop\FINALES\<type>\`.
 - Superseded versions go to `reels-cortos-FINALES/_versiones-anteriores/`. Never delete them.
 
 Lemo-opuscar on Windows:
