@@ -42,15 +42,15 @@ export default function SafetyGuidePage() {
   const faqs = [
     {
       q: 'Is San Luis Potosí safe for tourists?',
-      a: 'Yes. San Luis Potosí is classified as Level 2 (Exercise Increased Caution) by the US State Department, with no travel restrictions. Most tourists experience no safety issues, especially in tourist areas like Centro Histórico.'
+      a: 'Generally yes, with normal precautions. The US State Department rates San Luis Potosí state Level 2 (Exercise Increased Caution) and lists no specific travel restrictions for US government employees there. Most visitors to tourist areas like Centro Histórico report no problems.'
     },
     {
       q: 'Is it safe to walk at night?',
-      a: 'Daytime safety is excellent (76% feel safe). Nighttime requires more caution (41% feel safe). Stick to well-lit, populated areas like Lomas and Centro. Avoid Colonia Satélite and Progreso at night.'
+      a: 'Numbeo users rate walking alone during the day at about 74/100 and at night at about 39/100, so nights call for more caution. Stick to well-lit, busy areas like Lomas and Centro, and use a ride app to get to unfamiliar neighborhoods after dark.'
     },
     {
       q: 'How does SLP compare to other Mexican cities?',
-      a: 'SLP has a lower crime index (52.63) than Mexico City (66.75) according to Numbeo. It\'s safer than many major Mexican cities but slightly above the national average for perception of insecurity.'
+      a: 'On Numbeo\'s user-perception crime index, SLP scores 52 vs. 66 for Mexico City and 62 for Guadalajara. In INEGI\'s ENSU survey (September 2026), 61% of adults in the SLP metro area said they feel unsafe, slightly above the 58.1% average for the 91 cities surveyed.'
     },
     {
       q: 'Are expats targeted for crime?',
@@ -58,11 +58,11 @@ export default function SafetyGuidePage() {
     },
     {
       q: 'What about drug-related violence?',
-      a: 'SLP has low frequency of random violence (81% never encounter it). Drug-related crime exists but typically doesn\'t affect residents who aren\'t involved. Homicides dropped 39% in first half of 2025, and SLP ranks among the 10 safest states for homicides nationally.'
+      a: 'Organized-crime violence exists in the state, as in much of Mexico, but it rarely affects visitors in the capital\'s tourist and residential areas. Official SESNSP figures show a sharp drop in intentional homicides in 2026, and México Evalúa ranked SLP second-lowest for homicide rate in the first half of 2026. The NGO Causa en Común has questioned whether some cases are being recorded under other categories, so treat the drop with some caution.'
     },
     {
       q: 'Is Uber/taxi safe?',
-      a: 'Yes. Uber and DiDi operate safely in SLP. For traditional taxis, use Taxi Seguro (444 817 2111) or Radio Taxi (444 812 0000). Avoid unmarked cabs.'
+      a: 'Generally yes. Uber and DiDi both operate in SLP and are the easiest option for visitors. For traditional taxis, use an official taxi stand (sitio) or have your hotel or restaurant call one. Avoid unmarked cabs.'
     },
     {
       q: 'Is San Luis Potosí safe for solo female travelers?',
@@ -70,15 +70,15 @@ export default function SafetyGuidePage() {
     },
     {
       q: 'Is San Luis Potosí safe for American tourists?',
-      a: 'Yes. The US State Department classifies SLP as Level 2 (Exercise Increased Caution) with zero travel restrictions for government employees. SLP is in the same safety tier as popular tourist states like Querétaro and Puebla. Most American visitors experience no safety issues, especially in tourist areas like Centro Histórico and Lomas.'
+      a: 'Generally yes. The US State Department rates SLP Level 2 (Exercise Increased Caution) and lists no specific travel restrictions for government employees there. That is the same tier as Querétaro, Puebla and Mexico City. Most American visitors report no problems, especially in Centro Histórico and Lomas.'
     },
     {
       q: 'Is it safe to drive through San Luis Potosí?',
-      a: 'During the day on toll roads (cuotas), yes. Avoid Highway 57 (the free road to Matehuala/Monterrey) after dark — it has historically been a high-crime stretch at night. Use the cuota (toll) alternative instead. Within the city, driving is safe during normal hours with standard urban caution.'
+      a: 'In daylight, generally yes. Highway 57 north to Matehuala and Monterrey is a free federal highway with heavy truck traffic; a San Luis–Matehuala toll road is under construction but not yet a full alternative, so plan to drive it in daylight. Use toll roads (cuotas) where they exist and avoid highway driving at night. Within the city, normal urban caution applies.'
     },
     {
       q: 'Is San Luis Potosí safe to live in long-term?',
-      a: 'Yes. SLP has a growing expat community (especially around the BMW/GM automotive plants) and ranks among the top 10 safest Mexican states for homicides. Long-term residents report feeling safer than in many US cities of similar size. Choose neighborhoods like Lomas, Polanco, or Del Valle for maximum safety and walkability.'
+      a: 'Many foreigners do. SLP has a growing expat community (especially around the BMW and GM plants), and México Evalúa ranked it among the states with the lowest homicide rates in the first half of 2026. Many long-term residents say they feel safe day to day. Neighborhoods like Lomas, Polanco and Del Valle are popular for safety and walkability.'
     },
   ];
 
@@ -102,7 +102,7 @@ export default function SafetyGuidePage() {
               headline: 'Is San Luis Potosí Safe? Complete Safety Guide',
               description: 'Data-driven safety analysis of San Luis Potosí with crime statistics, neighborhood ratings, expat experiences, and practical tips.',
               datePublished: '2025-01-01',
-              dateModified: '2026-04-10',
+              dateModified: '2026-10-27',
               author: {
                 '@type': 'Person',
                 '@id': 'https://www.sanluisway.com/about#editorial-team',
@@ -156,7 +156,7 @@ export default function SafetyGuidePage() {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Is San Luis Potosí Safe?
             </h1>
-            <LastUpdated date="2026-04-07" className="text-gray-100 mb-4" />
+            <LastUpdated date="2026-10-27" className="text-gray-100 mb-4" />
             <p className="text-xl text-gray-100 mb-6">
               A data-driven analysis with crime statistics, local perception surveys, and real expat experiences.
             </p>
@@ -165,10 +165,10 @@ export default function SafetyGuidePage() {
                 Level 2: Exercise Caution
               </span>
               <span className="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full text-sm font-medium">
-                Top 10 Safest States
+                Low Reported Homicide Rate
               </span>
               <span className="px-4 py-2 bg-purple-500/20 text-purple-300 rounded-full text-sm font-medium">
-                Homicides ↓39% in 2025
+                Perceived Insecurity 61% (Sep 2026)
               </span>
             </div>
           </div>
@@ -182,10 +182,10 @@ export default function SafetyGuidePage() {
                 <span className="text-2xl">✅</span> The Short Answer
               </h2>
               <p className="text-emerald-800 leading-relaxed">
-                <strong>San Luis Potosí is moderately safe</strong> — ranked among Mexico&apos;s top 10 safest states for homicides,
-                and safer than Mexico City and Guadalajara. The US State Department classifies it as Level 2 (Exercise Increased Caution)
-                with <strong>no travel restrictions</strong>. Homicides dropped 39% in the first half of 2025, and the capital saw a 50% reduction.
-                Perception of insecurity remains above national average but is improving. Take standard urban precautions and you&apos;ll likely have no issues.
+                <strong>San Luis Potosí is moderately safe</strong>. México Evalúa ranked it among the states with the lowest homicide rates in the
+                first half of 2026, and Numbeo users rate it safer than Mexico City and Guadalajara. The US State Department classifies it as Level 2 (Exercise Increased Caution)
+                with <strong>no specific restrictions</strong> for US government employees. Official figures show a sharp drop in homicides in 2026, though one NGO has questioned how some cases are classified.
+                Perceived insecurity (61% in September 2026) is slightly above the national urban average. Take standard urban precautions and you&apos;ll likely have no issues.
               </p>
             </div>
           </div>
@@ -224,7 +224,7 @@ export default function SafetyGuidePage() {
 
                 <div className="prose prose-lg max-w-none">
                   <p>
-                    San Luis Potosí sits in Mexico&apos;s industrial heartland, home to major automotive plants (BMW, GM, Ford)
+                    San Luis Potosí sits in Mexico&apos;s industrial heartland, home to major automotive plants (BMW, GM)
                     and a growing expat community. Understanding safety here requires looking at multiple data sources:
                     official statistics, perception surveys, and real experiences from people living in the city.
                   </p>
@@ -233,9 +233,9 @@ export default function SafetyGuidePage() {
                   <div className="bg-amber-50 border-l-4 border-amber-400 p-4 my-4">
                     <p className="text-amber-900">
                       <strong>Level 2: Exercise Increased Caution</strong><br />
-                      San Luis Potosí is in the same category as Querétaro, Aguascalientes, and Puebla.
-                      There are <strong>no restrictions</strong> on travel for US government employees
-                      and <strong>no specific areas to avoid</strong> according to the State Department.
+                      San Luis Potosí is in the same category as Querétaro, Aguascalientes, and Puebla. The advisory cites crime,
+                      kidnapping and terrorism risk for the state, and lists <strong>no specific restrictions</strong> on travel
+                      for US government employees there.
                     </p>
                     <p className="text-sm text-amber-700 mt-2">
                       Source: <a href="https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mexico-travel-advisory.html" target="_blank" rel="noopener noreferrer" className="underline">US State Department Mexico Travel Advisory</a>
@@ -245,7 +245,7 @@ export default function SafetyGuidePage() {
                   <p>
                     For context: Only Yucatán and Campeche are Level 1 (Normal Precautions).
                     Six states are Level 4 (Do Not Travel): Colima, Guerrero, Michoacán, Sinaloa, Tamaulipas, and Zacatecas.
-                    SLP is solidly in the &quot;proceed with normal urban caution&quot; category.
+                    Jalisco and Guanajuato are Level 3. SLP sits in the Level 2 &quot;exercise increased caution&quot; group with most central states.
                   </p>
                 </div>
               </section>
@@ -256,24 +256,24 @@ export default function SafetyGuidePage() {
 
                 <div className="grid md:grid-cols-2 gap-6 mb-8">
                   <div className="bg-gray-50 rounded-xl p-6 text-center">
-                    <p className="text-4xl font-bold text-emerald-600 mb-2">52.63</p>
+                    <p className="text-4xl font-bold text-emerald-600 mb-2">52.0</p>
                     <p className="text-gray-600 text-sm">Crime Index (Numbeo)</p>
-                    <p className="text-xs text-gray-500 mt-1">Lower is better • Similar to NYC</p>
+                    <p className="text-xs text-gray-500 mt-1">Lower is better • Similar to New York (50.7)</p>
                   </div>
                   <div className="bg-gray-50 rounded-xl p-6 text-center">
-                    <p className="text-4xl font-bold text-blue-600 mb-2">47.37</p>
+                    <p className="text-4xl font-bold text-blue-600 mb-2">48.0</p>
                     <p className="text-gray-600 text-sm">Safety Index (Numbeo)</p>
                     <p className="text-xs text-gray-500 mt-1">Higher is better</p>
                   </div>
                   <div className="bg-gray-50 rounded-xl p-6 text-center">
-                    <p className="text-4xl font-bold text-green-600 mb-2">↓39%</p>
-                    <p className="text-gray-600 text-sm">Homicide Decline H1 2025</p>
-                    <p className="text-xs text-gray-500 mt-1">142 vs 235 same period 2024</p>
+                    <p className="text-4xl font-bold text-green-600 mb-2">61%</p>
+                    <p className="text-gray-600 text-sm">Feel Unsafe in the City (ENSU)</p>
+                    <p className="text-xs text-gray-500 mt-1">Sep 2026, down from 70.9% in Sep 2025</p>
                   </div>
                   <div className="bg-gray-50 rounded-xl p-6 text-center">
-                    <p className="text-4xl font-bold text-purple-600 mb-2">Top 10</p>
-                    <p className="text-gray-600 text-sm">Safest States (Homicides)</p>
-                    <p className="text-xs text-gray-500 mt-1">Mexico Evalúa 2025</p>
+                    <p className="text-4xl font-bold text-purple-600 mb-2">0.9</p>
+                    <p className="text-gray-600 text-sm">Homicides per 100k, H1 2026</p>
+                    <p className="text-xs text-gray-500 mt-1">México Evalúa (national: 6.7)</p>
                   </div>
                 </div>
 
@@ -290,13 +290,13 @@ export default function SafetyGuidePage() {
                     <tbody>
                       <tr>
                         <td className="p-3 border">Crime Index</td>
-                        <td className="p-3 border text-emerald-600 font-semibold">52.63</td>
-                        <td className="p-3 border text-red-600">66.75</td>
+                        <td className="p-3 border text-emerald-600 font-semibold">52.0</td>
+                        <td className="p-3 border text-red-600">66.1</td>
                       </tr>
                       <tr>
                         <td className="p-3 border">Safety Index</td>
-                        <td className="p-3 border text-emerald-600 font-semibold">47.37</td>
-                        <td className="p-3 border text-red-600">33.25</td>
+                        <td className="p-3 border text-emerald-600 font-semibold">48.0</td>
+                        <td className="p-3 border text-red-600">33.9</td>
                       </tr>
                     </tbody>
                   </table>
@@ -305,18 +305,18 @@ export default function SafetyGuidePage() {
                   Source: <a href="https://www.numbeo.com/crime/compare_cities.jsp?country1=Mexico&city1=San+Luis+Potosi&country2=Mexico&city2=Mexico+City" target="_blank" rel="noopener noreferrer" className="underline">Numbeo Crime Comparison</a>
                 </p>
 
-                <h3 className="text-xl font-semibold mt-8 mb-4">Day vs. Night Safety</h3>
+                <h3 className="text-xl font-semibold mt-8 mb-4">Day vs. Night Safety (Numbeo user ratings)</h3>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-emerald-50 rounded-xl p-6">
                     <div className="flex items-center gap-3 mb-3">
                       <span className="text-3xl">☀️</span>
                       <div>
                         <p className="font-bold text-emerald-900">Daytime</p>
-                        <p className="text-emerald-700">76% feel completely safe</p>
+                        <p className="text-emerald-700">Walking alone: 74/100</p>
                       </div>
                     </div>
                     <div className="w-full bg-emerald-200 rounded-full h-3">
-                      <div className="bg-emerald-500 h-3 rounded-full" style={{width: '76%'}}></div>
+                      <div className="bg-emerald-500 h-3 rounded-full" style={{width: '74%'}}></div>
                     </div>
                   </div>
                   <div className="bg-slate-100 rounded-xl p-6">
@@ -324,11 +324,11 @@ export default function SafetyGuidePage() {
                       <span className="text-3xl">🌙</span>
                       <div>
                         <p className="font-bold text-slate-900">Nighttime</p>
-                        <p className="text-slate-700">41% feel completely safe</p>
+                        <p className="text-slate-700">Walking alone: 39/100</p>
                       </div>
                     </div>
                     <div className="w-full bg-slate-300 rounded-full h-3">
-                      <div className="bg-slate-600 h-3 rounded-full" style={{width: '41%'}}></div>
+                      <div className="bg-slate-600 h-3 rounded-full" style={{width: '39%'}}></div>
                     </div>
                   </div>
                 </div>
@@ -344,36 +344,36 @@ export default function SafetyGuidePage() {
                 </p>
 
                 <div className="bg-blue-50 rounded-xl p-6 mb-6">
-                  <h3 className="font-bold text-blue-900 mb-4">INEGI ENSU Survey Results (2025)</h3>
+                  <h3 className="font-bold text-blue-900 mb-4">INEGI ENSU Survey Results (Q3 2026)</h3>
                   <ul className="space-y-3 text-blue-800">
                     <li className="flex items-start gap-2">
                       <span className="text-emerald-500 mt-1">✓</span>
-                      <span><strong>70.9% perception of insecurity</strong> (Q3 2025) — improved 4 points from Q2&apos;s 74.8%</span>
+                      <span><strong>61% perception of insecurity</strong> (September 2026), down from 70.9% a year earlier</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-emerald-500 mt-1">✓</span>
-                      <span><strong>Ranked 34th of 91 cities</strong> — middle of the pack nationally</span>
+                      <span><strong>Change vs. June 2026 (62.5%)</strong> was small and not statistically significant</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-emerald-500 mt-1">✓</span>
-                      <span><strong>Capital: -50% homicides</strong> in 2025 — lowest since October 2016</span>
+                      <span><strong>Homicide rate 0.9 per 100k</strong> in H1 2026, second-lowest nationally (México Evalúa)</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-amber-500 mt-1">!</span>
-                      <span>Still above national average (63% feel insecure nationally)</span>
+                      <span>Still slightly above the 91-city average (58.1% in September 2026)</span>
                     </li>
                   </ul>
                   <p className="text-sm text-blue-600 mt-4">
-                    Source: <a href="https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2025/ensu/ENSU20205_10_RR.pdf" target="_blank" rel="noopener noreferrer" className="underline">INEGI ENSU Q3 2025</a>
+                    Source: <a href="https://www.inegi.org.mx/programas/ensu/" target="_blank" rel="noopener noreferrer" className="underline">INEGI ENSU Q3 2026</a>
                   </p>
                 </div>
 
-                <h3 className="text-xl font-semibold mb-4">Trend: Mixed but Improving</h3>
+                <h3 className="text-xl font-semibold mb-4">Trend: Improving, With Caveats</h3>
                 <p className="text-gray-700">
-                  Perception of insecurity rose in early 2025 (to 74.8% in Q2) but has since improved to 70.9% in Q3.
-                  Meanwhile, <strong>actual crime is declining significantly</strong>: homicides down 39% statewide and 50% in the capital.
-                  The gap between perception and reality suggests media coverage may influence feelings more than actual risk.
-                  Mayor Enrique Galindo reports 23 points of improvement in security perception over his 4-year term.
+                  Perceived insecurity fell from 70.9% in September 2025 to 61% in September 2026.
+                  Official SESNSP data show intentional homicides down sharply in 2026, but the NGO Causa en Común reported that the state
+                  logged far more &quot;other crimes against life&quot; than intentional homicides in the first half of 2026 and questioned whether
+                  cases are being reclassified. Homicide figures also say nothing about theft and other common crimes, so treat any single number with caution.
                 </p>
               </section>
 
@@ -424,14 +424,14 @@ export default function SafetyGuidePage() {
                 </div>
 
                 <div className="mt-6 bg-red-50 border-l-4 border-red-400 p-4 rounded-r-xl">
-                  <h3 className="font-bold text-red-900">Areas to Avoid (Especially at Night)</h3>
+                  <h3 className="font-bold text-red-900">Areas Where Locals Advise Extra Caution at Night</h3>
                   <ul className="text-red-800 text-sm mt-2 space-y-1">
-                    <li>• <strong>Colonia Satélite</strong> — higher incidence of petty crime and car theft</li>
-                    <li>• <strong>Colonia Progreso</strong> — rougher area, especially after dark</li>
-                    <li>• <strong>Delegación La Pila</strong> — south end of the metro area, elevated crime rates</li>
-                    <li>• <strong>Soledad de Graciano Sánchez</strong> (east side) — industrial suburbs with less policing</li>
+                    <li>• <strong>Colonia Satélite</strong> and <strong>Colonia Progreso</strong> — often mentioned by residents; avoid walking there at night</li>
+                    <li>• <strong>Delegación La Pila</strong> — outlying south end of the metro area</li>
+                    <li>• Parts of <strong>Soledad de Graciano Sánchez</strong> (separate municipality to the northeast)</li>
                     <li>• Peripheral industrial zones and unlit areas after dark</li>
                   </ul>
+                  <p className="text-red-700 text-xs mt-2">No official crime data is published by colonia; these reflect local perception, not rankings.</p>
                 </div>
               </section>
 
@@ -474,7 +474,7 @@ export default function SafetyGuidePage() {
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Is San Luis Potosí safe for American tourists?</h2>
                 <p className="text-gray-700 mb-4">
                   <strong>Yes.</strong> The US State Department classifies SLP as <strong>Level 2 (Exercise Increased Caution)</strong> —
-                  the same tier as tourist favorites Querétaro, Aguascalientes, and Puebla. There are <strong>zero travel restrictions</strong> for
+                  the same tier as Querétaro, Aguascalientes, Puebla and Mexico City. The advisory lists <strong>no specific travel restrictions</strong> for
                   US government employees in the state.
                 </p>
                 <div className="overflow-x-auto mb-4">
@@ -492,49 +492,49 @@ export default function SafetyGuidePage() {
                       <tr>
                         <th scope="row" className="p-3 border font-semibold">San Luis Potosí</th>
                         <td className="p-3 border text-emerald-700 font-semibold">Level 2</td>
-                        <td className="p-3 border">52.6</td>
-                        <td className="p-3 border text-emerald-700">47.4</td>
+                        <td className="p-3 border">52.0</td>
+                        <td className="p-3 border text-emerald-700">48.0</td>
                       </tr>
                       <tr className="bg-gray-50">
                         <th scope="row" className="p-3 border font-semibold">Querétaro</th>
                         <td className="p-3 border">Level 2</td>
-                        <td className="p-3 border">42.3</td>
-                        <td className="p-3 border">57.7</td>
+                        <td className="p-3 border">37.4</td>
+                        <td className="p-3 border">62.6</td>
                       </tr>
                       <tr>
                         <th scope="row" className="p-3 border font-semibold">Mérida</th>
-                        <td className="p-3 border">Level 2</td>
-                        <td className="p-3 border">29.4</td>
-                        <td className="p-3 border">70.6</td>
+                        <td className="p-3 border">Level 1</td>
+                        <td className="p-3 border">23.9</td>
+                        <td className="p-3 border">76.1</td>
                       </tr>
                       <tr className="bg-gray-50">
                         <th scope="row" className="p-3 border font-semibold">Guadalajara</th>
-                        <td className="p-3 border">Level 2</td>
-                        <td className="p-3 border">61.4</td>
-                        <td className="p-3 border">38.6</td>
+                        <td className="p-3 border text-amber-700">Level 3</td>
+                        <td className="p-3 border">62.1</td>
+                        <td className="p-3 border">37.9</td>
                       </tr>
                       <tr>
                         <th scope="row" className="p-3 border font-semibold">Mexico City</th>
                         <td className="p-3 border text-amber-700">Level 2</td>
-                        <td className="p-3 border text-red-600">66.8</td>
-                        <td className="p-3 border text-red-600">33.2</td>
+                        <td className="p-3 border text-red-600">66.1</td>
+                        <td className="p-3 border text-red-600">33.9</td>
                       </tr>
                       <tr className="bg-gray-50">
                         <th scope="row" className="p-3 border font-semibold">Oaxaca</th>
                         <td className="p-3 border">Level 2</td>
-                        <td className="p-3 border">35.2</td>
-                        <td className="p-3 border">64.8</td>
+                        <td className="p-3 border">39.8</td>
+                        <td className="p-3 border">60.2</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <p className="text-sm text-gray-500">
-                  Source: <a href="https://www.numbeo.com/crime/rankings.jsp?title=2025&region=019" target="_blank" rel="noopener noreferrer" className="underline">Numbeo Crime Index 2025</a> +{' '}
+                  Source: <a href="https://www.numbeo.com/crime/country_result.jsp?country=Mexico" target="_blank" rel="noopener noreferrer" className="underline">Numbeo Crime Index (2026)</a> +{' '}
                   <a href="https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mexico-travel-advisory.html" target="_blank" rel="noopener noreferrer" className="underline">US State Department</a>
                 </p>
                 <p className="text-gray-700 mt-4">
-                  SLP is safer than Guadalajara and Mexico City by Numbeo&apos;s index. It&apos;s less safe than Mérida or Oaxaca
-                  but significantly more affordable. Travel Off Path named SLP one of the{' '}
+                  SLP scores better than Guadalajara and Mexico City on Numbeo&apos;s index, and worse than Mérida, Querétaro or Oaxaca.
+                  Numbeo figures are crowd-sourced perceptions, not police data. In 2024, Travel Off Path named SLP one of the{' '}
                   <a href="https://www.traveloffpath.com/these-are-4-of-the-most-cultural-and-safe-cities-in-mexico/" target="_blank" rel="noopener noreferrer" className="underline text-emerald-700">
                     4 most cultural and safe cities in Mexico
                   </a>.
@@ -549,11 +549,11 @@ export default function SafetyGuidePage() {
                   The main risk is on <strong>inter-city highways at night</strong>.
                 </p>
                 <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-xl mb-4">
-                  <h3 className="font-bold text-red-900">Highway 57 Warning</h3>
+                  <h3 className="font-bold text-red-900">Highway 57 North</h3>
                   <p className="text-red-800 text-sm mt-1">
-                    The free highway to Matehuala and Monterrey (Highway 57 libre) has historically been a high-crime stretch
-                    after dark. <strong>Always use the toll road (cuota)</strong> if driving north, especially at night.
-                    The toll costs ~$300-500 MXN but is significantly safer and faster.
+                    Federal Highway 57 to Matehuala and Monterrey is a free (libre) four-lane highway with heavy truck traffic. A
+                    San Luis–Matehuala toll road is under construction but is not yet a full alternative, so <strong>drive this
+                    stretch in daylight</strong>, stop only at busy service stations, and avoid driving it at night.
                   </p>
                 </div>
                 <div className="grid md:grid-cols-2 gap-4">
@@ -569,7 +569,7 @@ export default function SafetyGuidePage() {
                   <div className="bg-red-50 rounded-xl p-4">
                     <h3 className="font-bold text-red-900 mb-2">Avoid</h3>
                     <ul className="text-red-800 text-sm space-y-1">
-                      <li>✗ Highway 57 libre after dark</li>
+                      <li>✗ Highway 57 north after dark</li>
                       <li>✗ Any free highway at night alone</li>
                       <li>✗ Rural roads near Tamaulipas border</li>
                       <li>✗ Parking in unlit areas at night</li>
@@ -661,7 +661,7 @@ export default function SafetyGuidePage() {
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-emerald-500">✓</span>
-                        Centro and Lomas are fine until 11 PM
+                        Busy parts of Centro and Lomas are usually fine in the evening
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-emerald-500">✓</span>
@@ -730,20 +730,16 @@ export default function SafetyGuidePage() {
                     <p className="text-2xl font-mono text-red-700">911</p>
                   </div>
                   <div className="bg-blue-50 rounded-xl p-4">
-                    <p className="font-bold text-blue-900">Police</p>
-                    <p className="text-xl font-mono text-blue-700">444 826 8300</p>
+                    <p className="font-bold text-blue-900">Police, Fire, Ambulance (Cruz Roja)</p>
+                    <p className="text-xl font-mono text-blue-700">911</p>
                   </div>
                   <div className="bg-orange-50 rounded-xl p-4">
-                    <p className="font-bold text-orange-900">Fire Department</p>
-                    <p className="text-xl font-mono text-orange-700">444 812 4344</p>
-                  </div>
-                  <div className="bg-red-50 rounded-xl p-4">
-                    <p className="font-bold text-red-900">Red Cross</p>
-                    <p className="text-xl font-mono text-red-700">444 815 0808</p>
+                    <p className="font-bold text-orange-900">Anonymous Crime Report</p>
+                    <p className="text-xl font-mono text-orange-700">089</p>
                   </div>
                   <div className="bg-purple-50 rounded-xl p-4">
-                    <p className="font-bold text-purple-900">Tourist Police</p>
-                    <p className="text-xl font-mono text-purple-700">444 834 1115</p>
+                    <p className="font-bold text-purple-900">Highway Assistance (Ángeles Verdes)</p>
+                    <p className="text-xl font-mono text-purple-700">078</p>
                   </div>
                   <div className="bg-green-50 rounded-xl p-4">
                     <p className="font-bold text-green-900">US Embassy (CDMX)</p>
@@ -753,8 +749,8 @@ export default function SafetyGuidePage() {
 
                 <div className="mt-6 bg-amber-50 border border-amber-200 rounded-xl p-4">
                   <p className="text-amber-800 text-sm">
-                    <strong>Tip:</strong> Save these numbers in your phone. For taxis, use
-                    <strong> Taxi Seguro (444 817 2111)</strong> or <strong>Radio Taxi (444 812 0000)</strong>.
+                    <strong>Tip:</strong> Save these numbers in your phone. For taxis, use Uber, DiDi or an official
+                    taxi stand (sitio), or ask your hotel to call one.
                   </p>
                 </div>
               </section>
@@ -782,11 +778,11 @@ export default function SafetyGuidePage() {
               <section className="bg-slate-100 rounded-2xl p-8">
                 <h2 className="text-xl font-bold text-gray-900 mb-4">Sources & References</h2>
                 <ul className="text-sm text-gray-600 space-y-2">
-                  <li>1. <a href="https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mexico-travel-advisory.html" target="_blank" rel="noopener noreferrer" className="underline">US State Department Mexico Travel Advisory (Aug 2025)</a></li>
-                  <li>2. <a href="https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2025/ensu/ENSU20205_10_RR.pdf" target="_blank" rel="noopener noreferrer" className="underline">INEGI ENSU Q3 2025 - Perception Survey</a></li>
-                  <li>3. <a href="https://elheraldoslp.com.mx/new/2025/07/21/homicidios-dolosos-disminuyen-39-2-en-slp-durante-primer-semestre-de-2025/" target="_blank" rel="noopener noreferrer" className="underline">El Heraldo SLP - Homicide Statistics H1 2025</a></li>
-                  <li>4. <a href="https://seguridad.slp.gob.mx/noticias/2025/8/19/san-luis-potosí-de-las-entidades-más-seguras-del-país/" target="_blank" rel="noopener noreferrer" className="underline">SLP Security Ministry - Top 10 Safest States 2025</a></li>
-                  <li>5. <a href="https://www.numbeo.com/crime/in/San-Luis-Potosi" target="_blank" rel="noopener noreferrer" className="underline">Numbeo Crime Index - San Luis Potosí 2025</a></li>
+                  <li>1. <a href="https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mexico-travel-advisory.html" target="_blank" rel="noopener noreferrer" className="underline">US State Department Mexico Travel Advisory (May 2026 update)</a></li>
+                  <li>2. <a href="https://www.inegi.org.mx/programas/ensu/" target="_blank" rel="noopener noreferrer" className="underline">INEGI ENSU Q3 2026 - Perception Survey</a></li>
+                  <li>3. <a href="https://planoinformativo.com/1164063/tiene-slp-segunda-tasa-mas-baja-de-homicidios-segun-mexico-evalua" target="_blank" rel="noopener noreferrer" className="underline">Plano Informativo - México Evalúa homicide rates, H1 2026</a></li>
+                  <li>4. <a href="https://www.diariodemexico.com/mi-nacion/detecta-causa-en-comun-anomalias-opacidad-en-registros-delitos-alto-impacto" target="_blank" rel="noopener noreferrer" className="underline">Diario de México - Causa en Común on crime-data anomalies (Aug 2026)</a></li>
+                  <li>5. <a href="https://www.numbeo.com/crime/in/San-Luis-Potosi" target="_blank" rel="noopener noreferrer" className="underline">Numbeo Crime Index - San Luis Potosí 2026</a></li>
                   <li>6. <a href="https://mexicorelocationguide.com/living-in-san-luis-potosi-the-city-most-expats-are-missing-out-on/" target="_blank" rel="noopener noreferrer" className="underline">Mexico Relocation Guide - Expat Experiences</a></li>
                 </ul>
               </section>

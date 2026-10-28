@@ -41,14 +41,14 @@ export default function LivingGuidePage() {
         description: 'Annual fair featuring cultural events, food, and entertainment',
       },
       {
-        name: 'Festival Internacional de Danza Contemporánea',
-        date: 'October',
+        name: 'Festival Internacional de Danza Contemporánea Lila López',
+        date: 'Late July – early August',
         description: 'International contemporary dance festival',
       },
       {
-        name: 'Festival de la Luz',
-        date: 'December',
-        description: 'Christmas light festival and celebrations',
+        name: 'Fiesta de Luz',
+        date: 'December (winter edition)',
+        description: 'Light projections on historic buildings; other editions run at other times of year',
       },
     ],
     traditions: [
@@ -79,18 +79,6 @@ export default function LivingGuidePage() {
         name: 'La Parroquia',
         cuisine: 'Traditional Mexican',
         location: 'Centro Histórico',
-        priceRange: '$$',
-      },
-      {
-        name: 'La Antigua',
-        cuisine: 'International',
-        location: 'Zona Universitaria',
-        priceRange: '$$$',
-      },
-      {
-        name: 'El Patio',
-        cuisine: 'Mexican Fusion',
-        location: 'San Sebastián',
         priceRange: '$$',
       },
     ],
@@ -189,9 +177,9 @@ export default function LivingGuidePage() {
   const weatherInfo = {
     climate: {
       description: 'Semi-arid climate with warm summers and mild winters',
-      summer: 'March to May: Hot and dry (25-35°C)',
+      summer: 'March to May: Warm and dry (daytime highs ~29-31°C)',
       rainy: 'June to October: Rainy season with moderate temperatures',
-      winter: 'November to February: Cool and dry (10-25°C)',
+      winter: 'November to February: Cool and dry (nights ~4-6°C, days ~22°C)',
     },
     tips: [
       'Stay hydrated during hot months',
@@ -236,11 +224,6 @@ export default function LivingGuidePage() {
       { spanish: '¿Dónde está...?', english: 'Where is...?' },
     ],
     resources: [
-      {
-        name: 'Instituto Potosino de Lenguas',
-        description: 'Language school offering Spanish classes',
-        contact: '444 812 3456',
-      },
       {
         name: 'Conversation Groups',
         description: 'Weekly meetups for language practice',

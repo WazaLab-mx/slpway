@@ -40,12 +40,12 @@ export default function SchoolGuidePage() {
   ];
 
   const quickStats = [
-    { label: 'Schools Total', value: '4,500+', source: 'SEGE 2024' },
-    { label: 'Int\'l Schools', value: '6+', source: 'Directory' },
-    { label: 'Universities', value: '35+', source: 'ANUIES' },
-    { label: 'Literacy Rate', value: '95.8%', source: 'INEGI 2024' },
-    { label: 'Student Pop.', value: '890,000+', source: 'SEP 2024' },
-    { label: 'School Year', value: 'Sep-Jul*', source: 'SEP 2025' },
+    { label: 'School Days 2026-27', value: '185', source: 'SEP' },
+    { label: 'Classes Start', value: 'Aug 31, 2026', source: 'SEP' },
+    { label: 'IB Programmes (Terranova)', value: '3', source: 'IB / School' },
+    { label: 'UASLP Students', value: '32,000+', source: 'UASLP' },
+    { label: 'Literacy (Mexico)', value: '~95%', source: 'World Bank' },
+    { label: 'School Year', value: 'Aug-Jul', source: 'SEP 2026-27' },
   ];
 
   const internationalSchools = [
@@ -53,130 +53,61 @@ export default function SchoolGuidePage() {
       name: 'Colegio Internacional Terranova',
       curriculum: 'IB World School (PYP, MYP, DP)',
       levels: 'Preschool - High School',
-      location: 'Industrial Aviación',
-      address: 'Av. Palmira No. 705, Industrial Aviación',
+      location: 'Privadas del Pedregal',
+      address: 'Av. Palmira No. 705, Privadas del Pedregal',
       phone: '444 841 6422',
       website: 'https://www.terranova.edu.mx',
-      tuitionRange: '$14,000 - $20,000 MXN/month',
-      enrollment: '$40,000 - $55,000 MXN',
-      highlights: ['Only school with 3 IB programmes', '25 nationalities', 'Global citizens focus', '20+ years experience'],
+      tuitionRange: 'Request current fees',
+      enrollment: 'Request current fees',
+      highlights: ['Offers all 3 IB programmes (PYP, MYP, DP)', 'IB World School since 2011', 'Preschool to Bachillerato'],
       languages: ['Spanish', 'English'],
-      extraActivities: ['Arts program', 'Sports', 'Intercultural exchanges', 'After-school activities'],
-      studentTeacherRatio: '16:1',
+      extraActivities: ['After-school program'],
+      studentTeacherRatio: 'Ask the school',
       rating: 5,
       featured: true,
     },
     {
-      name: 'Colegio Motolinía de San Luis Potosí',
-      curriculum: 'SEP Bilingual',
-      levels: 'Preschool - High School',
-      location: 'Multiple campuses',
-      address: 'Av. Venustiano Carranza 2150, Centro',
-      phone: '444 812 1522',
-      website: 'https://www.motoliniaslp.edu.mx',
-      tuitionRange: '$8,000 - $14,000 MXN/month',
-      enrollment: '$25,000 - $35,000 MXN',
-      highlights: ['Catholic values', '100+ years tradition', 'Sports facilities', 'Strong community'],
-      languages: ['Spanish', 'English'],
-      extraActivities: ['Soccer', 'Basketball', 'Dance', 'Music', 'Chess'],
-      studentTeacherRatio: '20:1',
-      rating: 5,
-    },
-    {
-      name: 'Colegio del Bosque',
-      curriculum: 'SEP Bilingual + Project-Based',
-      levels: 'Preschool - Secondary',
-      location: 'Lomas 4A Sección',
-      address: 'Av. Real del Potosí 500, Lomas 4A Sección',
-      phone: '444 825 4000',
-      website: 'https://www.colegiodelbosque.edu.mx',
-      tuitionRange: '$9,000 - $15,000 MXN/month',
-      enrollment: '$28,000 - $38,000 MXN',
-      highlights: ['Environmental focus', 'Small classes', 'Arts emphasis', 'Green campus'],
-      languages: ['Spanish', 'English'],
-      extraActivities: ['Gardening', 'Art workshops', 'Music', 'Environmental club'],
-      studentTeacherRatio: '15:1',
-      rating: 4,
-    },
-    {
       name: 'Colegio Chapultepec de San Luis',
-      curriculum: 'SEP Bilingual',
-      levels: 'Preschool - High School',
+      curriculum: 'Bilingual (Cambridge-endorsed)',
+      levels: 'Maternal - High School',
       location: 'Privadas del Pedregal',
       address: 'Prolongación Av. Chapultepec 1280, Privadas del Pedregal',
-      phone: '444 813 5544',
+      phone: '444 825 5043',
       website: 'http://www.colegiochapultepecdesanluis.com',
-      tuitionRange: '$6,500 - $10,000 MXN/month',
-      enrollment: '$18,000 - $25,000 MXN',
-      highlights: ['English immersion', 'Modern facilities', 'Tech integration', 'Parent involvement'],
+      tuitionRange: 'Request current fees',
+      enrollment: 'Request current fees',
+      highlights: ['Classes taught in English (per school)', 'Cambridge-endorsed', 'Microsoft-endorsed program', 'Maternal to Preparatoria'],
       languages: ['Spanish', 'English'],
-      extraActivities: ['Swimming', 'Soccer', 'Art', 'Coding'],
-      studentTeacherRatio: '18:1',
+      extraActivities: ['Ask the school'],
+      studentTeacherRatio: 'Ask the school',
       rating: 4,
     },
   ];
 
   const privateSchools = [
     {
-      name: 'Instituto Potosino',
-      type: 'Catholic (Lasallista)',
+      name: 'Instituto Potosino Marista',
+      type: 'Catholic (Marist)',
+      levels: 'Primary - High School',
+      location: 'Benigno Arriaga (primary)',
+      address: 'Benigno Arriaga 608 (primary)',
+      phone: '444 813 4375 (primary) / 444 813 4024 (secondary & prepa)',
+      tuitionRange: 'Request current fees',
+      enrollment: 'Request current fees',
+      features: ['Founded 1935', 'Marist Brothers', 'Inclusion program (Ollin Yolotl)'],
+      englishLevel: 'Ask the school',
+    },
+    {
+      name: 'Colegio Motolinía de San Luis',
+      type: 'Catholic',
       levels: 'Preschool - High School',
-      location: 'Centro Histórico',
-      address: 'Manuel José Othón 135, Centro',
-      phone: '444 812 0341',
-      tuitionRange: '$4,500 - $7,000 MXN/month',
-      enrollment: '$12,000 - $18,000 MXN',
-      features: ['100+ year tradition', 'Strong values', 'Affordable', 'Alumni network'],
-      englishLevel: 'Basic-Intermediate',
-    },
-    {
-      name: 'Centro Escolar Presidente Alemán (CEPA)',
-      type: 'Secular',
-      levels: 'Preschool - High School',
-      location: 'Himno Nacional',
-      address: 'Av. Himno Nacional 2400',
-      phone: '444 814 5678',
-      tuitionRange: '$5,000 - $8,000 MXN/month',
-      enrollment: '$15,000 - $22,000 MXN',
-      features: ['STEM focus', 'Sports programs', 'Modern labs', 'Technical careers'],
-      englishLevel: 'Intermediate',
-    },
-    {
-      name: 'Instituto Anglo Español',
-      type: 'Secular',
-      levels: 'Preschool - Middle School',
-      location: 'Tequis',
-      address: 'Av. Tequis 420, Tequisquiapam',
-      phone: '444 818 2233',
-      tuitionRange: '$4,000 - $6,500 MXN/month',
-      enrollment: '$10,000 - $15,000 MXN',
-      features: ['Bilingual program', 'Family atmosphere', 'Individual attention', 'Values'],
-      englishLevel: 'Intermediate-Advanced',
-    },
-    {
-      name: 'Colegio San Luis Rey',
-      type: 'Catholic (Franciscan)',
-      levels: 'Preschool - Middle School',
-      location: 'Barrio de Santiago',
-      address: 'Reforma 850, Barrio de Santiago',
-      phone: '444 812 8899',
-      tuitionRange: '$3,500 - $5,500 MXN/month',
-      enrollment: '$8,000 - $12,000 MXN',
-      features: ['Franciscan values', 'Community focus', 'Affordable', 'Extracurriculars'],
-      englishLevel: 'Basic',
-    },
-    {
-      name: 'Instituto Miguel de Cervantes',
-      type: 'Secular',
-      levels: 'Preschool - High School',
-      location: 'Industrial Aviación',
-      address: 'Blvd. Industrial 1580',
-      phone: '444 824 3300',
-      tuitionRange: '$4,800 - $7,500 MXN/month',
-      enrollment: '$14,000 - $20,000 MXN',
-      features: ['Technical programs', 'Industry connections', 'Practical education', 'Job placement'],
-      englishLevel: 'Intermediate',
-      featured: true,
+      location: 'Polanco, Jardín & Lomas 4a (3 campuses)',
+      address: 'Av. Venustiano Carranza 2150, Col. Polanco (preschool & primary)',
+      phone: '444 813 0240',
+      tuitionRange: 'Request current fees',
+      enrollment: 'Request current fees',
+      features: ['Catholic education', 'Secondary: Basalenque 140, Col. Jardín', 'Prepa: Cordillera Arakán 709, Lomas 4a'],
+      englishLevel: 'Ask the school',
     },
   ];
 
@@ -184,42 +115,42 @@ export default function SchoolGuidePage() {
     {
       name: 'Universidad Autónoma de San Luis Potosí (UASLP)',
       type: 'Public',
-      founded: '1859',
-      programs: '99 undergraduate, 88+ graduate programs',
+      founded: '1923 as a university (roots in the 1859 Instituto Científico y Literario)',
+      programs: '99 undergraduate, 88 graduate programs',
       students: '32,000+',
-      location: 'Multiple campuses (main: Centro)',
-      address: 'Álvaro Obregón 64, Centro',
+      location: 'Multiple campuses (Zona Universitaria and Centro)',
+      address: 'Several campuses; see uaslp.mx',
       website: 'https://www.uaslp.mx',
-      tuitionRange: '$2,000 - $8,000 MXN/semestre (residents)',
-      highlights: ['Largest in state', 'Research excellence', 'Medical school', 'Law school', 'International exchange'],
+      tuitionRange: 'Request current fees',
+      highlights: ['Largest in state', 'Medical school', 'Law school', 'International exchange'],
       faculties: ['Medicine', 'Law', 'Engineering', 'Sciences', 'Business', 'Architecture', 'Psychology'],
-      ranking: 'Top 25 in Mexico (QS 2025)',
+      ranking: 'Top 25 in Mexico (QS 2025 edition)',
     },
     {
       name: 'Instituto Tecnológico y de Estudios Superiores de Monterrey (ITESM)',
       type: 'Private',
-      founded: '1978 (SLP campus)',
-      programs: '30+ undergraduate, 20+ graduate programs',
-      students: '4,500+',
-      location: 'Zona Industrial',
-      address: 'Av. Eugenio Garza Sada 300, Zona Industrial',
+      founded: '1975 (SLP campus)',
+      programs: 'PrepaTec, undergraduate and graduate programs',
+      students: '',
+      location: 'Lomas del Tecnológico',
+      address: 'Av. Eugenio Garza Sada 300, Lomas del Tecnológico',
       website: 'https://www.tec.mx/es/san-luis-potosi',
-      tuitionRange: '$80,000 - $120,000 MXN/semestre',
-      highlights: ['Top 3 in Mexico', 'Innovation hub', 'Entrepreneur programs', 'Global partners', 'Industry connections'],
+      tuitionRange: 'Request current fees',
+      highlights: ['Top-ranked in Mexico', 'Entrepreneur programs', 'Global partners', 'Industry connections'],
       faculties: ['Business', 'Engineering', 'IT', 'Design', 'Health'],
-      ranking: 'Top 3 in Mexico, Top 200 globally (QS 2024)',
+      ranking: "Among Mexico's top-ranked universities (QS)",
     },
     {
       name: 'Universidad del Valle de México (UVM)',
       type: 'Private',
-      founded: '1995 (SLP campus)',
-      programs: '40+ programs',
-      students: '3,000+',
-      location: 'Lomas',
-      address: 'Blvd. Rocha Cordero 300, Lomas',
+      founded: '',
+      programs: 'Undergraduate and graduate programs',
+      students: '',
+      location: 'Fracc. Tecnológico',
+      address: 'Av. Robles 600, Fracc. Tecnológico',
       website: 'https://www.uvm.mx',
-      tuitionRange: '$45,000 - $85,000 MXN/semestre',
-      highlights: ['Flexible schedules', 'Online options', 'Career services', 'Modern campus'],
+      tuitionRange: 'Request current fees',
+      highlights: ['Flexible schedules', 'Online options', 'Career services'],
       faculties: ['Business', 'Health Sciences', 'Design', 'Engineering', 'Law'],
       ranking: 'Laureate International network',
     },
@@ -227,29 +158,29 @@ export default function SchoolGuidePage() {
       name: 'Universidad Politécnica de San Luis Potosí (UPSLP)',
       type: 'Public',
       founded: '2001',
-      programs: '15+ engineering & technology programs',
+      programs: 'Engineering, technology and business programs',
       students: '6,000+',
-      location: 'Zona Industrial (La Libertad)',
-      address: 'Urbano Villalón 500, La Libertad',
+      location: 'La Ladrillera',
+      address: 'Urbano Villalón 500, Col. La Ladrillera',
       website: 'https://www.upslp.edu.mx',
-      tuitionRange: '$3,000 - $6,000 MXN/semestre',
-      highlights: ['Industry focused', 'Dual education', 'Automotive sector', 'Aerospace programs'],
-      faculties: ['Mechatronics', 'Industrial Engineering', 'IT', 'Automotive', 'Aerospace'],
-      ranking: 'Top polytechnic in region',
+      tuitionRange: 'Request current fees',
+      highlights: ["Mexico's first polytechnic university", 'Industry focused'],
+      faculties: ['Engineering', 'Information Technology', 'Business'],
+      ranking: 'Public polytechnic university',
     },
     {
       name: 'Universidad Tangamanga (UTAN)',
       type: 'Private',
-      founded: '1996',
-      programs: '25+ programs',
-      students: '8,000+',
-      location: 'Multiple campuses',
-      address: 'Fray Diego de la Magdalena 300, Centro',
+      founded: '',
+      programs: 'Prepa, undergraduate, executive, graduate and online programs',
+      students: '',
+      location: 'Campuses: Saucito, Tequis, Industrias, Huasteca',
+      address: 'Av. Fray Diego de la Magdalena 42, Col. Saucito (one of several campuses)',
       website: 'https://www.utan.edu.mx',
-      tuitionRange: '$25,000 - $45,000 MXN/semestre',
-      highlights: ['Flexible schedules', 'Working professionals', 'Online programs', 'Affordable private'],
+      tuitionRange: 'Request current fees',
+      highlights: ['Executive programs for working adults', 'Online programs', 'Several campuses'],
       faculties: ['Business', 'Law', 'Education', 'Health', 'Technology'],
-      ranking: 'Regional leader',
+      ranking: 'Private regional university',
     },
   ];
 
@@ -260,31 +191,31 @@ export default function SchoolGuidePage() {
       time: '2-4 weeks',
       description: 'Attend open houses, tour facilities, meet staff, and compare curricula',
       details: ['Schedule visits during school hours', 'Ask about English programs', 'Check extracurricular offerings', 'Review academic results'],
-      tip: 'Most schools hold open houses in February-March for August enrollment. Private schools may have availability year-round.'
+      tip: 'Many schools hold open houses in the first months of the year for the cycle that starts in late August. Private schools may have availability year-round.'
     },
     {
       step: 2,
       title: 'Gather Required Documents',
       time: '1-2 weeks',
       description: 'Collect all necessary paperwork for application',
-      details: ['Birth certificate (certified copy)', 'CURP (Mexican ID)', 'Previous school records', 'Vaccination card', '6 passport photos', 'Proof of address'],
-      tip: 'Foreign documents require apostille and certified translation (cost: $1,500-3,000 MXN per document).'
+      details: ['Birth certificate (certified copy)', 'CURP (Mexican ID)', 'Previous school records', 'Vaccination card', 'Passport photos', 'Proof of address'],
+      tip: 'Foreign documents may need an apostille and a certified Spanish translation, depending on the grade level; translation costs vary by translator.'
     },
     {
       step: 3,
       title: 'Document Validation (Foreign Students)',
       time: '2-4 weeks',
-      description: 'Validate foreign academic credentials through SEP',
-      details: ['Submit to SEP state office', 'Provide apostilled originals', 'Include certified translations', 'Pay validation fee (~$500-800 MXN)'],
-      tip: 'Start this process early. SEGE office: Jardin Hidalgo 11, Centro. Phone: 444 834 2000.'
+      description: 'Validate foreign academic credentials through the state education office',
+      details: ['Ask SEGE which documents your grade level needs', 'Provide originals (apostilled if required)', 'Include certified translations if required', 'Pay the applicable fee'],
+      tip: 'Start early. Requirements are lighter for preschool-secundaria than for preparatoria and university; confirm the current rules with SEGE (Secretaría de Educación de Gobierno del Estado).'
     },
     {
       step: 4,
       title: 'Submit Application',
       time: '1-2 weeks',
       description: 'Complete application forms and pay fees',
-      details: ['Fill out school application', 'Pay application fee ($500-2,000 MXN)', 'Submit all documents', 'Schedule entrance evaluation'],
-      tip: 'Many schools accept applications online. Call to confirm requirements for your specific grade level.'
+      details: ['Fill out school application', 'Pay the application fee', 'Submit all documents', 'Schedule entrance evaluation'],
+      tip: 'Many schools accept applications online. Call to confirm requirements and fees for your specific grade level.'
     },
     {
       step: 5,
@@ -299,20 +230,20 @@ export default function SchoolGuidePage() {
       title: 'Enrollment & Payment',
       time: '1 week',
       description: 'Confirm enrollment and complete payments',
-      details: ['Sign enrollment contract', 'Pay inscription fee', 'Purchase uniforms ($2,000-5,000 MXN)', 'Buy school supplies', 'Register for transportation (optional)'],
-      tip: 'Ask about payment plans and sibling discounts. Many schools offer 10-12 monthly payments.'
+      details: ['Sign enrollment contract', 'Pay inscription fee', 'Purchase uniforms', 'Buy school supplies', 'Register for transportation (optional)'],
+      tip: 'Ask about payment plans and sibling discounts. Many schools spread tuition over 10-12 monthly payments.'
     },
   ];
 
   const requiredDocuments = [
-    { document: 'Birth Certificate', notes: 'Original + 2 copies. Foreign certificates need apostille + translation.' },
-    { document: 'CURP', notes: 'Mexican ID number. Foreign residents can obtain at INM or online at gob.mx/curp' },
-    { document: 'Previous School Records', notes: 'Report cards, transcripts. Apostille + translation for foreign docs.' },
+    { document: 'Birth Certificate', notes: 'Original + copies. Foreign certificates may need apostille + translation.' },
+    { document: 'CURP', notes: 'Mexican ID number. Foreign residents receive it with residency; look it up at gob.mx/curp' },
+    { document: 'Previous School Records', notes: 'Report cards, transcripts. Apostille + translation may be required for foreign docs.' },
     { document: 'Transfer Certificate', notes: 'Required when changing schools within Mexico during school year.' },
-    { document: 'Vaccination Card', notes: 'Cartilla de Vacunación. Must be up to date per SEP requirements.' },
-    { document: 'Passport Photos', notes: '6-8 recent photos. Sizes: infantil (2.5x3cm) and credencial (3x3.5cm)' },
+    { document: 'Vaccination Card', notes: 'Cartilla Nacional de Salud / vaccination record, up to date.' },
+    { document: 'Passport Photos', notes: 'Several recent photos; ask the school for the required size.' },
     { document: 'Proof of Address', notes: 'Utility bill, bank statement, or rental contract (< 3 months old)' },
-    { document: 'Parent ID', notes: 'INE/IFE for Mexican parents. Passport + residency for foreign parents.' },
+    { document: 'Parent ID', notes: 'INE for Mexican parents. Passport + residency card for foreign parents.' },
     { document: 'Medical Certificate', notes: 'Some schools require recent physical exam certificate.' },
   ];
 
@@ -357,7 +288,7 @@ export default function SchoolGuidePage() {
   const faqs = [
     {
       q: 'What is the school year calendar in Mexico?',
-      a: 'Starting 2025-2026, the Mexican school year runs from September 1 to mid-July (185 school days). This is a change from the previous August start. Major breaks include: Christmas/New Year (2 weeks Dec-Jan), Semana Santa (Holy Week March/April), and summer vacation (July-August). SEP publishes the official calendar annually.'
+      a: 'The SEP 2026-2027 calendar runs from August 31, 2026 to July 9, 2027 (185 school days). (The previous 2025-2026 year started on September 1, 2025.) Major breaks: winter vacation December 21, 2026 to January 5, 2027, spring vacation March 22 to April 2, 2027, and summer vacation from mid-July. SEP publishes the official calendar annually.'
     },
     {
       q: 'Do international schools follow the same calendar?',
@@ -373,15 +304,15 @@ export default function SchoolGuidePage() {
     },
     {
       q: 'How do I validate foreign school credentials?',
-      a: 'Foreign academic documents require: 1) Apostille from the issuing country, 2) Certified Spanish translation by a "perito traductor", 3) Revalidation through SEGE (state education office). Process takes 2-4 weeks and costs approximately $2,000-5,000 MXN total.'
+      a: 'Requirements depend on the level. For preparatoria and university, foreign documents usually need: 1) an apostille from the issuing country, 2) a certified Spanish translation by a "perito traductor", and 3) revalidation through SEGE (the state education office). For preschool to secundaria the process is simpler. Confirm current requirements, timing and fees with SEGE before you move.'
     },
     {
       q: 'What is CURP and how do I get one?',
-      a: 'CURP (Clave Única de Registro de Población) is Mexico\'s unique citizen ID. Foreign residents can obtain it through INM after receiving temporary or permanent residency. It\'s required for school enrollment, banking, and many official processes.'
+      a: 'CURP (Clave Única de Registro de Población) is Mexico\'s unique population registry code. Foreign residents obtain it through INM after receiving temporary or permanent residency. It\'s required for school enrollment, banking, and many official processes.'
     },
     {
       q: 'Are school uniforms mandatory?',
-      a: 'Yes, uniforms are mandatory at all Mexican schools (public and private). Each school has specific uniforms including daily wear, PE clothes, and sometimes formal attire. Costs range from $2,000-6,000 MXN for complete sets. Most schools have designated uniform stores.'
+      a: 'Most Mexican schools, public and private, use uniforms. Each school has specific uniforms including daily wear, PE clothes, and sometimes formal attire. Most schools have designated uniform stores; ask for current prices.'
     },
     {
       q: 'What about special education or learning differences?',
@@ -389,7 +320,7 @@ export default function SchoolGuidePage() {
     },
     {
       q: 'How does school transportation work?',
-      a: 'Most private schools offer optional bus service ($1,500-3,500 MXN/month) with door-to-door pickup. Public school students typically walk, use public transit, or are driven by parents. Carpool groups (WhatsApp) are common among parents.'
+      a: 'Many private schools offer optional bus service with door-to-door pickup; ask for current fees. Public school students typically walk, use public transit, or are driven by parents. Carpool groups (WhatsApp) are common among parents.'
     },
     {
       q: 'What homework load should I expect?',
@@ -405,11 +336,11 @@ export default function SchoolGuidePage() {
     },
     {
       q: 'Is homeschooling legal in Mexico?',
-      a: 'Homeschooling exists in a legal gray area in Mexico. Education is constitutionally mandatory, but enforcement is limited. Options include: Online schools accredited by SEP, INEA (adult education adapted for children), or international online programs. Annual SEP validation exams may be required.'
+      a: 'Homeschooling exists in a legal gray area in Mexico. Education is constitutionally mandatory, but enforcement is limited. Options include online schools with SEP recognition or international online programs. SEP validation exams may be required to re-enter the Mexican system.'
     },
     {
       q: 'What grade would my child enter based on age?',
-      a: 'Mexican school grade placement is based on birth date cutoff (August 31 typically): Preescolar 3: age 3, Primaria 1: age 6, Secundaria 1: age 12, Preparatoria 1: age 15. Foreign students may need placement tests regardless of previous grade level.'
+      a: 'Grade placement is based on age, using a birth-date cutoff set by SEP (confirm the current cutoff with the school): Preescolar 1: age 3, Primaria 1: age 6, Secundaria 1: age 12, Preparatoria 1: age 15. Foreign students may need placement tests regardless of previous grade level.'
     },
   ];
 
@@ -442,7 +373,7 @@ export default function SchoolGuidePage() {
               "description": t('seo.description'),
               "inLanguage": locale,
               "datePublished": "2025-01-01",
-              "dateModified": "2026-04-07",
+              "dateModified": "2026-10-27",
               "author": { "@type": "Organization", "name": "San Luis Way" },
               "speakable": {
                 "@type": "SpeakableSpecification",
@@ -500,7 +431,7 @@ export default function SchoolGuidePage() {
               <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
                 {t('hero.title')}
               </h1>
-              <LastUpdated date="2026-04-07" className="text-gray-100 mb-4" />
+              <LastUpdated date="2026-10-27" className="text-gray-100 mb-4" />
               <p className="text-xl text-white/90 mb-8">
                 {t('hero.subtitle')}
               </p>
@@ -549,19 +480,19 @@ export default function SchoolGuidePage() {
                   <ul className="space-y-2 text-blue-800 text-sm">
                     <li className="flex items-start gap-2">
                       <span className="text-green-600 mt-0.5">✓</span>
-                      <span>6+ international/bilingual schools available</span>
+                      <span>One IB World School (Terranova) plus bilingual and Catholic private schools</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-green-600 mt-0.5">✓</span>
-                      <span>Monthly costs: $3,000-18,000 MXN depending on school type</span>
+                      <span>Fees vary widely and are rarely published: request current fees</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-green-600 mt-0.5">✓</span>
-                      <span>School year runs August to July</span>
+                      <span>2026-27 school year runs Aug 31, 2026 to Jul 9, 2027</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-green-600 mt-0.5">✓</span>
-                      <span>Foreign documents need apostille + translation</span>
+                      <span>Foreign documents may need apostille + translation (depends on level)</span>
                     </li>
                   </ul>
                 </div>
@@ -570,7 +501,7 @@ export default function SchoolGuidePage() {
                   <ul className="space-y-2 text-blue-800 text-sm">
                     <li className="flex items-start gap-2">
                       <span className="text-blue-600 mt-0.5">→</span>
-                      <span>Best options: Colegio Terranova (IB), Colegio Motolinía</span>
+                      <span>Best options: Colegio Internacional Terranova (IB), Colegio Chapultepec (bilingual)</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-blue-600 mt-0.5">→</span>
@@ -578,7 +509,7 @@ export default function SchoolGuidePage() {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-blue-600 mt-0.5">→</span>
-                      <span>Spanish immersion support at most bilingual schools</span>
+                      <span>Ask each bilingual school about Spanish support for newcomers</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-blue-600 mt-0.5">→</span>
@@ -594,7 +525,7 @@ export default function SchoolGuidePage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Education in San Luis Potosí</h2>
               <div className="bg-white rounded-xl shadow-elegant p-6 space-y-6">
                 <p className="text-gray-700 leading-relaxed">
-                  San Luis Potosí offers a robust educational ecosystem with options ranging from traditional Mexican public schools to prestigious international institutions. As a growing economic hub with major automotive (BMW, GM) and aerospace industries, the city has developed quality educational infrastructure to serve both local and expatriate families.
+                  San Luis Potosí offers a robust educational ecosystem with options ranging from traditional Mexican public schools to prestigious international institutions. As a growing economic hub with major automotive (BMW, GM) and manufacturing industries, the city has developed quality educational infrastructure to serve both local and expatriate families.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -602,7 +533,7 @@ export default function SchoolGuidePage() {
                     <ul className="space-y-2 text-gray-600 text-sm">
                       <li className="flex items-start gap-2">
                         <svg className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-                        <span>Lower costs than Mexico City or Monterrey (30-50% less)</span>
+                        <span>Lower living costs than Mexico City (about 22% cheaper incl. rent, Numbeo Oct 2026)</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <svg className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
@@ -614,25 +545,25 @@ export default function SchoolGuidePage() {
                       </li>
                       <li className="flex items-start gap-2">
                         <svg className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-                        <span>High literacy rate (95.8%)</span>
+                        <span>High literacy rate (~95% nationally)</span>
                       </li>
                     </ul>
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-3">Important Dates</h3>
                     <ul className="space-y-2 text-gray-600 text-sm">
-                      <li><strong>School Year:</strong> September - July (2025-2026)*</li>
-                      <li><strong>Enrollment Period:</strong> February - May (for September start)</li>
-                      <li><strong>Winter Break:</strong> Dec 22 - Jan 9 (approx.)</li>
-                      <li><strong>Spring Break:</strong> Semana Santa (1-2 weeks)</li>
-                      <li><strong>Summer Break:</strong> July - August</li>
+                      <li><strong>School Year:</strong> Aug 31, 2026 - Jul 9, 2027 (2026-2027)*</li>
+                      <li><strong>Enrollment Period:</strong> Public pre-registration usually in February; private schools from early in the year</li>
+                      <li><strong>Winter Break:</strong> Dec 21, 2026 - Jan 5, 2027</li>
+                      <li><strong>Spring Break:</strong> Mar 22 - Apr 2, 2027</li>
+                      <li><strong>Summer Break:</strong> Mid-July - late August</li>
                     </ul>
-                    <p className="text-xs text-gray-500 mt-2">*Note: Starting 2025-2026, school year begins September 1 per SEP calendar change.</p>
+                    <p className="text-xs text-gray-500 mt-2">*Per the official SEP 2026-2027 calendar (185 school days). The 2025-2026 year began September 1, 2025.</p>
                   </div>
                 </div>
                 <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
                   <p className="text-amber-800 text-sm">
-                    <strong>For Expat Families:</strong> Start your school search 3-6 months before your planned move. Popular international schools have waiting lists, and document validation for foreign credentials takes 2-4 weeks.
+                    <strong>For Expat Families:</strong> Start your school search 3-6 months before your planned move. Popular schools can fill up, and document validation for foreign credentials can take several weeks.
                   </p>
                 </div>
               </div>
@@ -694,7 +625,7 @@ export default function SchoolGuidePage() {
             {/* International Schools Section */}
             <section id="international" className="mb-16">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">International & Bilingual Schools</h2>
-              <p className="text-gray-600 mb-6">These schools offer bilingual education (English/Spanish) with international curricula. Ideal for expat families seeking easier transitions and globally recognized programs.</p>
+              <p className="text-gray-600 mb-6">These schools offer an international (IB) curriculum or bilingual English/Spanish instruction. Ideal for expat families seeking easier transitions and globally recognized programs.</p>
               <div className="space-y-6">
                 {internationalSchools.map((school, index) => (
                   <div key={index} className={`bg-white rounded-xl shadow-elegant overflow-hidden ${school.featured ? 'ring-2 ring-yellow-400' : ''}`}>
@@ -760,15 +691,10 @@ export default function SchoolGuidePage() {
               <p className="text-gray-600 mb-6">Quality private education following the Mexican SEP curriculum. More affordable than international schools with varying levels of English instruction.</p>
               <div className="space-y-4">
                 {privateSchools.map((school, index) => (
-                  <div key={index} className={`bg-white rounded-xl shadow-elegant p-6 ${school.featured ? 'ring-2 ring-yellow-400' : ''}`}>
+                  <div key={index} className="bg-white rounded-xl shadow-elegant p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <div className="flex items-center gap-2 mb-1">
-                          {school.featured && (
-                            <span className="px-3 py-1 bg-gradient-to-r from-yellow-400 to-amber-500 text-white text-xs font-bold rounded-full uppercase">
-                              ⭐ Featured
-                            </span>
-                          )}
                           <h3 className="text-xl font-semibold text-gray-900">{school.name}</h3>
                         </div>
                         <p className="text-gray-600 text-sm">{school.levels} • {school.location}</p>
@@ -838,17 +764,16 @@ export default function SchoolGuidePage() {
                 <div className="bg-blue-50 rounded-lg p-5">
                   <h4 className="font-semibold text-gray-900 mb-3">How to Enroll in Public School</h4>
                   <ol className="space-y-2 text-gray-600 text-sm">
-                    <li><strong>1.</strong> Contact SEGE (State Education Secretary): Phone 444 834 2000</li>
+                    <li><strong>1.</strong> Contact SEGE (Secretaría de Educación de Gobierno del Estado) or the nearest public school</li>
                     <li><strong>2.</strong> Provide required documents (birth certificate, CURP, proof of address)</li>
-                    <li><strong>3.</strong> Complete pre-registration online through SEGE portal during February</li>
+                    <li><strong>3.</strong> Complete pre-registration (preinscripción), usually held in February; check SEGE announcements for dates</li>
                     <li><strong>4.</strong> Attend assigned school for final registration</li>
                     <li><strong>5.</strong> Purchase uniforms and school supplies</li>
                   </ol>
                   <div className="mt-4 pt-4 border-t border-blue-200">
                     <p className="text-gray-700 text-sm">
-                      <strong>Contact:</strong> SEGE Secretaría de Educación<br />
-                      Address: Jardín Hidalgo 11, Centro, San Luis Potosí<br />
-                      Phone: 444 834 2000 | Website: <a href="https://www.sege.gob.mx" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">www.sege.gob.mx</a>
+                      <strong>Contact:</strong> SEGE Secretaría de Educación de Gobierno del Estado<br />
+                      Check current offices and phone numbers on the state portal: <a href="https://slp.gob.mx" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">slp.gob.mx</a>
                     </p>
                   </div>
                 </div>
@@ -869,7 +794,7 @@ export default function SchoolGuidePage() {
                           {uni.type}
                         </span>
                       </div>
-                      <p className="text-white/80 text-sm mt-1">Founded {uni.founded} • {uni.students} students</p>
+                      <p className="text-white/80 text-sm mt-1">{[uni.founded && `Founded ${uni.founded}`, uni.students && `${uni.students} students`].filter(Boolean).join(' • ')}</p>
                     </div>
                     <div className="p-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -1007,7 +932,7 @@ export default function SchoolGuidePage() {
               <div className="bg-white rounded-xl shadow-elegant p-6">
 
                 {/* Comparison Table */}
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Cost Comparison by School Type</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Cost Comparison by School Type (indicative estimates)</h3>
                 <div className="overflow-x-auto mb-8">
                   <table className="w-full text-sm">
                     <thead>
@@ -1064,7 +989,7 @@ export default function SchoolGuidePage() {
                 {/* USD Conversion Note */}
                 <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
                   <p className="text-blue-800 text-sm">
-                    <strong>USD Conversion (approx.):</strong> At ~17 MXN/USD: International schools cost $470-$1,060 USD/month. Standard private schools cost $175-$350 USD/month. Public education has minimal costs of ~$30-100 USD/month total.
+                    <strong>USD Conversion (approx.):</strong> At ~18.6 MXN/USD (Banxico FIX, Oct 27, 2026): International schools cost about $430-$970 USD/month. Standard private schools cost about $160-$320 USD/month. Public education has minimal costs of ~$25-80 USD/month total. All ranges on this page are editorial estimates, not published fees: request current fees from each school.
                   </p>
                 </div>
               </div>

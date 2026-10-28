@@ -505,19 +505,19 @@
     "ranking": "Ranking",
     "rankingText": "2do parque urbano más grande de México",
     "trees": "Árboles",
-    "treesCount": "Más de 1.8 millones",
-    "oxygen": "Oxígeno",
-    "oxygenProduction": "800 toneladas anuales",
+    "treesCount": "Cientos de miles",
+    "oxygen": "Inauguración",
+    "oxygenProduction": "1983",
     "history": {
       "title": "Historia y Significado Cultural",
       "meaningTitle": "El Significado de \"Tangamanga\"",
-      "meaningText": "El nombre \"Tangamanga\" proviene del idioma Huachichil, un grupo indígena que una vez habitó la región. Se traduce como \"lugar de encuentro\" o \"lugar de reunión\", reflejando el rol del parque como un centro social y cultural para la comunidad.",
+      "meaningText": "\"Tangamanga\" era el nombre indígena del valle donde se fundó San Luis Potosí, una zona habitada por grupos guachichiles antes de la llegada de los españoles. Las fuentes que consultamos no documentan una traducción literal de la palabra, pero el nombre vincula al parque con el pasado prehispánico del valle.",
       "originTitle": "Origen Histórico",
-      "originText": "El parque fue formado en terrenos de la antigua Hacienda de la Tenería, que data de 1609. El edificio principal de la hacienda aún se conserva dentro del parque, siendo testigo silencioso de más de cuatro siglos de historia potosina.",
+      "originText": "El parque se formó en los terrenos de la antigua Hacienda de la Tenería, de origen colonial. El casco de la hacienda aún se conserva dentro del parque y hoy alberga el EcoMuseo.",
       "creationTitle": "Creación y Desarrollo",
-      "creationText": "La primera fase del proyecto se inició en 1982, cuando se expropiaron los terrenos y se plantaron más de mil árboles. El parque fue inaugurado oficialmente en 1983 durante el gobierno del Prof. Carlos Jonguitud Barrios. En 1997, el gobierno le dio el nombre oficial de \"Parque Carlos Jonguitud Barrios\", aunque la mayoría de la gente lo conoce simplemente como Parque Tangamanga.",
+      "creationText": "El proyecto comenzó en 1982 y el parque fue inaugurado oficialmente en 1983, durante el gobierno estatal del Prof. Carlos Jonguitud Barrios. Hoy lo administra el organismo estatal CECURT (Centros Estatales de Cultura y Recreación Tangamanga).",
       "impactTitle": "Importancia Nacional",
-      "impactText": "Con una extensión de 420 hectáreas, el Parque Tangamanga I se posiciona como el segundo parque urbano más grande de México, solo superado por el Bosque de Chapultepec en la Ciudad de México, y uno de los parques urbanos más grandes del mundo. Sus más de 1.8 millones de árboles lo convierten en el pulmón verde más importante de San Luis Potosí, produciendo 800 toneladas de oxígeno al año."
+      "impactText": "Con una superficie de alrededor de 420 hectáreas, el Parque Tangamanga I es considerado el segundo parque urbano más grande de México, solo superado por el Bosque de Chapultepec en la Ciudad de México. Sus cientos de miles de árboles lo convierten en uno de los pulmones verdes más importantes de San Luis Potosí."
     },
     "attractions": {
       "title": "Principales Atracciones",
@@ -567,7 +567,7 @@
     },
     "biodiversity": {
       "title": "Biodiversidad y Naturaleza",
-      "text": "El parque alberga una extraordinaria diversidad de flora y fauna. En sus 420 hectáreas conviven más de 1.8 millones de árboles de especies nativas y exóticas, aves migratorias y residentes, así como pequeños mamíferos y reptiles. El jardín botánico es especialmente importante para la conservación de especies endémicas de la región potosina y el desierto mexicano."
+      "text": "El parque alberga una rica diversidad de flora y fauna. En sus alrededor de 420 hectáreas conviven cientos de miles de árboles nativos y exóticos, junto con aves migratorias y residentes, así como pequeños mamíferos y reptiles. El jardín botánico es especialmente importante para la conservación de especies endémicas de la región potosina y del desierto mexicano."
     },
     "sustainability": {
       "title": "Autosustentabilidad",
@@ -577,7 +577,7 @@
       "feature2Title": "Generación de Composta",
       "feature2Text": "Producción propia de composta orgánica para nutrir la vegetación del parque",
       "feature3Title": "Pulmón Verde",
-      "feature3Text": "Generación de 800 toneladas de oxígeno al año gracias a sus 1.8 millones de árboles"
+      "feature3Text": "Un gran pulmón verde para la ciudad, con cientos de miles de árboles"
     },
     "services": {
       "title": "Servicios",
@@ -610,41 +610,41 @@
       "q4": "Es seguro el Parque Tangamanga?",
       "a4": "Si. El parque esta bien vigilado durante el horario de apertura. Evita ir solo despues del anochecer entre semana. Las mananas de fin de semana son las mas seguras.",
       "q5": "Que tan grande es el Parque Tangamanga?",
-      "a5": "El Parque Tangamanga I cubre 411 hectareas, mas grande que Central Park en Nueva York (341 ha). Tiene mas de 400,000 arboles.",
+      "a5": "El Parque Tangamanga I abarca alrededor de 420 hectáreas, más que el Central Park de Nueva York (341 ha). Tiene cientos de miles de árboles.",
       "q6": "¿Cuándo es el Maratón BMW Tangamanga?",
-      "a6": "El Maratón Internacional Tangamanga se corre cada año el último domingo de junio. La edición 40 es el 28 de junio de 2026, con salida y meta en Parque Tangamanga I. Las inscripciones abren en enero.",
+      "a6": "El Maratón Internacional Tangamanga se celebra cada año a finales de junio. La edición 40 se corrió el domingo 28 de junio de 2026, con salida y meta frente al Planetario del Parque Tangamanga I. Consulta al organizador oficial para conocer la fecha y las inscripciones del próximo año.",
       "q7": "¿Hay estacionamiento en el Parque Tangamanga?",
-      "a7": "Sí, estacionamiento gratuito en múltiples accesos. Los principales están junto al zoológico (entrada este) y junto al teatro (entrada norte). Fines de semana y días festivos los lotes se llenan antes de las 11 AM — llega temprano o usa transporte por aplicación.",
+      "a7": "Sí. El parque tiene estacionamientos en sus accesos. Los fines de semana y días festivos se llenan temprano: llega temprano o usa transporte por aplicación.",
       "q8": "¿Cómo llego al Parque Tangamanga en transporte público?",
-      "a8": "El parque está sobre Av. Dr. Salvador Nava. Varias rutas urbanas paran en los accesos principales: Ruta 23, 32 y 52 llegan al lado este (zoológico). Taxis y apps de transporte pueden dejarte en cualquiera de las 8 puertas.",
+      "a8": "El parque está sobre la Av. Dr. Salvador Nava Martínez. Varias rutas de transporte urbano pasan cerca; consulta las rutas vigentes en una app como Moovit. Los taxis y autos por aplicación pueden dejarte en los accesos principales.",
       "q9": "¿Qué pueden hacer los niños en el Parque Tangamanga?",
       "a9": "Planea una caminata o una parada en los juegos infantiles y consulta la programación familiar y los boletos del Museo Laberinto. Zoológico cerrado temporalmente por remodelación; consulta a CECURT antes de visitarlo.",
       "q10": "¿Cuál es la diferencia entre Tangamanga I y Tangamanga II?",
-      "a10": "Tangamanga I (esta página) es el parque turístico de 411 hectáreas con zoológico, planetario, acuario y jardines. Tangamanga II es un parque deportivo de 189 hectáreas construido sobre el antiguo aeropuerto de SLP — enfocado en tiro con arco, pistas de correr, autódromo y canchas. Ambos son gratuitos y están dentro de la ciudad.",
+      "a10": "Tangamanga I (esta página) es el parque de alrededor de 420 hectáreas con planetario, jardín japonés, teatros, lagos y jardines (su zoológico está cerrado temporalmente). Tangamanga II es un parque deportivo creado en 1985 sobre el antiguo aeropuerto de SLP, con el autódromo, tiro con arco, pistas para correr y canchas de fútbol. Ambos son gratuitos y están dentro de la ciudad de San Luis Potosí.",
       "q11": "¿El Parque Tangamanga es más grande que Central Park?",
-      "a11": "Sí. El Parque Tangamanga I tiene 411 hectáreas (1,015 acres), 70 hectáreas más grande que el Central Park de Nueva York (341 ha / 843 acres). Es el segundo parque urbano más grande de México.",
+      "a11": "Sí. El Parque Tangamanga I abarca alrededor de 420 hectáreas, unas 80 hectáreas más que el Central Park de Nueva York (341 ha). Se considera el segundo parque urbano más grande de México.",
       "q12": "¿Cuánto tiempo toma visitar el Parque Tangamanga?",
       "a12": "Elige algunas actividades y deja tiempo para descansar. Revisa por separado los horarios de museos y eventos antes de ir. Zoológico cerrado temporalmente por remodelación; consulta a CECURT antes de visitarlo.",
       "q13": "¿Se permiten perros en el Parque Tangamanga?",
-      "a13": "Sí, los perros son bienvenidos con correa en las áreas de caminata del Parque Tangamanga I. No se permiten dentro del zoológico, planetario ni acuario. Si buscas una zona sin correa, el Parque Tangamanga II tiene un área cercada exclusiva para mascotas.",
+      "a13": "Es común ver perros con correa en los andadores públicos del Parque Tangamanga I, pero los museos y recintos cerrados tienen sus propias reglas. Revisa los letreros o consulta a CECURT antes de llevar a tu perro.",
       "q14": "¿Puedo llevar comida al Parque Tangamanga?",
-      "a14": "Sí. Los días de campo son bienvenidos en las áreas de césped designadas. No se permiten envases de vidrio ni alcohol. También hay puestos de comida y pequeños restaurantes dentro del parque, más activos los fines de semana.",
+      "a14": "Sí. Los días de campo son comunes en las áreas de pasto; revisa las reglas publicadas sobre envases de vidrio y alcohol. También hay vendedores de comida dentro del parque, sobre todo los fines de semana.",
       "q15": "¿Cuál es la mejor hora para visitar el Parque Tangamanga?",
       "a15": "Revisa los horarios del parque y la agenda vigente antes de elegir tu visita. Los lunes tienen horario reducido por mantenimiento."
     },
     "maraton": {
       "badge": "Evento Anual",
       "title": "BMW Maratón Internacional Tangamanga 2026 — 40 Aniversario",
-      "subtitle": "El evento deportivo más grande de la ciudad se corre aquí en Tangamanga I cada año. Más de 17,000 corredores, cuatro distancias certificadas (5K, 10K, medio maratón, maratón completo), y cuarenta años de tradición.",
+      "subtitle": "El evento deportivo más grande de la ciudad se corre aquí en Tangamanga I cada año. Miles de corredores, cuatro distancias (5K, 10K, medio maratón y maratón completo) y cuarenta años de tradición.",
       "date": "28 de junio, 2026",
       "linkText": "Ver guía completa de la carrera"
     },
     "comparison": {
       "title": "Parque Tangamanga I vs Tangamanga II",
       "description": "San Luis Potosí tiene dos Tangamangas. Comparten nombre y filosofía, pero están pensados para visitantes distintos.",
-      "t1Title": "Tangamanga I — 411 ha",
-      "t1Desc": "El parque icónico. Zoológico, planetario, acuario, jardín japonés, teatro, lagos y 400,000 árboles. Ideal para familias, turistas y primera visita.",
-      "t2Title": "Tangamanga II — 189 ha",
+      "t1Title": "Tangamanga I — 420 ha",
+      "t1Desc": "El parque icónico. Planetario, jardín japonés, teatros, lagos y cientos de miles de árboles (el zoológico está cerrado temporalmente). Ideal para familias, turistas y quienes lo visitan por primera vez.",
+      "t2Title": "Tangamanga II — Parque deportivo",
       "t2Desc": "Construido sobre el antiguo aeropuerto de la ciudad. Enfocado a deporte: tiro con arco, autódromo, canchas de fútbol, básquetbol, tenis, zona de mascotas y área infantil. Ideal para atletas y corredores.",
       "ctaText": "Visita la guía de Tangamanga II"
     },
@@ -783,7 +783,7 @@
       "title": "Bienvenido al Corazón de San Luis Potosí",
       "paragraph1": "El Centro Histórico es mucho más que un conjunto de edificios antiguos: es el alma viviente de la ciudad. Cada plaza, cada callejón, cada fachada de cantera rosa cuenta una historia que se remonta a más de cuatro siglos.",
       "paragraph2": "Aquí, el pasado y el presente conviven en perfecta armonía. Mientras admiras la majestuosidad de la arquitectura colonial, puedes saborear un café de especialidad en un patio del siglo XVIII, explorar galerías de arte contemporáneo o disfrutar de la mejor gastronomía de la ciudad.",
-      "stat1": "Edificios Históricos",
+      "stat1": "Patrimonio Mundial UNESCO (Camino Real)",
       "stat2": "Años de Historia",
       "stat3": "Año de Fundación"
     },
@@ -802,7 +802,7 @@
       "originsTitle": "Orígenes Coloniales",
       "originsText": "Fundada en 1592, San Luis Potosí nació gracias a la riqueza minera de la región. El Centro Histórico conserva la esencia de más de cuatro siglos de historia, con edificios barrocos, neoclásicos y coloniales que narran la grandeza de la Nueva España.",
       "architectureTitle": "Arquitectura Excepcional",
-      "architectureText": "El Centro Histórico es un museo al aire libre con más de 1,500 edificios históricos catalogados. La cantera rosa, característica de la ciudad, adorna fachadas de templos, casonas y edificios gubernamentales. Cada calle revela tesoros arquitectónicos que transportan a otra época.",
+      "architectureText": "El Centro Histórico es un museo al aire libre, protegido desde 1990 como Zona de Monumentos Históricos federal. La cantera rosa, característica de la ciudad, adorna fachadas de templos, casonas y edificios gubernamentales. Cada calle revela tesoros arquitectónicos que transportan a otra época.",
       "todayTitle": "Un Centro Vivo",
       "todayText": "Lejos de ser un museo congelado, el Centro Histórico pulsa con vida. Cafés en patios coloniales, galerías de arte contemporáneo en edificios del siglo XVIII, y restaurantes gourmet en antiguas casonas crean una fusión única entre pasado y presente."
     },
@@ -813,10 +813,10 @@
       "landmark2": "Catedral Metropolitana - Joya barroca del siglo XVII",
       "landmark3": "Teatro de la Paz - Uno de los teatros más bellos de México",
       "landmark4": "Templo del Carmen - Obra maestra del churrigueresco",
-      "landmark5": "Palacio de Gobierno - Historia viva con murales de Fernando Leal",
+      "landmark5": "Palacio de Gobierno - Donde Benito Juárez instaló el gobierno nacional en 1863",
       "museumsTitle": "Museos y Cultura",
       "museum1": "Museo Nacional de la Máscara - Colección única en México",
-      "museum2": "Museo Federico Silva - Arte contemporáneo en la Antigua Hacienda",
+      "museum2": "Museo Federico Silva - Escultura contemporánea en un edificio escolar de 1907 restaurado",
       "museum3": "Museo del Virreinato - Historia colonial",
       "museum4": "Centro de las Artes - Exposiciones y talleres"
     },
@@ -824,8 +824,8 @@
       "title": "Gastronomía y Vida Nocturna",
       "intro": "El Centro Histórico es un paraíso gastronómico donde tradición y vanguardia se encuentran. Desde cantinas centenarias hasta restaurantes de autor, cada esquina ofrece una experiencia culinaria memorable.",
       "restaurantsTitle": "Restaurantes Destacados",
-      "restaurant1": "La Gran Vía - Cocina tradicional y ambiente histórico desde 1940",
-      "restaurant2": "Café Pacífico - Clásico desde 1943",
+      "restaurant1": "La Gran Vía - Cocina española e internacional",
+      "restaurant2": "Café Pacífico - Un clásico del centro desde hace décadas",
       "restaurant3": "La Oruga y la Cebada - Cocina de autor",
       "restaurant4": "Restaurante 1913 - Alta cocina mexicana",
       "restaurant5": "La Posadita - Cocina mexicana y ambiente bohemio",
@@ -836,7 +836,7 @@
       "bar4": "Catrina Rooftop - Terraza con vista panorámica",
       "bar5": "El Callejón del Beso - Bar en callejón histórico",
       "marketsTitle": "Mercados Tradicionales",
-      "market1": "Mercado Hidalgo - El mercado principal desde 1906",
+      "market1": "Mercado Hidalgo - El mercado principal del centro",
       "market2": "Mercado República - Artesanías y antojitos",
       "market3": "Tianguis de los Domingos - Antigüedades y curiosidades",
       "market4": "Mercado 16 de Septiembre - Productos frescos"
@@ -864,8 +864,8 @@
     "hiddenGems": {
       "title": "Secretos del Centro",
       "intro": "Más allá de los sitios turísticos, el Centro Histórico guarda secretos que solo los locales conocen. Aquí te revelamos algunos de nuestros favoritos.",
-      "gem1Title": "Callejón del Cardo",
-      "gem1Text": "Un pasaje escondido con galerías de arte y cafés bohemios. Perfecto para una tarde tranquila explorando.",
+      "gem1Title": "Callejón del Cariño",
+      "gem1Text": "Un breve callejón del centro entre Venustiano Carranza y Madero, ligado a la leyenda de una pulquería del siglo XIX. Perfecto para una tarde tranquila explorando.",
       "gem2Title": "Los Patios Coloniales",
       "gem2Text": "Muchos edificios conservan patios interiores espectaculares. Entra a admirar fuentes, jardines y arquitectura íntima.",
       "gem3Title": "La Hora Dorada",
@@ -893,15 +893,15 @@
     },
     "funFacts": {
       "title": "Datos Curiosos",
-      "fact1": "El Centro Histórico tiene más de 1,500 edificios catalogados como patrimonio histórico.",
-      "fact2": "La cantera rosa que adorna los edificios se extrae de canteras locales y es única en México.",
+      "fact1": "El Centro Histórico forma parte del Camino Real de Tierra Adentro, inscrito como Patrimonio Mundial por la UNESCO en 2010.",
+      "fact2": "La cantera rosa que adorna los edificios proviene de yacimientos del valle que rodea a la ciudad, como las faldas de la Sierra de San Miguelito.",
       "fact3": "Benito Juárez estableció aquí la capital de México en 1863 durante la intervención francesa.",
       "fact4": "El Teatro de la Paz fue inaugurado en 1894 y es considerado uno de los más bellos de América Latina."
     },
     "cafes": {
       "title": "Cafés para Descansar",
       "intro": "Después de caminar, estos cafés son perfectos para recargar energías:",
-      "cafe1": "Café Pacífico - Clásico desde 1943",
+      "cafe1": "Café Pacífico - Un clásico del centro desde hace décadas",
       "cafe2": "Barista del Portal - Café de especialidad",
       "cafe3": "Café La Parroquia - Tradición potosina",
       "cafe4": "Cocolatte - Chocolate artesanal y café"
@@ -1552,7 +1552,7 @@
   "arrivalChecklist": {
     "meta": {
       "title": "Checklist de Llegada: Tus Primeros 30 Días en San Luis Potosí | San Luis Way",
-      "description": "Checklist completo de 45+ items para recién llegados a San Luis Potosí. Cubre trámites, servicios, banca, salud e integración social.",
+      "description": "Checklist completo de 39 items para recién llegados a San Luis Potosí. Cubre trámites, servicios, banca, salud e integración social.",
       "keywords": "checklist llegada San Luis Potosí, lista expatriados México, mudarse a SLP, primeros días San Luis Potosí",
       "ogTitle": "Checklist de Llegada: Tus Primeros 30 Días en San Luis Potosí",
       "ogDescription": "Tu checklist completo para establecerte en San Luis Potosí."
@@ -1560,7 +1560,7 @@
     "hero": {
       "badge": "Tus Primeros 30 Días",
       "title": "Checklist de Llegada",
-      "subtitle": "45+ items accionables para ayudarte a establecerte en San Luis Potosí exitosamente",
+      "subtitle": "39 items accionables para ayudarte a establecerte en San Luis Potosí exitosamente",
       "categories": "7 Categorías",
       "checkboxes": "Casillas Interactivas",
       "links": "Enlaces Oficiales"
@@ -1634,7 +1634,7 @@
           },
           "curp": {
             "title": "Obtén tu CURP",
-            "description": "ID de población de México. Gratis en Registro Civil con pasaporte y tarjeta de residencia."
+            "description": "Clave de población de México. El INM la asigna a residentes extranjeros; normalmente viene impresa en la tarjeta de residente. Descárgala gratis en gob.mx/curp."
           },
           "rfc": {
             "title": "Obtén RFC (si trabajas)",
@@ -1646,7 +1646,7 @@
           },
           "license": {
             "title": "Licencia de conducir mexicana (opcional)",
-            "description": "Aplica en Secretaría de Seguridad Pública. Costo: ~$800-1,200 MXN."
+            "description": "La expide la Secretaría de Finanzas del estado (oficinas recaudadoras). La primera licencia permanente es gratuita para residentes del estado (2026); lleva identificación y dos comprobantes de domicilio."
           }
         }
       },
@@ -1663,7 +1663,7 @@
           },
           "gas": {
             "title": "Arregla entrega de gas",
-            "description": "Proveedores: Gas Express Nieto, Zeta Gas. Tanques estacionarios se rellenan, portátiles se intercambian."
+            "description": "Entre los proveedores está Gas Express Nieto. Tanques estacionarios se rellenan, portátiles se intercambian."
           },
           "internet": {
             "title": "Configura internet",
@@ -1671,7 +1671,7 @@
           },
           "garrafon": {
             "title": "Compra garrafones de agua",
-            "description": "El agua de la llave NO es potable. Compra garrafones de 19L de Bonafont, Ciel. ~$30-40 MXN cada uno."
+            "description": "El agua de la llave NO es potable. Compra garrafones de 20L: Bonafont o Ciel ~$55-70 MXN cada uno; las purificadoras locales son más baratas."
           },
           "dispenser": {
             "title": "Consigue un dispensador de garrafón",
@@ -1717,11 +1717,11 @@
           },
           "pharmacy": {
             "title": "Localiza farmacias",
-            "description": "Farmacias Guadalajara, Farmacias del Ahorro. Muchos medicamentos disponibles sin receta."
+            "description": "Farmacias Guadalajara, Farmacias del Ahorro. Muchos medicamentos disponibles sin receta, pero los antibióticos la requieren."
           },
           "insurance": {
             "title": "Configura seguro de salud",
-            "description": "IMSS (~$6,000 MXN/año) o privado: GNP, Seguros Monterrey, Bupa."
+            "description": "Seguro voluntario del IMSS ($9,300-22,150 MXN/año según edad, 2026) o privado: GNP, Seguros Monterrey, Bupa."
           },
           "emergency": {
             "title": "Guarda números de emergencia",
@@ -1742,7 +1742,7 @@
           },
           "classes": {
             "title": "Inscríbete en clases de español",
-            "description": "UASLP ofrece cursos. Tutores privados: $150-300 MXN/hora."
+            "description": "Escuelas de idiomas y tutores privados: ~$150-350 MXN/hora."
           },
           "neighborhoods": {
             "title": "Explora las colonias",
@@ -1763,7 +1763,7 @@
         "items": {
           "supermarkets": {
             "title": "Encuentra supermercados",
-            "description": "Soriana (local), Walmart, HEB (premium), Costco (membresía)."
+            "description": "Soriana, Walmart, HEB (premium), Costco (membresía)."
           },
           "markets": {
             "title": "Explora mercados locales",

@@ -20,7 +20,7 @@ const neighborhoods = [
     badge: '#1 EXPAT CHOICE',
     badgeColor: 'bg-yellow-500',
     tags: ['Family-Friendly', 'Premium'],
-    description: 'The most popular neighborhood for expat families in San Luis Potosí, named after the nearby ITESM (Tec de Monterrey) campus.',
+    description: 'The most popular neighborhood for expat families in San Luis Potosí, home to the Tec de Monterrey (ITESM) San Luis Potosí campus.',
     whyExpatsChoose: [
       { title: 'Hospital Lomas', desc: 'Top private hospital with English-speaking doctors' },
       { title: 'Colegio Terranova', desc: 'Only IB school in SLP (10 min drive)' },
@@ -87,7 +87,7 @@ const neighborhoods = [
     badge: 'BEST VALUE',
     badgeColor: 'bg-orange-500',
     tags: ['Walkable', 'Cultural'],
-    description: 'UNESCO-recognized colonial downtown with stunning baroque architecture, pedestrian streets, plazas, and a vibrant cultural scene. The most walkable area in the city.',
+    description: 'Historic downtown (part of the UNESCO-listed Camino Real de Tierra Adentro) with stunning baroque architecture, pedestrian streets, plazas, and a vibrant cultural scene. The most walkable area in the city.',
     culturalHighlight: 'Living in Centro means being steps away from Plaza de Armas, Templo del Carmen, dozens of cafes, museums, and live music venues.',
     prices: [
       { type: 'Studio / 1-Bed', range: '$4,000 - $10,000' },
@@ -122,8 +122,8 @@ const neighborhoods = [
     badge: 'SHORT COMMUTE',
     badgeColor: 'bg-purple-500',
     tags: ['Industrial'],
-    description: 'The Parque Industrial Logistik in Villa de Reyes (about 25km south) is home to BMW, General Motors, and numerous automotive suppliers.',
-    importantNote: 'Most expats do NOT live near the industrial zone. Despite the shorter commute, the lack of international schools, quality healthcare, restaurants, and security infrastructure means that 90%+ of foreign employees choose to live in Lomas or Pedregal.',
+    description: 'The Parque Industrial Logistik in Villa de Reyes (about 25km south) is home to the BMW plant and numerous automotive suppliers; General Motors\' San Luis Potosí complex is also in Villa de Reyes.',
+    importantNote: 'Most expats do NOT live near the industrial zone. Despite the shorter commute, the lack of international schools, quality healthcare, restaurants, and security infrastructure means that most foreign employees choose to live in Lomas or Pedregal.',
     prices: [
       { type: 'Basic Apartment', range: '$7,000 - $12,000' },
       { type: '2-3 Bed House', range: '$12,000 - $20,000' },
@@ -170,12 +170,12 @@ const howToRentSteps = [
 ];
 
 const faqs = [
-  { q: 'What\'s the best neighborhood for expat families with children?', a: 'Lomas del Tecnológico or Privadas del Pedregal. These areas offer the best combination of safety, proximity to Colegio Internacional Terranova (the only IB school), Hospital Lomas, and expat-friendly services. 90%+ of corporate families with children choose these neighborhoods.' },
+  { q: 'What\'s the best neighborhood for expat families with children?', a: 'Lomas del Tecnológico or Privadas del Pedregal. These areas offer the best combination of safety, proximity to Colegio Internacional Terranova (the only IB school), Hospital Lomas, and expat-friendly services. Most corporate families with children choose these neighborhoods.' },
   { q: 'Can I rent without speaking Spanish?', a: 'Yes, in premium neighborhoods. Many real estate agents in Lomas and Pedregal speak English. However, having a Spanish-speaking colleague for contract review is recommended.' },
   { q: 'Do I need a Mexican guarantor (aval)?', a: 'Traditionally yes. For foreigners, alternatives include: (1) a larger security deposit (2-3 months), (2) an employer guarantee letter, or (3) a rental insurance policy.' },
   { q: 'What\'s included in the rent?', a: 'Usually nothing. Most rentals are unfurnished with utilities separate. Always clarify: water, gas, electricity, internet, and HOA fees.' },
   { q: 'Are furnished apartments available?', a: 'Yes, but at a premium. Furnished units typically cost 30-50% more. Search for "amueblado" on rental portals.' },
-  { q: 'Is fiber internet available?', a: 'In most areas, but not all. Lomas and Centro have good coverage. Newer developments may only have DSL. Some expats use Starlink (~$60 USD/month) as backup.' },
+  { q: 'Is fiber internet available?', a: 'In most areas, but not all. Lomas and Centro have good coverage. Newer developments may only have DSL. Some expats use Starlink (roughly MXN $1,350/month for the residential plan, May 2026 pricing) as backup.' },
   { q: 'How safe is San Luis Potosí for foreigners?', a: 'Considered safer than many Mexican states. The U.S. Department of State rates it Level 2 ("Exercise Increased Caution"). Expats report feeling safe in gated communities.' },
   { q: 'What\'s the commute like from Lomas to BMW/GM?', a: '25-35 minutes in normal traffic via Highway 57 south. Rush hour can add 10-15 minutes. Some companies provide shuttle buses.' },
   { q: 'Are pets allowed in rentals?', a: 'It depends. Many apartments prohibit pets or limit size. Houses generally have more flexibility. Always ask specifically about pets.' },
@@ -184,13 +184,13 @@ const faqs = [
   { q: 'Can I use USD for rent?', a: 'Pesos are standard. Some luxury landlords may accept USD, but most contracts are in pesos. Open a Mexican bank account for easier transfers.' },
   { q: 'Are there neighborhoods to avoid?', a: 'No specific neighborhoods are "dangerous" in the urban core. The seven neighborhoods in this guide are all viable options with different trade-offs.' },
   { q: 'What\'s parking like?', a: 'Centro: Extremely limited, street only. Lomas/Pedregal/Villa Magna: Properties typically include garage. Gated communities usually have assigned spots.' },
-  { q: 'How do prices compare to other Mexican cities?', a: 'SLP is approximately 35% cheaper than Mexico City and 20-30% cheaper than Querétaro. Prices have risen 10.3% in 2024 and an additional 9% in early 2025 due to continued industrial investment.' },
+  { q: 'How do prices compare to other Mexican cities?', a: 'Crowdsourced Numbeo data (Oct 2026) put Mexico City about 29% more expensive than SLP including rent, with rents roughly double. Querétaro also tends to run somewhat higher, though estimates vary by source. Home prices in the city of San Luis Potosí rose about 6.4% year over year in Q2 2026 (SHF housing price index).' },
 ];
 
 const sources = [
   { category: 'Government', items: [
     { name: 'INEGI - Censo de Población y Vivienda 2020', desc: 'Foreign-born population statistics', url: 'https://www.inegi.org.mx/programas/ccpv/2020/' },
-    { name: 'Sociedad Hipotecaria Federal 2025', desc: 'Housing price increase data (10.3% in 2024, 9% in Q1 2025)', url: 'https://www.gob.mx/shf' },
+    { name: 'Sociedad Hipotecaria Federal 2025', desc: 'Housing price index (SLP municipality +6.4% year over year, Q2 2026)', url: 'https://www.gob.mx/shf' },
     { name: 'U.S. Department of State - Travel Advisory', desc: 'Safety rating for SLP (Level 2)', url: 'https://travel.state.gov' },
   ]},
   { category: 'Industry', items: [
@@ -256,10 +256,10 @@ export default function NeighborhoodsGuidePage() {
   };
 
   const seoFaqs = [
-    { q: 'What is the best neighborhood for expats in San Luis Potosí?', a: 'Lomas del Tecnológico is the most popular expat neighborhood. It\'s walkable, has excellent restaurants and cafes, is well-patrolled, and has a mix of modern apartments and houses. Rent for a 2-bedroom starts at $12,000-18,000 MXN ($700-1,050 USD).' },
-    { q: 'How much is rent in San Luis Potosí?', a: 'Rent varies widely by neighborhood: budget apartments in Zona Industrial start at $7,000 MXN ($400 USD), mid-range in Lomas or Tangamanga runs $12,000-20,000 MXN ($700-1,200 USD), and premium homes in Villa Magna or La Loma Golf start at $35,000 MXN ($2,000+ USD).' },
+    { q: 'What is the best neighborhood for expats in San Luis Potosí?', a: 'Lomas del Tecnológico is the most popular expat neighborhood. It has excellent restaurants and cafes, many gated communities, and a mix of modern apartments and houses. 1–2 bedroom apartments generally run MXN $17,000–22,000 (about $915–1,185 USD at 18.58 MXN/USD, Oct 2026).' },
+    { q: 'How much is rent in San Luis Potosí?', a: 'Rent varies widely by neighborhood: basic apartments near the industrial zone start around MXN $7,000 (~$375 USD), Tangamanga 2-beds run about $12,000–18,000 (~$645–970 USD), Lomas 1–2 bed apartments about $17,000–22,000 (~$915–1,185 USD), and premium homes in Villa Magna or La Loma Golf typically start around $45,000 (~$2,400+ USD). USD at 18.58 MXN/USD (Oct 2026); asking rents are approximate.' },
     { q: 'Is Centro Histórico safe to live in?', a: 'During the day, Centro is very safe and well-patrolled — it\'s the tourist heart of the city. At night, exercise caution after 11 PM in quieter streets. Many expats love living in Centro for the colonial architecture, walkability, and cultural life, but prefer Lomas for family living.' },
-    { q: 'Which neighborhoods have the best schools nearby?', a: 'Lomas del Tecnológico is closest to Colegio Terranova and Colegio Motolinia (the top bilingual schools). Del Valle is near several private schools. For university-area living, the Zona Universitaria around UASLP offers affordable options near the main campus.' },
+    { q: 'Which neighborhoods have the best schools nearby?', a: 'Lomas del Tecnológico and Privadas del Pedregal are closest to Colegio Internacional Terranova (SLP\'s IB school) and several private bilingual schools. Del Valle is near several private schools. For university-area living, the Zona Universitaria around UASLP offers affordable options near the main campus.' },
   ];
 
   return (
@@ -286,7 +286,7 @@ export default function NeighborhoodsGuidePage() {
               description: t('seo.description'),
               inLanguage: locale,
               datePublished: '2025-01-01',
-              dateModified: '2026-04-07',
+              dateModified: '2026-10-27',
               author: {
                 '@type': 'Person',
                 '@id': 'https://www.sanluisway.com/about#editorial-team',
@@ -356,13 +356,13 @@ export default function NeighborhoodsGuidePage() {
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Ultimate Neighborhoods Guide
             </h1>
-            <LastUpdated date="2026-04-07" className="text-gray-100 mb-4" />
+            <LastUpdated date="2026-10-27" className="text-gray-100 mb-4" />
             <p className="text-xl text-gray-100 mb-6">
               Where to Live in San Luis Potosí — A Complete Guide for Expats
             </p>
             <div className="flex flex-wrap gap-3 text-sm">
               <span className="px-3 py-1 bg-green-500/20 text-green-300 rounded-full">✓ Verified</span>
-              <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full">20 Sources</span>
+              <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full">13 Sources</span>
               <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full">7 Neighborhoods</span>
               <span className="px-3 py-1 bg-orange-500/20 text-orange-300 rounded-full">25 min read</span>
             </div>
@@ -426,19 +426,19 @@ export default function NeighborhoodsGuidePage() {
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div className="bg-white/10 rounded-xl p-5 text-center">
-                  <p className="text-4xl font-bold mb-2">$950</p>
-                  <p className="text-sm text-white/80">USD Avg. Rent</p>
-                  <p className="text-xs text-white/60">2-bed apartment</p>
+                  <p className="text-4xl font-bold mb-2">$11.8K</p>
+                  <p className="text-sm text-white/80">MXN Avg. Rent</p>
+                  <p className="text-xs text-white/60">1-bed, city center (Numbeo, Oct 2026)</p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-5 text-center">
-                  <p className="text-4xl font-bold mb-2">35%</p>
+                  <p className="text-4xl font-bold mb-2">~22%</p>
                   <p className="text-sm text-white/80">Lower than CDMX</p>
-                  <p className="text-xs text-white/60">Cost of living</p>
+                  <p className="text-xs text-white/60">Cost of living incl. rent (Numbeo, Oct 2026)</p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-5 text-center">
-                  <p className="text-4xl font-bold mb-2">10.3%</p>
-                  <p className="text-sm text-white/80">Price Increase</p>
-                  <p className="text-xs text-white/60">2024-2025</p>
+                  <p className="text-4xl font-bold mb-2">6.4%</p>
+                  <p className="text-sm text-white/80">Home Price Increase</p>
+                  <p className="text-xs text-white/60">Year over year, Q2 2026 (SHF)</p>
                 </div>
                 <div className="bg-white/10 rounded-xl p-5 text-center">
                   <p className="text-4xl font-bold mb-2">1</p>
@@ -624,16 +624,16 @@ export default function NeighborhoodsGuidePage() {
                 </div>
                 <div className="p-6">
                   <p className="text-gray-700 mb-4">
-                    A traditional country club community with decades of history. Features a golf course, equestrian facilities, and a strong sense of community. Popular among established Mexican families and long-term expat residents.
+                    A traditional country club community dating to 1960. Features an 18-hole golf course and a strong sense of community. Popular among established Mexican families and long-term expat residents.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     <span className="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-xs font-medium">Country Club</span>
-                    <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Equestrian</span>
+                    <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">18-Hole Golf</span>
                     <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Traditional</span>
                   </div>
                   <div className="text-sm text-gray-600">
                     <strong>Rent:</strong> $35,000 - $65,000 MXN/month<br/>
-                    <strong>Best for:</strong> Families seeking club lifestyle, equestrian enthusiasts
+                    <strong>Best for:</strong> Families seeking club lifestyle, golfers
                   </div>
                 </div>
               </div>
@@ -723,7 +723,7 @@ export default function NeighborhoodsGuidePage() {
               </table>
             </div>
             <p className="text-sm text-gray-500 mt-4 italic">
-              Prices in MXN/month. Schools rating considers international/bilingual options. Security rating based on gated community availability.
+              Prices in MXN/month, approximate asking rents (bands reviewed Apr 2026; Lomas listings and Numbeo spot-checked 27 Oct 2026). Schools rating considers international/bilingual options. Security rating based on gated community availability.
             </p>
           </section>
 
@@ -852,7 +852,7 @@ export default function NeighborhoodsGuidePage() {
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-lg">
               <h4 className="font-semibold text-yellow-900 mb-2">Editorial Note</h4>
               <p className="text-yellow-800 text-sm">
-                All rental prices were verified against active listings on major Mexican real estate portals. Housing prices in SLP increased 10.3% in 2024 and 9% in early 2025. Market conditions change frequently. This guide is updated quarterly.
+                Rental bands were compiled from active listings on major Mexican real estate portals and are approximate. Home prices in the city of San Luis Potosí rose about 6.4% year over year in Q2 2026 (SHF). Market conditions change frequently—always confirm on live listings.
               </p>
             </div>
           </section>

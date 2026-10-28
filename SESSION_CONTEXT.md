@@ -1,5 +1,28 @@
 # Session Context Log - Coding Agent
 
+## 2026-10-27 — fix: site-wide fact-check of 3 blog posts + 19 static pages
+- Method: every claim needed two external (non-sanluisway) sources. Wrong items were fixed, unverifiable ones were softened or removed, and all 4 locales were patched. Per-page reports live in the session scratchpad (`factcheck/*.md`). Blog reports are in `public/factchecks/` (best-hikes, family-camping, xantolo).
+- Blog (Supabase, already live):
+  - best-hikes and family-camping updated via `publish.mjs --update`.
+  - xantolo updated with direct row edits on content/_es/_de/_ja: bolim instead of "chilpan", no "Ruta Xantolo", 2026 dates, travel time.
+- Worst findings:
+  - The health, family and school guides had fabricated clinics and schools with patterned phone numbers (812 4567…), a non-existent Christus Muguerza hospital, wrong hospital addresses and phones, an "Acuario Potosino" that doesn't exist, and "Parque Fundidora" (that one is in Monterrey).
+  - Unsourced emergency numbers were replaced with 911/089/078.
+- Other fixes:
+  - Tangamanga I: 420 ha, opened 1983, west side, no aquarium.
+  - Teatro de la Paz is at Villerías 205. Centro de las Artes is at Calzada de Guadalupe 705, and entry is not free.
+  - Fernando Leal murals are in the railway station. The alley is Callejón del Cariño. San Luis Rey day is Aug 25.
+  - Ford never built in SLP. US advisory levels for Mérida and Guadalajara corrected.
+  - IMSS voluntary 2026 table. Antibiotics need a prescription.
+  - 2026 bus fare 13.50, MetroRed free. INM 2026 fees verified, first resident card is 1 year.
+  - SEP 2026-27 calendar. Schools corrected: Terranova (IB), Instituto Potosino Marista, Colegio Chapultepec, Motolinía.
+- Open items for the owner:
+  - Corazón de Xoconostle package prices.
+  - Cost-of-living USD columns still use 17.54 (FIX was 18.58 on Oct 27).
+  - Unused stale keys in family-guide/school-guide/living-guide JSON.
+  - Legacy /living-guide and /expat-guide pages (they redirect) could be deleted.
+- Tests 608/608. tsc shows only the 4 pre-existing errors (stripe webhook, two test files).
+
 ## 2026-10-27 — reel-viral: owner revisions to 02, 03, 04 + FINALES folder (docs only, assets outside repo)
 - New folder `Desktop\FINALES\` (reels\, ads\) holds only upload-ready files. Every new final gets copied there.
 - 02 ahorita: option D is now "Sometime in the future" (correct), with the payoff "5 minutes… or 5 hours." 9 s. Caption decoder updated.

@@ -41,12 +41,12 @@ export default function HealthGuidePage() {
   ];
 
   const quickStats = [
-    { value: '3+', label: 'Major Private Hospitals', source: 'Directory 2024' },
-    { value: '50-70%', label: 'Lower Costs vs US', source: 'Numbeo 2024' },
+    { value: '4+', label: 'Major Private Hospitals', source: 'Directory 2026' },
+    { value: 'Lower', label: 'Costs vs US', source: 'Estimate' },
     { value: '911', label: 'Emergency Number', source: 'Official' },
     { value: '24/7', label: 'Emergency Services', source: 'Verified' },
-    { value: '$400-800', label: 'Avg Doctor Visit (MXN)', source: 'Market Survey' },
-    { value: '15+', label: 'Major Clinics', source: 'Directory' },
+    { value: '$400-800', label: 'Typical Doctor Visit (MXN)', source: 'Estimate' },
+    { value: 'IMSS', label: 'Voluntary Plan for Residents', source: 'imss.gob.mx' },
   ];
 
   const hospitals = {
@@ -55,57 +55,57 @@ export default function HealthGuidePage() {
         name: 'Hospital Lomas de San Luis',
         badge: 'TOP RATED',
         badgeColor: 'bg-yellow-500',
-        address: 'Av. Sierra Leona 550, Lomas 2a Sección',
-        phone: '444 824 2424',
-        emergency: '444 824 2400',
-        website: 'https://www.hospitallomas.com.mx',
+        address: 'Av. Palmira 600, Villas del Pedregal',
+        phone: '444 102 5900',
+        emergency: 'Main line (24/7 ER)',
+        website: 'https://www.google.com/maps/search/?api=1&query=Hospital+Lomas+de+San+Luis+Palmira+600',
         specialties: ['Cardiology', 'Oncology', 'Neurology', 'Orthopedics', 'Pediatrics', 'Gastroenterology'],
-        features: ['24/7 Emergency', 'ICU', 'English-speaking staff', 'International insurance accepted', 'Helipad'],
+        features: ['24/7 Emergency', 'ICU', 'Some English-speaking staff', 'Major insurers accepted'],
         rating: 4.8,
         costLevel: 'Premium',
-        erWaitTime: '15-30 min',
+        erWaitTime: 'Varies by triage',
       },
       {
         name: 'Hospital Angeles San Luis Potosí',
         badge: 'NATIONAL NETWORK',
         badgeColor: 'bg-blue-500',
         address: 'Antonio Aguilar No. 155, Burócratas del Estado',
-        phone: '444 813 3797',
-        emergency: '444 813 1700',
-        website: 'https://www.hospitalangeles.com',
+        phone: '444 834 0300',
+        emergency: '444 834 0300 (Urgencias, 24/7)',
+        website: 'https://en.hospitalangeles.com/potosi',
         specialties: ['General Surgery', 'Cardiology', 'Gastroenterology', 'Gynecology', 'Urology', 'Neurosurgery'],
         features: ['24/7 Emergency', 'Modern facilities', 'Part of national network', 'Insurance coordination', 'VIP rooms'],
         rating: 4.7,
         costLevel: 'Premium',
-        erWaitTime: '20-40 min',
+        erWaitTime: 'Varies by triage',
       },
       {
         name: 'Star Médica San Luis Potosí',
         badge: 'ADVANCED TECH',
         badgeColor: 'bg-purple-500',
-        address: 'Av. Prolongación Muñoz 102, Desarrollo del Pedregal',
-        phone: '444 834 7000',
-        emergency: '444 834 7000 ext. 7009',
+        address: 'Mariano Arista 735, Barrio de Tequisquiapan',
+        phone: '444 812 3737',
+        emergency: 'Main line (24/7 ER)',
         website: 'https://www.starmedica.com',
         specialties: ['Cardiology', 'Neurosurgery', 'Orthopedics', 'Oncology', 'Bariatric Surgery'],
         features: ['24/7 Emergency', 'Advanced imaging (MRI, CT)', 'Rehabilitation center', 'Modern ORs'],
         rating: 4.6,
         costLevel: 'High',
-        erWaitTime: '20-35 min',
+        erWaitTime: 'Varies by triage',
       },
       {
-        name: 'Christus Muguerza Hospital',
-        badge: 'EXPAT FRIENDLY',
+        name: 'Hospital Beneficencia Española',
+        badge: 'CENTRAL LOCATION',
         badgeColor: 'bg-green-500',
-        address: 'Av. Himno Nacional 2571',
-        phone: '444 825 5000',
-        emergency: '444 825 5100',
-        website: 'https://www.christusmuguerza.com.mx',
-        specialties: ['General Medicine', 'Cardiology', 'Pediatrics', 'Obstetrics', 'Internal Medicine'],
-        features: ['24/7 Emergency', 'Bilingual staff', 'US insurance accepted', 'Patient coordinators'],
+        address: 'Av. Venustiano Carranza 1090, Tequisquiapan',
+        phone: '444 813 4048',
+        emergency: 'Main line',
+        website: 'https://www.google.com/maps/search/?api=1&query=Beneficencia+Espa%C3%B1ola+San+Luis+Potos%C3%AD',
+        specialties: ['General Medicine', 'Internal Medicine', 'Surgery', 'Obstetrics'],
+        features: ['Emergency room', 'Private rooms', 'Major insurers accepted'],
         rating: 4.5,
         costLevel: 'Medium-High',
-        erWaitTime: '25-45 min',
+        erWaitTime: 'Varies by triage',
       },
     ],
     public: [
@@ -115,7 +115,7 @@ export default function HealthGuidePage() {
         phone: '444 834 2700',
         type: 'Teaching Hospital',
         services: ['Emergency', 'General medicine', 'Surgery', 'Pediatrics', 'Obstetrics', 'Trauma'],
-        note: 'Main public hospital, can be crowded',
+        note: 'Main public hospital (now in the IMSS-Bienestar network), can be crowded',
       },
       {
         name: 'Hospital del Niño y la Mujer',
@@ -127,8 +127,8 @@ export default function HealthGuidePage() {
       },
       {
         name: 'IMSS Hospital General de Zona No. 1',
-        address: 'Av. Nicolas Zapata 203, Centro',
-        phone: '(444) 812 4131',
+        address: 'Nicolás Zapata, Centro',
+        phone: '800 623 2323 (IMSS line)',
         type: 'Social Security',
         services: ['For IMSS beneficiaries only', 'Emergency', 'General medicine', 'Surgery'],
         note: 'Requires IMSS enrollment',
@@ -142,73 +142,52 @@ export default function HealthGuidePage() {
       icon: '👨‍⚕️',
       avgCost: '$400 - $800 MXN',
       waitTime: 'Same day - 2 days',
-      options: [
-        { name: 'Clínica Médica del Centro', address: 'Centro Histórico', phone: '444 812 4567', rating: 4.5 },
-        { name: 'Consultorios Médicos Lomas', address: 'Lomas del Tecnológico', phone: '444 817 8901', rating: 4.7 },
-        { name: 'MediCenter SLP', address: 'Zona Universitaria', phone: '444 820 3344', rating: 4.4 },
-      ],
+      whereToLook: 'Hospital medical towers (Lomas, Angeles, Star Médica) and Lomas del Tecnológico',
     },
     {
       specialty: 'Dentistry',
       icon: '🦷',
       avgCost: '$500 - $1,500 MXN',
       waitTime: '1-3 days',
-      options: [
-        { name: 'Dental Spa SLP', address: 'Lomas', phone: '444 811 2233', rating: 4.8, note: 'Cosmetic & general' },
-        { name: 'Clínica Dental Sonrisa', address: 'Tequis', phone: '444 814 5566', rating: 4.5 },
-        { name: 'OrthoSmile Especialistas', address: 'Lomas', phone: '444 825 7788', rating: 4.6, note: 'Orthodontics' },
-      ],
+      whereToLook: 'Lomas, Tequisquiapan and Carranza avenue; compare reviews on Doctoralia',
     },
     {
       specialty: 'Dermatology',
       icon: '🩺',
       avgCost: '$600 - $1,200 MXN',
       waitTime: '3-7 days',
-      options: [
-        { name: 'Dermacentro SLP', address: 'Lomas', phone: '444 825 3344', rating: 4.7 },
-        { name: 'Clínica Dermatológica del Centro', address: 'Centro', phone: '444 812 7788', rating: 4.4 },
-      ],
+      whereToLook: 'Private hospital medical towers; search board-certified dermatologists on Doctoralia',
     },
     {
       specialty: 'Ophthalmology',
       icon: '👁️',
       avgCost: '$500 - $1,000 MXN',
       waitTime: '3-5 days',
-      options: [
-        { name: 'Centro Oftalmológico San Luis', address: 'Lomas', phone: '444 817 9900', rating: 4.8 },
-        { name: 'Clínica de Ojos', address: 'Zona Universitaria', phone: '444 820 1122', rating: 4.5 },
-        { name: 'LASIK SLP', address: 'Pedregal', phone: '444 834 5566', rating: 4.7, note: 'Laser surgery' },
-      ],
+      whereToLook: 'Private hospital medical towers and specialist eye clinics; ask about LASIK separately',
     },
     {
       specialty: 'Pediatrics',
       icon: '👶',
       avgCost: '$500 - $900 MXN',
       waitTime: 'Same day - 2 days',
-      options: [
-        { name: 'Pediatras Asociados SLP', address: 'Lomas', phone: '444 824 5566', rating: 4.9 },
-        { name: 'Clínica Pediátrica San Luis', address: 'Himno Nacional', phone: '444 818 7788', rating: 4.6 },
-      ],
+      whereToLook: 'Hospital medical towers; Hospital del Niño y la Mujer for public care',
     },
     {
       specialty: 'Gynecology & Obstetrics',
       icon: '🤰',
       avgCost: '$600 - $1,200 MXN',
       waitTime: '2-5 days',
-      options: [
-        { name: 'Ginecología Integral SLP', address: 'Lomas', phone: '444 817 4455', rating: 4.8 },
-        { name: 'Centro de Fertilidad San Luis', address: 'Pedregal', phone: '444 834 2233', rating: 4.7 },
-      ],
+      whereToLook: 'Private hospital medical towers; Hospital del Niño y la Mujer for public care',
     },
   ];
 
   const emergencyContacts = [
     { name: 'General Emergency', number: '911', description: 'Police, Fire, Medical - 24/7', priority: true },
-    { name: 'Red Cross (Cruz Roja)', number: '444 815 0519', description: 'Ambulance services - 24/7', priority: true },
-    { name: 'Civil Protection', number: '444 814 4080', description: 'Disasters & emergencies' },
-    { name: 'Fire Department', number: '444 812 2626', description: 'Fire emergencies' },
-    { name: 'Poison Control', number: '800 123 4567', description: 'Toxic exposure emergencies' },
-    { name: 'LOCATEL', number: '444 812 3456', description: 'Information & assistance' },
+    { name: 'Ambulance (Cruz Roja)', number: '911', description: 'Ambulances are dispatched through 911', priority: true },
+    { name: 'Hospital Angeles ER', number: '444 834 0300', description: 'Private emergency room - 24/7' },
+    { name: 'Hospital Central', number: '444 834 2700', description: 'Main public hospital - 24/7' },
+    { name: 'Hospital del Niño y la Mujer', number: '444 826 5002', description: 'Women & children - 24/7' },
+    { name: 'Anonymous Crime Report', number: '089', description: 'National anonymous reporting line' },
   ];
 
   const insuranceOptions = [
@@ -217,11 +196,11 @@ export default function HealthGuidePage() {
       name: 'IMSS (Instituto Mexicano del Seguro Social)',
       description: 'For employed individuals. Employer makes contributions.',
       coverage: 'Comprehensive: medical, dental, prescriptions, hospitalization, surgery',
-      cost: 'Included in employment (employer contribution ~5% of salary)',
+      cost: 'Via employment (employer and employee contributions); residents without a job can buy the voluntary plan: $9,300-22,150 MXN/year per person by age (2026)',
       pros: ['No out-of-pocket costs', 'Prescriptions included', 'Disability coverage'],
       cons: ['Long wait times', 'Crowded facilities', 'Limited specialist access'],
       website: 'https://www.imss.gob.mx',
-      bestFor: 'Employees with formal employment contracts',
+      bestFor: 'Formal employees; temporary or permanent residents as a low-cost backup',
     },
     {
       type: 'Public',
@@ -237,12 +216,12 @@ export default function HealthGuidePage() {
     {
       type: 'Public',
       name: 'IMSS-Bienestar',
-      description: 'Free healthcare for uninsured Mexican residents.',
+      description: 'Free care at public facilities for people without social security. San Luis Potosí is part of the IMSS-Bienestar network.',
       coverage: 'Basic medical services at public facilities',
       cost: 'Free',
       pros: ['No cost', 'Accessible', 'Basic coverage'],
       cons: ['Very long waits', 'Limited services', 'Basic facilities'],
-      website: 'https://www.gob.mx/imss',
+      website: 'https://www.gob.mx/imss-bienestar',
       bestFor: 'Those without other options',
     },
     {
@@ -250,7 +229,7 @@ export default function HealthGuidePage() {
       name: 'GNP Seguros',
       description: 'Major Mexican insurance provider with extensive hospital network.',
       coverage: 'Customizable: hospital, outpatient, dental, vision, international',
-      cost: '$3,000 - $15,000+ MXN/month',
+      cost: 'Varies widely by age, deductible and plan - request a quote',
       pros: ['Extensive network', 'Fast claims', 'International options'],
       cons: ['Higher premiums', 'Deductibles apply', 'Pre-existing exclusions'],
       website: 'https://www.gnp.com.mx',
@@ -261,7 +240,7 @@ export default function HealthGuidePage() {
       name: 'AXA Seguros',
       description: 'International insurance company with strong presence in Mexico.',
       coverage: 'Major medical, dental, vision, maternity options',
-      cost: '$2,500 - $12,000+ MXN/month',
+      cost: 'Varies widely by age, deductible and plan - request a quote',
       pros: ['International company', 'Good customer service', 'Flexible plans'],
       cons: ['Moderate premiums', 'Network limitations'],
       website: 'https://www.axa.mx',
@@ -269,13 +248,13 @@ export default function HealthGuidePage() {
     },
     {
       type: 'Private',
-      name: 'Seguros Monterrey (MetLife)',
-      description: 'Part of MetLife, offering comprehensive health plans.',
+      name: 'Seguros Monterrey New York Life',
+      description: 'Part of New York Life, offering major medical (gastos médicos mayores) plans.',
       coverage: 'Hospital, outpatient, preventive care, dental',
-      cost: '$3,000 - $10,000+ MXN/month',
-      pros: ['MetLife backing', 'Preventive focus', 'Wellness programs'],
+      cost: 'Varies widely by age, deductible and plan - request a quote',
+      pros: ['New York Life backing', 'Preventive focus', 'Wellness programs'],
       cons: ['Mid-range premiums', 'Pre-existing waiting periods'],
-      website: 'https://www.segurosmonterrey.com.mx',
+      website: 'https://www.mnyl.com.mx',
       bestFor: 'Those wanting preventive care focus',
     },
     {
@@ -283,7 +262,7 @@ export default function HealthGuidePage() {
       name: 'BUPA Global',
       description: 'Premium international health insurance for expats.',
       coverage: 'Worldwide coverage, evacuation, repatriation',
-      cost: '$800 - $2,000+ USD/month',
+      cost: 'Premium international pricing (USD) - request a quote',
       pros: ['Global coverage', 'Evacuation included', 'Premium service'],
       cons: ['Very expensive', 'May be overkill for Mexico'],
       website: 'https://www.bupaglobal.com',
@@ -296,7 +275,7 @@ export default function HealthGuidePage() {
       step: 1,
       title: 'Choose Your Hospital',
       description: 'Select a hospital based on your needs: emergency, specialist, or routine care.',
-      tips: ['Private hospitals offer faster service', 'Check if your insurance is accepted', 'Lomas and Angeles are most expat-friendly'],
+      tips: ['Private hospitals offer faster service', 'Check if your insurance is accepted', 'Lomas, Angeles and Star Médica are popular with expats'],
       time: '5 min',
     },
     {
@@ -393,7 +372,7 @@ export default function HealthGuidePage() {
       name: 'Farmacias del Ahorro',
       type: '24/7 Locations Available',
       services: ['24/7 locations', 'Home delivery', 'Generic medications', 'Basic health checks', 'Loyalty program'],
-      doctorConsult: 'FREE (voluntary donation)',
+      doctorConsult: 'Low-cost; varies by branch',
       website: 'https://www.fahorro.com',
       rating: 4.5,
     },
@@ -401,7 +380,7 @@ export default function HealthGuidePage() {
       name: 'Farmacias Guadalajara',
       type: 'Extended Hours',
       services: ['Extended hours (7am-11pm)', 'Wide selection', 'Loyalty program', 'Online ordering', 'Convenience items'],
-      doctorConsult: '$35-50 MXN',
+      doctorConsult: 'Varies by branch',
       website: 'https://www.farmaciasguadalajara.com',
       rating: 4.4,
     },
@@ -409,7 +388,7 @@ export default function HealthGuidePage() {
       name: 'Farmacias Similares',
       type: 'Budget-Friendly',
       services: ['Affordable generics', 'Doctor consultations', 'Widespread locations', 'Basic medications'],
-      doctorConsult: '70-85 MXN',
+      doctorConsult: 'About $50-80 MXN',
       website: 'https://www.farmaciasdesimilares.com.mx',
       rating: 4.2,
     },
@@ -426,15 +405,15 @@ export default function HealthGuidePage() {
   const faqs = [
     {
       question: 'What are the best hospitals for expats in San Luis Potosí?',
-      answer: 'The top hospitals for expats are Hospital Lomas (444 824 2424) and Hospital Angeles (444 813 3797). Both have English-speaking staff, accept international insurance, and offer high-quality care. Christus Muguerza is also expat-friendly with bilingual patient coordinators.'
+      answer: 'Expats most often use Hospital Lomas de San Luis (444 102 5900), Hospital Angeles (444 834 0300) and Star Médica (444 812 3737). All three are private hospitals with 24/7 emergency rooms, some English-speaking doctors, and agreements with major insurers. Confirm that your specific insurer is accepted before treatment.'
     },
     {
       question: 'How much does a doctor visit cost in SLP?',
-      answer: 'General practitioner visits cost $400-800 MXN ($25-50 USD). Specialists range from $600-1,500 MXN ($35-90 USD). Pharmacy consultations are only $35-60 MXN for minor issues. These costs are 50-70% lower than US prices.'
+      answer: 'Private general practitioner visits typically cost $400-800 MXN. Specialists usually charge $600-1,500 MXN. Pharmacy-adjacent clinics charge much less (roughly $50-120 MXN) for minor issues. These are estimates; prices vary by doctor, and all are well below typical US out-of-pocket prices.'
     },
     {
       question: 'Do I need health insurance in Mexico?',
-      answer: 'While not legally required for visitors, health insurance is highly recommended. Medical costs are affordable, but a serious illness or accident can still be expensive. Options include Mexican private insurance ($2,500-15,000 MXN/month), international expat insurance, or IMSS through formal employment.'
+      answer: 'While not legally required for visitors, health insurance is highly recommended. Medical costs are affordable, but a serious illness or accident can still be expensive. Options include Mexican private major-medical insurance (price depends heavily on age), international expat insurance, IMSS through formal employment, or IMSS voluntary enrollment for residents.'
     },
     {
       question: 'Can I use my US health insurance in Mexico?',
@@ -442,27 +421,27 @@ export default function HealthGuidePage() {
     },
     {
       question: 'How do I call an ambulance in San Luis Potosí?',
-      answer: 'Dial 911 for general emergencies or call Cruz Roja (Red Cross) directly at 444 815 0519 for ambulance service. Private hospitals also have their own ambulance services - Hospital Lomas: 444 824 2400, Hospital Angeles: 444 813 1700.'
+      answer: 'Dial 911; Cruz Roja (Red Cross) ambulances are dispatched through it. Private hospitals also run their own ambulances - for example, Hospital Angeles: 444 834 0300.'
     },
     {
       question: 'Are medications available without prescription in Mexico?',
-      answer: 'Many medications that require prescriptions in the US/Canada are available over-the-counter in Mexico, including some antibiotics and pain medications. However, controlled substances (opioids, benzodiazepines) require prescriptions. Pharmacists can often recommend medications for common ailments.'
+      answer: 'Some medications that need a prescription in the US/Canada are sold over the counter in Mexico. However, antibiotics have required a prescription since 2010, and controlled substances (opioids, benzodiazepines) require a special prescription. Pharmacists can often recommend medications for common ailments.'
     },
     {
       question: 'Do doctors in SLP speak English?',
-      answer: 'Many doctors in private hospitals speak English, especially at Hospital Lomas and Hospital Angeles. When booking, request an English-speaking physician. Younger doctors are more likely to speak English. For public hospitals, English speakers are less common.'
+      answer: 'Many doctors in private hospitals speak some English, especially at Hospital Lomas, Hospital Angeles and Star Médica. When booking, request an English-speaking physician. For public hospitals, English speakers are less common.'
     },
     {
       question: 'What is IMSS and can expats get it?',
-      answer: 'IMSS (Instituto Mexicano del Seguro Social) is Mexico\'s public health system. Expats can access IMSS through: 1) Formal employment (employer enrolls you), or 2) Voluntary enrollment if you have temporary/permanent residency (costs vary by age). Coverage includes medical, dental, and prescriptions.'
+      answer: 'IMSS (Instituto Mexicano del Seguro Social) is Mexico\'s public health system. Expats can access IMSS through: 1) Formal employment (employer enrolls you), or 2) Voluntary enrollment (Seguro de Salud para la Familia) if you have temporary or permanent residency. The 2026 annual fee is $9,300-22,150 MXN per person depending on age. Some pre-existing conditions are excluded and others have waiting periods.'
     },
     {
       question: 'How do emergency rooms work in Mexico?',
-      answer: 'Private hospital ERs work similarly to the US: register, triage, treatment, payment. Wait times are typically shorter (15-45 min). Public hospital ERs can have very long waits (2-6+ hours) but treat everyone. Private ERs require payment or insurance verification upfront.'
+      answer: 'Private hospital ERs work similarly to the US: register, triage, treatment, payment. Wait times are usually shorter than in public ERs. Public hospital ERs can have very long waits but treat everyone. Private ERs require payment or insurance verification upfront.'
     },
     {
       question: 'What vaccinations are recommended for SLP?',
-      answer: 'Standard vaccinations recommended: Hepatitis A & B, Typhoid, Tetanus update, and routine vaccinations. COVID-19 vaccination is widely available. Rabies vaccine recommended if you\'ll work with animals. Yellow fever not required unless coming from endemic areas.'
+      answer: 'Standard vaccinations recommended: Hepatitis A & B, Typhoid, Tetanus update, and routine vaccinations. COVID-19 vaccination is widely available. Ask about rabies vaccine if you\'ll work with animals. The CDC says yellow fever vaccine is neither required nor recommended for Mexico.'
     },
     {
       question: 'How do I find a specialist in San Luis Potosí?',
@@ -470,28 +449,28 @@ export default function HealthGuidePage() {
     },
     {
       question: 'What are pharmacy consultations and how do they work?',
-      answer: 'Many pharmacies (Similares, Ahorro, Guadalajara) have in-house doctors offering consultations for $35-60 MXN. These are great for minor issues: cold/flu, minor infections, skin rashes. The doctor can diagnose and prescribe medications on the spot. Not suitable for serious conditions.'
+      answer: 'Many pharmacies (Similares, Ahorro, Guadalajara) have adjacent doctor\'s offices offering low-cost consultations (roughly $50-120 MXN). These are great for minor issues: cold/flu, minor infections, skin rashes. The doctor can diagnose and prescribe medications on the spot. Not suitable for serious conditions.'
     },
     {
       question: 'Is dental care good and affordable in SLP?',
-      answer: 'Yes, dental care in SLP is excellent and 60-80% cheaper than the US. A cleaning costs $500-800 MXN, fillings $400-1,000 MXN, and crowns $3,000-6,000 MXN. Many dentists trained in the US or have US certifications. Popular clinics include Dental Spa and OrthoSmile.'
+      answer: 'Yes, dental care in SLP is excellent and 60-80% cheaper than the US. A cleaning costs $500-800 MXN, fillings $400-1,000 MXN, and crowns $3,000-6,000 MXN. Prices vary; ask for a written estimate before treatment and check reviews on Doctoralia.'
     },
     {
       question: 'What should I do if I have a medical emergency?',
-      answer: 'For serious emergencies: 1) Call 911 or go directly to nearest private hospital ER, 2) Hospital Lomas ER: 444 824 2400, 3) Hospital Angeles ER: 444 813 1700. For ambulance: Cruz Roja 444 815 0519. Don\'t wait if having chest pain, stroke symptoms, or severe injuries.'
+      answer: 'For serious emergencies: 1) Call 911 or go directly to nearest private hospital ER, 2) Hospital Angeles ER: 444 834 0300, 3) Hospital Central (public): 444 834 2700. For an ambulance, dial 911. Don\'t wait if having chest pain, stroke symptoms, or severe injuries.'
     },
     {
       question: 'Can I get my prescriptions filled from the US?',
-      answer: 'Mexican pharmacies can fill US prescriptions, but may require a Mexican prescription for certain medications. Many medications are available without prescription. Bring your US prescription bottles for reference. Some pharmacies can contact your US doctor for verification.'
+      answer: 'Antibiotics and controlled medications require a prescription from a doctor licensed in Mexico; a US prescription is not enough. Many other medications are available without a prescription. Bring your US prescription bottles for reference, or see a pharmacy-adjacent doctor for a local prescription.'
     },
   ];
 
   const sources = [
     { name: 'Secretaría de Salud de San Luis Potosí', url: 'https://slpsalud.gob.mx', type: 'Government' },
     { name: 'IMSS Official Portal', url: 'https://www.imss.gob.mx', type: 'Government' },
-    { name: 'Hospital Lomas de San Luis', url: 'https://www.hospitallomas.com.mx', type: 'Institution' },
-    { name: 'Hospital Angeles Network', url: 'https://www.hospitalangeles.com', type: 'Institution' },
-    { name: 'Numbeo Cost of Living Index 2024', url: 'https://www.numbeo.com', type: 'Data' },
+    { name: 'Hospital Angeles San Luis Potosí', url: 'https://en.hospitalangeles.com/potosi', type: 'Institution' },
+    { name: 'IMSS Seguro de Salud para la Familia', url: 'https://www.imss.gob.mx/derechoH/seguro-salud-familia', type: 'Government' },
+    { name: 'CDC Travelers\' Health: Mexico', url: 'https://wwwnc.cdc.gov/travel/destinations/traveler/none/mexico', type: 'Government' },
     { name: 'COFEPRIS (Federal Health Regulator)', url: 'https://www.gob.mx/cofepris', type: 'Government' },
     { name: 'Doctoralia México', url: 'https://www.doctoralia.com.mx', type: 'Directory' },
     { name: 'GNP Seguros', url: 'https://www.gnp.com.mx', type: 'Insurance' },
@@ -500,10 +479,10 @@ export default function HealthGuidePage() {
   ];
 
   const seoFaqs = [
-    { q: 'How much does a doctor visit cost in San Luis Potosí?', a: 'A general practitioner consultation costs $400-800 MXN ($25-50 USD) at private clinics. Specialists like cardiologists or dermatologists charge $800-1,500 MXN ($50-90 USD). Many pharmacy clinics (Similares, Farmacias Guadalajara) offer consultations for $35-50 MXN ($2-3 USD).' },
-    { q: 'Which hospitals in SLP have English-speaking doctors?', a: 'Hospital Lomas de San Luis, Star Médica San Luis Potosí, and Hospital Ángeles are the main private hospitals with English-speaking staff. Hospital Central Dr. Ignacio Morones Prieto is the largest public hospital but English is limited.' },
-    { q: 'Do I need private health insurance as an expat in SLP?', a: 'Strongly recommended. While IMSS (public healthcare) is available to residents for ~$500 USD/year, wait times are long and English support is minimal. Private insurance (GNP, AXA, BUPA) costs $1,500-3,000 USD/year and gives access to the private hospital network with much shorter wait times.' },
-    { q: 'Can I buy prescription medication without a prescription in Mexico?', a: 'Most medications except controlled substances (opioids, benzodiazepines, antibiotics since 2010) can be purchased over-the-counter at Mexican pharmacies. Prices are typically 50-80% lower than in the US. Always bring a copy of your prescription for controlled medications.' },
+    { q: 'How much does a doctor visit cost in San Luis Potosí?', a: 'A general practitioner consultation typically costs $400-800 MXN at private clinics. Specialists like cardiologists or dermatologists usually charge $800-1,500 MXN. Pharmacy-adjacent clinics (Similares, Del Ahorro, Farmacias Guadalajara) offer consultations for roughly $50-120 MXN. Prices are estimates and vary by doctor.' },
+    { q: 'Which hospitals in SLP have English-speaking doctors?', a: 'Hospital Lomas de San Luis, Star Médica San Luis Potosí, and Hospital Ángeles are the main private hospitals where you are most likely to find English-speaking doctors. Hospital Central Dr. Ignacio Morones Prieto is the main public hospital, but English is limited.' },
+    { q: 'Do I need private health insurance as an expat in SLP?', a: 'Strongly recommended. IMSS voluntary coverage is available to temporary and permanent residents for $9,300-22,150 MXN per person per year in 2026 (depending on age), but wait times are long, English support is minimal, and some pre-existing conditions are excluded. Private insurance (GNP, AXA, BUPA) costs more, rises steeply with age, and gives access to the private hospital network with much shorter waits.' },
+    { q: 'Can I buy prescription medication without a prescription in Mexico?', a: 'Many medications can be bought over the counter at Mexican pharmacies, but antibiotics (since 2010) and controlled substances (opioids, benzodiazepines) require a prescription from a doctor licensed in Mexico. Prices for many drugs, especially generics, are lower than in the US. Bring a copy of your prescription and medication list.' },
   ];
 
   return (
@@ -531,7 +510,7 @@ export default function HealthGuidePage() {
               description: 'Complete guide to healthcare in San Luis Potosí: hospitals, doctors, insurance, pharmacies, and step-by-step guides for expats.',
               inLanguage: locale,
               datePublished: '2025-01-01',
-              dateModified: '2026-04-10',
+              dateModified: '2026-10-27',
               author: {
                 '@type': 'Person',
                 '@id': 'https://www.sanluisway.com/about#editorial-team',
@@ -603,7 +582,7 @@ export default function HealthGuidePage() {
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
                 Healthcare Guide: Hospitals, Doctors & Insurance
               </h1>
-              <LastUpdated date="2026-04-07" className="text-emerald-100 mb-4" />
+              <LastUpdated date="2026-10-27" className="text-emerald-100 mb-4" />
               <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
                 San Luis Potosí - Complete Medical Services for Expats
               </p>
@@ -641,7 +620,7 @@ export default function HealthGuidePage() {
               </h2>
               <div className="prose max-w-none text-gray-700">
                 <p className="text-lg mb-4">
-                  San Luis Potosí offers <strong>high-quality healthcare at 50-70% lower costs</strong> than the US. The city has excellent private hospitals with English-speaking staff, a public healthcare system for residents, and affordable pharmacy consultations for minor issues.
+                  San Luis Potosí offers <strong>good private healthcare at much lower prices</strong> than the US. The city has excellent private hospitals with English-speaking staff, a public healthcare system for residents, and affordable pharmacy consultations for minor issues.
                 </p>
               </div>
 
@@ -659,10 +638,10 @@ export default function HealthGuidePage() {
               <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
                 <h3 className="font-semibold text-yellow-800 mb-2">🎯 Key Takeaways</h3>
                 <ul className="text-sm text-yellow-900 space-y-1">
-                  <li>• <strong>Emergency:</strong> Dial 911 or go to Hospital Lomas/Angeles ER</li>
-                  <li>• <strong>Best Hospitals:</strong> Hospital Lomas and Hospital Angeles for expats</li>
-                  <li>• <strong>Insurance:</strong> Private insurance $2,500-15,000 MXN/month; IMSS through employment</li>
-                  <li>• <strong>Minor Issues:</strong> Pharmacy consultations only $35-60 MXN</li>
+                  <li>• <strong>Emergency:</strong> Dial 911 or go to a private ER (Lomas, Angeles, Star Médica)</li>
+                  <li>• <strong>Popular with Expats:</strong> Hospital Lomas, Hospital Angeles and Star Médica</li>
+                  <li>• <strong>Insurance:</strong> Private plans priced by age; IMSS via employment or voluntary plan ($9,300-22,150 MXN/year, 2026)</li>
+                  <li>• <strong>Minor Issues:</strong> Pharmacy-adjacent consultations, roughly $50-120 MXN</li>
                 </ul>
               </div>
 
@@ -837,19 +816,9 @@ export default function HealthGuidePage() {
                       <span className="text-blue-700">Wait: {category.waitTime}</span>
                     </div>
                   </div>
-                  <div className="space-y-3">
-                    {category.options.map((option, idx) => (
-                      <div key={idx} className="border-b border-gray-100 pb-2 last:border-0">
-                        <div className="flex items-center justify-between">
-                          <p className="font-medium text-gray-900">{option.name}</p>
-                          <span className="text-yellow-500 text-sm">★ {option.rating}</span>
-                        </div>
-                        <p className="text-gray-500 text-sm">{option.address}</p>
-                        <p className="text-emerald-600 text-sm">{option.phone}</p>
-                        {option.note && <p className="text-gray-400 text-xs italic">{option.note}</p>}
-                      </div>
-                    ))}
-                  </div>
+                  <p className="text-gray-600 text-sm">
+                    <strong>Where to look:</strong> {category.whereToLook}
+                  </p>
                 </div>
               ))}
             </div>
@@ -1077,7 +1046,7 @@ export default function HealthGuidePage() {
 
             <div className="mt-6 bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
               <p className="text-blue-800">
-                <strong>Pro Tip:</strong> Pharmacy consultations ($35-60 MXN) are great for minor issues like colds, minor infections, or skin rashes. The doctor can diagnose and prescribe medications on the spot.
+                <strong>Pro Tip:</strong> Pharmacy-adjacent consultations (roughly $50-120 MXN) are great for minor issues like colds, minor infections, or skin rashes. The doctor can diagnose and prescribe medications on the spot.
               </p>
             </div>
           </section>
@@ -1128,7 +1097,7 @@ export default function HealthGuidePage() {
                 ))}
               </div>
               <p className="text-xs text-gray-500 mt-4">
-                Last updated: December 2024 | Prices and information may change. Always verify current rates.
+                Last updated: October 2026 | Prices and information may change. Always verify current rates.
               </p>
             </div>
           </section>

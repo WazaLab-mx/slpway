@@ -128,7 +128,7 @@ export default function CentroHistorico() {
                 whileHover={{ scale: 1.05 }}
                 className="text-center p-4 rounded-lg bg-gradient-to-br from-amber-50 to-orange-50 transition-all cursor-default"
               >
-                <div className="text-3xl font-bold text-amber-600 mb-1">1,500+</div>
+                <div className="text-3xl font-bold text-amber-600 mb-1">2010</div>
                 <div className="text-sm text-gray-600">{t('centroHistorico.intro.stat1')}</div>
               </motion.div>
               <motion.div

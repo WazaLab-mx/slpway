@@ -152,7 +152,7 @@ export default {
     joya: {
       title: 'Cráter Joya Honda',
       paragraphs: [
-        'A dry volcanic crater about 1.4 km across and some 300 m deep, protected as a state natural monument. The hike circles the rim for about 5–6 km with big views into the crater, and wooden stairs lead down inside. Part of the loop has no defined path, with brush, loose rock and stone walls, and the rim is very windy.',
+        'A dry volcanic crater roughly 1.2–1.4 km across and some 300 m deep, protected as a state natural monument. The hike circles the rim for about 5–6 km with big views into the crater, and wooden stairs lead down inside. Part of the loop has no defined path, with brush, loose rock and stone walls, and the rim is very windy.',
         'Access is via Highway 57 north to Estación Ventura (km 33), then about 5 km of dirt road. In 2024 entry was MXN 25 (MXN 300 to camp inside), with dry toilets and gorditas on weekends; a 2025 review describes the facilities as a little neglected.',
       ],
       fact: [
@@ -196,7 +196,7 @@ export default {
       title: 'La Ventana (Sierra de San Miguelito)',
       paragraphs: [
         'The signature hike of San Luis Potosí. La Ventana (“the window”) is a natural rock arch near one of the highest points of the Sierra de San Miguelito, reached through oak and pine woodland from the community of La Amapola. The route is marked with ribbons and blue and white paint, and finishes with a steep rock scramble up to the arch, so it isn’t for small children. A detour of about 1 km each way leads to Cerro de la Cruz, with an altar to the Virgin of Guadalupe.',
-        'Getting there is part of the adventure: from Highway 80 toward Guadalajara, turn off toward El Mezquital and drive about 10 km of rough dirt road; a high-clearance car is recommended. The ejido charges <strong>MXN 50 per person</strong> (confirmed in 2026) and watches your car. Pay only at the ejido parking area. Start early, carry at least 3 litres of water and download the track: in February 2025 a hiker went missing near this route after taking an alternate path.',
+        'Getting there is part of the adventure: from Highway 80 toward Guadalajara, turn off toward El Mezquital and drive about 10 km of rough dirt road; a high-clearance car is recommended. The ejido charges <strong>MXN 50 per person</strong> (reported by hikers in 2026) and watches your car. Pay only at the ejido parking area. Start early, carry at least 3 litres of water and download the track: in February 2025 a hiker went missing near this route after taking an alternate path.',
       ],
       fact: [
         ['trailhead', 'La Amapola (ejido parking)'],
@@ -243,7 +243,7 @@ export default {
         'Respect is not optional: don’t touch offerings and stay quiet if a ceremony is under way. AllTrails lists access as free, but hikers, including one in 2024, report paying a MXN 20 maintenance contribution at the summit, so carry small change. Real de Catorce is about 3 h 30 min from the city, so stay the night; our <a href="/blog/real-de-catorce-guide-2026">Real de Catorce guide</a> covers the rest of the trip.',
       ],
       fact: [
-        ['drive', 'About 213 km / 3 h 30 min, plus the Ogarrio tunnel'],
+        ['drive', 'About 250 km / 3 h 30 min, plus the Ogarrio tunnel'],
         ['stats', '10.3–10.9 km out and back, 365–410 m gain, max ~2,940 m'],
         ['difficulty', 'Moderate (high altitude)'],
         ['fee', 'Free per AllTrails; some hikers report a MXN 20 contribution'],
@@ -266,7 +266,7 @@ export default {
     subtitle: 'Why every local hiker starts at first light',
     paragraphs: [
       'SLP city sits at about 1,860 m. Trailheads in the Sierra de San Miguelito are at about 1,900–2,400 m and summits reach 2,600–2,880 m; the Sierra de Álvarez sits around 2,500–2,650 m, and Real de Catorce at 2,600–3,200 m. If you’ve just arrived, take the first few days easy, drink more than you think and remember that sunburn comes faster at altitude.',
-      'The best months are <strong>October to March</strong>: dry, cool and clear, with September and October greenest right after the rains. December and January bring near-freezing dawns at the higher trailheads and, occasionally, snow. April and May are hot (May averages a 28 °C high) and are the peak of wildfire season. From June to September, afternoon storms bring lightning on exposed summits, slippery rock and flash floods in canyons.',
+      'The best months are <strong>October to March</strong>: dry, cool and clear, with September and October greenest right after the rains. December and January bring near-freezing dawns at the higher trailheads and, occasionally, snow. April and May are hot (May averages a 29 °C high) and are the peak of wildfire season. From June to September, afternoon storms bring lightning on exposed summits, slippery rock and flash floods in canyons.',
       'There is no water on these trails and very little shade. Plan on half a litre per hour, at least 3 litres on summit days, plus electrolytes, a hat, long sleeves and sunscreen.',
     ],
   },
@@ -283,7 +283,7 @@ export default {
     title: 'Rules in the protected areas',
     subtitle: 'Most of these trails cross federal reserves or community land',
     paragraphs: [
-      'The Sierra de San Miguelito became a federal Flora and Fauna Protection Area in December 2021, covering 111,160 hectares across SLP, Mexquitic, Villa de Reyes and Villa de Arriaga. Its management rules, published in the DOF in June 2024, ask hikers to stay on established trails, carry out all rubbish, keep dogs on a leash and pick up after them, and only light fires where allowed. The Sierra de Álvarez has similar CONANP rules.',
+      'The Sierra de San Miguelito became a federal Flora and Fauna Protection Area in December 2021, covering 111,160 hectares across SLP, Mexquitic, Villa de Reyes and Villa de Arriaga. Its management rules, published in the DOF in June 2024, ask hikers to stay on established trails, carry out all rubbish, keep dogs on a leash and pick up after them, and only light fires where allowed. The Sierra de Álvarez is also a federal protected area, but its management programme has still not been published, so follow the same practices there.',
       'Much of the land is ejido or community property (La Amapola, Suspiro Picacho, the Valle de los Fantasmas). Small fees and requests for permission are normal and legitimate when they come from the community authority or the official parking area. Respect fences and gates.',
     ],
   },

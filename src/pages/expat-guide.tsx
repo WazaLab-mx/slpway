@@ -39,10 +39,7 @@ export default function ExpatGuidePage() {
 
   const emergencyContacts = [
     { name: 'Emergency Services (General)', number: '911' },
-    { name: 'Police', number: '444 826 8300' },
-    { name: 'Fire Department', number: '444 812 4344' },
-    { name: 'Red Cross', number: '444 815 0808' },
-    { name: 'Tourist Police', number: '444 834 1115' },
+    { name: 'Anonymous Crime Tips', number: '089' },
     { name: 'U.S. Embassy in Mexico City', number: '55 5080 2000' },
     { name: 'Canadian Embassy in Mexico City', number: '55 5724 7900' },
   ];
@@ -51,19 +48,19 @@ export default function ExpatGuidePage() {
     {
       name: 'Hospital Central "Dr. Ignacio Morones Prieto"',
       address: 'Av. Venustiano Carranza 2395',
-      phone: '444 834 2700',
+      phone: '444 210 1300',
       type: 'Public',
     },
     {
       name: 'Hospital Lomas de San Luis',
-      address: 'Av. Sierra Leona 550',
-      phone: '444 824 2424',
+      address: 'Av. Palmira 600, Villas del Pedregal',
+      phone: '',
       type: 'Private',
     },
     {
       name: 'Hospital Angeles',
-      address: 'Av. Benito Juárez 1210',
-      phone: '444 813 1717',
+      address: 'Antonio Aguilar 155, Burócratas del Estado',
+      phone: '444 834 0300',
       type: 'Private',
     },
   ];
@@ -72,7 +69,7 @@ export default function ExpatGuidePage() {
     office: 'Instituto Nacional de Migración (INM)',
     address: 'Calle Muñoz 362, Fracc. Muñoz 1ª Sección, C.P. 78165',
     phone: '444 833 1959',
-    hours: 'Monday–Friday 09:00–15:00',
+    hours: 'Monday–Friday 09:00–14:00',
     website: 'https://www.gob.mx/inm',
     requirements: [
       'Valid passport',
@@ -88,7 +85,7 @@ export default function ExpatGuidePage() {
       name: 'BBVA',
       requirements: [
         'Valid passport',
-        'Immigration document (FM2/FM3)',
+        'Immigration document (Temporary or Permanent Resident card)',
         'Proof of address',
         'Minimum deposit',
       ],
@@ -107,14 +104,9 @@ export default function ExpatGuidePage() {
   ];
 
   const transportationInfo = {
-    taxi: [
-      { name: 'Taxi Seguro', phone: '444 817 2111' },
-      { name: 'Radio Taxi', phone: '444 812 0000' },
-    ],
     apps: [
       { name: 'Uber', available: true },
       { name: 'DiDi', available: true },
-      { name: 'Beat', available: true },
     ],
     busCompanies: [
       { name: 'Primera Plus', website: 'https://www.primeraplus.com.mx' },
@@ -163,7 +155,7 @@ export default function ExpatGuidePage() {
                   "name": "What are the emergency numbers in San Luis Potosí?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The main emergency number in San Luis Potosí is 911 for general emergencies. Police: 444 826 8300, Fire Department: 444 812 4344, Red Cross: 444 815 0808, and Tourist Police: 444 834 1115."
+                    "text": "The main emergency number in San Luis Potosí is 911 for police, ambulance and fire. For anonymous crime tips, call 089."
                   }
                 },
                 {
@@ -171,7 +163,7 @@ export default function ExpatGuidePage() {
                   "name": "Where can expats find healthcare in San Luis Potosí?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "San Luis Potosí has several healthcare options for expats. Private hospitals include Hospital Lomas de San Luis (444 824 2424) and Hospital Angeles (444 813 1717). The main public hospital is Hospital Central Dr. Ignacio Morones Prieto (444 834 2700)."
+                    "text": "San Luis Potosí has several healthcare options for expats. Private hospitals include Hospital Lomas de San Luis (Av. Palmira 600) and Hospital Angeles (444 834 0300). The main public hospital is Hospital Central Dr. Ignacio Morones Prieto (444 210 1300)."
                   }
                 },
                 {
@@ -179,7 +171,7 @@ export default function ExpatGuidePage() {
                   "name": "What documents do I need to open a bank account in San Luis Potosí?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "To open a bank account in San Luis Potosí, you'll typically need: a valid passport, immigration document (FM2/FM3 or temporary/permanent resident card), proof of address in Mexico, and often a Tax ID (RFC). Some banks may also require a minimum deposit."
+                    "text": "To open a bank account in San Luis Potosí, you'll typically need: a valid passport, immigration document (temporary or permanent resident card), proof of address in Mexico, and often a Tax ID (RFC). Some banks may also require a minimum deposit."
                   }
                 },
                 {
@@ -187,7 +179,7 @@ export default function ExpatGuidePage() {
                   "name": "Where is the immigration office in San Luis Potosí?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The Instituto Nacional de Migración (INM) office in San Luis Potosí is located at Calle Muñoz 362, Fracc. Muñoz 1ª Sección, C.P. 78165. Phone: 444 833 1959. Hours: Monday–Friday 09:00–15:00. They handle visa applications, residency permits, and other immigration matters."
+                    "text": "The Instituto Nacional de Migración (INM) office in San Luis Potosí is located at Calle Muñoz 362, Fracc. Muñoz 1ª Sección, C.P. 78165. Phone: 444 833 1959. Hours: Monday–Friday 09:00–14:00. They handle visa applications, residency permits, and other immigration matters."
                   }
                 },
                 {
@@ -195,7 +187,7 @@ export default function ExpatGuidePage() {
                   "name": "What transportation options are available for expats in San Luis Potosí?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "San Luis Potosí offers multiple transportation options including Uber, DiDi, and Beat ride-sharing apps. Traditional taxi services include Taxi Seguro (444 817 2111) and Radio Taxi (444 812 0000). For intercity travel, bus companies like Primera Plus and ETN provide service."
+                    "text": "San Luis Potosí offers multiple transportation options including the Uber and DiDi ride-hailing apps, plus street and app-dispatched taxis. For intercity travel, bus companies like Primera Plus and ETN provide service."
                   }
                 },
                 {
@@ -326,7 +318,7 @@ export default function ExpatGuidePage() {
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 mb-2">{hospital.name}</h3>
                         <p className="text-gray-600 mb-2">{hospital.address}</p>
-                        <p className="text-primary font-medium">{hospital.phone}</p>
+                        {hospital.phone && <p className="text-primary font-medium">{hospital.phone}</p>}
                       </div>
                       <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                         hospital.type === 'Private' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800'
@@ -401,24 +393,6 @@ export default function ExpatGuidePage() {
             <section id="transportation" className="mb-16">
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Transportation</h2>
               <div className="space-y-6">
-                {/* Taxis */}
-                <div className="bg-white rounded-xl shadow-elegant p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Taxi Services</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {transportationInfo.taxi.map((service, index) => (
-                      <div key={index} className="flex items-center space-x-4">
-                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
-                        </svg>
-                        <div>
-                          <p className="font-medium text-gray-900">{service.name}</p>
-                          <p className="text-primary">{service.phone}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
                 {/* Ride-hailing Apps */}
                 <div className="bg-white rounded-xl shadow-elegant p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">Ride-hailing Apps</h3>

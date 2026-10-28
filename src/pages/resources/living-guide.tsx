@@ -46,14 +46,14 @@ export default function LivingGuidePage() {
     { label: 'Monthly Budget (2026)', value: '$1,200-$2,000 USD' },
     { label: '1BR Rent Centro', value: '$450-$750 USD/mo' },
     { label: 'Meal Out', value: '$13-$43 USD' },
-    { label: 'Population (metro)', value: '1.31 million' },
+    { label: 'Population (metro, 2020)', value: '1.24 million' },
     { label: 'Altitude', value: '1,864m (6,115 ft)' },
-    { label: 'MXN/USD (Mar 2026)', value: '~17.5' },
+    { label: 'MXN/USD (Mar 2026)', value: '~17.8' },
   ];
 
   const visaTypes = [
-    { type: 'Tourist (FMM)', duration: '180 days', work: 'No', bestFor: 'Short visits, nomads testing SLP' },
-    { type: 'Temporary Resident', duration: '1-4 years', work: 'With permit', bestFor: 'Remote workers ($4,185/mo income)' },
+    { type: 'Tourist (FMM)', duration: 'Up to 180 days', work: 'No', bestFor: 'Short visits, nomads testing SLP' },
+    { type: 'Temporary Resident', duration: '1-4 years', work: 'With permit', bestFor: 'Remote workers (~$4,400/mo income)' },
     { type: 'Permanent Resident', duration: 'Indefinite', work: 'Yes', bestFor: 'Retirees, long-term' },
     { type: 'Work Visa', duration: '1-4 years', work: 'Yes (employer-specific)', bestFor: 'BMW, GM, Valeo transferees' },
   ];
@@ -73,7 +73,7 @@ export default function LivingGuidePage() {
       rent: '$450-$750 USD (2026)',
       bestFor: 'Culture lovers, singles',
       safety: 4,
-      description: 'UNESCO World Heritage historic center, colonial architecture, best restaurants',
+      description: 'UNESCO World Heritage historic center (part of the Camino Real de Tierra Adentro listing), colonial architecture, best restaurants',
       pros: ['Walkable', 'Rich culture', 'Beautiful architecture', 'Best dining'],
       cons: ['Noisy', 'Limited parking', 'Older buildings', 'Fewer modern amenities'],
     },
@@ -101,28 +101,28 @@ export default function LivingGuidePage() {
     { name: 'Hospital Ángeles', type: 'Private', specialties: 'Full-service, emergency, specialists', english: 'Yes' },
     { name: 'Hospital Lomas', type: 'Private', specialties: 'General, maternity, pediatrics', english: 'Some' },
     { name: 'Star Médica', type: 'Private', specialties: 'Full-service, modern', english: 'Yes' },
-    { name: 'Hospital Central (IMSS)', type: 'Public', specialties: 'Emergency, general care', english: 'Limited' },
+    { name: 'Hospital Central (IMSS-Bienestar)', type: 'Public', specialties: 'Emergency, general care', english: 'Limited' },
     { name: 'Beneficencia Española', type: 'Private', specialties: 'General, affordable', english: 'Some' },
   ];
 
   const banks = [
     { name: 'BBVA México', rating: 5, englishApp: 'Yes', notes: 'Most popular for expats' },
     { name: 'Santander', rating: 4, englishApp: 'Yes', notes: 'International transfers' },
-    { name: 'Citibanamex', rating: 4, englishApp: 'Yes', notes: 'Wide ATM network' },
+    { name: 'Banamex', rating: 4, englishApp: 'Yes', notes: 'Wide ATM network' },
     { name: 'HSBC', rating: 5, englishApp: 'Yes', notes: 'Good for Premier customers' },
-    { name: 'Banorte', rating: 3, englishApp: 'Limited', notes: 'Largest Mexican bank' },
+    { name: 'Banorte', rating: 3, englishApp: 'Limited', notes: 'Largest Mexican-owned bank' },
   ];
 
   const faqs = [
-    { q: 'Do I need to speak Spanish?', a: 'While English is available in tourist areas, Spanish is essential for daily life. Unlike San Miguel de Allende, there\'s limited English infrastructure. Consider classes at CELE (UASLP) or private tutors (~$10-15 USD/hour).' },
+    { q: 'Do I need to speak Spanish?', a: 'While English is available in tourist areas, Spanish is essential for daily life. Unlike San Miguel de Allende, there\'s limited English infrastructure. Consider language schools or private tutors (~$8-19 USD/hour).' },
     { q: 'Can I work remotely on a tourist visa?', a: 'Working remotely on a tourist visa is technically a gray area. While enforcement is minimal for remote workers earning from abroad, obtaining Temporary Residency is safer for long-term stays and provides access to banking and healthcare.' },
-    { q: 'Is tap water safe?', a: 'No. Use garrafones (20L jugs of purified water) delivered home (~35-50 MXN each). Most restaurants use purified ice.' },
+    { q: 'Is tap water safe?', a: 'No. Use garrafones (20L jugs of purified water) delivered home (~30-70 MXN each, depending on brand). Most restaurants use purified ice.' },
     { q: 'What\'s the expat community like?', a: 'Small but growing, consisting of: professionals (BMW, GM, aerospace), retirees, digital nomads, and spouses of Mexican nationals. Facebook groups and informal meetups exist.' },
-    { q: 'Can I bring pets?', a: 'Yes. Requirements: health certificate (within 10 days), current rabies vaccination (15 days to 1 year before travel). Many apartments allow pets. Good veterinary care: $30-50 USD for routine visits.' },
-    { q: 'Are there international schools?', a: 'Yes: Instituto Potosino (bilingual), Colegio Motolinia (Catholic, bilingual), American School of San Luis Potosí. Tuition: $3,000-$10,000 USD/year.' },
-    { q: 'Can I use my foreign driver\'s license?', a: 'Valid for 6 months as tourist. Once resident, obtain Mexican license (proof of residency, medical exam, written/practical tests). Cost: ~$50-100 USD total.' },
-    { q: 'Is San Luis Potosí good for digital nomads in 2026?', a: 'Yes and growing fast. The city has 51+ coworking spaces as of March 2026 (vs ~25 in 2024), fiber internet at 100-500 Mbps in all major neighborhoods, and direct flights to Houston and Dallas. Monthly nomad budget averages $1,800 USD. Entidad Nómada in Centro Histórico is the default first-stop coworking space.' },
-    { q: 'What changed in Mexican residency visas for 2026?', a: 'Two things: (1) In July 2025, Mexican consulates shifted to UMA-based economic solvency calculations instead of minimum wage. For 2026 the threshold is ~$4,185 USD monthly income or ~$69,750 USD in savings. (2) Government processing fees for residency visas and cards were roughly doubled effective November 7, 2025.' },
+    { q: 'Can I bring pets?', a: 'Yes. Dogs and cats arriving from the US or Canada only need a physical inspection by SENASICA on arrival; from other countries a health certificate is required. Rules can change, so check with SENASICA before you travel. Many apartments allow pets. Good veterinary care: $30-50 USD for routine visits.' },
+    { q: 'Are there international schools?', a: 'Yes. Colegio Internacional Terranova is an IB World School, and bilingual options include Colegio Chapultepec de San Luis and Instituto Potosino Marista; see our school guide for more options. Tuition varies widely by school.' },
+    { q: 'Can I use my foreign driver\'s license?', a: 'A valid foreign license can be used while you visit as a tourist. Once resident, get a San Luis Potosí license from the state Secretaría de Finanzas: the first permanent license is free for state residents (2026); bring ID and two proofs of address.' },
+    { q: 'Is San Luis Potosí good for digital nomads in 2026?', a: 'Yes and growing fast. nomads.com lists 50+ coworking spaces in the city (2026), fiber internet of 100+ Mbps is widely available, and there are direct flights to Houston and Dallas. Monthly nomad budget averages $1,800 USD.' },
+    { q: 'What changed in Mexican residency visas for 2026?', a: 'Two things: (1) In July 2025, new visa guidelines directed Mexican consulates to use UMA-based economic solvency calculations instead of minimum wage. For 2026 the temporary residency threshold is ~MXN 79,800/month in income (~US$4,400) or ~MXN 1.34 million in savings (~US$74,700); consulates vary by up to ~10%. (2) A fee schedule published November 7, 2025 roughly doubled residency card fees from January 1, 2026.' },
     { q: 'How many days should a tourist plan for San Luis Potosí?', a: '3 days for the city (Centro Histórico, Parque Tangamanga, a day trip to Real de Catorce). Add 3-4 more days for the Huasteca Potosina (Cascada de Tamul, Xilitla Surrealist Gardens, Tamasopo). A full state visit is 7-8 days.' },
   ];
 
@@ -301,9 +301,9 @@ export default function LivingGuidePage() {
               </h2>
               <p className="text-base md:text-lg text-gray-800 leading-relaxed mb-5">
                 San Luis Potosí is the capital of the state of San Luis Potosí, Mexico — a UNESCO-connected colonial city
-                of approximately 1.31 million people in the metropolitan area, sitting at 1,864 meters elevation in the
-                central Bajío region. For foreigners moving to Mexico in 2026, SLP offers roughly 35–50% lower living
-                costs than Mexico City for a similar quality of life, direct flights to Houston and Dallas, over 350
+                of about 1.24 million people in the metropolitan area (2020 census), sitting at 1,864 meters elevation in the
+                central Bajío region. For foreigners moving to Mexico in 2026, SLP offers roughly 20–25% lower living
+                costs than Mexico City (rent about half), direct flights to Houston and Dallas, hundreds of
                 international companies (BMW, General Motors, Valeo, Continental), and a rapidly growing digital-nomad
                 infrastructure of 51+ coworking spaces. The city works for three profiles: long-term expats, remote
                 workers on temporary residency, and slow travelers exploring the Bajío and the Huasteca Potosina.
@@ -313,11 +313,11 @@ export default function LivingGuidePage() {
                 {[
                   'Comfortable solo budget: $1,200–$2,000 USD / month (single), $1,800–$2,500 (couple), $2,400–$3,500 (family of four)',
                   '1BR apartment in Centro Histórico: $450–$750 USD / month (2026 market)',
-                  'Temporary Resident visa income threshold (2026): ~$4,185 USD/month or ~$69,750 USD in savings — fees doubled November 2025',
+                  'Temporary Resident visa income threshold (2026): ~MXN 79,800/month (~US$4,400) or ~MXN 1.34M in savings (~US$74,700) — card fees roughly doubled from January 2026',
                   'Fiber internet 100–500 Mbps available in Centro, Lomas, Tangamanga — $32–$50 USD/month',
                   'Healthcare: Hospital Ángeles, Star Médica, Hospital Lomas — private consult $30–$60 USD',
                   'US State Department advisory: Level 2 — Exercise Increased Caution (same as France)',
-                  'MXN/USD exchange rate in March 2026: approximately 17.5',
+                  'MXN/USD exchange rate in March 2026: approximately 17.8',
                 ].map((fact, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-sm md:text-base text-gray-800">
                     <span className="text-green-600 mt-1" aria-hidden>•</span>
@@ -340,7 +340,7 @@ export default function LivingGuidePage() {
                     <ul className="space-y-2 text-gray-600">
                       <li className="flex items-start gap-2">
                         <svg className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-                        <span>~26% lower cost of living than Mexico City (housing up to 55% cheaper)</span>
+                        <span>~22% lower cost of living than Mexico City (rent ~49% lower, Numbeo 2026)</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <svg className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
@@ -348,7 +348,7 @@ export default function LivingGuidePage() {
                       </li>
                       <li className="flex items-start gap-2">
                         <svg className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-                        <span>UNESCO World Heritage historic center</span>
+                        <span>UNESCO World Heritage historic center (Camino Real de Tierra Adentro)</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <svg className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
@@ -365,7 +365,7 @@ export default function LivingGuidePage() {
                     <ul className="space-y-2 text-gray-600 text-sm">
                       <li>• Mexico City: 420 km (4-5 hours)</li>
                       <li>• Guadalajara: 330 km (3.5-4 hours)</li>
-                      <li>• Aguascalientes: 200 km (2.5 hours)</li>
+                      <li>• Aguascalientes: 165 km (2 hours)</li>
                       <li>• Zacatecas: 193 km (2.5 hours)</li>
                       <li>• Monterrey: 521 km (5-6 hours)</li>
                     </ul>
@@ -373,7 +373,7 @@ export default function LivingGuidePage() {
                 </div>
                 <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
                   <p className="text-blue-800 text-sm">
-                    <strong>Economic Stability:</strong> The state's GDP grew 7.9% in 2023, making it Mexico's third-fastest growing economy (after Quintana Roo and Oaxaca). Key sectors include automotive (BMW, GM), aerospace, logistics, and business services.
+                    <strong>Economic Stability:</strong> The state's GDP grew 8.0% in 2023 (INEGI), the second-fastest of any Mexican state after Quintana Roo. Key sectors include automotive (BMW, GM), aerospace, logistics, and business services.
                   </p>
                 </div>
               </div>
@@ -415,9 +415,9 @@ export default function LivingGuidePage() {
                     {[
                       { step: 1, title: 'Schedule Consulate Appointment', desc: 'Book 2-4 weeks in advance through SRE Consulate Directory' },
                       { step: 2, title: 'Gather Documents', desc: 'Valid passport (6+ months validity), completed application, passport photo, proof of financial solvency, visa fee ($50-$80 USD)' },
-                      { step: 3, title: 'Prove Financial Solvency', desc: 'Bank statements: ~$69,750 USD average balance (12 months), OR monthly income: ~$4,185 USD for 6 months' },
+                      { step: 3, title: 'Prove Financial Solvency', desc: 'Bank statements: ~MXN 1.34M (~US$74,700) average balance (12 months), OR monthly income: ~MXN 79,800 (~US$4,400) for 6 months' },
                       { step: 4, title: 'Attend Consulate Interview', desc: 'Present documents and discuss plans' },
-                      { step: 5, title: 'Exchange Visa Upon Entry', desc: 'Visit INM office within 30 days (Calle Muñoz 362, Tel: 444 833 1959, Hours: Mon–Fri 09:00–15:00)' },
+                      { step: 5, title: 'Exchange Visa Upon Entry', desc: 'Visit INM office within 30 days (Calle Muñoz 362, Tel: 444 833 1959, Hours: Mon–Fri 09:00–14:00)' },
                       { step: 6, title: 'Receive Resident Card', desc: 'Valid for 1 year, renewable up to 4 years' },
                     ].map((item) => (
                       <div key={item.step} className="flex gap-4">
@@ -444,13 +444,13 @@ export default function LivingGuidePage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">How much does it cost to live in San Luis Potosí?</h2>
               <div className="space-y-6">
                 <div className="bg-white rounded-xl shadow-elegant p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Cost Comparison Index (NYC = 100)</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Cost of Living Index excl. rent (NYC = 100, Numbeo Oct 2026)</h3>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {[
-                      { city: 'San Luis Potosí', index: 26.8 },
-                      { city: 'Mexico City', index: 35.2 },
-                      { city: 'Guadalajara', index: 32.1 },
-                      { city: 'San Miguel de Allende', index: 41.5 },
+                      { city: 'San Luis Potosí', index: 41.7 },
+                      { city: 'Mexico City', index: 46.0 },
+                      { city: 'Guadalajara', index: 40.9 },
+                      { city: 'San Miguel de Allende', index: 48.4 },
                     ].map((item, i) => (
                       <div key={i} className="text-center p-4 bg-gray-50 rounded-lg">
                         <div className="text-2xl font-bold text-terracotta">{item.index}</div>
@@ -472,8 +472,8 @@ export default function LivingGuidePage() {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr className="border-b"><td className="py-3 px-4">1BR Apartment</td><td className="py-3 px-4">$580 USD</td><td className="py-3 px-4">$300 USD</td></tr>
-                        <tr className="border-b"><td className="py-3 px-4">3BR Apartment</td><td className="py-3 px-4">$900 USD</td><td className="py-3 px-4">$550 USD</td></tr>
+                        <tr className="border-b"><td className="py-3 px-4">1BR Apartment</td><td className="py-3 px-4">$640 USD</td><td className="py-3 px-4">$460 USD</td></tr>
+                        <tr className="border-b"><td className="py-3 px-4">3BR Apartment</td><td className="py-3 px-4">$1,160 USD</td><td className="py-3 px-4">$755 USD</td></tr>
                         <tr><td className="py-3 px-4">3BR House</td><td className="py-3 px-4">$1,200 USD</td><td className="py-3 px-4">$700 USD</td></tr>
                       </tbody>
                     </table>
@@ -484,8 +484,8 @@ export default function LivingGuidePage() {
                   <div className="bg-white rounded-xl shadow-elegant p-6">
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Food & Groceries</h3>
                     <ul className="space-y-2 text-sm text-gray-600">
-                      <li className="flex justify-between"><span>Restaurant meal</span><span className="font-medium">$5 USD</span></li>
-                      <li className="flex justify-between"><span>Mid-range (2 people)</span><span className="font-medium">$25 USD</span></li>
+                      <li className="flex justify-between"><span>Restaurant meal</span><span className="font-medium">$14 USD</span></li>
+                      <li className="flex justify-between"><span>Mid-range (2 people)</span><span className="font-medium">$42 USD</span></li>
                       <li className="flex justify-between"><span>Domestic beer</span><span className="font-medium">$2.50 USD</span></li>
                       <li className="flex justify-between"><span>Cappuccino</span><span className="font-medium">$3 USD</span></li>
                       <li className="flex justify-between"><span>Monthly groceries</span><span className="font-medium">$150-200 USD</span></li>
@@ -495,10 +495,10 @@ export default function LivingGuidePage() {
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">Utilities & Services</h3>
                     <ul className="space-y-2 text-sm text-gray-600">
                       <li className="flex justify-between"><span>Electricity/water/gas</span><span className="font-medium">$40 USD</span></li>
-                      <li className="flex justify-between"><span>Internet (60+ Mbps)</span><span className="font-medium">$28 USD</span></li>
+                      <li className="flex justify-between"><span>Internet (60+ Mbps)</span><span className="font-medium">$31 USD</span></li>
                       <li className="flex justify-between"><span>Mobile (unlimited)</span><span className="font-medium">$20 USD</span></li>
                       <li className="flex justify-between"><span>Gym membership</span><span className="font-medium">$30 USD</span></li>
-                      <li className="flex justify-between"><span>Cinema ticket</span><span className="font-medium">$4 USD</span></li>
+                      <li className="flex justify-between"><span>Cinema ticket</span><span className="font-medium">$6 USD</span></li>
                     </ul>
                   </div>
                 </div>
@@ -615,7 +615,7 @@ export default function LivingGuidePage() {
                 <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
                   <h4 className="font-semibold text-blue-800 mb-2">How to Find Housing</h4>
                   <ul className="text-blue-800 text-sm space-y-1">
-                    <li>• Use local platforms: Inmuebles24.com, Segundamano.mx, Vivanuncios.com, Facebook groups</li>
+                    <li>• Use local platforms: Inmuebles24.com, Vivanuncios.com, Facebook groups</li>
                     <li>• Arrive first and search in person (book Airbnb for 2-4 weeks)</li>
                     <li>• Understand lease terms: 1-year minimum, 1-2 months deposit, may need guarantor</li>
                     <li>• Negotiate prices, especially for longer leases or upfront payments</li>
@@ -630,12 +630,12 @@ export default function LivingGuidePage() {
               <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="bg-white rounded-xl shadow-elegant p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Public: IMSS (Annual Costs 2024)</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Public: IMSS (Annual Costs 2026)</h3>
                     <ul className="space-y-2 text-sm text-gray-600">
-                      <li className="flex justify-between"><span>Age 0-19</span><span>~$240 USD</span></li>
-                      <li className="flex justify-between"><span>Age 20-39</span><span>~$310 USD</span></li>
-                      <li className="flex justify-between"><span>Age 40-59</span><span>~$405 USD</span></li>
-                      <li className="flex justify-between"><span>Age 60+</span><span>~$525 USD</span></li>
+                      <li className="flex justify-between"><span>Age 0-19</span><span>~$505 USD</span></li>
+                      <li className="flex justify-between"><span>Age 20-39</span><span>~$630-670 USD</span></li>
+                      <li className="flex justify-between"><span>Age 40-59</span><span>~$780-805 USD</span></li>
+                      <li className="flex justify-between"><span>Age 60+</span><span>~$1,120-1,205 USD</span></li>
                     </ul>
                     <p className="text-xs text-gray-500 mt-3">Covers: consultations, hospitalization, surgery, medications, lab work, maternity</p>
                   </div>
@@ -679,7 +679,7 @@ export default function LivingGuidePage() {
 
                 <div className="bg-emerald-50 border-l-4 border-emerald-400 p-4 rounded-r-lg">
                   <p className="text-emerald-800 text-sm">
-                    <strong>Dual Coverage Strategy:</strong> Many expats use IMSS for routine care + high-deductible private policy for emergencies (typically $600-800 USD/year total).
+                    <strong>Dual Coverage Strategy:</strong> Many expats use IMSS for routine care + high-deductible private policy for emergencies. IMSS alone now runs ~$505-1,205 USD/year depending on age (2026 rates), so budget the private policy on top.
                   </p>
                 </div>
 
@@ -761,9 +761,9 @@ export default function LivingGuidePage() {
                 <div className="bg-white rounded-xl shadow-elegant p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Public Transit (MetroRed)</h3>
                   <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="flex justify-between"><span>Single ride</span><span>15.50 MXN (~$0.75 USD)</span></li>
-                    <li className="flex justify-between"><span>Monthly pass</span><span>~500 MXN ($25 USD)</span></li>
-                    <li className="flex justify-between"><span>Hours</span><span>5:00 AM - 11:00 PM</span></li>
+                    <li className="flex justify-between"><span>MetroRed fare</span><span>Free (state-funded)</span></li>
+                    <li className="flex justify-between"><span>Regular city buses</span><span>Paid fare, cash</span></li>
+                    <li className="flex justify-between"><span>Airport link</span><span>Line 5 announced (2026)</span></li>
                   </ul>
                 </div>
                 <div className="bg-white rounded-xl shadow-elegant p-6">
@@ -780,7 +780,7 @@ export default function LivingGuidePage() {
                   <ul className="space-y-2 text-sm text-gray-600">
                     <li className="flex justify-between"><span>Starting fare</span><span>30 MXN (~$1.50 USD)</span></li>
                     <li className="flex justify-between"><span>Per km</span><span>~12 MXN</span></li>
-                    <li className="flex justify-between"><span>Airport to Centro</span><span>~250 MXN ($12 USD)</span></li>
+                    <li className="flex justify-between"><span>Airport to Centro</span><span>~350-500 MXN (est.)</span></li>
                   </ul>
                   <p className="text-xs text-gray-500 mt-2">Agree on price if no meter</p>
                 </div>
@@ -788,10 +788,10 @@ export default function LivingGuidePage() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Driving/Car Rental</h3>
                   <ul className="space-y-2 text-sm text-gray-600">
                     <li className="flex justify-between"><span>Daily rental</span><span>~$30-50 USD</span></li>
-                    <li className="flex justify-between"><span>Gas (per liter)</span><span>~22 MXN ($1.10 USD)</span></li>
+                    <li className="flex justify-between"><span>Gas (per liter)</span><span>~24 MXN ($1.30 USD)</span></li>
                     <li className="flex justify-between"><span>Insurance (annual)</span><span>~$300 USD</span></li>
                   </ul>
-                  <p className="text-xs text-gray-500 mt-2">Foreign license valid 6 months</p>
+                  <p className="text-xs text-gray-500 mt-2">Foreign license OK while visiting as a tourist</p>
                 </div>
               </div>
             </section>
@@ -813,7 +813,7 @@ export default function LivingGuidePage() {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr className="border-b"><td className="py-3 px-4">Telmex (Infinitum)</td><td className="py-3 px-4">20-200 Mbps</td><td className="py-3 px-4">$350-700 MXN</td><td className="py-3 px-4 text-gray-600">Widest coverage</td></tr>
+                        <tr className="border-b"><td className="py-3 px-4">Telmex (Infinitum)</td><td className="py-3 px-4">120-1,000 Mbps</td><td className="py-3 px-4">From ~$350 MXN</td><td className="py-3 px-4 text-gray-600">Widest coverage</td></tr>
                         <tr className="border-b"><td className="py-3 px-4">Totalplay</td><td className="py-3 px-4">100-500 Mbps</td><td className="py-3 px-4">$450-900 MXN</td><td className="py-3 px-4 text-gray-600">Fiber optic</td></tr>
                         <tr className="border-b"><td className="py-3 px-4">Izzi</td><td className="py-3 px-4">50-300 Mbps</td><td className="py-3 px-4">$400-800 MXN</td><td className="py-3 px-4 text-gray-600">Good value bundles</td></tr>
                         <tr><td className="py-3 px-4">Megacable</td><td className="py-3 px-4">50-200 Mbps</td><td className="py-3 px-4">$400-700 MXN</td><td className="py-3 px-4 text-gray-600">Regional provider</td></tr>
@@ -837,14 +837,14 @@ export default function LivingGuidePage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Safety & Security</h2>
               <div className="space-y-6">
                 <div className="bg-white rounded-xl shadow-elegant p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Safety Index Comparison (Numbeo 2024)</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Safety Index Comparison (Numbeo 2026)</h3>
                   <p className="text-gray-500 text-sm mb-4">Higher score = safer (scale 0-100)</p>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {[
-                      { city: 'San Luis Potosí', score: 52.4 },
-                      { city: 'Mexico City', score: 41.2 },
-                      { city: 'Guadalajara', score: 44.8 },
-                      { city: 'Mérida (safest)', score: 72.1 },
+                      { city: 'San Luis Potosí', score: 48.0 },
+                      { city: 'Mexico City', score: 33.9 },
+                      { city: 'Guadalajara', score: 37.9 },
+                      { city: 'Mérida (safest)', score: 76.1 },
                     ].map((item, i) => (
                       <div key={i} className="text-center p-4 bg-gray-50 rounded-lg">
                         <div className="text-2xl font-bold text-gray-900">{item.score}</div>

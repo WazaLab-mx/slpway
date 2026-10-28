@@ -59,10 +59,10 @@ const featuredAttractions = [
     image: '/images/cultural/teatro-de-la-paz.jpg',
     category: 'Theaters',
     location: 'Centro Histórico, San Luis Potosí',
-    address: 'Villerías 705, Centro Histórico',
-    hours: 'Tuesday to Sunday, 10:00 AM - 6:00 PM',
-    admission: 'Free tours available, performance tickets vary',
-    highlights: ['Neoclassical architecture', 'Historic murals', 'Live performances', 'Guided tours']
+    address: 'Villerías 205, Centro Histórico',
+    hours: 'Varies by performance; check the box office',
+    admission: 'Performance tickets vary',
+    highlights: ['Neoclassical architecture', 'Opened in 1894', 'Live performances', 'Plaza del Carmen setting']
   },
   {
     id: 'museo-federico-silva',
@@ -72,9 +72,9 @@ const featuredAttractions = [
     category: 'Museums',
     location: 'Centro Histórico',
     address: 'Álvaro Obregón 80, Centro Histórico',
-    hours: 'Tuesday to Sunday, 10:00 AM - 6:00 PM',
-    admission: 'Free admission',
-    highlights: ['Contemporary sculptures', 'Historic prison architecture', 'Rotating exhibitions', 'Educational workshops']
+    hours: 'Mon, Wed–Fri 10:00 AM - 6:00 PM; Sat 11:00 AM - 6:00 PM; Sun 10:00 AM - 2:00 PM (closed Tuesdays)',
+    admission: 'Free on Sundays and the last Saturday of each month',
+    highlights: ['Contemporary sculptures', 'Restored 1907 school building', 'Rotating exhibitions', 'Educational workshops']
   },
   {
     id: 'catedral-san-luis-potosi',
@@ -84,20 +84,20 @@ const featuredAttractions = [
     category: 'Sacred Sites',
     location: 'Plaza de Armas, Centro Histórico',
     address: 'Plaza de Armas, Centro Histórico',
-    hours: 'Daily, 6:00 AM - 8:00 PM',
+    hours: 'Open daily; hours vary around Mass times',
     admission: 'Free admission',
     highlights: ['Baroque architecture', 'Colonial altars', 'Historic plaza', 'Religious art']
   },
   {
     id: 'centro-artes',
     name: 'Centro de las Artes',
-    description: 'A dynamic cultural center that promotes contemporary arts through exhibitions, workshops, performances, and community programs.',
+    description: 'Housed in the former state penitentiary, this dynamic cultural center promotes contemporary arts through exhibitions, workshops, performances, and community programs.',
     image: '/images/cultural/centro-artes.jpg',
     category: 'Cultural Centers',
-    location: 'Centro Histórico',
-    address: 'Callejón de los Cedros 1735, Centro Histórico',
-    hours: 'Tuesday to Sunday, 10:00 AM - 8:00 PM',
-    admission: 'Free admission to most exhibitions',
+    location: 'Calzada de Guadalupe, south of the Centro Histórico',
+    address: 'Calzada de Guadalupe 705, Col. Julián Carrillo',
+    hours: 'Tuesday to Sunday; check current hours before visiting',
+    admission: 'Varies by venue; the Museo Leonora Carrington charges admission',
     highlights: ['Contemporary art', 'Art workshops', 'Performance space', 'Community programs']
   }
 ];
@@ -228,7 +228,7 @@ const CulturalAttractionsPage: NextPage<CulturalAttractionsPageProps> = ({ place
               </div>
               <div className="flex items-center text-amber-300">
                 <TicketIcon className="w-5 h-5 mr-2" />
-                <span className="font-medium">Free Admission to Most Sites</span>
+                <span className="font-medium">Many Free or Low-Cost Sites</span>
               </div>
             </div>
           </div>

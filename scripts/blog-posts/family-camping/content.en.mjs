@@ -83,7 +83,7 @@ export default {
       ],
       fact: [
         ['drive', 'About 136 km / 2 h 15 min via Highway 70 or the Rioverde toll road. Paved to the gate; large parking lot.'],
-        ['cost', 'Tent MXN 150 plus entry (adults MXN 100, children and seniors MXN 50). Cabins MXN 1,300–2,600 per night with entry included. Cash only.'],
+        ['cost', 'Tent MXN 150 plus entry (adults MXN 100, children and seniors MXN 50). Cabins are also available; ask for current rates by WhatsApp. Cash only.'],
         ['facilities', 'Bathrooms open 24 h, showers until 19:00, food court, kayak and raft rental. No cell signal and weak Wi-Fi.'],
         ['bestFor', 'Families with kids of any age who want to swim.'],
         ['season', 'October–May. Summer rains can cloud the water and have closed the park before (for about 10 days in late July–early August 2024). Closed Tuesdays; day hours 8:00–17:00.'],
@@ -208,7 +208,7 @@ export default {
       title: '9. Long-weekend upgrade: Puente de Dios (Tamasopo)',
       subtitle: 'Turquoise pools in the Huasteca, but too far for a regular weekend',
       paragraphs: [
-        'Puente de Dios in Tamasopo is one of the most beautiful swimming spots in the state: turquoise pools under a natural rock bridge at the gateway to the Huasteca Potosina. At about 3 h 30 min from the city it is beyond the range of this guide, so treat it as a long-weekend trip. Entry is MXN 150 (2026), with life jackets at about MXN 25 and parking at MXN 30.',
+        'Puente de Dios in Tamasopo is one of the most beautiful swimming spots in the state: turquoise pools under a natural rock bridge at the gateway to the Huasteca Potosina. At about 3 h 30 min from the city it is beyond the range of this guide, so treat it as a long-weekend trip. Entry is MXN 150 (2026), with life jackets at about MXN 25–50 and parking at MXN 30.',
         'Two cautions for families: there are a few hundred steep steps down to the water, and the current can be strong, so it suits children of eight and up who swim well. The Huasteca stretch of Highway 70 calls for daylight driving. Our <a href="/blog/huasteca-potosina-itinerary-2026">Huasteca Potosina itinerary</a> covers the region in depth.',
       ],
     },
@@ -223,7 +223,7 @@ export default {
       ['Parque Recreativo Gogorrón', 'Thermal pools with cabins, but 2026 reviews report poor maintenance and no tent camping could be confirmed.'],
       ['Real de Catorce campsites', 'Three and a half to four hours away, and the route passes Matehuala on Highway 57.'],
     ],
-    note: 'Looking for a structured camp for older kids instead? Tlachtli in the Sierra de Álvarez has run inclusion- and conservation-focused camps since 1996 with schools and groups.',
+    note: 'Looking for a structured camp for older kids instead? Tlachtli in the Sierra de Álvarez has run inclusion- and conservation-focused camps for years with schools and groups.',
   },
   seasons: {
     title: 'When to go: weather, cold nights and rain',
@@ -254,7 +254,7 @@ export default {
     ['Pack for 0 °C, even in spring', 'Sleeping bags rated to 0 °C or lower, wool layers, hats and insulated sleeping pads. Desert and sierra nights drop fast after sunset.'],
     ['Lock the cooler', 'Free-roaming ranch dogs raid food at several sites. Keep food in the car overnight.'],
     ['Carry cash and a full tank', 'Most campsites don’t take cards, and some (like La Misión) have no gas station nearby.'],
-    ['Respect the springs', 'Life jackets are mandatory at Media Luna (MXN 50 rental; you can’t bring your own) and at Puente de Dios (around MXN 25). Bring water shoes and leave the soap at home.'],
+    ['Respect the springs', 'Life jackets are mandatory at Media Luna (MXN 50 rental; you can’t bring your own) and at Puente de Dios (around MXN 25–50). Bring water shoes and leave the soap at home.'],
     ['Shake out your boots', 'Scorpions and snakes live in the desert sites. Bring a headlamp and insect repellent for the rainy season.'],
     ['Confirm by WhatsApp', 'Prices and rules at small campsites change often. A two-minute message saves a wasted drive.'],
   ],
@@ -267,7 +267,7 @@ export default {
   ],
   faq: [
     ['Where can I camp near San Luis Potosí with kids?', 'The best family options are Laguna de la Media Luna in Rioverde (warm springs, 24 h bathrooms), Shamballa and Colibrí in the Sierra de Álvarez (about 45 minutes), and Cráter Encantado in Armadillo de los Infante (activities for kids, camping inside a volcanic crater).'],
-    ['How much does it cost to camp at the Media Luna?', 'As of February 2026, camping costs MXN 150 per tent plus entry (MXN 100 adults; MXN 50 children and seniors). Cabins cost MXN 1,300–2,600 per night with entry included. The park is closed on Tuesdays.'],
+    ['How much does it cost to camp at the Media Luna?', 'As of February 2026, camping costs MXN 150 per tent plus entry (MXN 100 adults; MXN 50 children and seniors). Cabins are also available; ask for current rates by WhatsApp. The park is closed on Tuesdays.'],
     ['Is it cold to camp near San Luis Potosí?', 'Yes, from November to February. The city sits at about 1,860 m and the sierras are higher, so near-freezing nights are normal. Media Luna in Rioverde is lower and much warmer.'],
     ['Can I make a campfire?', 'Only in designated fire rings. Wildfire season runs from 16 January to 30 June, and protected areas such as the Sierra de Álvarez only allow fires in designated spots. Media Luna allows only ready-made food (no cooking on site as of September 2026); ask before you go.'],
     ['Is it safe to camp near San Luis Potosí?', 'Our news search found no 2025–2026 incident reports specific to the campsites in this guide. The main risk is on certain highways, especially Highway 57 near Matehuala. Drive in daylight, use toll roads and arrive before dark.'],

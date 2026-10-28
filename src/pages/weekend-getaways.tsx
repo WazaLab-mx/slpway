@@ -67,10 +67,10 @@ const weekendGetaways = [
     ],
     accommodations: [
       "Cabañas Media Luna",
-      "Hotel Quinta Mar",
+      "Hotels in Rioverde (about 15 km away)",
       "Camping in designated areas"
     ],
-    culturalNotes: "Important archaeological site where ancient artifacts have been discovered underwater. The crystal-clear blue waters remain at 27°C year-round."
+    culturalNotes: "Important archaeological site where ancient artifacts have been discovered underwater. The crystal-clear spring-fed waters stay warm (roughly 27–30°C) year-round."
   }
 ];
 
@@ -80,7 +80,7 @@ const WeekendGetawaysPage: NextPage = () => {
     <>
       <SEO
         title="Weekend Getaways from San Luis Potosí — Real de Catorce, Huasteca, Media Luna"
-        ogTitle="3 weekend escapes 2 hours from San Luis Potosí"
+        ogTitle="3 weekend escapes 2–4 hours from San Luis Potosí"
         description="Escape SLP this weekend: Real de Catorce, Huasteca Potosina, Media Luna. 2-day itineraries with prices, drive times and what to book — start planning in 2 minutes."
         keywords="weekend getaways, San Luis Potosí, Corazón de Xoconostle, Huasteca Potosina, Real de Catorce, Media Luna, travel, adventure, tourism, Mexico"
         ogImage="/images/sponsored/weekend-getaways.jpg"
@@ -94,7 +94,7 @@ const WeekendGetawaysPage: NextPage = () => {
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Article',
-              headline: '3 weekend escapes 2 hours from San Luis Potosí',
+              headline: '3 weekend escapes 2–4 hours from San Luis Potosí',
               description:
                 'Real de Catorce, Huasteca Potosina and Media Luna: 2-day weekend itineraries from San Luis Potosí with prices, activities and where to stay.',
               image: 'https://www.sanluisway.com/images/sponsored/weekend-getaways.jpg',
@@ -170,7 +170,7 @@ const WeekendGetawaysPage: NextPage = () => {
             <div className="w-full md:w-2/3">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">About Corazón de Xoconostle</h2>
               <p className="text-gray-700 mb-4">
-                The story begins in 2014, when a group of dreamers with a profound love for their homeland came together in the heart of San Luis Potosí. Like the xoconostle—a resilient native fruit that thrives in the challenging terrain of central Mexico—they grew from a small hospitality project into something extraordinary. Today, Corazón de Xoconostle's certified professional guides (NOM-09-TUR-2002 and NOM-011-TUR-2017) have become the heartbeat of authentic travel experiences in the region.
+                According to the company, the story begins in 2014, when a group of dreamers with a profound love for their homeland came together in the heart of San Luis Potosí. Like the xoconostle—a resilient native fruit that thrives in the challenging terrain of central Mexico—they grew from a small hospitality project into something extraordinary. Today, Corazón de Xoconostle's professional guides, which the company says are certified under NOM-09-TUR-2002 and NOM-011-TUR-2017, have become the heartbeat of authentic travel experiences in the region.
               </p>
               <p className="text-gray-700 mb-4">
                 "We don't just show you places; we help you feel their soul," explains one of their founders. Their journeys were born from countless personal expeditions—scaling the rugged mountains, swimming in hidden cenotes, and sharing meals with local artisans. Each route they've crafted contains pieces of their own stories, passed on to travelers seeking to connect with the authentic spirit of San Luis Potosí in a way no guidebook could capture.
@@ -339,7 +339,7 @@ const WeekendGetawaysPage: NextPage = () => {
 
                 {getaway.id === "real-de-catorce" && (
                   <p className="text-gray-700 mb-6">
-                    The moment you emerge from the Ogarrio Tunnel, it feels like stepping through a portal in time. Real de Catorce greets you with whispers of its silver mining past, where fortunes were made and lost. The ghosts of Spanish colonials, revolutionary soldiers, and silver barons seem to linger in the mist that often envelops this magical town perched at 9,000 feet above sea level. As you walk the uneven cobblestone streets worn smooth by centuries of footsteps, you'll discover a place where time moves differently—a town that died when the silver ran out and was mysteriously reborn as a spiritual haven and artistic refuge.
+                    The moment you emerge from the Ogarrio Tunnel, it feels like stepping through a portal in time. Real de Catorce greets you with whispers of its silver mining past, where fortunes were made and lost. The ghosts of Spanish colonials, revolutionary soldiers, and silver barons seem to linger in the mist that often envelops this magical town perched at about 9,000 feet (2,750 m) above sea level. As you walk the uneven cobblestone streets worn smooth by centuries of footsteps, you'll discover a place where time moves differently—a town that died when the silver ran out and was mysteriously reborn as a spiritual haven and artistic refuge.
                   </p>
                 )}
 
@@ -351,7 +351,7 @@ const WeekendGetawaysPage: NextPage = () => {
 
                 {getaway.id === "media-luna" && (
                   <p className="text-gray-700 mb-6">
-                    Beneath the surface of Media Luna's crystalline waters lies a mysterious underwater world that has captivated divers and scientists alike for generations. This half-moon shaped lagoon, formed by thermal springs that maintain a perfect 27°C year-round, reveals its secrets slowly. As you float in its transparent blue waters, you're suspended above an archaeological treasure trove where pre-Hispanic offerings rest alongside modern legends. Local stories tell of underwater passageways leading to distant lagoons and caves—some explored, others still waiting for brave souls to discover their wonders. The surrounding landscape, with its desert vegetation contrasting dramatically with the oasis-like water, creates a surreal setting that feels both ancient and timeless.
+                    Beneath the surface of Media Luna's crystalline waters lies a mysterious underwater world that has captivated divers and scientists alike for generations. This half-moon shaped lagoon, formed by springs that keep the water warm, roughly 27–30°C, year-round, reveals its secrets slowly. As you float in its transparent blue waters, you're suspended above an underwater archaeological site where pre-Hispanic objects and Ice Age fossils have been found. Local stories tell of underwater passageways leading to distant lagoons and caves—some explored, others still waiting for brave souls to discover their wonders. The surrounding landscape, with its desert vegetation contrasting dramatically with the oasis-like water, creates a surreal setting that feels both ancient and timeless.
                   </p>
                 )}
 
@@ -361,7 +361,7 @@ const WeekendGetawaysPage: NextPage = () => {
 
                   {getaway.id === "real-de-catorce" && (
                     <p className="text-gray-700 mb-2">
-                      Your journey begins as morning light bathes the desert in gold. After an early departure from San Luis Potosí, you'll travel through the changing landscapes of the altiplano until reaching the famous Ogarrio Tunnel—the only entrance to this mystical town. As you check into your historic accommodation, you can already feel the unique energy that has drawn seekers and adventurers here for generations.
+                      Your journey begins as morning light bathes the desert in gold. After an early departure from San Luis Potosí, you'll travel through the changing landscapes of the altiplano until reaching the famous Ogarrio Tunnel—the main road entrance to this mystical town. As you check into your historic accommodation, you can already feel the unique energy that has drawn seekers and adventurers here for generations.
                     </p>
                   )}
 
@@ -373,7 +373,7 @@ const WeekendGetawaysPage: NextPage = () => {
 
                   {getaway.id === "media-luna" && (
                     <p className="text-gray-700 mb-2">
-                      The journey to Media Luna takes you through the changing landscapes of central San Luis Potosí, where cacti and desert scrub gradually give way to the surprising oasis that contains one of Mexico's most extraordinary natural springs. As you arrive and catch your first glimpse of the luminous blue waters forming their perfect half-moon shape, you'll understand why this place has drawn visitors for thousands of years—from ancient indigenous peoples to modern-day underwater explorers.
+                      The journey to Media Luna takes you through the changing landscapes of central San Luis Potosí, where cacti and desert scrub gradually give way to the surprising oasis that contains one of Mexico's most extraordinary natural springs. As you arrive and catch your first glimpse of the luminous blue waters forming their perfect half-moon shape, you'll understand why this place has drawn visitors for centuries—from the pre-Hispanic Río Verde culture to modern-day underwater explorers.
                     </p>
                   )}
 
@@ -431,7 +431,7 @@ const WeekendGetawaysPage: NextPage = () => {
 
                   {getaway.id === "real-de-catorce" && (
                     <p className="text-gray-700 mt-2">
-                      During your visit, you might witness Wixárika pilgrims completing their 450 km journey to collect peyote and leave offerings at sacred sites. Their colorful beadwork and profound spiritual traditions offer a glimpse into pre-Columbian beliefs that have survived against all odds. Meanwhile, the crumbling grandeur of colonial buildings tells the story of European influence and the boom-and-bust cycle of mining towns throughout Mexican history.
+                      During your visit, you might witness Wixárika pilgrims completing their roughly 500 km journey to collect peyote and leave offerings at sacred sites. Their colorful beadwork and profound spiritual traditions offer a glimpse into pre-Columbian beliefs that have survived against all odds. Meanwhile, the crumbling grandeur of colonial buildings tells the story of European influence and the boom-and-bust cycle of mining towns throughout Mexican history.
                     </p>
                   )}
 
@@ -443,7 +443,7 @@ const WeekendGetawaysPage: NextPage = () => {
 
                   {getaway.id === "media-luna" && (
                     <p className="text-gray-700 mt-2">
-                      Beyond its natural beauty, Media Luna holds archaeological significance as a site where ancient civilizations conducted rituals and left offerings. Underwater archaeological expeditions have recovered artifacts dating back thousands of years, including evidence of some of the earliest human presence in central Mexico. The contrast between the arid surroundings and this life-giving water source has made it a place of spiritual importance throughout human history in the region.
+                      Beyond its natural beauty, Media Luna holds archaeological significance as a site where ancient civilizations conducted rituals and left offerings. Underwater archaeological work has recovered pre-Hispanic objects linked to the Río Verde culture, along with Ice Age fossils such as mammoth remains. The contrast between the arid surroundings and this life-giving water source has made it a place of spiritual importance throughout human history in the region.
                     </p>
                   )}
                 </div>
@@ -495,7 +495,7 @@ const WeekendGetawaysPage: NextPage = () => {
                 <p className="text-gray-700">
                   Imagine leaving your home after breakfast and by lunchtime, standing in a
                   completely different world. San Luis Potosí's treasure troves of adventure
-                  lie just 2-3 hours from the city center—close enough for a weekend escape,
+                  lie roughly 2 to 4 hours from the city center—close enough for a weekend escape,
                   yet far enough to disconnect completely from urban routines. While others plan
                   elaborate vacations waiting for "someday," you can be swimming beneath a waterfall
                   or wandering a ghost town by this afternoon.

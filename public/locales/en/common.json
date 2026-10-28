@@ -505,19 +505,19 @@
     "ranking": "Ranking",
     "rankingText": "2nd largest urban park in Mexico",
     "trees": "Trees",
-    "treesCount": "Over 1.8 million",
-    "oxygen": "Oxygen",
-    "oxygenProduction": "800 tons per year",
+    "treesCount": "Hundreds of thousands",
+    "oxygen": "Opened",
+    "oxygenProduction": "1983",
     "history": {
       "title": "History & Cultural Significance",
       "meaningTitle": "The Meaning of \"Tangamanga\"",
-      "meaningText": "The name \"Tangamanga\" comes from the Huachichil language, an indigenous group that once inhabited the region. It translates to \"meeting place\" or \"place of gathering\", reflecting the park's role as a central social and cultural hub for the community.",
+      "meaningText": "\"Tangamanga\" was the indigenous name of the valley where San Luis Potosí was founded, an area inhabited by Guachichil (Huachichil) groups before the Spanish arrived. The sources we checked do not document a literal translation of the word, but the name ties the park to the valley's pre-colonial past.",
       "originTitle": "Historical Origin",
-      "originText": "The park was formed on the grounds of the old Hacienda de la Tenería, which dates back to 1609. The hacienda's main building is still preserved within the park, serving as a silent witness to over four centuries of Potosino history.",
+      "originText": "The park was formed on the grounds of the old Hacienda de la Tenería, a colonial-era estate. The hacienda's main house (casco) is still preserved within the park and now houses the EcoMuseum.",
       "creationTitle": "Creation and Development",
-      "creationText": "The project's first phase began in 1982, when the land was expropriated and over a thousand trees were planted. The park was officially inaugurated in 1983 during the government of Prof. Carlos Jonguitud Barrios. In 1997, the government gave it the official name \"Parque Carlos Jonguitud Barrios\", although most people simply know it as Tangamanga Park.",
+      "creationText": "The project began in 1982, and the park was officially inaugurated in 1983 during the state government of Prof. Carlos Jonguitud Barrios. Today it is run by the state agency CECURT (Centros Estatales de Cultura y Recreación Tangamanga).",
       "impactTitle": "National Importance",
-      "impactText": "With an area of 420 hectares, Tangamanga Park I is positioned as the second largest urban park in Mexico, only surpassed by Bosque de Chapultepec in Mexico City, and one of the largest urban parks in the world. Its more than 1.8 million trees make it the most important green lung of San Luis Potosí, producing 800 tons of oxygen per year."
+      "impactText": "With an area of about 420 hectares, Tangamanga Park I is considered the second largest urban park in Mexico, surpassed only by Bosque de Chapultepec in Mexico City. Its hundreds of thousands of trees make it one of the most important green lungs of San Luis Potosí."
     },
     "attractions": {
       "title": "Main Attractions",
@@ -567,7 +567,7 @@
     },
     "biodiversity": {
       "title": "Biodiversity & Nature",
-      "text": "The park hosts an extraordinary diversity of flora and fauna. In its 420 hectares, more than 1.8 million native and exotic trees coexist, along with migratory and resident birds, as well as small mammals and reptiles. The botanical garden is especially important for the conservation of endemic species from the Potosino region and the Mexican desert."
+      "text": "The park hosts a rich diversity of flora and fauna. Across its roughly 420 hectares, hundreds of thousands of native and exotic trees coexist, along with migratory and resident birds, as well as small mammals and reptiles. The botanical garden is especially important for the conservation of endemic species from the Potosino region and the Mexican desert."
     },
     "sustainability": {
       "title": "Self-Sustainability",
@@ -577,7 +577,7 @@
       "feature2Title": "Compost Generation",
       "feature2Text": "Own production of organic compost to nourish the park's vegetation",
       "feature3Title": "Green Lung",
-      "feature3Text": "Generation of 800 tons of oxygen per year thanks to its 1.8 million trees"
+      "feature3Text": "A major green lung for the city, with hundreds of thousands of trees"
     },
     "services": {
       "title": "Services",
@@ -610,41 +610,41 @@
       "q4": "Is Parque Tangamanga safe?",
       "a4": "Yes. The park is well-patrolled during opening hours. Avoid visiting alone after dark on weekdays. Weekend mornings are the busiest and safest time.",
       "q5": "How big is Parque Tangamanga compared to other parks?",
-      "a5": "Parque Tangamanga I covers 411 hectares, larger than Central Park in New York (341 ha). It has over 400,000 trees.",
+      "a5": "Parque Tangamanga I covers about 420 hectares, larger than Central Park in New York (341 ha). It has hundreds of thousands of trees.",
       "q6": "When is the BMW Tangamanga Marathon?",
-      "a6": "The Maratón Internacional Tangamanga runs every year on the last Sunday of June. Edition 40 takes place June 28, 2026, starting and ending at Parque Tangamanga I. Registration opens in January each year.",
+      "a6": "The Maratón Internacional Tangamanga is held each year in late June. The 40th edition took place on Sunday, June 28, 2026, starting and finishing in front of the Planetarium at Parque Tangamanga I. Check the official organizer for next year's date and registration.",
       "q7": "Is there parking at Parque Tangamanga?",
-      "a7": "Yes. Free parking is available at multiple entrances. The main lots are near the zoo (east entrance) and near the theater (north entrance). On weekends and holidays the lots fill before 11 AM — arrive early or use rideshare.",
+      "a7": "Yes. The park has parking areas at its entrances. On weekends and holidays they fill up early — arrive early or use rideshare.",
       "q8": "How do I get to Parque Tangamanga by public transit?",
-      "a8": "The park sits on Av. Dr. Salvador Nava. Several city bus routes stop at the main entrances: Ruta 23, 32, and 52 reach the east side (zoo). Rideshare and taxis drop visitors at any of the 8 gates.",
+      "a8": "The park sits on Av. Dr. Salvador Nava Martínez. Several city bus routes pass nearby; check current routes in a transit app such as Moovit. Rideshare and taxis can drop visitors at the main entrances.",
       "q9": "What can kids do at Parque Tangamanga?",
       "a9": "Plan an outdoor walk or playground stop, and check the Museo Laberinto program for family activities and tickets. Zoo temporarily closed for renovation; check CECURT before visiting.",
       "q10": "What's the difference between Tangamanga I and Tangamanga II?",
-      "a10": "Tangamanga I (this page) is the 411-hectare tourist park with the zoo, planetarium, aquarium, and gardens. Tangamanga II is a 189-hectare sports park built over SLP's old airport — focused on archery, running tracks, auto racing, and soccer fields. Both are free and both are in San Luis Potosí city limits.",
+      "a10": "Tangamanga I (this page) is the roughly 420-hectare park with the planetarium, Japanese garden, theaters, lakes and gardens (its zoo is temporarily closed). Tangamanga II is a sports park created in 1985 on SLP's old airport, home to the Autódromo motor-racing circuit, archery, running and soccer fields. Both are free and both are in San Luis Potosí city limits.",
       "q11": "Is Parque Tangamanga bigger than Central Park?",
-      "a11": "Yes. Parque Tangamanga I covers 411 hectares (1,015 acres), which is 70 hectares larger than New York's Central Park (341 ha / 843 acres). It is the second-largest urban park in Mexico.",
+      "a11": "Yes. Parque Tangamanga I covers about 420 hectares (roughly 1,040 acres), about 80 hectares more than New York's Central Park (341 ha / 843 acres). It is considered the second-largest urban park in Mexico.",
       "q12": "How long does it take to visit Parque Tangamanga?",
       "a12": "Choose a few activities and leave time for breaks. Check museum and event schedules separately before visiting. Zoo temporarily closed for renovation; check CECURT before visiting.",
       "q13": "Are dogs allowed at Parque Tangamanga?",
-      "a13": "Yes, dogs are allowed on leash in the public walking areas of Parque Tangamanga I. Dogs are not permitted inside the zoo, planetarium, or aquarium. For an off-leash experience, Parque Tangamanga II has a dedicated fenced pet zone.",
+      "a13": "Leashed dogs are commonly seen on the public walking paths of Parque Tangamanga I, but museums and enclosed venues set their own rules. Check posted signs or ask CECURT before bringing your dog.",
       "q14": "Can I bring food to Parque Tangamanga?",
-      "a14": "Yes. Picnics are welcome in the designated lawn areas. Glass containers and alcohol are not permitted. There are also food vendors and small restaurants inside the park, most active on weekends.",
+      "a14": "Yes. Picnics are common in the lawn areas; check posted rules on glass containers and alcohol. There are also food vendors inside the park, most active on weekends.",
       "q15": "What is the best time to visit Parque Tangamanga?",
       "a15": "Check the park hours and current event program before choosing your visit. Monday has reduced opening hours for maintenance."
     },
     "maraton": {
       "badge": "Annual Event",
       "title": "BMW Maratón Internacional Tangamanga 2026 — 40th Anniversary",
-      "subtitle": "The city's biggest running event takes place right here in Tangamanga I every year. Over 17,000 runners, four certified distances (5K, 10K, half marathon, full marathon), and a forty-year tradition.",
+      "subtitle": "The city's biggest running event takes place right here in Tangamanga I every year. Thousands of runners, four distances (5K, 10K, half marathon, full marathon), and a forty-year tradition.",
       "date": "June 28, 2026",
       "linkText": "See full race guide"
     },
     "comparison": {
       "title": "Parque Tangamanga I vs Tangamanga II",
       "description": "San Luis Potosí has two Tangamanga parks. They share a name and a philosophy, but they serve different visitors.",
-      "t1Title": "Tangamanga I — 411 ha",
-      "t1Desc": "The iconic park. Zoo, planetarium, aquarium, Japanese garden, theater, lakes, and 400,000 trees. Best for families, tourists, and first-time visitors.",
-      "t2Title": "Tangamanga II — 189 ha",
+      "t1Title": "Tangamanga I — 420 ha",
+      "t1Desc": "The iconic park. Planetarium, Japanese garden, theaters, lakes, and hundreds of thousands of trees (the zoo is temporarily closed). Best for families, tourists, and first-time visitors.",
+      "t2Title": "Tangamanga II — Sports park",
       "t2Desc": "Built over the city's old airport. Sports-focused: archery, auto racing track, soccer fields, basketball, tennis, pet zone and kids area. Best for athletes and serious runners.",
       "ctaText": "Visit the Tangamanga II guide"
     },
@@ -783,7 +783,7 @@
       "title": "Welcome to the Heart of San Luis Potosí",
       "paragraph1": "The Historic Downtown is much more than a collection of old buildings: it's the living soul of the city. Every plaza, every alley, every pink quarry facade tells a story dating back over four centuries.",
       "paragraph2": "Here, past and present coexist in perfect harmony. While admiring the majesty of colonial architecture, you can savor specialty coffee in an 18th-century courtyard, explore contemporary art galleries, or enjoy the city's finest gastronomy.",
-      "stat1": "Historic Buildings",
+      "stat1": "UNESCO World Heritage (Camino Real)",
       "stat2": "Years of History",
       "stat3": "Year Founded"
     },
@@ -802,7 +802,7 @@
       "originsTitle": "Colonial Origins",
       "originsText": "Founded in 1592, San Luis Potosí was born thanks to the region's mining wealth. The Historic Downtown preserves the essence of over four centuries of history, with baroque, neoclassical, and colonial buildings that narrate the grandeur of New Spain.",
       "architectureTitle": "Exceptional Architecture",
-      "architectureText": "The Historic Downtown is an open-air museum with over 1,500 catalogued historic buildings. The pink quarry stone, characteristic of the city, adorns the facades of temples, mansions, and government buildings. Every street reveals architectural treasures that transport you to another era.",
+      "architectureText": "The Historic Downtown is an open-air museum, protected since 1990 as a federal Zone of Historic Monuments. The pink quarry stone, characteristic of the city, adorns the facades of temples, mansions, and government buildings. Every street reveals architectural treasures that transport you to another era.",
       "todayTitle": "A Living Downtown",
       "todayText": "Far from being a frozen museum, the Historic Downtown pulses with life. Cafés in colonial courtyards, contemporary art galleries in 18th-century buildings, and gourmet restaurants in old mansions create a unique fusion between past and present."
     },
@@ -813,10 +813,10 @@
       "landmark2": "Metropolitan Cathedral - 17th-century baroque jewel",
       "landmark3": "Teatro de la Paz - One of Mexico's most beautiful theaters",
       "landmark4": "Temple of Carmen - Churrigueresque masterpiece",
-      "landmark5": "Government Palace - Living history with Fernando Leal murals",
+      "landmark5": "Government Palace - Where Benito Juárez installed the national government in 1863",
       "museumsTitle": "Museums & Culture",
       "museum1": "National Mask Museum - Unique collection in Mexico",
-      "museum2": "Federico Silva Museum - Contemporary art in the Old Hacienda",
+      "museum2": "Federico Silva Museum - Contemporary sculpture in a restored 1907 school building",
       "museum3": "Viceroyalty Museum - Colonial history",
       "museum4": "Arts Center - Exhibitions and workshops"
     },
@@ -824,8 +824,8 @@
       "title": "Gastronomy & Nightlife",
       "intro": "The Historic Downtown is a gastronomic paradise where tradition and innovation meet. From century-old cantinas to author cuisine restaurants, every corner offers a memorable culinary experience.",
       "restaurantsTitle": "Featured Restaurants",
-      "restaurant1": "La Gran Vía - Traditional cuisine and historic ambiance since 1940",
-      "restaurant2": "Café Pacífico - Classic since 1943",
+      "restaurant1": "La Gran Vía - Spanish and international cuisine",
+      "restaurant2": "Café Pacífico - A downtown classic for decades",
       "restaurant3": "La Oruga y la Cebada - Author cuisine",
       "restaurant4": "Restaurante 1913 - Fine Mexican dining",
       "restaurant5": "La Posadita - Mexican cuisine and bohemian vibe",
@@ -836,7 +836,7 @@
       "bar4": "Catrina Rooftop - Terrace with panoramic views",
       "bar5": "El Callejón del Beso - Bar in historic alley",
       "marketsTitle": "Traditional Markets",
-      "market1": "Mercado Hidalgo - The main market since 1906",
+      "market1": "Mercado Hidalgo - The main downtown market",
       "market2": "Mercado República - Crafts and street food",
       "market3": "Sunday Tianguis - Antiques and curiosities",
       "market4": "Mercado 16 de Septiembre - Fresh produce"
@@ -864,8 +864,8 @@
     "hiddenGems": {
       "title": "Downtown Secrets",
       "intro": "Beyond the tourist sites, the Historic Downtown holds secrets that only locals know. Here we reveal some of our favorites.",
-      "gem1Title": "Callejón del Cardo",
-      "gem1Text": "A hidden passage with art galleries and bohemian cafés. Perfect for a quiet afternoon of exploration.",
+      "gem1Title": "Callejón del Cariño",
+      "gem1Text": "A short downtown alley between Venustiano Carranza and Madero, tied to the legend of a 19th-century pulquería. Perfect for a quiet afternoon of exploration.",
       "gem2Title": "Colonial Courtyards",
       "gem2Text": "Many buildings preserve spectacular interior courtyards. Enter to admire fountains, gardens, and intimate architecture.",
       "gem3Title": "Golden Hour",
@@ -893,15 +893,15 @@
     },
     "funFacts": {
       "title": "Fun Facts",
-      "fact1": "The Historic Downtown has over 1,500 buildings catalogued as historical heritage.",
-      "fact2": "The pink quarry stone that adorns the buildings is extracted from local quarries and is unique to Mexico.",
+      "fact1": "The Historic Downtown is part of the UNESCO World Heritage property Camino Real de Tierra Adentro, inscribed in 2010.",
+      "fact2": "The pink quarry stone (cantera rosa) that adorns the buildings comes from deposits in the valley around the city, such as the slopes of the Sierra de San Miguelito.",
       "fact3": "Benito Juárez established Mexico's capital here in 1863 during the French intervention.",
       "fact4": "Teatro de la Paz was inaugurated in 1894 and is considered one of the most beautiful theaters in Latin America."
     },
     "cafes": {
       "title": "Cafés to Rest",
       "intro": "After walking, these cafés are perfect to recharge:",
-      "cafe1": "Café Pacífico - Classic since 1943",
+      "cafe1": "Café Pacífico - A downtown classic for decades",
       "cafe2": "Barista del Portal - Specialty coffee",
       "cafe3": "Café La Parroquia - Potosino tradition",
       "cafe4": "Cocolatte - Artisan chocolate and coffee"
@@ -1566,7 +1566,7 @@
   "arrivalChecklist": {
     "meta": {
       "title": "Arrival Checklist: Your First 30 Days in San Luis Potosí | San Luis Way",
-      "description": "Complete 45+ item checklist for newcomers to San Luis Potosí. Covers essentials, bureaucratic tasks, utilities, banking, healthcare, and social integration.",
+      "description": "Complete 39-item checklist for newcomers to San Luis Potosí. Covers essentials, bureaucratic tasks, utilities, banking, healthcare, and social integration.",
       "keywords": "San Luis Potosí arrival checklist, expat checklist Mexico, moving to SLP, first days San Luis Potosí",
       "ogTitle": "Arrival Checklist: Your First 30 Days in San Luis Potosí",
       "ogDescription": "Your complete checklist for settling in San Luis Potosí."
@@ -1574,7 +1574,7 @@
     "hero": {
       "badge": "Your First 30 Days",
       "title": "Arrival Checklist",
-      "subtitle": "45+ actionable items to help you settle into San Luis Potosí successfully",
+      "subtitle": "39 actionable items to help you settle into San Luis Potosí successfully",
       "categories": "7 Categories",
       "checkboxes": "Interactive Checkboxes",
       "links": "Official Links"
@@ -1648,7 +1648,7 @@
           },
           "curp": {
             "title": "Get your CURP",
-            "description": "Mexico's population ID. Free at Registro Civil with passport and residency card."
+            "description": "Mexico's population ID. INM assigns one to foreign residents; it is usually printed on your resident card. Download it free at gob.mx/curp."
           },
           "rfc": {
             "title": "Obtain RFC (if working)",
@@ -1660,7 +1660,7 @@
           },
           "license": {
             "title": "Mexican driver's license (optional)",
-            "description": "Apply at Secretaría de Seguridad Pública. Cost: ~$800-1,200 MXN."
+            "description": "Issued by the state Secretaría de Finanzas (oficinas recaudadoras). The first permanent license is free for state residents (2026); bring ID and two proofs of address."
           }
         }
       },
@@ -1677,7 +1677,7 @@
           },
           "gas": {
             "title": "Arrange gas delivery",
-            "description": "Providers: Gas Express Nieto, Zeta Gas. Stationary tanks refilled, portable exchanged."
+            "description": "Providers include Gas Express Nieto. Stationary tanks refilled, portable exchanged."
           },
           "internet": {
             "title": "Set up internet",
@@ -1685,7 +1685,7 @@
           },
           "garrafon": {
             "title": "Buy water garrafones",
-            "description": "Tap water NOT drinkable. Buy 5-gallon jugs from Bonafont, Ciel. ~$30-40 MXN each."
+            "description": "Tap water NOT drinkable. Buy 20L jugs: Bonafont or Ciel ~$55-70 MXN each; local purificadoras are cheaper."
           },
           "dispenser": {
             "title": "Get a garrafón dispenser",
@@ -1731,11 +1731,11 @@
           },
           "pharmacy": {
             "title": "Locate pharmacies",
-            "description": "Farmacias Guadalajara, Farmacias del Ahorro. Many meds available without prescription."
+            "description": "Farmacias Guadalajara, Farmacias del Ahorro. Many meds available without prescription, but antibiotics require one."
           },
           "insurance": {
             "title": "Set up health insurance",
-            "description": "IMSS (~$6,000 MXN/year) or private: GNP, Seguros Monterrey, Bupa."
+            "description": "IMSS voluntary plan ($9,300-22,150 MXN/year by age, 2026) or private: GNP, Seguros Monterrey, Bupa."
           },
           "emergency": {
             "title": "Save emergency numbers",
@@ -1756,7 +1756,7 @@
           },
           "classes": {
             "title": "Enroll in Spanish classes",
-            "description": "UASLP offers courses. Private tutors: $150-300 MXN/hour."
+            "description": "Language schools and private tutors: ~$150-350 MXN/hour."
           },
           "neighborhoods": {
             "title": "Explore neighborhoods",
@@ -1777,7 +1777,7 @@
         "items": {
           "supermarkets": {
             "title": "Find supermarkets",
-            "description": "Soriana (local), Walmart, HEB (premium), Costco (membership)."
+            "description": "Soriana, Walmart, HEB (premium), Costco (membership)."
           },
           "markets": {
             "title": "Explore local markets",

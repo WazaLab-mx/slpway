@@ -53,7 +53,7 @@ export default function CostOfLivingGuidePage() {
     },
     { 
       q: 'Is the bus really free?', 
-      a: 'The MetroRed BRT is described as free through 2026 in our July cost-of-living reporting; regular city buses were MXN $12.50 with a possible future bump—confirm locally.' 
+      a: 'Yes—MetroRed remained free to ride as of October 2026. Regular city buses charge MXN $13.50 (general fare since mid-January 2026), or $12.50 with a prepaid card.'
     },
   ];
 
@@ -75,7 +75,7 @@ export default function CostOfLivingGuidePage() {
               headline: 'Cost of Living in San Luis Potosí: 2026 Budgets for Expats and Digital Nomads',
               description: 'Complete cost of living guide for San Luis Potosí, Mexico (2026): monthly budgets by profile, neighborhood rents, utilities, groceries, transportation, healthcare, and sample line-item breakdowns.',
               datePublished: '2026-09-24',
-              dateModified: '2026-09-24',
+              dateModified: '2026-10-27',
               author: {
                 '@type': 'Person',
                 '@id': 'https://www.sanluisway.com/about#editorial-team',
@@ -153,7 +153,7 @@ export default function CostOfLivingGuidePage() {
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
                 Cost of Living in San Luis Potosí: 2026 Budgets for Expats and Digital Nomads
               </h1>
-              <LastUpdated date="2026-09-24" className="text-green-100 mb-4" />
+              <LastUpdated date="2026-10-27"className="text-green-100 mb-4" />
               <p className="text-xl text-green-100 max-w-3xl mx-auto">
                 Complete monthly budget breakdowns, neighborhood rents, utilities, groceries, and comparisons with other Mexican cities
               </p>
@@ -232,7 +232,7 @@ export default function CostOfLivingGuidePage() {
 
               <div className="mt-6 bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
                 <p className="text-blue-900 text-sm">
-                  <strong>Exchange Rate Note:</strong> Those USD columns use the article&apos;s stated Banxico FIX reference of <strong>17.54 MXN per USD</strong> on 2 July 2026. For orientation on 23 Sep 2026, Banxico&apos;s tipcamb page displayed FIX-related prints around 17.50. Budget in pesos first; convert with the day&apos;s Banxico FIX when you wire money.
+                  <strong>Exchange Rate Note:</strong> Those USD columns use the article&apos;s stated Banxico FIX reference of <strong>17.54 MXN per USD</strong> on 2 July 2026. The peso has since weakened: the FIX was 18.58 on 27 Oct 2026 (DOF), so at that rate each USD figure would be about 6% lower. Budget in pesos first; convert with the day&apos;s Banxico FIX when you wire money.
                 </p>
               </div>
             </div>
@@ -248,7 +248,7 @@ export default function CostOfLivingGuidePage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-600 font-bold">•</span>
-                  <span><strong>Cross-check:</strong> Numbeo (San Luis Potosí) still showed a last update of 19 June 2026 when fetched 23 Sep 2026</span>
+                  <span><strong>Cross-check:</strong> Numbeo (San Luis Potosí, page last updated 2 Oct 2026) showed the same key prices when re-checked 27 Oct 2026</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-600 font-bold">•</span>
@@ -355,42 +355,42 @@ export default function CostOfLivingGuidePage() {
                     <tr>
                       <td className="px-4 py-3 text-sm">Electricity (typical subsidized home)</td>
                       <td className="px-4 py-3 text-sm font-medium">~MXN $300/month (~$17 USD at 17.54)</td>
-                      <td className="px-4 py-3 text-sm">COL blog; warns of new 2026 nationwide fixed charge ~$20–70 and DAC high-use trap</td>
+                      <td className="px-4 py-3 text-sm">COL blog; 2026 bills add a fixed monthly charge that varies by region (reported ~MXN $20–110), plus the DAC high-use trap</td>
                     </tr>
                     <tr>
                       <td className="px-4 py-3 text-sm">Water (INTERAPAS)</td>
-                      <td className="px-4 py-3 text-sm">2026 increases cited 3.8–6.6%</td>
-                      <td className="px-4 py-3 text-sm">COL blog citing El Sol de San Luis</td>
+                      <td className="px-4 py-3 text-sm">Single-digit annual increases; 2027 tariff hike still under debate in the state Congress (Oct 2026)</td>
+                      <td className="px-4 py-3 text-sm">COL blog; local press (Plano Informativo, Oct 2026)</td>
                     </tr>
                     <tr>
                       <td className="px-4 py-3 text-sm">Combined basic utilities (crowd avg.)</td>
                       <td className="px-4 py-3 text-sm font-medium">~MXN $757</td>
-                      <td className="px-4 py-3 text-sm">Numbeo (also visible 23 Sep 2026)</td>
+                      <td className="px-4 py-3 text-sm">Numbeo (unchanged when re-checked 27 Oct 2026)</td>
                     </tr>
                     <tr>
                       <td className="px-4 py-3 text-sm">Fiber — Telmex</td>
-                      <td className="px-4 py-3 text-sm font-medium">from MXN $349 (120 Mbps cited)</td>
-                      <td className="px-4 py-3 text-sm">COL blog / provider plans</td>
+                      <td className="px-4 py-3 text-sm font-medium">approx. MXN $349–389 (~120 Mbps; list prices shifted during 2026)</td>
+                      <td className="px-4 py-3 text-sm">COL blog; Selectra plan listings (Jul 2026)</td>
                     </tr>
                     <tr>
                       <td className="px-4 py-3 text-sm">Fiber — izzi</td>
-                      <td className="px-4 py-3 text-sm font-medium">from MXN $379 after March 2026 hike</td>
-                      <td className="px-4 py-3 text-sm">COL blog / El Financiero mention</td>
+                      <td className="px-4 py-3 text-sm font-medium">approx. MXN $349–389 (promo vs. regular price)</td>
+                      <td className="px-4 py-3 text-sm">Selectra plan listings (Jul 2026)</td>
                     </tr>
                     <tr>
                       <td className="px-4 py-3 text-sm">Fiber — Totalplay</td>
-                      <td className="px-4 py-3 text-sm font-medium">from MXN $599 (150 Mbps cited)</td>
-                      <td className="px-4 py-3 text-sm">COL blog</td>
+                      <td className="px-4 py-3 text-sm font-medium">approx. MXN $599 (150 Mbps cited)</td>
+                      <td className="px-4 py-3 text-sm">COL blog (Jul 2026; not re-verified Oct 2026)</td>
                     </tr>
                     <tr>
                       <td className="px-4 py-3 text-sm">Mobile — Telcel postpaid</td>
-                      <td className="px-4 py-3 text-sm font-medium">from MXN $229–249</td>
-                      <td className="px-4 py-3 text-sm">COL blog</td>
+                      <td className="px-4 py-3 text-sm font-medium">approx. MXN $229–249</td>
+                      <td className="px-4 py-3 text-sm">COL blog (Jul 2026); Numbeo 10GB+ plan avg ~MXN $293</td>
                     </tr>
                     <tr>
                       <td className="px-4 py-3 text-sm">Mobile — AT&T prepaid example</td>
-                      <td className="px-4 py-3 text-sm font-medium">MXN $200 ≈ 12 GB / 30 days</td>
-                      <td className="px-4 py-3 text-sm">COL blog</td>
+                      <td className="px-4 py-3 text-sm font-medium">approx. MXN $200 ≈ 12 GB / 30 days</td>
+                      <td className="px-4 py-3 text-sm">COL blog (Jul 2026)</td>
                     </tr>
                   </tbody>
                 </table>
@@ -448,11 +448,11 @@ export default function CostOfLivingGuidePage() {
               <ul className="space-y-2 text-gray-700 ml-4">
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-600 font-bold">•</span>
-                  <span><strong>MetroRed BRT:</strong> free through 2026 per COL blog confirmation note</span>
+                  <span><strong>MetroRed BRT:</strong> still free to ride as of October 2026</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-600 font-bold">•</span>
-                  <span><strong>City buses:</strong> MXN $12.50 (article notes a hike to 13.50 approved but &quot;not yet in force&quot; as of that writing—verify on arrival)</span>
+                  <span><strong>City buses:</strong> MXN $13.50 general fare since mid-January 2026; $12.50 with a prepaid card; $6.75 special fare (students, seniors, people with disabilities)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-600 font-bold">•</span>
@@ -460,7 +460,7 @@ export default function CostOfLivingGuidePage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-600 font-bold">•</span>
-                  <span><strong>Gasoline:</strong> national ~MXN $23.70/L in the July article; Numbeo fetch showed gasoline ~MXN $25.93/L average—treat as a moving national figure</span>
+                  <span><strong>Gasoline:</strong> regular (Magna) averaged ~MXN $23.95/L in San Luis Potosí in late October 2026; Numbeo&apos;s crowd average is ~MXN $25.93/L—prices move weekly</span>
                 </li>
               </ul>
               <p className="text-gray-700 mt-4">
@@ -601,7 +601,7 @@ export default function CostOfLivingGuidePage() {
                       <tr>
                         <td className="px-4 py-3 text-sm">Transport (bus/MetroRed/occasional DiDi)</td>
                         <td className="px-4 py-3 text-sm text-right">600</td>
-                        <td className="px-4 py-3 text-sm">MetroRed free; buses 12.50; few rideshares</td>
+                        <td className="px-4 py-3 text-sm">MetroRed free; buses 13.50 (12.50 prepaid); few rideshares</td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 text-sm">Healthcare buffer / pharmacy</td>
@@ -833,12 +833,12 @@ export default function CostOfLivingGuidePage() {
             <div className="bg-white rounded-xl shadow-md p-6">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">SLP vs Other Cities</h2>
               <p className="text-gray-700 mb-4">
-                From the COL article&apos;s crowdsourced indices (directional only):
+                Crowdsourced indices (directional only; Numbeo figures re-checked 27 Oct 2026):
               </p>
               <ul className="space-y-2 text-gray-700 ml-4">
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-600 font-bold">•</span>
-                  <span>Mexico City <strong>~+24%</strong> overall with rent vs SLP (Numbeo, Jul 2026)</span>
+                  <span>Mexico City <strong>~+29%</strong> overall with rent vs SLP; rents ~<strong>+95%</strong> (Numbeo, Oct 2026)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-600 font-bold">•</span>
@@ -846,11 +846,11 @@ export default function CostOfLivingGuidePage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-600 font-bold">•</span>
-                  <span>Mérida <strong>~+2.5%</strong> with rent; rents there ~<strong>+10%</strong></span>
+                  <span>Mérida <strong>~+3%</strong> with rent; rents there ~<strong>+8%</strong> (Numbeo, Oct 2026)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-600 font-bold">•</span>
-                  <span>San Antonio, TX <strong>~+66%</strong> with rent; rents ~<strong>+138%</strong></span>
+                  <span>San Antonio, TX <strong>~+74%</strong> with rent; rents ~<strong>+143%</strong> (Numbeo, Oct 2026)</span>
                 </li>
               </ul>
               <p className="text-gray-700 mt-4">
@@ -882,7 +882,7 @@ export default function CostOfLivingGuidePage() {
                     <span className="ml-4 flex-shrink-0 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
                   </summary>
                   <p className="mt-4 text-gray-600">
-                    Prefer Banxico&apos;s FIX for the day you convert. Our July 2026 article used 17.54; late September 2026 tipcamb prints clustered near ~17.50.
+                    Prefer Banxico&apos;s FIX for the day you convert. Our July 2026 article used 17.54; the FIX was about 17.3–17.6 in late September 2026 and 18.58 on 27 October 2026.
                   </p>
                 </details>
 
@@ -892,7 +892,7 @@ export default function CostOfLivingGuidePage() {
                     <span className="ml-4 flex-shrink-0 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
                   </summary>
                   <p className="mt-4 text-gray-600">
-                    Crowdsourced indices in mid-2026 pointed to Querétaro roughly 8% higher and Mexico City about 24% higher overall with rent—useful directionally, not as a quote.
+                    Crowdsourced indices in 2026 pointed to Querétaro roughly 8% higher (Expatistan, May) and Mexico City about 29% higher overall with rent (Numbeo, Oct)—useful directionally, not as a quote.
                   </p>
                 </details>
 
@@ -922,7 +922,7 @@ export default function CostOfLivingGuidePage() {
                     <span className="ml-4 flex-shrink-0 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
                   </summary>
                   <p className="mt-4 text-gray-600">
-                    At 17.54 FX, USD $1,000 is about MXN $17,540—inside/above the frugal band if rent stays low and you cook. It is tight for Tequis furnished stock and private insurance.
+                    At 17.54 FX, USD $1,000 is about MXN $17,540 (about MXN $18,580 at the 27 Oct 2026 FIX of 18.58)—above the frugal band if rent stays low and you cook. It is tight for Tequis furnished stock and private insurance.
                   </p>
                 </details>
 

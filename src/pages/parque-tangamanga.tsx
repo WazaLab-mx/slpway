@@ -42,7 +42,7 @@ const tangamangaStructuredData = {
   name: 'Parque Tangamanga I',
   alternateName: 'Parque Tangamanga',
   description:
-    'Parque Tangamanga I is one of the largest urban parks in Mexico (411 hectares), located in San Luis Potosí. It features gardens, museums, lakes and sports facilities. The zoo is temporarily closed for renovation according to CECURT.',
+    'Parque Tangamanga I is one of the largest urban parks in Mexico (420 hectares), located in San Luis Potosí. It features gardens, museums, lakes and sports facilities. The zoo is temporarily closed for renovation according to CECURT.',
   url: 'https://www.sanluisway.com/parque-tangamanga',
   image: 'https://www.sanluisway.com/images/parque-tangamanga/hero.jpg',
   address: {
@@ -83,7 +83,6 @@ const tangamangaStructuredData = {
   amenityFeature: [
     { '@type': 'LocationFeatureSpecification', name: 'Zoo', value: false },
     { '@type': 'LocationFeatureSpecification', name: 'Planetarium', value: true },
-    { '@type': 'LocationFeatureSpecification', name: 'Aquarium', value: true },
     { '@type': 'LocationFeatureSpecification', name: 'Japanese Garden', value: true },
     { '@type': 'LocationFeatureSpecification', name: 'Botanical Garden', value: true },
     { '@type': 'LocationFeatureSpecification', name: 'Open-air Theater', value: true },
@@ -239,7 +238,7 @@ export default function ParqueTangamanga({ events = [], eventsUnavailable = fals
                 </a>
                 <a href="#splash" className="flex items-center space-x-2 p-3 rounded-lg hover:bg-green-50 transition-colors border border-gray-200">
                   <span className="text-2xl">💦</span>
-                  <span className="text-sm font-medium">Acuario</span>
+                  <span className="text-sm font-medium">Parque Acuático</span>
                 </a>
                 <a href="#teatro" className="flex items-center space-x-2 p-3 rounded-lg hover:bg-green-50 transition-colors border border-gray-200">
                   <span className="text-2xl">🎭</span>
@@ -354,12 +353,12 @@ export default function ParqueTangamanga({ events = [], eventsUnavailable = fals
                   <tbody className="divide-y divide-gray-100">
                     <tr>
                       <td className="p-3 font-semibold text-gray-700">Size</td>
-                      <td className="p-3 text-gray-800">411 ha (1,015 acres)</td>
-                      <td className="p-3 text-gray-800">189 ha (467 acres)</td>
+                      <td className="p-3 text-gray-800">420 ha (about 1,040 acres)</td>
+                      <td className="p-3 text-gray-800">Smaller (no official figure published)</td>
                     </tr>
                     <tr className="bg-gray-50">
                       <td className="p-3 font-semibold text-gray-700">Opened</td>
-                      <td className="p-3 text-gray-800">1980</td>
+                      <td className="p-3 text-gray-800">1983</td>
                       <td className="p-3 text-gray-800">1985 (over old airport)</td>
                     </tr>
                     <tr>
@@ -369,8 +368,8 @@ export default function ParqueTangamanga({ events = [], eventsUnavailable = fals
                     </tr>
                     <tr className="bg-gray-50">
                       <td className="p-3 font-semibold text-gray-700">Location</td>
-                      <td className="p-3 text-gray-800">Southeast SLP, Av. Dr. Salvador Nava</td>
-                      <td className="p-3 text-gray-800">Southwest SLP, Av. Salvador Nava Martínez</td>
+                      <td className="p-3 text-gray-800">West side of SLP, Av. Dr. Salvador Nava Martínez 3055</td>
+                      <td className="p-3 text-gray-800">North side of SLP, Fray Diego de la Magdalena 485</td>
                     </tr>
                     <tr>
                       <td className="p-3 font-semibold text-gray-700">Main attractions</td>
@@ -384,7 +383,7 @@ export default function ParqueTangamanga({ events = [], eventsUnavailable = fals
                     </tr>
                     <tr>
                       <td className="p-3 font-semibold text-gray-700">Trees</td>
-                      <td className="p-3 text-gray-800">400,000+</td>
+                      <td className="p-3 text-gray-800">Hundreds of thousands</td>
                       <td className="p-3 text-gray-800">Perimeter groves + open lawn</td>
                     </tr>
                   </tbody>
@@ -745,7 +744,7 @@ export default function ParqueTangamanga({ events = [], eventsUnavailable = fals
                 </div>
                 <div className="bg-blue-50 p-6 rounded-lg">
                   <h4 className="font-semibold mb-3">Información Importante</h4>
-                  <p className="text-sm text-gray-700 mb-2">Temporada: Marzo a Octubre</p>
+                  <p className="text-sm text-gray-700 mb-2">Temporada: consulta las fechas de apertura con CECURT</p>
                   <p className="text-sm text-gray-700 mb-2">Costo: Entrada separada del parque</p>
                   <p className="text-sm text-gray-700">Incluye: Vestidores y casilleros</p>
                 </div>
@@ -761,7 +760,7 @@ export default function ParqueTangamanga({ events = [], eventsUnavailable = fals
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <p className="text-gray-700 mb-4">
-                    El Teatro Carlos Amador es el principal foro cultural del Parque Tangamanga, con capacidad para más de 1,000 personas. Presenta una amplia variedad de eventos culturales durante todo el año.
+                    El Teatro Carlos Amador es uno de los foros culturales del Parque Tangamanga, junto con el Teatro de la Ciudad al aire libre. Presenta una amplia variedad de eventos culturales durante todo el año.
                   </p>
                   <h3 className="font-semibold mb-2">Eventos:</h3>
                   <ul className="space-y-2 text-gray-700">
@@ -800,7 +799,7 @@ export default function ParqueTangamanga({ events = [], eventsUnavailable = fals
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <p className="text-gray-700 mb-4">
-                    Ubicado en los edificios históricos de la antigua Hacienda de la Tenería (1609), el EcoMuseo preserva la historia y el patrimonio cultural de la región.
+                    Ubicado en los edificios históricos de la antigua Hacienda de la Tenería, de origen colonial, el EcoMuseo preserva la historia y el patrimonio cultural de la región.
                   </p>
                   <h3 className="font-semibold mb-2">Exhibiciones:</h3>
                   <ul className="space-y-2 text-gray-700">

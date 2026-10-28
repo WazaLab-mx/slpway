@@ -75,7 +75,7 @@ export default function VisasResidencyGuidePage() {
               headline: 'Mexico Visas and Residency for Living in San Luis Potosí (2026)',
               description: 'Complete guide to Mexican temporary and permanent residency: FMM visitor permits, 2026 economic solvency requirements, INM canje process, fees, and post-card steps including CURP and RFC.',
               datePublished: '2026-09-24',
-              dateModified: '2026-09-24',
+              dateModified: '2026-10-27',
               author: {
                 '@type': 'Person',
                 '@id': 'https://www.sanluisway.com/about#editorial-team',
@@ -209,7 +209,7 @@ export default function VisasResidencyGuidePage() {
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
                 Mexico Visas and Residency for Living in San Luis Potosí (2026)
               </h1>
-              <LastUpdated date="2026-09-24" className="text-blue-100 mb-4" />
+              <LastUpdated date="2026-10-27"className="text-blue-100 mb-4" />
               <p className="text-xl text-blue-100 max-w-3xl mx-auto">
                 Complete guide to Mexican immigration: temporary resident, permanent resident, FMM visitor permits, and the INM canje process
               </p>
@@ -333,7 +333,7 @@ export default function VisasResidencyGuidePage() {
               <div className="bg-white rounded-xl shadow-md p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Temporary Resident</h3>
                 <p className="text-gray-700 mb-4">
-                  <strong>Residente temporal</strong> is the workhorse status for people relocating to San Luis Potosí for one to four years. Cards are typically issued for <strong>1–4 years</strong> depending on the authorization and the derechos you pay. After holding temporary residency continuously, many people become eligible to change to permanent residency (commonly after four years, though specific requirements vary by ground—confirm with INM for your case).
+                  <strong>Residente temporal</strong> is the workhorse status for people relocating to San Luis Potosí for one to four years. The first card issued by canje is valid for <strong>1 year</strong>; at renewal you can generally request <strong>1–3 more years</strong> (up to four years in total), paying the derechos for the term you choose. After holding temporary residency continuously, many people become eligible to change to permanent residency (commonly after four years, though specific requirements vary by ground—confirm with INM for your case).
                 </p>
                 <div className="space-y-2">
                   <p className="text-sm text-gray-600"><strong>Common grounds:</strong></p>
@@ -444,7 +444,7 @@ export default function VisasResidencyGuidePage() {
               
               <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg mb-4">
                 <p className="text-yellow-900 font-semibold">
-                  ⚠️ San Diego Contradiction: San Diego currently hosts two English sheets labeled 2026 with different USD thresholds ($75,950/$4,510 vs $68,241/$4,049). Applicants must confirm which sheet the visa section is using when they book.
+                  ⚠️ Old PDFs still circulate: San Diego&apos;s current 2026 sheets (English and Spanish) list $68,241 / $4,049, but the consulate site still hosts an older Spanish sheet with lower pre-2026 amounts ($51,860 / $3,112). Use the sheet dated for the current year.
                 </p>
               </div>
 
@@ -460,13 +460,7 @@ export default function VisasResidencyGuidePage() {
                   </thead>
                   <tbody className="divide-y divide-gray-200">
                     <tr>
-                      <td className="px-4 py-3 text-sm">San Diego (PDF 1)</td>
-                      <td className="px-4 py-3 text-sm">$75,950 USD</td>
-                      <td className="px-4 py-3 text-sm">$4,510 USD</td>
-                      <td className="px-4 py-3 text-sm">$56 USD</td>
-                    </tr>
-                    <tr>
-                      <td className="px-4 py-3 text-sm">San Diego (PDF 2)</td>
+                      <td className="px-4 py-3 text-sm">San Diego (2026 sheet)</td>
                       <td className="px-4 py-3 text-sm">$68,241 USD</td>
                       <td className="px-4 py-3 text-sm">$4,049 USD</td>
                       <td className="px-4 py-3 text-sm">$56 USD</td>
@@ -549,7 +543,7 @@ export default function VisasResidencyGuidePage() {
                   <p><strong>Address:</strong> Calle Muñoz No. 362, Fraccionamiento Muñoz 1ª Sección, C.P. 78165, San Luis Potosí, S.L.P.</p>
                   <p><strong>Phone:</strong> (444) 833 1959</p>
                   <p><strong>Public hours:</strong> Monday–Friday 09:00–15:00 (call to confirm—some third-party sources list 09:00–14:00)</p>
-                  <p className="text-sm"><strong>Source:</strong> <a href="https://www.inm.gob.mx/gobmx/word/index.php/san-luis-potosi/" className="underline" target="_blank" rel="noopener noreferrer">INM official page</a> (consulted 23 Sep 2026)</p>
+                  <p className="text-sm"><strong>Source:</strong> <a href="https://www.inm.gob.mx/gobmx/word/index.php/san-luis-potosi/" className="underline" target="_blank" rel="noopener noreferrer">INM official page</a> (consulted 27 Oct 2026)</p>
                 </div>
               </div>
 
@@ -614,7 +608,7 @@ export default function VisasResidencyGuidePage() {
               </div>
 
               <p className="text-sm text-gray-600 mt-4">
-                The 50% column applies only when you qualify under the Ley Federal de Derechos criteria (family unity, registered employer job offer, etc.). Always regenerate the payment slip for your trámite the day you pay.
+                A canje after a consular visa issues the 1-year temporary card (or the permanent card); the 2–4 year amounts apply to renewals and other trámites. The 50% column applies only when you qualify under the Ley Federal de Derechos criteria (family unity, registered employer job offer, etc.) and request it at the INM office before paying. Always regenerate the payment slip for your trámite the day you pay. Source: INM &quot;Trámites migratorios 2026&quot; fee table (gob.mx/inm).
               </p>
             </div>
           </section>
@@ -704,7 +698,7 @@ export default function VisasResidencyGuidePage() {
                 <li>Missing the <strong>30-day canje</strong> window</li>
                 <li>Bringing <strong>unstamped</strong> PDF bank statements when the consulate requires wet-ink bank verification</li>
                 <li>Copying <strong>another city&apos;s USD thresholds</strong></li>
-                <li>Assuming <strong>San Diego&apos;s two PDFs</strong> are identical</li>
+                <li>Relying on an <strong>outdated consulate PDF</strong> instead of the current year&apos;s sheet</li>
                 <li>Using an <strong>outdated INM street address</strong> from old blog posts</li>
                 <li>Paying <strong>cash</strong> to anyone claiming to be INM staff</li>
                 <li>Skipping <strong>apostilles/translations</strong> on foreign civil documents</li>

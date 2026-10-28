@@ -510,19 +510,19 @@
     "ranking": "ランキング",
     "rankingText": "メキシコで2番目に大きい都市公園",
     "trees": "樹木",
-    "treesCount": "180万本以上",
-    "oxygen": "酸素",
-    "oxygenProduction": "年間800トン",
+    "treesCount": "数十万本",
+    "oxygen": "開園",
+    "oxygenProduction": "1983年",
     "history": {
       "title": "歴史と文化的意義",
       "meaningTitle": "「タンガマンガ」の意味",
-      "meaningText": "「タンガマンガ」という名前は、かつてこの地域に住んでいた先住民族ワチチル族の言語に由来します。「集会の場所」または「集まりの場所」を意味し、コミュニティの中心的な社会的・文化的ハブとしての公園の役割を反映しています。",
+      "meaningText": "「タンガマンガ」は、サン・ルイス・ポトシが創設された盆地の先住民による呼び名で、スペイン人到来以前はグアチチル族が暮らしていた地域です。私たちが確認した資料では言葉の直訳は確認できませんが、この名前は公園と盆地の植民地化以前の歴史を結びつけています。",
       "originTitle": "歴史的起源",
-      "originText": "公園は1609年に遡る旧アシエンダ・デ・ラ・テネリアの敷地に形成されました。アシエンダのメインビルディングは今も公園内に保存されており、ポトシーノの4世紀以上の歴史の静かな証人として存在しています。",
+      "originText": "公園は植民地時代に起源をもつ旧アシエンダ・デ・ラ・テネリアの敷地に造られました。アシエンダの母屋（カスコ）は今も公園内に残り、現在はエコミュージアムになっています。",
       "creationTitle": "創設と開発",
-      "creationText": "プロジェクトの第一段階は1982年に始まり、土地が収用され、千本以上の木が植えられました。公園は1983年にカルロス・ホンギトゥド・バリオス教授の政権下で正式にオープンしました。1997年、政府は「パルケ・カルロス・ホンギトゥド・バリオス」という正式名称を与えましたが、ほとんどの人は単にタンガマンガ公園として知っています。",
+      "creationText": "プロジェクトは1982年に始まり、公園はカルロス・ホンギトゥド・バリオス教授の州政権下の1983年に正式に開園しました。現在は州の機関CECURT（Centros Estatales de Cultura y Recreación Tangamanga）が運営しています。",
       "impactTitle": "国家的重要性",
-      "impactText": "420ヘクタールの面積を持つタンガマンガ公園Iは、メキシコシティのボスケ・デ・チャプルテペックに次いでメキシコで2番目に大きい都市公園であり、世界でも最大級の都市公園の1つです。180万本以上の木々により、サンルイスポトシで最も重要な緑の肺であり、年間800トンの酸素を生産しています。"
+      "impactText": "約420ヘクタールの面積を持つタンガマンガ公園Iは、メキシコシティのチャプルテペックの森に次ぐ、メキシコで2番目に大きな都市公園とされています。数十万本の木々があり、サン・ルイス・ポトシで最も重要な緑の肺のひとつです。"
     },
     "attractions": {
       "title": "主な見どころ",
@@ -572,7 +572,7 @@
     },
     "biodiversity": {
       "title": "生物多様性と自然",
-      "text": "公園には並外れた動植物の多様性があります。420ヘクタールの中に、180万本以上の在来種と外来種の木々、渡り鳥と留鳥、小型哺乳類と爬虫類が共存しています。植物園は、ポトシーノ地域とメキシコ砂漠の固有種の保全に特に重要です。"
+      "text": "公園には豊かな動植物が生息しています。約420ヘクタールの園内には数十万本の在来種・外来種の木々があり、渡り鳥や留鳥、小型の哺乳類や爬虫類も暮らしています。植物園は、ポトシ地方とメキシコの砂漠に固有の種を保全するうえで特に重要です。"
     },
     "sustainability": {
       "title": "自己持続可能性",
@@ -582,7 +582,7 @@
       "feature2Title": "堆肥生成",
       "feature2Text": "公園の植物を育てるための有機堆肥の自家生産",
       "feature3Title": "緑の肺",
-      "feature3Text": "180万本の木々のおかげで年間800トンの酸素を生成"
+      "feature3Text": "数十万本の木々がある、街の大きな緑の肺"
     },
     "services": {
       "title": "サービス",
@@ -615,41 +615,41 @@
       "q4": "Is it safe?",
       "a4": "Yes, well-patrolled during hours. Avoid going alone after dark on weekdays.",
       "q5": "How big is it?",
-      "a5": "411 hectares, larger than Central Park NYC (341 ha). Over 400,000 trees.",
+      "a5": "タンガマンガ公園Iの面積は約420ヘクタールで、ニューヨークのセントラルパーク（341ヘクタール）より広く、数十万本の木があります。",
       "q6": "When is the BMW Tangamanga Marathon?",
-      "a6": "The Maratón Internacional Tangamanga runs every year on the last Sunday of June. Edition 40 takes place June 28, 2026, starting and ending at Parque Tangamanga I. Registration opens in January each year.",
+      "a6": "タンガマンガ国際マラソンは毎年6月下旬に開催されます。第40回大会は2026年6月28日（日）に行われ、タンガマンガ公園Iのプラネタリウム前がスタート・ゴールでした。翌年の日程とエントリーは公式主催者に確認してください。",
       "q7": "Is there parking at Parque Tangamanga?",
-      "a7": "Yes. Free parking is available at multiple entrances. The main lots are near the zoo (east entrance) and near the theater (north entrance). On weekends and holidays the lots fill before 11 AM — arrive early or use rideshare.",
+      "a7": "はい。公園の入口付近に駐車場があります。週末や祝日は早く満車になるため、早めに到着するか配車アプリを利用してください。",
       "q8": "How do I get to Parque Tangamanga by public transit?",
-      "a8": "The park sits on Av. Dr. Salvador Nava. Several city bus routes stop at the main entrances: Ruta 23, 32, and 52 reach the east side (zoo). Rideshare and taxis drop visitors at any of the 8 gates.",
+      "a8": "公園はAv. Dr. Salvador Nava Martínez沿いにあります。近くを複数の市内バス路線が通っているので、Moovitなどのアプリで最新の路線を確認してください。タクシーや配車サービスなら主要な入口まで行けます。",
       "q9": "What can kids do at Parque Tangamanga?",
       "a9": "家族での散歩や遊具での遊びに加え、ムセオ・ラベリントの家族向けプログラムとチケットをご確認ください。 動物園は改修のため一時休園中です。訪問前にCECURTへご確認ください。",
       "q10": "What's the difference between Tangamanga I and Tangamanga II?",
-      "a10": "Tangamanga I (this page) is the 411-hectare tourist park with the zoo, planetarium, aquarium, and gardens. Tangamanga II is a 189-hectare sports park built over SLP's old airport — focused on archery, running tracks, auto racing, and soccer fields. Both are free and both are in San Luis Potosí city limits.",
+      "a10": "タンガマンガI（このページ）は約420ヘクタールの公園で、プラネタリウム、日本庭園、劇場、湖、庭園があります（動物園は一時閉鎖中）。タンガマンガIIは1985年にSLPの旧空港跡地に造られたスポーツ公園で、サーキット（オートドロモ）、アーチェリー、ランニングコース、サッカー場があります。どちらも入場無料で、サン・ルイス・ポトシ市内にあります。",
       "q11": "Is Parque Tangamanga bigger than Central Park?",
-      "a11": "Yes. Parque Tangamanga I covers 411 hectares (1,015 acres), which is 70 hectares larger than New York's Central Park (341 ha / 843 acres). It is the second-largest urban park in Mexico.",
+      "a11": "はい。タンガマンガ公園Iは約420ヘクタールで、ニューヨークのセントラルパーク（341ヘクタール）より約80ヘクタール広く、メキシコで2番目に大きな都市公園とされています。",
       "q12": "How long does it take to visit Parque Tangamanga?",
       "a12": "楽しみたい活動をいくつか選び、休憩時間も確保しましょう。博物館やイベントの時間は訪問前に個別にご確認ください。 動物園は改修のため一時休園中です。訪問前にCECURTへご確認ください。",
       "q13": "Are dogs allowed at Parque Tangamanga?",
-      "a13": "Yes, dogs are allowed on leash in the public walking areas of Parque Tangamanga I. Dogs are not permitted inside the zoo, planetarium, or aquarium. For an off-leash experience, Parque Tangamanga II has a dedicated fenced pet zone.",
+      "a13": "タンガマンガ公園Iの遊歩道ではリードをつけた犬をよく見かけますが、博物館や屋内施設には独自のルールがあります。犬を連れて行く前に、掲示を確認するかCECURTに問い合わせてください。",
       "q14": "Can I bring food to Parque Tangamanga?",
-      "a14": "Yes. Picnics are welcome in the designated lawn areas. Glass containers and alcohol are not permitted. There are also food vendors and small restaurants inside the park, most active on weekends.",
+      "a14": "はい。芝生エリアでのピクニックは一般的です。ガラス容器やアルコールについては掲示されたルールを確認してください。園内には屋台もあり、特に週末に多く出ています。",
       "q15": "What is the best time to visit Parque Tangamanga?",
       "a15": "訪問日を決める前に、公園の開園時間と最新のイベント情報をご確認ください。月曜日は整備のため開園時間が短くなります。"
     },
     "maraton": {
       "badge": "Annual Event",
       "title": "BMW Maratón Internacional Tangamanga 2026 — 40th Anniversary",
-      "subtitle": "The city's biggest running event takes place right here in Tangamanga I every year. Over 17,000 runners, four certified distances (5K, 10K, half marathon, full marathon), and a forty-year tradition.",
+      "subtitle": "市内最大のランニングイベントが毎年ここタンガマンガIで開催されます。数千人のランナー、4つの距離（5K、10K、ハーフマラソン、フルマラソン）、そして40年の伝統。",
       "date": "June 28, 2026",
       "linkText": "See full race guide"
     },
     "comparison": {
       "title": "Parque Tangamanga I vs Tangamanga II",
       "description": "San Luis Potosí has two Tangamanga parks. They share a name and a philosophy, but they serve different visitors.",
-      "t1Title": "Tangamanga I — 411 ha",
-      "t1Desc": "The iconic park. Zoo, planetarium, aquarium, Japanese garden, theater, lakes, and 400,000 trees. Best for families, tourists, and first-time visitors.",
-      "t2Title": "Tangamanga II — 189 ha",
+      "t1Title": "タンガマンガI — 420ヘクタール",
+      "t1Desc": "象徴的な公園。プラネタリウム、日本庭園、劇場、湖、数十万本の木々（動物園は一時閉鎖中）。家族連れ、観光客、初めての訪問者に最適。",
+      "t2Title": "タンガマンガII — スポーツ公園",
       "t2Desc": "Built over the city's old airport. Sports-focused: archery, auto racing track, soccer fields, basketball, tennis, pet zone and kids area. Best for athletes and serious runners.",
       "ctaText": "Visit the Tangamanga II guide"
     },
@@ -1138,7 +1138,7 @@
       "title": "サンルイスポトシの心臓部へようこそ",
       "paragraph1": "歴史地区は単なる古い建物の集まりではありません：それは街の生きた魂です。すべての広場、すべての路地、すべてのピンクの採石場のファサードが、4世紀以上に遡る物語を語っています。",
       "paragraph2": "ここでは過去と現在が完璧な調和の中で共存しています。植民地建築の壮大さを眺めながら、18世紀の中庭でスペシャルティコーヒーを味わったり、現代アートギャラリーを探索したり、街最高のガストロノミーを楽しんだりできます。",
-      "stat1": "歴史的建造物",
+      "stat1": "ユネスコ世界遺産（カミノ・レアル）",
       "stat2": "年の歴史",
       "stat3": "創設年"
     },
@@ -1157,7 +1157,7 @@
       "originsTitle": "植民地時代の起源",
       "originsText": "1592年に設立されたサンルイスポトシは、この地域の鉱業の富のおかげで生まれました。歴史地区は4世紀以上の歴史の本質を保存しており、ヌエバ・エスパーニャの壮大さを物語るバロック、新古典主義、植民地時代の建物があります。",
       "architectureTitle": "卓越した建築",
-      "architectureText": "歴史地区は1,500以上の登録された歴史的建造物を持つ野外博物館です。街の特徴であるピンクの採石場の石が、寺院、邸宅、政府の建物のファサードを飾っています。すべての通りが別の時代へとあなたを連れ戻す建築の宝物を明らかにします。",
+      "architectureText": "歴史地区は野外博物館のような場所で、1990年から連邦の「歴史的記念物地区」として保護されています。街の特徴であるピンクのカンテラ石が、教会、邸宅、政府の建物のファサードを飾っています。すべての通りが別の時代へとあなたを連れ戻す建築の宝物を明らかにします。",
       "todayTitle": "生きている ダウンタウン",
       "todayText": "凍結された博物館とはかけ離れて、歴史地区は活気に満ちています。植民地時代の中庭のカフェ、18世紀の建物の中の現代アートギャラリー、古い邸宅のグルメレストランが、過去と現在のユニークな融合を生み出しています。"
     },
@@ -1168,10 +1168,10 @@
       "landmark2": "メトロポリタン大聖堂 - 17世紀のバロック様式の宝石",
       "landmark3": "テアトロ・デ・ラ・パス - メキシコで最も美しい劇場の一つ",
       "landmark4": "カルメン教会 - チュリゲレスク様式の傑作",
-      "landmark5": "政府宮殿 - フェルナンド・レアルの壁画のある生きた歴史",
+      "landmark5": "政府宮殿 - 1863年にベニート・フアレスが国の政府を置いた場所",
       "museumsTitle": "博物館と文化",
       "museum1": "国立仮面博物館 - メキシコでユニークなコレクション",
-      "museum2": "フェデリコ・シルバ博物館 - 旧アシエンダの現代アート",
+      "museum2": "フェデリコ・シルバ博物館 - 修復された1907年の校舎で見る現代彫刻",
       "museum3": "副王制博物館 - 植民地時代の歴史",
       "museum4": "アートセンター - 展示会とワークショップ"
     },
@@ -1179,8 +1179,8 @@
       "title": "ガストロノミーとナイトライフ",
       "intro": "歴史地区は伝統と革新が出会う美食の楽園です。世紀を超えたカンティーナからシェフの料理レストランまで、あらゆる角で忘れられない料理体験を提供します。",
       "restaurantsTitle": "おすすめレストラン",
-      "restaurant1": "ラ・グラン・ビア - 1940年以来の伝統料理と歴史的な雰囲気",
-      "restaurant2": "カフェ・パシフィコ - 1943年以来のクラシック",
+      "restaurant1": "ラ・グラン・ビア - スペイン料理と各国料理",
+      "restaurant2": "カフェ・パシフィコ - 何十年も続くセントロの定番",
       "restaurant3": "ラ・オルーガ・イ・ラ・セバダ - シェフの料理",
       "restaurant4": "レストランテ1913 - 上質なメキシコ料理",
       "restaurant5": "ラ・ポサディータ - メキシコ料理とボヘミアンな雰囲気",
@@ -1191,7 +1191,7 @@
       "bar4": "カトリーナ・ルーフトップ - パノラマビューのテラス",
       "bar5": "エル・カジェホン・デル・ベソ - 歴史的な路地のバー",
       "marketsTitle": "伝統市場",
-      "market1": "メルカド・イダルゴ - 1906年以来のメイン市場",
+      "market1": "メルカド・イダルゴ - セントロのメイン市場",
       "market2": "メルカド・レプブリカ - 工芸品とストリートフード",
       "market3": "日曜ティアンギス - 骨董品と珍品",
       "market4": "メルカド16デセプティエンブレ - 生鮮食品"
@@ -1219,8 +1219,8 @@
     "hiddenGems": {
       "title": "ダウンタウンの秘密",
       "intro": "観光スポットの先には、地元の人だけが知る秘密があります。お気に入りをいくつか紹介します。",
-      "gem1Title": "カジェホン・デル・カルド",
-      "gem1Text": "アートギャラリーとボヘミアンカフェのある隠れた通路。静かな午後の探索に最適。",
+      "gem1Title": "カジェホン・デル・カリーニョ",
+      "gem1Text": "ベヌスティアーノ・カランサ通りとマデロ通りの間にある短い路地で、19世紀のプルケ酒場の伝説にまつわる場所。静かな午後の探索に最適。",
       "gem2Title": "植民地時代の中庭",
       "gem2Text": "多くの建物が壮大な内部の中庭を保存しています。噴水、庭園、親密な建築を眺めに入ってみてください。",
       "gem3Title": "ゴールデンアワー",
@@ -1248,15 +1248,15 @@
     },
     "funFacts": {
       "title": "面白い事実",
-      "fact1": "歴史地区には1,500以上の歴史遺産として登録された建物があります。",
-      "fact2": "建物を飾るピンクの採石場の石は地元の採石場から採掘され、メキシコ独自のものです。",
+      "fact1": "歴史地区は、2010年にユネスコ世界遺産に登録された「カミノ・レアル・デ・ティエラ・アデントロ」の一部です。",
+      "fact2": "建物を飾るピンクのカンテラ石（カンテラ・ロサ）は、サン・ミゲリート山脈のふもとなど、街を囲む盆地の鉱床から採られています。",
       "fact3": "ベニート・フアレスは1863年のフランス介入中にここにメキシコの首都を置きました。",
       "fact4": "テアトロ・デ・ラ・パスは1894年に開館し、ラテンアメリカで最も美しい劇場の一つと見なされています。"
     },
     "cafes": {
       "title": "休憩できるカフェ",
       "intro": "歩いた後にエネルギーを補充するのに最適なカフェ：",
-      "cafe1": "カフェ・パシフィコ - 1943年以来のクラシック",
+      "cafe1": "カフェ・パシフィコ - 何十年も続くセントロの定番",
       "cafe2": "バリスタ・デル・ポルタル - スペシャルティコーヒー",
       "cafe3": "カフェ・ラ・パロキア - ポトシーノの伝統",
       "cafe4": "ココラッテ - 職人チョコレートとコーヒー"
@@ -1569,7 +1569,7 @@
   "arrivalChecklist": {
     "meta": {
       "title": "到着チェックリスト：サンルイスポトシでの最初の30日間 | San Luis Way",
-      "description": "サンルイスポトシへの新規居住者向け45以上のチェックリスト。手続き、公共サービス、銀行、医療、社会統合をカバー。",
+      "description": "サンルイスポトシへの新規居住者向け39項目のチェックリスト。手続き、公共サービス、銀行、医療、社会統合をカバー。",
       "keywords": "サンルイスポトシ到着チェックリスト, 駐在員チェックリストメキシコ, SLP引越し, サンルイスポトシ最初の日々",
       "ogTitle": "到着チェックリスト：サンルイスポトシでの最初の30日間",
       "ogDescription": "サンルイスポトシでの定住のための完全チェックリスト。"
@@ -1577,7 +1577,7 @@
     "hero": {
       "badge": "最初の30日間",
       "title": "到着チェックリスト",
-      "subtitle": "サンルイスポトシでの定住を成功させるための45以上の実行可能な項目",
+      "subtitle": "サンルイスポトシでの定住を成功させるための39の実行可能な項目",
       "categories": "7カテゴリー",
       "checkboxes": "インタラクティブチェックボックス",
       "links": "公式リンク"
@@ -1651,7 +1651,7 @@
           },
           "curp": {
             "title": "CURPを取得",
-            "description": "メキシコの人口ID。パスポートと居住カードでRegistro Civilにて無料。"
+            "description": "メキシコの人口ID。外国人居住者にはINMが付与し、通常は居住カードに印字されています。gob.mx/curpで無料ダウンロード可能。"
           },
           "rfc": {
             "title": "RFC取得（就労の場合）",
@@ -1663,7 +1663,7 @@
           },
           "license": {
             "title": "メキシコの運転免許証（任意）",
-            "description": "Secretaría de Seguridad Públicaで申請。費用：約800-1,200 MXN。"
+            "description": "州財務局（Secretaría de Finanzas、oficinas recaudadoras）が発行。州の居住者は初回の永久免許が無料（2026年）。身分証明書と住所証明2通を持参。"
           }
         }
       },
@@ -1680,7 +1680,7 @@
           },
           "gas": {
             "title": "ガス配達を手配",
-            "description": "プロバイダー：Gas Express Nieto、Zeta Gas。固定タンクは補充、ポータブルは交換。"
+            "description": "プロバイダーにはGas Express Nietoなどがあります。固定タンクは補充、ポータブルは交換。"
           },
           "internet": {
             "title": "インターネットを設定",
@@ -1688,7 +1688,7 @@
           },
           "garrafon": {
             "title": "水用ガラフォンを購入",
-            "description": "水道水は飲めません。Bonafont、Cielの19Lボトルを購入。各約30-40 MXN。"
+            "description": "水道水は飲めません。20Lボトルを購入：BonafontやCielは各約55-70 MXN、地元のpurificadoraはより安価。"
           },
           "dispenser": {
             "title": "ガラフォンディスペンサーを入手",
@@ -1734,11 +1734,11 @@
           },
           "pharmacy": {
             "title": "薬局を見つける",
-            "description": "Farmacias Guadalajara、Farmacias del Ahorro。多くの薬が処方箋なしで入手可能。"
+            "description": "Farmacias Guadalajara、Farmacias del Ahorro。多くの薬が処方箋なしで入手可能ですが、抗生物質には処方箋が必要です。"
           },
           "insurance": {
             "title": "健康保険を設定",
-            "description": "IMSS（約6,000 MXN/年）またはプライベート：GNP、Seguros Monterrey、Bupa。"
+            "description": "IMSS任意加入保険（年齢により年9,300-22,150 MXN、2026年）またはプライベート：GNP、Seguros Monterrey、Bupa。"
           },
           "emergency": {
             "title": "緊急連絡先を保存",
@@ -1759,7 +1759,7 @@
           },
           "classes": {
             "title": "スペイン語クラスに登録",
-            "description": "UASLPがコースを提供。プライベートチューター：150-300 MXN/時。"
+            "description": "語学学校とプライベートチューター：約150-350 MXN/時。"
           },
           "neighborhoods": {
             "title": "地域を探索",
@@ -1780,7 +1780,7 @@
         "items": {
           "supermarkets": {
             "title": "スーパーマーケットを見つける",
-            "description": "Soriana（地元）、Walmart、HEB（プレミアム）、Costco（会員制）。"
+            "description": "Soriana、Walmart、HEB（プレミアム）、Costco（会員制）。"
           },
           "markets": {
             "title": "地元の市場を探索",

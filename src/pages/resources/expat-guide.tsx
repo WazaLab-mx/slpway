@@ -36,37 +36,33 @@ export default function ExpatGuidePage() {
 
   const emergencyContacts = [
     { name: 'Emergency Services (General)', number: '911' },
-    { name: 'Police', number: '444 826 8300' },
-    { name: 'Fire Department', number: '444 812 4344' },
-    { name: 'Red Cross', number: '444 815 0808' },
-    { name: 'Tourist Police', number: '444 834 1115' },
+    { name: 'Anonymous Crime Tips', number: '089' },
     { name: 'U.S. Embassy in Mexico City', number: '55 5080 2000' },
     { name: 'Canadian Embassy in Mexico City', number: '55 5724 7900' },
   ];
 
   const hospitals = [
-    { name: 'Hospital Central "Dr. Ignacio Morones Prieto"', address: 'Av. Venustiano Carranza 2395', phone: '444 834 2700', type: 'Public' },
-    { name: 'Hospital Lomas de San Luis', address: 'Av. Sierra Leona 550', phone: '444 824 2424', type: 'Private' },
-    { name: 'Hospital Angeles', address: 'Av. Benito Juárez 1210', phone: '444 813 1717', type: 'Private' },
+    { name: 'Hospital Central "Dr. Ignacio Morones Prieto"', address: 'Av. Venustiano Carranza 2395', phone: '444 210 1300', type: 'Public' },
+    { name: 'Hospital Lomas de San Luis', address: 'Av. Palmira 600, Villas del Pedregal', phone: '', type: 'Private' },
+    { name: 'Hospital Angeles', address: 'Antonio Aguilar 155, Burócratas del Estado', phone: '444 834 0300', type: 'Private' },
   ];
 
   const immigrationInfo = {
     office: 'Instituto Nacional de Migración (INM)',
     address: 'Calle Muñoz 362, Fracc. Muñoz 1ª Sección, C.P. 78165',
     phone: '444 833 1959',
-    hours: 'Monday–Friday 09:00–15:00',
+    hours: 'Monday–Friday 09:00–14:00',
     website: 'https://www.gob.mx/inm',
     requirements: ['Valid passport', 'Visa application form', 'Proof of economic solvency', 'Proof of residence', 'Employment contract (if applicable)'],
   };
 
   const bankingInfo = [
-    { name: 'BBVA', requirements: ['Valid passport', 'Immigration document (FM2/FM3)', 'Proof of address', 'Minimum deposit'], website: 'https://www.bbva.mx' },
+    { name: 'BBVA', requirements: ['Valid passport', 'Immigration document (Temporary or Permanent Resident card)', 'Proof of address', 'Minimum deposit'], website: 'https://www.bbva.mx' },
     { name: 'Santander', requirements: ['Valid passport', 'Immigration document', 'Proof of address', 'Tax ID (RFC)'], website: 'https://www.santander.com.mx' },
   ];
 
   const transportationInfo = {
-    taxi: [{ name: 'Taxi Seguro', phone: '444 817 2111' }, { name: 'Radio Taxi', phone: '444 812 0000' }],
-    apps: [{ name: 'Uber', available: true }, { name: 'DiDi', available: true }, { name: 'Beat', available: true }],
+    apps: [{ name: 'Uber', available: true }, { name: 'DiDi', available: true }],
     busCompanies: [{ name: 'Primera Plus', website: 'https://www.primeraplus.com.mx' }, { name: 'ETN', website: 'https://etn.com.mx' }],
   };
 
@@ -96,9 +92,9 @@ export default function ExpatGuidePage() {
               "@context": "https://schema.org",
               "@type": "FAQPage",
               "mainEntity": [
-                { "@type": "Question", "name": "What are the emergency numbers in San Luis Potosí?", "acceptedAnswer": { "@type": "Answer", "text": "The main emergency number is 911. Police: 444 826 8300, Fire: 444 812 4344, Red Cross: 444 815 0808." }},
-                { "@type": "Question", "name": "Where can expats find healthcare in San Luis Potosí?", "acceptedAnswer": { "@type": "Answer", "text": "Private hospitals include Hospital Lomas (444 824 2424) and Hospital Angeles (444 813 1717). Public: Hospital Central (444 834 2700)." }},
-                { "@type": "Question", "name": "What documents do I need to open a bank account?", "acceptedAnswer": { "@type": "Answer", "text": "You'll need: valid passport, immigration document (FM2/FM3), proof of address, and often a Tax ID (RFC)." }},
+                { "@type": "Question", "name": "What are the emergency numbers in San Luis Potosí?", "acceptedAnswer": { "@type": "Answer", "text": "The main emergency number is 911 (police, ambulance, fire). For anonymous crime tips, call 089." }},
+                { "@type": "Question", "name": "Where can expats find healthcare in San Luis Potosí?", "acceptedAnswer": { "@type": "Answer", "text": "Private hospitals include Hospital Lomas (Av. Palmira 600) and Hospital Angeles (444 834 0300). Public: Hospital Central (444 210 1300)." }},
+                { "@type": "Question", "name": "What documents do I need to open a bank account?", "acceptedAnswer": { "@type": "Answer", "text": "You'll need: valid passport, immigration document (Temporary or Permanent Resident card), proof of address, and often a Tax ID (RFC)." }},
               ]
             })
           }}
@@ -206,7 +202,7 @@ export default function ExpatGuidePage() {
                       <div>
                         <h3 className="text-xl font-semibold text-gray-900 mb-2">{hospital.name}</h3>
                         <p className="text-gray-600 mb-2">{hospital.address}</p>
-                        <p className="text-primary font-medium">{hospital.phone}</p>
+                        {hospital.phone && <p className="text-primary font-medium">{hospital.phone}</p>}
                       </div>
                       <span className={`px-3 py-1 rounded-full text-sm font-medium ${hospital.type === 'Private' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800'}`}>
                         {hospital.type}
@@ -232,13 +228,13 @@ export default function ExpatGuidePage() {
                   <h3 className="text-xl font-semibold text-gray-900">Popular Neighborhoods for Expats</h3>
                   <ul className="list-disc list-inside text-gray-600 space-y-2">
                     <li><strong>Lomas:</strong> Upscale residential area with modern amenities</li>
-                    <li><strong>San Sebastián:</strong> Trendy area with restaurants and nightlife</li>
+                    <li><strong>San Sebastián:</strong> One of the historic barrios east of Centro, with traditional character</li>
                     <li><strong>Centro Histórico:</strong> Historic center with colonial architecture</li>
                     <li><strong>Zona Universitaria:</strong> Near universities, affordable options</li>
                   </ul>
                   <h3 className="text-xl font-semibold text-gray-900 mt-6">Average Monthly Rent</h3>
                   <ul className="list-disc list-inside text-gray-600 space-y-2">
-                    <li>1-bedroom apartment: $5,000 - $10,000 MXN</li>
+                    <li>1-bedroom apartment: $7,000 - $12,000 MXN</li>
                     <li>2-bedroom apartment: $8,000 - $15,000 MXN</li>
                     <li>House: $12,000 - $25,000+ MXN</li>
                   </ul>
@@ -250,22 +246,6 @@ export default function ExpatGuidePage() {
             <section id="transportation" className="mb-16">
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Transportation</h2>
               <div className="space-y-6">
-                <div className="bg-white rounded-xl shadow-elegant p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Taxi Services</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {transportationInfo.taxi.map((service, index) => (
-                      <div key={index} className="flex items-center space-x-4">
-                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
-                        </svg>
-                        <div>
-                          <p className="font-medium text-gray-900">{service.name}</p>
-                          <p className="text-primary">{service.phone}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
                 <div className="bg-white rounded-xl shadow-elegant p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">Ride-hailing Apps</h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

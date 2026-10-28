@@ -35,15 +35,15 @@ export default function CulturalPage({ events: initialEvents }: CulturalPageProp
   const faqs = [
     {
       question: 'What is San Luis Potosí known for culturally?',
-      answer: 'SLP is renowned for its colonial architecture, the Procesión del Silencio (a silent Holy Week procession declared Intangible Cultural Heritage), Huapango music from the Huasteca region, Potosino cuisine (enchiladas potosinas, gorditas), and its Centro Histórico with over 20 historic churches and plazas.',
+      answer: 'SLP is renowned for its colonial architecture, the Procesión del Silencio (a silent Good Friday procession declared Intangible Cultural Heritage of the State of San Luis Potosí in 2013), Huapango music from the Huasteca region, Potosino cuisine (enchiladas potosinas, gorditas), and its Centro Histórico with over 20 historic churches and plazas.',
     },
     {
       question: 'What are the main cultural events in San Luis Potosí?',
-      answer: 'The biggest are: Festival Internacional San Luis en Primavera (April — free concerts, ballet, theater), FENAPO (August — Mexico\'s traditional state fair), Procesión del Silencio (Good Friday), Xantolo (Day of the Dead in the Huasteca), and Día de San Luis Rey (June 19).',
+      answer: 'The biggest are: Festival Internacional San Luis en Primavera (Holy Week, March/April — free concerts, ballet, theater), FENAPO (August — Mexico\'s traditional state fair), Procesión del Silencio (Good Friday), Xantolo (Day of the Dead in the Huasteca), and the feast of San Luis Rey, patron saint of the city (August 25).',
     },
     {
       question: 'Is there a good arts scene in San Luis Potosí?',
-      answer: 'Yes. SLP has world-class museums like Museo Federico Silva (contemporary sculpture), Centro de las Artes (housed in a former prison), Museo Nacional de la Máscara, and Teatro de la Paz. The city produces several annual art biennials and has a growing contemporary gallery scene.',
+      answer: 'Yes. SLP has world-class museums like Museo Federico Silva (contemporary sculpture), Centro de las Artes (housed in a former prison), Museo Nacional de la Máscara, and Teatro de la Paz. The city hosts recurring arts festivals and exhibitions and has a growing contemporary gallery scene.',
     },
   ];
 
@@ -141,7 +141,7 @@ export default function CulturalPage({ events: initialEvents }: CulturalPageProp
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Historical Heritage</h3>
                   <p className="text-gray-600">
-                    Explore colonial architecture, UNESCO World Heritage sites, and museums showcasing the region's rich history.
+                    Explore colonial architecture, a UNESCO World Heritage historic center, and museums showcasing the region's rich history.
                   </p>
                   <Link
                     href="/cultural/history"
@@ -386,7 +386,7 @@ export default function CulturalPage({ events: initialEvents }: CulturalPageProp
                   </div>
                   <div className="p-6">
                     <p className="text-gray-700 mb-4 leading-relaxed">
-                      Theater workers and performers report unexplained phenomena at Teatro de la Paz: phantom footsteps in empty corridors, a mysterious woman in Victorian dress appearing in Box 13, and the sound of applause when the theater is empty. Some say it's the spirit of Ángela Peralta, the famous soprano, still drawn to the stage.
+                      Theater workers and performers report unexplained phenomena at Teatro de la Paz: phantom footsteps in empty corridors and the sound of applause when the theater is empty. The best-known figure is "La Dama de Negro" (the Lady in Black), a veiled woman in mourning dress whose story has even been staged at the theater around Day of the Dead.
                     </p>
                     <div className="flex items-center text-sm text-purple-600">
                       <MapPinIcon className="w-4 h-4 mr-1" />

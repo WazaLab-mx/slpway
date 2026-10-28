@@ -41,80 +41,61 @@ export default function FamilyGuidePage() {
   ];
 
   const quickStats = [
-    { value: '50+', label: 'Private Schools', source: 'SEP 2024' },
-    { value: '420ha', label: 'Tangamanga Park', source: 'City Data' },
-    { value: '25+', label: 'Sports Academies', source: 'Directory' },
-    { value: '3+', label: 'Family Hospitals', source: 'Verified' },
-    { value: '10+', label: 'Kids Museums', source: 'Tourism' },
+    { value: '420ha', label: 'Tangamanga I', source: 'México Desconocido' },
+    { value: 'Free', label: 'Tangamanga Entry', source: 'CECURT' },
+    { value: '3', label: 'IB Programmes (Terranova)', source: 'IB / School' },
+    { value: '185', label: 'School Days 2026-27', source: 'SEP' },
+    { value: '3', label: 'Private Hospitals w/ 24h ER', source: 'Verified' },
     { value: '5', label: 'Family Zones', source: 'Guide' },
   ];
 
   const schools = {
     international: [
       {
-        name: 'Colegio Terranova',
+        name: 'Colegio Internacional Terranova',
         badge: 'IB WORLD SCHOOL',
         badgeColor: 'bg-blue-600',
-        address: 'Privada de Sierra Gorda 140, Lomas 4a Secc.',
-        phone: '444 817 3999',
+        address: 'Av. Palmira 705, Privadas del Pedregal',
+        phone: '444 841 6422',
         website: 'https://www.terranova.edu.mx',
-        curriculum: ['IB Primary Years', 'IB Middle Years', 'IB Diploma', 'Bilingual'],
-        features: ['25+ nationalities', 'English immersion', 'Sports facilities', 'Arts program', 'STEAM labs'],
+        curriculum: ['IB Primary Years (PYP)', 'IB Middle Years (MYP)', 'IB Diploma (DP)', 'Bilingual'],
+        features: ['IB World School since 2011', 'After-school program', 'Preschool to Bachillerato'],
         levels: 'Preschool - High School',
-        tuition: '$8,000 - $15,000 MXN/month',
-        rating: 4.9,
+        tuition: 'Request current fees',
       },
       {
-        name: 'Instituto Potosino',
-        badge: 'TRADITIONAL EXCELLENCE',
+        name: 'Instituto Potosino Marista',
+        badge: 'MARIST, SINCE 1935',
         badgeColor: 'bg-green-600',
-        address: 'Av. Venustiano Carranza 2425',
-        phone: '444 813 7788',
-        website: 'https://www.institutopotosino.edu.mx',
-        curriculum: ['SEP + English', 'Cambridge certifications', 'Values education'],
-        features: ['90+ years history', 'Strong academics', 'Sports teams', 'Cultural events'],
-        levels: 'Preschool - High School',
-        tuition: '$5,000 - $9,000 MXN/month',
-        rating: 4.7,
+        address: 'Benigno Arriaga 608 (primary)',
+        phone: '444 813 4375 (primary) / 444 813 4024 (secondary & prepa)',
+        website: 'https://potosino.maristas.edu.mx',
+        curriculum: ['SEP curriculum', 'Catholic (Marist Brothers)'],
+        features: ['Founded 1935', 'Inclusion program (Ollin Yolotl)', 'Primary to Preparatoria'],
+        levels: 'Primary - High School',
+        tuition: 'Request current fees',
       },
       {
-        name: 'Colegio del Bosque',
-        badge: 'NATURE-FOCUSED',
+        name: 'Colegio Chapultepec de San Luis',
+        badge: 'BILINGUAL',
         badgeColor: 'bg-emerald-600',
-        address: 'Camino al Club Campestre',
-        phone: '444 824 5678',
-        website: 'https://www.colegiodelbosque.edu.mx',
-        curriculum: ['Bilingual program', 'Environmental education', 'Montessori-inspired'],
-        features: ['Large green areas', 'Outdoor learning', 'Small class sizes', 'Farm activities'],
-        levels: 'Preschool - Middle School',
-        tuition: '$6,000 - $10,000 MXN/month',
-        rating: 4.6,
+        address: 'Prol. Av. Chapultepec 1280, Privadas del Pedregal',
+        phone: '444 825 5043',
+        website: 'http://www.colegiochapultepecdesanluis.com',
+        curriculum: ['Bilingual (classes taught in English, per school)', 'Cambridge-endorsed'],
+        features: ['Maternal to Preparatoria', 'Microsoft-endorsed program'],
+        levels: 'Maternal - High School',
+        tuition: 'Request current fees',
       },
     ],
     bilingual: [
       {
-        name: 'Colegio Motolinía',
-        address: 'Av. Himno Nacional 3000',
-        phone: '444 817 5566',
+        name: 'Colegio Motolinía de San Luis',
+        address: 'Av. Venustiano Carranza 2150, Col. Polanco (preschool & primary)',
+        phone: '444 813 0240',
         levels: 'Preschool - High School',
-        focus: 'Catholic, bilingual, traditional values',
-        tuition: '$4,500 - $7,500 MXN/month',
-      },
-      {
-        name: 'Instituto Lux',
-        address: 'Av. Manuel Nava 120',
-        phone: '444 820 4455',
-        levels: 'Preschool - High School',
-        focus: 'Jesuit education, strong academics',
-        tuition: '$5,000 - $8,000 MXN/month',
-      },
-      {
-        name: 'Colegio Hispano',
-        address: 'Cordillera del Himalaya 335',
-        phone: '444 833 2211',
-        levels: 'Preschool - High School',
-        focus: 'Bilingual, sports emphasis',
-        tuition: '$4,000 - $6,500 MXN/month',
+        focus: 'Catholic school; secondary (Basalenque 140) and prepa (Cordillera Arakán 709) on separate campuses',
+        tuition: 'Request current fees',
       },
     ],
   };
@@ -124,61 +105,61 @@ export default function FamilyGuidePage() {
       name: 'Parque Tangamanga I',
       icon: '🌳',
       size: '420 hectares',
-      features: ['Largest urban park in Latin America', 'Bike trails', 'Paddle boats', 'Planetarium', 'Go-karts', 'Picnic areas', 'Jogging paths', 'Skate park'],
+      features: ["Considered Mexico's 2nd-largest urban park", 'Bike trails', 'Planetarium', 'Japanese Garden', 'Picnic areas', 'Jogging paths'],
       cost: 'Free entry',
-      hours: '6:00 AM - 6:00 PM',
-      address: 'Prolongación Muñoz, Tangamanga',
+      hours: 'Tue-Sat 5:00 AM - 10:30 PM; Sun 5:00 AM - 6:00 PM; Mon 5:00 - 11:00 AM',
+      address: 'Av. Dr. Salvador Nava Martínez 3055',
       bestFor: 'Outdoor family days, cycling, nature walks',
     },
     {
       name: 'Parque Tangamanga II',
       icon: '🚴',
-      size: '180 hectares',
-      features: ['Sports facilities', 'Soccer fields', 'Baseball diamonds', 'Running track', 'Swimming pools', 'Tennis courts'],
-      cost: 'Free entry, pool fees vary',
-      hours: '6:00 AM - 6:00 PM',
-      address: 'Av. Fray Diego de la Magdalena',
-      bestFor: 'Sports activities, swimming, organized games',
+      size: 'Sports park (north side)',
+      features: ['Sports fields', 'Autódromo on the old airport runway', 'Open green areas'],
+      cost: 'Free entry',
+      hours: 'Check with CECURT (444 475 2385)',
+      address: 'Fray Diego de la Magdalena 485, Aviación Industrial',
+      bestFor: 'Sports activities, organized games',
     },
     {
-      name: 'Museo Laberinto de las Ciencias',
+      name: 'Museo Laberinto de las Ciencias y las Artes',
       icon: '🔬',
       size: 'Interactive museum',
-      features: ['Science exhibits', 'Hands-on experiments', 'Planetarium shows', 'Butterfly garden', 'Dinosaur exhibits', 'Water play area'],
-      cost: '$90-150 MXN',
-      hours: '10:00 AM - 6:00 PM (Tue-Sun)',
-      address: 'Blvd. Antonio Rocha Cordero 5',
+      features: ['Interactive science exhibits', 'Space gallery', 'Nature gallery', 'Light & color gallery', 'Temporary exhibitions'],
+      cost: 'Check current prices (museolaberinto.com)',
+      hours: 'Tue-Fri 9:00 AM - 5:00 PM; Sat-Sun 11:00 AM - 5:00 PM',
+      address: 'Blvd. Antonio Rocha Cordero s/n, Col. Tierra Blanca',
       bestFor: 'Educational outings, rainy days, curious kids',
     },
     {
-      name: 'Parque Fundidora de Morales',
-      icon: '🎡',
-      size: 'Historic park',
-      features: ['Playground equipment', 'Open green spaces', 'Historic structures', 'Walking paths', 'Weekend vendors'],
+      name: 'Ciclovía on Av. Carranza',
+      icon: '🚲',
+      size: 'Sunday car-free route',
+      features: ['Car-free on Sundays', 'Biking', 'Skating', 'Walking'],
       cost: 'Free',
-      hours: '6:00 AM - 8:00 PM',
-      address: 'Morales neighborhood',
-      bestFor: 'Quick outings, evening walks, local experience',
+      hours: 'Sundays, approx. 8:00 AM - 1:00 PM',
+      address: 'Av. Venustiano Carranza',
+      bestFor: 'Sunday family rides, local experience',
     },
     {
-      name: 'Acuario Potosino',
-      icon: '🐠',
-      size: 'Aquarium',
-      features: ['Marine life exhibits', 'Touch pools', 'Penguin habitat', 'Fish feeding shows', 'Educational tours'],
-      cost: '$80-120 MXN',
-      hours: '10:00 AM - 6:00 PM',
-      address: 'Inside Tangamanga I',
-      bestFor: 'Animal lovers, toddlers, educational visits',
+      name: 'Bol Tangamanga',
+      icon: '🎳',
+      size: 'Bowling alley',
+      features: ['Bowling lanes', 'Indoor activity'],
+      cost: 'Check current prices',
+      hours: 'Check with the venue',
+      address: 'Plaza Tangamanga',
+      bestFor: 'Rainy days, birthday outings',
     },
     {
-      name: 'La Loma Sports Complex',
-      icon: '⚽',
-      size: '25+ sports',
-      features: ['Swimming pools', 'Soccer fields', 'Tennis courts', 'Gymnastics', 'Martial arts', 'Dance classes', 'Summer camps'],
-      cost: 'Membership required',
-      hours: '6:00 AM - 10:00 PM',
-      address: 'Lomas del Tecnológico',
-      bestFor: 'Structured activities, sports training',
+      name: 'GoKartMania',
+      icon: '🏎️',
+      size: 'Go-kart track',
+      features: ['Go-karts', 'Next to Tangamanga I'],
+      cost: 'Check current prices',
+      hours: 'Check with the venue',
+      address: 'Plaza Citadella, Av. Salvador Nava Martínez 3125',
+      bestFor: 'Older kids and teens',
     },
   ];
 
@@ -186,85 +167,85 @@ export default function FamilyGuidePage() {
     {
       name: 'Hospital del Niño y la Mujer',
       type: 'Public Specialized',
-      badge: 'TOP PEDIATRIC',
-      address: 'Av. Pedro Antonio Santos 316',
-      phone: '444 834 2900',
-      services: ['Pediatric emergencies', 'Neonatal ICU', 'Pediatric surgery', 'Child development', 'Vaccinations'],
+      badge: 'WOMEN & CHILDREN',
+      address: 'Blvd. Antonio Rocha Cordero 2510, San Juan de Guadalupe',
+      phone: '444 826 5002',
+      services: ['Pediatric emergencies (24/7)', 'Pediatric and maternal care'],
       wait: 'Variable (public)',
-      cost: 'Low cost / Free',
+      cost: 'Low cost (public)',
     },
     {
-      name: 'Hospital Lomas - Pediatrics',
-      type: 'Private Premium',
-      badge: 'EXPAT FRIENDLY',
-      address: 'Av. Sierra Leona 550, Lomas',
-      phone: '444 824 2424',
-      services: ['24/7 Pediatric ER', 'English-speaking doctors', 'Child specialists', 'Vaccinations', 'Well-child visits'],
-      wait: '15-30 min',
-      cost: '$600-1,200 MXN consultation',
+      name: 'Hospital Lomas de San Luis',
+      type: 'Private Hospital',
+      badge: 'POPULAR WITH EXPATS',
+      address: 'Av. Palmira 600, Villas del Pedregal',
+      phone: '444 102 5900',
+      services: ['24/7 emergency room', 'Pediatric specialists', 'Some English-speaking doctors'],
+      wait: 'Varies',
+      cost: 'Ask for current consultation fees',
     },
     {
-      name: 'Hospital Angeles - Pediatrics',
-      type: 'Private Premium',
+      name: 'Hospital Angeles San Luis Potosí',
+      type: 'Private Hospital',
       badge: 'NATIONAL NETWORK',
-      address: 'Av. Benito Juárez 1210',
-      phone: '444 813 1717',
-      services: ['Pediatric specialists', 'Child surgery', 'Allergies', 'Child psychology', 'Nutrition'],
-      wait: '20-40 min',
-      cost: '$500-1,000 MXN consultation',
+      address: 'Antonio Aguilar 155, Burócratas del Estado',
+      phone: '444 834 0300',
+      services: ['24/7 emergency room', 'Pediatric specialists'],
+      wait: 'Varies',
+      cost: 'Ask for current consultation fees',
     },
     {
-      name: 'Pediatras Asociados SLP',
-      type: 'Private Clinic',
-      badge: 'HIGHLY RATED',
-      address: 'Lomas 2a Sección',
-      phone: '444 824 5566',
-      services: ['General pediatrics', 'Vaccinations', 'Development checks', 'Sick visits', 'Newborn care'],
-      wait: 'Same day - 2 days',
-      cost: '$500-900 MXN consultation',
+      name: 'Star Médica San Luis Potosí',
+      type: 'Private Hospital',
+      badge: 'NATIONAL NETWORK',
+      address: 'Mariano Arista 735, Barrio de Tequisquiapan',
+      phone: '444 812 3737',
+      services: ['24/7 emergency room', 'Pediatric specialists'],
+      wait: 'Varies',
+      cost: 'Ask for current consultation fees',
     },
   ];
 
   const childcareOptions = [
     {
       type: 'CENDI (Government)',
-      name: 'CENDI DIF',
-      ages: '45 days - 6 years',
-      hours: '7:00 AM - 4:00 PM',
+      name: 'CENDI (DIF / state centers)',
+      ages: 'Infants to preschool (varies by center)',
+      hours: 'Varies by center',
       cost: 'Subsidized',
-      features: ['Meals included', 'Educational program', 'Medical support'],
-      requirements: 'Working parents, income verification',
-      contact: 'DIF Municipal: 444 812 3456',
+      features: ['Meals included', 'Educational program'],
+      requirements: 'Typically working parents; ask the center',
+      contact: 'DIF San Luis Potosí: dif.slp.gob.mx',
     },
     {
       type: 'IMSS Daycare',
       name: 'Guarderías IMSS',
       ages: '43 days - 4 years',
-      hours: '7:00 AM - 4:00 PM',
+      hours: 'Varies by unit',
       cost: 'Included with IMSS',
       features: ['Full-day care', 'Nutrition program', 'Early stimulation'],
-      requirements: 'IMSS beneficiary (formal employment)',
+      requirements: 'IMSS-insured working parent (formal employment)',
       contact: 'IMSS: 800 623 2323',
     },
     {
       type: 'Private Daycare',
       name: 'Various Private Options',
-      ages: '3 months - 6 years',
-      hours: 'Flexible, 7:00 AM - 7:00 PM',
-      cost: '$3,000 - $8,000 MXN/month',
-      features: ['Small groups', 'Bilingual options', 'Extended hours', 'Activities'],
+      ages: 'Infants to preschool (varies)',
+      hours: 'Varies; some offer extended hours',
+      cost: 'Request current fees',
+      features: ['Small groups', 'Bilingual options', 'Activities'],
       requirements: 'Registration, medical exam',
       contact: 'Search: "guarderías privadas SLP"',
     },
     {
       type: 'Montessori',
-      name: 'Casa de los Niños Montessori',
-      ages: '2 - 6 years',
-      hours: '8:00 AM - 2:00 PM',
-      cost: '$4,500 - $7,000 MXN/month',
-      features: ['Montessori method', 'Mixed ages', 'Self-directed learning', 'Prepared environment'],
-      requirements: 'Parent interview, child observation',
-      contact: '444 817 9900',
+      name: 'Montessori preschools',
+      ages: 'Varies by school',
+      hours: 'Varies by school',
+      cost: 'Request current fees',
+      features: ['Montessori method', 'Mixed ages', 'Self-directed learning'],
+      requirements: 'Usually a parent interview',
+      contact: 'Search: "Montessori San Luis Potosí"',
     },
   ];
 
@@ -272,65 +253,57 @@ export default function FamilyGuidePage() {
     {
       sport: 'Soccer',
       icon: '⚽',
-      venues: ['Club Santos Laguna Academy', 'Escuela de Fútbol Potosina', 'La Loma Soccer Fields'],
+      venues: ['Club and school academies across the city', 'Tangamanga II sports fields'],
       ages: '4 years+',
-      cost: '$800 - $2,000 MXN/month',
+      cost: 'Fees vary; ask each academy',
       popularity: 'Very High',
     },
     {
       sport: 'Swimming',
       icon: '🏊',
-      venues: ['Swim Kids', 'Club La Loma', 'Tangamanga II Pools', 'YMCA SLP'],
+      venues: ['Private swim schools', 'Private sports clubs'],
       ages: '3 years+',
-      cost: '$600 - $1,500 MXN/month',
+      cost: 'Fees vary; ask each school',
       popularity: 'High',
     },
     {
       sport: 'Gymnastics',
       icon: '🤸',
-      venues: ['Gimnasia Olímpica SLP', 'La Loma Centro Deportivo', 'Club Campestre'],
+      venues: ['Private gymnastics schools', 'Private sports clubs'],
       ages: '3 years+',
-      cost: '$900 - $2,000 MXN/month',
+      cost: 'Fees vary; ask each school',
       popularity: 'Medium-High',
     },
     {
       sport: 'Tennis',
       icon: '🎾',
-      venues: ['Club La Loma', 'Club Campestre', 'Tangamanga II Courts'],
+      venues: ['Club Deportivo Potosino (hosts the ATP Challenger)', 'Private sports clubs'],
       ages: '5 years+',
-      cost: '$1,000 - $2,500 MXN/month',
+      cost: 'Fees vary; ask each club',
       popularity: 'Medium',
     },
     {
       sport: 'Martial Arts',
       icon: '🥋',
-      venues: ['Bushido Karate', 'Taekwondo San Luis', 'Brazilian Jiu-Jitsu SLP'],
+      venues: ['Karate, taekwondo and jiu-jitsu schools across the city'],
       ages: '4 years+',
-      cost: '$700 - $1,500 MXN/month',
+      cost: 'Fees vary; ask each school',
       popularity: 'Medium-High',
     },
     {
       sport: 'Dance',
       icon: '💃',
-      venues: ['Dance Academy SLP', 'Ballet Potosino', 'Hip Hop Kids'],
+      venues: ['Ballet, folk and hip-hop academies across the city'],
       ages: '3 years+',
-      cost: '$600 - $1,500 MXN/month',
-      popularity: 'High (especially girls)',
-    },
-    {
-      sport: 'Parkour',
-      icon: '🏃',
-      venues: ['VertiGo Parkour Academy'],
-      ages: '6 years+',
-      cost: '$800 - $1,500 MXN/month',
-      popularity: 'Growing',
+      cost: 'Fees vary; ask each academy',
+      popularity: 'High',
     },
     {
       sport: 'Mountain Biking',
       icon: '🚵',
-      venues: ['Parque Tangamanga I', 'Parque Tangamanga II'],
+      venues: ['Parque Tangamanga I trails'],
       ages: '6 years+',
-      cost: '$600 - $1,200 MXN/month',
+      cost: 'Free park entry; club fees vary',
       popularity: 'Medium',
     },
   ];
@@ -339,17 +312,17 @@ export default function FamilyGuidePage() {
     {
       name: 'Lomas del Tecnológico',
       rating: 5,
-      description: 'Premium family neighborhood with excellent schools, parks, and safety',
-      highlights: ['Colegio Terranova nearby', 'Club La Loma access', 'Shopping malls', 'Low crime'],
+      description: 'Established family neighborhood in the Lomas area with good access to schools and services',
+      highlights: ['Near Tec de Monterrey campus', 'Shopping nearby', 'Residential streets'],
       avgRent: '$18,000 - $35,000 MXN/month',
       schoolAccess: 'Excellent',
-      parkAccess: 'Very Good',
+      parkAccess: 'Good',
     },
     {
       name: 'Lomas 4a Sección',
       rating: 5,
       description: 'Upscale area with international community and modern amenities',
-      highlights: ['International schools', 'Gated communities', 'Family restaurants', 'Quiet streets'],
+      highlights: ['Colegio Motolinía prepa campus', 'Gated communities', 'Family restaurants', 'Quiet streets'],
       avgRent: '$20,000 - $40,000 MXN/month',
       schoolAccess: 'Excellent',
       parkAccess: 'Good',
@@ -358,7 +331,7 @@ export default function FamilyGuidePage() {
       name: 'Desarrollo del Pedregal',
       rating: 4,
       description: 'Modern development with young families and good infrastructure',
-      highlights: ['New constructions', 'Family-oriented', 'Near hospitals', 'Growing area'],
+      highlights: ['Near Terranova and Colegio Chapultepec', 'Near Hospital Lomas', 'New constructions', 'Growing area'],
       avgRent: '$12,000 - $25,000 MXN/month',
       schoolAccess: 'Good',
       parkAccess: 'Good',
@@ -367,16 +340,16 @@ export default function FamilyGuidePage() {
       name: 'Jardines del Sur',
       rating: 4,
       description: 'Established middle-class neighborhood with good value',
-      highlights: ['Family homes', 'Near Tangamanga II', 'Local schools', 'Parks nearby'],
+      highlights: ['Family homes', 'Local schools', 'Parks nearby'],
       avgRent: '$10,000 - $18,000 MXN/month',
       schoolAccess: 'Good',
-      parkAccess: 'Excellent',
+      parkAccess: 'Good',
     },
     {
       name: 'Club Campestre Area',
       rating: 5,
-      description: 'Exclusive area with country club access and premium housing',
-      highlights: ['Golf course', 'Tennis facilities', 'Swimming pools', 'Very secure'],
+      description: 'Exclusive area around the Club Campestre de San Luis, with premium housing',
+      highlights: ['18-hole golf course (members)', 'Premium housing'],
       avgRent: '$25,000 - $50,000 MXN/month',
       schoolAccess: 'Very Good',
       parkAccess: 'Country club',
@@ -385,116 +358,82 @@ export default function FamilyGuidePage() {
 
   const familyRestaurants = [
     {
-      name: 'La Corriente Cevichería',
-      type: 'Seafood',
-      features: ['Kids menu', 'High chairs', 'Outdoor seating', 'Birthday parties'],
-      priceRange: '$$',
-      address: 'Lomas del Tecnológico',
-    },
-    {
-      name: 'Sonora Grill',
-      type: 'Steakhouse',
-      features: ['Family portions', 'Kids activities', 'Play area', 'Weekend brunch'],
-      priceRange: '$$$',
-      address: 'Lomas 4a Sección',
-    },
-    {
-      name: 'Toks',
-      type: 'Mexican Family',
-      features: ['Affordable', 'Kids menu', 'Crayons & games', 'Quick service'],
-      priceRange: '$',
-      address: 'Multiple locations',
-    },
-    {
-      name: 'Italianni\'s',
-      type: 'Italian',
-      features: ['Family-friendly', 'Large portions', 'Kids pasta', 'Birthday songs'],
-      priceRange: '$$',
-      address: 'Plaza Sendero, Lomas',
-    },
-    {
-      name: 'Wings Army',
-      type: 'Wings & Sports',
-      features: ['Kids meals', 'Games area', 'TVs for sports', 'Casual atmosphere'],
-      priceRange: '$$',
-      address: 'Multiple locations',
-    },
-    {
       name: 'Peter Piper Pizza',
       type: 'Pizza & Games',
-      features: ['Arcade games', 'Birthday packages', 'Buffet option', 'Prize counter'],
+      features: ['Arcade games', 'Birthday parties', 'Kid-friendly'],
       priceRange: '$$',
-      address: 'Plaza Sendero',
+      address: 'Plaza Citadella, Av. Salvador Nava Martínez',
     },
   ];
 
   const faqs = [
     {
       question: 'What are the best international schools in San Luis Potosí?',
-      answer: 'Colegio Terranova is the top choice for international families, offering IB programs from preschool through high school with students from 25+ nationalities. Instituto Potosino and Colegio del Bosque are also excellent bilingual options with strong academics and English programs.'
+      answer: 'Colegio Internacional Terranova is the IB World School in SLP, offering the IB Primary Years, Middle Years and Diploma programmes from preschool through bachillerato. Colegio Chapultepec de San Luis is a bilingual school that says it teaches its classes in English and is Cambridge-endorsed. Instituto Potosino Marista (founded 1935) and Colegio Motolinía are long-established Catholic private schools.'
     },
     {
       question: 'What is the school year calendar in Mexico?',
-      answer: 'The school year in Mexico runs from late August to early July. There are breaks in December-January (2-3 weeks), Easter week (1-2 weeks), and shorter breaks in November and February. Private schools may have slightly different schedules but generally follow the SEP calendar.'
+      answer: 'The SEP 2026-2027 calendar runs from August 31, 2026 to July 9, 2027 (185 school days). Winter vacation is December 21, 2026 to January 5, 2027, and spring vacation is March 22 to April 2, 2027, plus several long weekends. Private schools generally follow the SEP calendar with small variations.'
     },
     {
       question: 'How much does private school cost in SLP?',
-      answer: 'Private school tuition varies widely: basic bilingual schools start at $4,000-6,000 MXN/month, mid-range schools run $6,000-10,000 MXN/month, and premium international schools like Terranova cost $10,000-15,000 MXN/month. Most require an inscription fee of 1-2 months tuition.'
+      answer: 'Tuition varies widely by school and level, and most schools do not publish their fees. Request current fees directly from each school, and ask about the annual inscription fee, uniforms, books and other extras, which are charged on top of monthly tuition.'
     },
     {
       question: 'Where can I find English-speaking pediatricians?',
-      answer: 'Hospital Lomas and Hospital Angeles have pediatricians who speak English. Private practices like Pediatras Asociados SLP also have English-speaking doctors. When booking, specifically request an English-speaking physician to ensure availability.'
+      answer: 'Hospital Lomas de San Luis (444 102 5900), Hospital Angeles (444 834 0300) and Star Médica (444 812 3737) are private hospitals with 24/7 emergency rooms and pediatric specialists, and some of their doctors speak English. When booking, specifically request an English-speaking physician.'
     },
     {
       question: 'What are the best parks for kids in San Luis Potosí?',
-      answer: 'Tangamanga I (420 hectares) is the largest with bike trails, paddle boats, and a planetarium. Museo Laberinto is perfect for educational outings with science exhibits and hands-on activities. Tangamanga II has sports facilities and swimming pools for active families.'
+      answer: "Tangamanga I (420 hectares, considered Mexico's second-largest urban park) has free entry, bike trails, a planetarium and a Japanese Garden. Museo Laberinto de las Ciencias y las Artes is perfect for educational outings with interactive exhibits. Tangamanga II, on the north side of the city, is a sports park."
     },
     {
       question: 'How do I find childcare/daycare in SLP?',
-      answer: 'Options include: CENDI (government subsidized, for working parents), IMSS guarderías (if you have formal employment), and private daycares ($3,000-8,000 MXN/month). Montessori schools also offer preschool programs. Most require registration, medical exams, and parent interviews.'
+      answer: 'Options include: CENDI centers (government subsidized, usually for working parents), IMSS guarderías (for children of IMSS-insured workers, from 43 days to 4 years), and private daycares (request current fees). Montessori schools also offer preschool programs. Most require registration, medical exams, and parent interviews.'
     },
     {
       question: 'What sports activities are available for children?',
-      answer: 'Soccer is most popular, with academies across the city. Swimming programs are available at La Loma, Tangamanga II, and private clubs. Other options include gymnastics, tennis, martial arts, dance, and basketball. Most activities cost $600-2,000 MXN/month.'
+      answer: 'Soccer is most popular, with academies across the city. Swimming programs are offered by private swim schools and sports clubs. Other options include gymnastics, tennis, martial arts, dance, and basketball. Fees vary, so ask each academy for current prices.'
     },
     {
       question: 'Which neighborhoods are best for families with children?',
-      answer: 'Lomas del Tecnológico and Lomas 4a Sección are top choices with excellent schools, parks, and safety. Desarrollo del Pedregal offers modern housing at better prices. For country club lifestyle, the Club Campestre area provides premium amenities and security.'
+      answer: 'Lomas del Tecnológico and Lomas 4a Sección are popular choices with good access to schools and services. Desarrollo del Pedregal offers modern housing near Colegio Terranova, Colegio Chapultepec and Hospital Lomas. For a country club lifestyle, the Club Campestre area offers premium housing around the golf course.'
     },
     {
       question: 'Are there playgroups or mom groups in SLP?',
-      answer: 'Yes! Check Facebook groups like "Expats in San Luis Potosí" and "Mamás SLP" for playgroup meetups. Many schools organize parent activities, and clubs like La Loma have family programs. The expat community regularly organizes kid-friendly events.'
+      answer: 'Yes. Look for expat and parent groups on Facebook for playgroup meetups. Many schools organize parent activities, and the expat community regularly organizes kid-friendly events.'
     },
     {
       question: 'What vaccinations do children need for school in Mexico?',
-      answer: 'Required vaccinations include BCG, Hepatitis B, Pentavalent (DPT+Hib+HepB), Rotavirus, Pneumococcal, MMR, and boosters. Schools require a vaccination card (Cartilla de Vacunación). Private clinics and pharmacies offer all standard vaccines; IMSS provides them free for beneficiaries.'
+      answer: 'The national schedule includes BCG, Hepatitis B, Hexavalent (formerly Pentavalent: diphtheria, tetanus, pertussis, polio, Hib, hepatitis B), Rotavirus, Pneumococcal, MMR (SRP), and boosters. Schools require a vaccination card (Cartilla Nacional de Salud). Public health centers vaccinate free of charge, and private clinics and pharmacies also offer vaccines.'
     },
     {
       question: 'Is it safe for children to play outside in SLP?',
-      answer: 'In family-friendly neighborhoods like Lomas and residential areas, yes. Parks like Tangamanga are safe during daytime hours. As with any city, supervise children, visit parks during active hours, and choose well-maintained play areas. Many families use private clubs with controlled access.'
+      answer: 'In family-friendly neighborhoods like Lomas and residential areas, yes. Parks like Tangamanga are busiest and safest during daytime hours. As with any city, supervise children, visit parks during active hours, and choose well-maintained play areas. Many families use private clubs with controlled access.'
     },
     {
       question: 'What birthday party venues are popular?',
-      answer: 'Popular options include Peter Piper Pizza, Jumping World, and Chiquitines party salons. Tangamanga parks offer outdoor party areas. Many restaurants like Sonora Grill and Wings cater birthday parties. Private party salons are available throughout the city for $3,000-10,000 MXN.'
+      answer: 'Popular options include Peter Piper Pizza (Plaza Citadella), Bol Tangamanga bowling and GoKartMania, plus outdoor areas in the Tangamanga parks. Private party salons are available throughout the city; request current prices.'
     },
   ];
 
   const sources = [
     { name: 'SEP (Ministry of Education)', url: 'https://www.gob.mx/sep', type: 'Government' },
-    { name: 'Colegio Terranova Official', url: 'https://www.terranova.edu.mx', type: 'Institution' },
+    { name: 'SEP School Calendar 2026-2027', url: 'https://calendarioescolar.sep.gob.mx/', type: 'Government' },
+    { name: 'Colegio Internacional Terranova', url: 'https://www.terranova.edu.mx', type: 'Institution' },
+    { name: 'Instituto Potosino Marista', url: 'https://potosino.maristas.edu.mx', type: 'Institution' },
+    { name: 'Colegio Motolinía de San Luis', url: 'https://www.motoliniaslp.edu.mx', type: 'Institution' },
     { name: 'DIF San Luis Potosí', url: 'https://dif.slp.gob.mx', type: 'Government' },
     { name: 'IMSS Guarderías', url: 'https://www.imss.gob.mx', type: 'Government' },
-    { name: 'Hospital del Niño y la Mujer', url: 'https://slpsalud.gob.mx', type: 'Institution' },
-    { name: 'Tangamanga Parks Official', url: 'https://slp.gob.mx', type: 'Government' },
-    { name: 'Museo Laberinto', url: 'https://www.laberintoslp.com', type: 'Institution' },
-    { name: 'La Loma Centro Deportivo', url: 'https://www.laloma.mx', type: 'Institution' },
+    { name: 'Tangamanga Parks (CECURT)', url: 'https://cecurt.slp.gob.mx/faq/', type: 'Government' },
+    { name: 'Museo Laberinto', url: 'https://www.museolaberinto.com', type: 'Institution' },
   ];
 
   const seoFaqs = [
-    { q: 'Is San Luis Potosí a good city for families with children?', a: 'Yes. SLP has excellent international and bilingual schools (Colegio Terranova, Motolinia), large parks like Tangamanga I and II, indoor play centers (Kidiverso, Jumparks), and a low cost of living that lets families enjoy a comfortable lifestyle. Many expat families with children from the BMW, GM, and Ford plants live here.' },
-    { q: 'How much does it cost to raise a family in San Luis Potosí?', a: 'A family of 4 can live comfortably on $2,500-3,500 USD/month including housing in a good neighborhood (Lomas, Del Valle), private school tuition ($200-600 USD/month), groceries, and entertainment. This is roughly 40% less than comparable living in the US.' },
-    { q: 'Are there English-speaking pediatricians in SLP?', a: 'Yes. Hospital Lomas de San Luis and Star Médica have English-speaking pediatricians. Several private clinics in the Lomas area also cater to expat families. Expect to pay $30-60 USD per consultation.' },
-    { q: 'What family-friendly activities are available on weekends?', a: 'Weekends in SLP are packed: Sunday Ciclovía on Av. Carranza (free bike riding), Parque Tangamanga (free zoo + science museum), Kidiverso, Jumparks, bowling at Bol Tanga, go-karts, and the Laberinto de las Ciencias interactive museum.' },
+    { q: 'Is San Luis Potosí a good city for families with children?', a: 'Yes. SLP has an IB World School (Colegio Internacional Terranova) and several bilingual and Catholic private schools, large parks like Tangamanga I and II, indoor options such as bowling, go-karts and the Laberinto science museum, and a lower cost of living than Mexico City. Many expat families with children from the BMW and GM plants live here.' },
+    { q: 'How much does it cost to raise a family in San Luis Potosí?', a: 'Costs depend mostly on housing and school choice. As a reference, 1-2 bedroom apartments in Lomas generally list for about $17,000-22,000 MXN/month (October 2026). Private school fees vary widely and are rarely published, so request current fees from each school. Groceries and entertainment are cheaper than in Mexico City.' },
+    { q: 'Are there English-speaking pediatricians in SLP?', a: 'Yes. Hospital Lomas de San Luis, Hospital Angeles and Star Médica have pediatric specialists, some of whom speak English. Several private clinics in the Lomas area also cater to expat families. Ask for current consultation fees when booking.' },
+    { q: 'What family-friendly activities are available on weekends?', a: 'Weekends in SLP are packed: the Sunday Ciclovía on Av. Carranza (free, about 8:00 AM-1:00 PM), Parque Tangamanga I (free entry; the zoo is closed for renovation), bowling at Bol Tangamanga, go-karts at GoKartMania, and the Laberinto de las Ciencias y las Artes interactive museum.' },
   ];
 
   return (
@@ -523,7 +462,7 @@ export default function FamilyGuidePage() {
               description: t('seo.description'),
               inLanguage: locale,
               datePublished: '2025-01-01',
-              dateModified: '2026-04-10',
+              dateModified: '2026-10-27',
               author: {
                 '@type': 'Person',
                 '@id': 'https://www.sanluisway.com/about#editorial-team',
@@ -581,7 +520,7 @@ export default function FamilyGuidePage() {
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
                 Ultimate Family Life Guide
               </h1>
-              <LastUpdated date="2026-04-07" className="text-gray-300 mb-4" />
+              <LastUpdated date="2026-10-27" className="text-gray-300 mb-4" />
               <p className="text-xl text-purple-100 max-w-3xl mx-auto">
                 San Luis Potosí - Schools, Activities & Family Living
               </p>
@@ -637,9 +576,9 @@ export default function FamilyGuidePage() {
               <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
                 <h3 className="font-semibold text-yellow-800 mb-2">Key Takeaways</h3>
                 <ul className="text-sm text-yellow-900 space-y-1">
-                  <li>• <strong>Schools:</strong> Colegio Terranova (IB) is top choice for international families</li>
-                  <li>• <strong>Parks:</strong> Tangamanga I & II offer 600+ hectares of family activities</li>
-                  <li>• <strong>Healthcare:</strong> Hospital Lomas & Angeles have English-speaking pediatricians</li>
+                  <li>• <strong>Schools:</strong> Colegio Internacional Terranova is SLP's IB World School</li>
+                  <li>• <strong>Parks:</strong> Tangamanga I alone covers 420 hectares, with free entry</li>
+                  <li>• <strong>Healthcare:</strong> Hospital Lomas, Angeles and Star Médica have pediatric specialists; some speak English</li>
                   <li>• <strong>Best Areas:</strong> Lomas del Tecnológico and Lomas 4a for families</li>
                 </ul>
               </div>
@@ -664,8 +603,6 @@ export default function FamilyGuidePage() {
                           <span className={`px-3 py-1 ${school.badgeColor} text-white text-xs font-bold rounded-full`}>
                             {school.badge}
                           </span>
-                          <span className="text-yellow-500">{'★'.repeat(Math.floor(school.rating))}</span>
-                          <span className="text-sm text-gray-500">{school.rating}</span>
                         </div>
                         <h4 className="text-xl font-bold text-gray-900">{school.name}</h4>
                         <p className="text-gray-600 text-sm">{school.address}</p>
@@ -707,7 +644,7 @@ export default function FamilyGuidePage() {
               ))}
             </div>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Other Bilingual Schools</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Other Private Schools</h3>
             <div className="grid md:grid-cols-3 gap-4">
               {schools.bilingual.map((school, index) => (
                 <div key={index} className="bg-white rounded-xl shadow-md p-6">
@@ -903,7 +840,7 @@ export default function FamilyGuidePage() {
                       <p className="text-gray-600">{neighborhood.description}</p>
                     </div>
                     <div className="text-right">
-                      <div className="text-sm text-gray-500">Avg. Rent</div>
+                      <div className="text-sm text-gray-500">Approx. Rent</div>
                       <div className="font-semibold text-purple-600">{neighborhood.avgRent}</div>
                     </div>
                   </div>
