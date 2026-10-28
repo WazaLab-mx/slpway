@@ -1570,9 +1570,8 @@
       "title": "Recursos Esenciales",
       "emergency": {
         "title": "Números de Emergencia",
-        "general": "Emergencia General",
-        "police": "Policía",
-        "ambulance": "Cruz Roja / Ambulancia"
+        "general": "Policía, ambulancia y bomberos (todo el país)",
+        "anonymous": "Denuncia anónima"
       },
       "guides": {
         "title": "Guías de San Luis Way",
@@ -1726,7 +1725,7 @@
           },
           "emergency": {
             "title": "Guarda números de emergencia",
-            "description": "911 (emergencia), 066 (policía), 065 (ambulancia/Cruz Roja)."
+            "description": "911 (policía, ambulancia, bomberos). 089 para denuncias anónimas."
           }
         }
       },

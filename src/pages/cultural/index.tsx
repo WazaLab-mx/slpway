@@ -247,7 +247,7 @@ export default function CulturalPage({ events: initialEvents }: CulturalPageProp
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Museo Federico Silva</h3>
                   <p className="text-gray-600 mb-4">
-                    Housed in a former prison, this contemporary art museum showcases the monumental sculptures and artistic works of renowned Mexican sculptor Federico Silva.
+                    Opened in 2003 in a restored 1907 school building beside Jardín San Juan de Dios, this museum showcases the monumental sculptures of renowned Mexican sculptor Federico Silva.
                   </p>
                   <div className="flex items-center text-gray-500 mb-4">
                     <MapPinIcon className="w-5 h-5 mr-2" />

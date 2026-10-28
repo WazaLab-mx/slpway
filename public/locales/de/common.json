@@ -1537,9 +1537,8 @@
       "title": "Wichtige Ressourcen",
       "emergency": {
         "title": "Notrufnummern",
-        "general": "Allgemeiner Notfall",
-        "police": "Polizei",
-        "ambulance": "Rotes Kreuz / Krankenwagen"
+        "general": "Polizei, Krankenwagen & Feuerwehr (landesweit)",
+        "anonymous": "Anonyme Hinweise"
       },
       "guides": {
         "title": "San Luis Way Reiseführer",
@@ -1693,7 +1692,7 @@
           },
           "emergency": {
             "title": "Notrufnummern speichern",
-            "description": "911 (Notfall), 066 (Polizei), 065 (Krankenwagen/Rotes Kreuz)."
+            "description": "911 (Polizei, Krankenwagen, Feuerwehr). 089 für anonyme Hinweise."
           }
         }
       },

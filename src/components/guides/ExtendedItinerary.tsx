@@ -25,7 +25,7 @@ const plans: DayPlan[] = [
       { time: '9:00 - 10:30', title: 'Breakfast at La Parroquia', detail: 'Classic potosino breakfast — enchiladas potosinas or huevos rancheros at the institution by the Cathedral.', cost: '$120-180 MXN' },
       { time: '10:30 - 13:00', title: 'Plaza de Armas + Cathedral + Palacio de Gobierno', detail: 'Walk the main square, visit the baroque Cathedral and tour the Palacio de Gobierno murals (free).' },
       { time: '13:00 - 15:00', title: 'Lunch at La Oruga y La Cebada', detail: 'Contemporary Mexican cuisine on a leafy patio. Try the gordas potosinas and mezcal flight.', cost: '$300-450 MXN' },
-      { time: '15:00 - 17:30', title: 'Museo Federico Silva + Templo del Carmen', detail: 'Modern sculpture museum housed in a former prison, then the Churrigueresque masterpiece of Templo del Carmen.', cost: 'Museum $40 MXN' },
+      { time: '15:00 - 17:30', title: 'Museo Federico Silva + Templo del Carmen', detail: 'Modern sculpture museum in a restored 1907 school building, then the Churrigueresque masterpiece of Templo del Carmen.', cost: 'Museum $40 MXN' },
       { time: '17:30 - 19:00', title: 'Stroll Plaza del Carmen + Caja del Agua', detail: 'Golden hour in the plazas. Stop at Chocolates Costanzo for a traditional hot chocolate.' },
       { time: '19:00 - 22:00', title: 'Dinner at La Gran Vía', detail: 'A SLP institution since 1966. Spanish-Mexican classics, white tablecloths, impeccable service.', cost: '$450-700 MXN' },
     ],

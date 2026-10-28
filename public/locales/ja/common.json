@@ -1587,9 +1587,8 @@
       "title": "重要なリソース",
       "emergency": {
         "title": "緊急連絡先",
-        "general": "一般緊急",
-        "police": "警察",
-        "ambulance": "赤十字 / 救急車"
+        "general": "警察・救急・消防（全国共通）",
+        "anonymous": "匿名通報"
       },
       "guides": {
         "title": "San Luis Way ガイド",
@@ -1743,7 +1742,7 @@
           },
           "emergency": {
             "title": "緊急連絡先を保存",
-            "description": "911（緊急）、066（警察）、065（救急車/赤十字）。"
+            "description": "911（警察・救急・消防）。匿名通報は089。"
           }
         }
       },

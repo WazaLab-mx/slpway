@@ -67,7 +67,7 @@ const featuredAttractions = [
   {
     id: 'museo-federico-silva',
     name: 'Museo Federico Silva',
-    description: 'Housed in a former prison, this contemporary art museum showcases the monumental sculptures and artistic works of renowned Mexican sculptor Federico Silva.',
+    description: 'Opened in 2003 in a restored 1907 school building beside Jardín San Juan de Dios, this museum showcases the monumental sculptures of renowned Mexican sculptor Federico Silva.',
     image: '/images/cultural/museo-federico-silva.jpg',
     category: 'Museums',
     location: 'Centro Histórico',

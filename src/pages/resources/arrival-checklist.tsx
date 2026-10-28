@@ -322,8 +322,7 @@ export default function ArrivalChecklistPage() {
                 <h3 className="font-semibold text-blue-900 mb-3">{t('arrivalChecklist.resources.emergency.title')}</h3>
                 <ul className="space-y-2 text-sm text-blue-800">
                   <li><strong>911</strong> - {t('arrivalChecklist.resources.emergency.general')}</li>
-                  <li><strong>066</strong> - {t('arrivalChecklist.resources.emergency.police')}</li>
-                  <li><strong>065</strong> - {t('arrivalChecklist.resources.emergency.ambulance')}</li>
+                  <li><strong>089</strong> - {t('arrivalChecklist.resources.emergency.anonymous')}</li>
                 </ul>
               </div>
               <div className="bg-green-50 p-6 rounded-xl">

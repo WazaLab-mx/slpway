@@ -1584,9 +1584,8 @@
       "title": "Essential Resources",
       "emergency": {
         "title": "Emergency Numbers",
-        "general": "General Emergency",
-        "police": "Police",
-        "ambulance": "Red Cross / Ambulance"
+        "general": "Police, ambulance & fire (nationwide)",
+        "anonymous": "Anonymous tips"
       },
       "guides": {
         "title": "San Luis Way Guides",
@@ -1740,7 +1739,7 @@
           },
           "emergency": {
             "title": "Save emergency numbers",
-            "description": "911 (emergency), 066 (police), 065 (ambulance/Red Cross)."
+            "description": "911 (police, ambulance, fire). 089 for anonymous tips."
           }
         }
       },
