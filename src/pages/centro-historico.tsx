@@ -252,6 +252,10 @@ export default function CentroHistorico() {
                     <p className="text-lg text-gray-700 leading-relaxed">
                       {t('centroHistorico.history.originsText')}
                     </p>
+                    <Link href="/seven-barrios-san-luis-potosi" className="mt-4 inline-flex items-center gap-2 font-semibold text-amber-700 hover:text-amber-800 underline underline-offset-4">
+                      {t('centroHistorico.history.barriosLink')}
+                      <ArrowRightIcon className="w-4 h-4" aria-hidden="true" />
+                    </Link>
                   </div>
                 </div>
                 <div>

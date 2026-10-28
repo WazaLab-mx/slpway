@@ -1,5 +1,14 @@
 # Commit Log
 
+## 2026-10-28 — feat: /seven-barrios-san-luis-potosi map page (7 traditional barrios walking loop)
+- Built because Reel 21 (seven-barrios) ends with "Map: link in bio".
+- Page: src/pages/seven-barrios-san-luis-potosi.tsx, components in src/components/seven-barrios/ (hero, inline SVG map, barrio cards, walking info + FAQ), data/projection/Google Maps URL builders in src/lib/seven-barrios.ts, JSON-LD in src/lib/seven-barrios-schema.ts.
+- New i18n namespace `seven-barrios` (en/es/de/ja), registered in next-i18next.config.js.
+- Linked as first item on /ig (ig-link-hub.ts + link-hub.json), added to sitemap static-routes, one link line in centro-historico (common.json x4).
+- Map: church coordinates from OSM cross-checked with Wikidata/HMDB/Google Places; loop Catedral → 7 barrios → Catedral ≈ 13 km (12,996 m on OSM foot routing).
+- Facts: two external sources each (Plano Informativo, HMDB, Líder Empresarial, UASLP, sanluis.capital); disputed founders and Tequisquiapan/Montecillo founding years omitted.
+- Tests: +23 (data, projection, URLs, schema, locale key parity, render in 4 locales). 631 passing; tsc only the 4 pre-existing errors.
+
 ## 2026-10-27 — fix: fact-check round 2 (food, wine, nomad, spouse, culture subpages, family/outdoors/visit, 10 event pages) + cost-of-living FX
 - The same method as round 1 (two external sources per claim; per-page reports in the session scratchpad `factcheck/`). 2,040+ locale patch entries applied via `apply_patches.py`, with no conflicts.
 - Owner decisions applied:

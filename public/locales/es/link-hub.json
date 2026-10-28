@@ -3,6 +3,7 @@
   "title": "San Luis Way",
   "subtitle": "Las guías que compartimos en Instagram, a un toque.",
   "items": {
+    "sevenBarrios": { "label": "Los 7 barrios: mapa", "detail": "San Luis Potosí eran 7 pueblos. Recórrelos" },
     "realPotosi": { "label": "Carrera Real del Potosí", "detail": "Sáb 17 oct · carrera nocturna 3K, 6K y 10K" },
     "halfMarathon": { "label": "Medio Maratón La Capital", "detail": "Dom 8 nov · gratis · inscripción hasta el 4 nov" },
     "xantolo": { "label": "Xantolo 2026", "detail": "Día de Muertos en la capital y la Huasteca" },

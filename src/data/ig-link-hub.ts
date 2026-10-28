@@ -7,6 +7,7 @@ export interface LinkHubItem {
 }
 
 export const LINK_HUB_ITEMS: LinkHubItem[] = [
+  { id: 'sevenBarrios', href: '/seven-barrios-san-luis-potosi', icon: '⛪' },
   { id: 'realPotosi', href: '/events/carrera-real-del-potosi-2026', icon: '🌙' },
   { id: 'halfMarathon', href: '/events/medio-maraton-capital-del-deporte-2026', icon: '🏃' },
   { id: 'xantolo', href: '/events/xantolo-2026', icon: '🕯️' },

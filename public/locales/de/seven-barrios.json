@@ -1,0 +1,98 @@
+{
+  "seo": {
+    "title": "Die 7 Barrios von San Luis Potosí: Karte und Rundgang",
+    "description": "Karte der sieben traditionellen Barrios von San Luis Potosí: Santiago, Tlaxcala, Montecillo, San Sebastián, San Juan de Guadalupe, San Miguelito und Tequisquiapan. Geprüfte Geschichte und ein 13 km langer Rundweg zum Öffnen in Google Maps.",
+    "keywords": "7 barrios san luis potosi, sieben barrios, barrio de tlaxcala, barrio de santiago, san miguelito, tequisquiapan, san sebastian, san juan de guadalupe, montecillo, rundgang san luis potosi"
+  },
+  "hero": {
+    "eyebrow": "Geschichte zum Erlaufen",
+    "title": "San Luis Potosí war nicht ein Ort. Es waren 7.",
+    "intro": "Rund um die 1592 gegründete spanische Siedlung entstanden sieben Barrios, die meisten als eigenständige indigene Dörfer mit eigener Kirche und eigenem Jardín. Die Stadt hat sie längst eingemeindet, doch sie umringen bis heute das Zentrum, und alle sieben lassen sich an einem Tag erwandern.",
+    "ctaMap": "Zur Karte",
+    "ctaRoute": "Route in Google Maps öffnen"
+  },
+  "map": {
+    "title": "Die Karte",
+    "description": "Jedes Barrio steht in seiner tatsächlichen Richtung und Entfernung zur Kathedrale. Die Nummern folgen der empfohlenen Laufreihenfolge.",
+    "svgTitle": "Schematische Karte der sieben Barrios von San Luis Potosí",
+    "svgDesc": "In der Mitte liegt die Kathedrale an der Plaza de Armas. Sieben nummerierte Markierungen zeigen die Kirchen und Jardines der Barrios ringsum, verbunden durch einen gestrichelten Rundweg: 1 Santiago und 2 Tlaxcala im Norden, 3 Montecillo im Osten, 4 San Sebastián und 5 San Juan de Guadalupe im Süden, 6 San Miguelito im Südwesten und 7 Tequisquiapan im Westen.",
+    "center": "Kathedrale",
+    "north": "N",
+    "markerLabel": "{{number}}. Barrio de {{name}}",
+    "legendRoute": "Rundweg, etwa 13 km",
+    "scale": "1 km"
+  },
+  "route": {
+    "cta": "Rundweg in Google Maps öffnen",
+    "note": "Öffnet Google Maps mit allen sieben Stationen in Reihenfolge, Start und Ziel an der Kathedrale."
+  },
+  "barrios": {
+    "title": "Die sieben Barrios in Laufreihenfolge",
+    "founded": "Gegründet {{year}}",
+    "foundedUnknown": "Gründungsjahr nicht bestätigt",
+    "seeTitle": "Sehenswert",
+    "openMaps": "In Google Maps öffnen",
+    "items": {
+      "santiago": {
+        "history": "Santiago wurde 1592 gegründet, im selben Jahr wie die Stadt, und hat Guachichil-Wurzeln: Es entstand aus den Guachichiles, die sich neben der neuen spanischen Siedlung niederließen. Es liegt direkt westlich von Tlaxcala, seinem gleich alten Nachbarn.",
+        "see": "Die Barrio-Kirche gegenüber dem Jardín de Santiago."
+      },
+      "tlaxcala": {
+        "history": "Tlaxkaltekische Familien gründeten dieses Barrio 1592, im selben Jahr wie Santiago. Die Tlaxkalteken aus Zentralmexiko gehörten zu den ersten Bewohnern der neuen Siedlung.",
+        "see": "Die Parroquia de Nuestra Señora de la Asunción und der Jardín daneben."
+      },
+      "montecillo": {
+        "history": "Die Eisenbahn veränderte Montecillo. Die Strecke erreichte San Luis Potosí 1888, und in diesem Barrio östlich des Zentrums wurden die Bahnhöfe gebaut.",
+        "see": "Der Templo de San Cristóbal del Montecillo und der Jardín daneben."
+      },
+      "sanSebastian": {
+        "history": "San Sebastián wurde 1603 als augustinische Doctrina gegründet: eine Pfarrei für die indigene Bevölkerung, betreut von Augustinermönchen.",
+        "see": "Die Parroquia de San Sebastián Mártir und ihr Jardín."
+      },
+      "sanJuanDeGuadalupe": {
+        "history": "San Juan de Guadalupe, gegründet 1676, ist das jüngste der sieben. Hier steht das Santuario de Nuestra Señora de Guadalupe, dessen heutiger Bau 1772 nach Plänen von Felipe Cleere begonnen wurde.",
+        "see": "Das Santuario (die Basilika) de Guadalupe am Südende der Route."
+      },
+      "sanMiguelito": {
+        "history": "San Miguelito wurde 1597 gegründet. Sein erster Name war Santísima Trinidad (Heilige Dreifaltigkeit); später übernahm es den Namen seines Schutzpatrons, des heiligen Michael.",
+        "see": "Der Templo de San Miguelito und die Plaza daneben."
+      },
+      "tequisquiapan": {
+        "history": "Die Quellen nennen unterschiedliche Gründungsjahre für Tequisquiapan, deshalb lassen wir das Datum weg. In seinem Jardín steht das Monumento a la Madre, eingeweiht am 10. Mai 1948, dem Muttertag in Mexiko.",
+        "see": "Der Jardín de Tequisquiapan und das Monumento a la Madre."
+      }
+    }
+  },
+  "practical": {
+    "title": "Alle sieben zu Fuß",
+    "intro": "Wir haben den Rundweg auf dem Straßennetz gemessen: Von der Kathedrale durch die sieben Barrios und zurück sind es etwa 13 km.",
+    "items": [
+      { "label": "Strecke", "value": "Etwa 13 km auf Straßen (Kathedrale → 7 Barrios → Kathedrale)" },
+      { "label": "Gehzeit", "value": "Etwa 3 bis 3,5 Stunden reine Gehzeit" },
+      { "label": "Planung", "value": "Ein ganzer Tag, mit Pausen an jeder Kirche, jedem Jardín und einem Essen unterwegs" },
+      { "label": "Reihenfolge", "value": "Im Uhrzeigersinn ab Norden: Santiago, Tlaxcala, Montecillo, San Sebastián, San Juan de Guadalupe, San Miguelito, Tequisquiapan" },
+      { "label": "Tipps", "value": "Bequeme Schuhe, Wasser und Sonnenschutz. Bitte Rücksicht nehmen, wenn Sie eine Kirche während der Messe betreten." }
+    ]
+  },
+  "faq": {
+    "title": "Häufige Fragen",
+    "items": [
+      {
+        "q": "Welche sind die 7 Barrios von San Luis Potosí?",
+        "a": "Santiago, Tlaxcala, Montecillo, San Sebastián, San Juan de Guadalupe, San Miguelito und Tequisquiapan. Sie entstanden rund um die 1592 gegründete spanische Siedlung und umgeben bis heute das historische Zentrum."
+      },
+      {
+        "q": "Kann man alle sieben Barrios an einem Tag zu Fuß besuchen?",
+        "a": "Ja. Der Rundweg von der Kathedrale durch die sieben Barrios und zurück ist auf Straßen etwa 13 km lang, rund 3 bis 3,5 Stunden Gehzeit. Mit Pausen sollten Sie einen ganzen Tag einplanen."
+      },
+      {
+        "q": "Wann wurden die Barrios gegründet?",
+        "a": "Tlaxcala und Santiago 1592, San Miguelito 1597, San Sebastián 1603 und San Juan de Guadalupe 1676 als letztes der sieben. Für Tequisquiapan nennen die Quellen unterschiedliche Jahre, für Montecillo fanden wir kein bestätigtes Datum."
+      },
+      {
+        "q": "Wo beginnt man den Rundgang am besten?",
+        "a": "An der Kathedrale an der Plaza de Armas. Von dort nach Norden zu Santiago und Tlaxcala, dann im Uhrzeigersinn: Montecillo, San Sebastián, San Juan de Guadalupe, San Miguelito und zuletzt Tequisquiapan, etwa 2 km westlich der Kathedrale."
+      }
+    ]
+  }
+}

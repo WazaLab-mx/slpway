@@ -38,6 +38,7 @@ export const STATIC_ROUTES: StaticRoute[] = [
   { path: '/parque-tangamanga-ii',                    changefreq: 'monthly', priority: 0.7 },
   { path: '/blog/factchecks',                         changefreq: 'weekly',  priority: 0.8 },
   { path: '/centro-historico',                        changefreq: 'monthly', priority: 0.7 },
+  { path: '/seven-barrios-san-luis-potosi',           changefreq: 'monthly', priority: 0.8 },
   { path: '/traditional-cuisine',                     changefreq: 'monthly', priority: 0.7 },
   { path: '/family-friendly-activities',              changefreq: 'monthly', priority: 0.7 },
   { path: '/farmers-markets-san-luis-potosi',         changefreq: 'monthly', priority: 0.7 },

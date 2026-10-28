@@ -3,6 +3,7 @@
   "title": "San Luis Way",
   "subtitle": "Instagramで紹介したガイドにワンタップで。",
   "items": {
+    "sevenBarrios": { "label": "7つのバリオ：地図", "detail": "7つの村から生まれた街を歩く" },
     "realPotosi": { "label": "カレラ・レアル・デル・ポトシ", "detail": "10月17日（土）・ナイトラン 3K・6K・10K" },
     "halfMarathon": { "label": "ラ・カピタル・ハーフマラソン", "detail": "11月8日（日）・参加無料・11月4日まで登録" },
     "xantolo": { "label": "シャントロ2026", "detail": "州都とワステカの死者の日" },

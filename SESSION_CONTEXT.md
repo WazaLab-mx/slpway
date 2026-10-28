@@ -599,3 +599,10 @@ Increase newsletter subscriptions on sanluisway.com with minimal friction by add
 - Branch: cursor/newsletter-inline-popup-3db4
 - Commit: ee089d7
 
+
+
+## 2026-10-28 - Seven barrios map page
+- New page /seven-barrios-san-luis-potosi (4 locales, namespace `seven-barrios`): inline SVG map of the 7 traditional barrios around the Catedral, Google Maps walking-route link (~13 km loop), per-barrio verified history cards, FAQ + JSON-LD.
+- Target of Reel 21's "Map: link in bio"; first item on /ig link hub; in sitemap.
+- Data module src/lib/seven-barrios.ts (coords from OSM, cross-checked). Facts need 2 external sources; site pages are not a source.
+- Not pushed yet (batch pushes, Netlify).

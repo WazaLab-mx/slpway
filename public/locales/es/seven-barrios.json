@@ -1,0 +1,98 @@
+{
+  "seo": {
+    "title": "Los 7 barrios de San Luis Potosí: mapa y ruta a pie",
+    "description": "Mapa de los siete barrios tradicionales de San Luis Potosí: Santiago, Tlaxcala, Montecillo, San Sebastián, San Juan de Guadalupe, San Miguelito y Tequisquiapan. Historia verificada y un circuito a pie de 13 km que puedes abrir en Google Maps.",
+    "keywords": "7 barrios san luis potosi, siete barrios slp, barrio de tlaxcala, barrio de santiago, san miguelito, tequisquiapan, san sebastian, san juan de guadalupe, montecillo, ruta a pie san luis potosi"
+  },
+  "hero": {
+    "eyebrow": "Historia que se camina",
+    "title": "San Luis Potosí no era un solo pueblo. Eran 7.",
+    "intro": "Alrededor del pueblo español fundado en 1592 crecieron siete barrios, la mayoría pueblos indígenas separados, cada uno con su templo y su jardín. La ciudad los absorbió hace mucho, pero siguen rodeando el Centro y puedes recorrer los siete en un día.",
+    "ctaMap": "Ver el mapa",
+    "ctaRoute": "Abrir la ruta en Google Maps"
+  },
+  "map": {
+    "title": "El mapa",
+    "description": "Cada barrio está colocado según su dirección y distancia reales desde la Catedral. Los números siguen el orden sugerido del recorrido.",
+    "svgTitle": "Mapa esquemático de los siete barrios de San Luis Potosí",
+    "svgDesc": "La Catedral, en la Plaza de Armas, está al centro. Siete marcadores numerados señalan los templos y jardines de los barrios alrededor, unidos por un circuito a pie punteado: 1 Santiago y 2 Tlaxcala al norte, 3 Montecillo al oriente, 4 San Sebastián y 5 San Juan de Guadalupe al sur, 6 San Miguelito al suroeste y 7 Tequisquiapan al poniente.",
+    "center": "Catedral",
+    "north": "N",
+    "markerLabel": "{{number}}. Barrio de {{name}}",
+    "legendRoute": "Circuito a pie, unos 13 km",
+    "scale": "1 km"
+  },
+  "route": {
+    "cta": "Abrir la ruta a pie en Google Maps",
+    "note": "Abre Google Maps con las siete paradas en orden, saliendo y regresando a la Catedral."
+  },
+  "barrios": {
+    "title": "Los siete barrios, en orden de recorrido",
+    "founded": "Fundado en {{year}}",
+    "foundedUnknown": "Año de fundación sin confirmar",
+    "seeTitle": "Qué ver",
+    "openMaps": "Abrir en Google Maps",
+    "items": {
+      "santiago": {
+        "history": "Santiago se fundó en 1592, el mismo año que la ciudad, y sus raíces son guachichiles: nació de los guachichiles que se asentaron junto al nuevo pueblo español. Está justo al poniente de Tlaxcala, su vecino y gemelo en edad.",
+        "see": "El templo del barrio, frente al Jardín de Santiago."
+      },
+      "tlaxcala": {
+        "history": "Familias tlaxcaltecas fundaron este barrio en 1592, el mismo año que Santiago. Los tlaxcaltecas, venidos del centro de México, estuvieron entre los primeros pobladores del nuevo pueblo.",
+        "see": "La Parroquia de Nuestra Señora de la Asunción y el jardín junto a ella."
+      },
+      "montecillo": {
+        "history": "El ferrocarril transformó Montecillo. La vía llegó a San Luis Potosí en 1888 y en este barrio, al oriente del Centro, se construyeron las estaciones ferrocarrileras.",
+        "see": "El Templo de San Cristóbal del Montecillo y el jardín junto a él."
+      },
+      "sanSebastian": {
+        "history": "San Sebastián se fundó en 1603 como doctrina agustina: una parroquia para la población indígena a cargo de frailes agustinos.",
+        "see": "La Parroquia de San Sebastián Mártir y su jardín."
+      },
+      "sanJuanDeGuadalupe": {
+        "history": "Fundado en 1676, San Juan de Guadalupe es el último de los siete. Ahí está el Santuario de Nuestra Señora de Guadalupe, cuyo edificio actual se comenzó en 1772 con diseño de Felipe Cleere.",
+        "see": "El Santuario (Basílica) de Guadalupe, en el extremo sur del recorrido."
+      },
+      "sanMiguelito": {
+        "history": "San Miguelito se fundó en 1597. Su primer nombre fue Santísima Trinidad; después tomó el nombre de su patrono, San Miguel.",
+        "see": "El Templo de San Miguelito y la plaza junto a él."
+      },
+      "tequisquiapan": {
+        "history": "Las fuentes no coinciden en el año de fundación de Tequisquiapan, así que no lo damos. En su jardín está el Monumento a la Madre, inaugurado el 10 de mayo de 1948, Día de las Madres en México.",
+        "see": "El Jardín de Tequisquiapan y el Monumento a la Madre."
+      }
+    }
+  },
+  "practical": {
+    "title": "Recorrer los siete",
+    "intro": "Medimos el circuito sobre la red de calles: de la Catedral por los siete barrios y de regreso son unos 13 km.",
+    "items": [
+      { "label": "Distancia", "value": "Unos 13 km por calles (Catedral → 7 barrios → Catedral)" },
+      { "label": "Tiempo caminando", "value": "Entre 3 y 3.5 horas de caminata efectiva" },
+      { "label": "Plan", "value": "Un día completo, con paradas en cada templo, jardín y una comida en el camino" },
+      { "label": "Orden", "value": "En el sentido del reloj desde el norte: Santiago, Tlaxcala, Montecillo, San Sebastián, San Juan de Guadalupe, San Miguelito, Tequisquiapan" },
+      { "label": "Consejos", "value": "Zapatos cómodos, agua y protección solar. Respeta las celebraciones si entras a un templo durante la misa." }
+    ]
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "items": [
+      {
+        "q": "¿Cuáles son los 7 barrios de San Luis Potosí?",
+        "a": "Santiago, Tlaxcala, Montecillo, San Sebastián, San Juan de Guadalupe, San Miguelito y Tequisquiapan. Crecieron alrededor del pueblo español fundado en 1592 y todavía rodean el Centro Histórico."
+      },
+      {
+        "q": "¿Se pueden recorrer los siete barrios a pie en un día?",
+        "a": "Sí. El circuito desde la Catedral por los siete barrios y de regreso mide unos 13 km por calles, entre 3 y 3.5 horas de caminata. Con paradas, considera un día completo."
+      },
+      {
+        "q": "¿Cuándo se fundaron los barrios?",
+        "a": "Tlaxcala y Santiago en 1592, San Miguelito en 1597, San Sebastián en 1603 y San Juan de Guadalupe en 1676, el último de los siete. Las fuentes no coinciden sobre Tequisquiapan y no encontramos una fecha confirmada para Montecillo."
+      },
+      {
+        "q": "¿Dónde conviene empezar el recorrido?",
+        "a": "Empieza en la Catedral, en la Plaza de Armas, y ve al norte hacia Santiago y Tlaxcala; luego sigue en el sentido del reloj: Montecillo, San Sebastián, San Juan de Guadalupe, San Miguelito y al final Tequisquiapan, a unos 2 km al poniente de la Catedral."
+      }
+    ]
+  }
+}

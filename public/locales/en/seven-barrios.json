@@ -1,0 +1,98 @@
+{
+  "seo": {
+    "title": "The 7 Barrios of San Luis Potosí: Map and Walking Route",
+    "description": "Map of the seven traditional barrios of San Luis Potosí: Santiago, Tlaxcala, Montecillo, San Sebastián, San Juan de Guadalupe, San Miguelito and Tequisquiapan. Verified history and a 13 km walking loop you can open in Google Maps.",
+    "keywords": "7 barrios san luis potosi, siete barrios slp, barrio de tlaxcala, barrio de santiago, san miguelito, tequisquiapan, san sebastian, san juan de guadalupe, montecillo, walking route san luis potosi"
+  },
+  "hero": {
+    "eyebrow": "History you can walk",
+    "title": "San Luis Potosí wasn't one town. It was 7.",
+    "intro": "Around the Spanish town founded in 1592 grew seven barrios, most of them separate indigenous pueblos with their own church and jardín. They were absorbed by the city long ago, but they still ring the Centro, and you can walk all seven in a day.",
+    "ctaMap": "See the map",
+    "ctaRoute": "Open the route in Google Maps"
+  },
+  "map": {
+    "title": "The map",
+    "description": "Each barrio is placed by its real direction and distance from the Catedral. Numbers follow the suggested walking order.",
+    "svgTitle": "Schematic map of the seven barrios of San Luis Potosí",
+    "svgDesc": "The Catedral on Plaza de Armas sits at the center. Seven numbered markers show the barrio churches and jardines around it, joined by a dashed walking loop: 1 Santiago and 2 Tlaxcala to the north, 3 Montecillo to the east, 4 San Sebastián and 5 San Juan de Guadalupe to the south, 6 San Miguelito to the south-west and 7 Tequisquiapan to the west.",
+    "center": "Catedral",
+    "north": "N",
+    "markerLabel": "{{number}}. Barrio de {{name}}",
+    "legendRoute": "Walking loop, about 13 km",
+    "scale": "1 km"
+  },
+  "route": {
+    "cta": "Open the walking route in Google Maps",
+    "note": "Opens Google Maps with all seven stops in order, starting and ending at the Catedral."
+  },
+  "barrios": {
+    "title": "The seven barrios, in walking order",
+    "founded": "Founded {{year}}",
+    "foundedUnknown": "Founding year not confirmed",
+    "seeTitle": "What to see",
+    "openMaps": "Open in Google Maps",
+    "items": {
+      "santiago": {
+        "history": "Santiago was founded in 1592, the same year as the city, and its roots are Guachichil: it grew from the Guachichil people who settled beside the new Spanish town. It sits just west of Tlaxcala, its neighbor and twin in age.",
+        "see": "The barrio church facing the Jardín de Santiago."
+      },
+      "tlaxcala": {
+        "history": "Tlaxcalan families founded this barrio in 1592, the same year as Santiago. The Tlaxcalans, from central Mexico, were among the first settlers of the new town.",
+        "see": "The Parroquia de Nuestra Señora de la Asunción and the jardín beside it."
+      },
+      "montecillo": {
+        "history": "The railway transformed Montecillo. The line reached San Luis Potosí in 1888, and the railway stations were built in this barrio, east of the Centro.",
+        "see": "The Templo de San Cristóbal del Montecillo and the jardín beside it."
+      },
+      "sanSebastian": {
+        "history": "San Sebastián was founded in 1603 as an Augustinian doctrine: a parish for the indigenous population run by Augustinian friars.",
+        "see": "The Parroquia de San Sebastián Mártir and its jardín."
+      },
+      "sanJuanDeGuadalupe": {
+        "history": "Founded in 1676, San Juan de Guadalupe is the last of the seven. It is home to the Santuario de Nuestra Señora de Guadalupe, whose present building was begun in 1772 to a design by Felipe Cleere.",
+        "see": "The Santuario (Basílica) de Guadalupe at the southern end of the route."
+      },
+      "sanMiguelito": {
+        "history": "San Miguelito was founded in 1597. Its first name was Santísima Trinidad (Holy Trinity); it later took the name of its patron, Saint Michael.",
+        "see": "The Templo de San Miguelito and the plaza beside it."
+      },
+      "tequisquiapan": {
+        "history": "Sources disagree on when Tequisquiapan was founded, so we leave the date out. Its jardín holds the Monumento a la Madre, inaugurated on 10 May 1948, Mexico's Mother's Day.",
+        "see": "The Jardín de Tequisquiapan and the Monumento a la Madre."
+      }
+    }
+  },
+  "practical": {
+    "title": "Walking all seven",
+    "intro": "We measured the loop on the street network: from the Catedral through the seven barrios and back is about 13 km.",
+    "items": [
+      { "label": "Distance", "value": "About 13 km on streets (Catedral → 7 barrios → Catedral)" },
+      { "label": "Walking time", "value": "About 3 to 3.5 hours of pure walking" },
+      { "label": "Plan", "value": "A full day, with stops at each church, jardín and a meal on the way" },
+      { "label": "Order", "value": "Clockwise from the north: Santiago, Tlaxcala, Montecillo, San Sebastián, San Juan de Guadalupe, San Miguelito, Tequisquiapan" },
+      { "label": "Tips", "value": "Comfortable shoes, water and sun protection. Respect services if you go into a church during mass." }
+    ]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "q": "What are the 7 barrios of San Luis Potosí?",
+        "a": "Santiago, Tlaxcala, Montecillo, San Sebastián, San Juan de Guadalupe, San Miguelito and Tequisquiapan. They grew around the Spanish town founded in 1592 and still surround the Centro Histórico."
+      },
+      {
+        "q": "Can you walk all seven barrios in one day?",
+        "a": "Yes. The loop from the Catedral through the seven barrios and back is about 13 km on streets, roughly 3 to 3.5 hours of walking. With stops, plan a full day."
+      },
+      {
+        "q": "When were the barrios founded?",
+        "a": "Tlaxcala and Santiago in 1592, San Miguelito in 1597, San Sebastián in 1603 and San Juan de Guadalupe in 1676, the last of the seven. Sources disagree on Tequisquiapan, and we found no confirmed date for Montecillo."
+      },
+      {
+        "q": "Where should I start the walk?",
+        "a": "Start at the Catedral on Plaza de Armas and head north to Santiago and Tlaxcala, then go clockwise: Montecillo, San Sebastián, San Juan de Guadalupe, San Miguelito and finally Tequisquiapan, about 2 km west of the Catedral."
+      }
+    ]
+  }
+}
