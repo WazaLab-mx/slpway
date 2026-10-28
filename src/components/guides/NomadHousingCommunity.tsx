@@ -13,7 +13,7 @@ const platforms = [
     name: 'Airbnb',
     for: 'First 1-4 weeks',
     priceRange: '$600-$1,400 USD/mo',
-    note: 'Use monthly discounts (often 30-50% off). Verify wifi with host.',
+    note: 'Look for monthly-stay discounts. Verify wifi with host.',
     external: 'https://www.airbnb.com/s/San-Luis-Potosi--Mexico',
     color: 'bg-rose-500',
   },
@@ -29,7 +29,7 @@ const platforms = [
     name: 'Vivanuncios',
     for: 'Direct from owner',
     priceRange: '$5,500-$15,000 MXN/mo',
-    note: 'Cheaper, fewer scams than FB but verify in person.',
+    note: 'Often direct from owners. Always verify in person before paying.',
     external: 'https://www.vivanuncios.com.mx/s-departamentos-renta/san-luis-potosi/v1c1098l1021p1',
     color: 'bg-orange-500',
   },
@@ -37,7 +37,7 @@ const platforms = [
     name: 'Facebook Groups',
     for: 'Deals & community',
     priceRange: '$5,000-$20,000 MXN/mo',
-    note: '"Renta SLP", "Expats in San Luis Potosí", "Departamentos en Renta SLP".',
+    note: 'Search "renta San Luis Potosí" and local expat groups. Never pay a deposit before viewing.',
     external: 'https://www.facebook.com/search/groups/?q=renta%20san%20luis%20potosi',
     color: 'bg-indigo-600',
   },
@@ -52,9 +52,9 @@ export function NomadHousingSection() {
       </h2>
       <p className="text-gray-600 mb-6">
         Start with Airbnb for the first month while you explore neighborhoods in person, then switch
-        to a longer lease. Most landlords ask for <strong>1-2 months deposit</strong>; foreigners are
-        usually <strong>exempt from the "aval" (guarantor)</strong> rule Mexicans deal with —
-        a passport and bank statements are typically enough.
+        to a longer lease. Most landlords ask for <strong>1-2 months deposit</strong>, and many also ask for an
+        <strong>"aval" (guarantor) or a "póliza jurídica"</strong> (rental legal policy). Some
+        will accept a larger deposit plus passport and bank statements instead — negotiate up front.
       </p>
       <div className="grid sm:grid-cols-2 gap-4 mb-6">
         {platforms.map((p) => (
@@ -90,7 +90,7 @@ export function NomadHousingSection() {
           <li>• Leases typically run <strong>12 months</strong>, shorter with furnished places.</li>
           <li>• <strong>Deposit</strong>: 1 month (returned) + 1 month (first month rent).</li>
           <li>• <strong>Utilities not included</strong>: electricity (CFE), water, internet, gas.</li>
-          <li>• Most Mexican landlords don't run credit checks on foreigners — bank statements work.</li>
+          <li>• Foreigners usually can't show a Mexican credit history, so expect to offer bank statements, a póliza jurídica or extra deposit.</li>
           <li>• Ask about "cuota de mantenimiento" for condos ($500-$2,000 MXN/mo extra).</li>
         </ul>
       </div>
@@ -116,7 +116,7 @@ const communityLinks = [
   {
     Icon: ChatBubbleLeftRightIcon,
     title: 'WhatsApp Groups',
-    desc: '"SLP Expats & Nomads" · "English Speakers SLP"',
+    desc: 'Ask in expat Facebook groups and at coworking spaces for invites',
     href: '/community',
     color: 'from-green-500 to-emerald-500',
   },
@@ -135,7 +135,7 @@ export function NomadCommunitySection() {
       <h2 className="text-2xl font-bold text-gray-900 mb-2">Nomad Community & Meetups</h2>
       <p className="text-gray-600 mb-6">
         SLP's nomad scene is smaller than CDMX or Oaxaca, but that means newcomers get noticed and
-        welcomed fast. The core group meets weekly at Capital Coffee and Impact Hub.
+        welcomed fast. Expat Facebook groups, language exchanges and coworking spaces are the easiest ways in.
       </p>
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {communityLinks.map(({ Icon, title, desc, href, color }) => (

@@ -17,7 +17,7 @@ const weekendGetaways = [
     name: "Real de Catorce",
     description: "Magic town nestled in the Sierra del Altiplano Potosino with cobblestone streets and rich mining history.",
     imageUrl: "/images/outdoors/real-de-catorce-main.jpg",
-    price: "From $2,850 MXN",
+    price: "Call to confirm current prices",
     days: 2,
     activities: [
       "Willy 4x4 Desert Tour",
@@ -37,7 +37,7 @@ const weekendGetaways = [
     name: "Huasteca Potosina",
     description: "Paradise of turquoise waterfalls, lush jungles, and incredible natural landscapes perfect for adventure seekers.",
     imageUrl: "/images/outdoors/tamul-waterfall.jpg",
-    price: "From $2,850 MXN",
+    price: "Call to confirm current prices",
     days: 2,
     activities: [
       "Tamul Waterfall Boat Tour",
@@ -57,7 +57,7 @@ const weekendGetaways = [
     name: "Media Luna",
     description: "Crystal-clear thermal spring forming a half-moon lagoon perfect for swimming, diving, and underwater exploration.",
     imageUrl: "/images/outdoors/media-luna.jpg",
-    price: "From $2,500 MXN",
+    price: "Call to confirm current prices",
     days: 2,
     activities: [
       "Snorkeling in thermal waters",
@@ -81,7 +81,7 @@ const WeekendGetawaysPage: NextPage = () => {
       <SEO
         title="Weekend Getaways from San Luis Potosí — Real de Catorce, Huasteca, Media Luna"
         ogTitle="3 weekend escapes 2–4 hours from San Luis Potosí"
-        description="Escape SLP this weekend: Real de Catorce, Huasteca Potosina, Media Luna. 2-day itineraries with prices, drive times and what to book — start planning in 2 minutes."
+        description="Escape SLP this weekend: Real de Catorce, Huasteca Potosina, Media Luna. 2-day itineraries, drive times and what to book — start planning in 2 minutes."
         keywords="weekend getaways, San Luis Potosí, Corazón de Xoconostle, Huasteca Potosina, Real de Catorce, Media Luna, travel, adventure, tourism, Mexico"
         ogImage="/images/sponsored/weekend-getaways.jpg"
         ogType="article"
@@ -96,7 +96,7 @@ const WeekendGetawaysPage: NextPage = () => {
               '@type': 'Article',
               headline: '3 weekend escapes 2–4 hours from San Luis Potosí',
               description:
-                'Real de Catorce, Huasteca Potosina and Media Luna: 2-day weekend itineraries from San Luis Potosí with prices, activities and where to stay.',
+                'Real de Catorce, Huasteca Potosina and Media Luna: 2-day weekend itineraries from San Luis Potosí with activities and where to stay.',
               image: 'https://www.sanluisway.com/images/sponsored/weekend-getaways.jpg',
               datePublished: '2026-04-07',
               dateModified: '2026-07-14',

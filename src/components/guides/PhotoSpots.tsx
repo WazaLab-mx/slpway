@@ -9,7 +9,7 @@ const spots = [
   {
     name: 'Caja del Agua',
     img: '/images/cultural/museum.jpg',
-    tip: 'Shoot from the staircase opposite for a symmetrical frame of this neoclassical fountain. Best midmorning when shadows are soft.',
+    tip: 'Shoot from across Calzada de Guadalupe for a symmetrical frame of this 1830s neoclassical water fountain. Best midmorning when shadows are soft.',
   },
   {
     name: 'Teatro de la Paz facade',
@@ -19,7 +19,7 @@ const spots = [
   {
     name: 'Templo del Carmen',
     img: '/images/cultural/san-luis-potosi-cathedral.jpg',
-    tip: 'The Churrigueresque facade is best photographed in the morning when the east light hits it directly. A wide lens captures the full tile dome.',
+    tip: 'The Churrigueresque facade looks best in soft morning or late-afternoon light. A wide lens captures the full tiled dome.',
   },
   {
     name: 'Parque Tangamanga at sunrise',
@@ -27,9 +27,9 @@ const spots = [
     tip: 'The lakes at Tangamanga mirror the sky at dawn. Arrive 15 min before sunrise for dreamy reflections and no crowds.',
   },
   {
-    name: 'Hotel Museo rooftop',
+    name: 'Hotel Museo rooftop terrace',
     img: '/images/cultural/museo-federico-silva.jpg',
-    tip: 'Book a drink at the rooftop bar of Hotel Museo Palacio de San Agustín for a bird-eye view of the historic skyline — especially magical at dusk.',
+    tip: 'Hotel Museo Palacio de San Agustín has a rooftop terrace with a bird-eye view of the historic skyline. Ask the hotel whether it is open to non-guests.',
   },
 ];
 

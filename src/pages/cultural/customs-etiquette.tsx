@@ -15,7 +15,7 @@ export default function CustomsEtiquettePage() {
     },
     {
       question: 'Is San Luis Potosí conservative?',
-      answer: 'SLP is more conservative than Mexico City or Oaxaca. It\'s a traditionally Catholic city with strong family values. Sunday mass is important, religious holidays are widely observed, and social norms around dress and behavior tend to be more traditional, especially outside the Centro/Lomas areas.',
+      answer: 'SLP is generally more conservative than Mexico City. It\'s a traditionally Catholic city with strong family values. Sunday mass is important, religious holidays are widely observed, and social norms around dress and behavior tend to be more traditional, especially outside the Centro/Lomas areas.',
     },
     {
       question: 'What should I avoid doing in San Luis Potosí?',
@@ -166,7 +166,7 @@ export default function CustomsEtiquettePage() {
                       <h4 className="font-medium text-gray-900">Punctuality</h4>
                     </div>
                     <p className="text-gray-600 text-sm">
-                      Social events often start 30-60 minutes later than the stated time, while business meetings typically require punctuality.
+                      Social events often start later than the stated time (arriving 15-30 minutes late is common), while business meetings typically require punctuality.
                     </p>
                   </div>
                   <div className="border-b border-gray-200 pb-4">

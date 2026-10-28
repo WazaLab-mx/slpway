@@ -2,7 +2,7 @@ const tips = [
   {
     emoji: '💧',
     title: 'Tap water',
-    text: "Don't drink from the tap. Bottled water is everywhere and cheap ($15-25 MXN / 1.5L). Hotels provide complimentary bottles. Ice at restaurants is safe.",
+    text: "Don't drink from the tap. Bottled water is everywhere and cheap ($15-25 MXN / 1.5L). Hotels provide complimentary bottles. Established restaurants generally use ice made from purified water.",
   },
   {
     emoji: '⛰️',
@@ -22,12 +22,12 @@ const tips = [
   {
     emoji: '💊',
     title: 'Pharmacies',
-    text: 'Pharmacies are abundant and many stock the same medications as the US without prescription. Trusted chains: Farmacias San Pablo, Benavides and Guadalajara.',
+    text: 'Pharmacies are abundant. Many common medicines are sold over the counter, but antibiotics and controlled drugs require a prescription from a doctor licensed in Mexico. Large chains include Farmacias Guadalajara, Benavides and Similares.',
   },
   {
     emoji: '🚨',
     title: 'Emergency numbers',
-    text: 'Dial 911 for any emergency (police, fire, ambulance). Tourist police speak English and patrol the Centro Histórico. Save your embassy phone just in case.',
+    text: 'Dial 911 for any emergency (police, fire, ambulance). 089 is the anonymous-tip line. Save your embassy or consulate phone just in case.',
   },
 ];
 
@@ -36,7 +36,7 @@ export default function SafetyTips() {
     <section id="safety">
       <h2 className="text-2xl font-bold text-gray-900 mb-2">Safety & Practical Tips</h2>
       <p className="text-gray-600 mb-6">
-        SLP is considered one of the safest mid-size cities in Mexico. These practical tips will keep your trip smooth.
+        The state has one of Mexico's lowest reported homicide rates (México Evalúa, H1 2026), though about 6 in 10 city residents say they feel unsafe (INEGI ENSU, June 2026). These practical tips will keep your trip smooth.
       </p>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {tips.map((t) => (

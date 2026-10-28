@@ -41,7 +41,7 @@ export default function CostOfLivingGuidePage() {
   const seoFaqs = [
     { 
       q: 'How much do I need to live in San Luis Potosí in 2026?', 
-      a: 'Mid-2026 editorial budgets: about MXN $14,000–16,000 for a frugal single, $25,000–29,000 comfortable single, $33,000–40,000 couple, and $60,000–70,000 family of four, converting at 17.54 MXN/USD (Banxico FIX, 2 Jul 2026).' 
+      a: 'Mid-2026 editorial budgets: about MXN $14,000–16,000 for a frugal single, $25,000–29,000 comfortable single, $33,000–40,000 couple, and $60,000–70,000 family of four, converting at 18.65 MXN/USD (Banxico FIX, 27 Oct 2026).' 
     },
     { 
       q: 'How much is rent in Lomas vs Centro?', 
@@ -202,29 +202,29 @@ export default function CostOfLivingGuidePage() {
                     <tr>
                       <th className="px-4 py-3 text-left text-sm font-semibold">Profile</th>
                       <th className="px-4 py-3 text-right text-sm font-semibold">MXN / month</th>
-                      <th className="px-4 py-3 text-right text-sm font-semibold">USD / month at 17.54</th>
+                      <th className="px-4 py-3 text-right text-sm font-semibold">USD / month at 18.65</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200">
                     <tr>
                       <td className="px-4 py-3 text-sm">Frugal single</td>
                       <td className="px-4 py-3 text-sm text-right font-medium">$14,000–16,000</td>
-                      <td className="px-4 py-3 text-sm text-right">~$800–915</td>
+                      <td className="px-4 py-3 text-sm text-right">~$750–860</td>
                     </tr>
                     <tr>
                       <td className="px-4 py-3 text-sm">Comfortable single / nomad</td>
                       <td className="px-4 py-3 text-sm text-right font-medium">$25,000–29,000</td>
-                      <td className="px-4 py-3 text-sm text-right">~$1,425–1,655</td>
+                      <td className="px-4 py-3 text-sm text-right">~$1,340–1,555</td>
                     </tr>
                     <tr>
                       <td className="px-4 py-3 text-sm">Couple</td>
                       <td className="px-4 py-3 text-sm text-right font-medium">$33,000–40,000</td>
-                      <td className="px-4 py-3 text-sm text-right">~$1,880–2,280</td>
+                      <td className="px-4 py-3 text-sm text-right">~$1,770–2,145</td>
                     </tr>
                     <tr>
                       <td className="px-4 py-3 text-sm">Family of four</td>
                       <td className="px-4 py-3 text-sm text-right font-medium">$60,000–70,000</td>
-                      <td className="px-4 py-3 text-sm text-right">~$3,420–3,990</td>
+                      <td className="px-4 py-3 text-sm text-right">~$3,215–3,755</td>
                     </tr>
                   </tbody>
                 </table>
@@ -232,7 +232,7 @@ export default function CostOfLivingGuidePage() {
 
               <div className="mt-6 bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
                 <p className="text-blue-900 text-sm">
-                  <strong>Exchange Rate Note:</strong> Those USD columns use the article&apos;s stated Banxico FIX reference of <strong>17.54 MXN per USD</strong> on 2 July 2026. The peso has since weakened: the FIX was 18.58 on 27 Oct 2026 (DOF), so at that rate each USD figure would be about 6% lower. Budget in pesos first; convert with the day&apos;s Banxico FIX when you wire money.
+                  <strong>Exchange Rate Note:</strong> Those USD columns use the Banxico FIX of <strong>18.65 MXN per USD</strong> (18.6525) set on 27 October 2026. The July 2026 article converted at 17.54; the peso has weakened since. Budget in pesos first; convert with the day&apos;s Banxico FIX when you wire money.
                 </p>
               </div>
             </div>
@@ -354,7 +354,7 @@ export default function CostOfLivingGuidePage() {
                   <tbody className="divide-y divide-gray-200">
                     <tr>
                       <td className="px-4 py-3 text-sm">Electricity (typical subsidized home)</td>
-                      <td className="px-4 py-3 text-sm font-medium">~MXN $300/month (~$17 USD at 17.54)</td>
+                      <td className="px-4 py-3 text-sm font-medium">~MXN $300/month (~$16 USD at 18.65)</td>
                       <td className="px-4 py-3 text-sm">COL blog; 2026 bills add a fixed monthly charge that varies by region (reported ~MXN $20–110), plus the DAC high-use trap</td>
                     </tr>
                     <tr>
@@ -557,12 +557,12 @@ export default function CostOfLivingGuidePage() {
           <section id="detailed-budgets" className="mb-16 scroll-mt-24">
             <h2 className="text-3xl font-bold text-gray-900 mb-8">Sample Monthly Budgets with Line-Item Sources</h2>
             <p className="text-gray-700 mb-6">
-              Exchange rate for these worked examples: <strong>17.54 MXN/USD</strong> (Banxico FIX as cited for 2 July 2026 in the COL article). Round-trip conversion: divide MXN by 17.54.
+              Exchange rate for these worked examples: <strong>18.65 MXN/USD</strong> (Banxico FIX, 27 October 2026). Round-trip conversion: divide MXN by 18.65.
             </p>
 
             <div className="space-y-8">
               <div className="bg-white rounded-xl shadow-md p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">1) Frugal single / lean digital nomad — ~MXN $15,000 (~USD $855)</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">1) Frugal single / lean digital nomad — ~MXN $15,000 (~USD $804)</h3>
                 <div className="overflow-x-auto">
                   <table className="min-w-full bg-white rounded-lg shadow-sm">
                     <thead className="bg-gray-100">
@@ -624,7 +624,7 @@ export default function CostOfLivingGuidePage() {
               </div>
 
               <div className="bg-white rounded-xl shadow-md p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">2) Comfortable single / typical nomad — ~MXN $27,000 (~USD $1,540)</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">2) Comfortable single / typical nomad — ~MXN $27,000 (~USD $1,450)</h3>
                 <div className="overflow-x-auto">
                   <table className="min-w-full bg-white rounded-lg shadow-sm">
                     <thead className="bg-gray-100">
@@ -691,7 +691,7 @@ export default function CostOfLivingGuidePage() {
               </div>
 
               <div className="bg-white rounded-xl shadow-md p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">3) Couple — ~MXN $36,500 (~USD $2,081)</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">3) Couple — ~MXN $36,500 (~USD $1,957)</h3>
                 <div className="overflow-x-auto">
                   <table className="min-w-full bg-white rounded-lg shadow-sm">
                     <thead className="bg-gray-100">
@@ -753,7 +753,7 @@ export default function CostOfLivingGuidePage() {
               </div>
 
               <div className="bg-white rounded-xl shadow-md p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">4) Family of four (illustration) — ~MXN $65,000 (~USD $3,706)</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">4) Family of four (illustration) — ~MXN $65,000 (~USD $3,485)</h3>
                 <div className="overflow-x-auto">
                   <table className="min-w-full bg-white rounded-lg shadow-sm">
                     <thead className="bg-gray-100">
@@ -882,7 +882,7 @@ export default function CostOfLivingGuidePage() {
                     <span className="ml-4 flex-shrink-0 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
                   </summary>
                   <p className="mt-4 text-gray-600">
-                    Prefer Banxico&apos;s FIX for the day you convert. Our July 2026 article used 17.54; the FIX was about 17.3–17.6 in late September 2026 and 18.58 on 27 October 2026.
+                    Prefer Banxico&apos;s FIX for the day you convert. This page converts at 18.65, the FIX set on 27 October 2026 (our July 2026 article used 17.54; the FIX was about 17.3–17.6 in late September 2026).
                   </p>
                 </details>
 
@@ -922,7 +922,7 @@ export default function CostOfLivingGuidePage() {
                     <span className="ml-4 flex-shrink-0 text-gray-400 group-open:rotate-180 transition-transform">▼</span>
                   </summary>
                   <p className="mt-4 text-gray-600">
-                    At 17.54 FX, USD $1,000 is about MXN $17,540 (about MXN $18,580 at the 27 Oct 2026 FIX of 18.58)—above the frugal band if rent stays low and you cook. It is tight for Tequis furnished stock and private insurance.
+                    At the 27 Oct 2026 FIX of 18.65, USD $1,000 is about MXN $18,650—above the frugal band if rent stays low and you cook. It is tight for Tequis furnished stock and private insurance.
                   </p>
                 </details>
 

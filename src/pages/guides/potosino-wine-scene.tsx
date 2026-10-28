@@ -10,46 +10,44 @@ import AdUnit from '@/components/common/AdUnit';
 // Wine regions data
 const wineRegions = [
   {
-    id: "san-miguelito",
-    name: "San Miguelito Valley",
-    description: "A hidden gem for wine production with unique microclimate and terroir, producing exceptional red varietals and innovative blends.",
+    id: "moctezuma-valley",
+    name: "Moctezuma Valley (Altiplano)",
+    description: "A semi-arid high-plateau valley west of the capital that is home to the state's largest winery and a wide spread of red, white and sparkling wines.",
     imageUrl: "/images/sponsored/potosino-wine.jpg",
-    bestVarietals: "Cabernet Sauvignon, Merlot, Syrah",
-    bestFor: "Boutique wineries and stunning landscapes",
+    bestVarietals: "Cabernet Sauvignon, Merlot, Tempranillo, Nebbiolo, Chardonnay, Sauvignon Blanc",
+    bestFor: "The state's largest vineyard and traditional-method sparkling wine",
+    aroma: "dry desert scrub and sun-warmed earth",
     wineries: [
-      "Viñedos San Miguelito",
-      "Cava Quintanilla",
-      "Tierra Adentro"
+      {
+        name: "Cava Quintanilla",
+        note: "On the Moctezuma–Villa de Arista road, this is by far the state's largest winery, with about 120 hectares of vines. Its flagship label is Laberinto, and it also makes a sparkling wine by the traditional method."
+      }
     ],
-    culturalNotes: "This emerging wine region has rapidly gained recognition for its quality wines, with some vineyards dating back several decades but only recently gaining commercial prominence."
+    culturalNotes: "Founder Carlos Quintanilla was a vegetable grower who planted French vines in 2011 as an experiment after a trip to France. Within a decade his wines were winning international medals, proving the Altiplano could grow serious wine."
   },
   {
-    id: "catorce-highlands",
-    name: "Catorce Highlands",
-    description: "High-altitude vineyards producing distinctive wines with intense minerality and complex flavor profiles due to significant day-night temperature variations.",
+    id: "capital-outskirts",
+    name: "Around the Capital (Soledad and nearby haciendas)",
+    description: "Vineyards on old hacienda land roughly 20 minutes from downtown San Luis Potosí, at around 1,870 meters above sea level, where most of the state's boutique wineries are found.",
     imageUrl: "/images/sponsored/wine-highlands.jpg",
-    bestVarietals: "Tempranillo, Grenache, Chardonnay",
-    bestFor: "High-altitude wines with mineral character",
+    bestVarietals: "Syrah, Malbec, Cabernet Sauvignon, Merlot, Grenache, Sauvignon Blanc",
+    bestFor: "Boutique wineries, hacienda settings and easy half-day trips",
+    aroma: "wild herbs and dry high-desert air",
     wineries: [
-      "Bodegas del Altiplano",
-      "Real de Catorce Vinícola",
-      "Viñas de la Sierra"
+      {
+        name: "Pozo de Luna",
+        note: "Built around the former Hacienda El Jaralito in Soledad de Graciano Sánchez, minutes from the airport, with about 15 hectares of vines planted from French stock. Tastings and vineyard tours are by reservation."
+      },
+      {
+        name: "Bodega 1881",
+        note: "Producing wine since 2012, it takes its name from a plaque on a former chile-drying building of the Hacienda Santa Ana. It grows Malbec, Cabernet Sauvignon, Syrah and Grenache."
+      },
+      {
+        name: "Viña Cordelia",
+        note: "The Abella family, Spanish immigrants who fled the Civil War, began making wine here in the mid-20th century. Its decades-old vines still produce the house dessert wine, Mistela de Cordelia."
+      }
     ],
-    culturalNotes: "The arid conditions and mineral-rich soil of this high desert region create challenging growing conditions that result in low yields but exceptionally concentrated flavors."
-  },
-  {
-    id: "rio-verde",
-    name: "Río Verde Valley",
-    description: "Fertile valleys with a more moderate climate ideal for producing elegant white wines and sparkling varieties with vibrant acidity and fruit forward profiles.",
-    imageUrl: "/images/sponsored/wine-valley.jpg",
-    bestVarietals: "Sauvignon Blanc, Chenin Blanc, Sparkling varieties",
-    bestFor: "Refreshing white wines and vineyard tours",
-    wineries: [
-      "Viñedos del Río",
-      "Espumosos Potosinos",
-      "Bodegas La Huasteca"
-    ],
-    culturalNotes: "This region benefits from the influence of the Río Verde, creating a more temperate microclimate within San Luis Potosí's generally arid environment, perfect for white wine production."
+    culturalNotes: "Vines are not new to San Luis Potosí: colonial missionaries planted grapes here, and Viña Cordelia has been making wine for decades. The modern commercial wave, though, dates mainly from the 2010s, when growers imported vines from France."
   }
 ];
 
@@ -61,7 +59,7 @@ const WineScenePage: NextPage = () => {
         title="Discover the Potosino Wine Scene | Sponsored by La Gran Vía"
         ogTitle="The desert wine region nobody's talking about yet"
         description="Explore the emerging wine regions of San Luis Potosí, from boutique vineyards to stunning wineries, and discover the unique terroir that's putting Potosino wines on the map."
-        keywords="San Luis Potosí wine, Potosino vineyards, Mexican wine regions, wine tourism Mexico, San Miguelito wines, Catorce wine region, wine tasting in SLP, La Gran Vía restaurant"
+        keywords="San Luis Potosí wine, Potosino vineyards, Mexican wine regions, wine tourism Mexico, Cava Quintanilla, Pozo de Luna, Festival Internacional del Vino SLP, wine tasting in SLP, La Gran Vía restaurant"
         ogImage="/images/sponsored/potosino-wine.jpg"
         ogType="article"
         article={{ publishedTime: '2026-04-07', modifiedTime: '2026-07-14' }}
@@ -117,16 +115,16 @@ const WineScenePage: NextPage = () => {
             </h1>
             <LastUpdated date="2026-04-07" className="text-gray-200 mb-4" />
             <p className="text-lg text-gray-200 mb-4">
-              The sun dips below the horizon as you raise your glass, capturing the last golden rays through the ruby-red Tempranillo in your hand. Here, in the emerging vineyards of San Luis Potosí, you're witnessing the birth of Mexico's newest wine story—one that local winemakers have been quietly crafting for decades, now finally ready to be savored and shared.
+              The sun dips below the horizon as you raise your glass, capturing the last golden rays through the ruby-red Tempranillo in your hand. Here, in the emerging vineyards of San Luis Potosí, you're witnessing one of Mexico's newest wine stories—one that a few local families have been quietly crafting for decades, now finally ready to be savored and shared.
             </p>
             <p className="text-lg text-gray-200 mb-4">
               Beyond its rich cultural heritage and stunning landscapes, San Luis Potosí harbors a blossoming wine scene that's capturing the attention of enthusiasts and connoisseurs. Join us on a journey through the region's emerging vineyards, curated by <Link href="https://lagranviaslp.com/" className="text-red-300 hover:underline font-medium" target="_blank" rel="noopener noreferrer">La Gran Vía</Link>, where ancient lands and modern techniques are producing uniquely Potosino expressions of the vine.
             </p>
             <p className="text-lg text-gray-200 mb-4">
-              The region is home to a variety of wineries, each offering a distinct taste of the land. From the high-altitude vineyards of the Catorce Highlands, known for their intense minerality and complex flavor profiles, to the fertile Río Verde Valley, where elegant white wines and sparkling varieties flourish, San Luis Potosí is a haven for wine enthusiasts.
+              The state is home to a small but growing group of wineries, each offering a distinct taste of the land. From the large Altiplano vineyards of the Moctezuma Valley to the boutique hacienda wineries just outside the capital, San Luis Potosí rewards curious wine lovers.
             </p>
             <p className="text-lg text-gray-200 mb-4">
-              San Luis Potosí hosts various wine events throughout the year, showcasing the diversity and quality of regional wines. These events are a testament to the region's growing reputation in the world of viticulture, drawing wine lovers from near and far to experience the vibrant flavors and rich cultural heritage of San Luis Potosí.
+              Each spring the capital hosts the Festival Internacional del Vino de San Luis Potosí, whose 14th edition was held at the Centro de las Artes on May 29–30, 2026, alongside harvest celebrations at individual wineries. These events are a sign of the region's growing reputation, drawing wine lovers to experience the flavors and cultural heritage of San Luis Potosí.
             </p>
             <div className="flex justify-center mt-6">
               <a
@@ -158,16 +156,16 @@ const WineScenePage: NextPage = () => {
             <div className="w-full md:w-2/3">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">About La Gran Vía & Wine Pairings</h2>
               <p className="text-gray-700 mb-4">
-                You push open the heavy wooden door of La Gran Vía and are immediately enveloped in the warm aromas of saffron, garlic, and the unmistakable scent of Spanish tradition that has filled this space since 1979. The restaurant has been a cornerstone of San Luis Potosí's culinary scene, specializing in Spanish and international cuisine, and recognized as one of Mexico's "100 Imperdibles" (100 Must-Visit Places) in 2017.
+                You push open the door of La Gran Vía, on Avenida Venustiano Carranza 560, and are immediately enveloped in the warm aromas of saffron, garlic, and the Spanish tradition the restaurant has served since it opened in 1979. The restaurant has been a cornerstone of San Luis Potosí's culinary scene, specializing in Spanish and international cuisine, and recognized as one of Mexico's "100 Imperdibles" (100 Must-Visit Places) in 2017.
               </p>
               <p className="text-gray-700 mb-4">
-                As you settle into your chair, the sommelier approaches with a knowing smile and a bottle of local Tempranillo from the Catorce Highlands. "This one," they say, "was made for our paella." And they're right—the wine's bold flavors and mineral notes perfectly balance the rich, savory taste of La Gran Vía's signature dish, creating a harmony that could only exist here, where the terroir of San Luis Potosí meets generations of Spanish culinary expertise.
+                As you settle into your chair, think about what to pour with the paella, one of the house classics. A medium-bodied red such as Tempranillo, a grape now grown in the Potosino Altiplano, balances its rich, savory flavors—a meeting of Spanish culinary tradition and the wine-growing ambitions of San Luis Potosí.
               </p>
               <p className="text-gray-700 mb-4">
-                Later, as you move to a crisp Sauvignon Blanc from the Río Verde Valley, you notice how its vibrant acidity cuts through the creamy texture of the traditional Spanish tortilla on your plate. Each sip and bite reveals new dimensions of flavor, telling the story of this unique culinary landscape.
+                Later, a crisp Sauvignon Blanc, a variety grown at Potosino wineries such as Pozo de Luna, shows how vibrant acidity cuts through the creamy texture of a traditional Spanish tortilla. Each sip and bite reveals new dimensions of flavor, telling the story of this unique culinary landscape.
               </p>
               <p className="text-gray-700 mb-4">
-                For those seeking a truly immersive experience, La Gran Vía offers curated wine pairings, allowing diners to explore the symbiotic relationship between Potosino wines and the restaurant's carefully crafted dishes. As you sip and savor, you'll find that each pairing tells a story, weaving together the flavors of the land with the artistry of the kitchen—a journey of taste that stays with you long after the last glass is empty.
+                For those seeking a more immersive experience, ask the staff to suggest wines to pair with each course, and whether a Potosino label is on the list that day. As you sip and savor, you'll find that each pairing tells a story, weaving together the flavors of the land with the artistry of the kitchen—a journey of taste that stays with you long after the last glass is empty.
               </p>
             </div>
           </div>
@@ -201,7 +199,7 @@ const WineScenePage: NextPage = () => {
 
                 <div className="mb-6">
                   <h4 className="font-medium text-gray-900 mb-2">A Taste of the Region</h4>
-                  <p className="text-gray-600">As you wander through the {region.name}, the air carries hints of {region.id === "san-miguelito" ? "wild herbs and sun-warmed earth" : region.id === "catorce-highlands" ? "mountain minerals and alpine flowers" : "riverside vegetation and orchard fruits"}. The wines here reflect their surroundings, with {region.bestVarietals} expressing the soul of this unique landscape.</p>
+                  <p className="text-gray-600">As you wander through the {region.name}, the air carries hints of {region.aroma}. The wines here reflect their surroundings, with {region.bestVarietals} expressing the soul of this unique landscape.</p>
                 </div>
 
                 <div className="mb-6">
@@ -217,43 +215,11 @@ const WineScenePage: NextPage = () => {
                 <div className="mb-6">
                   <h4 className="font-medium text-gray-900 mb-2">Wineries to Visit</h4>
                   <ul className="list-disc pl-5 text-gray-600">
-                    {region.id === "san-miguelito" ? (
-                      <>
-                        <li key="Viñedos San Miguelito">
-                          <span className="font-medium">Viñedos San Miguelito</span> - A pioneering estate where you might find the winemaker eager to share stories of their family's connection to this land, offering intimate tastings of their exceptional red varietals.
-                        </li>
-                        <li key="Cava Quintanilla">
-                          <span className="font-medium">Cava Quintanilla</span> - Known for its elegant cellar and meticulous aging process, this boutique winery focuses on small-batch production with remarkable attention to detail.
-                        </li>
-                        <li key="Tierra Adentro">
-                          <span className="font-medium">Tierra Adentro</span> - A newer arrival to the scene but already making waves with innovative blending techniques that showcase the unique microclimate of the valley.
-                        </li>
-                      </>
-                    ) : region.id === "catorce-highlands" ? (
-                      <>
-                        <li key="Bodegas del Altiplano">
-                          <span className="font-medium">Bodegas del Altiplano</span> - Perched at one of the highest elevations in the region, tastings here take place with breathtaking panoramic views of the surrounding mountains.
-                        </li>
-                        <li key="Real de Catorce Vinícola">
-                          <span className="font-medium">Real de Catorce Vinícola</span> - Housed in a restored hacienda, this winery combines historical charm with modern winemaking, specializing in robust Tempranillos that express the mineral-rich soil.
-                        </li>
-                        <li key="Viñas de la Sierra">
-                          <span className="font-medium">Viñas de la Sierra</span> - A family-run operation that embraces the extreme growing conditions to produce limited quantities of intensely flavored wines with remarkable complexity.
-                        </li>
-                      </>
-                    ) : (
-                      <>
-                        <li key="Viñedos del Río">
-                          <span className="font-medium">Viñedos del Río</span> - Set alongside the flowing waters that give this valley its name, this winery specializes in crisp white wines that capture the freshness of the region.
-                        </li>
-                        <li key="Espumosos Potosinos">
-                          <span className="font-medium">Espumosos Potosinos</span> - Pioneering sparkling wine production in the region, using traditional methods combined with local grape varieties to create unique bubblies.
-                        </li>
-                        <li key="Bodegas La Huasteca">
-                          <span className="font-medium">Bodegas La Huasteca</span> - Where traditional methods meet innovative approaches, this winery embraces sustainable practices to create wines that truly express the terroir of Río Verde.
-                        </li>
-                      </>
-                    )}
+                    {region.wineries.map((winery) => (
+                      <li key={winery.name}>
+                        <span className="font-medium">{winery.name}</span> - {winery.note}
+                      </li>
+                    ))}
                   </ul>
                 </div>
 
@@ -280,24 +246,23 @@ const WineScenePage: NextPage = () => {
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Guided Wine Tours</h3>
                 <p className="text-gray-700 mb-4">
-                  Several operators now offer specialized wine tours that take you through the vineyards of San Luis Potosí, with expert guides explaining the unique characteristics of the region.
+                  San Luis Potosí does not yet have an established wine route, so the best way to visit is to book directly with the wineries that receive guests.
                 </p>
                 <ul className="list-disc pl-5 text-gray-600">
-                  <li>Ruta del Vino Potosino</li>
-                  <li>SLP Wine Adventures</li>
-                  <li>Enoturismo Central</li>
+                  <li>Pozo de Luna: tastings and vineyard tours by reservation</li>
+                  <li>Cava Quintanilla: contact the winery for visits and harvest events</li>
+                  <li>Ask your hotel about private drivers for winery day trips</li>
                 </ul>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Wine Festivals</h3>
                 <p className="text-gray-700 mb-4">
-                  Throughout the year, San Luis Potosí hosts several wine festivals where you can sample local vintages and meet the winemakers.
+                  San Luis Potosí hosts wine events where you can sample local vintages and meet the winemakers.
                 </p>
                 <ul className="list-disc pl-5 text-gray-600">
-                  <li>Vendimia San Miguelito (August)</li>
-                  <li>Expo Vino Potosino (November)</li>
-                  <li>Various seasonal wine tastings throughout the year</li>
+                  <li>Festival Internacional del Vino de San Luis Potosí (spring; the 2026 edition ran May 29–30 at the Centro de las Artes)</li>
+                  <li>Harvest festivals (vendimias) hosted by individual wineries such as Cava Quintanilla</li>
                 </ul>
               </div>
             </div>
@@ -308,19 +273,19 @@ const WineScenePage: NextPage = () => {
                 <div>
                   <h4 className="font-medium text-gray-900 mb-2">Best Time to Visit</h4>
                   <p className="text-gray-600 mb-4">
-                    October to May offers the most pleasant weather. August-September is harvest season - exciting but busy.
+                    The dry months from October to May offer the most comfortable weather. Late summer is harvest season, when wineries may host vendimia events.
                   </p>
 
                   <h4 className="font-medium text-gray-900 mb-2">Getting Around</h4>
                   <p className="text-gray-600">
-                    Most wineries are located 30-90 minutes from San Luis Potosí city. Consider hiring a driver or joining an organized tour.
+                    Wineries near the capital are about 20 minutes from downtown, while the Moctezuma Valley is roughly an hour's drive. Consider hiring a driver.
                   </p>
                 </div>
 
                 <div>
                   <h4 className="font-medium text-gray-900 mb-2">Reservations</h4>
                   <p className="text-gray-600 mb-4">
-                    Most wineries require advance reservations for tastings and tours. Book at least one week ahead.
+                    Visits are generally by reservation only, so contact the winery well before your trip.
                   </p>
 
                   <h4 className="font-medium text-gray-900 mb-2">What to Bring</h4>

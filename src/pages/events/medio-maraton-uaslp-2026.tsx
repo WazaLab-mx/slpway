@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { CalendarIcon, MapPinIcon, TrophyIcon, ClockIcon } from '@heroicons/react/24/outline';
+import { CalendarIcon, MapPinIcon, TrophyIcon } from '@heroicons/react/24/outline';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import SEO from '@/components/common/SEO';
@@ -21,8 +21,13 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => ({
 // - palestra.com.mx / mediastintasslp.com.mx (2025 race was the 42nd edition,
 //   so 2026 is edition 43 — the site DB title saying "42nd" was wrong)
 // - wp.uaslp.mx (41st edition set an attendance record).
+// Rechecked 2026-10-27 (race already held): planoinformativo.com 1170858
+// (Sept 27 date, kit pickup), 1171956 (~15k runners in SLP + 2k+ in Valles,
+// 6:30 start in front of the UASLP Edificio Central) and 1173013 (XLIII
+// edition; official results under review after athletes' complaints).
+// 2026 fees and caps could not be re-verified, so they are no longer shown.
 
-const REGISTRATION_URL = 'https://mediomaraton.uaslp.mx/';
+const OFFICIAL_URL = 'https://mediomaraton.uaslp.mx/';
 
 export default function MedioMaratonUaslp2026() {
   const { locale = 'en' } = useRouter();
@@ -32,118 +37,115 @@ export default function MedioMaratonUaslp2026() {
   const distances = [
     {
       name: '21K',
-      price: '$500 MXN',
       color: 'border-blue-700 bg-blue-950/60',
       accent: 'text-blue-400',
       desc: L(
-        'La prueba estelar. Salida y meta en Álvaro Obregón 64, Centro Histórico de SLP.',
-        'The flagship race. Start and finish at Álvaro Obregón 64, in SLP’s Centro Histórico.'
+        'La prueba estelar. Salida y meta frente al Edificio Central de la UASLP (Álvaro Obregón 64), Centro Histórico de SLP.',
+        'The flagship race. Start and finish in front of the UASLP Edificio Central (Álvaro Obregón 64), in SLP’s Centro Histórico.'
       ),
     },
     {
       name: '10K',
-      price: '$450 MXN',
       color: 'border-indigo-700 bg-indigo-950/60',
       accent: 'text-indigo-400',
       desc: L(
-        'Misma salida y meta que el 21K (Álvaro Obregón 64). También se corre en Ciudad Valles.',
+        'Misma salida y meta que el 21K (Álvaro Obregón 64). También se corrió en Ciudad Valles.',
         'Same start and finish as the 21K (Álvaro Obregón 64). Also run in Ciudad Valles.'
       ),
     },
     {
       name: '5K',
-      price: '$400 MXN',
       color: 'border-cyan-700 bg-cyan-950/60',
       accent: 'text-cyan-400',
       desc: L(
-        'Salida en Álvaro Obregón 64 y meta en Av. Venustiano Carranza 235. Ideal para debutantes; también en Ciudad Valles.',
-        'Starts at Álvaro Obregón 64, finishes at Av. Venustiano Carranza 235. Great for first-timers; also in Ciudad Valles.'
+        'Salida en Álvaro Obregón 64 y meta en Av. Venustiano Carranza 235. También se corrió en Ciudad Valles.',
+        'Started at Álvaro Obregón 64 and finished at Av. Venustiano Carranza 235. Also run in Ciudad Valles.'
       ),
     },
   ];
 
-  const registration = [
+  const recap = [
     {
-      icon: '💻',
-      title: L('En línea', 'Online'),
+      icon: '🏃',
+      title: L('Participación', 'Turnout'),
       desc: L(
-        'Desde el 1 de junio de 2026 en mediomaraton.uaslp.mx. Cierra dos semanas antes de la carrera o al agotarse los lugares.',
-        'From June 1, 2026 at mediomaraton.uaslp.mx. Closes two weeks before race day or when spots sell out.'
+        'Unos 15 mil corredores en la capital y más de 2 mil en Ciudad Valles, llegados de 28 estados (Plano Informativo).',
+        'About 15,000 runners in the capital and more than 2,000 in Ciudad Valles, from 28 states (Plano Informativo).'
       ),
     },
     {
-      icon: '🏟️',
-      title: L('Módulos presenciales', 'In-person modules'),
+      icon: '⏱️',
+      title: L('Salida', 'Start'),
       desc: L(
-        'Unidad Deportiva Universitaria (9:00–16:00) y Unimanía, Av. Niño Artillero 140 (8:00–16:00). Desde el 10 de agosto también en el Parque Tangamanga I, frente al planetario (7:00–10:00).',
-        'Unidad Deportiva Universitaria (9:00–16:00) and Unimanía, Av. Niño Artillero 140 (8:00–16:00). From August 10 also at Parque Tangamanga I, in front of the planetarium (7:00–10:00).'
+        'A las 6:30 a.m. frente al Edificio Central de la UASLP; los corredores se reunieron antes en la Plaza de Fundadores.',
+        'At 6:30 a.m. in front of the UASLP Edificio Central; runners gathered beforehand in Plaza de Fundadores.'
       ),
     },
     {
-      icon: '🎽',
-      title: L('Cupo limitado', 'Limited capacity'),
+      icon: '📋',
+      title: L('Resultados', 'Results'),
       desc: L(
-        '10,000 corredores en la sede San Luis Potosí y 1,500 en Ciudad Valles (El Exprés / Líder Life).',
-        '10,000 runners at the San Luis Potosí venue and 1,500 in Ciudad Valles (El Exprés / Líder Life).'
+        'Tras quejas de atletas sobre el jueceo, el comité organizador pidió a la empresa de cronometraje entregar y transparentar los resultados oficiales, y el caso se turnó a la federación de atletismo (Plano Informativo, 1 de octubre).',
+        'After athletes complained about the judging, the organizing committee asked the timing company to deliver and publish the official results, and the case was referred to the athletics federation (Plano Informativo, October 1).'
       ),
     },
   ];
 
   const faqs = [
     {
-      q: L('¿Cuándo es el Medio Maratón UASLP 2026?', 'When is the UASLP Half Marathon 2026?'),
+      q: L('¿Cuándo fue el Medio Maratón UASLP 2026?', 'When was the UASLP Half Marathon 2026?'),
       a: L(
         'El domingo 27 de septiembre de 2026, con sedes simultáneas en San Luis Potosí capital y Ciudad Valles.',
-        'Sunday, September 27, 2026, held simultaneously in San Luis Potosí city and Ciudad Valles.'
+        'On Sunday, September 27, 2026, held simultaneously in San Luis Potosí city and Ciudad Valles.'
       ),
     },
     {
-      q: L('¿Qué distancias hay?', 'What distances are offered?'),
+      q: L('¿Qué distancias hubo?', 'What distances were offered?'),
       a: L(
-        'En San Luis Potosí: 21, 10 y 5 kilómetros. En Ciudad Valles: 10 y 5 kilómetros.',
-        'In San Luis Potosí: 21K, 10K and 5K. In Ciudad Valles: 10K and 5K.'
+        'En San Luis Potosí: 21, 10 y 5 kilómetros, además de 10K en silla de ruedas. En Ciudad Valles: 10 y 5 kilómetros.',
+        'In San Luis Potosí: 21K, 10K and 5K, plus a 10K wheelchair race. In Ciudad Valles: 10K and 5K.'
       ),
     },
     {
-      q: L('¿Cuánto cuesta la inscripción?', 'How much does registration cost?'),
+      q: L('¿Cuántas personas corrieron?', 'How many people ran?'),
       a: L(
-        '$500 MXN los 21K, $450 los 10K y $400 los 5K — las mismas cuotas que el año anterior, según la UASLP.',
-        '$500 MXN for the 21K, $450 for the 10K and $400 for the 5K — the same fees as the previous year, per UASLP.'
+        'Plano Informativo reportó unos 15 mil corredores en la capital y más de 2 mil en Ciudad Valles, de 28 estados del país.',
+        'Plano Informativo reported about 15,000 runners in the capital and more than 2,000 in Ciudad Valles, from 28 Mexican states.'
       ),
     },
     {
-      q: L('¿Dónde me inscribo?', 'Where do I register?'),
+      q: L('¿A qué hora y dónde fue la salida?', 'When and where was the start?'),
       a: L(
-        'En línea en mediomaraton.uaslp.mx (desde el 1 de junio de 2026) o en los módulos presenciales: Unidad Deportiva Universitaria, Unimanía (Av. Niño Artillero 140) y, a partir del 10 de agosto, Parque Tangamanga I frente al planetario. Cierre: dos semanas antes del evento o hasta agotar lugares.',
-        'Online at mediomaraton.uaslp.mx (since June 1, 2026) or at the in-person modules: Unidad Deportiva Universitaria, Unimanía (Av. Niño Artillero 140) and, from August 10, Parque Tangamanga I in front of the planetarium. Deadline: two weeks before the event or until sold out.'
+        'A las 6:30 a.m. frente al Edificio Central de la UASLP, en el Centro Histórico. Los corredores se reunieron antes en la Plaza de Fundadores.',
+        'At 6:30 a.m. in front of the UASLP Edificio Central, in the Centro Histórico. Runners gathered beforehand in Plaza de Fundadores.'
       ),
     },
     {
-      q: L('¿Cuál es la ruta en San Luis Potosí?', 'What is the route in San Luis Potosí?'),
+      q: L('¿Cuál fue la ruta en San Luis Potosí?', 'What was the route in San Luis Potosí?'),
       a: L(
-        'Las carreras de 21K y 10K salen y llegan a Álvaro Obregón 64, en el Centro Histórico. El 5K sale del mismo punto y termina en Av. Venustiano Carranza 235. Los mapas oficiales por distancia se publican en mediomaraton.uaslp.mx.',
-        'The 21K and 10K start and finish at Álvaro Obregón 64, in the Centro Histórico. The 5K starts from the same point and finishes at Av. Venustiano Carranza 235. Official route maps per distance are published at mediomaraton.uaslp.mx.'
+        'Las carreras de 21K y 10K salieron y llegaron a Álvaro Obregón 64, en el Centro Histórico. El 5K salió del mismo punto y terminó en Av. Venustiano Carranza 235. Los mapas oficiales están en mediomaraton.uaslp.mx.',
+        'The 21K and 10K started and finished at Álvaro Obregón 64, in the Centro Histórico. The 5K started from the same point and finished at Av. Venustiano Carranza 235. Official maps are at mediomaraton.uaslp.mx.'
       ),
     },
     {
-      q: L('¿Qué edición es la de 2026?', 'Which edition is the 2026 race?'),
+      q: L('¿Quién ganó?', 'Who won?'),
       a: L(
-        'La edición 43. La UASLP presentó la playera y medalla de la edición 42 en septiembre de 2025 (Palestra, Medias Tintas SLP), por lo que la carrera de 2026 corresponde al número 43.',
-        'The 43rd. UASLP unveiled the shirt and medal of the 42nd edition in September 2025 (Palestra, Medias Tintas SLP), which makes the 2026 race number 43.'
+        'Los resultados oficiales quedaron en revisión: tras quejas de atletas sobre el jueceo, el comité organizador pidió a la empresa de cronometraje transparentarlos y el caso se turnó a la federación de atletismo. Consulta mediomaraton.uaslp.mx para la versión oficial.',
+        'The official results went under review: after athletes complained about the judging, the organizing committee asked the timing company to publish them and the case was referred to the athletics federation. Check mediomaraton.uaslp.mx for the official version.'
       ),
     },
     {
-      q: L('¿Cuánta gente corre?', 'How many people run it?'),
+      q: L('¿Qué edición fue la de 2026?', 'Which edition was the 2026 race?'),
       a: L(
-        'El cupo 2026 es de 10,000 corredores en SLP más 1,500 en Ciudad Valles. Es una de las carreras más tradicionales del estado: la edición 41 registró récord de asistencia, según la propia UASLP.',
-        'The 2026 cap is 10,000 runners in SLP plus 1,500 in Ciudad Valles. It is one of the state’s most traditional races: the 41st edition set an attendance record, per UASLP itself.'
+        'La XLIII (43ª) edición, como la identificó la cobertura local de la carrera.',
+        'The 43rd (XLIII) edition, as identified in local coverage of the race.'
       ),
     },
     {
-      q: L('¿Vale la pena si vengo de fuera?', 'Is it worth traveling for?'),
+      q: L('¿Cuándo es la edición 2027?', 'When is the 2027 edition?'),
       a: L(
-        'Sí: la ruta pasa por el Centro Histórico (Patrimonio de la Humanidad), la fecha de fines de septiembre suele traer clima fresco, y la altitud de la ciudad (~1,860 m) es un reto interesante. Reserva hotel con anticipación: el fin de semana llegan corredores de varios estados.',
-        'Yes: the course runs through the UNESCO-listed Centro Histórico, late-September weather is usually cool, and the city’s ~1,860 m altitude is an interesting challenge. Book your hotel early — runners come in from several states that weekend.'
+        'El sitio oficial se despide con un “Nos vemos en 2027”, pero aún no hemos visto una fecha oficial. La publicaremos cuando la UASLP la anuncie.',
+        'The official site signs off with “See you in 2027”, but we have not seen an official date yet. We will post it when UASLP announces it.'
       ),
     },
   ];
@@ -173,12 +175,6 @@ export default function MedioMaratonUaslp2026() {
           name: 'Universidad Autónoma de San Luis Potosí (UASLP)',
           url: 'https://www.uaslp.mx/',
         },
-        offers: [
-          { '@type': 'Offer', name: '21K', price: '500', priceCurrency: 'MXN', url: REGISTRATION_URL, availability: 'https://schema.org/InStock', validFrom: '2026-06-01' },
-          { '@type': 'Offer', name: '10K', price: '450', priceCurrency: 'MXN', url: REGISTRATION_URL, availability: 'https://schema.org/InStock', validFrom: '2026-06-01' },
-          { '@type': 'Offer', name: '5K', price: '400', priceCurrency: 'MXN', url: REGISTRATION_URL, availability: 'https://schema.org/InStock', validFrom: '2026-06-01' },
-        ],
-        maximumAttendeeCapacity: 10000,
         eventStatus: 'https://schema.org/EventScheduled',
         eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
         url: 'https://www.sanluisway.com/events/medio-maraton-uaslp-2026',
@@ -205,7 +201,7 @@ export default function MedioMaratonUaslp2026() {
   const stats = [
     { value: L('27 sep', 'Sep 27'), label: L('Domingo, 2026', 'Sunday, 2026') },
     { value: '43ª', label: L('Edición', 'Edition') },
-    { value: '11,500', label: L('Cupo total (SLP + Valles)', 'Total cap (SLP + Valles)') },
+    { value: '17,000+', label: L('Corredores (SLP + Valles)', 'Runners (SLP + Valles)') },
     { value: '3', label: L('Distancias', 'Distances') },
   ];
 
@@ -213,12 +209,12 @@ export default function MedioMaratonUaslp2026() {
     <>
       <SEO
         title={L(
-          'Medio Maratón UASLP 2026: fecha, ruta e inscripciones',
-          'UASLP Half Marathon 2026: Date, Route & Registration'
+          'Medio Maratón UASLP 2026: cómo fue la carrera, ruta y distancias',
+          'UASLP Half Marathon 2026: Race Recap, Route & Distances'
         )}
         description={L(
-          'El Medio Maratón UASLP 2026 (edición 43) se corre el domingo 27 de septiembre en San Luis Potosí y Ciudad Valles. Distancias de 21K, 10K y 5K, costos de $400–500 MXN, ruta por el Centro Histórico e inscripciones en mediomaraton.uaslp.mx.',
-          'The UASLP Half Marathon 2026 (43rd edition) runs Sunday, September 27 in San Luis Potosí and Ciudad Valles. 21K, 10K and 5K distances, $400–500 MXN fees, a Centro Histórico route, and registration at mediomaraton.uaslp.mx.'
+          'El Medio Maratón UASLP 2026 (edición 43) se corrió el domingo 27 de septiembre en San Luis Potosí y Ciudad Valles, con unos 17 mil corredores. Distancias de 21K, 10K y 5K, ruta por el Centro Histórico y estado de los resultados oficiales.',
+          'The UASLP Half Marathon 2026 (43rd edition) was run on Sunday, September 27 in San Luis Potosí and Ciudad Valles, with about 17,000 runners. 21K, 10K and 5K distances, the Centro Histórico route and the status of the official results.'
         )}
         keywords="medio maraton uaslp 2026, medio maraton uaslp, medio maraton san luis potosi 2026, medio maraton uaslp inscripciones, medio maraton uaslp ruta, carrera 27 septiembre san luis potosi"
         ogImage="/images/events/maraton-runners.jpg"
@@ -232,7 +228,7 @@ export default function MedioMaratonUaslp2026() {
             <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/40 rounded-full px-4 py-1.5 mb-6">
               <TrophyIcon className="w-4 h-4 text-blue-300" />
               <span className="text-blue-200 text-xs font-bold uppercase tracking-widest">
-                {L('Inscripciones abiertas', 'Registration open')}
+                {L('Carrera concluida', 'Race completed')}
               </span>
             </div>
             <div className="flex items-center gap-3 mb-2 text-blue-200">
@@ -258,8 +254,8 @@ export default function MedioMaratonUaslp2026() {
             </h2>
             <p className="text-lg text-white/85 max-w-2xl mb-8">
               {L(
-                'La carrera más tradicional de San Luis Potosí recorre el Centro Histórico cada septiembre. En 2026 hay cupo para 10,000 corredores en la capital y 1,500 en Ciudad Valles, en distancias de 21, 10 y 5 kilómetros.',
-                'San Luis Potosí’s most traditional race crosses the Centro Histórico every September. In 2026 there are spots for 10,000 runners in the capital and 1,500 in Ciudad Valles, over 21K, 10K and 5K distances.'
+                'El medio maratón universitario recorrió el Centro Histórico el 27 de septiembre de 2026: unos 15 mil corredores en la capital y más de 2 mil en Ciudad Valles, en distancias de 21, 10 y 5 kilómetros.',
+                'The university half marathon crossed the Centro Histórico on September 27, 2026: about 15,000 runners in the capital and more than 2,000 in Ciudad Valles, over 21K, 10K and 5K distances.'
               )}
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 max-w-2xl">
@@ -272,12 +268,12 @@ export default function MedioMaratonUaslp2026() {
             </div>
             <div className="flex flex-wrap gap-4">
               <a
-                href={REGISTRATION_URL}
+                href={OFFICIAL_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-blue-500 hover:bg-blue-400 text-white font-bold px-6 py-3 rounded-full inline-flex items-center gap-2 transition-colors"
               >
-                {L('Inscríbete en mediomaraton.uaslp.mx', 'Register at mediomaraton.uaslp.mx')}
+                {L('Sitio oficial: mediomaraton.uaslp.mx', 'Official site: mediomaraton.uaslp.mx')}
                 <TrophyIcon className="w-5 h-5" />
               </a>
               <a
@@ -292,35 +288,32 @@ export default function MedioMaratonUaslp2026() {
         </div>
       </section>
 
-      {/* Distances & prices */}
+      {/* Distances */}
       <section className="py-16 px-4 bg-gray-950 text-white">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold font-serif mb-3">
-              {L('Distancias y costos', 'Distances & fees')}
+              {L('Distancias', 'Distances')}
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
               {L(
-                'Cuotas 2026 confirmadas por la UASLP — sin aumento respecto al año anterior.',
-                '2026 fees confirmed by UASLP — unchanged from the previous year.'
+                'Las distancias del programa 2026.',
+                'The distances on the 2026 program.'
               )}
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {distances.map((d) => (
               <div key={d.name} className={`border rounded-xl p-6 ${d.color}`}>
-                <div className="flex items-baseline justify-between mb-3">
-                  <p className={`text-2xl font-bold ${d.accent}`}>{d.name}</p>
-                  <p className="text-white font-bold">{d.price}</p>
-                </div>
+                <p className={`text-2xl font-bold mb-3 ${d.accent}`}>{d.name}</p>
                 <p className="text-gray-300 text-sm leading-relaxed">{d.desc}</p>
               </div>
             ))}
           </div>
           <p className="text-center text-gray-500 text-sm mt-6">
             {L(
-              'En Ciudad Valles solo se corren 10K y 5K.',
-              'Ciudad Valles hosts the 10K and 5K only.'
+              'En Ciudad Valles se corrieron 10K y 5K.',
+              'Ciudad Valles hosted the 10K and 5K.'
             )}
           </p>
         </div>
@@ -354,9 +347,9 @@ export default function MedioMaratonUaslp2026() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
-              { icon: '🏁', text: L('21K y 10K: salida y meta en Álvaro Obregón 64, Centro Histórico.', '21K & 10K: start and finish at Álvaro Obregón 64, Centro Histórico.') },
-              { icon: '🎯', text: L('5K: salida en Álvaro Obregón 64 y meta en Av. Venustiano Carranza 235.', '5K: starts at Álvaro Obregón 64, finishes at Av. Venustiano Carranza 235.') },
-              { icon: '⛰️', text: L('La ciudad está a ~1,860 m de altitud: si vienes del nivel del mar, considera llegar 1–2 días antes.', 'The city sits at ~1,860 m altitude: if you are coming from sea level, consider arriving 1–2 days early.') },
+              { icon: '🏁', text: L('21K y 10K: salida y meta en Álvaro Obregón 64 (Edificio Central de la UASLP), Centro Histórico.', '21K & 10K: start and finish at Álvaro Obregón 64 (UASLP Edificio Central), Centro Histórico.') },
+              { icon: '🎯', text: L('5K: salida en Álvaro Obregón 64 y meta en Av. Venustiano Carranza 235.', '5K: started at Álvaro Obregón 64 and finished at Av. Venustiano Carranza 235.') },
+              { icon: '⛰️', text: L('La carrera se corre a unos 1,860 m de altitud, en el centro de la ciudad.', 'The race is run at about 1,860 m altitude, in the city center.') },
             ].map((item) => (
               <div key={item.icon} className="bg-gray-800 rounded-xl p-5 flex gap-3">
                 <span className="text-2xl shrink-0">{item.icon}</span>
@@ -367,20 +360,15 @@ export default function MedioMaratonUaslp2026() {
         </div>
       </section>
 
-      {/* Registration */}
+      {/* Race-day recap */}
       <section className="py-16 px-4 bg-gray-950 text-white">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold font-serif mb-3">{L('Inscripciones', 'Registration')}</h2>
-            <p className="text-gray-400">
-              {L(
-                'Abiertas desde el 1 de junio de 2026 — hasta dos semanas antes o agotar cupo.',
-                'Open since June 1, 2026 — until two weeks before race day or sell-out.'
-              )}
-            </p>
+            <h2 className="text-3xl font-bold font-serif mb-3">{L('Así fue la carrera', 'How race day went')}</h2>
+            <p className="text-gray-400">{L('Domingo 27 de septiembre de 2026.', 'Sunday, September 27, 2026.')}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {registration.map((r) => (
+            {recap.map((r) => (
               <div key={r.icon} className="bg-gray-900 border border-gray-800 rounded-xl p-6">
                 <div className="text-2xl mb-3">{r.icon}</div>
                 <h3 className="font-bold text-lg text-blue-300 mb-2">{r.title}</h3>
@@ -388,20 +376,8 @@ export default function MedioMaratonUaslp2026() {
               </div>
             ))}
           </div>
-          <div className="flex justify-center mt-8">
-            <a
-              href={REGISTRATION_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-500 hover:bg-blue-400 text-white font-bold px-8 py-3.5 rounded-full inline-flex items-center gap-2 transition-colors"
-            >
-              {L('Ir al portal oficial de inscripción', 'Go to the official registration portal')}
-              <ClockIcon className="w-5 h-5" />
-            </a>
-          </div>
         </div>
       </section>
-
       {/* FAQ */}
       <section className="py-16 px-4 bg-gray-900 text-white">
         <div className="container mx-auto max-w-3xl">
@@ -429,20 +405,11 @@ export default function MedioMaratonUaslp2026() {
           </h2>
           <p className="text-white/85 mb-8">
             {L(
-              'Asegura tu lugar antes de que se agote el cupo, y revisa qué más hay en la ciudad ese fin de semana.',
-              'Lock in your spot before it sells out, and see what else is on in the city that weekend.'
+              'La próxima gran carrera en la capital es el Medio Maratón La Capital del Deporte, el 8 de noviembre.',
+              'The next big race in the capital is the La Capital del Deporte Half Marathon on November 8.'
             )}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href={REGISTRATION_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-500 hover:bg-blue-400 text-white font-bold px-8 py-4 rounded-full inline-flex items-center gap-2 transition-colors"
-            >
-              {L('Inscribirme ahora', 'Register now')}
-              <TrophyIcon className="w-5 h-5" />
-            </a>
             <Link
               href="/events/medio-maraton-capital-del-deporte-2026"
               className="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-8 py-4 rounded-full transition-colors"

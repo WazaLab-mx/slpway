@@ -12,11 +12,11 @@ export default function ReligiousPracticesPage() {
   const faqs = [
     {
       question: 'What is the Procesión del Silencio?',
-      answer: 'The Procesión del Silencio is a solemn Good Friday procession where over 2,000 participants dressed in biblical-era robes walk in absolute silence through the streets of Centro Histórico. Declared Intangible Cultural Heritage, it draws tens of thousands of spectators and is one of Mexico\'s most powerful religious traditions.',
+      answer: 'The Procesión del Silencio is a solemn Good Friday procession where over 2,000 participants dressed in biblical-era robes walk in absolute silence through the streets of Centro Histórico. Declared Intangible Cultural Heritage of the state of San Luis Potosí in 2013, it draws tens of thousands of spectators and is one of Mexico\'s most powerful religious traditions.',
     },
     {
       question: 'How important is Catholicism in San Luis Potosí?',
-      answer: 'Very. SLP is one of Mexico\'s most traditionally Catholic cities. The Centro Histórico alone has over 20 churches, and religious holidays (Semana Santa, Día de la Virgen de Guadalupe, Día de Muertos) are widely observed with processions, masses, and community celebrations.',
+      answer: 'Very. SLP is one of Mexico\'s most traditionally Catholic cities. The Centro Histórico is dotted with colonial-era churches, and religious holidays (Semana Santa, Día de la Virgen de Guadalupe, Día de Muertos) are widely observed with processions, masses, and community celebrations.',
     },
     {
       question: 'What is the connection between Wixárika (Huichol) culture and SLP?',
@@ -107,7 +107,7 @@ export default function ReligiousPracticesPage() {
                 Spiritual Heritage Overview
               </h2>
               <p className="text-gray-600 mb-6">
-                The spiritual landscape of San Luis Potosí is deeply rooted in the pre-Hispanic traditions of its Indigenous peoples, particularly the Huichol (Wixárika) and Teenek cultures. The desert regions and sacred natural sites have shaped spiritual practices for millennia, creating a rich tapestry of beliefs that continues to thrive alongside introduced Catholic elements.
+                The spiritual landscape of San Luis Potosí is deeply rooted in the pre-Hispanic traditions of its Indigenous peoples, notably the Teenek and Nahua communities of the Huasteca, and it is also shaped by the Wixárika (Huichol), who travel from Jalisco and Nayarit on pilgrimage to the state's Wirikuta desert. The desert regions and sacred natural sites have shaped spiritual practices for millennia, creating a rich tapestry of beliefs that continues to thrive alongside introduced Catholic elements.
               </p>
               
               <div className="space-y-6">
@@ -137,7 +137,7 @@ export default function ReligiousPracticesPage() {
                     <li>Wirikuta desert as a primary pilgrimage destination</li>
                     <li>Sacred mountains believed to house ancestor spirits</li>
                     <li>Natural springs and oases as ritual purification sites</li>
-                    <li>Astronomical alignments and solstice ceremonies</li>
+                    <li>Cerro Quemado, where Wixárika tradition says the sun was born</li>
                   </ul>
                 </div>
               </div>
@@ -215,7 +215,7 @@ export default function ReligiousPracticesPage() {
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Pilgrimage to Wirikuta</h3>
                   <p className="text-gray-600 mb-4">
-                    The annual Huichol pilgrimage to Wirikuta in the desert of San Luis Potosí is one of Mexico's most significant spiritual journeys. Pilgrims travel over 400 kilometers to collect hikuri (peyote) and communicate with their deities in this sacred landscape.
+                    The annual Huichol pilgrimage to Wirikuta in the desert of San Luis Potosí is one of Mexico's most significant spiritual journeys. Pilgrims travel around 500 kilometers to collect hikuri (peyote) and communicate with their deities in this sacred landscape. In July 2025, UNESCO inscribed the Wixárika route through sacred sites to Wirikuta on its World Heritage List.
                   </p>
                   <div className="space-y-2">
                     <p className="text-gray-600">
@@ -391,7 +391,7 @@ export default function ReligiousPracticesPage() {
               <div className="bg-white rounded-lg p-6 shadow-sm">
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">Cave of Swallows (Sótano de las Golondrinas)</h3>
                 <p className="text-gray-600">
-                  This enormous natural shaft is considered a portal to the underworld in Indigenous cosmology. The daily flight of thousands of birds from the cave symbolizes the journey between worlds.
+                  This enormous natural shaft is wrapped in local legend; one story links it to sacred Huastec waters swallowed by the earth. At dawn, thousands of swifts and parakeets spiral out of the cave.
                 </p>
                 <p className="text-gray-600 mt-4">
                   <span className="font-semibold">Location:</span> Municipality of Aquismón in the Huasteca region
@@ -403,7 +403,7 @@ export default function ReligiousPracticesPage() {
               <div className="bg-white rounded-lg p-6 shadow-sm">
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">Tamtoc Archaeological Site</h3>
                 <p className="text-gray-600">
-                  This ancient Huastec ceremonial center features structures aligned with astronomical events and includes the Monument of the Scarified Woman, reflecting the site's importance in fertility rituals and goddess worship.
+                  This ancient Huastec ceremonial center includes Monument 32, a huge carved stela that archaeoastronomers interpret as a possible calendar marker, and La Mujer Escarificada (the Scarified Woman), a sculpture found in a ritual offering beside a spring, linked to water and fertility.
                 </p>
                 <p className="text-gray-600 mt-4">
                   <span className="font-semibold">Location:</span> Near Tamuín in the eastern part of the state
@@ -417,9 +417,12 @@ export default function ReligiousPracticesPage() {
 
           {/* Seasonal Ceremonial Calendar */}
           <div className="mt-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
               Indigenous Ceremonial Calendar
             </h2>
+            <p className="text-gray-600 mb-8 text-center max-w-3xl mx-auto">
+              Wixárika ceremonies take place in their home communities in Jalisco and Nayarit, with the pilgrimage leading to Wirikuta in San Luis Potosí. Xantolo is celebrated by the Teenek and Nahua communities of the Huasteca Potosina.
+            </p>
             <div className="overflow-hidden bg-white shadow-md rounded-lg">
               <table className="min-w-full divide-y divide-gray-200">
                 <thead className="bg-gray-50">
@@ -438,7 +441,7 @@ export default function ReligiousPracticesPage() {
                 <tbody className="bg-white divide-y divide-gray-200">
                   <tr>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      Early Dry Season
+                      Dry Season (Oct–Apr)
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                       Wirikuta Pilgrimage
@@ -449,35 +452,35 @@ export default function ReligiousPracticesPage() {
                   </tr>
                   <tr>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      Before Rainy Season
+                      After the Pilgrims Return
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      Tatei Neixa (Dance of Our Mother)
+                      Hikuri Neixa (Peyote Dance)
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-500 hidden md:table-cell">
-                      Preparation of corn fields and petition for favorable rains
+                      Celebrates the pilgrims' return from Wirikuta with the hikuri they collected
                     </td>
                   </tr>
                   <tr>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      Rainy Season
+                      Start of the Rains
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      Hikuli Neixa (Dance of the Peyote)
+                      Namawita Neixa (Sowing Ceremony)
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-500 hidden md:table-cell">
-                      Thanks for rainfall and seeking guidance for successful crop growth
+                      Marks the start of the corn-planting season
                     </td>
                   </tr>
                   <tr>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      Harvest Time
+                      Harvest (Sep–Oct)
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      Namestixa (Toasted Corn Feast)
+                      Tatei Neixa (Drum Festival)
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-500 hidden md:table-cell">
-                      Thanksgiving for harvest and sharing of first fruits with community
+                      Celebrates the first tender corn of the harvest and opens the Wixárika new year
                     </td>
                   </tr>
                   <tr>
@@ -493,35 +496,13 @@ export default function ReligiousPracticesPage() {
                   </tr>
                   <tr>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      November 1-2
+                      October 31 – November 2
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                       Xantolo (Day of the Dead)
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-500 hidden md:table-cell">
                       Honoring ancestors who return to visit the living during this period
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      Winter Solstice
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      Mara'akáme (Shamanic Rituals)
-                    </td>
-                    <td className="px-6 py-4 text-sm text-gray-500 hidden md:table-cell">
-                      Ceremonies for the return of the sun and preparation for the new annual cycle
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      Spring Equinox
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      Awakening of the Earth
-                    </td>
-                    <td className="px-6 py-4 text-sm text-gray-500 hidden md:table-cell">
-                      Rituals at sacred sites to align with solar energy and prepare for planting
                     </td>
                   </tr>
                 </tbody>

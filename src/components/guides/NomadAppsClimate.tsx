@@ -20,7 +20,7 @@ const apps = [
   },
   {
     name: 'DiDi',
-    desc: 'Often 20-30% cheaper than Uber',
+    desc: 'Often cheaper than Uber',
     Icon: TruckIcon,
     color: 'bg-orange-500 text-white',
   },
@@ -38,7 +38,7 @@ const apps = [
   },
   {
     name: 'Mercado Libre',
-    desc: 'Amazon of LatAm — next-day delivery',
+    desc: 'Amazon of LatAm — fast delivery',
     Icon: BriefcaseIcon,
     color: 'bg-yellow-400 text-gray-900',
   },
@@ -67,7 +67,7 @@ export function NomadAppsSection() {
     <section id="apps">
       <h2 className="text-2xl font-bold text-gray-900 mb-2">Apps You'll Need</h2>
       <p className="text-gray-600 mb-6">
-        Install these on day one. All work with foreign credit cards (Wise, Revolut, etc.).
+        Install these on day one. Most accept foreign cards (Wise, Revolut, etc.); banking and CFE apps need a Mexican account or contract.
       </p>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         {apps.map(({ name, desc, Icon, color }) => (
@@ -93,16 +93,16 @@ const seasons = [
   {
     label: 'Spring',
     months: 'Mar – May',
-    temp: '22° / 10°C',
+    temp: '27° / 12°C',
     Icon: SunIcon,
-    desc: 'Warm sunny days, cool nights. Driest months — expect dust. Best time for outdoor exploration.',
+    desc: 'The warmest stretch of the year (May is the hottest month), with cool nights. Dry and dusty until the rains start. Good for outdoor exploration.',
     pack: ['Light layers', 'Sunscreen SPF 50', 'Lip balm'],
     gradient: 'from-amber-400 to-orange-400',
   },
   {
     label: 'Summer',
     months: 'Jun – Sep',
-    temp: '26° / 14°C',
+    temp: '25° / 13°C',
     Icon: CloudArrowDownIcon,
     desc: 'Rainy season — afternoon thunderstorms, lush green landscape. Mornings are perfect.',
     pack: ['Light rain jacket', 'Umbrella', 'Quick-dry shoes'],
@@ -120,7 +120,7 @@ const seasons = [
   {
     label: 'Winter',
     months: 'Dec – Feb',
-    temp: '20° / 4°C',
+    temp: '21° / 6°C',
     Icon: SparklesIcon,
     desc: 'Surprisingly cold nights (sometimes freezing). Most homes have NO heating — layers inside too.',
     pack: ['Warm jacket', 'Thermal layers', 'Hat & scarf for nights'],
@@ -133,8 +133,8 @@ export function NomadClimateSection() {
     <section id="climate">
       <h2 className="text-2xl font-bold text-gray-900 mb-2">Climate & What to Pack</h2>
       <p className="text-gray-600 mb-6">
-        SLP sits at <strong>1,860 m</strong> elevation with a semi-arid climate. Average year-round
-        temp hovers around 18-22°C, but altitude makes nights colder than you'd expect — especially
+        SLP sits at <strong>1,864 m</strong> elevation with a semi-arid climate. The year-round average
+        temperature is about 17°C, and altitude makes nights colder than you'd expect — especially
         Dec–Feb.
       </p>
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">

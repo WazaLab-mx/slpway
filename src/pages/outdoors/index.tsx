@@ -103,7 +103,7 @@ export default function OutdoorsPage() {
                       <li>Trail length: 5-15 km</li>
                     </ul>
                     <p className="text-sm text-gray-500 italic mt-2">
-                      Expert guided treks available through Corazón de Xoconostle, including the popular Picacho de Bernalejo route.
+                      Expert guided treks available through Corazón de Xoconostle.
                     </p>
                   </div>
                   <div>
@@ -147,7 +147,7 @@ export default function OutdoorsPage() {
                     <ul className="mt-2 list-disc list-inside text-gray-600">
                       <li>Parque Tangamanga</li>
                       <li>Historic Center loop</li>
-                      <li>Riverside trails</li>
+                      <li>Parque Bicentenario jogging tracks</li>
                     </ul>
                   </div>
                 </div>
@@ -207,7 +207,7 @@ export default function OutdoorsPage() {
                       <li>Leave no trace principles</li>
                     </ul>
                     <p className="text-sm text-gray-500 italic mt-2">
-                      Special guided camping experiences available with Corazón de Xoconostle, including their popular Xilitla climbing camp.
+                      Guided weekend getaways are available with Corazón de Xoconostle.
                     </p>
                   </div>
                 </div>
@@ -294,8 +294,8 @@ export default function OutdoorsPage() {
                     Historic mining town with colonial architecture and scenic views.
                   </p>
                   <div className="space-y-2 text-sm text-gray-600">
-                    <p><span className="font-semibold">Drive time:</span> 45 minutes</p>
-                    <p><span className="font-semibold">Distance:</span> 35 km</p>
+                    <p><span className="font-semibold">Drive time:</span> 35-40 minutes</p>
+                    <p><span className="font-semibold">Distance:</span> 22 km</p>
                     <p><span className="font-semibold">Highlights:</span> Colonial church, mining history, panoramic views</p>
                   </div>
                 </div>
@@ -319,8 +319,8 @@ export default function OutdoorsPage() {
                     Charming colonial town known for its traditional architecture and local crafts.
                   </p>
                   <div className="space-y-2 text-sm text-gray-600">
-                    <p><span className="font-semibold">Drive time:</span> 1 hour</p>
-                    <p><span className="font-semibold">Distance:</span> 65 km</p>
+                    <p><span className="font-semibold">Drive time:</span> 45-50 minutes</p>
+                    <p><span className="font-semibold">Distance:</span> 45 km</p>
                     <p><span className="font-semibold">Highlights:</span> Colonial buildings, artisan workshops, local cuisine</p>
                   </div>
                 </div>
@@ -344,8 +344,8 @@ export default function OutdoorsPage() {
                     Crystal-clear spring-fed lake perfect for swimming and diving.
                   </p>
                   <div className="space-y-2 text-sm text-gray-600">
-                    <p><span className="font-semibold">Drive time:</span> 2.5 hours</p>
-                    <p><span className="font-semibold">Distance:</span> 180 km</p>
+                    <p><span className="font-semibold">Drive time:</span> 2-2.5 hours</p>
+                    <p><span className="font-semibold">Distance:</span> 150 km</p>
                     <p><span className="font-semibold">Highlights:</span> Swimming, diving, camping, natural beauty</p>
                   </div>
                 </div>
@@ -369,8 +369,8 @@ export default function OutdoorsPage() {
                     UNESCO World Heritage city with colonial architecture and vibrant arts scene.
                   </p>
                   <div className="space-y-2 text-sm text-gray-600">
-                    <p><span className="font-semibold">Drive time:</span> 3 hours</p>
-                    <p><span className="font-semibold">Distance:</span> 220 km</p>
+                    <p><span className="font-semibold">Drive time:</span> 2.5 hours</p>
+                    <p><span className="font-semibold">Distance:</span> 170 km</p>
                     <p><span className="font-semibold">Highlights:</span> Historic center, art galleries, restaurants</p>
                   </div>
                 </div>
@@ -422,8 +422,8 @@ export default function OutdoorsPage() {
                     Home to Edward James' surrealist garden and Huasteca culture.
                   </p>
                   <div className="space-y-2 text-sm text-gray-600">
-                    <p><span className="font-semibold">Drive time:</span> 4 hours</p>
-                    <p><span className="font-semibold">Distance:</span> 280 km</p>
+                    <p><span className="font-semibold">Drive time:</span> 4.5-5 hours</p>
+                    <p><span className="font-semibold">Distance:</span> 315 km</p>
                     <p><span className="font-semibold">Highlights:</span> Las Pozas garden, waterfalls, Huasteca culture</p>
                   </div>
                 </div>

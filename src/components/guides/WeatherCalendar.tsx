@@ -24,7 +24,7 @@ const events = [
   {
     name: 'Procesión del Silencio',
     when: 'Good Friday (March/April)',
-    description: 'Mexico\'s most dramatic Holy Week procession — 2,000 hooded cofrades walking in absolute silence through the Centro. UNESCO Intangible Heritage.',
+    description: 'One of Mexico\'s best-known Holy Week processions — some 30 cofradías and more than 2,000 hooded participants walking in silence through the Centro. Declared intangible cultural heritage of the state in 2013.',
   },
   {
     name: 'Semana Santa',
@@ -33,13 +33,13 @@ const events = [
   },
   {
     name: 'FENAPO',
-    when: 'August (3 weeks)',
-    description: 'Feria Nacional Potosina — Mexico\'s third-largest fair, with concerts (Bad Bunny, Molotov, Luis Miguel past headliners), bullfights, food and rides.',
+    when: 'August (about 3 weeks)',
+    description: 'Feria Nacional Potosina — the state\'s biggest annual fair, with concerts, food and rides. The 2026 edition ran August 7-30.',
   },
   {
     name: 'Día de Muertos',
     when: 'Oct 31 - Nov 2',
-    description: 'Altars in every plaza, traditional pan de muerto, and catrinas marches through the Centro. More intimate than CDMX.',
+    description: 'Altars in plazas and homes, traditional pan de muerto, and Xantolo celebrations across the Huasteca.',
   },
 ];
 

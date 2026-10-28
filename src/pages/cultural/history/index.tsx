@@ -55,33 +55,33 @@ export default function History() {
 
   const timelineEvents = [
     {
-      year: '1592',
-      title: 'City Founding',
-      description: 'San Luis Potosí is founded by Spanish settlers, though indigenous peoples had inhabited the area for centuries.',
-      image: '/images/history/timeline/founding.jpg'
-    },
-    {
-      year: '1593',
+      year: 'March 1592',
       title: 'First Silver Discovery',
       description: 'Gold and silver deposits are discovered at Cerro de San Pedro, marking the beginning of the city\'s mining era.',
       image: '/images/history/timeline/silver.jpg'
     },
     {
-      year: '1656',
+      year: 'November 1592',
+      title: 'City Founding',
+      description: 'San Luis Potosí is formally founded on November 3, 1592, in the valley below the mines, though indigenous peoples had inhabited the area for centuries.',
+      image: '/images/history/timeline/founding.jpg'
+    },
+    {
+      year: '1670',
       title: 'Cathedral Construction',
-      description: 'Construction begins on the Metropolitan Cathedral, a symbol of the city\'s religious and architectural heritage.',
+      description: 'Construction begins on the building that is today the Metropolitan Cathedral (completed in 1730), a symbol of the city\'s religious and architectural heritage.',
       image: '/images/history/timeline/cathedral.jpg'
     },
     {
       year: '1810',
       title: 'Independence Movement',
-      description: 'San Luis Potosí becomes a key strategic point in Mexico\'s War of Independence.',
+      description: 'Brigadier Félix María Calleja raises in San Luis Potosí the royalist army that would confront Hidalgo\'s insurgents in Mexico\'s War of Independence.',
       image: '/images/history/timeline/independence.jpg'
     },
     {
       year: '1910',
       title: 'Mexican Revolution',
-      description: 'The city plays a crucial role in the Mexican Revolution as a center for political meetings and military movements.',
+      description: 'Francisco I. Madero, held in San Luis Potosí after his arrest, issues the Plan de San Luis (dated October 5, 1910), the call to arms that launched the Mexican Revolution.',
       image: '/images/history/timeline/revolution.jpg'
     },
     {
@@ -204,10 +204,10 @@ export default function History() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="prose max-w-none">
                 <p>
-                  San Luis Potosí was founded in 1592 by Spanish settlers, though the area had been inhabited by indigenous peoples for centuries before. The city's name combines two elements: "San Luis" in honor of King Louis IX of France, and "Potosí" after the rich silver mines of Potosí in Bolivia, which the Spanish hoped to replicate here.
+                  San Luis Potosí was formally founded on November 3, 1592, by Spanish captains Miguel Caldera and Juan de Oñate, though the area had been inhabited by indigenous peoples for centuries before. The city's name combines two elements: "San Luis" in honor of King Louis IX of France, and "Potosí" after the rich silver mines of Potosí in Bolivia, which the Spanish hoped to replicate here.
                 </p>
                 <p>
-                  The founding of the city was driven by the discovery of rich silver deposits in the Cerro de San Pedro area. This discovery attracted miners, merchants, and settlers, transforming the region into one of New Spain's most important mining centers.
+                  The founding of the city was driven by the discovery of rich gold and silver deposits at Cerro de San Pedro in March 1592; because the hill lacked water, the town was laid out in the valley below. This discovery attracted miners, merchants, and settlers, transforming the region into one of New Spain's most important mining centers.
                 </p>
               </div>
               <div className="relative h-[300px] rounded-lg overflow-hidden">
@@ -228,16 +228,16 @@ export default function History() {
               {[
                 {
                   name: 'San Miguelito',
-                  description: 'Known for its colonial architecture and traditional markets, San Miguelito is one of the oldest neighborhoods in the city.',
+                  description: 'Known for its colonial architecture, San Miguelito is one of the oldest neighborhoods in the city.',
                   image: '/images/history/barrios/san-miguelito.jpg',
-                  details: 'San Miguelito features some of the city\'s most well-preserved colonial buildings and hosts weekly traditional markets that have been operating for centuries.',
+                  details: 'San Miguelito features some of the city\'s most well-preserved colonial buildings.',
                   style: 'bg-gradient-to-br from-blue-50 to-blue-100 border-l-4 border-blue-500'
                 },
                 {
                   name: 'San Sebastián',
                   description: 'Famous for its historic churches and traditional festivals, this barrio maintains strong cultural traditions.',
                   image: '/images/history/barrios/san-sebastian.jpg',
-                  details: 'The barrio is home to the historic San Sebastián Church and hosts the annual Festival of San Sebastián, one of the city\'s most important religious celebrations.',
+                  details: 'The barrio is home to the historic San Sebastián Church and celebrates its patron saint\'s feast each January.',
                   style: 'bg-gradient-to-br from-purple-50 to-purple-100 border-l-4 border-purple-500'
                 },
                 {
@@ -321,11 +321,11 @@ export default function History() {
                       {[
                         {
                           name: 'San Miguelito',
-                          details: 'San Miguelito features some of the city\'s most well-preserved colonial buildings and hosts weekly traditional markets that have been operating for centuries.'
+                          details: 'San Miguelito features some of the city\'s most well-preserved colonial buildings.'
                         },
                         {
                           name: 'San Sebastián',
-                          details: 'The barrio is home to the historic San Sebastián Church and hosts the annual Festival of San Sebastián, one of the city\'s most important religious celebrations.'
+                          details: 'The barrio is home to the historic San Sebastián Church and celebrates its patron saint\'s feast each January.'
                         },
                         {
                           name: 'San Juan de Guadalupe',
@@ -454,10 +454,10 @@ export default function History() {
             <h2 className="text-3xl font-bold text-gray-900 mb-8">Independence and Revolution</h2>
             <div className="prose max-w-none">
               <p>
-                San Luis Potosí played significant roles in both Mexico's War of Independence and the Mexican Revolution. During the independence movement, the city was a key strategic point, and several important battles were fought in the region.
+                San Luis Potosí played significant roles in both Mexico's War of Independence and the Mexican Revolution. During the independence movement, Brigadier Félix María Calleja raised in San Luis Potosí the royalist army that confronted Hidalgo's insurgents, while insurgent supporters worked to bring the province into the uprising.
               </p>
               <p>
-                In the Mexican Revolution, San Luis Potosí was the site of important political meetings and military movements. The city's strategic location and economic importance made it a crucial center for revolutionary activities.
+                In 1910, Francisco I. Madero was jailed in San Luis Potosí and then confined to the city on bail; the Plan de San Luis, dated in the city on October 5, 1910, called for the uprising of November 20 that began the Mexican Revolution.
               </p>
             </div>
           </section>
@@ -496,10 +496,10 @@ export default function History() {
               <div className="bg-white rounded-xl shadow-lg p-6">
                 <div className="flex items-center mb-3">
                   <CultureIcon className="w-6 h-6 text-red-600 mr-2" />
-                  <h3 className="text-xl font-semibold">Cultural Capital</h3>
+                  <h3 className="text-xl font-semibold">Cradle of the Revolution</h3>
                 </div>
                 <p className="text-gray-600">
-                  San Luis Potosí was named the American Capital of Culture in 2006.
+                  Madero's Plan de San Luis (1910), which launched the Mexican Revolution, takes its name from the city.
                 </p>
               </div>
               <div className="bg-white rounded-xl shadow-lg p-6">
@@ -508,7 +508,7 @@ export default function History() {
                   <h3 className="text-xl font-semibold">Historic Architecture</h3>
                 </div>
                 <p className="text-gray-600">
-                  The city has over 1,500 historic buildings in its colonial center.
+                  The colonial center was declared a federal Zona de Monumentos Históricos in 1990.
                 </p>
               </div>
               <div className="bg-white rounded-xl shadow-lg p-6">

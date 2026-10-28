@@ -15,11 +15,11 @@ export default function MusicDancePage() {
   const faqs = [
     {
       question: 'What is Huapango?',
-      answer: 'Huapango is the traditional music of the Huasteca Potosina region — characterized by violin, jarana, and quinta huapanguera (guitars), with falsetto singing and zapateado (foot stomping dance). Xilitla and Ciudad Valles host annual Huapango festivals.',
+      answer: 'Huapango is the traditional music of the Huasteca Potosina region — characterized by violin, jarana, and quinta huapanguera (guitars), with falsetto singing and zapateado (foot stomping dance). Xilitla hosts the annual 48 Horas de Huapango marathon, and Tamazunchale holds a national huapango contest during its Feria Nacional del Huapango.',
     },
     {
       question: 'Where can I see traditional dance in San Luis Potosí?',
-      answer: 'At the Festival de Primavera (April), FENAPO (August), and cultural events at Centro de las Artes. During Xantolo (November), the Huasteca comes alive with traditional dances like the Danza de los Huehues and Danza de los Viejitos.',
+      answer: 'At the Festival de Primavera (April), FENAPO (August), and cultural events at Centro de las Artes. During Xantolo (November), the Huasteca comes alive with traditional dances such as the masked comparsas of Huehues (the "old ones").',
     },
     {
       question: 'What is the Danza de los Huehues?',
@@ -39,7 +39,7 @@ export default function MusicDancePage() {
     mariachi: {
       name: "Mariachi",
       description: "The iconic sound of Mexico, featuring trumpets, violins, and guitars",
-      origins: "Jalisco, 18th century",
+      origins: "Western Mexico (Jalisco and neighboring states), 19th century; UNESCO Intangible Cultural Heritage since 2011",
       characteristics: [
         "Typically 6-8 musicians in traditional charro suits",
         "Features trumpets, violins, guitars, vihuela, and guitarrón",
@@ -53,7 +53,7 @@ export default function MusicDancePage() {
         "Show respect during Mexican national anthem performances"
       ],
       whereToExperience: [
-        "Plaza de Armas on weekend evenings",
+        "Centro Histórico plazas, where strolling musicians often play",
         "Traditional restaurants and cantinas",
         "Festivals and celebrations throughout the year",
         "Private events and serenades (can be hired)"
@@ -77,7 +77,7 @@ export default function MusicDancePage() {
       ],
       whereToExperience: [
         "Huasteca Potosina cultural events",
-        "Traditional festivals in Ciudad Valles and Tamazunchale",
+        "Xilitla's 48 Horas de Huapango and Tamazunchale's Feria Nacional del Huapango",
         "Cultural centers showcasing regional traditions",
         "Special performances during Xantolo (Day of the Dead)"
       ]
@@ -155,7 +155,7 @@ export default function MusicDancePage() {
     {
       name: "Danza de los Concheros",
       aka: "Aztec Dance",
-      description: "Pre-Hispanic ceremonial dance with indigenous roots",
+      description: "Ceremonial dance blending pre-Hispanic and Catholic traditions",
       attire: "Feathered headdresses, traditional indigenous costumes",
       significance: "Spiritual connection to indigenous ancestors and traditions"
     }
@@ -436,7 +436,7 @@ export default function MusicDancePage() {
                 <ul className="space-y-3 text-gray-600">
                   <li className="flex items-start gap-2">
                     <span className="text-amber-500">•</span>
-                    Plaza de Armas on weekend evenings for mariachi
+                    Centro Histórico plazas and restaurants for mariachi
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-amber-500">•</span>

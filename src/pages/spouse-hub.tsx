@@ -10,19 +10,19 @@ import AdUnit from '@/components/common/AdUnit';
 
 const activities = [
   { category: 'fitnessWellness', icon: '🧘', items: [
-    { name: 'Yoga Classes', location: 'Casa Tibet SLP, Lomas studios', schedule: 'Morning & evening classes', note: 'Many instructors speak English' },
+    { name: 'Yoga Classes', location: 'Independent studios in Lomas, Polanco and other areas', schedule: 'Morning & evening classes', note: 'Ask whether classes are offered in English' },
     { name: 'Pilates', location: 'Multiple studios in Lomas', schedule: 'Flexible schedules', note: 'Private sessions available' },
-    { name: 'CrossFit', location: 'CrossFit Lomas, CrossFit Potosí', schedule: 'Various time slots', note: 'Great expat community' },
-    { name: 'Swimming', location: 'Club Campestre, La Loma', schedule: 'Open access with membership', note: 'Year-round pools' },
+    { name: 'CrossFit', location: 'Affiliated boxes across the city (see the CrossFit.com gym finder)', schedule: 'Various time slots', note: 'Classes are usually in Spanish' },
+    { name: 'Swimming', location: 'Private sports clubs and gyms with pools', schedule: 'Varies by club', note: 'Most require a membership' },
   ]},
   { category: 'artsCreativity', icon: '🎨', items: [
-    { name: 'Painting & Art Classes', location: 'Centro de las Artes, private studios', schedule: 'Weekly sessions', note: 'Beginner-friendly' },
+    { name: 'Painting & Art Classes', location: 'Centro de las Artes de San Luis Potosí, private studios', schedule: 'Weekly sessions', note: 'Beginner-friendly' },
     { name: 'Pottery & Ceramics', location: 'Talleres in Centro', schedule: 'Flexible', note: 'Traditional Mexican techniques' },
     { name: 'Photography Workshops', location: 'Various locations', schedule: 'Weekend intensives', note: 'Explore beautiful SLP' },
     { name: 'Cooking Classes', location: 'Private kitchens, cooking schools', schedule: 'By appointment', note: 'Learn Mexican cuisine' },
   ]},
   { category: 'languageCulture', icon: '📚', items: [
-    { name: 'Spanish Classes', location: 'Berlitz, private tutors, online', schedule: 'Customizable', note: 'Essential for integration' },
+    { name: 'Spanish Classes', location: 'Berlitz (Av. Carranza 2065), private tutors, online', schedule: 'Customizable', note: 'Essential for integration' },
     { name: 'Language Exchange', location: 'Cafes, online groups', schedule: 'Weekly meetups', note: 'Practice with locals' },
     { name: 'Cultural Tours', location: 'Centro Histórico, Huasteca', schedule: 'Weekends', note: 'Deep dive into history' },
     { name: 'Book Clubs', location: 'English-speaking groups', schedule: 'Monthly', note: 'Connect over literature' },
@@ -30,26 +30,25 @@ const activities = [
 ];
 
 const volunteerOpportunities = [
-  { org: 'Casa Hogar Para Niños', cause: 'Children\'s Home', description: 'Support orphaned and vulnerable children through activities, tutoring, and care.', commitment: '4-8 hrs/week', englishFriendly: true },
-  { org: 'Banco de Alimentos', cause: 'Food Bank', description: 'Help sort and distribute food to families in need across San Luis Potosí.', commitment: '2-4 hrs/week', englishFriendly: false },
-  { org: 'Cruz Roja SLP', cause: 'Red Cross', description: 'Various programs from disaster relief to community health initiatives.', commitment: 'Flexible', englishFriendly: true },
-  { org: 'Animal Shelters', cause: 'Animal Welfare', description: 'Help care for rescued animals, organize adoption events, foster pets.', commitment: 'Flexible', englishFriendly: true },
+  { org: 'Children\'s Homes (Casas Hogar)', cause: 'Children\'s Home', description: 'Support orphaned and vulnerable children through activities, tutoring, and care.', commitment: 'Varies by home', englishFriendly: false },
+  { org: 'Food Banks', cause: 'Food Bank', description: 'Help sort and distribute food to families in need. Mexico\'s national food bank network is Red BAMX.', commitment: 'Flexible', englishFriendly: false },
+  { org: 'Cruz Roja Mexicana (SLP)', cause: 'Red Cross', description: 'Various programs from disaster relief to community health initiatives.', commitment: 'Flexible', englishFriendly: false },
+  { org: 'Animal Shelters', cause: 'Animal Welfare', description: 'Help care for rescued animals, organize adoption events, foster pets.', commitment: 'Flexible', englishFriendly: false },
   { org: 'English Teaching', cause: 'Education', description: 'Volunteer to teach English at public schools or community centers.', commitment: '2-6 hrs/week', englishFriendly: true },
-  { org: 'Environmental Groups', cause: 'Conservation', description: 'Tree planting, cleanup events, and sustainability education.', commitment: 'Monthly events', englishFriendly: true },
+  { org: 'Environmental Groups', cause: 'Conservation', description: 'Tree planting, cleanup events, and sustainability education.', commitment: 'Varies', englishFriendly: false },
 ];
 
 const momGroups = [
-  { name: 'SLP International Moms', platform: 'WhatsApp/Facebook', members: '150+', description: 'The main group for expat mothers. Playdates, school advice, recommendations, and emotional support.', languages: ['English', 'Spanish'] },
-  { name: 'German-Speaking Families', platform: 'WhatsApp', members: '80+', description: 'German, Austrian, and Swiss families. Cultural events, language playgroups, holiday celebrations.', languages: ['German', 'English'] },
-  { name: 'Japanese Community SLP', platform: 'Private', members: '60+', description: 'Japanese families connected through companies. Cultural activities and support network.', languages: ['Japanese', 'English'] },
-  { name: 'Terranova Parent Community', platform: 'School-based', members: '200+', description: 'Parents of Colegio Terranova students. School events, carpooling, social activities.', languages: ['English', 'Spanish'] },
+  { name: 'School Parent Communities', platform: 'School-based', description: 'International and bilingual schools such as Colegio Internacional Terranova have parent networks for school events, carpooling and social activities.', languages: ['English', 'Spanish'] },
+  { name: 'Company Spouse Networks', platform: 'Via HR', description: 'Many multinational employers connect relocating families through HR or relocation providers. Ask your partner\'s company.', languages: ['Varies'] },
+  { name: 'Expat Facebook & WhatsApp Groups', platform: 'Facebook / WhatsApp', description: 'Online groups for expats in San Luis Potosí share playdates, school advice and recommendations. Most are private and need an admin to approve you.', languages: ['English', 'Spanish'] },
 ];
 
 const workIdeas = [
   { category: 'remoteWork', icon: '💻', ideas: [
     { title: 'Freelance Writing/Editing', description: 'Content creation, copywriting, translation services for global clients.', platforms: 'Upwork, Fiverr, LinkedIn' },
     { title: 'Virtual Assistant', description: 'Administrative support, scheduling, email management for entrepreneurs.', platforms: 'Belay, Time Etc, direct clients' },
-    { title: 'Online Teaching', description: 'Teach English, your native language, or professional skills online.', platforms: 'VIPKid, iTalki, Outschool' },
+    { title: 'Online Teaching', description: 'Teach English, your native language, or professional skills online.', platforms: 'Preply, iTalki, Outschool' },
     { title: 'Graphic Design', description: 'Create designs for businesses, social media, marketing materials.', platforms: 'Canva, 99designs, direct clients' },
   ]},
   { category: 'localOpportunities', icon: '🏪', ideas: [
@@ -64,37 +63,6 @@ const workIdeas = [
     { title: 'Content Creation', description: 'Blog, YouTube, Instagram about expat life in Mexico. Monetize your experience.', platforms: 'All social platforms' },
     { title: 'Consulting in Your Field', description: 'Continue your career remotely as a consultant in your area of expertise.', platforms: 'LinkedIn, industry networks' },
   ]},
-];
-
-const successStories = [
-  {
-    name: 'Sarah M.',
-    country: '🇺🇸 USA',
-    years: 3,
-    quote: 'I went from crying in my apartment to running a thriving expat consulting business. The key was saying yes to every coffee invitation and joining a Spanish class. Now I help other newcomers avoid my early mistakes.',
-    now: 'Founder, SLP Expat Services',
-  },
-  {
-    name: 'Anna K.',
-    country: '🇩🇪 Germany',
-    years: 4,
-    quote: 'The first year was brutal. I missed my career, my friends, everything. Then I started volunteering at a children\'s home. It gave me purpose. I found my community. My Spanish improved. Now I can\'t imagine leaving.',
-    now: 'Volunteer coordinator & Spanish teacher',
-  },
-  {
-    name: 'Yuki T.',
-    country: '🇯🇵 Japan',
-    years: 2,
-    quote: 'I was terrified of the language barrier. But Mexican people are so warm. I started a small Japanese cooking class for expats and locals. It became my social life, my income, and my identity here.',
-    now: 'Cooking instructor & food blogger',
-  },
-  {
-    name: 'María José R.',
-    country: '🇪🇸 Spain',
-    years: 5,
-    quote: 'Even speaking Spanish, it was hard. The culture is different. I found my tribe through the mom groups and yoga. Now my kids are bilingual, I have deep friendships, and SLP feels like home.',
-    now: 'Yoga instructor & mom of 3',
-  },
 ];
 
 export default function SpouseHubPage() {
@@ -334,9 +302,7 @@ export default function SpouseHubPage() {
                         </div>
                       </div>
                       <div className="text-center md:text-right">
-                        <p className="text-3xl font-bold text-rose-600">{group.members}</p>
-                        <p className="text-sm text-gray-500">{t('spouseHub.momGroups.members')}</p>
-                        <p className="text-xs text-gray-400 mt-1">{group.platform}</p>
+                        <p className="text-sm text-gray-500">{group.platform}</p>
                       </div>
                     </div>
                   </div>
@@ -413,34 +379,6 @@ export default function SpouseHubPage() {
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                   {t('spouseHub.stories.subtitle')}
                 </p>
-              </div>
-
-              <div className="space-y-8">
-                {successStories.map((story, index) => (
-                  <div key={story.name} className={`bg-white rounded-2xl shadow-lg overflow-hidden ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} md:flex`}>
-                    <div className={`md:w-1/3 p-8 flex flex-col justify-center items-center text-center ${
-                      index % 4 === 0 ? 'bg-gradient-to-br from-rose-500 to-pink-500' :
-                      index % 4 === 1 ? 'bg-gradient-to-br from-purple-500 to-indigo-500' :
-                      index % 4 === 2 ? 'bg-gradient-to-br from-amber-500 to-orange-500' :
-                      'bg-gradient-to-br from-teal-500 to-emerald-500'
-                    }`}>
-                      <div className="text-5xl mb-3">{story.country}</div>
-                      <h3 className="text-2xl font-bold text-white mb-1">{story.name}</h3>
-                      <p className="text-white/80 text-sm">{story.years} {t('spouseHub.stories.yearsInSLP')}</p>
-                      <p className="text-white/90 font-medium mt-3">{story.now}</p>
-                    </div>
-                    <div className="md:w-2/3 p-8 flex items-center">
-                      <div>
-                        <svg className="w-10 h-10 text-gray-300 mb-4" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                        </svg>
-                        <p className="text-gray-700 text-lg leading-relaxed italic">
-                          {story.quote}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
               </div>
 
               <div className="mt-12 bg-gradient-to-r from-rose-500 to-purple-500 rounded-2xl p-8 text-white text-center">

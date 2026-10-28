@@ -1,29 +1,29 @@
 {
   "banner": {
-    "badge": "Night race · Sat Oct 17",
+    "badge": "Night race · held Sat Oct 17",
     "title": "Carrera Real del Potosí 2026",
-    "text": "3K, 6K and 10K after dark in Parque Tangamanga I, 7:00 p.m. start.",
+    "text": "3K, 6K and 10K were run after dark in Parque Tangamanga I, with a 7:00 p.m. start.",
     "cta": "See the guide"
   },
   "seo": {
-    "title": "Carrera Real del Potosí 2026: Date, Distances, Fee & Race Kit",
-    "description": "Guide to the Carrera Real del Potosí 2026 (5th edition): a night race on Saturday, October 17 at 7:00 p.m. in Parque Tangamanga I. 3K, 6K and 10K, $375 MXN online registration, kit with a light-up wristband and medal.",
+    "title": "Carrera Real del Potosí 2026: Night Race Recap, Distances & Kit",
+    "description": "Recap of the Carrera Real del Potosí 2026 (5th edition): a night race held on Saturday, October 17 at 7:00 p.m. in Parque Tangamanga I. 3K, 6K and 10K, $375 MXN online registration, kit with a light-up wristband and medal.",
     "keywords": "carrera real del potosi 2026, night race san luis potosi, tangamanga night run, october 17 race san luis potosi"
   },
   "hero": {
     "eyebrow": "5th edition · night race",
     "subtitle": "3K, 6K and 10K under the lights of Parque Tangamanga I",
-    "description": "The fifth Carrera Real del Potosí runs at night. Start and finish are on Av. Artesanos, in front of the planetarium, and the kit includes a light-up wristband and a medal.",
+    "description": "The fifth Carrera Real del Potosí was run at night on October 17. Start and finish were on Av. Artesanos, in front of the planetarium, and the kit included a light-up wristband and a medal.",
     "date": "Saturday, October 17, 2026",
     "time": "Start 7:00 p.m.",
     "location": "Parque Tangamanga I · Av. Artesanos, in front of the planetarium",
-    "ctaRegister": "Register online",
+    "ctaRegister": "Official event page",
     "ctaGuide": "See details",
     "alt": "Parque Tangamanga entrance lit up at night"
   },
   "status": {
-    "title": "What hasn't been published yet",
-    "description": "The official registration page doesn't list a course map, categories, awards, or the date and place for kit pickup. Check the registration page before Saturday."
+    "title": "This race has already taken place",
+    "description": "The Carrera Real del Potosí 2026 was held on Saturday, October 17. When we last checked (October 27), the official event page listed no results, course map, categories or awards."
   },
   "facts": {
     "title": "The essentials",
@@ -35,14 +35,14 @@
     ]
   },
   "kit": {
-    "title": "What's in the race kit",
+    "title": "What was in the race kit",
     "items": ["Shirt", "Medal", "Bib", "Timing chip", "Light-up wristband", "Surprise gift"],
-    "sizes": "Shirt sizes from XS to 3XL–6XL; you pick yours when you register."
+    "sizes": "Shirt sizes ran from XS to 3XL–6XL, chosen at registration."
   },
   "registration": {
-    "title": "Registration",
-    "description": "Online only, on the Tu Tiempo a Tiempo timing platform. Choose your distance and size, then pay $375 MXN.",
-    "policy": "Entries are personal, non-transferable and non-refundable. If the event is cancelled by the authorities or force majeure, the organizers will announce the options."
+    "title": "How registration worked",
+    "description": "Registration was online only, on the Tu Tiempo a Tiempo timing platform: runners chose a distance and shirt size and paid $375 MXN.",
+    "policy": "Entries were personal, non-transferable and non-refundable."
   },
   "tips": {
     "title": "Tips for running at night",
@@ -56,20 +56,20 @@
   "faq": {
     "title": "Frequently asked questions",
     "items": [
-      { "q": "When is the Carrera Real del Potosí 2026?", "a": "Saturday, October 17, 2026 at 7:00 p.m. It's the fifth edition and it's run at night." },
-      { "q": "Where is the start?", "a": "In Parque Tangamanga I, on Av. Artesanos in front of the planetarium. The finish is in the same spot." },
-      { "q": "How much is it and what distances are there?", "a": "$375 MXN for any of the three distances: 3 km, 6 km or 10 km." },
-      { "q": "How do I register?", "a": "Online at tutiempoatiempo.com: pick your distance and shirt size and pay. Entries are personal, non-transferable and non-refundable." },
-      { "q": "What's in the kit?", "a": "A shirt, medal, bib, timing chip, light-up wristband and a surprise gift." }
+      { "q": "When was the Carrera Real del Potosí 2026?", "a": "On Saturday, October 17, 2026 at 7:00 p.m. It was the fifth edition and it was run at night." },
+      { "q": "Where were the start and finish?", "a": "In Parque Tangamanga I, on Av. Artesanos in front of the planetarium. The finish was in the same spot." },
+      { "q": "How much was it and what distances were there?", "a": "$375 MXN for any of the three distances: 3 km, 6 km or 10 km." },
+      { "q": "How did registration work?", "a": "Online at tutiempoatiempo.com: runners picked a distance and shirt size and paid. Entries were personal, non-transferable and non-refundable. Registration is closed because the event has ended." },
+      { "q": "What was in the kit?", "a": "A shirt, medal, bib, timing chip, light-up wristband and a surprise gift." }
     ]
   },
   "sources": {
     "title": "Sources",
-    "description": "Facts verified on October 12, 2026 against the official registration page and the 5th-edition race poster.",
-    "official": "Official registration page (Tu Tiempo a Tiempo)"
+    "description": "Facts verified on October 12, 2026 against the official registration page and the 5th-edition race poster; event status rechecked on October 27, 2026.",
+    "official": "Official event page (Tu Tiempo a Tiempo)"
   },
   "actions": {
-    "official": "Register",
+    "official": "See the event on Tu Tiempo a Tiempo",
     "halfMarathon": "Half marathon on November 8",
     "tangamanga": "Parque Tangamanga guide"
   }

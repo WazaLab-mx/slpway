@@ -32,7 +32,7 @@ const facts = [
     Icon: CurrencyDollarIcon,
     label: 'Currency',
     value: 'MXN',
-    hint: '~$18 MXN per 1 USD',
+    hint: '~$18.6 MXN per 1 USD (Oct 2026)',
     color: 'from-blue-500 to-cyan-500',
   },
   {

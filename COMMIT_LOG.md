@@ -1,5 +1,29 @@
 # Commit Log
 
+## 2026-10-27 — fix: fact-check round 2 (food, wine, nomad, spouse, culture subpages, family/outdoors/visit, 10 event pages) + cost-of-living FX
+- The same method as round 1 (two external sources per claim; per-page reports in the session scratchpad `factcheck/`). 2,040+ locale patch entries applied via `apply_patches.py`, with no conflicts.
+- Owner decisions applied:
+  - Corazón de Xoconostle package prices were removed everywhere (weekend-getaways, ToursAndExperiences, ExtendedItinerary) and replaced with "Call to confirm current prices".
+  - Cost-of-living USD figures were recomputed at the Banxico FIX of 18.65 (set 27 Oct 2026).
+  - The legacy /living-guide and /expat-guide pages were kept.
+- Worst findings:
+  - potosino-wine-scene was mostly fabricated: 8 of 9 wineries, all 3 regions, both festivals and the tour operators. It now lists Cava Quintanilla, Pozo de Luna, Bodega 1881 and Viña Cordelia, plus the Festival Internacional del Vino in May.
+  - The foodie guide had invented restaurants and founder quotes.
+  - Spouse hub had invented testimonials and mom groups.
+  - The nomad guide listed "Impact Hub SLP", which does not exist.
+  - Family activities listed invented venues: Jumparks, Lost Box, Jaulas Mont Park.
+  - The history page claimed SLP was "American Capital of Culture 2006"; it was Córdoba.
+  - The visit page used the airport code BJX, wrote "Callejón de los Besos" and called the city a "UNESCO candidate".
+- Events:
+  - Past events (Cara Sucia, Real del Potosí, UASLP half, Tangamanga marathon) are rewritten in the past tense with no registration or ticket CTAs.
+  - Tangamanga marathon logistics corrected from the official convocatoria.
+  - 2025 dates removed from the Feria de la Enchilada page.
+- Still open:
+  - The web-search quota ran out, so customs-etiquette, the LiveMusicVenues component, MoneyAndCosts prices and the La Legendaria beer lineup were softened rather than verified.
+  - Stale unused JSON keys remain.
+  - The Tangamanga post-event banner is hardcoded Spanish.
+- Tests 608/608; tsc shows only the 4 pre-existing errors.
+
 ## 2026-10-27 — fix: site-wide fact-check of 3 blog posts + 19 static pages
 - Method: every claim needed two external (non-sanluisway) sources. Wrong items were fixed, unverifiable ones were softened or removed, and all 4 locales were patched. Per-page reports live in the session scratchpad (`factcheck/*.md`). Blog reports are in `public/factchecks/` (best-hikes, family-camping, xantolo).
 - Blog (Supabase, already live):

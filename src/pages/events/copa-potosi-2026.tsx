@@ -22,6 +22,8 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => ({
 // - atleticodesanluis.mx / TUDN (Estadio Alfonso Lastras renamed Estadio
 //   Libertad Financiera in January 2026).
 // 2027 edition NOT announced as of July 2026 — marked TBD below.
+// Rechecked 2026-10-27: removed the unsourced "biggest amateur tournament"
+// superlative and the stale invitation to the (already held) UASLP race.
 
 const GROUPS_MEN: Record<string, string[]> = {
   A: ['Villa de Arriaga', 'Epoxipisos', 'Chivas', 'Naranjeros'],
@@ -66,7 +68,7 @@ export default function CopaPotosi2026() {
     {
       date: L('Por definir', 'TBD'),
       phase: L('Copa Potosí 2027', 'Copa Potosí 2027'),
-      detail: L('A julio de 2026 no hay convocatoria ni fechas anunciadas para la edición 2027. Actualizaremos esta página cuando Inpode publique la convocatoria.', 'As of July 2026 there is no announced call or dates for the 2027 edition. We will update this page when Inpode publishes the convocatoria.'),
+      detail: L('No hemos visto convocatoria ni fechas oficiales para la edición 2027. Actualizaremos esta página cuando Inpode publique la convocatoria.', 'We have not seen an official call or dates for the 2027 edition. We will update this page when Inpode publishes the convocatoria.'),
     },
   ];
 
@@ -246,8 +248,8 @@ export default function CopaPotosi2026() {
             <h1 className="text-4xl md:text-6xl font-bold font-serif mb-3">Copa Potosí 2026</h1>
             <h2 className="text-xl md:text-2xl text-emerald-300 font-semibold mb-5">
               {L(
-                'Calendario, resultados y campeones del torneo amateur más grande del país',
-                'Schedule, results and champions of Mexico’s biggest amateur tournament'
+                'Calendario, resultados y campeones del torneo de futbol amateur del Estado',
+                'Schedule, results and champions of the state’s amateur football tournament'
               )}
             </h2>
             <p className="text-lg text-white/85 max-w-2xl mb-8">
@@ -407,16 +409,16 @@ export default function CopaPotosi2026() {
           </h2>
           <p className="text-white/85 mb-8">
             {L(
-              'El calendario deportivo potosino no para: revisa el Medio Maratón UASLP (27 de septiembre) o lo que hay esta semana.',
-              'SLP’s sports calendar never stops: check out the UASLP Half Marathon (September 27) or what’s on this week.'
+              'El calendario deportivo potosino sigue: el Medio Maratón La Capital del Deporte se corre el 8 de noviembre. También revisa lo que hay esta semana.',
+              'SLP’s sports calendar keeps going: the La Capital del Deporte Half Marathon runs on November 8. Or see what’s on this week.'
             )}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              href="/events/medio-maraton-uaslp-2026"
+              href="/events/medio-maraton-capital-del-deporte-2026"
               className="bg-emerald-500 hover:bg-emerald-400 text-gray-950 font-bold px-8 py-4 rounded-full transition-colors"
             >
-              {L('Medio Maratón UASLP 2026', 'UASLP Half Marathon 2026')}
+              {L('Medio Maratón La Capital del Deporte 2026', 'La Capital del Deporte Half Marathon 2026')}
             </Link>
             <Link
               href="/events/this-week"

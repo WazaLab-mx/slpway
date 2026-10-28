@@ -5,23 +5,23 @@ const souvenirs = [
   {
     name: 'Rebozo',
     emoji: '🧣',
-    img: '/images/cultural/culinary-traditions.jpg',
-    description: 'Traditional silk or cotton shawls hand-woven in Santa María del Río — a UNESCO intangible heritage craft.',
-    price: '$200 - 800 MXN',
+    img: '/images/blog/potosino-art/rebozos-santa-maria.jpg',
+    description: 'Traditional silk or cotton shawls hand-woven in Santa María del Río — declared intangible cultural heritage of the state of San Luis Potosí (2016).',
+    price: 'Varies by fiber and work',
   },
   {
     name: 'Chocolates Costanzo',
     emoji: '🍫',
     img: '/images/brands/chocolates-costanzo.jpg',
-    description: 'The city\'s beloved artisan chocolatier since 1929. Signature chocolate bars, bombones and drinking chocolate.',
+    description: 'The city\'s beloved chocolatier since 1930. Signature chocolate bars, bombones and drinking chocolate.',
     price: '$80 - 300 MXN',
   },
   {
-    name: 'Mezcal Laguna Seca',
+    name: 'Mezcal potosino',
     emoji: '🥃',
     img: '/images/brands/la-legendaria-logo.png',
-    description: 'Small-batch mezcal from the Altiplano region, made from wild-harvested salmiana agave.',
-    price: '$400 - 900 MXN',
+    description: 'Small-batch mezcal from the Altiplano region, made mainly from salmiana agave.',
+    price: 'Varies by brand',
   },
   {
     name: 'Cajeta Coronado',
@@ -29,20 +29,6 @@ const souvenirs = [
     img: '/images/brands/productos-don-tacho.jpg',
     description: 'Classic Mexican goat-milk caramel — perfect on toast, ice cream or eaten straight from the jar.',
     price: '$60 - 150 MXN',
-  },
-  {
-    name: 'Ron Potosí',
-    emoji: '🍹',
-    img: '/images/brands/ron-potosi.jpg',
-    description: 'Locally produced aged rum with smooth vanilla and oak notes. A distinctive gift from the region.',
-    price: '$350 - 700 MXN',
-  },
-  {
-    name: 'Cerámica Aguas de Lourdes',
-    emoji: '🏺',
-    img: '/images/brands/aguas-de-lourdes.jpg',
-    description: 'Hand-painted artisan pottery and ceramic water jars from a generations-old local workshop.',
-    price: '$150 - 900 MXN',
   },
 ];
 

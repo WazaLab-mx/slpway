@@ -1,29 +1,29 @@
 {
   "banner": {
-    "badge": "Carrera nocturna · sábado 17 oct",
+    "badge": "Carrera nocturna · fue el sáb 17 oct",
     "title": "Carrera Real del Potosí 2026",
-    "text": "3K, 6K y 10K de noche en el Parque Tangamanga I, salida 7:00 p. m.",
+    "text": "Se corrieron 3K, 6K y 10K de noche en el Parque Tangamanga I, con salida a las 7:00 p.m.",
     "cta": "Ver guía"
   },
   "seo": {
-    "title": "Carrera Real del Potosí 2026: fecha, distancias, costo y kit",
-    "description": "Guía de la Carrera Real del Potosí 2026 (quinta edición): carrera nocturna el sábado 17 de octubre a las 7:00 p. m. en el Parque Tangamanga I. 3K, 6K y 10K, inscripción $375 MXN en línea, kit con pulsera de luz y medalla.",
+    "title": "Carrera Real del Potosí 2026: resumen de la carrera nocturna, distancias y kit",
+    "description": "Resumen de la Carrera Real del Potosí 2026 (quinta edición): carrera nocturna celebrada el sábado 17 de octubre a las 7:00 p.m. en el Parque Tangamanga I. 3K, 6K y 10K, inscripción en línea de $375 MXN, kit con pulsera luminosa y medalla.",
     "keywords": "carrera real del potosi 2026, carrera real del potosi, carrera nocturna tangamanga, carrera 17 octubre san luis potosi, carrera nocturna san luis potosi 2026"
   },
   "hero": {
     "eyebrow": "Quinta edición · carrera nocturna",
     "subtitle": "3K, 6K y 10K bajo las luces del Parque Tangamanga I",
-    "description": "La quinta edición de la Carrera Real del Potosí se corre de noche. Salida y meta en Av. Artesanos, frente al planetario, con kit que incluye pulsera de luz y medalla.",
+    "description": "La quinta Carrera Real del Potosí se corrió de noche el 17 de octubre. La salida y la meta estuvieron en Av. Artesanos, frente al planetario, y el kit incluyó una pulsera luminosa y una medalla.",
     "date": "Sábado 17 de octubre de 2026",
     "time": "Salida 7:00 p. m.",
     "location": "Parque Tangamanga I · Av. Artesanos, frente al planetario",
-    "ctaRegister": "Inscríbete en línea",
+    "ctaRegister": "Página oficial del evento",
     "ctaGuide": "Ver detalles",
     "alt": "Entrada del Parque Tangamanga iluminada de noche"
   },
   "status": {
-    "title": "Lo que todavía no se ha publicado",
-    "description": "La página oficial de inscripción no detalla mapa de ruta, categorías, premiación ni fecha y lugar de entrega de kits. Revisa la página de inscripción antes del sábado."
+    "title": "Esta carrera ya se realizó",
+    "description": "La Carrera Real del Potosí 2026 se celebró el sábado 17 de octubre. En nuestra última revisión (27 de octubre), la página oficial del evento no mostraba resultados, mapa de ruta, categorías ni premiación."
   },
   "facts": {
     "title": "Lo esencial",
@@ -35,14 +35,14 @@
     ]
   },
   "kit": {
-    "title": "Qué incluye el kit",
+    "title": "Qué incluyó el kit",
     "items": ["Playera", "Medalla", "Número", "Chip", "Pulsera de luz", "Regalo sorpresa"],
-    "sizes": "Tallas de playera de XS a 3XL–6XL; se elige al inscribirte."
+    "sizes": "Las tallas de playera iban de XS a 3XL–6XL y se elegían al inscribirse."
   },
   "registration": {
-    "title": "Inscripción",
-    "description": "Solo en línea, en la plataforma de cronometraje Tu Tiempo a Tiempo. Eliges distancia y talla, y pagas $375 MXN.",
-    "policy": "La inscripción es personal e intransferible y no hay reembolsos. Si la autoridad o una causa de fuerza mayor cancela el evento, la organización informará las alternativas."
+    "title": "Cómo fue la inscripción",
+    "description": "La inscripción fue solo en línea, en la plataforma de cronometraje Tu Tiempo a Tiempo: se elegía distancia y talla y se pagaban $375 MXN.",
+    "policy": "Las inscripciones eran personales, intransferibles y no reembolsables."
   },
   "tips": {
     "title": "Consejos para correr de noche",
@@ -56,20 +56,20 @@
   "faq": {
     "title": "Preguntas frecuentes",
     "items": [
-      { "q": "¿Cuándo es la Carrera Real del Potosí 2026?", "a": "El sábado 17 de octubre de 2026 a las 7:00 p. m. Es la quinta edición y se corre de noche." },
-      { "q": "¿Dónde es la salida?", "a": "En el Parque Tangamanga I, sobre Av. Artesanos, frente al planetario. Ahí mismo está la meta." },
-      { "q": "¿Cuánto cuesta y qué distancias hay?", "a": "$375 MXN para cualquiera de las tres distancias: 3 km, 6 km o 10 km." },
-      { "q": "¿Cómo me inscribo?", "a": "En línea en tutiempoatiempo.com: eliges distancia y talla de playera y pagas. La inscripción es personal, intransferible y sin reembolso." },
-      { "q": "¿Qué trae el kit?", "a": "Playera, medalla, número, chip, pulsera de luz y un regalo sorpresa." }
+      { "q": "¿Cuándo fue la Carrera Real del Potosí 2026?", "a": "El sábado 17 de octubre de 2026 a las 7:00 p.m. Fue la quinta edición y se corrió de noche." },
+      { "q": "¿Dónde fueron la salida y la meta?", "a": "En el Parque Tangamanga I, sobre Av. Artesanos frente al planetario. La meta estuvo en el mismo punto." },
+      { "q": "¿Cuánto costó y qué distancias hubo?", "a": "$375 MXN para cualquiera de las tres distancias: 3, 6 o 10 km." },
+      { "q": "¿Cómo era la inscripción?", "a": "En línea en tutiempoatiempo.com: se elegía distancia y talla de playera y se pagaba. Las inscripciones eran personales, intransferibles y no reembolsables. El registro está cerrado porque el evento ya terminó." },
+      { "q": "¿Qué incluyó el kit?", "a": "Playera, medalla, número, chip de cronometraje, pulsera luminosa y un regalo sorpresa." }
     ]
   },
   "sources": {
     "title": "Fuentes",
-    "description": "Datos verificados el 12 de octubre de 2026 en la página oficial de inscripción y el cartel de la quinta edición.",
-    "official": "Página oficial de inscripción (Tu Tiempo a Tiempo)"
+    "description": "Datos verificados el 12 de octubre de 2026 con la página oficial de inscripción y el cartel de la quinta edición; estado del evento revisado de nuevo el 27 de octubre de 2026.",
+    "official": "Página oficial del evento (Tu Tiempo a Tiempo)"
   },
   "actions": {
-    "official": "Inscribirme",
+    "official": "Ver el evento en Tu Tiempo a Tiempo",
     "halfMarathon": "Medio Maratón 8 de noviembre",
     "tangamanga": "Guía del Parque Tangamanga"
   }

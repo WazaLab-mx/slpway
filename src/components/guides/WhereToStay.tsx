@@ -1,30 +1,30 @@
 const tiers = [
   {
     tier: 'Budget',
-    price: '$30-60 USD',
+    price: '~$20-40 USD',
     emoji: '🎒',
     accent: 'from-emerald-500 to-teal-500',
     description: 'Comfortable hostels, guesthouses and small hotels in Centro or near Alameda.',
-    options: ['Hostal San Francisco', 'Hotel Filher', 'Hotel Plaza'],
+    options: ['Hotel Alameda', 'Hotel del Río', 'Hotel Real Plaza'],
     tip: 'Book rooms facing the interior courtyard — quieter at night.',
   },
   {
     tier: 'Mid-range',
-    price: '$80-150 USD',
+    price: '~$40-90 USD',
     emoji: '🏨',
     accent: 'from-blue-500 to-indigo-500',
     description: 'Stylish boutique hotels and refurbished colonial buildings within walking distance of Plaza de Armas.',
-    options: ['Hotel Panorama', 'Hotel Concordia', 'Hotel Nápoles'],
-    tip: 'Hotel Panorama has a rooftop pool with skyline views — perfect at sunset.',
+    options: ['Hotel Panorama', 'Hotel San Francisco', 'Fiesta Inn Glorieta Juárez'],
+    tip: 'Hotel Panorama is on Av. Carranza, a short walk from Plaza de Armas.',
   },
   {
     tier: 'Luxury',
-    price: '$200+ USD',
+    price: '~$140+ USD',
     emoji: '✨',
     accent: 'from-amber-500 to-rose-500',
     description: 'Restored palaces and design-forward boutique hotels offering a full five-star experience.',
     options: ['Hotel Museo Palacio de San Agustín', 'Fiesta Americana San Luis Potosí', 'Hotel Hilton SLP'],
-    tip: 'Hotel Museo is a former aristocratic mansion — even non-guests can book afternoon tea.',
+    tip: 'Fiesta Americana, next to Parque Tangamanga I, has a rooftop atrium pool.',
   },
 ];
 
@@ -65,7 +65,7 @@ export default function WhereToStay() {
       </div>
       <div className="mt-4 text-sm text-gray-600 bg-primary/5 border border-primary/10 rounded-xl p-4">
         <span className="font-semibold text-primary">AirBnB note: </span>
-        Airbnb is abundant and usually 20-40% cheaper than hotels. The best neighborhoods for short-term rentals are Centro, Lomas de San Luis and Tequisquiapan. Expect $35-90 USD/night for a well-reviewed private studio.
+        Airbnb is widely available. Popular neighborhoods for short-term rentals are Centro, Lomas de San Luis and Tequisquiapan. Prices vary by season and location.
       </div>
     </section>
   );

@@ -1089,7 +1089,7 @@
   "countryFest2026": {
     "seo": {
       "title": "Cara Sucia Country Fest 2026 — Festival Country en San Luis Potosí",
-      "description": "Cara Sucia Country Fest 2026: sábado 13 de junio en La Legendaria, SLP. Música country en vivo, BBQ, toro mecánico, juegos de rodeo y mercado vaquero. Boletos desde $380 MXN en Superboletos.",
+      "description": "El Cara Sucia Country Fest 2026 se celebró el sábado 13 de junio en Garita de Jalisco, San Luis Potosí: música country en vivo, comida de Cara Sucia, toro mecánico, juegos y un mercadito de marcas locales con hat bar.",
       "keywords": "cara sucia country fest 2026, festival country san luis potosi, country fest slp, conciertos country mexico, la legendaria slp, festival 13 junio 2026"
     },
     "hero": {
@@ -1097,11 +1097,11 @@
       "date": "Sábado 13 de Junio, 2026 · Acceso 2:00 PM",
       "title": "Cara Sucia Country Fest",
       "subtitle": "Howdy y'all 🤠 — Música, BBQ y Espíritu Vaquero",
-      "description": "El primer gran festival country de San Luis Potosí. Una jornada de música country en vivo, BBQ al humo todo el día, toro mecánico, juegos de rodeo y mercadito vaquero en La Legendaria.",
+      "description": "Presentado por sus organizadores como el primer festival country de San Luis, llenó el 13 de junio de 2026 de música country en vivo, comida de Cara Sucia, toro mecánico, juegos y concursos, y un mercadito de marcas locales.",
       "cta": "Comprar boletos",
       "ctaLineup": "Ver cartel",
-      "location": "La Legendaria, Garita de Jalisco, San Luis Potosí",
-      "bannerAlt": "Cartel oficial del Cara Sucia Country Fest 2026 — 13 de junio en La Legendaria, SLP"
+      "location": "Lib. Sur Anillo Periférico 720, Garita de Jalisco, San Luis Potosí",
+      "bannerAlt": "Banner oficial del Cara Sucia Country Fest 2026: 13 de junio, Garita de Jalisco, SLP"
     },
     "stats": {
       "date": "Junio",
@@ -1115,48 +1115,48 @@
     },
     "lineup": {
       "title": "Cartel Oficial",
-      "subtitle": "Un día con lo mejor del country, americana y folk en La Legendaria.",
+      "subtitle": "El cartel oficial: Manuel Covarrubias, Dan Rosales, The Roses, Combine The Band, Héctor Villalobos, Rommel Balterra y Memphis Acoustic.",
       "posterAlt": "Cartel completo de artistas del Cara Sucia Country Fest 2026",
       "posterNote": "Cartel oficial publicado por"
     },
     "activities": {
       "title": "Mucho Más que un Concierto",
-      "subtitle": "Una jornada completa de experiencias vaqueras para toda la familia.",
+      "subtitle": "Lo que anunció el cartel oficial además de la música.",
       "items": {
         "bbq": {
           "icon": "🥩",
           "title": "BBQ Cara Sucia",
-          "desc": "Menú BBQ ahumado al estilo Cara Sucia disponible durante todo el evento."
+          "desc": "Menú de comida de Cara Sucia."
         },
         "mechanicalBull": {
           "icon": "🐂",
           "title": "Toro Mecánico",
-          "desc": "Sube al toro mecánico y demuestra tu temple vaquero. Apto para todas las edades."
+          "desc": "Un torito mecánico para los más valientes."
         },
         "rodeo": {
           "icon": "🤠",
-          "title": "Juegos de Rodeo",
-          "desc": "Lazos, herraduras y juegos clásicos del rodeo para que vivas la experiencia western."
+          "title": "Juegos y concursos",
+          "desc": "Juegos y concursos en el lugar, según el cartel oficial."
         },
         "hatBar": {
           "icon": "🪶",
           "title": "Hat Customization Bar",
-          "desc": "Personaliza tu sombrero vaquero en sitio con plumas, cintas y herrajes únicos."
+          "desc": "Un hat bar dentro del mercadito de marcas locales."
         },
         "kids": {
           "icon": "🧒",
-          "title": "Zona Infantil",
-          "desc": "Área de juegos para los más pequeños. Menores de 5 años entran gratis."
+          "title": "Ludoteca",
+          "desc": "Una ludoteca anunciada en el cartel oficial."
         },
         "market": {
           "icon": "👢",
           "title": "Mercadito Vaquero",
-          "desc": "Marcas locales con ropa country, botas, joyería, sombreros y accesorios."
+          "desc": "Un mercadito de marcas locales."
         },
         "drinks": {
           "icon": "🥃",
-          "title": "Bar Completo",
-          "desc": "Cocteles de autor, cervezas, vino, mocktails sin alcohol y agua disponibles."
+          "title": "Bebidas",
+          "desc": "Mixología, vino y cerveza."
         }
       }
     },
@@ -1200,26 +1200,26 @@
     },
     "faq": {
       "title": "Preguntas Frecuentes",
-      "q1": "¿Cuándo y dónde es el Cara Sucia Country Fest 2026?",
-      "a1": "El sábado 13 de junio de 2026 en La Legendaria, ubicada en Lib. Sur Anillo Perif. 720, Garita de Jalisco, 78294 San Luis Potosí, S.L.P. La apertura de puertas es a las 2:00 PM.",
-      "q2": "¿Cuánto cuestan los boletos y dónde los compro?",
-      "a2": "Los boletos están en preventa por fases (Fase 1 $380, Fase 2 $480, Fase 3 $580 MXN). La venta es exclusiva en Superboletos. Reserva antes para asegurar el mejor precio.",
-      "q3": "¿Es un evento familiar? ¿Pueden entrar niños?",
-      "a3": "Sí, es un festival apto para toda la familia. Los menores de 5 años entran gratis acompañados de un adulto. Hay zona infantil y actividades para los más pequeños.",
-      "q4": "¿Habrá comida en el festival?",
-      "a4": "Sí. Cara Sucia BBQ ofrece su menú ahumado durante todo el evento, además de food trucks invitados y un bar completo con cocteles, cervezas, vino y opciones sin alcohol.",
-      "q5": "¿Qué bandas o artistas se presentan?",
-      "a5": "Consulta el cartel oficial en esta página para ver el lineup completo. Para actualizaciones síguenos en @soycarasucia en Instagram.",
-      "q6": "¿Puedo entrar con mi sombrero, botas y atuendo vaquero?",
-      "a6": "¡Por supuesto! El dress code country es bienvenido. Habrá un Hat Customization Bar dentro del festival si quieres personalizar tu sombrero en sitio.",
-      "q7": "¿Hay estacionamiento?",
-      "a7": "Sí, hay estacionamiento disponible en el predio de La Legendaria. Recomendamos llegar temprano o usar Uber/DiDi en horarios pico.",
-      "q8": "¿Qué pasa si llueve?",
-      "a8": "El evento se realiza en gran parte al aire libre. En caso de lluvia ligera el festival continúa; trae impermeable o sombrilla. Sigue @soycarasucia para cualquier actualización del clima."
+      "q1": "¿Cuándo y dónde fue el Cara Sucia Country Fest 2026?",
+      "a1": "El sábado 13 de junio de 2026 en Lib. Sur Anillo Periférico 720, Garita de Jalisco, 78294 San Luis Potosí, S.L.P. El acceso abrió a las 2:00 PM.",
+      "q2": "¿Dónde se vendieron los boletos?",
+      "a2": "En Superboletos. El evento ya terminó, así que ya no hay boletos a la venta.",
+      "q3": "¿Hubo algo para niños?",
+      "a3": "El cartel oficial anunció una ludoteca, además del torito mecánico, juegos y concursos.",
+      "q4": "¿Hubo comida y bebida?",
+      "a4": "Sí. Cara Sucia se encargó del menú de comida, y hubo mixología, vino y cerveza.",
+      "q5": "¿Quiénes se presentaron?",
+      "a5": "El cartel oficial anunció a Manuel Covarrubias, Dan Rosales, The Roses, Combine The Band, Héctor Villalobos, Rommel Balterra y Memphis Acoustic.",
+      "q6": "¿Hubo hat bar?",
+      "a6": "Sí. El cartel anunció un hat bar dentro del mercadito de marcas locales.",
+      "q7": "¿Quién lo organizó?",
+      "a7": "Cara Sucia (@soycarasucia), con Ford SS San Luis como patrocinador principal.",
+      "q8": "¿Habrá otra edición?",
+      "a8": "No hemos visto un anuncio oficial de una nueva edición. Sigue a @soycarasucia para novedades."
     },
     "cta": {
-      "title": "No te pierdas el Cara Sucia Country Fest 2026",
-      "description": "Una jornada vaquera con BBQ, música country en vivo y experiencias únicas. Sábado 13 de junio en La Legendaria, SLP.",
+      "title": "¿Buscas el próximo evento?",
+      "description": "El Cara Sucia Country Fest 2026 se realizó el 13 de junio. Mira qué más hay en San Luis Potosí.",
       "buy": "Comprar boletos",
       "moreEvents": "Ver más eventos en SLP"
     }
@@ -1235,7 +1235,7 @@
       "date": "28 de Junio, 2026",
       "title": "Maratón Tangamanga",
       "subtitle": "BMW Maratón Internacional — 40ª Edición",
-      "description": "Una de las carreras más antiguas y prestigiosas de México celebró sus 40 años el 28 de junio de 2026. Consulta los resultados de la edición 2026, la guía del recorrido por el Parque Tangamanga y el Centro Histórico, y toda la información para preparar tu próxima carrera en San Luis Potosí.",
+      "description": "Una de las carreras de ruta más longevas de México celebró su 40ª edición el 28 de junio de 2026. Consulta los resultados 2026, el recorrido por el Parque Tangamanga y el Centro Histórico, y cómo se organizó la carrera.",
       "cta": "Ver resultados 2026",
       "ctaRoute": "Ver ruta",
       "location": "San Luis Potosí, capital del estado de San Luis Potosí, México"
@@ -1248,7 +1248,7 @@
       "distances": "Distancias",
       "distancesValue": "4",
       "certified": "Certificación",
-      "certifiedValue": "World Athletics"
+      "certifiedValue": "AIMS"
     },
     "results": {
       "title": "Resultados 2026",
@@ -1262,39 +1262,39 @@
     },
     "distances": {
       "title": "Categorías y Distancias",
-      "subtitle": "Elige tu distancia y prepárate para correr en una de las carreras más emblemáticas de México.",
+      "subtitle": "Las cuatro distancias del programa 2026, con sus cuotas oficiales.",
       "fiveK": {
         "name": "5K Recreativa",
-        "description": "Ideal para principiantes y familias. Recorrido dentro del Parque Tangamanga.",
-        "age": "Edad mínima: 15 años",
-        "start": "Salida: 7:30 AM"
+        "description": "La distancia más corta del programa 2026.",
+        "age": "Cuota: $320 MXN + cargo por servicio",
+        "start": "Hora de salida no indicada en la convocatoria"
       },
       "tenK": {
         "name": "10K",
-        "description": "Ruta mixta por el parque y calles aledañas. Categorías por edad y género.",
-        "age": "Edad mínima: 16 años",
-        "start": "Salida: 7:00 AM"
+        "description": "Categoría única varonil y femenil, más una categoría de prensa deportiva.",
+        "age": "Cuota: $370 MXN + cargo por servicio",
+        "start": "Hora de salida no indicada en la convocatoria"
       },
       "halfMarathon": {
         "name": "Medio Maratón (21K)",
-        "description": "Recorrido certificado FMAA por Parque Tangamanga, Av. Salvador Nava y Centro Histórico.",
-        "age": "Edad mínima: 18 años",
-        "start": "Salida: 6:30 AM"
+        "description": "Salida y meta frente al Planetario del Parque Tangamanga I. Categoría única varonil y femenil.",
+        "age": "Cuota: $520 MXN + cargo por servicio",
+        "start": "Salida: 6:00 AM"
       },
       "marathon": {
         "name": "Maratón (42K)",
-        "description": "Ruta completa certificada World Athletics y FMAA. El recorrido más emblemático de SLP.",
-        "age": "Edad mínima: 20 años",
+        "description": "Recorrido de 42,195 m medido por un medidor de AIMS / World Athletics. Categorías general y máster (40–49, 50–59, 60 y más).",
+        "age": "Cuota: $670 MXN + cargo por servicio",
         "start": "Salida: 6:00 AM"
       }
     },
     "route": {
       "title": "Mapa de Ruta",
       "subtitle": "El recorrido atraviesa los paisajes más icónicos de San Luis Potosí.",
-      "description": "La ruta parte del Parque Tangamanga I, sube por Av. Salvador Nava hacia el Centro Histórico, pasa por la Plaza de los Fundadores y la Catedral, y regresa al parque. El maratón completo repite un circuito modificado.",
-      "hydration": "Puntos de hidratación cada 2.5 km con agua y bebida isotónica.",
-      "medical": "Puestos de atención médica en km 5, 10, 15, 21, 30 y meta.",
-      "landmarks": "Puntos de interés: Parque Tangamanga, Av. Carranza, Plaza de Armas, Catedral Metropolitana, Teatro de la Paz."
+      "description": "La salida y la meta estuvieron frente al Planetario del Parque Tangamanga I. Según los organizadores, el recorrido pasa por el Tangamanga I, el Centro Histórico y el Tangamanga II.",
+      "hydration": "Abastecimiento del maratón en los km 3, 5, 8, 10, 12.3, 15, 17, 19, 21, 23, 26, 28, 30, 32, 33, 35, 37, 38.8, 40 y en la meta.",
+      "medical": "Servicios médicos cada 5 km hasta el km 20 y, a partir de ahí, cada 2 km.",
+      "landmarks": "Recorrido: Parque Tangamanga I, Centro Histórico y Parque Tangamanga II."
     },
     "runnerGuide": {
       "title": "Guía del Corredor",
@@ -1302,27 +1302,27 @@
       "altitudeTitle": "Altitud",
       "altitudeDesc": "San Luis Potosí está a 1,860 metros sobre el nivel del mar. Si vienes de una ciudad baja, llega al menos 2 días antes para aclimatarte. La altitud afecta tu ritmo y recuperación.",
       "weatherTitle": "Clima en junio",
-      "weatherDesc": "Temperatura entre 15°C (salida) y 28°C (mediodía). Posibles lluvias vespertinas. Usa ropa ligera, gorra y protector solar. Hidrátate más de lo habitual.",
+      "weatherDesc": "Los organizadores describen las mañanas de fines de junio como frescas y secas, de 13 a 18 °C al amanecer, con máximas por la tarde que pueden superar los 28 °C. Usa ropa ligera, gorra y bloqueador.",
       "hydrationTitle": "Hidratación",
       "hydrationDesc": "Por la altitud, necesitas más agua de lo normal. Bebe 500ml 2 horas antes de la salida. Aprovecha cada punto de hidratación en la ruta.",
       "warmupTitle": "Calentamiento",
-      "warmupDesc": "La zona de calentamiento está en la explanada principal del Parque Tangamanga. Llega al menos 45 minutos antes de tu hora de salida."
+      "warmupDesc": "La salida y la meta estuvieron frente al Planetario del Parque Tangamanga I, donde el guardarropa abrió a las 5:00 AM. Llega temprano para calentar."
     },
     "kit": {
       "title": "Kit del Corredor",
-      "subtitle": "Todo lo que recibes y necesitas saber para la entrega de paquetes.",
+      "subtitle": "Qué incluyó el kit 2026 y cómo fue la entrega.",
       "includes": "El kit incluye",
-      "includesList": "Playera oficial del 40 aniversario, número de competidor, chip de cronometraje, medalla finisher (al completar), bolsa de corredor con productos patrocinadores",
+      "includesList": "Playera oficial, número de corredor, chip desechable, medalla de finalista (al terminar), paquete de recuperación",
       "pickupTitle": "Entrega de paquetes",
-      "pickupDesc": "Expo Maratón en Parque Tangamanga. Viernes 26 y sábado 27 de junio, de 10:00 AM a 7:00 PM. Lleva tu comprobante de inscripción e identificación oficial.",
+      "pickupDesc": "Expo Tangamanga en el Centro Cultural Bicentenario (Av. Sierra Leona 550): viernes 26 de junio de 11:00 a 18:00 y sábado 27 de junio de 10:00 a 19:00. No se entregaron números el día de la carrera.",
       "docsTitle": "Documentos necesarios",
-      "docsDesc": "Comprobante de inscripción (impreso o digital), identificación oficial vigente, certificado médico deportivo (obligatorio para 21K y 42K)."
+      "docsDesc": "Identificación oficial. Un tercero podía recoger el número con una autorización firmada y copia firmada de la identificación del corredor. Se recomendaba un examen médico previo, no era obligatorio."
     },
     "spectators": {
       "title": "Info para Acompañantes",
       "subtitle": "Apoya a tu corredor desde los mejores puntos del recorrido.",
       "viewingTitle": "Mejores puntos para ver la carrera",
-      "viewingDesc": "Meta en Parque Tangamanga (llegada), Av. Salvador Nava (km 8-10), Plaza de Armas en Centro Histórico (km 15), Av. Carranza (km 18-20).",
+      "viewingDesc": "La meta frente al Planetario del Parque Tangamanga I y el Centro Histórico, por donde pasaba el recorrido.",
       "parkingTitle": "Estacionamiento",
       "parkingDesc": "Estacionamientos disponibles en el Parque Tangamanga y calles aledañas. Llega temprano — los espacios se llenan rápido el día de la carrera.",
       "activitiesTitle": "Qué hacer mientras esperas",
@@ -1331,34 +1331,34 @@
     "accommodation": {
       "title": "Hospedaje y Transporte",
       "airportTitle": "Desde el aeropuerto",
-      "airportDesc": "El Aeropuerto Internacional de SLP (BJX) está a 25 minutos del Parque Tangamanga. Taxis y servicio de transporte disponibles.",
+      "airportDesc": "El Aeropuerto Internacional Ponciano Arriaga (SLP) está al norte de la ciudad, a unos 30 minutos o más en auto del Parque Tangamanga según el tráfico. Hay taxis.",
       "busTitle": "Desde la central de autobuses",
       "busDesc": "La Central de Autobuses está a 20 minutos del parque. Conexiones directas desde CDMX, Monterrey, Guadalajara y Querétaro.",
       "hotelsTitle": "Hoteles recomendados",
-      "hotelsDesc": "Zona Tangamanga Sur: hoteles a 5-10 min del parque. Centro Histórico: hoteles con encanto colonial a 15 min. Reserva con anticipación — junio es temporada alta por el maratón."
+      "hotelsDesc": "Zona Tangamanga Sur: hoteles cerca del parque. Centro Histórico: hoteles coloniales a unos 15 minutos. Reserva con anticipación en fines de semana de carrera."
     },
     "faq": {
       "title": "Preguntas Frecuentes",
-      "q1": "¿Cuándo abren las inscripciones?",
-      "a1": "Las inscripciones generalmente abren en enero. Consulta maratontangamanga.com para fechas exactas y precios por categoría. Los precios suben conforme se acerca el evento.",
-      "q2": "¿Necesito certificado médico?",
-      "a2": "Sí, para las distancias de 21K y 42K es obligatorio presentar un certificado médico deportivo vigente (máximo 6 meses de antigüedad) al recoger tu kit.",
-      "q3": "¿Hay servicio de pacemakers?",
-      "a3": "Sí, el maratón cuenta con pacemakers oficiales para los tiempos de 3:30, 4:00, 4:30 y 5:00 horas en el maratón, y 1:45 y 2:00 en el medio maratón.",
-      "q4": "¿Cuál es el tiempo límite?",
-      "a4": "Maratón: 6 horas. Medio maratón: 3 horas. 10K: 1 hora 30 minutos. 5K: 45 minutos.",
+      "q1": "¿Cómo fueron las inscripciones en 2026?",
+      "a1": "De forma presencial en el Teatro de la Paz y El Comal, en línea y en los módulos de la Expo el 26 y 27 de junio. Las cuotas fueron $670 MXN (42K), $520 (21K), $370 (10K) y $320 (5K), más cargo por servicio.",
+      "q2": "¿Se pedía certificado médico?",
+      "a2": "No. La convocatoria recomendaba un examen médico previo, pero no exigía certificado.",
+      "q3": "¿El recorrido estaba certificado?",
+      "a3": "El recorrido de 42,195 m fue medido por un medidor de AIMS / World Athletics. La carrera es miembro de AIMS y figura como clasificatoria para el Maratón de Boston.",
+      "q4": "¿Cuál fue el tiempo límite?",
+      "a4": "Siete horas para el maratón. La convocatoria no publicó límites para las demás distancias.",
       "q5": "¿La altitud afecta el rendimiento?",
-      "a5": "Sí. A 1,860m sobre el nivel del mar, espera un rendimiento 5-10% menor que a nivel del mar. Llega 2-3 días antes para aclimatarte y ajusta tu ritmo objetivo.",
-      "q6": "¿Puedo cambiar de distancia después de inscribirme?",
-      "a6": "Los cambios de distancia están sujetos a disponibilidad y se permiten hasta 2 semanas antes del evento, con posible ajuste de tarifa.",
-      "q7": "¿Hay guardería de bolsas?",
-      "a7": "Sí, hay servicio de guardería de bolsas en la zona de salida/meta en el Parque Tangamanga. Se recomienda no dejar objetos de valor.",
-      "q8": "¿Cómo consulto mis resultados?",
-      "a8": "Los resultados se publican en tiempo real en la web del maratón y en la app oficial. El chip de cronometraje registra tiempos parciales y netos.",
-      "q9": "¿Hay estaciones de hidratación?",
-      "a9": "Sí, cada 2.5 km hay estaciones de hidratación con agua, bebida isotónica y en algunos puntos, fruta (plátano y naranja).",
-      "q10": "¿Se permite correr con audífonos?",
-      "a10": "Sí, se permite el uso de audífonos, pero se recomienda usarlos a bajo volumen para escuchar instrucciones de los jueces y vehículos de emergencia."
+      "a5": "Sí. A unos 1,860 m sobre el nivel del mar, quienes vienen de baja altitud suelen necesitar un ritmo objetivo más lento. Llegar unos días antes ayuda.",
+      "q6": "¿Qué recibían los corredores?",
+      "a6": "Playera oficial, número y chip desechable en la entrega de kits, más medalla y paquete de recuperación en la meta.",
+      "q7": "¿Hubo guardarropa?",
+      "a7": "Sí. El guardarropa abrió a las 5:00 AM junto al Planetario del Parque Tangamanga I.",
+      "q8": "¿Dónde veo los resultados?",
+      "a8": "Los ganadores aparecen arriba, según medios locales. El cronometraje usó chips electrónicos desechables que registraron a cada corredor desde la línea de salida hasta la meta.",
+      "q9": "¿Dónde estuvieron los abastecimientos?",
+      "a9": "En el maratón, en los km 3, 5, 8, 10, 12.3, 15, 17, 19, 21, 23, 26, 28, 30, 32, 33, 35, 37, 38.8, 40 y en la meta, más un paquete de recuperación para cada finalista.",
+      "q10": "¿Cuándo es la edición 2027?",
+      "a10": "Aún no hemos visto un anuncio oficial. Publicaremos las fechas aquí cuando los organizadores las den a conocer."
     },
     "cta": {
       "title": "El Maratón Tangamanga, año con año",
@@ -1447,13 +1447,13 @@
     },
     "activities": {
       "title": "Actividades y Clases",
-      "subtitle": "Llena tus días con cosas que te traigan alegría. Probadas y aprobadas por cónyuges expat en SLP.",
+      "subtitle": "Llena tus días con cosas que te traigan alegría. Estos son los tipos de actividades que puedes encontrar en SLP.",
       "fitnessWellness": "Fitness y Bienestar",
       "artsCreativity": "Artes y Creatividad",
       "languageCulture": "Idioma y Cultura",
-      "proTipTitle": "Consejo de Otras Spouses",
-      "proTip": "No esperes a sentirte lista. Inscríbete en algo — lo que sea — en tu primera semana. La actividad en sí importa menos que presentarte consistentemente. Así es como construyes una rutina y conoces gente. Empecé con yoga sin saber nada de español, y mis compañeras de clase se convirtieron en mis primeras amigas aquí.",
-      "proTipAuthor": "— Lisa, 2 años en SLP"
+      "proTipTitle": "Consejo",
+      "proTip": "No esperes a sentirte lista. Inscríbete en algo — lo que sea — en tu primera semana. La actividad en sí importa menos que presentarte consistentemente. Así es como construyes una rutina y conoces gente, aunque empieces sin saber nada de español.",
+      "proTipAuthor": "— Equipo editorial de San Luis Way"
     },
     "volunteer": {
       "title": "Oportunidades de Voluntariado",
@@ -1473,16 +1473,16 @@
       "members": "miembros",
       "howToJoinTitle": "Cómo Unirse",
       "howToJoinIntro": "La mayoría de los grupos son privados por seguridad. Así es como puedes conectar:",
-      "join1": "Pregunta en Colegio Terranova si tus hijos asisten — pueden conectarte",
-      "join2": "Busca en Facebook \"Expats in San Luis Potosí\" y solicita unirte",
+      "join1": "Pregunta en el Colegio Internacional Terranova si tus hijos asisten — pueden conectarte",
+      "join2": "Busca en Facebook grupos de expats en San Luis Potosí y solicita unirte",
       "join3": "Pregunta al departamento de RH de tu pareja — a menudo tienen redes de cónyuges",
       "join4": "Contáctanos y te ayudaremos a facilitar las presentaciones"
     },
     "work": {
       "title": "Ideas de Trabajo y Negocios",
-      "subtitle": "No tienes que pausar tu carrera. Muchas cónyuges han construido negocios y carreras prósperas desde SLP.",
+      "subtitle": "No tienes que pausar tu carrera. Muchas parejas acompañantes siguen trabajando en remoto o inician sus propios proyectos.",
       "visaWarningTitle": "Importante: Consideraciones de Visa de Trabajo",
-      "visaWarning": "Tu visa de dependiente puede no permitir empleo formal en México. Sin embargo, SÍ PUEDES: trabajar remotamente para empresas no mexicanas, hacer freelance internacional, iniciar un negocio en línea o ser voluntaria. Consulta a un abogado de inmigración para tu situación específica antes de buscar empleo local.",
+      "visaWarning": "La residencia temporal por unidad familiar suele emitirse sin permiso para trabajar en México; puedes solicitar un permiso de trabajo al INM por separado, normalmente con una oferta de empleo. Trabajar en remoto para empresas no mexicanas, hacer freelance internacional o tener un negocio en línea son opciones comunes, pero la ley mexicana no las regula expresamente. Consulta a un abogado de inmigración para tu situación específica antes de buscar empleo local.",
       "remoteWork": "Trabajo Remoto",
       "localOpportunities": "Oportunidades Locales",
       "entrepreneurship": "Emprendimiento",
@@ -1490,7 +1490,7 @@
     },
     "stories": {
       "title": "Historias de Éxito",
-      "subtitle": "Historias reales de cónyuges que encontraron su camino en San Luis Potosí. Si ellas pudieron, tú también.",
+      "subtitle": "Estamos reuniendo historias de cónyuges que encontraron su camino en San Luis Potosí. La tuya podría ser una de las primeras.",
       "yearsInSLP": "años en SLP",
       "ctaTitle": "Tu Historia Podría Estar Aquí",
       "ctaText": "Cada historia de éxito comenzó con alguien sintiéndose exactamente como tú ahora. Da el primer paso. Únete a un grupo. Inscríbete en una clase. Di que sí.",
@@ -2283,18 +2283,18 @@
     },
     "whySlp": {
       "title": "¿Por Qué San Luis Potosí para Trabajo Remoto?",
-      "intro": "San Luis Potosí combina accesibilidad, seguridad, cultura y conectividad de una forma que pocas ciudades mexicanas igualan. Zona horaria central (CST/CDT), vuelos directos a EE.UU. y un costo de vida 60-70% menor que ciudades comparables en EE.UU.",
+      "intro": "San Luis Potosí combina accesibilidad, cultura y conectividad de una forma que pocas ciudades mexicanas igualan. Horario del Centro todo el año (UTC-6), vuelos directos a EE.UU. y un costo de vida aproximadamente 40% menor que en San Antonio, Texas (Numbeo, oct. 2026).",
       "timezone": {
         "title": "Misma Zona Horaria que EE.UU.",
-        "description": "CST/CDT — igual que Chicago, Dallas y Houston. Perfecto para clientes y equipos en EE.UU."
+        "description": "Horario del Centro (UTC-6) todo el año, desde que México eliminó el horario de verano en 2022. Misma hora que Chicago, Dallas y Houston en invierno; una hora menos durante el horario de verano de EE.UU."
       },
       "safety": {
-        "title": "Segura y Caminable",
-        "description": "Una de las ciudades medianas más seguras de México. El centro histórico y las zonas residenciales son bien mantenidas y caminables."
+        "title": "Relativamente Segura y Caminable",
+        "description": "El estado tiene una de las tasas de homicidio reportadas más bajas de México (México Evalúa, 1er semestre 2026), aunque cerca de 6 de cada 10 habitantes de la capital dicen sentirse inseguros (INEGI ENSU, junio 2026). El centro histórico y las zonas residenciales son bien mantenidas y caminables."
       },
       "cost": {
         "title": "Bajo Costo de Vida",
-        "description": "Vive cómodamente con $1,000-$1,500 USD/mes. Disfruta una calidad de vida que costaría 3 veces más en EE.UU."
+        "description": "Vive cómodamente con $1,000-$1,500 USD/mes. Un estilo de vida similar cuesta cerca de 1.7 veces más en San Antonio, Texas (Numbeo, oct. 2026)."
       },
       "culture": {
         "title": "Rica Escena Cultural",
@@ -2308,7 +2308,7 @@
     },
     "internet": {
       "title": "Internet y Conectividad",
-      "intro": "El internet de fibra óptica está ampliamente disponible en SLP. La mayoría de las colonias tienen acceso a 100+ Mbps, y muchos cafés ofrecen 50-100 Mbps. La cobertura de datos móviles (4G/5G) es fuerte con Telcel, AT&T México y Movistar.",
+      "intro": "El internet de fibra óptica está ampliamente disponible en SLP, con planes de 100 Mbps o más en casi toda la ciudad. La velocidad mediana de descarga fija en México fue de unos 94-104 Mbps en 2026. El wifi de los cafés varía mucho, así que haz una prueba de velocidad antes de instalarte. La cobertura de datos móviles (4G/5G) es fuerte con Telcel, AT&T México y Movistar.",
       "provider": "Proveedor",
       "speed": "Velocidad",
       "price": "Precio"
@@ -2322,7 +2322,7 @@
     },
     "visas": {
       "title": "Opciones de Visa para Nómadas",
-      "intro": "México es uno de los países más fáciles para trabajadores remotos. No necesitas un permiso de trabajo para trabajar en remoto para un empleador extranjero — la distinción clave es que no estás empleado por una empresa mexicana."
+      "intro": "México es uno de los países más accesibles para trabajadores remotos, aunque no tiene visa de nómada digital. La ley mexicana no regula expresamente el trabajo remoto para un empleador extranjero con permiso de visitante: en la práctica se tolera, pero no está autorizado formalmente. Trabajar para una empresa o clientes mexicanos requiere permiso de trabajo."
     },
     "neighborhoods": {
       "title": "Mejores Colonias para Nómadas",
@@ -2337,7 +2337,7 @@
       },
       "tangamanga": {
         "name": "Zona Tangamanga",
-        "description": "Tranquila, verde, cerca del parque urbano más grande de México. Ideal para corredores, ciclistas y amantes de la naturaleza."
+        "description": "Tranquila, verde, cerca del Parque Tangamanga, considerado el segundo parque urbano más grande de México. Ideal para corredores, ciclistas y amantes de la naturaleza."
       },
       "cta": "Guía Completa de Colonias"
     },
@@ -2361,7 +2361,7 @@
   "visitGuide": {
     "meta": {
       "title": "Visita San Luis Potosí — Guía de Viaje | Qué Hacer y Ver",
-      "description": "Planea tu viaje a San Luis Potosí, México. Principales atracciones, itinerario de 48 horas, guía gastronómica, excursiones a la Huasteca Potosina y consejos prácticos."
+      "description": "Planea tu viaje a San Luis Potosí, México. Principales atracciones, itinerario de 3 días, guía gastronómica, excursiones a la Huasteca Potosina y consejos prácticos."
     },
     "breadcrumb": "Visita San Luis Potosí",
     "hero": {
@@ -2383,11 +2383,11 @@
       "title": "Principales Atracciones",
       "intro": "El centro histórico de San Luis Potosí es un tesoro de arquitectura barroca y neoclásica, grandes plazas y museos de clase mundial.",
       "centro": "Centro Histórico",
-      "centroDesc": "Recorre plazas coloniales, iglesias barrocas y calles peatonales. El corazón de la ciudad y candidato a Patrimonio de la Humanidad UNESCO.",
+      "centroDesc": "Recorre plazas coloniales, iglesias barrocas y calles peatonales. El corazón de la ciudad, inscrito por la UNESCO en 2010 como parte del Camino Real de Tierra Adentro, Patrimonio de la Humanidad.",
       "tangamanga": "Parque Tangamanga",
-      "tangamangaDesc": "Uno de los parques urbanos más grandes de México con 57 hectáreas de senderos, lagos, instalaciones deportivas y jardines botánicos.",
+      "tangamangaDesc": "Uno de los parques urbanos más grandes de México, con 420 hectáreas de senderos, lagos, instalaciones deportivas, jardines y un planetario.",
       "museums": "Museos y Galerías",
-      "museumsDesc": "Del Museo Nacional de la Máscara al Centro de las Artes — SLP tiene más de 20 museos por explorar.",
+      "museumsDesc": "Del Museo Nacional de la Máscara al Centro de las Artes — SLP tiene más de una docena de museos por explorar.",
       "history": "Patrimonio Histórico",
       "historyDesc": "Descubre 400+ años de historia desde la minería colonial de plata hasta la Revolución Mexicana."
     },
@@ -2425,12 +2425,12 @@
       "huasteca": {
         "name": "Huasteca Potosina",
         "description": "Cascadas turquesas, ríos en la selva y pozas naturales surrealistas. El paraíso de la aventura en México.",
-        "distance": "4-5 horas al este"
+        "distance": "3.5-4.5 horas al este"
       },
       "realDeCatorce": {
         "name": "Real de Catorce",
         "description": "Pueblo fantasma convertido en pueblo mágico. Llega a través de un túnel de 2.3 km a un paisaje desértico místico.",
-        "distance": "3 horas al norte"
+        "distance": "3.5 horas al norte"
       },
       "xilitla": {
         "name": "Xilitla y Las Pozas",
@@ -2451,11 +2451,11 @@
       "title": "Cómo Llegar y Moverse",
       "byAir": {
         "title": "Por Avión",
-        "description": "El Aeropuerto Internacional Ponciano Arriaga (SLP) tiene vuelos directos desde CDMX (VivaAerobus, Volaris), Monterrey, Dallas, Houston y Chicago. El aeropuerto está a 15 minutos del centro."
+        "description": "El Aeropuerto Internacional Ponciano Arriaga (SLP) tiene vuelos directos desde CDMX (Aeroméxico; VivaAerobus al AIFA), Monterrey, Guadalajara, Dallas, Houston y, desde junio de 2026, Chicago (Volaris). El aeropuerto está a unos 17 km al norte del centro."
       },
       "byBus": {
         "title": "Por Autobús",
-        "description": "Autobuses de primera clase (Primera Plus, ETN) conectan SLP con CDMX (4-5 hrs), Querétaro (3 hrs), Guadalajara (4 hrs) y Monterrey (5 hrs). La central de autobuses es moderna y bien conectada."
+        "description": "Autobuses de primera clase (Primera Plus, ETN, Futura y otros) conectan SLP con CDMX (unas 5-6 hrs), Querétaro (unas 3 hrs), Guadalajara (unas 4.5-5 hrs) y Monterrey (6 hrs o más). La central de autobuses es moderna y bien conectada."
       }
     },
     "bestTime": {
@@ -2463,15 +2463,15 @@
       "intro": "SLP tiene un clima semiárido con días cálidos y noches frescas. La ciudad está a 1,850m de elevación, manteniendo temperaturas cómodas todo el año.",
       "octDec": {
         "title": "Oct – Dic",
-        "description": "Clima ideal (18-25°C). Celebraciones de Día de Muertos, mercados navideños y Festival de Luz."
+        "description": "Días templados y casi secos (máximas de ~23-26°C) y noches frías (~4-9°C). Celebraciones de Día de Muertos, mercados navideños y Fiesta de Luz."
       },
       "janMar": {
         "title": "Ene – Mar",
-        "description": "Fresco y seco (12-22°C). Carnaval en febrero, procesiones de Semana Santa en marzo/abril."
+        "description": "Seco, con días cálidos (máximas de ~23-28°C) y noches frías (~4-7°C). Procesiones de Semana Santa en marzo/abril."
       },
       "aprJun": {
         "title": "Abr – Jun",
-        "description": "Cálido (22-32°C). Festival de San Luis en junio, temporada cultural de primavera."
+        "description": "Los meses más cálidos (máximas de ~29-31°C); las lluvias empiezan en junio. Festival San Luis en Primavera en torno a Semana Santa."
       },
       "julSep": {
         "title": "Jul – Sep",

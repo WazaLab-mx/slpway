@@ -1,6 +1,7 @@
 // Carrera Real del Potosí 2026 (5th edition) — facts verified 2026-10-12 against
 // the official registration page on tutiempoatiempo.com and the race poster.
 // Not published: route map, categories, awards, kit pickup date/place.
+// Race held 2026-10-17; event page shows it as ended (rechecked 2026-10-27).
 
 import type { FaqItem } from './half-marathon-capital-2026';
 
@@ -18,7 +19,6 @@ export function buildRealPotosiSchema(faqs: FaqItem[]) {
     price: '375',
     priceCurrency: 'MXN',
     url: REAL_POTOSI_REGISTRATION_URL,
-    availability: 'https://schema.org/InStock',
   });
 
   return {

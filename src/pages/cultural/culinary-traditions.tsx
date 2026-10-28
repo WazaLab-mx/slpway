@@ -12,7 +12,7 @@ export default function CulinaryTraditionsPage() {
   const faqs = [
     {
       question: 'What is the most famous food from San Luis Potosí?',
-      answer: 'Enchiladas potosinas — red corn tortillas stuffed with cheese, rolled, and served with sour cream and salsa. Other iconic dishes are gorditas (thick corn cakes with fillings), asado de boda (pork in a sweet chocolate-chile sauce), and queso de tuna (cactus fruit cheese).',
+      answer: 'Enchiladas potosinas — corn masa tinted red with dried chile, filled with cheese, folded closed like a half-moon, and served with sour cream and salsa. Other iconic dishes are gorditas (thick corn cakes with fillings), asado de boda (pork in a sweet chocolate-chile sauce), and queso de tuna (despite the name, a dense sweet paste made from cactus fruit).',
     },
     {
       question: 'What should I try at a Potosino market?',
@@ -20,7 +20,7 @@ export default function CulinaryTraditionsPage() {
     },
     {
       question: 'Does San Luis Potosí have its own wine and mezcal?',
-      answer: 'Yes. The state has a mezcal appellation of origin — artisan producers make mezcal from 8+ agave varieties. SLP\'s wine scene centers on the annual Festival del Vino Potosino (October). The region has been producing wine since colonial times.',
+      answer: 'Yes. San Luis Potosí is part of the mezcal appellation of origin; Altiplano producers work mainly with Agave salmiana (maguey verde). The wine scene gathers at the annual Festival Internacional del Vino, held in late spring (the 2026 edition ran May 29–30 at the Centro de las Artes), and Potosino wines have won medals at national competitions.',
     },
   ];
 
@@ -135,7 +135,7 @@ export default function CulinaryTraditionsPage() {
                   </p>
                   <ul className="list-disc list-inside text-gray-600 mb-4">
                     <li>Use of native corn varieties and nixtamalization</li>
-                    <li>Wild herbs and plants like chepil and hoja santa</li>
+                    <li>Wild herbs and greens like quelites and hoja santa</li>
                     <li>Cooking methods like pit ovens and stone grinding</li>
                     <li>Traditional ingredients like insects and cactus</li>
                   </ul>
@@ -175,7 +175,7 @@ export default function CulinaryTraditionsPage() {
                       <h4 className="font-medium text-gray-900">Food Festivals</h4>
                     </div>
                     <p className="text-gray-600 text-sm">
-                      The annual Festival Gastronómico showcases local chefs and traditional cooking techniques from across the state.
+                      Food festivals held throughout the year showcase local cooks and traditional techniques from across the state.
                     </p>
                   </div>
                   <div>
@@ -441,16 +441,6 @@ export default function CulinaryTraditionsPage() {
                       La Parroquia Potosina
                     </Link>
                   </li>
-                  <li>
-                    <span className="text-gray-600">
-                      El Rincón Huasteco
-                    </span>
-                  </li>
-                  <li>
-                    <span className="text-gray-600">
-                      La Casa del Portal
-                    </span>
-                  </li>
                 </ul>
               </div>
               <div className="bg-white rounded-lg p-6 shadow-sm">
@@ -461,7 +451,7 @@ export default function CulinaryTraditionsPage() {
                 <ul className="list-disc list-inside text-gray-600">
                   <li>Mercado República</li>
                   <li>Mercado Hidalgo</li>
-                  <li>Street food stalls on Plaza de Armas</li>
+                  <li>Street food around the Centro Histórico</li>
                   <li>Sunday tianguis (street markets)</li>
                 </ul>
               </div>
@@ -471,7 +461,7 @@ export default function CulinaryTraditionsPage() {
                   Interactive ways to deepen your understanding of local cuisine:
                 </p>
                 <ul className="list-disc list-inside text-gray-600">
-                  <li>Cooking classes at La Cocina Potosina</li>
+                  <li>Cooking classes at local culinary schools</li>
                   <li>Food tours with local guides</li>
                   <li>Visit to traditional pulque producers</li>
                   <li>Seasonal food festivals</li>

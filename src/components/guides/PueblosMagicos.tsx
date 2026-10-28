@@ -6,8 +6,8 @@ const pueblos = [
     name: 'Real de Catorce',
     badge: 'Pueblo Mágico',
     img: '/images/outdoors/real-de-catorce-main.jpg',
-    distance: '260 km · ~3 hrs drive',
-    description: 'A former silver-mining ghost town perched at 2,750 m. You enter through the one-lane Ogarrio tunnel and emerge into cobblestone streets, sacred peyote country and a Wim Wenders kind of silence. Pilgrims walk here for the feast of San Francisco (Oct 4).',
+    distance: '~250 km · ~3.5 hrs drive',
+    description: 'A former silver-mining ghost town perched at about 2,730 m. You enter through the one-lane Ogarrio tunnel and emerge into cobblestone streets, sacred peyote country and a Wim Wenders kind of silence. Pilgrims walk here for the feast of San Francisco (Oct 4).',
     highlights: ['Ogarrio Tunnel entrance', 'Parroquia de la Purísima', 'Jeep tour to Pueblo Fantasma', 'Wixárika cultural heritage'],
     cta: { href: '/real-de-catorce-guide', label: 'Real de Catorce guide' },
   },
@@ -15,16 +15,16 @@ const pueblos = [
     name: 'Xilitla',
     badge: 'Pueblo Mágico',
     img: '/images/outdoors/xilitla.webp',
-    distance: '350 km · ~4.5 hrs drive',
+    distance: '~315 km · ~4.5-5 hrs drive',
     description: 'Home to Las Pozas, the surrealist sculpture garden designed by Edward James in the Huasteca jungle. Spiral staircases climb to nowhere, concrete orchids bloom in the mist and waterfalls cut through the ruins.',
-    highlights: ['Las Pozas surrealist garden', 'Edward James castle', 'Sótano de las Huahuas cave', 'Coffee plantations'],
+    highlights: ['Las Pozas surrealist garden', 'Edward James castle', 'Museo Leonora Carrington Xilitla', 'Coffee plantations'],
     cta: { href: '/places/las-pozas-xilitla', label: 'Visit Las Pozas' },
   },
   {
     name: 'Aquismón',
-    badge: 'Waterfall country',
+    badge: 'Pueblo Mágico',
     img: '/images/outdoors/tamul-waterfall.jpg',
-    distance: '380 km · ~5 hrs drive',
+    distance: '~280 km · ~4 hrs drive',
     description: 'Gateway to the Huasteca Potosina\'s biggest wonders — the 105m Tamul waterfall, the Sótano de las Golondrinas cave and turquoise rivers. Nearby Tancanhuitz Teenek villages offer deep indigenous culture.',
     highlights: ['Cascada de Tamul', 'Sótano de las Golondrinas', 'Puente de Dios', 'Teenek cultural experiences'],
     cta: { href: '/huasteca-potosina', label: 'Huasteca Potosina guide' },
@@ -36,7 +36,7 @@ export default function PueblosMagicos() {
     <section id="pueblos-magicos">
       <h2 className="text-2xl font-bold text-gray-900 mb-2">Pueblos Mágicos & Nearby Towns</h2>
       <p className="text-gray-600 mb-6">
-        San Luis Potosí state holds two of Mexico's most iconic Pueblos Mágicos, plus the gateway to the Huasteca Potosina waterfalls.
+        San Luis Potosí state has six Pueblos Mágicos — Real de Catorce, Xilitla, Aquismón, Santa María del Río, Ciudad del Maíz and Tierra Nueva. These three are the best known.
       </p>
       <div className="space-y-4">
         {pueblos.map((p) => (

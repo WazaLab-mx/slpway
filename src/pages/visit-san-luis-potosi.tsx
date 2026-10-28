@@ -44,7 +44,7 @@ const sections = [
 const faqItems = [
   {
     q: 'How do I get to San Luis Potosí?',
-    a: 'SLP has its own international airport (BJX/SLP) with direct flights from Mexico City, Monterrey, Dallas, Houston and Chicago. By bus, it is 4-5 hours from Mexico City, 3 hours from Querétaro, and 5 hours from Monterrey via Primera Plus or ETN.',
+    a: 'SLP has its own international airport, Ponciano Arriaga (code SLP), with direct flights from Mexico City (Aeroméxico; Viva Aerobus flies to AIFA), Monterrey, Dallas, Houston and, since June 2026, Chicago. By bus, it is about 5-6 hours from Mexico City, about 3 hours from Querétaro and 6 hours or more from Monterrey, with lines such as Primera Plus, ETN and Futura.',
   },
   {
     q: 'How many days do I need in San Luis Potosí?',
@@ -52,11 +52,11 @@ const faqItems = [
   },
   {
     q: 'Is San Luis Potosí safe for tourists?',
-    a: 'Yes. The historic center and tourist areas are well-patrolled and generally very safe. SLP is considered one of the safest mid-size cities in Mexico. Standard precautions apply as in any city.',
+    a: 'The historic center and main tourist areas are busy and generally considered safe for visitors. The state has one of Mexico\'s lowest reported homicide rates (México Evalúa, H1 2026), although about 6 in 10 city residents say they feel unsafe (INEGI ENSU, June 2026). Standard precautions apply as in any city.',
   },
   {
     q: 'What is the best time to visit?',
-    a: 'October to April offers the most pleasant weather (18-25°C). The Feria Nacional Potosina (FENAPO) in August is the biggest festival. Holy Week (Semana Santa) features spectacular processions.',
+    a: 'October to April is the driest and most pleasant period, with daytime highs of about 22-28°C and cool to cold nights. The Feria Nacional Potosina (FENAPO) in August is the biggest festival. Holy Week (Semana Santa) features spectacular processions.',
   },
   {
     q: 'Do I need to speak Spanish?',

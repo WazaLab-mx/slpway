@@ -35,60 +35,60 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 const outdoorPlaces = [
   {
     name: 'Parque Tangamanga I',
-    desc: 'El parque urbano más grande de SLP con zoológico, lago, canchas, áreas de picnic, Laberinto de las Ciencias y senderos para bici.',
-    descEn: 'SLP\'s largest urban park with zoo, lake, sports courts, picnic areas, science museum, and bike trails.',
+    desc: 'El parque urbano más grande de SLP (420 ha) con lago, canchas, áreas de picnic, planetario, senderos para bici y el Museo Laberinto junto al parque.',
+    descEn: 'SLP\'s largest urban park (420 ha) with a lake, sports courts, picnic areas, a planetarium, bike trails, and the Laberinto museum next door.',
     price: 'Gratis', priceEn: 'Free',
     hours: 'Lun 5AM-11AM | Mar-Sáb 5AM-10:30PM | Dom 5AM-6PM', hoursEn: 'Mon 5AM-11AM | Tue-Sat 5AM-10:30PM | Sun 5AM-6PM',
-    ages: '0-99', icon: '🌳', tip: 'Lleva bicicleta y protector solar. El zoológico abre Mar-Dom 9AM-5PM',
-    tipEn: 'Bring a bike and sunscreen. Zoo open Tue-Sun 9AM-5PM',
+    ages: '0-99', icon: '🌳', tip: 'Lleva bicicleta y protector solar. El zoológico está cerrado temporalmente por remodelación',
+    tipEn: 'Bring a bike and sunscreen. The zoo is temporarily closed for renovation',
     map: 'Parque+Tangamanga+I+San+Luis+Potosi',
   },
   {
     name: 'Parque Tangamanga II',
-    desc: 'Segundo parque con canchas deportivas, lago y áreas verdes más tranquilas. Ideal para días relajados.',
-    descEn: 'Second park with sports courts, lake, and quieter green areas. Perfect for relaxed days.',
+    desc: 'Segundo parque, en el norte de la ciudad (Fray Diego de la Magdalena 485), con canchas deportivas y áreas verdes más tranquilas. Ideal para días relajados.',
+    descEn: 'Second park, on the city\'s north side (Fray Diego de la Magdalena 485), with sports courts and quieter green areas. Perfect for relaxed days.',
     price: 'Gratis', priceEn: 'Free',
-    hours: 'Lun 5AM-11AM | Mar-Sáb 5AM-10:30PM | Dom 5AM-6PM', hoursEn: 'Mon 5AM-11AM | Tue-Sat 5AM-10:30PM | Sun 5AM-6PM',
+    hours: 'Consulta el horario con CECURT', hoursEn: 'Check hours with CECURT',
     ages: '0-99', icon: '🏞️', tip: 'Menos concurrido que Tangamanga I',
     tipEn: 'Less crowded than Tangamanga I',
     map: 'Parque+Tangamanga+II+San+Luis+Potosi',
   },
   {
     name: 'Ciclovía Dominical (Av. Carranza)',
-    desc: 'Cada domingo la avenida más icónica se cierra al tráfico para ciclistas, patinadores y familias. Renta de bicis disponible.',
-    descEn: 'Every Sunday the most iconic avenue closes to traffic for cyclists, skaters, and families. Bike rentals available.',
+    desc: 'Cada domingo la avenida más icónica se cierra al tráfico para ciclistas, patinadores y familias.',
+    descEn: 'Every Sunday the most iconic avenue closes to traffic for cyclists, skaters, and families.',
     price: 'Gratis', priceEn: 'Free',
     hours: 'Dom 8AM-1PM', hoursEn: 'Sun 8AM-1PM',
-    ages: '0-99', icon: '🚴', tip: 'Llega temprano para rentar bici (~$50-100 MXN/hr)',
-    tipEn: 'Arrive early to rent a bike (~$50-100 MXN/hr)',
+    ages: '0-99', icon: '🚴', tip: 'Lleva tu propia bici o patines y llega temprano',
+    tipEn: 'Bring your own bike or skates and arrive early',
     map: 'Avenida+Venustiano+Carranza+San+Luis+Potosi',
   },
   {
     name: 'Presa de San José',
-    desc: 'Presa histórica inaugurada en 1903 con paseo peatonal, senderos para correr y andar en bici, vistas al cerro y puestos de gorditas los fines de semana.',
-    descEn: 'Historic dam built in 1903 with pedestrian walkway, running and cycling trails, hill views, and gorditas food stands on weekends.',
+    desc: 'Presa histórica con paseo peatonal, senderos para correr y andar en bici, vistas al cerro y, de camino, los puestos de gorditas de Morales los fines de semana.',
+    descEn: 'Historic dam with a pedestrian walkway, running and cycling trails, hill views, and the Gorditas de Morales stands along the way on weekends.',
     price: 'Gratis', priceEn: 'Free',
     hours: 'Diario — consultar estatus de apertura', hoursEn: 'Daily — check current opening status',
     ages: '0-99', icon: '💧',
-    tip: 'Área natural protegida. Puede tener cierres temporales por mantenimiento — verifica antes de ir',
-    tipEn: 'Protected natural area. May have temporary closures for maintenance — verify before going',
+    tip: 'Puede tener cierres temporales por mantenimiento — verifica antes de ir',
+    tipEn: 'May have temporary closures for maintenance — verify before going',
     map: 'Presa+de+San+Jose+San+Luis+Potosi',
   },
   {
     name: 'Parque Bicentenario (IMMSA)',
-    desc: 'Parque urbano moderno con pista de ciclismo, skatepark, áreas de juegos infantiles, anfiteatro al aire libre, zonas de ejercicio y Museo de la Energía.',
-    descEn: 'Modern urban park with cycling track, skatepark, children\'s playgrounds, outdoor amphitheater, exercise zones, and Energy Museum.',
+    desc: 'Parque urbano inaugurado en 2010 con ciclovías, pistas para trotar, áreas de juegos infantiles, anfiteatro al aire libre, zonas de ejercicio y esculturas industriales.',
+    descEn: 'Urban park opened in 2010 with cycling paths, jogging tracks, children\'s playgrounds, an outdoor amphitheater, exercise zones, and industrial sculptures.',
     price: 'Gratis', priceEn: 'Free',
-    hours: 'Diario 7AM-6PM', hoursEn: 'Daily 7AM-6PM',
+    hours: 'Consulta el horario antes de ir', hoursEn: 'Check hours before going',
     ages: '0-99', icon: '🚴‍♂️',
-    tip: 'Antigua planta de cobre reconvertida en parque. Tiene 6 áreas de baños gratuitos y miradores',
-    tipEn: 'Former copper plant converted into park. Has 6 free bathroom areas and viewpoints',
+    tip: 'Antigua fundidora de cobre de IMMSA reconvertida en parque, con miradores y áreas de descanso',
+    tipEn: 'Former IMMSA copper foundry converted into a park, with viewpoints and rest areas',
     map: 'Parque+Bicentenario+IMMSA+San+Luis+Potosi',
   },
   {
     name: 'Rancho La Estación',
-    desc: '9 hectáreas de rancho campestre a 10 min de la ciudad. Tirolesa, muro de escalada, rapel, tiro con arco, cabalgata, chapoteadero con agua caliente y granja con animales.',
-    descEn: '9-hectare country ranch 10 min from the city. Zip-line, climbing wall, rappelling, archery, horseback riding, heated splash pool, and farm animals.',
+    desc: 'Rancho campestre en la Carretera a Matehuala Km 8.5 (Soledad) con jardines, palapas, restaurante y hospedaje. Se enfoca en eventos corporativos, escolares y familiares.',
+    descEn: 'Country ranch on Carretera a Matehuala Km 8.5 (Soledad) with gardens, palapas, a restaurant, and lodging. Focused on corporate, school, and family events.',
     price: 'Consultar precios (varía por evento/grupo)', priceEn: 'Check prices (varies by event/group)',
     hours: 'Con reservación', hoursEn: 'By reservation',
     ages: '3-99', icon: '🐴',
@@ -102,10 +102,10 @@ const outdoorPlaces = [
 const indoorPlaces = [
   {
     name: 'Kidiverso',
-    desc: 'Parque infantil con trampolines, laberintos, resbaladillas, inflables, pared de escalada, carrusel, alberca de pelotas, área de bebés y cancha de fútbol. También ofrecen fiestas privadas.',
-    descEn: 'Kids\' park with trampolines, mazes, slides, inflatables, climbing wall, carousel, ball pit, baby area, and soccer field. Also offer private parties.',
-    price: 'Desde $90 MXN (bebés) — consultar precios en sitio', priceEn: 'From $90 MXN (toddlers) — check current prices on-site',
-    hours: 'Mar-Vie 1PM-8PM | Sáb-Dom 2PM-8PM', hoursEn: 'Tue-Fri 1PM-8PM | Sat-Sun 2PM-8PM',
+    desc: 'Parque infantil con más de 10 zonas: laberinto, trampolines, escalada, inflables, carrusel y área de bebés. También ofrecen fiestas privadas.',
+    descEn: 'Kids\' park with 10+ zones: maze, trampolines, climbing, inflatables, carousel, and baby area. Also offer private parties.',
+    price: '$150 MXN 1 hora / $280 Day Pass / $90 bebés (1-2 años)', priceEn: '$150 MXN 1 hour / $280 Day Pass / $90 toddlers (1-2)',
+    hours: 'Mar-Vie 1PM-8PM | Sáb-Dom 2:30PM-8PM', hoursEn: 'Tue-Fri 1PM-8PM | Sat-Sun 2:30PM-8PM',
     ages: '1-12', icon: '🎢',
     tip: 'Ubicado en Carr. Guadalajara 1235, Lomas del Tecnológico. Grupos de 5+ niños tienen 10% descuento',
     tipEn: 'Located at Carr. Guadalajara 1235, Lomas del Tecnológico. Groups of 5+ kids get 10% discount',
@@ -113,116 +113,85 @@ const indoorPlaces = [
     map: 'Kidiverso+San+Luis+Potosi',
   },
   {
-    name: 'Jumparks SLP',
-    desc: 'El parque de trampolines más grande de la ciudad. Camas elásticas, fosa de espuma, pared ninja, dodgeball y zona para pequeños.',
-    descEn: 'The city\'s largest trampoline park. Trampolines, foam pit, ninja wall, dodgeball, and toddler zone.',
-    price: '$189-279 MXN por persona (~$11-16 USD)', priceEn: '$189-279 MXN per person (~$11-16 USD)',
-    hours: 'Lun-Dom 11AM-8PM', hoursEn: 'Mon-Sun 11AM-8PM',
-    ages: '3-99', icon: '🤸',
-    tip: 'Calcetines antideslizantes obligatorios (se venden en el lugar)',
-    tipEn: 'Non-slip socks required (sold on-site)',
-    map: 'Jumparks+San+Luis+Potosi',
-  },
-  {
     name: 'Laberinto de las Ciencias y las Artes',
-    desc: 'Museo interactivo dentro de Tangamanga con experimentos científicos, planetario, área de agua y exhibiciones rotativas.',
-    descEn: 'Interactive museum inside Tangamanga with science experiments, planetarium, water area, and rotating exhibits.',
-    price: '$50 MXN entrada general (~$3 USD)', priceEn: '$50 MXN general admission (~$3 USD)',
-    hours: 'Mar-Vie 9AM-4PM | Sáb-Dom 11AM-7PM', hoursEn: 'Tue-Fri 9AM-4PM | Sat-Sun 11AM-7PM',
+    desc: 'Museo interactivo de ciencia y arte en la zona del Parque Tangamanga I, con salas permanentes sobre el espacio, la naturaleza, las redes y lo imperceptible, además de exhibiciones temporales.',
+    descEn: 'Interactive science-and-art museum in the Tangamanga I area, with permanent halls on space, nature, networks, and the microscopic world, plus temporary exhibits.',
+    price: '$50-60 MXN entrada general (~$3 USD)', priceEn: '$50-60 MXN general admission (~$3 USD)',
+    hours: 'Mar-Vie 9AM-5PM | Sáb-Dom 11AM-5PM', hoursEn: 'Tue-Fri 9AM-5PM | Sat-Sun 11AM-5PM',
     ages: '3-99', icon: '🔬',
-    tip: 'El planetario tiene horarios limitados, consulta al llegar',
-    tipEn: 'Planetarium has limited showtimes, check on arrival',
+    tip: 'El planetario del Parque Tangamanga I es un recinto aparte; consulta sus funciones por separado',
+    tipEn: 'The Tangamanga I planetarium is a separate venue; check its shows separately',
     map: 'Museo+Laberinto+de+las+Ciencias+San+Luis+Potosi',
   },
   {
-    name: 'Bol Tanga (Boliche)',
-    desc: 'Centro de boliche moderno con lanes iluminados, snack bar y ambiente familiar. Perfecto para tardes lluviosas.',
-    descEn: 'Modern bowling center with lit lanes, snack bar, and family atmosphere. Perfect for rainy afternoons.',
-    price: '$100-150 MXN por persona/juego (~$6-9 USD)', priceEn: '$100-150 MXN per person/game (~$6-9 USD)',
-    hours: 'Lun-Dom 12PM-10PM', hoursEn: 'Mon-Sun 12PM-10PM',
+    name: 'Bol Tangamanga (Boliche)',
+    desc: 'Boliche en Plaza Tangamanga, cerca del parque. Perfecto para tardes lluviosas.',
+    descEn: 'Bowling alley in Plaza Tangamanga, near the park. Perfect for rainy afternoons.',
+    price: 'Consultar precios con el lugar', priceEn: 'Check prices with the venue',
+    hours: 'Consultar horario', hoursEn: 'Check hours',
     ages: '4-99', icon: '🎳',
-    tip: 'Martes y miércoles suelen tener promociones',
-    tipEn: 'Tuesday and Wednesday usually have promotions',
-    map: 'Bol+Tanga+Boliche+San+Luis+Potosi',
+    tip: 'Llama antes para confirmar disponibilidad de pistas',
+    tipEn: 'Call ahead to confirm lane availability',
+    map: 'Bol+Tangamanga+San+Luis+Potosi',
   },
   {
-    name: 'Lost Box — Laser Tag',
-    desc: 'Arena de laser tag con escenarios temáticos, efectos de luz y juego en equipo. También tienen escape rooms.',
-    descEn: 'Laser tag arena with themed scenarios, light effects, and team play. They also have escape rooms.',
-    price: '$150-200 MXN por persona (~$9-12 USD)', priceEn: '$150-200 MXN per person (~$9-12 USD)',
-    hours: 'Lun-Dom 12PM-9PM', hoursEn: 'Mon-Sun 12PM-9PM',
-    ages: '6-99', icon: '🎯',
-    tip: 'Reserva para grupos de 8+ con anticipación',
-    tipEn: 'Book ahead for groups of 8+',
-    map: 'Lost+Box+Laser+Tag+San+Luis+Potosi',
-  },
-  {
-    name: 'Go-Karts SLP',
-    desc: 'Pista de go-karts con carreras para adultos y karts especiales para niños. Emoción sobre ruedas para toda la familia.',
-    descEn: 'Go-kart track with adult races and special karts for kids. Wheeled thrills for the whole family.',
-    price: '$150-250 MXN por carrera (~$9-15 USD)', priceEn: '$150-250 MXN per race (~$9-15 USD)',
-    hours: 'Vie-Dom 11AM-8PM', hoursEn: 'Fri-Sun 11AM-8PM',
+    name: 'GoKartMania Citadella',
+    desc: 'Pista de go-karts en Plaza Citadella (Av. Salvador Nava Martínez 3125), junto a Tangamanga I, con karts para adultos y opciones para niños.',
+    descEn: 'Go-kart track in Plaza Citadella (Av. Salvador Nava Martínez 3125), next to Tangamanga I, with adult karts and options for kids.',
+    price: '$349 MXN carrera adulto / $150 Kartito (~$19/$8 USD)', priceEn: '$349 MXN adult race / $150 Kartito (~$19/$8 USD)',
+    hours: 'Consultar horario', hoursEn: 'Check hours',
     ages: '5-99', icon: '🏎️',
-    tip: 'Los fines de semana tienen más horarios disponibles',
-    tipEn: 'Weekends have more available time slots',
-    map: 'Go+Karts+San+Luis+Potosi',
+    tip: 'Los paquetes de varias carreras bajan el precio por carrera',
+    tipEn: 'Multi-race packages lower the price per race',
+    website: 'https://gokartmaniaslp.com/servicios/',
+    map: 'GoKartMania+Citadella+San+Luis+Potosi',
   },
   {
     name: 'Enigma Rooms (Escape Room)',
-    desc: 'Salas de escape temáticas donde la familia trabaja en equipo para resolver acertijos y escapar antes del tiempo. Varias dificultades disponibles.',
-    descEn: 'Themed escape rooms where the family works together to solve puzzles and escape before time runs out. Various difficulty levels.',
-    price: '$200-300 MXN por persona (~$12-17 USD)', priceEn: '$200-300 MXN per person (~$12-17 USD)',
-    hours: 'Lun-Dom 12PM-9PM', hoursEn: 'Mon-Sun 12PM-9PM',
+    desc: 'Salas de escape temáticas donde la familia trabaja en equipo para resolver acertijos antes de que se acaben los 60 minutos. Sucursales en Av. Carranza 940 y The Park.',
+    descEn: 'Themed escape rooms where the family works together to solve puzzles before the 60 minutes run out. Branches at Av. Carranza 940 and The Park.',
+    price: '$320-380 MXN + IVA por persona (~$17-20 USD)', priceEn: '$320-380 MXN + VAT per person (~$17-20 USD)',
+    hours: 'Con reservación', hoursEn: 'By reservation',
     ages: '8-99', icon: '🔐',
-    tip: 'Calificado 5.0/5 en TripAdvisor. Ideal para familias con niños mayores de 8',
-    tipEn: 'Rated 5.0/5 on TripAdvisor. Best for families with kids 8+',
+    tip: 'Menores de 11 años deben ir acompañados de un adulto. Ideal para familias con niños mayores de 8',
+    tipEn: 'Kids under 11 must be accompanied by an adult. Best for families with kids 8+',
+    website: 'https://enigmarooms.mx/eng/slp.html',
     map: 'Enigma+Rooms+San+Luis+Potosi',
-  },
-  {
-    name: 'Jaulas de Bateo Mont Park',
-    desc: 'Centro de bateo con jaulas de diferentes velocidades para niños y adultos. Diversión deportiva para practicar béisbol y softbol.',
-    descEn: 'Batting center with cages at different speeds for kids and adults. Sports fun for baseball and softball practice.',
-    price: '$80-150 MXN por ronda (~$5-9 USD)', priceEn: '$80-150 MXN per round (~$5-9 USD)',
-    hours: 'Lun-Dom 10AM-9PM', hoursEn: 'Mon-Sun 10AM-9PM',
-    ages: '5-99', icon: '⚾',
-    tip: 'Tiene jaulas de velocidad baja para principiantes y niños',
-    tipEn: 'Has low-speed cages for beginners and kids',
-    map: 'Jaulas+de+Bateo+Mont+Park+San+Luis+Potosi',
   },
 ];
 
 const culturePlaces = [
   {
     name: 'Centro de las Artes',
-    desc: 'Antigua penitenciaría convertida en centro cultural con talleres de arte, galerías y la Sala Leonora Carrington.',
-    descEn: 'Former penitentiary turned cultural center with art workshops, galleries, and the Leonora Carrington Room.',
-    price: 'Gratis', priceEn: 'Free',
+    desc: 'Antigua penitenciaría estatal convertida en centro cultural (Calzada de Guadalupe 705) con talleres de arte, galerías y el Museo Leonora Carrington.',
+    descEn: 'Former state penitentiary turned cultural center (Calzada de Guadalupe 705) with art workshops, galleries, and the Museo Leonora Carrington.',
+    price: '~$55 MXN; gratis los miércoles', priceEn: '~$55 MXN; free on Wednesdays',
     hours: 'Mar-Dom 10AM-6PM', hoursEn: 'Tue-Sun 10AM-6PM',
     ages: '0-99', icon: '🎨',
-    tip: 'Los talleres infantiles de fin de semana son gratuitos',
-    tipEn: 'Weekend kids\' workshops are free',
+    tip: 'Revisa la agenda semanal del CEART para talleres infantiles',
+    tipEn: 'Check the CEART weekly agenda for kids\' workshops',
     map: 'Centro+de+las+Artes+San+Luis+Potosi',
   },
   {
     name: 'Museo Nacional de la Máscara',
     desc: 'Más de 1,300 máscaras ceremoniales de todo México. A los niños les fascina la variedad de diseños y colores.',
     descEn: 'Over 1,300 ceremonial masks from across Mexico. Kids love the variety of designs and colors.',
-    price: '$20 MXN general / $10 niños y estudiantes (~$1.15 USD). Gratis los martes', priceEn: '$20 MXN general / $10 kids & students (~$1.15 USD). Free on Tuesdays',
-    hours: 'Lun-Sáb 10AM-9PM | Dom 11AM-7PM', hoursEn: 'Mon-Sat 10AM-9PM | Sun 11AM-7PM',
+    price: 'Entrada de bajo costo — consulta tarifas vigentes', priceEn: 'Low-cost admission — check current prices',
+    hours: 'Mar-Dom (cerrado lunes) — consulta horario', hoursEn: 'Tue-Sun (closed Mon) — check hours',
     ages: '3-99', icon: '🎭',
-    tip: 'Los martes la entrada es gratuita. En el Centro Histórico, combínalo con un paseo por las plazas',
-    tipEn: 'Free admission on Tuesdays. In Centro Histórico, combine with a walk around the plazas',
+    tip: 'Está en Villerías 2, Centro Histórico. Combínalo con un paseo por las plazas',
+    tipEn: 'Located at Villerías 2, Centro Histórico. Combine with a walk around the plazas',
     map: 'Museo+Nacional+de+la+Mascara+San+Luis+Potosi',
   },
   {
     name: 'San Luis Rey (Tranvía)',
     desc: 'Recorrido narrado en tranvía por el centro histórico. Historia, arquitectura y leyendas de la ciudad.',
     descEn: 'Narrated trolley tour through the historic center. History, architecture, and city legends.',
-    price: '$50 MXN adultos / $35 niños (~$3/$2 USD)', priceEn: '$50 MXN adults / $35 kids (~$3/$2 USD)',
-    hours: 'Salidas desde Plaza de Armas', hoursEn: 'Departures from Plaza de Armas',
+    price: '$150 MXN adultos / $100 niños e INAPAM (~$8/$5 USD)', priceEn: '$150 MXN adults / $100 kids & seniors (~$8/$5 USD)',
+    hours: 'Diario 10AM-7:30PM, salidas desde el Jardín San Juan de Dios', hoursEn: 'Daily 10AM-7:30PM, departures from Jardín San Juan de Dios',
     ages: '3-99', icon: '🚋',
-    tip: 'Los recorridos nocturnos de leyendas son geniales para niños mayores',
-    tipEn: 'Night legend tours are great for older kids',
+    tip: 'El recorrido dura cerca de 90 minutos; los boletos se compran a bordo',
+    tipEn: 'The tour takes about 90 minutes; tickets are sold on board',
     map: 'Tranvia+Turistico+San+Luis+Rey+San+Luis+Potosi',
   },
 ];
@@ -235,10 +204,10 @@ const familyPlans = [
     budgetEn: '$85-145 USD',
     schedule: [
       { time: '9:00', act: 'Desayuno en La Parroquia Potosina', actEn: 'Breakfast at La Parroquia Potosina' },
-      { time: '10:30', act: 'Parque Tangamanga - Zoológico y lago', actEn: 'Tangamanga Park - Zoo and lake' },
+      { time: '10:30', act: 'Parque Tangamanga I - lago y juegos', actEn: 'Tangamanga Park I - lake and playgrounds' },
       { time: '13:30', act: 'Almuerzo picnic en el parque', actEn: 'Picnic lunch in the park' },
-      { time: '15:00', act: 'Jumparks o Go-Karts', actEn: 'Jumparks or Go-Karts' },
-      { time: '18:00', act: 'Helado en La Flor de SLP', actEn: 'Ice cream at La Flor de SLP' },
+      { time: '15:00', act: 'GoKartMania o Bol Tangamanga', actEn: 'GoKartMania or Bol Tangamanga' },
+      { time: '18:00', act: 'Helado y paseo en Plaza Citadella', actEn: 'Ice cream and stroll at Plaza Citadella' },
     ],
     color: 'green',
   },
@@ -251,7 +220,7 @@ const familyPlans = [
       { time: '9:00', act: 'Desayuno en Sanborns o VIPS', actEn: 'Breakfast at Sanborns or VIPS' },
       { time: '10:30', act: 'Laberinto de las Ciencias', actEn: 'Laberinto Science Museum' },
       { time: '13:00', act: 'San Luis Rey Tranvía', actEn: 'San Luis Rey Trolley Tour' },
-      { time: '14:30', act: 'Comida en La Oruga y la Cebolla', actEn: 'Lunch at La Oruga y la Cebolla' },
+      { time: '14:30', act: 'Comida en La Posada del Virrey (Jardín Hidalgo)', actEn: 'Lunch at La Posada del Virrey (Jardín Hidalgo)' },
       { time: '16:30', act: 'Museo de la Máscara + paseo Centro', actEn: 'Mask Museum + Centro walk' },
     ],
     color: 'blue',
@@ -263,10 +232,10 @@ const familyPlans = [
     budgetEn: '$35-70 USD',
     schedule: [
       { time: '8:00', act: 'Ciclovía en Av. Carranza', actEn: 'Ciclovía on Av. Carranza' },
-      { time: '10:30', act: 'Desayuno en El Mesón de San Pascual', actEn: 'Breakfast at El Mesón de San Pascual' },
-      { time: '12:00', act: 'Kidiverso o Boliche', actEn: 'Kidiverso or Bowling' },
-      { time: '14:30', act: 'Comida en Peter Piper Pizza', actEn: 'Lunch at Peter Piper Pizza' },
-      { time: '16:00', act: 'Helado y paseo en Plaza Citadina', actEn: 'Ice cream and stroll at Plaza Citadina' },
+      { time: '10:30', act: 'Desayuno en Café Cortao (Centro)', actEn: 'Breakfast at Café Cortao (Centro)' },
+      { time: '14:00', act: 'Kidiverso (abre 2:30PM fines de semana) o Boliche', actEn: 'Kidiverso (opens 2:30PM on weekends) or Bowling' },
+      { time: '16:30', act: 'Comida en Peter Piper Pizza (Plaza Citadella)', actEn: 'Lunch at Peter Piper Pizza (Plaza Citadella)' },
+      { time: '18:00', act: 'Helado y paseo en Plaza Citadella', actEn: 'Ice cream and stroll at Plaza Citadella' },
     ],
     color: 'orange',
   },
@@ -284,18 +253,18 @@ export default function FamilyFriendlyActivities({ familyEvents: initialFamilyEv
   const isEs = locale === 'es';
 
   const pageTitle = isEs
-    ? 'Parques para Niños en San Luis Potosí: los 12 mejores + 30 actividades familiares (precios y horarios)'
-    : 'Parks for Kids in San Luis Potosí: 12 Best + 30 Family Activities (Prices & Hours)';
+    ? 'Parques para Niños en San Luis Potosí: 14 actividades familiares con precios y horarios'
+    : 'Parks for Kids in San Luis Potosí: 14 Family Activities with Prices & Hours';
   const pageDesc = isEs
-    ? 'Parques para niños en San Luis Potosí: los 12 mejores más 30 actividades familiares con precios, horarios y edades — Tangamanga, trampolines, museos, go-karts y más para este fin de semana.'
-    : 'Parks for kids in San Luis Potosí: the 12 best plus 30 family activities with prices, hours and age ranges — Tangamanga, trampolines, museums, go-karts and more for this weekend.';
+    ? 'Parques para niños en San Luis Potosí: 14 actividades familiares con precios, horarios y edades — Tangamanga, Kidiverso, museos, go-karts y más para este fin de semana.'
+    : 'Parks for kids in San Luis Potosí: 14 family activities with prices, hours and age ranges — Tangamanga, Kidiverso, museums, go-karts and more for this weekend.';
 
   return (
     <>
       <SEO
         title={pageTitle}
         description={pageDesc}
-        keywords="family friendly activities San Luis Potosí, actividades familiares SLP, things to do with kids San Luis Potosi, family activities Mexico, parques infantiles SLP, Kidiverso, Jumparks, Tangamanga, boliche SLP, go karts San Luis Potosi, Laberinto de las Ciencias, family travel San Luis Potosi, kid friendly SLP"
+        keywords="family friendly activities San Luis Potosí, actividades familiares SLP, things to do with kids San Luis Potosi, family activities Mexico, parques infantiles SLP, Kidiverso, GoKartMania, Tangamanga, boliche SLP, go karts San Luis Potosi, Laberinto de las Ciencias, family travel San Luis Potosi, kid friendly SLP"
         ogType="website"
       />
 
@@ -339,22 +308,22 @@ export default function FamilyFriendlyActivities({ familyEvents: initialFamilyEv
                 {
                   '@type': 'Question',
                   name: 'What are the best family friendly activities in San Luis Potosí?',
-                  acceptedAnswer: { '@type': 'Answer', text: 'The best family friendly activities in San Luis Potosí include Parque Tangamanga (free urban park with zoo), Kidiverso (indoor play park), Jumparks (trampoline park), Laberinto de las Ciencias (interactive science museum), bowling at Bol Tanga, go-karts, Lost Box laser tag, and the Sunday Ciclovía on Avenida Carranza.' },
+                  acceptedAnswer: { '@type': 'Answer', text: 'The best family friendly activities in San Luis Potosí include Parque Tangamanga I (free urban park; its zoo is temporarily closed for renovation), Kidiverso (indoor play park), Laberinto de las Ciencias (interactive science museum), bowling at Bol Tangamanga, GoKartMania go-karts, Enigma Rooms escape rooms, and the Sunday Ciclovía on Avenida Carranza.' },
                 },
                 {
                   '@type': 'Question',
                   name: 'Are there free family friendly activities in San Luis Potosí?',
-                  acceptedAnswer: { '@type': 'Answer', text: 'Yes, several family friendly activities in San Luis Potosí are completely free: Parque Tangamanga I and II, the Sunday Ciclovía on Avenida Carranza, Centro de las Artes, and walking tours of the historic center plazas.' },
+                  acceptedAnswer: { '@type': 'Answer', text: 'Yes, several family friendly activities in San Luis Potosí are completely free: Parque Tangamanga I and II, Parque Bicentenario, the Sunday Ciclovía on Avenida Carranza, and walking around the historic center plazas. Centro de las Artes is free on Wednesdays.' },
                 },
                 {
                   '@type': 'Question',
                   name: 'How much do family friendly activities cost in San Luis Potosí?',
-                  acceptedAnswer: { '@type': 'Answer', text: 'Family friendly activities in San Luis Potosí are very affordable. Kidiverso costs $199-299 MXN ($11-17 USD), Jumparks $189-279 MXN ($11-16 USD), bowling $100-150 MXN ($6-9 USD), go-karts $150-250 MXN ($9-15 USD). Many parks and cultural sites are free.' },
+                  acceptedAnswer: { '@type': 'Answer', text: 'Family friendly activities in San Luis Potosí are affordable. Kidiverso costs $150 MXN for one hour or $280 MXN for a day pass, Museo Laberinto about $50-60 MXN, and a GoKartMania adult race $349 MXN ($150 for the Kartito). Many parks are free.' },
                 },
                 {
                   '@type': 'Question',
                   name: 'What indoor family friendly activities are available in San Luis Potosí for rainy days?',
-                  acceptedAnswer: { '@type': 'Answer', text: 'Indoor family friendly activities for rainy days in San Luis Potosí include Kidiverso (play park), Jumparks (trampoline park), Bol Tanga (bowling), Lost Box (laser tag and escape rooms), Laberinto de las Ciencias (science museum), and Museo Nacional de la Máscara.' },
+                  acceptedAnswer: { '@type': 'Answer', text: 'Indoor family friendly activities for rainy days in San Luis Potosí include Kidiverso (play park), Bol Tangamanga (bowling), Enigma Rooms (escape rooms), Laberinto de las Ciencias (science museum), and Museo Nacional de la Máscara.' },
                 },
               ],
             }),
@@ -377,7 +346,7 @@ export default function FamilyFriendlyActivities({ familyEvents: initialFamilyEv
         <section className="relative overflow-hidden">
           <Image
             src="/images/meeting-spots/tangamanga-zoo.jpg"
-            alt="Tangamanga zoo, a family favorite in San Luis Potosí"
+            alt="Parque Tangamanga, a family favorite in San Luis Potosí"
             fill
             priority
             className="object-cover"
@@ -399,7 +368,7 @@ export default function FamilyFriendlyActivities({ familyEvents: initialFamilyEv
             <div className="flex flex-wrap justify-center gap-4">
               {[
                 { icon: '🌳', label: isEs ? '6 Al Aire Libre' : '6 Outdoor' },
-                { icon: '🎢', label: isEs ? '8 Bajo Techo' : '8 Indoor' },
+                { icon: '🎢', label: isEs ? '5 Bajo Techo' : '5 Indoor' },
                 { icon: '🎨', label: isEs ? '3 Culturales' : '3 Cultural' },
                 { icon: '📋', label: isEs ? '3 Planes del Día' : '3 Day Plans' },
               ].map((s) => (
@@ -596,9 +565,9 @@ export default function FamilyFriendlyActivities({ familyEvents: initialFamilyEv
             <div className="space-y-4">
               {[
                 { color: 'green', icon: '☀️', text: isEs ? 'El clima de SLP es semiárido. Lleva protector solar, gorra y agua, especialmente para actividades al aire libre entre 11AM-3PM.' : 'SLP has a semi-arid climate. Bring sunscreen, a cap, and water, especially for outdoor activities between 11AM-3PM.' },
-                { color: 'blue', icon: '🚗', text: isEs ? 'Uber y DiDi funcionan bien en toda la ciudad. Para recorrer varios lugares en un día, considera rentar auto — el estacionamiento es barato ($20-40 MXN/hr).' : 'Uber and DiDi work well throughout the city. To visit multiple places in a day, consider renting a car — parking is cheap ($20-40 MXN/hr).' },
-                { color: 'amber', icon: '💰', text: isEs ? 'Muchas family friendly activities en SLP son gratis o cuestan menos de $200 MXN por persona. Comer en fondas locales cuesta $60-100 MXN por persona vs $200+ en restaurantes.' : 'Many family friendly activities in SLP are free or under $200 MXN per person. Eating at local fondas costs $60-100 MXN per person vs $200+ at restaurants.' },
-                { color: 'purple', icon: '📅', text: isEs ? 'Los fines de semana son más concurridos. Para evitar filas en Kidiverso y Jumparks, ve entre semana o llega temprano.' : 'Weekends are busier. To avoid lines at Kidiverso and Jumparks, go on weekdays or arrive early.' },
+                { color: 'blue', icon: '🚗', text: isEs ? 'Uber y DiDi funcionan bien en toda la ciudad. Para recorrer varios lugares en un día, considera rentar auto — el estacionamiento suele ser económico.' : 'Uber and DiDi work well throughout the city. To visit multiple places in a day, consider renting a car — parking is usually inexpensive.' },
+                { color: 'amber', icon: '💰', text: isEs ? 'Muchas family friendly activities en SLP son gratis o cuestan menos de $200 MXN por persona. Comer en fondas locales suele costar mucho menos que en restaurantes.' : 'Many family friendly activities in SLP are free or under $200 MXN per person. Eating at local fondas usually costs far less than at restaurants.' },
+                { color: 'purple', icon: '📅', text: isEs ? 'Los fines de semana son más concurridos. Para evitar filas en Kidiverso y GoKartMania, ve entre semana o llega temprano.' : 'Weekends are busier. To avoid lines at Kidiverso and GoKartMania, go on weekdays or arrive early.' },
                 { color: 'red', icon: '🏥', text: isEs ? 'Farmacias están en todas partes. Para emergencias: Hospital Lomas (privado) y Star Médica. Número de emergencias: 911.' : 'Pharmacies are everywhere. For emergencies: Hospital Lomas (private) and Star Médica. Emergency number: 911.' },
               ].map((tip) => (
                 <div key={tip.icon} className={`bg-${tip.color}-50 border-l-4 border-${tip.color}-400 p-4 rounded-r-lg`}>

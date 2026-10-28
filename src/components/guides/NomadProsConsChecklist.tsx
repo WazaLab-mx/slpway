@@ -1,13 +1,13 @@
 import { CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/solid';
 
 const pros = [
-  'Among the safest cities in Mexico — walk the Centro at night',
+  'One of the lowest reported homicide rates among Mexican states (México Evalúa, H1 2026)',
   'Low cost: $1,000-$1,500 USD/mo comfortable lifestyle',
   'Stunning colonial architecture & UNESCO-listed Centro',
   'World-class food (enchiladas potosinas, gorditas, mezcal)',
-  '2-3 hr drive to Huasteca Potosina waterfalls & caves',
-  'Clean air, altitude (1,860 m), manageable traffic',
-  'Direct flights SLP → DFW, IAH, MEX',
+  'About 3.5 hrs (~250 km) by road to the Huasteca Potosina waterfalls & caves',
+  'High altitude (1,864 m), mild year-round temperatures',
+  'Direct flights to Mexico City, Monterrey, Texas and Chicago',
   'Strong universities = educated, entrepreneurial locals',
 ];
 
@@ -26,8 +26,7 @@ export function NomadProsConsSection() {
     <section id="pros-cons">
       <h2 className="text-2xl font-bold text-gray-900 mb-2">Honest Pros & Cons</h2>
       <p className="text-gray-600 mb-6">
-        No city is perfect. Here's the unvarnished reality after talking to dozens of nomads who've
-        lived 3-24 months in SLP.
+        No city is perfect. Here's the unvarnished reality of living and working remotely in SLP.
       </p>
       <div className="grid md:grid-cols-2 gap-5">
         <div className="bg-gradient-to-br from-emerald-50 to-green-50 border border-emerald-200 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300">
@@ -67,14 +66,14 @@ const checklist = [
   'Buy local SIM card (Telcel/AT&T store — bring passport)',
   'Download Uber + DiDi, link your card',
   'Walk the Centro Histórico (Plaza de Armas, Cathedral, Jardín de San Francisco)',
-  'Try enchiladas potosinas at La Oruga y La Cebada or La Posada del Virrey',
+  'Try enchiladas potosinas at a traditional Centro restaurant or Mercado Hidalgo',
   'Install your bank app — enable international transactions',
   'Scope out a gym or studio (Smart Fit ~$400 MXN/mo, local boutiques $800-$1,500)',
-  'Join "SLP Expats & Nomads" Facebook + WhatsApp groups',
-  'Visit a coworking day pass — Impact Hub or Capital Coffee',
-  'Buy groceries at La Comer, Soriana or Mercado Hidalgo',
+  'Join San Luis Potosí expat groups on Facebook and WhatsApp',
+  'Try a coworking day pass (e.g., VAEO in Lomas) or a work-friendly café',
+  'Buy groceries at Soriana or Mercado Hidalgo',
   'Stock up on bottled water (most locals don\'t drink tap)',
-  'Get a mezcal tasting — Mezcal Oso & El Pasito are classics',
+  'Book a mezcal tasting at a Centro mezcalería',
   'Take a weekend trip to Real de Catorce or Huasteca',
 ];
 

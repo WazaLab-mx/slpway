@@ -26,6 +26,8 @@ const DISTANCE_ACCENTS = ['text-emerald-400', 'text-teal-400', 'text-blue-400', 
 // Verified 2026 results (40th edition, run June 28, 2026). Winners' names and
 // times are factual data cross-checked across Global Media, El Sol de San Luis,
 // Código San Luis and Pulso SLP — kept out of i18n since they are proper nouns.
+// Logistics rechecked 2026-10-27 against the official 2026 convocatoria
+// (maratontangamanga.com); unpublished 17,000 cap removed from schema.
 const RESULTS_2026 = [
   { key: 'marathon', men: { name: 'Bonyface Kaplagat Kangogo', time: '2:29:32' }, women: { name: 'Anahí Rivera', time: '2:53:17' } },
   { key: 'halfMarathon', men: { name: 'Kalid Galván', time: '1:11:22' }, women: { name: 'Berenice Rodríguez', time: '1:25:21' } },
@@ -64,7 +66,6 @@ export default function MaratonTangamanga2026() {
         organizer: { '@type': 'Organization', name: 'Maratón Tangamanga', url: 'https://maratontangamanga.com/' },
         eventStatus: 'https://schema.org/EventScheduled',
         eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-        maximumAttendeeCapacity: 17000,
         url: 'https://www.sanluisway.com/events/maraton-tangamanga-2026',
       },
       {

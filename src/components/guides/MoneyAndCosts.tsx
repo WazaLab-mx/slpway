@@ -1,11 +1,11 @@
 const costs = [
-  { item: 'Museum entry', price: 'Free - $50 MXN', emoji: '🏛️' },
+  { item: 'Museum entry', price: 'Free - $60 MXN', emoji: '🏛️' },
   { item: 'Coffee at a cafe', price: '$40 - 60 MXN', emoji: '☕' },
   { item: 'Street tacos', price: '$15 - 25 MXN each', emoji: '🌮' },
   { item: 'Mid-range dinner', price: '$300 - 500 MXN', emoji: '🍽️' },
   { item: 'Local beer / cocktail', price: '$40 - 90 MXN', emoji: '🍺' },
   { item: 'Guided tour', price: '$400 - 1,200 MXN', emoji: '🧭' },
-  { item: 'Artisan rebozo', price: '$200 - 800 MXN', emoji: '🧣' },
+  { item: 'Artisan rebozo', price: 'Varies by fiber and work', emoji: '🧣' },
   { item: 'Uber across town', price: '$60 - 120 MXN', emoji: '🚕' },
 ];
 

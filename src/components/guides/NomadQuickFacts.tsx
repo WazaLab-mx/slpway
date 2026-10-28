@@ -10,8 +10,8 @@ const facts = [
   {
     Icon: WifiIcon,
     label: 'Avg Internet',
-    value: '150 Mbps',
-    hint: 'Fiber in most homes',
+    value: '~100 Mbps',
+    hint: 'Mexico fixed median, 2026',
     color: 'from-blue-500 to-cyan-500',
   },
   {
@@ -25,14 +25,14 @@ const facts = [
     Icon: ClockIcon,
     label: 'Time Zone',
     value: 'CST (UTC-6)',
-    hint: 'Same as Chicago',
+    hint: 'No DST; = Chicago in winter',
     color: 'from-indigo-500 to-purple-500',
   },
   {
     Icon: ShieldCheckIcon,
     label: 'Safety',
-    value: 'High',
-    hint: 'Safest mid-size MX',
+    value: 'Moderate',
+    hint: 'US advisory Level 2',
     color: 'from-amber-500 to-orange-500',
   },
   {

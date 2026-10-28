@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { WifiIcon, ClockIcon, MapPinIcon, CurrencyDollarIcon } from '@heroicons/react/24/outline';
-import { StarIcon } from '@heroicons/react/24/solid';
 
 interface Spot {
   name: string;
@@ -10,85 +9,64 @@ interface Spot {
   wifi: string;
   hours: string;
   vibe: string[];
-  rating: number;
 }
 
 const spots: Spot[] = [
   {
     name: 'Capital Coffee',
     img: '/images/blog/cafes/capital-coffee.jpg',
-    neighborhood: 'Lomas / Av. Venustiano Carranza',
-    price: '$60-90 MXN drink',
-    wifi: '~80 Mbps',
-    hours: '7:30am - 10:00pm',
-    vibe: ['Fast wifi', 'Specialty coffee', 'Social'],
-    rating: 4.7,
+    neighborhood: 'Av. Cuauhtémoc 1327, Col. Jardín',
+    price: '~$60-90 MXN drink',
+    wifi: 'Free',
+    hours: '~8:00am - 10:00pm',
+    vibe: ['Specialty coffee', 'Social'],
   },
   {
     name: 'Café Sideral',
     img: '/images/blog/cafes/cafe-sideral.jpg',
-    neighborhood: 'Centro Histórico',
-    price: '$50-80 MXN drink',
-    wifi: '~60 Mbps',
-    hours: '8:00am - 9:00pm',
-    vibe: ['Quiet', 'Cozy', 'Plug points'],
-    rating: 4.6,
+    neighborhood: 'Galeana 475, Centro Histórico',
+    price: '~$50-80 MXN drink',
+    wifi: 'Free',
+    hours: 'Check before going',
+    vibe: ['Cozy', 'Specialty coffee'],
   },
   {
     name: 'Las Castañas',
     img: '/images/blog/cafes/las-castanas-new.jpg',
-    neighborhood: 'Centro / Jardín de San Juan de Dios',
-    price: '$55-95 MXN drink',
-    wifi: '~50 Mbps',
-    hours: '8:00am - 10:00pm',
-    vibe: ['Brunch', 'Outdoor seating', 'Laptop-friendly'],
-    rating: 4.5,
+    neighborhood: 'Av. Carranza 1325 (Tequis) · Independencia 800 (Centro)',
+    price: '~$55-95 MXN drink',
+    wifi: 'Free',
+    hours: 'Check before going',
+    vibe: ['Brunch', 'Bakery', 'Two locations'],
   },
   {
     name: '500 Noches',
     img: '/images/blog/cafes/500-noches.jpg',
-    neighborhood: 'Centro Histórico',
-    price: '$45-75 MXN drink',
-    wifi: '~45 Mbps',
-    hours: '9:00am - 11:00pm',
-    vibe: ['Artsy', 'Late hours', 'Good for calls'],
-    rating: 4.4,
+    neighborhood: 'Calle Huasteca 300, Bellas Lomas',
+    price: '~$45-75 MXN drink',
+    wifi: 'Free',
+    hours: '~9:00am - 1:00am',
+    vibe: ['Café-bar', 'Late hours', 'Live music'],
   },
   {
-    name: 'Impact Hub SLP',
-    img: '/images/blog/cafes/capital-coffee.jpg',
-    neighborhood: 'Av. Benito Juárez',
-    price: '$150-250 MXN/day · $2,800 MXN/mo',
-    wifi: '~200 Mbps',
-    hours: 'Mon-Fri 9:00am - 8:00pm',
-    vibe: ['Coworking', 'Events', 'Meeting rooms'],
-    rating: 4.8,
+    name: 'VAEO Business Club',
+    img: '/images/heroes/community-coffee.jpg',
+    neighborhood: 'Plaza Covalia, Av. Real de Lomas 350',
+    price: 'Day passes & memberships — ask for rates',
+    wifi: 'Included',
+    hours: 'Weekday business hours',
+    vibe: ['Coworking', 'Meeting rooms', 'Phone booths'],
   },
   {
     name: 'Halva Café',
     img: '/images/blog/cafes/halva-cafe.png',
-    neighborhood: 'Lomas 2da Sección',
-    price: '$60-100 MXN drink',
-    wifi: '~70 Mbps',
-    hours: '8:00am - 10:00pm',
-    vibe: ['Healthy menu', 'Quiet', 'AC'],
-    rating: 4.6,
+    neighborhood: 'Casa H, Av. Carranza 1190, Tequisquiapan',
+    price: '~$60-100 MXN drink',
+    wifi: 'Free',
+    hours: 'Check before going',
+    vibe: ['Bakery', 'Garden setting'],
   },
 ];
-
-function Rating({ value }: { value: number }) {
-  return (
-    <div className="flex items-center gap-1">
-      {[1, 2, 3, 4, 5].map((n) => (
-        <StarIcon
-          key={n}
-          className={`w-4 h-4 ${n <= Math.round(value) ? 'text-amber-400' : 'text-gray-200'}`}
-        />
-      ))}
-      <span className="text-xs text-gray-600 ml-1 font-semibold">{value.toFixed(1)}</span>
-    </div>
-  );
-}
 
 export default function NomadCoworkingList() {
   return (
@@ -105,9 +83,6 @@ export default function NomadCoworkingList() {
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500"
             />
-            <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-sm rounded-full px-2.5 py-1 shadow-sm">
-              <Rating value={s.rating} />
-            </div>
           </div>
           <div className="p-5">
             <h3 className="font-bold text-lg text-gray-900 mb-1">{s.name}</h3>

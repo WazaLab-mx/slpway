@@ -11,7 +11,7 @@ export default function FestivalsPage() {
   const faqs = [
     {
       question: 'What is the biggest festival in San Luis Potosí?',
-      answer: 'FENAPO (Feria Nacional Potosina) in August is the largest — a 3-week state fair with free concerts, livestock expo, cultural pavilions, and the famous Teatro del Pueblo. Festival Internacional San Luis en Primavera (April) is the biggest cultural festival.',
+      answer: 'FENAPO (Feria Nacional Potosina) in August is the largest — the 2026 edition ran August 7–30 with free entry, free concerts, a livestock expo, cultural pavilions, and the famous Teatro del Pueblo. Festival Internacional San Luis en Primavera (Holy Week; the 2026 edition ran March 28–April 4) is the biggest cultural festival.',
     },
     {
       question: 'When is the Procesión del Silencio?',
@@ -19,7 +19,7 @@ export default function FestivalsPage() {
     },
     {
       question: 'Are festivals in San Luis Potosí free?',
-      answer: 'Many are. Festival de Primavera outdoor concerts, FENAPO Teatro del Pueblo, Noche de Museos (last Friday monthly), and most plaza events are free. Some FENAPO concerts and palenque shows require tickets.',
+      answer: 'Many are. Festival de Primavera outdoor concerts, FENAPO entry and Teatro del Pueblo, the Fiesta de Luz projection shows, and most plaza events are free. Some FENAPO concerts and palenque shows require tickets.',
     },
   ];
 
@@ -28,7 +28,7 @@ export default function FestivalsPage() {
       <Head>
         <title>Food &amp; Cultural Festivals in San Luis Potosí 2026 — Dates, Tickets, Free Events | San Luis Way</title>
         <meta name="description" content="Food and cultural festivals in San Luis Potosí for 2026: dates, tickets and free events — FENAPO, Festival de Primavera, Procesión del Silencio, Día de Muertos and more." />
-        <meta name="keywords" content="food festivals San Luis Potosí, San Luis Potosí festivals 2026, cultural events, traditional celebrations, Feria Nacional Potosina, Festival de la Luz, Día de los Muertos, free events SLP" />
+        <meta name="keywords" content="food festivals San Luis Potosí, San Luis Potosí festivals 2026, cultural events, traditional celebrations, Feria Nacional Potosina, Fiesta de Luz, Día de los Muertos, free events SLP" />
         <meta property="og:title" content="Food & Cultural Festivals in San Luis Potosí 2026 — Dates, Tickets, Free Events" />
         <meta property="og:description" content="Food and cultural festivals in San Luis Potosí for 2026: dates, tickets and free events — FENAPO, Festival de Primavera, Procesión del Silencio and more." />
         <meta property="og:image" content="/images/festivals.jpeg" />
@@ -119,7 +119,7 @@ export default function FestivalsPage() {
                   </p>
                   <ul className="list-disc list-inside text-gray-600 mb-4">
                     <li>Feria Nacional Potosina</li>
-                    <li>Festival de la Luz</li>
+                    <li>Fiesta de Luz</li>
                     <li>Día de los Muertos Celebrations</li>
                     <li>Semana Santa Processions</li>
                   </ul>
@@ -170,7 +170,7 @@ export default function FestivalsPage() {
                   <div className="border-b border-gray-200 pb-4">
                     <div className="flex justify-between items-start mb-2">
                       <h4 className="font-medium text-gray-900">Feria Nacional Potosina</h4>
-                      <span className="text-sm text-gray-500">Aug 15-30</span>
+                      <span className="text-sm text-gray-500">Aug 7-30, 2026</span>
                     </div>
                     <p className="text-gray-600 text-sm">
                       The city's largest annual fair featuring traditional music, food, and cultural performances.
@@ -178,11 +178,11 @@ export default function FestivalsPage() {
                   </div>
                   <div className="border-b border-gray-200 pb-4">
                     <div className="flex justify-between items-start mb-2">
-                      <h4 className="font-medium text-gray-900">Festival de la Luz</h4>
-                      <span className="text-sm text-gray-500">Sep 10-15</span>
+                      <h4 className="font-medium text-gray-900">Fiesta de Luz</h4>
+                      <span className="text-sm text-gray-500">Seasonal</span>
                     </div>
                     <p className="text-gray-600 text-sm">
-                      A celebration of light and culture with spectacular light shows and installations.
+                      Light projections on historic buildings such as the Cathedral, staged in seasonal editions around Xantolo and the Christmas season.
                     </p>
                   </div>
                   <div>
@@ -223,7 +223,7 @@ export default function FestivalsPage() {
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Procesión del Silencio</h3>
                   <p className="text-gray-600 mb-4">
-                    Held on Good Friday, the Procesión del Silencio is one of the most solemn and moving religious events in San Luis Potosí. This centuries-old tradition features hooded penitents walking in silence through the historic center, accompanied by the haunting sounds of drums and traditional music.
+                    Held on Good Friday, the Procesión del Silencio is one of the most solemn and moving religious events in San Luis Potosí. This tradition, held since 1954, features hooded penitents walking in silence through the historic center, accompanied by the haunting sounds of drums and traditional music.
                   </p>
                   <div className="space-y-2">
                     <p className="text-gray-600">
@@ -246,17 +246,17 @@ export default function FestivalsPage() {
                 <div className="order-2 md:order-1">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Festival de Primavera</h3>
                   <p className="text-gray-600 mb-4">
-                    The Spring Festival celebrates the arrival of spring with a burst of color and cultural activities. This vibrant celebration includes flower exhibitions, traditional dances, music performances, and art installations throughout the city's parks and plazas.
+                    The Festival Internacional San Luis en Primavera fills the city during Holy Week with a mostly free program of concerts, theater, dance and international guest artists. The 2026 edition, its fifth, ran March 28–April 4.
                   </p>
                   <div className="space-y-2">
                     <p className="text-gray-600">
-                      <span className="font-semibold">When:</span> March/April
+                      <span className="font-semibold">When:</span> Holy Week (2026: March 28–April 4)
                     </p>
                     <p className="text-gray-600">
-                      <span className="font-semibold">Where:</span> Various locations in the city
+                      <span className="font-semibold">Where:</span> Centro Histórico and other venues in the city
                     </p>
                     <p className="text-gray-600">
-                      <span className="font-semibold">Highlights:</span> Flower exhibitions, traditional dances, art installations
+                      <span className="font-semibold">Highlights:</span> Free concerts, international artists, theater and dance
                     </p>
                   </div>
                 </div>
@@ -289,7 +289,7 @@ export default function FestivalsPage() {
                   </p>
                   <div className="space-y-2">
                     <p className="text-gray-600">
-                      <span className="font-semibold">When:</span> August (15-30 days)
+                      <span className="font-semibold">When:</span> August (2026: August 7–30)
                     </p>
                     <p className="text-gray-600">
                       <span className="font-semibold">Where:</span> Feria Nacional Grounds
@@ -312,10 +312,10 @@ export default function FestivalsPage() {
                   </p>
                   <div className="space-y-2">
                     <p className="text-gray-600">
-                      <span className="font-semibold">When:</span> November 1-2
+                      <span className="font-semibold">When:</span> Around October 31 – November 2
                     </p>
                     <p className="text-gray-600">
-                      <span className="font-semibold">Where:</span> Throughout the city and Huasteca region
+                      <span className="font-semibold">Where:</span> Teenek and Nahua communities of the Huasteca Potosina (Aquismón, Tancanhuitz, Tampamolón and more)
                     </p>
                     <p className="text-gray-600">
                       <span className="font-semibold">Highlights:</span> Traditional altars, dances, music, special foods
@@ -339,25 +339,25 @@ export default function FestivalsPage() {
                 <div className="relative h-[400px] rounded-lg overflow-hidden">
                   <Image
                     src="/images/festivals/festival-luz.jpg"
-                    alt="Festival de la Luz"
+                    alt="Fiesta de Luz"
                     fill
                     className="object-cover"
                   />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Festival de la Luz</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Fiesta de Luz</h3>
                   <p className="text-gray-600 mb-4">
-                    The Festival of Light transforms the historic center into a spectacular display of light and art. This modern celebration features light installations, projections on historic buildings, interactive exhibits, and cultural performances that showcase the city's artistic heritage.
+                    The Fiesta de Luz transforms the historic center with light and art. This modern event projects light shows onto historic buildings such as the Metropolitan Cathedral, in seasonal editions tied to Xantolo and Día de Muertos and to the Christmas season.
                   </p>
                   <div className="space-y-2">
                     <p className="text-gray-600">
-                      <span className="font-semibold">When:</span> September
+                      <span className="font-semibold">When:</span> Seasonal (around Xantolo and the Christmas season; check current dates)
                     </p>
                     <p className="text-gray-600">
                       <span className="font-semibold">Where:</span> Historic Center
                     </p>
                     <p className="text-gray-600">
-                      <span className="font-semibold">Highlights:</span> Light installations, building projections, interactive exhibits
+                      <span className="font-semibold">Highlights:</span> Projections on historic buildings, light installations
                     </p>
                   </div>
                 </div>

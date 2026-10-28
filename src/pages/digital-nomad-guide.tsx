@@ -61,15 +61,15 @@ const sections = [
 const faqItems = [
   {
     q: 'Is San Luis Potosí safe for digital nomads?',
-    a: 'Yes. SLP is considered one of the safest mid-size cities in Mexico, with low crime rates compared to border cities and major tourist destinations. The historic center and residential areas like Lomas are particularly safe.',
+    a: "Relatively, yes. San Luis Potosí state had one of Mexico's lowest reported homicide rates in H1 2026 (México Evalúa), and the US State Department rates the state Level 2 (exercise increased caution). Still, about 6 in 10 city residents say they feel unsafe (INEGI ENSU, June 2026), so use normal big-city precautions. The historic center and residential areas like Lomas are popular with expats.",
   },
   {
     q: 'How fast is the internet in San Luis Potosí?',
-    a: 'Fiber optic is widely available through Telmex and Totalplay, with speeds of 100-500 Mbps in most neighborhoods. Cafes and coworking spaces typically offer 50-100 Mbps.',
+    a: "Fiber is widely available through Telmex, Totalplay and izzi, with home plans from about 60-125 Mbps up to 1 Gbps (roughly $349-$1,020 MXN/month, Oct 2026). Mexico's median fixed download speed was about 94-104 Mbps in 2026. Café wifi varies, so test it before a call.",
   },
   {
     q: 'Do I need a visa to work remotely from Mexico?',
-    a: 'For stays up to 180 days, the FMM tourist permit is sufficient — you enter visa-free from most countries. For longer stays, apply for a Temporary Resident visa (1-4 years) which does not require a Mexican employer.',
+    a: 'Many nationalities (including US, Canadian and EU citizens) enter visa-free as visitors for up to 180 days, but the immigration officer decides how many days you get and extensions are rarely granted. Mexico has no digital nomad visa, and remote work for a foreign employer on a visitor permit is tolerated rather than expressly authorized. For longer stays, apply at a Mexican consulate for Temporary Residence (up to 4 years), which does not require a Mexican employer.',
   },
   {
     q: 'What is the cost of living for a digital nomad in SLP?',
@@ -77,33 +77,33 @@ const faqItems = [
   },
   {
     q: 'Is there a digital nomad community in SLP?',
-    a: 'The community is growing. While smaller than Mexico City or Oaxaca, SLP has an active expat and remote worker scene with language exchanges, coworking events, and social meetups.',
+    a: "It is small. SLP's remote-worker scene is much smaller than Mexico City's or Oaxaca's; expat Facebook groups, language exchanges and coworking spaces are the usual ways to meet people.",
   },
 ];
 
 const internetProviders = [
   {
     name: 'Totalplay',
-    speed: '200-500 Mbps',
-    price: '$499 - $899 MXN/mo',
-    highlight: 'Fastest fiber',
-    note: 'Includes streaming bundle. Best for heavy uploads.',
+    speed: '125 Mbps - 1 Gbps',
+    price: 'From ~$599 - $769 MXN/mo',
+    highlight: 'Fastest median speeds',
+    note: 'Fiber. Highest median download/upload of the big ISPs in 2026 tests. Promo prices can rise.',
     color: 'from-violet-500 to-purple-600',
   },
   {
     name: 'Telmex Infinitum',
-    speed: '100-200 Mbps',
-    price: '$399 - $599 MXN/mo',
-    highlight: 'Most reliable',
-    note: 'Widest coverage, quickest install (3-5 days).',
+    speed: '60 Mbps - 1 Gbps',
+    price: '~$349 - $899 MXN/mo',
+    highlight: 'Cheapest entry plan',
+    note: 'Fiber. Largest provider in Mexico; entry plans are the cheapest of the three.',
     color: 'from-blue-500 to-cyan-500',
   },
   {
     name: 'Izzi',
-    speed: '100-300 Mbps',
-    price: '$449 - $699 MXN/mo',
-    highlight: 'Cable',
-    note: 'Cable (not fiber) — solid in Centro & Lomas.',
+    speed: '100 Mbps - 1 Gbps',
+    price: '~$389 - $1,020 MXN/mo',
+    highlight: 'Widest speed range',
+    note: 'Cable network being upgraded to fiber. Promos often undercut list prices.',
     color: 'from-red-500 to-orange-500',
   },
 ];
@@ -158,7 +158,7 @@ export default function DigitalNomadGuidePage() {
               },
               publisher: { '@type': 'Organization', name: 'San Luis Way', logo: { '@type': 'ImageObject', url: 'https://www.sanluisway.com/og-image.jpg' } },
               datePublished: '2026-04-13',
-              dateModified: '2026-04-13',
+              dateModified: '2026-10-27',
             }),
           }}
         />
@@ -215,7 +215,7 @@ export default function DigitalNomadGuidePage() {
               <div className="flex flex-wrap items-center gap-2 mb-4">
                 <span className="inline-flex items-center gap-1.5 bg-emerald-500/90 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full shadow-lg">
                   <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                  Updated April 2026
+                  Updated October 2026
                 </span>
                 <span className="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/20">
                   <ClockIcon className="w-3.5 h-3.5" />
@@ -232,7 +232,7 @@ export default function DigitalNomadGuidePage() {
               <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed drop-shadow">
                 {t('nomadGuide.hero.subtitle')}
               </p>
-              <LastUpdated date="2026-04-13" className="mt-4 text-white/80" />
+              <LastUpdated date="2026-10-27" className="mt-4 text-white/80" />
             </div>
           </div>
         </section>
@@ -300,7 +300,7 @@ export default function DigitalNomadGuidePage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6">
                     <p className="text-white text-sm md:text-base font-medium drop-shadow-lg max-w-md">
-                      Six hand-picked spots where nomads actually get work done — verified wifi, prices and hours.
+                      Six work-friendly spots with wifi — prices are approximate, so check hours before you go.
                     </p>
                   </div>
                 </div>
@@ -429,17 +429,17 @@ export default function DigitalNomadGuidePage() {
                   <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                     <h3 className="font-semibold text-gray-900 mb-2">FMM Tourist Permit</h3>
                     <ul className="text-sm text-gray-600 space-y-1">
-                      <li>Up to 180 days</li>
-                      <li>No work permit needed for remote work</li>
-                      <li>Free for most nationalities</li>
-                      <li>Extendable at INM office</li>
+                      <li>Up to 180 days (officer decides)</li>
+                      <li>Remote work for foreign employers tolerated, not formally authorized</li>
+                      <li>Visitor fee MXN $983 (~$53 USD), usually in airfare</li>
+                      <li>Extensions rarely granted</li>
                     </ul>
                   </div>
                   <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                     <h3 className="font-semibold text-gray-900 mb-2">Temporary Resident Visa</h3>
                     <ul className="text-sm text-gray-600 space-y-1">
-                      <li>1-4 years, renewable</li>
-                      <li>Proof of income ~$2,500 USD/mo</li>
+                      <li>Up to 4 years (1-year first card, then renewals)</li>
+                      <li>Income ~MXN $79,800/mo (~$4,000-$4,600 USD, varies by consulate) or savings</li>
                       <li>Apply at Mexican consulate abroad</li>
                       <li>Allows opening bank accounts</li>
                     </ul>

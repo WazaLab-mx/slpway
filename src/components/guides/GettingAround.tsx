@@ -9,16 +9,16 @@ const options = [
   {
     emoji: '🚗',
     title: 'Uber / DiDi',
-    cost: '$40-80 MXN',
+    cost: 'Varies by distance',
     description: 'The easiest way to reach neighborhoods beyond Centro. Both apps work well and are cheaper than street taxis.',
-    tip: 'DiDi is usually 10-15% cheaper than Uber in SLP. Prefer it for longer rides.',
+    tip: 'Compare fares in both apps before booking, especially for longer rides.',
   },
   {
     emoji: '🚌',
     title: 'Local Bus',
-    cost: '$10 MXN',
+    cost: '$13.50 MXN',
     description: 'Extensive network covering the metro area. Pay in cash on boarding. Routes are labeled on the windshield.',
-    tip: 'Download the "Mi Transporte SLP" app or ask your hotel for the best line to your destination.',
+    tip: 'Ask your hotel for the best line to your destination. A prepaid card lowers the fare to $12.50 MXN.',
   },
   {
     emoji: '🚙',

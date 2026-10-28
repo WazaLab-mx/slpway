@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { CalendarIcon, MapPinIcon, TicketIcon, ClockIcon } from '@heroicons/react/24/outline';
+import { CalendarIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { GetStaticProps } from 'next';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -15,12 +15,13 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   };
 };
 
-const TICKETS_URL =
-  'https://www.superboletos.com/landing-evento/khm-vFXrLDWdtC250Jc74w';
+// Past event (June 13, 2026). Facts checked 2026-10-27 against the official
+// poster/banner (date, doors, address, lineup, activities). Ticket prices and
+// the venue name could not be verified, so they are not shown.
 const INSTAGRAM_URL = 'https://www.instagram.com/soycarasucia/';
 
 const ACTIVITIES = ['bbq', 'mechanicalBull', 'rodeo', 'hatBar', 'kids', 'market', 'drinks'];
-const PHASES = ['phase1', 'phase2', 'phase3'];
+const LINEUP = ['Manuel Covarrubias', 'Dan Rosales', 'The Roses', 'Combine The Band', 'Héctor Villalobos', 'Rommel Balterra', 'Memphis Acoustic'];
 
 export default function CaraSuciaCountryFest2026() {
   const { t } = useTranslation('common');
@@ -36,7 +37,7 @@ export default function CaraSuciaCountryFest2026() {
         isAccessibleForFree: false,
         location: {
           '@type': 'Place',
-          name: 'La Legendaria',
+          name: 'Cara Sucia Country Fest 2026',
           address: {
             '@type': 'PostalAddress',
             streetAddress: 'Lib. Sur Anillo Perif. 720, Garita de Jalisco',
@@ -46,20 +47,9 @@ export default function CaraSuciaCountryFest2026() {
             addressCountry: 'MX',
           },
         },
-        offers: {
-          '@type': 'Offer',
-          url: TICKETS_URL,
-          price: '380',
-          priceCurrency: 'MXN',
-          availability: 'https://schema.org/InStock',
-          validFrom: '2026-01-01',
-        },
-        performer: { '@type': 'MusicGroup', name: 'Lineup oficial — ver cartel' },
+        performer: LINEUP.map((name) => ({ '@type': 'MusicGroup', name })),
         organizer: { '@type': 'Organization', name: 'Cara Sucia BBQ', url: INSTAGRAM_URL },
-        sponsor: [
-          { '@type': 'Organization', name: 'Ford SS San Luis' },
-          { '@type': 'Organization', name: 'Grupo La Gran Canica' },
-        ],
+        sponsor: [{ '@type': 'Organization', name: 'Ford SS San Luis' }],
         eventStatus: 'https://schema.org/EventScheduled',
         eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
         url: 'https://www.sanluisway.com/events/cara-sucia-country-fest-2026',
@@ -86,7 +76,6 @@ export default function CaraSuciaCountryFest2026() {
   const stats = [
     { value: t('countryFest2026.stats.dateValue'), label: t('countryFest2026.stats.date') },
     { value: t('countryFest2026.stats.gatesValue'), label: t('countryFest2026.stats.gates') },
-    { value: t('countryFest2026.stats.priceValue'), label: t('countryFest2026.stats.price') },
     { value: t('countryFest2026.stats.familyValue'), label: t('countryFest2026.stats.family') },
   ];
 
@@ -135,7 +124,7 @@ export default function CaraSuciaCountryFest2026() {
               <p className="text-lg text-white/85 max-w-2xl mb-8">
                 {t('countryFest2026.hero.description')}
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 max-w-xl">
+              <div className="grid grid-cols-3 gap-4 mb-8 max-w-md">
                 {stats.map((s) => (
                   <div key={s.label} className="text-center">
                     <p className="text-2xl font-bold text-white">{s.value}</p>
@@ -144,15 +133,6 @@ export default function CaraSuciaCountryFest2026() {
                 ))}
               </div>
               <div className="flex flex-wrap gap-4">
-                <a
-                  href={TICKETS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-amber-500 hover:bg-amber-400 text-stone-900 font-bold px-6 py-3 rounded-full inline-flex items-center gap-2 transition-colors"
-                >
-                  {t('countryFest2026.hero.cta')}
-                  <TicketIcon className="w-5 h-5" />
-                </a>
                 <a
                   href="#lineup"
                   className="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-6 py-3 rounded-full inline-flex items-center gap-2 transition-colors"
@@ -233,82 +213,6 @@ export default function CaraSuciaCountryFest2026() {
         </div>
       </section>
 
-      {/* Tickets */}
-      <section className="py-16 px-4 bg-stone-950 text-white">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold font-serif mb-3">{t('countryFest2026.tickets.title')}</h2>
-            <p className="text-stone-400">{t('countryFest2026.tickets.subtitle')}</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
-            {PHASES.map((phase, idx) => (
-              <div
-                key={phase}
-                className={`rounded-xl p-6 text-center transition-all ${
-                  idx === 2
-                    ? 'bg-gradient-to-br from-amber-500/20 to-orange-500/10 border-2 border-amber-400/60'
-                    : 'bg-stone-900 border border-stone-800'
-                }`}
-              >
-                <p className="text-xs uppercase tracking-widest text-amber-300/80 mb-2">
-                  {t(`countryFest2026.tickets.${phase}.label`)}
-                </p>
-                <p className="text-4xl font-bold text-white mb-2">
-                  {t(`countryFest2026.tickets.${phase}.price`)}
-                </p>
-                <p className="text-sm text-stone-400">{t(`countryFest2026.tickets.${phase}.status`)}</p>
-              </div>
-            ))}
-          </div>
-          <p className="text-center text-amber-300 text-sm mb-6">{t('countryFest2026.tickets.note')}</p>
-          <div className="flex justify-center">
-            <a
-              href={TICKETS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-amber-500 hover:bg-amber-400 text-stone-900 font-bold px-8 py-3.5 rounded-full inline-flex items-center gap-2 transition-colors"
-            >
-              {t('countryFest2026.tickets.cta')}
-              <TicketIcon className="w-5 h-5" />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Getting There */}
-      <section className="py-16 px-4 bg-stone-900 text-white">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold font-serif mb-2">{t('countryFest2026.gettingThere.title')}</h2>
-            <div className="flex items-center justify-center gap-2 text-stone-300 mt-2">
-              <MapPinIcon className="w-5 h-5" />
-              <span>{t('countryFest2026.gettingThere.venue')}</span>
-            </div>
-            <p className="text-stone-500 text-sm mt-1">{t('countryFest2026.gettingThere.address')}</p>
-            <div className="flex items-center justify-center gap-2 text-amber-300 text-sm mt-3">
-              <ClockIcon className="w-4 h-4" />
-              <span>{t('countryFest2026.gettingThere.gates')}</span>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {[
-              { title: t('countryFest2026.gettingThere.byCarTitle'), desc: t('countryFest2026.gettingThere.byCarDesc'), icon: '🚗' },
-              { title: t('countryFest2026.gettingThere.byTransitTitle'), desc: t('countryFest2026.gettingThere.byTransitDesc'), icon: '🚌' },
-              { title: t('countryFest2026.gettingThere.byPlaneTitle'), desc: t('countryFest2026.gettingThere.byPlaneDesc'), icon: '✈️' },
-              { title: t('countryFest2026.gettingThere.hotelsTitle'), desc: t('countryFest2026.gettingThere.hotelsDesc'), icon: '🏨' },
-            ].map((card) => (
-              <div key={card.title} className="bg-stone-800/60 rounded-xl p-5 flex gap-4">
-                <span className="text-2xl">{card.icon}</span>
-                <div>
-                  <h3 className="font-bold text-white mb-1">{card.title}</h3>
-                  <p className="text-stone-300 text-sm">{card.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Sponsors */}
       <section className="py-12 px-4 bg-stone-950 text-white">
         <div className="container mx-auto max-w-4xl text-center">
@@ -317,10 +221,6 @@ export default function CaraSuciaCountryFest2026() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
             <span className="text-stone-200 font-bold text-lg">Ford SS San Luis</span>
-            <span className="text-stone-600">·</span>
-            <span className="text-stone-200 font-bold text-lg">Grupo La Gran Canica</span>
-            <span className="text-stone-600">·</span>
-            <span className="text-stone-200 font-bold text-lg">Superboletos</span>
           </div>
         </div>
       </section>
@@ -348,15 +248,6 @@ export default function CaraSuciaCountryFest2026() {
           <h2 className="text-3xl font-bold font-serif mb-4">{t('countryFest2026.cta.title')}</h2>
           <p className="text-white/85 mb-8">{t('countryFest2026.cta.description')}</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href={TICKETS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-amber-500 hover:bg-amber-400 text-stone-900 font-bold px-8 py-4 rounded-full inline-flex items-center gap-2 transition-colors"
-            >
-              {t('countryFest2026.cta.buy')}
-              <TicketIcon className="w-5 h-5" />
-            </a>
             <Link
               href="/events/all"
               className="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold px-8 py-4 rounded-full transition-colors"

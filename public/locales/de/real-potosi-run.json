@@ -1,29 +1,29 @@
 {
   "banner": {
-    "badge": "Nachtlauf · Sa., 17. Okt.",
+    "badge": "Nachtlauf · fand am Sa, 17. Okt. statt",
     "title": "Carrera Real del Potosí 2026",
-    "text": "3 km, 6 km und 10 km bei Nacht im Parque Tangamanga I, Start 19:00 Uhr.",
+    "text": "3, 6 und 10 km wurden bei Dunkelheit im Parque Tangamanga I gelaufen, Start war um 19:00 Uhr.",
     "cta": "Zum Guide"
   },
   "seo": {
-    "title": "Carrera Real del Potosí 2026: Datum, Distanzen, Gebühr & Starterpaket",
-    "description": "Guide zur Carrera Real del Potosí 2026 (5. Ausgabe): Nachtlauf am Samstag, 17. Oktober, um 19:00 Uhr im Parque Tangamanga I. 3 km, 6 km und 10 km, Online-Anmeldung 375 MXN, Starterpaket mit Leuchtarmband und Medaille.",
+    "title": "Carrera Real del Potosí 2026: Rückblick auf den Nachtlauf, Distanzen & Starterpaket",
+    "description": "Rückblick auf die Carrera Real del Potosí 2026 (5. Ausgabe): ein Nachtlauf am Samstag, 17. Oktober, um 19:00 Uhr im Parque Tangamanga I. 3, 6 und 10 km, Online-Anmeldung für 375 MXN, Starterpaket mit Leuchtarmband und Medaille.",
     "keywords": "carrera real del potosi 2026, nachtlauf san luis potosi, tangamanga nachtlauf, lauf 17 oktober san luis potosi"
   },
   "hero": {
     "eyebrow": "5. Ausgabe · Nachtlauf",
     "subtitle": "3 km, 6 km und 10 km unter den Lichtern des Parque Tangamanga I",
-    "description": "Die fünfte Carrera Real del Potosí wird bei Nacht gelaufen. Start und Ziel liegen an der Av. Artesanos vor dem Planetarium; im Starterpaket sind ein Leuchtarmband und eine Medaille.",
+    "description": "Die fünfte Carrera Real del Potosí wurde am 17. Oktober nachts gelaufen. Start und Ziel lagen an der Av. Artesanos vor dem Planetarium; zum Starterpaket gehörten ein Leuchtarmband und eine Medaille.",
     "date": "Samstag, 17. Oktober 2026",
     "time": "Start 19:00 Uhr",
     "location": "Parque Tangamanga I · Av. Artesanos, vor dem Planetarium",
-    "ctaRegister": "Online anmelden",
+    "ctaRegister": "Offizielle Eventseite",
     "ctaGuide": "Details ansehen",
     "alt": "Nachts beleuchteter Eingang des Parque Tangamanga"
   },
   "status": {
-    "title": "Was noch nicht veröffentlicht ist",
-    "description": "Die offizielle Anmeldeseite nennt weder Streckenkarte, Kategorien, Preise noch Datum und Ort der Ausgabe der Starterpakete. Prüfe die Anmeldeseite vor Samstag."
+    "title": "Dieser Lauf hat bereits stattgefunden",
+    "description": "Die Carrera Real del Potosí 2026 fand am Samstag, 17. Oktober, statt. Bei unserer letzten Prüfung (27. Oktober) zeigte die offizielle Eventseite weder Ergebnisse noch Streckenkarte, Kategorien oder Preise."
   },
   "facts": {
     "title": "Das Wichtigste",
@@ -35,14 +35,14 @@
     ]
   },
   "kit": {
-    "title": "Inhalt des Starterpakets",
+    "title": "Das war im Starterpaket",
     "items": ["Shirt", "Medaille", "Startnummer", "Zeitmess-Chip", "Leuchtarmband", "Überraschungsgeschenk"],
-    "sizes": "Shirtgrößen von XS bis 3XL–6XL; du wählst sie bei der Anmeldung."
+    "sizes": "Die Shirtgrößen reichten von XS bis 3XL–6XL und wurden bei der Anmeldung gewählt."
   },
   "registration": {
-    "title": "Anmeldung",
-    "description": "Nur online über die Zeitmessplattform Tu Tiempo a Tiempo. Distanz und Größe wählen, dann 375 MXN bezahlen.",
-    "policy": "Die Anmeldung ist persönlich, nicht übertragbar und nicht erstattungsfähig. Wird der Lauf durch Behörden oder höhere Gewalt abgesagt, informiert der Veranstalter über Alternativen."
+    "title": "So lief die Anmeldung",
+    "description": "Die Anmeldung lief ausschließlich online über die Zeitmessplattform Tu Tiempo a Tiempo: Distanz und Shirtgröße wählen und 375 MXN zahlen.",
+    "policy": "Die Startplätze waren persönlich, nicht übertragbar und nicht erstattungsfähig."
   },
   "tips": {
     "title": "Tipps für den Nachtlauf",
@@ -56,20 +56,20 @@
   "faq": {
     "title": "Häufige Fragen",
     "items": [
-      { "q": "Wann ist die Carrera Real del Potosí 2026?", "a": "Am Samstag, 17. Oktober 2026, um 19:00 Uhr. Es ist die fünfte Ausgabe, und sie wird nachts gelaufen." },
-      { "q": "Wo ist der Start?", "a": "Im Parque Tangamanga I an der Av. Artesanos vor dem Planetarium. Dort ist auch das Ziel." },
-      { "q": "Was kostet es und welche Distanzen gibt es?", "a": "375 MXN für jede der drei Distanzen: 3 km, 6 km oder 10 km." },
-      { "q": "Wie melde ich mich an?", "a": "Online auf tutiempoatiempo.com: Distanz und Shirtgröße wählen und bezahlen. Die Anmeldung ist persönlich, nicht übertragbar und nicht erstattungsfähig." },
-      { "q": "Was ist im Starterpaket?", "a": "Shirt, Medaille, Startnummer, Zeitmess-Chip, Leuchtarmband und ein Überraschungsgeschenk." }
+      { "q": "Wann fand die Carrera Real del Potosí 2026 statt?", "a": "Am Samstag, 17. Oktober 2026, um 19:00 Uhr. Es war die fünfte Ausgabe, gelaufen wurde nachts." },
+      { "q": "Wo waren Start und Ziel?", "a": "Im Parque Tangamanga I, an der Av. Artesanos vor dem Planetarium. Das Ziel lag an derselben Stelle." },
+      { "q": "Was kostete es und welche Distanzen gab es?", "a": "375 MXN für jede der drei Distanzen: 3, 6 oder 10 km." },
+      { "q": "Wie lief die Anmeldung?", "a": "Online auf tutiempoatiempo.com: Distanz und Shirtgröße wählen, dann zahlen. Startplätze waren persönlich, nicht übertragbar und nicht erstattungsfähig. Die Anmeldung ist geschlossen, da die Veranstaltung vorbei ist." },
+      { "q": "Was war im Starterpaket?", "a": "Shirt, Medaille, Startnummer, Zeitmesschip, Leuchtarmband und ein Überraschungsgeschenk." }
     ]
   },
   "sources": {
     "title": "Quellen",
-    "description": "Fakten am 12. Oktober 2026 anhand der offiziellen Anmeldeseite und des Plakats der 5. Ausgabe geprüft.",
-    "official": "Offizielle Anmeldeseite (Tu Tiempo a Tiempo)"
+    "description": "Fakten am 12. Oktober 2026 anhand der offiziellen Anmeldeseite und des Plakats der 5. Ausgabe geprüft; Veranstaltungsstatus am 27. Oktober 2026 erneut geprüft.",
+    "official": "Offizielle Eventseite (Tu Tiempo a Tiempo)"
   },
   "actions": {
-    "official": "Anmelden",
+    "official": "Event auf Tu Tiempo a Tiempo ansehen",
     "halfMarathon": "Halbmarathon am 8. November",
     "tangamanga": "Guide zum Parque Tangamanga"
   }

@@ -23,6 +23,9 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => ({
 // - vanguardia.com.mx (enchilada potosina created 1919 by Cristina Jalomo;
 //   state intangible-cultural-heritage declaration, origin Soledad).
 // 2027 edition NOT announced as of July 2026 — page states this honestly.
+// Rechecked 2026-10-27: 2026 dates/venue confirmed on turismo.slp.gob.mx;
+// Cristina Jalomo origin (~1919) on municipiosoledad.gob.mx. Removed the
+// prior-year (2025) dates and the unsourced "busiest fairs" superlative.
 
 const ARTISTS_2026 = [
   'Gloria Trevi',
@@ -56,8 +59,8 @@ export default function FeriaDeLaEnchilada2026() {
     {
       q: L('¿Ya hay fechas para la Feria de la Enchilada 2027?', 'Are there dates for the Feria de la Enchilada 2027 yet?'),
       a: L(
-        'No. A julio de 2026 el ayuntamiento de Soledad no ha anunciado fechas para 2027. Las ediciones recientes se han celebrado en abril (2025: 18–27 de abril; 2026: 4–12 de abril), así que la ventana típica es la primera quincena o mediados de abril. Actualizaremos esta página cuando haya anuncio oficial.',
-        'No. As of July 2026 the Soledad municipal government has not announced 2027 dates. Recent editions have run in April (2025: April 18–27; 2026: April 4–12), so the typical window is early-to-mid April. We will update this page when there is an official announcement.'
+        'Todavía no hemos visto un anuncio oficial del ayuntamiento de Soledad con fechas para 2027. La edición 2026 se celebró del 4 al 12 de abril. Actualizaremos esta página cuando haya anuncio oficial.',
+        'We have not yet seen an official announcement of 2027 dates from the Soledad municipal government. The 2026 edition ran April 4–12. We will update this page when there is an official announcement.'
       ),
     },
     {
@@ -111,7 +114,7 @@ export default function FeriaDeLaEnchilada2026() {
           ? 'Qué es la Feria Nacional de la Enchilada, cómo fue la edición 2026 (4–12 de abril, 600 mil asistentes) y qué esperar de la edición 2027.'
           : 'What the Feria Nacional de la Enchilada is, how the 2026 edition went (April 4–12, 600k visitors) and what to expect from the 2027 edition.',
         datePublished: '2026-07-02',
-        dateModified: '2026-07-02',
+        dateModified: '2026-10-27',
         author: { '@type': 'Organization', name: 'San Luis Way', url: 'https://www.sanluisway.com' },
         publisher: { '@type': 'Organization', name: 'San Luis Way', url: 'https://www.sanluisway.com' },
         mainEntityOfPage: 'https://www.sanluisway.com/events/feria-de-la-enchilada-2026',
@@ -275,8 +278,8 @@ export default function FeriaDeLaEnchilada2026() {
             </p>
             <p>
               {L(
-                'La feria que la celebra es más reciente: la Feria Nacional de la Enchilada se fundó en 2012 (Infobae) y desde entonces se realiza cada año en la plaza principal de Soledad. En poco más de una década pasó de festival local a una de las ferias más concurridas del centro del país.',
-                'The fair that celebrates it is more recent: the Feria Nacional de la Enchilada was founded in 2012 (Infobae) and has been held annually on Soledad’s main plaza ever since. In just over a decade it grew from a local festival into one of the busiest fairs in central Mexico.'
+                'La feria que la celebra es más reciente: la Feria Nacional de la Enchilada se fundó en 2012 (Infobae) y desde entonces se realiza cada año en la plaza principal de Soledad. En poco más de una década pasó de festival local a una feria que, según el ayuntamiento, superó los 600 mil asistentes en 2026.',
+                'The fair that celebrates it is more recent: the Feria Nacional de la Enchilada was founded in 2012 (Infobae) and has been held annually on Soledad’s main plaza ever since. In just over a decade it grew from a local festival into a fair that, per the municipal government, drew more than 600,000 visitors in 2026.'
               )}
             </p>
             <p>
